@@ -286,40 +286,179 @@ describe('waehleKonsolidierung / gruppiereAbstracts', () => {
 });
 
 // ── Tor: die Klasse «SPARQL mit LIMIT ohne ORDER BY» darf in scripts/ nicht wiederkehren ──
-// (Mutter des B-07: dieselbe Abfrageform hatte 8 Monate lang keinen Prüfer.) Der Scanner
-// prüft jede Quelltext-Zeichenkette, die erkennbar SPARQL gegen Fedlex ist.
-function sparqlLimitOhneOrder(quelltext: string): string[] {
+// (Mutter des B-07: dieselbe Abfrageform hatte 8 Monate lang keinen Prüfer.)
+// Gehärtet nach Gegenprüfung Opus 7.10.2026 (B2): der erste Scanner prüfte nur Backtick-Literale mit
+// jolux:-Prädikat und liess durch: `LIMIT ${n}`, Abfragen in '…'/"…", volle jolux-IRI ohne Präfix,
+// ORDER BY nur in einer Unterabfrage oder im Kommentar, `${PREFIXE}`-Interpolation ohne Prädikat.
+// Jetzt: JEDE Datei unter scripts/, die den Fedlex-SPARQL-Endpoint anspricht (Marker unten), wird in ihre
+// String-Literale (', ", `, mit Kommentar-/Regex-Überspringen und `${…}`-Schachtelung) zerlegt; jedes Literal
+// mit `LIMIT <Zahl|Interpolation|?var>` braucht ein ORDER BY auf DERSELBEN Abfrageebene (Klammertiefe) davor.
+// Dateien ausserhalb der JS-Welt (.sh/.py) werden als ein Block ohne Zeilenkommentare geprüft.
+const FEDLEX_MARKER = /sparqlendpoint|fedlex\.data\.admin\.ch|fedlex-sparql|sparqlSelect|sparqlBatch/i;
+const LIMIT_MIT_WERT = /\bLIMIT\s*(\d|\u0000|\?\w)/gi;
+
+/** Zerlegt JS/TS-Quelltext in String-Literal-Inhalte; `${…}` wird zu \u0000, Kommentare/Regex werden übersprungen. */
+function stringLiterale(src: string): string[] {
+  const out: string[] = [];
+  const n = src.length;
+  const regexVor = /[(,=:[!&|?{};]/;
+  let letztesZeichen = '';
+  const lies = (q: string, start: number): number => {
+    let buf = '';
+    let j = start;
+    while (j < n) {
+      const c = src[j];
+      if (c === '\\') { buf += src.slice(j, j + 2); j += 2; continue; }
+      if (c === q) { out.push(buf); return j + 1; }
+      if (q === '`' && c === '$' && src[j + 1] === '{') { buf += '\u0000'; j = code(j + 2, true); continue; }
+      buf += c;
+      j += 1;
+    }
+    out.push(buf);
+    return j;
+  };
+  /** Code ab `start`; bei `bisKlammer` endet er an der passenden schliessenden `}` (Index danach). */
+  const code = (start: number, bisKlammer: boolean): number => {
+    let tiefe = 0;
+    let j = start;
+    while (j < n) {
+      const c = src[j];
+      if (c === '/' && src[j + 1] === '/') { const e = src.indexOf('\n', j); j = e < 0 ? n : e; continue; }
+      if (c === '/' && src[j + 1] === '*') { const e = src.indexOf('*/', j + 2); j = e < 0 ? n : e + 2; continue; }
+      if (c === "'" || c === '"' || c === '`') { j = lies(c, j + 1); letztesZeichen = 'a'; continue; }
+      if (c === '/' && (letztesZeichen === '' || regexVor.test(letztesZeichen))) {
+        let k = j + 1; let klasse = false;
+        while (k < n && src[k] !== '\n' && (klasse || src[k] !== '/')) {
+          if (src[k] === '\\') k += 1; else if (src[k] === '[') klasse = true; else if (src[k] === ']') klasse = false;
+          k += 1;
+        }
+        j = k + 1; letztesZeichen = 'a'; continue;
+      }
+      if (c === '{') tiefe += 1;
+      if (c === '}') { if (bisKlammer && tiefe === 0) return j + 1; tiefe -= 1; }
+      if (!/\s/.test(c)) letztesZeichen = c;
+      j += 1;
+    }
+    return j;
+  };
+  code(0, false);
+  return out;
+}
+
+/**
+ * Funde in EINER Abfrage-Zeichenkette: jedes `LIMIT <Wert>` ohne vorangehendes ORDER BY auf derselben
+ * Klammerebene. ORDER BY in einer tieferen Unterabfrage (`{ … }` davor) oder im #-Kommentar zählt nicht;
+ * das Verlassen der umschliessenden `{` beendet die Suche (LIMIT einer Unterabfrage ohne eigenes ORDER BY).
+ */
+function limitOhneOrder(abfrage: string): string[] {
+  const text = abfrage.replace(/(^|\s)#[^\n]*/g, '$1');
+  const ereignisse: Array<{ art: '{' | '}' | 'order'; idx: number }> = [];
+  for (const m of text.matchAll(/[{}]|\bORDER\s+BY\b/gi)) {
+    ereignisse.push({ art: m[0] === '{' ? '{' : m[0] === '}' ? '}' : 'order', idx: m.index });
+  }
   const funde: string[] = [];
-  for (const m of quelltext.matchAll(/`([^`]*)`/g)) {
-    const s = m[1];
-    if (!/jolux:|skos:notation|sparqlendpoint/.test(s)) continue;
-    if (/\bLIMIT\s+\d+/i.test(s) && !/\bORDER\s+BY\b/i.test(s)) funde.push(s.replace(/\s+/g, ' ').slice(0, 100));
+  for (const l of text.matchAll(LIMIT_MIT_WERT)) {
+    let tiefe = 0;
+    let gefunden = false;
+    for (const e of ereignisse.filter((x) => x.idx < l.index).reverse()) {
+      if (e.art === '}') tiefe += 1;
+      else if (e.art === '{') { if (tiefe === 0) break; tiefe -= 1; }
+      else if (tiefe === 0) { gefunden = true; break; }
+    }
+    if (!gefunden) funde.push(text.slice(Math.max(0, l.index - 40), l.index + 20).replace(/\s+/g, ' '));
   }
   return funde;
 }
+
+/** Funde einer Quelldatei; nur Dateien, die den Fedlex-SPARQL-Endpoint ansprechen. */
+function sparqlLimitOhneOrder(quelltext: string, dateiname = 'x.ts'): string[] {
+  if (!FEDLEX_MARKER.test(quelltext)) return [];
+  if (/\.(ts|tsx|mts|js|mjs|cjs)$/.test(dateiname)) return stringLiterale(quelltext).flatMap(limitOhneOrder);
+  return limitOhneOrder(quelltext.split('\n').filter((z) => !/^\s*(#|\/\/)/.test(z)).join('\n'));
+}
+
+/** Begründete Ausnahmen: Datei → Grund. Leer = jede Datei muss die Regel erfüllen. */
+const LIMIT_AUSNAHMEN: Record<string, string> = {};
 
 function skripte(dir: string, out: string[] = []): string[] {
   for (const e of readdirSync(dir)) {
     const p = join(dir, e);
     if (statSync(p).isDirectory()) skripte(p, out);
-    else if (p.endsWith('.ts') && !p.endsWith('.test.ts')) out.push(p);
+    else if (/\.(ts|tsx|mts|js|mjs|cjs|sh|py)$/.test(p) && !/\.test\.(ts|tsx)$/.test(p)) out.push(p);
   }
   return out;
 }
 
-describe('Tor: SPARQL-Abfragen mit LIMIT brauchen ORDER BY', () => {
+describe('Tor: SPARQL-Abfragen mit LIMIT brauchen ORDER BY (gehärtet, B2)', () => {
+  const marker = (abfrage: string): string => `import { sparqlSelect } from './fedlex-sparql';\nconst q = ${abfrage};`;
+
   it('Scanner erkennt die B-07-Form (Rot-Beweis des Tors, §6.7)', () => {
     const alt = '`PREFIX jolux: <http://x#> SELECT ?cc ?date WHERE { ?cc a jolux:ConsolidationAbstract } LIMIT 200`';
-    expect(sparqlLimitOhneOrder(alt)).toHaveLength(1);
-    expect(sparqlLimitOhneOrder(alt.replace('LIMIT 200', 'ORDER BY ?cc LIMIT 200'))).toHaveLength(0);
-    expect(sparqlLimitOhneOrder('`SELECT 1 LIMIT 5`')).toHaveLength(0); // kein SPARQL gegen Fedlex
+    expect(sparqlLimitOhneOrder(marker(alt))).toHaveLength(1);
+    expect(sparqlLimitOhneOrder(marker(alt.replace('LIMIT 200', 'ORDER BY ?cc LIMIT 200')))).toHaveLength(0);
+    expect(sparqlLimitOhneOrder('const q = `SELECT 1 LIMIT 5`;')).toHaveLength(0); // Datei spricht Fedlex nicht an
   });
 
-  it('kein Skript unter scripts/ enthält eine Fedlex-SPARQL-Abfrage mit LIMIT ohne ORDER BY', () => {
+  // Jede der fünf vom Prüfer genannten Umgehungen muss rot werden (Rot-Beweis je Variante).
+  it.each([
+    ['LIMIT ${n} (Interpolation statt Zahl)', '`SELECT ?a WHERE { ?a ?b ?c } LIMIT ${n}`'],
+    ['Abfrage in einfachen Anführungszeichen', "'SELECT ?a WHERE { ?a ?b ?c } LIMIT 5'"],
+    ['Abfrage in doppelten Anführungszeichen', '"SELECT ?a WHERE { ?a ?b ?c } LIMIT 5"'],
+    ['volle jolux-IRI ohne jolux:-Präfix', '`SELECT ?a WHERE { ?a <http://data.legilux.public.lu/resource/ontology/jolux#isMemberOf> ?c } LIMIT 5`'],
+    ['ORDER BY nur in der Unterabfrage', '`SELECT ?a WHERE { { SELECT ?a WHERE { ?a ?b ?c } ORDER BY ?a } } LIMIT 5`'],
+    ['ORDER BY nur im Kommentar', '`SELECT ?a WHERE { ?a ?b ?c }\n# ORDER BY ?a\nLIMIT 5`'],
+    ['${PREFIXE}-Interpolation ohne jolux-Prädikat', '`${PREFIXE}\nSELECT ?a WHERE { ?a ?b ?c } LIMIT 5`'],
+    ['LIMIT einer Unterabfrage ohne eigenes ORDER BY, ORDER BY aussen', '`SELECT ?a WHERE { { SELECT ?a WHERE { ?a ?b ?c } LIMIT 5 } } ORDER BY ?a`'],
+    ['lowercase limit', '`select ?a where { ?a ?b ?c } limit 5`'],
+  ])('rot: %s', (_name, abfrage) => {
+    expect(sparqlLimitOhneOrder(marker(abfrage))).toHaveLength(1);
+  });
+
+  it.each([
+    ['ORDER BY auf derselben Ebene', '`SELECT ?a WHERE { ?a ?b ?c } ORDER BY ?a LIMIT 5`'],
+    ['ORDER BY DESC + Interpolation', '`SELECT ?a WHERE { ?a ?b ?c } ORDER BY DESC(?a) LIMIT ${n}`'],
+    ['Unterabfrage mit eigenem ORDER BY + LIMIT', '`SELECT ?a WHERE { { SELECT ?a WHERE { ?a ?b ?c } ORDER BY ?a LIMIT 5 } }`'],
+    ['IRI mit # ist kein Kommentar', '`SELECT ?a WHERE { ?a <http://x#p> ?c } ORDER BY ?a LIMIT 5`'],
+    ['Abfrage ohne LIMIT', "'SELECT ?a WHERE { ?a ?b ?c } ORDER BY ?a'"],
+    ['Prosa mit «limit» ohne Wert', "'rate limit exceeded'"],
+  ])('grün: %s', (_name, abfrage) => {
+    expect(sparqlLimitOhneOrder(marker(abfrage))).toHaveLength(0);
+  });
+
+  it('Kommentare mit Apostroph und Regex-Literale verwirren den Tokenizer nicht', () => {
+    const src = [
+      "import { sparqlSelect } from './fedlex-sparql';",
+      "// it's a comment with an apostrophe",
+      "const r = /['\"`]/.test(x);",
+      '/* don\'t */',
+      'const q = `SELECT ?a WHERE { ?a ?b ?c } LIMIT 3`;',
+    ].join('\n');
+    expect(stringLiterale(src)).toContain('SELECT ?a WHERE { ?a ?b ?c } LIMIT 3');
+    expect(sparqlLimitOhneOrder(src)).toHaveLength(1);
+  });
+
+  it('verschachtelte Template-Literale (`${…`…`}`) werden vollständig zerlegt', () => {
+    const src = "import { sparqlSelect } from './fedlex-sparql';\nconst q = `A ${x.map((v) => `B ${v} LIMIT 9`).join(' ')} C`;";
+    expect(stringLiterale(src)).toEqual(expect.arrayContaining(['B \u0000 LIMIT 9']));
+    expect(sparqlLimitOhneOrder(src)).toHaveLength(1);
+  });
+
+  it('.sh/.py: Zeilenkommentare zählen nicht, ein Aufruf mit LIMIT ohne ORDER BY schon', () => {
+    const sh = 'curl https://fedlex.data.admin.ch/sparqlendpoint\n# Ursache: LIMIT 200 + bindings[0]\n';
+    expect(sparqlLimitOhneOrder(sh, 'x.sh')).toHaveLength(0);
+    expect(sparqlLimitOhneOrder(`${sh}Q='SELECT ?a WHERE { ?a ?b ?c } LIMIT 200'\n`, 'x.sh')).toHaveLength(1);
+  });
+
+  it('kein Skript unter scripts/, das Fedlex-SPARQL anspricht, enthält LIMIT ohne ORDER BY (Ausnahmen nur begründet)', () => {
     const treffer: string[] = [];
+    let geprueft = 0;
     for (const datei of skripte('scripts')) {
-      for (const f of sparqlLimitOhneOrder(readFileSync(datei, 'utf8'))) treffer.push(`${datei}: ${f}`);
+      const text = readFileSync(datei, 'utf8');
+      if (FEDLEX_MARKER.test(text)) geprueft += 1;
+      if (LIMIT_AUSNAHMEN[datei]) continue;
+      for (const f of sparqlLimitOhneOrder(text, datei)) treffer.push(`${datei}: ${f}`);
     }
+    expect(geprueft, 'Scanner prüft überhaupt Dateien').toBeGreaterThan(20);
     expect(treffer).toEqual([]);
   });
 });
