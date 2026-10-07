@@ -12,6 +12,7 @@
 // smoke.e2e.ts) — nie still erweitern, immer mit Bericht-Eintrag.
 import { test, expect, type Page, type TestInfo } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
+import { mockApiSuche } from './helpers/mockApiSuche'
 
 const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']
 
@@ -297,9 +298,12 @@ test('Rechtsprechung — BS-Entscheid-Reader (dunkel)', async ({ page }, testInf
 // UI-NAV S5: die /suche-Ergebnisseite mit Treffern (Gruppen-Landmarken,
 // Facetten-Buttons, Trefferlisten) a11y-sauber.
 test('Suche — Ergebnisseite (S5)', async ({ page }, testInfo) => {
+  // A1-FUNDAMENT 7.10.2026: der Gesetzestext-Volltext kommt vom Server (Gruppe
+  // «Volltext-Suche (online)»); die Serverantwort stellt der Mock nach.
+  await mockApiSuche(page)
   await oeffnen(page, '/suche?q=Miete')
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
-  await expect(page.getByRole('group', { name: 'Gesetzestext', exact: true })).toBeVisible()
+  await expect(page.getByRole('group', { name: 'Volltext-Suche (online)', exact: true })).toBeVisible()
   await axePruefen(page, testInfo, 'suche-seite')
 })
 
@@ -421,7 +425,7 @@ const DUNKEL_PUNKTE: Array<{
   // Budget wie beim Hell-Zwilling (Z. 195 ff.): der gedrosselte CI-Runner
   // braucht für axe.analyze auf der Übersicht mehr als die 60-s-Voreinstellung.
   { titel: 'Rechtsprechung — Übersicht', punkt: 'rechtsprechung-uebersicht', url: '/rechtsprechung', budget: 120_000 },
-  { titel: 'Suche — Ergebnisseite (S5)', punkt: 'suche-seite', url: '/suche?q=Miete' },
+  { titel: 'Suche — Ergebnisseite (S5)', punkt: 'suche-seite', url: '/suche?q=Miete', seeden: async (page) => { await mockApiSuche(page) } },
   { titel: 'International — Übersicht', punkt: 'international', url: '/gesetze?ebene=international' },
 ]
 

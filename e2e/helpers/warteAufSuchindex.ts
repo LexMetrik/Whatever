@@ -1,5 +1,8 @@
-// e2e/helpers/warteAufSuchindex.ts — auf den lazy Such-Index warten, nicht auf
-// die Uhr (Fixer 1e/1h, §17-Wurzelfix zum offenen Punkt «Aus Fixer 1e»).
+// e2e/helpers/warteAufSuchindex.ts — auf den Ladezustand der Suche warten, nicht
+// auf die Uhr (Fixer 1e/1h, §17-Wurzelfix zum offenen Punkt «Aus Fixer 1e»).
+// (Nachtrag 7.10.2026, A1-FUNDAMENT: es gibt keinen Browser-Suchindex mehr; «fertig»
+// heisst jetzt: Manifeste geladen UND die Serverantwort von /api/suche da — oder als
+// Ausfall gemeldet. Der Name bleibt, die Mechanik ist dieselbe.)
 //
 // ── DER DEFEKT ────────────────────────────────────────────────────────────
 // `useUniversalSuche.ts` lädt den Such-Index ERST beim ersten nicht-leeren

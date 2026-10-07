@@ -32,6 +32,7 @@
 //   (d) den `EINSTIEGE`-Block in `SucheLeerzustand.tsx` wieder rendern ⇒
 //       «kein Einstiege-Block» wird rot.
 import { test, expect, type Page } from '@playwright/test'
+import { mockApiSuche } from './helpers/mockApiSuche'
 
 const feld = (page: Page) => page.getByRole('combobox', { name: /LexMetrik durchsuchen/ })
 
@@ -154,6 +155,7 @@ test('F2 · jede Trefferzeile ist gleich hoch — und so hoch wie eine Zeile des
   // Zeile Volltitel plus mehrzeiliges Snippet trug. Die Panel-Höhe ist ein
   // CLS-Versprechen (§15.2) — sie kann keines sein, wenn die Zeile atmet.
   await page.setViewportSize({ width: 1440, height: 900 })
+  await mockApiSuche(page) // die Volltext-Zeilen kommen vom Server (A1-FUNDAMENT)
   await mitVerlauf(page)
 
   await oeffneLeer(page)
@@ -173,6 +175,7 @@ test('F2 · jede Trefferzeile ist gleich hoch — und so hoch wie eine Zeile des
 
 test('F1/F4 · Registerstrich, Kurzform, Art als Text — kein Kasten, kein ★', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 })
+  await mockApiSuche(page) // die Volltext-Zeilen kommen vom Server (A1-FUNDAMENT)
   await oeffneTreffer(page)
   const panel = page.locator('header [role="search"] .lc-suchpanel-huelle')
 
@@ -194,14 +197,18 @@ test('F1/F4 · Registerstrich, Kurzform, Art als Text — kein Kasten, kein ★'
 })
 
 test('F4 · der Leitentscheid steht als WORT da, nicht als ★', async ({ page }) => {
+  // A1-FUNDAMENT 7.10.2026: Entscheide stehen nicht mehr als Trefferliste in der
+  // Kopf-Suche (eigene Entscheid-Suche auf /rechtsprechung). Der Leitentscheid
+  // begegnet dem Panel nur noch als Direktsprung auf ein BGE-ZITAT — und trägt dort
+  // dieselbe Wort-Auskunft («Leitentscheid im Bestand»). Geprüft wird dieselbe
+  // Zusage an ihrer verbliebenen Stelle: Wort statt ★.
   await page.setViewportSize({ width: 1440, height: 900 })
-  await oeffneTreffer(page, 'BGE 148 III')
+  await oeffneTreffer(page, 'BGE 152 II 19')
   const panel = page.locator('header [role="search"] .lc-suchpanel-huelle')
+  // Das Entscheid-Register lädt erst für das Zitat nach — web-first auf den Satz warten.
+  await expect(panel.getByText(/Leitentscheid im Bestand/)).toBeVisible({ timeout: 30_000 })
   const text = await panel.innerText()
   expect(text, 'kein ★-Glyph mehr im Panel').not.toContain('★')
-  // Das Vokabular ist unverändert das des StatusBadge — nur ohne Kasten.
-  expect(text.includes('Leitentscheid') || text.includes('Entscheid'),
-    `Art-Angabe rechts fehlt: «${text.slice(0, 200)}»`).toBe(true)
 })
 
 test('F6 · das Panel steht nie auf einer Zeile, während gesucht wird', async ({ page }) => {
