@@ -152,8 +152,8 @@ StGB 52 2007-01-01, OR 631 2023-01-01, SVG 89a bewusst ohne) — nur Abnahme Dav
 - E3·W · 5.10. · Tore/Hooks: tor-schutz.py Quote-Split (Diff 5260e0118), gate-stopp.py, tor-paritaet (GP #1323), Streich-Runde nie fündiger Tore (Freigabe 22.9.) — QS-CPU, QS-TORE-DIAET
 - E3·W · 4.–6.10. · Daten-PR/Läufe: Merge-Treiber regen, Projektionen einzeln rot (#1329), Läufe 5–9 h spät, Fedlex-Netz-Fehlalarm, Materialien-Bot verwirft alle Snapshots
 - E3·W · 5.10. · Rückbau nach Umstieg (flaechenZeile, trendZeile, Rotation, ci.yml:70), Worktrees bleiben liegen, 8.10. CI-Sparplan nachmessen; PLAN_BUCHUNG_TOKEN gegenstandslos (David)
-- E3·W · Go David 7.10. · Cache-Tore ehrlich: p-klassen/vollstaendigkeit/struktur-konsistenz/verklebung melden in PR-CI grün ohne Prüfung — scripts/run-parallel.ts, ci.yml
-- E3 · Go David 7.10. · Nachgeladene JSON prüfen: 29× res.json ungeprüft, pruefeJson (src/data/jsonSchutz.ts) einsetzen, dazu Versions-Parameter — src/pages, src/components
+- E3 · 7.10. · check-merge-schutz.ts:43 nutzt git diff mit Rename-Erkennung: Risiko-Datei, auf Nicht-Risiko-Pfad verschoben, fällt aus dem Tor — Wurzel-Fix --no-renames wie kern.ts — scripts/check-merge-schutz.ts
+- E3 · 7.10. · Daten-Cache-Bruch nach Deploy: Inhalts-Hash je public-Datei im Manifest statt Deploy-SHA-Parameter (#1349 verworfen, entwertet MB-Caches) — vercel.json, src/lib/ladeJson.ts
 - E3·W · Go David 7.10. · Leser-Logik (162 .ts unter src/pages|components, ~22k Zeilen) nach src/lib/leser, danach Lint-Grenze — §3 Schichtentrennung
 - E3·W · wartet auf David 7.10. · §5-Text vs. Ist: ingest.ts liest public/*.json → DB, JSON ist faktisch Quelle — Umstellung fertig bauen oder §5 präzisieren — CLAUDE.md §5
 - E3·W · wartet auf David 7.10. · Rechtsprechung-Einzelentscheide (300 MB) als Release-Artefakt statt in git — public/rechtsprechung/
