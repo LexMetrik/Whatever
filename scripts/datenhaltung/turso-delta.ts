@@ -29,13 +29,17 @@
 //     · Schluessel nur remote ........... DELETE
 //     · Schluessel beidseits, Hash ≠ .... UPDATE (eine Zeilen-Schreibung, Index unberuehrt)
 //     · artikel: rowid ≠ ................ DELETE + INSERT (die rowid traegt den Such-Join
-//       `a.rowid = fts_artikel.rowid` UND die Ordnung `bm, rid` in api/suche.ts — sie MUSS
-//       der lokalen entsprechen, sonst ist das Ergebnis nicht gleich dem Vollneubau).
+//       `a.rowid = fts_artikel.rowid` UND (bis 7.10.2026) die Ordnung `bm, rid` in api/suche.ts —
+//       sie MUSS der lokalen entsprechen, sonst ist das Ergebnis nicht gleich dem Vollneubau).
+//       ERGAENZUNG 7.10.2026 (E0-BRANDSCHUTZ, stabile rowid): die lokale rowid ist jetzt ein Hash
+//       aus (erlass_key, art_id) (`stabile-rowid.ts`), nicht mehr die Einfuegereihenfolge — dieser
+//       Zweig tritt im Regelbetrieb nicht mehr auf (`BasisDiff.verschoben` zaehlt ihn und das Log
+//       nennt ihn als Ursache). Der Tie-Break der Suche ist ein fachlicher Schluessel, kein `rid`.
 //   `fts_artikel`: siehe turso-fts-delta.ts (Index-Delta ueber lokale Replika).
 //   ALLES in EINER Transaktion (BEGIN … COMMIT ueber baton): ein Abbruch laesst den alten,
 //   vollstaendigen Stand stehen. VOR dem COMMIT, in derselben Transaktion, laufen die
 //   Verifikationen (Inhalt je Zeile gegen das lokale Artefakt, Zeilenzahlen, Fingerabdruck
-//   aller Index-Shadow-Zeilen, rowid-Spannweite) und die Marken (`sig_`/`zeilen_`); schlaegt
+//   aller Index-Shadow-Zeilen, rowid-Menge) und die Marken (`sig_`/`zeilen_`, `delta_kennung`); schlaegt
 //   eine fehl, wird zurueckgerollt — strenger als der Vollneubau, der erst NACH dem Tausch
 //   nachkontrolliert. Die FTS-eigene Sicht (integrity-check, MATCH-Proben) folgt NACH dem
 //   COMMIT auf frischen Verbindungen: eine Verbindung, die FTS5 schon benutzt hat, liest nach
@@ -54,9 +58,14 @@
 //     dazu kommt das Lesen; ab ~50 % waere das Delta teurer, 30 % laesst Reserve. Gerechnet
 //     wird ueber die GRUPPE, nicht je Tabelle: sonst triggerte die Aenderung einer winzigen
 //     Tabelle (2 von 6 Zeilen) den Vollneubau der 60 000-Zeilen-Tabelle daneben. Typischer
-//     Ausloeser: ein NEUER Erlass mitten in der Reihenfolge verschiebt die rowids aller
-//     Folgezeilen (lokale rowid = Einfuegereihenfolge in ingest.ts).
+//     Ausloeser (bis 7.10.2026): ein NEUER Erlass mitten in der Reihenfolge verschob die rowids
+//     aller Folgezeilen (lokale rowid = Einfuegereihenfolge in ingest.ts). Seit der stabilen rowid
+//     nur noch beim EINMALIGEN Regelwechsel (ROWID_REGEL) — danach ist ein neuer Erlass ein Delta.
 //   · jeder Fehler/jede Verifikation, die im Delta rot wird (Transaktion zurueckgerollt).
+//   KEIN Rueckfall bei unklarem COMMIT-Ausgang (T-1): geht nur die COMMIT-ANTWORT verloren
+//   (`CommitUnklarFehler`), traegt der Remote-Stand die `delta_kennung` dieses Laufs und besteht
+//   die Verifikation auf frischen Verbindungen, ist das Delta festgeschrieben — ein Vollneubau
+//   waere Verschwendung. Fehlt die Kennung, ist es nicht festgeschrieben (Rueckfall wie sonst).
 //   Entscheide (`fts_entscheide_schaufenster`) laufen NICHT ueber das Delta: standalone mit
 //   ~250 MiB Text, ohne Hash-Spalte (die DDL ist durch check-turso-frische Pruefung 0 fixiert)
 //   und nur woechentlich neu — ~30 000 Schreibzeilen je Wochenlauf = ~0,3 % des Kontingents.

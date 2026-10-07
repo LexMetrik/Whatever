@@ -277,7 +277,10 @@ export const DDL_BASIS: Record<BasisTabelle, (name: string) => string> = {
  *  nirgends garantiert — eine einzige Luecke in der Quelle verschiebt alle folgenden Zeilen
  *  und liefert im Betrieb den FALSCHEN Artikel als Suchtreffer (Gegenpruefungs-Befund B2, am
  *  Minimalbeispiel reproduziert). Mit expliziter rowid ist die Kopplung unabhaengig von der
- *  Lueckenlosigkeit korrekt. */
+ *  Lueckenlosigkeit korrekt.
+ *  ERGAENZUNG 7.10.2026 (stabile rowid, stabile-rowid.ts): die lokalen rowids sind seit dem ein
+ *  Hash aus (erlass_key, art_id) und damit NIE dicht — die Kopplungs-Probe vergleicht darum die
+ *  Menge (rowidFingerabdruckSql), nicht nur min/max. */
 export const SPALTEN_BASIS: Record<BasisTabelle, string[]> = {
   erlasse: ['key', 'ebene', 'kanton', 'sr', 'abkuerzung', 'titel', 'rechtsgebiet', 'status'],
   erlass_fassungen: ['erlass_key', 'fassungs_token', 'gueltig_von', 'gueltig_bis', 'stand',
