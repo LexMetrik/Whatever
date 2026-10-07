@@ -18,6 +18,17 @@
 
 import type { Leitcharakter } from './typen';
 import { kodiereSchluessel } from '../normtext/dateiUrl';
+import { ladeJson, pruefeFelder } from '../ladeJson';
+
+const INDEX_PRUEFER = pruefeFelder('rechtsprechung/norm-index.json', { proNorm: 'objekt' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { INDEX_PRUEFER as NORMINDEX_PRUEFER };
+const ERLASS_PRUEFER = pruefeFelder('rechtsprechung/norm-index-erlasse.json', { proNorm: 'objekt' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { ERLASS_PRUEFER as NORMINDEX_ERLASS_PRUEFER };
+const SHARD_PRUEFER = pruefeFelder('rechtsprechung/norm-index/<Erlass>.json', { proArtikel: 'objekt' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { SHARD_PRUEFER as NORMINDEX_SHARD_PRUEFER };
 
 export interface EntscheidRef {
   key: string;
@@ -111,9 +122,9 @@ async function ladeNormIndex(): Promise<NormEntscheidIndex | null> {
   if (!indexPromise) {
     indexPromise = (async () => {
       try {
-        const res = await fetch('/rechtsprechung/norm-index.json');
-        if (!res.ok) { indexPromise = null; return null; }
-        return (await res.json()) as NormEntscheidIndex;
+        const r = await ladeJson<NormEntscheidIndex>('/rechtsprechung/norm-index.json', INDEX_PRUEFER);
+        if (r === null) indexPromise = null;
+        return r;
       } catch {
         indexPromise = null;   // transient — nicht dauerhaft als null zementieren
         return null;
@@ -139,9 +150,9 @@ async function ladeNormIndexErlasse(): Promise<NormErlassIndex | null> {
   if (!erlassPromise) {
     erlassPromise = (async () => {
       try {
-        const res = await fetch('/rechtsprechung/norm-index-erlasse.json');
-        if (!res.ok) { erlassPromise = null; return null; }
-        return (await res.json()) as NormErlassIndex;
+        const r = await ladeJson<NormErlassIndex>('/rechtsprechung/norm-index-erlasse.json', ERLASS_PRUEFER);
+        if (r === null) erlassPromise = null;
+        return r;
       } catch {
         erlassPromise = null;
         return null;
@@ -210,10 +221,8 @@ export async function ladeLeitfallShard(registerKey: string): Promise<LeitfallSh
   if (!p) {
     p = (async () => {
       try {
-        const res = await fetch(`/rechtsprechung/norm-index/${kodiereSchluessel(registerKey)}.json`);
-        if (res.status === 404) return null; // kein Shard = Erlass ohne Artikel-Treffer (kein Fehler)
-        if (!res.ok) { shardPromises.delete(registerKey); return null; }
-        return (await res.json()) as LeitfallShard;
+        // 404 = kein Shard = Erlass ohne Artikel-Treffer (kein Fehler)
+        return await ladeJson<LeitfallShard>(`/rechtsprechung/norm-index/${kodiereSchluessel(registerKey)}.json`, SHARD_PRUEFER);
       } catch {
         // Transienter Netz-/Parse-Fehler (W2·7-VZUI-Härtung): NICHT dauerhaft als
         // null cachen — sonst bleiben die Leitfall-Chips bis zum Reload tot, ein

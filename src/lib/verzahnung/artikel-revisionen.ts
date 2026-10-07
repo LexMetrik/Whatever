@@ -17,6 +17,11 @@
 import type { Datumspraezision } from './typen';
 import { kanonArtikelToken, type ArtikelRevision } from './revisionen-extrakt';
 import { kodiereSchluessel } from '../normtext/dateiUrl';
+import { ladeJson, pruefeFelder } from '../ladeJson';
+
+const PRUEFER = pruefeFelder('verzahnung/artikel-revisionen/<Erlass>.json', { proArtikel: 'objekt' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { PRUEFER as ARTIKEL_REVISIONEN_PRUEFER };
 
 export type { ArtikelRevision } from './revisionen-extrakt';
 
@@ -115,10 +120,8 @@ export async function ladeRevisionShard(erlassKey: string): Promise<RevisionShar
   if (!p) {
     p = (async () => {
       try {
-        const res = await fetch(`/verzahnung/artikel-revisionen/${kodiereSchluessel(erlassKey)}.json`);
-        if (res.status === 404) return null; // kein Shard = Erlass ohne Revisions-Beleg (kein Fehler)
-        if (!res.ok) { shardPromises.delete(erlassKey); return null; }
-        return (await res.json()) as RevisionShard;
+        // 404 = kein Shard = Erlass ohne Revisions-Beleg (kein Fehler)
+        return await ladeJson<RevisionShard>(`/verzahnung/artikel-revisionen/${kodiereSchluessel(erlassKey)}.json`, PRUEFER);
       } catch {
         // Transienter Netz-/Parse-Fehler: NICHT dauerhaft als null cachen (§8) —
         // ein späterer Aufrufer darf es erneut versuchen.

@@ -11,6 +11,12 @@
 // keine Rechtslogik. Alles hier ist ARITHMETIK über gegatete Artefakte; die
 // Einordnung dessen, was die Zahlen bedeuten, steht als Text auf der Seite.
 
+import { ladeJson, pruefeFelder } from '../ladeJson';
+
+const PRUEFER = pruefeFelder('materialien/deckungs-sicht.json', { staende: 'objekt', ebenen: 'objekt' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { PRUEFER as DECKUNG_PRUEFER };
+
 /** Versionierte Bauart — eine geänderte Ableitungsregel entsteht als `/2`
  *  DANEBEN, nie durch Editieren (Muster der Synopse-Normprofile). */
 export const DECKUNG_PROFIL = 'entstehung-deckung/1';
@@ -199,10 +205,7 @@ export function ladeDeckungProjektion(): Promise<DeckungProjektion | null> {
   if (laufend) return laufend;
   laufend = (async () => {
     try {
-      const res = await fetch(DECKUNG_URL);
-      if (res.status === 404) return null;
-      if (!res.ok) { laufend = null; return null; }
-      return (await res.json()) as DeckungProjektion;
+      return await ladeJson<DeckungProjektion>(DECKUNG_URL, PRUEFER);
     } catch {
       laufend = null;
       return null;

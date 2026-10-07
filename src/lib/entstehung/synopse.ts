@@ -26,6 +26,12 @@
 // §3 Schichtentrennung: Typen + Lazy-Loader + reine Auswahl-Helfer. Keine UI, keine
 // Rechtslogik, kein Fetch im Lesefluss (der Shard lädt erst auf Klick, §15).
 
+import { ladeJson, pruefeFelder } from '../ladeJson';
+
+const PRUEFER = pruefeFelder('materialien/synopse/<Erlass>.json', { staende: 'array' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { PRUEFER as SYNOPSE_PRUEFER };
+
 /**
  * Version des Normalisierungs-Profils. Ein GELANDETES Profil wird nie editiert — eine
  * Verbesserung bekommt eine neue Nummer und entsteht daneben, sonst entwertet sie
@@ -254,8 +260,7 @@ const cache = new Map<string, Promise<SynopseShard | null>>();
 export function ladeSynopseShard(erlassKey: string): Promise<SynopseShard | null> {
   const vorhanden = cache.get(erlassKey);
   if (vorhanden) return vorhanden;
-  const p = fetch(`/materialien/synopse/${encodeURIComponent(erlassKey)}.json`)
-    .then((r) => (r.ok ? (r.json() as Promise<SynopseShard>) : null))
+  const p = ladeJson<SynopseShard>(`/materialien/synopse/${encodeURIComponent(erlassKey)}.json`, PRUEFER)
     .catch(() => null);
   cache.set(erlassKey, p);
   return p;

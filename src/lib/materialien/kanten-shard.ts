@@ -26,6 +26,11 @@
 // entfernt (W2·27-BUND-FERTIG).
 
 import { KANTEN_ERLASSE } from './kanten-erlasse.generated';
+import { ladeJson, pruefeFelder } from '../ladeJson';
+
+const PRUEFER = pruefeFelder('materialien/kanten/<Erlass>.json', { erlass: 'string' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { PRUEFER as KANTEN_PRUEFER };
 
 /** Fundstelle einer aggregierten Kante (Ziffer + optionaler Deep-Link-Suffix). */
 interface ShardFundstelle {
@@ -105,11 +110,8 @@ export function beiKantenShardErholt(erlassKey: string, rueckruf: () => void): (
 }
 
 /** `null` = 404 (Datei gibt es nicht); jeder andere Fehlschlag wirft. */
-async function holeJson(pfad: string): Promise<RohShard | null> {
-  const res = await fetch(pfad);
-  if (res.status === 404) return null;
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return (await res.json()) as RohShard;
+function holeJson(pfad: string): Promise<RohShard | null> {
+  return ladeJson<RohShard>(pfad, PRUEFER);
 }
 
 /**

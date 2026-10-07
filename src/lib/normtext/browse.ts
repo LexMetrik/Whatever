@@ -7,6 +7,19 @@ import type { NormSnapshot, NormSnapshotDatei } from './typen';
 import type { KantonSystematik } from './systematik';
 import { randtitelKnoten } from './darstellung';
 import { normtextDateiUrl } from './dateiUrl';
+import { ladeJson, ladeJsonStreng, pruefeFelder } from '../ladeJson';
+
+const MANIFEST_PRUEFER = pruefeFelder('normtext/register.json', { erlasse: 'array' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { MANIFEST_PRUEFER as NORMTEXT_MANIFEST_PRUEFER };
+const DATEI_PRUEFER = pruefeFelder('normtext/<Erlass>.json', { eintraege: 'array' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { DATEI_PRUEFER as NORMTEXT_DATEI_PRUEFER };
+const STRUKTUR_PRUEFER = pruefeFelder('normtext/struktur/<Ebene>/<Erlass>.json', {});
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { STRUKTUR_PRUEFER as NORMTEXT_STRUKTUR_PRUEFER };
+/** Die Struktur-Datei fehlt, wenn `vite dev`/`vite preview` statt eines 404 die index.html (200 text/html) liefern. */
+const IST_HTML = (res: Response) => /\btext\/html\b/i.test(res.headers?.get?.('content-type') ?? '');
 
 // ── Manifest (einmal, gecacht als laufende Promise; Fehlschläge nicht, s. u.) ─
 let manifestPromise: Promise<BrowseManifest> | null = null;
@@ -23,11 +36,7 @@ function sidecarStreng<T>(url: string, auswerten: (roh: unknown) => T): () => Pr
   let gecacht: Promise<T> | null = null;
   return () => {
     if (!gecacht) {
-      const p = (async () => {
-        const res = await fetch(url);
-        if (!res.ok) throw new Error(`HTTP ${res.status} für ${url}`);
-        return auswerten(await res.json());
-      })();
+      const p = ladeJsonStreng<unknown>(url, pruefeFelder(url, {})).then(auswerten);
       p.catch(() => { if (gecacht === p) gecacht = null; });
       gecacht = p;
     }
@@ -93,11 +102,7 @@ export const ladeCurrency = sidecarStreng<CurrencyMap>('/normtext/currency.json'
  *  einen Erlass, sondern eine kaputte Auslieferung — ebenfalls Ladefehler. */
 function ladeBrowseManifestStreng(): Promise<BrowseManifest> {
   if (!manifestPromise) {
-    const p = (async () => {
-      const res = await fetch('/normtext/register.json');
-      if (!res.ok) throw new Error(`HTTP ${res.status} für /normtext/register.json`);
-      return (await res.json()) as BrowseManifest;
-    })();
+    const p = ladeJsonStreng<BrowseManifest>('/normtext/register.json', MANIFEST_PRUEFER);
     p.catch(() => {
       if (manifestPromise === p) manifestPromise = null;
     });
@@ -147,13 +152,7 @@ export function ladeErlassDateiStreng(datei: string): Promise<NormSnapshotDatei 
   let p = dateiCache.get(datei);
   if (!p) {
     const url = normtextDateiUrl(datei);
-    p = (async () => {
-      const res = await fetch(url);
-      if (res.status === 404) return null;
-      if (!res.ok) throw new Error(`HTTP ${res.status} für ${url}`);
-      const d = (await res.json()) as NormSnapshotDatei;
-      return Array.isArray(d.eintraege) ? d : null;
-    })();
+    p = ladeJson<NormSnapshotDatei>(url, DATEI_PRUEFER);
     p.catch(() => {
       if (dateiCache.get(datei) === p) dateiCache.delete(datei);
     });
@@ -281,18 +280,12 @@ function ladeStrukturDocStreng(ebene: string, key: string): Promise<StrukturDoc 
   const url = normtextDateiUrl(`struktur/${ebene}/${key}.json`);
   let p = strukturCache.get(url);
   if (!p) {
-    p = (async () => {
-      const res = await fetch(url);
-      if (res.status === 404) return null;
-      if (!res.ok) throw new Error(`HTTP ${res.status} für ${url}`);
-      // `vite preview`/`vite dev` beantworten eine FEHLENDE Datei mit der index.html
-      // (SPA-Fallback, 200, text/html) statt mit 404 (Prod: echter 404). Das ist
-      // «Datei fehlt» wie ein 404 — nicht «Ausfall» (BG-04-Nachzug, Gegenprüfung
-      // PR #1282: falsche Ausfallzeile bei PRHG/DSGVO/NYUE lokal). Mocks ohne
-      // Header-Objekt gelten als JSON.
-      if (/\btext\/html\b/i.test(res.headers?.get?.('content-type') ?? '')) return null;
-      return (await res.json()) as StrukturDoc;
-    })();
+    // `vite preview`/`vite dev` beantworten eine FEHLENDE Datei mit der index.html
+    // (SPA-Fallback, 200, text/html) statt mit 404 (Prod: echter 404). Das ist
+    // «Datei fehlt» wie ein 404 — nicht «Ausfall» (BG-04-Nachzug, Gegenprüfung
+    // PR #1282: falsche Ausfallzeile bei PRHG/DSGVO/NYUE lokal). Mocks ohne
+    // Header-Objekt gelten als JSON.
+    p = ladeJson<StrukturDoc>(url, STRUKTUR_PRUEFER, { alsFehlend: IST_HTML });
     p.catch(() => {
       if (strukturCache.get(url) === p) strukturCache.delete(url);
     });

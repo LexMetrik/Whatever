@@ -11,6 +11,14 @@ import type {
 } from './typen';
 import { BEHOERDEN, BEHOERDE_RANG, DOKTYP_LABEL } from './register';
 import type { Rechtsgebiet } from '../normtext/register';
+import { ladeJson, pruefeFelder } from '../ladeJson';
+
+const MANIFEST_PRUEFER = pruefeFelder('materialien/register.json', { materialien: 'array' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { MANIFEST_PRUEFER as MATERIALIEN_MANIFEST_PRUEFER };
+const I18N_PRUEFER = pruefeFelder('materialien/register-i18n.json', { titel: 'objekt' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { I18N_PRUEFER as MATERIALIEN_I18N_PRUEFER };
 
 // ── Manifest (einmal, gecacht als laufende Promise) ──────────────────────────
 let manifestPromise: Promise<MaterialManifest | null> | null = null;
@@ -19,10 +27,7 @@ export async function ladeMaterialManifest(): Promise<MaterialManifest | null> {
   if (!manifestPromise) {
     const versuch = (async () => {
       try {
-        const res = await fetch('/materialien/register.json');
-        if (!res.ok) return null;
-        const m = (await res.json()) as MaterialManifest;
-        return Array.isArray(m.materialien) ? m : null;
+        return await ladeJson<MaterialManifest>('/materialien/register.json', MANIFEST_PRUEFER);
       } catch {
         return null;
       }
@@ -70,10 +75,8 @@ export async function ladeMaterialTitelI18n(locale: string): Promise<TitelI18nSt
   if (!i18nPromise) {
     i18nPromise = (async (): Promise<TitelI18nStand> => {
       try {
-        const res = await fetch('/materialien/register-i18n.json');
-        if (!res.ok) return { art: 'nicht-geladen' };
-        const m = (await res.json()) as MaterialI18nManifest;
-        if (!m || typeof m.titel !== 'object' || m.titel === null) return { art: 'nicht-geladen' };
+        const m = await ladeJson<MaterialI18nManifest>('/materialien/register-i18n.json', I18N_PRUEFER);
+        if (!m) return { art: 'nicht-geladen' };
         return { art: 'geladen', karte: new Map(Object.entries(m.titel)) };
       } catch {
         return { art: 'nicht-geladen' };

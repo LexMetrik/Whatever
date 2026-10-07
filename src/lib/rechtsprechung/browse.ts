@@ -7,6 +7,17 @@
 import type { EntscheidManifest, BrowseEntscheid, RichterRegister } from './register';
 import type { EntscheidSnapshot, EntscheidSnapshotDatei, Gerichtstyp } from './typen';
 import { ERLASS_REGISTER, GEBIETE, GEBIET_LABEL, gebieteFuerFilter, type Rechtsgebiet } from '../normtext/register';
+import { ladeJson, pruefeFelder } from '../ladeJson';
+
+const MANIFEST_PRUEFER = pruefeFelder('rechtsprechung/register.json', { entscheide: 'array' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { MANIFEST_PRUEFER as RSPR_MANIFEST_PRUEFER };
+const RICHTER_PRUEFER = pruefeFelder('rechtsprechung/richter.json', { richter: 'objekt' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { RICHTER_PRUEFER as RSPR_RICHTER_PRUEFER };
+const DATEI_PRUEFER = pruefeFelder('rechtsprechung/<Entscheid>.json', { eintraege: 'array' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { DATEI_PRUEFER as RSPR_DATEI_PRUEFER };
 
 // ── Manifest (einmal, gecacht als laufende Promise) ──────────────────────────
 let manifestPromise: Promise<EntscheidManifest | null> | null = null;
@@ -15,9 +26,7 @@ export async function ladeEntscheidManifest(): Promise<EntscheidManifest | null>
   if (!manifestPromise) {
     manifestPromise = (async () => {
       try {
-        const res = await fetch('/rechtsprechung/register.json');
-        if (!res.ok) return null;
-        return (await res.json()) as EntscheidManifest;
+        return await ladeJson<EntscheidManifest>('/rechtsprechung/register.json', MANIFEST_PRUEFER);
       } catch {
         return null;
       }
@@ -37,9 +46,7 @@ export async function ladeRichterRegister(): Promise<RichterRegister | null> {
   if (!richterPromise) {
     richterPromise = (async () => {
       try {
-        const res = await fetch('/rechtsprechung/richter.json');
-        if (!res.ok) return null;
-        return (await res.json()) as RichterRegister;
+        return await ladeJson<RichterRegister>('/rechtsprechung/richter.json', RICHTER_PRUEFER);
       } catch {
         return null;
       }
@@ -63,10 +70,8 @@ export function ladeEntscheid(datei: string): Promise<EntscheidSnapshot | null> 
   if (!p) {
     p = (async () => {
       try {
-        const res = await fetch(`/rechtsprechung/${datei}`);
-        if (!res.ok) return null;
-        const d = (await res.json()) as EntscheidSnapshotDatei;
-        return Array.isArray(d.eintraege) && d.eintraege[0] ? d.eintraege[0] : null;
+        const d = await ladeJson<EntscheidSnapshotDatei>(`/rechtsprechung/${datei}`, DATEI_PRUEFER);
+        return d?.eintraege[0] ?? null;
       } catch {
         return null;
       }
