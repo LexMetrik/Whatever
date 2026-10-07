@@ -7,7 +7,7 @@
 // Seiteneffektfrei beim Import (kein Sync-Start, kein process.exit) — anders als turso-sync.ts.
 // Secrets: Der Aufrufer reicht `token` herein; hier wird nichts geloggt ausser SQL-Anfaengen.
 import type { Stmt, Wert } from './turso-transport';
-import type { Fern, FernTx } from './turso-delta';
+import { CommitUnklarFehler, type Fern, type FernTx } from './turso-delta';
 
 /** fetch mit Retry (transienten Netz-/5xx-Fehlern gewachsen — der Lauf ist lang). */
 export async function fetchRetry(input: string, init: RequestInit, versuche = 4): Promise<Response> {
@@ -169,7 +169,17 @@ export function hranaFern(url: string, token: string): Fern {
       try {
         await sende([]);
         const aus = await fn(tx);
-        const c = await pipelineRoh(url, token, [{ sql: 'COMMIT' }], { baton, close: true });
+        // Wirft der COMMIT-REQUEST selbst (Netz, 5xx nach den Wiederholungen, HTTP-Fehler eines
+        // Wiederholungsversuchs mit schon verbrauchtem baton), ist der Ausgang UNKLAR: der Server
+        // kann festgeschrieben haben, nur die Antwort ging verloren. Das ist etwas anderes als eine
+        // Fehlerantwort (`c.fehler`): die weist das COMMIT eindeutig ab.
+        let c: Awaited<ReturnType<typeof pipelineRoh>>;
+        try {
+          c = await pipelineRoh(url, token, [{ sql: 'COMMIT' }], { baton, close: true });
+        } catch (ce) {
+          baton = null; // kein ROLLBACK auf einen moeglicherweise schon beendeten Stream
+          throw new CommitUnklarFehler(ce instanceof Error ? ce.message : String(ce));
+        }
         if (c.fehler.length > 0) throw new Error(`COMMIT fehlgeschlagen: ${c.fehler.join(' · ')}`);
         baton = null;
         return aus;

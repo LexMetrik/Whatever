@@ -25,6 +25,7 @@ import {
   type Signatur,
   type SchattenLadungLese,
 } from './turso-skip';
+import { ROWID_REGEL } from './stabile-rowid';
 
 /** Wortlaut der Turso-Antwort aus der Sonde zum CI-Lauf 34948342923 (15.9.2026):
  *  HTTP 200, je Statement ein Pipeline-Fehler mit genau diesem Text. */
@@ -258,7 +259,19 @@ describe('signaturenLokal (alle fuenf HOT-Tabellen)', () => {
 
   it('bindet die Basis-Signatur an die DDL aus DDL_BASIS — eine Schema-Aenderung schlaegt durch', () => {
     const sig = signaturenLokal(manifest, soll, fts());
-    expect(sig.get('artikel')?.signatur).toBe(signaturBasis(DDL_BASIS.artikel('artikel'), 'z'));
+    expect(sig.get('artikel')?.signatur).toBe(signaturBasis(DDL_BASIS.artikel('artikel'), 'z', ROWID_REGEL));
+  });
+
+  it('bindet die rowid-Regel in die artikel-Signatur — ein Regelwechsel erzwingt den Neuaufbau, kein Skip auf alte rowids', () => {
+    // Manifest (ohne rowid) und DDL bleiben bei einem Wechsel der rowid-Vergabe GLEICH; ohne die
+    // Regel in der Signatur wuerde `artikel` mit den alten rowids uebersprungen, der Index aber
+    // neu gebaut — der Such-Join zeigte auf fremde Artikel (stabile-rowid.ts, Kopf).
+    const sig = signaturenLokal(manifest, soll, fts());
+    expect(sig.get('artikel')?.signatur).not.toBe(signaturBasis(DDL_BASIS.artikel('artikel'), 'z'));
+    expect(sig.get('artikel')?.signatur).not.toBe(signaturBasis(DDL_BASIS.artikel('artikel'), 'z', ROWID_REGEL + ' v2'));
+    // Tabellen ohne tragende rowid bleiben unberuehrt (kein unnoetiger Neuaufbau).
+    expect(sig.get('erlasse')?.signatur).toBe(signaturBasis(DDL_BASIS.erlasse('erlasse'), 'x'));
+    expect(sig.get('erlass_fassungen')?.signatur).toBe(signaturBasis(DDL_BASIS.erlass_fassungen('erlass_fassungen'), 'y'));
   });
 
   it('haelt die Tabellen auseinander: gleiche sha, andere DDL ⇒ andere Signatur', () => {
@@ -269,7 +282,7 @@ describe('signaturenLokal (alle fuenf HOT-Tabellen)', () => {
 
   it('ohne Manifest-Eintrag entsteht eine Signatur, die nie zu einer frueheren passt (nie Skip)', () => {
     const ohne = signaturenLokal({}, soll, fts()).get('artikel')?.signatur;
-    expect(ohne).toBe(signaturBasis(DDL_BASIS.artikel('artikel'), ''));
+    expect(ohne).toBe(signaturBasis(DDL_BASIS.artikel('artikel'), '', ROWID_REGEL));
     expect(ohne).not.toBe(signaturenLokal(manifest, soll, fts()).get('artikel')?.signatur);
   });
 });
