@@ -44,6 +44,7 @@
 //      Exit 3 (Datenfehler bleiben Exit 1, Erfolg 0).
 import { createHash, type Hash } from 'node:crypto';
 import type { Wert } from './turso-transport';
+import { ROWID_REGEL } from './stabile-rowid';
 
 /** Exit-Code des Syncs, wenn Turso das Schreiben wegen des Monatskontingents sperrt.
  *  Bewusst NICHT 1: die Sperre ist kein Datenfehler, und wer den Lauf auswertet, soll
@@ -137,12 +138,22 @@ export function schreibeWert(h: Hash, v: Wert): void {
   }
 }
 
-/** Signatur einer Basis-Tabelle: Ziel-DDL + Inhalts-sha aus dem committeten Manifest. */
-export function signaturBasis(ddl: string, datenSha: string): string {
+/** Signatur einer Basis-Tabelle: Ziel-DDL + Inhalts-sha aus dem committeten Manifest
+ *  (+ optional die Regel, nach der die rowid vergeben wird).
+ *
+ *  `rowidRegel` (E0-BRANDSCHUTZ, stabile rowid): Das Manifest rechnet OHNE rowid (`SELECT *`,
+ *  Zeilen-Strings sortiert) und die DDL ist von der rowid-Vergabe unabhaengig — beide bleiben
+ *  gleich, wenn die rowids von der Einfuegereihenfolge auf den Schluessel-Hash wechseln. Ohne
+ *  die Regel in der Signatur wuerde `artikel` mit den ALTEN rowids uebersprungen, waehrend
+ *  `fts_artikel` (andere Schatten-Zeilen, andere Signatur) neu gebaut wird: der Such-Join
+ *  zeigte dann auf fremde Artikel. Leer bleibt die Signatur unveraendert (erlasse/erlass_fassungen
+ *  haben keine tragende rowid und werden nicht angefasst). */
+export function signaturBasis(ddl: string, datenSha: string, rowidRegel = ''): string {
   const h = createHash('sha256');
   h.update('basis/1\n');
   schreibeWert(h, ddl);
   schreibeWert(h, datenSha);
+  if (rowidRegel !== '') schreibeWert(h, rowidRegel);
   return h.digest('hex');
 }
 
@@ -328,7 +339,7 @@ export function signaturenLokal(
   const sig = new Map<string, Signatur>();
   for (const t of BASIS) {
     sig.set(t, {
-      signatur: signaturBasis(DDL_BASIS[t](t), manifestNormtext[t]?.sha ?? ''),
+      signatur: signaturBasis(DDL_BASIS[t](t), manifestNormtext[t]?.sha ?? '', t === 'artikel' ? ROWID_REGEL : ''),
       sollZeilen: sollZeilen[t] ?? -1,
     });
   }

@@ -98,6 +98,7 @@ import { DatabaseSync } from 'node:sqlite';
 import { manifestDb } from './manifest';
 import { parseDatenManifest } from './validierung';
 import { ddlFtsArtikel, ddlFtsEntscheide } from './fts';
+import { rowidFingerabdruckSql } from './stabile-rowid';
 import { leseFtsSchatten, ftsDokumente } from './turso-fts-index';
 import {
   zeilenBytes,
@@ -662,8 +663,11 @@ async function main(): Promise<void> {
   // Kopplungs-Nachweis über die rowid-Spannweite (billige Aggregate statt LEFT JOIN — der
   // Join über 55'822 Zeilen braucht auf der Replika Minuten). Beweist zusammen mit der
   // Zeilengleichheit oben, dass fts_artikel.rowid und artikel.rowid denselben Bereich decken.
-  const spanneArtikel = await abfrage(url, token, "SELECT min(rowid) || '-' || max(rowid) FROM artikel");
-  const spanneFts = await abfrage(url, token, "SELECT min(rowid) || '-' || max(rowid) FROM fts_artikel");
+  // Seit der stabilen rowid (stabile-rowid.ts) sind die Nummern nicht mehr dicht: verglichen wird
+  // darum die MENGE (Zahl, min, max, zwei Modulo-Summen), nicht nur die Spannweite. Der Index wird
+  // ueber `_docsize` gelesen (gewoehnliche Tabelle, eine Zeile je Dokument — wie im Delta).
+  const spanneArtikel = await abfrage(url, token, rowidFingerabdruckSql('artikel', 'rowid'));
+  const spanneFts = await abfrage(url, token, rowidFingerabdruckSql('fts_artikel_docsize', 'id'));
   // `null` heisst «nicht ermittelbar», nicht «gleich». Ohne diese Prüfung wären zwei
   // fehlgeschlagene Abfragen beide null, damit gleich — und der Vergleich meldete grün.
   // (Dieselbe Falle wurde im Wächter gehärtet; hier stand sie noch offen, Runde 3.)

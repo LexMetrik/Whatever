@@ -72,3 +72,22 @@ export function pruefeKollision(db: DatabaseSync, rowid: number, erlassKey: stri
       'haben denselben Hash. Regel versionieren (Salz in ROWID_REGEL/artikelRowid) — kostet einen Neuaufbau der Replika.',
   );
 }
+
+// ── Kopplungs-Beweis ueber die rowid-MENGE ─────────────────────────────────────────
+// Bis zur stabilen rowid waren die Nummern dicht (1…N): «Zeilenzahl gleich UND min/max gleich»
+// bewies, dass `fts_artikel` und `artikel` dieselben rowids tragen. Bei Hash-rowids ist das nur
+// noch der Rand — zwei verschiedene Mengen mit gleicher Zahl und gleichen Extremen bestehen die
+// Probe, und der Such-Join (`a.rowid = fts_artikel.rowid`) zeigte auf fremde Artikel. Der
+// Fingerabdruck fuegt zwei Modulo-Summen hinzu (kleine Primmoduli, damit `sum()` nicht ueber
+// int64 laeuft: 60 000 · 10⁹ ≪ 9·10¹⁸); jede abweichende rowid aendert sie mit Wahrscheinlichkeit
+// 1 − 1/p.
+const MODUL_A = 1000000007;
+const MODUL_B = 998244353;
+
+/** SQL, das aus einer Spalte (rowid bzw. `_docsize.id`) den Mengen-Fingerabdruck bildet. */
+export function rowidFingerabdruckSql(tabelle: string, spalte: string): string {
+  return (
+    `SELECT count(*) || '|' || min(${spalte}) || '|' || max(${spalte}) || '|' || ` +
+    `sum(${spalte} % ${MODUL_A}) || '|' || sum(${spalte} % ${MODUL_B}) FROM ${tabelle}`
+  );
+}
