@@ -205,10 +205,15 @@ test('F4 · der Leitentscheid steht als WORT da, nicht als ★', async ({ page }
   await page.setViewportSize({ width: 1440, height: 900 })
   await oeffneTreffer(page, 'BGE 152 II 19')
   const panel = page.locator('header [role="search"] .lc-suchpanel-huelle')
-  // Das Entscheid-Register lädt erst für das Zitat nach — web-first auf den Satz warten.
-  await expect(panel.getByText(/Leitentscheid im Bestand/)).toBeVisible({ timeout: 30_000 })
+  // Das Entscheid-Register lädt erst für das Zitat nach — web-first auf die Zeile warten.
+  const zeile = panel.getByRole('option', { name: /BGE 152 II 19/ })
+  await expect(zeile).toBeVisible({ timeout: 30_000 })
   const text = await panel.innerText()
   expect(text, 'kein ★-Glyph mehr im Panel').not.toContain('★')
+  // Die Art-Angabe rechts ist ein Wort («Entscheid»), der Zusatz «Leitentscheid im
+  // Bestand» steht im `title` derselben Zeile (§8: Auskunft bleibt erreichbar).
+  expect(text, 'Art-Angabe rechts fehlt').toContain('Entscheid')
+  expect(await zeile.locator('[title]').first().getAttribute('title')).toMatch(/Leitentscheid im Bestand/)
 })
 
 test('F6 · das Panel steht nie auf einer Zeile, während gesucht wird', async ({ page }) => {

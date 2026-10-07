@@ -244,7 +244,10 @@ function Gruppe({ g, index, onAuswahl, onNavigate, listboxId, aktivId, q, sektio
           der Satzgrösse — sonst trägt eine Liste drei Textgrössen (Zeile 14,
           Etikett 12, Hinweis 14) und liest sich als drei Ebenen statt als eine
           Liste mit Beiwerk. Dieselbe Stufe wie die Abdeckungs-Fusszeile unten. */}
-      {g.hinweis && <p className="px-4 pb-1 text-micro leading-snug text-ink-500">{g.hinweis}</p>}
+      {/* `max-w-kleintext`: dieselbe Feinschrift-Lesespalte wie die Abdeckungszeile unten —
+          der Hinweis der Server-Gruppe ist ein ganzer Satz (>100 Zeichen) und lief auf
+          /suche über die 80-Zeichen-Zeile (e2e/seitenbreite, Lesemass). */}
+      {g.hinweis && <p className="px-4 pb-1 max-w-kleintext text-micro leading-snug text-ink-500">{g.hinweis}</p>}
       {/* Externer Amtslink (BGE «nicht im Bestand» → search.bger.ch). Echter
           `<a target>` (kein Listbox-Option — External-Navigation), rel gesichert. */}
       {g.externLink && (

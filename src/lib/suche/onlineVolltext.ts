@@ -167,8 +167,7 @@ const HINWEIS =
 /** §8: was die Gruppe sagt, wenn der Server nicht antwortet. Nennt, was NICHT
  *  geht (Wortsuche im Gesetzestext) und was weiter geht (Gesetze, Werkzeuge). */
 export const HINWEIS_NICHT_VERFUEGBAR =
-  'Volltextsuche derzeit nicht verfügbar — Gesetze und Werkzeuge werden weiterhin durchsucht, ' +
-  'die Wortsuche im Gesetzestext braucht eine Verbindung zum Server.';
+  'Volltextsuche derzeit nicht verfügbar — Gesetze und Werkzeuge werden weiterhin durchsucht.';
 
 function nichtVerfuegbarGruppe(): SuchGruppe {
   return {
