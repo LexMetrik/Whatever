@@ -40,8 +40,16 @@ export function pinIdentitaet(eli: string, konsolidierung: string, htmlN: number
 }
 
 /** Urteilt, ob der Marker eines /tmp-HTML-Caches der aktuell gepinnten Manifestation entspricht. */
-export function pinBefund(name: string, eli: string, konsolidierung: string, htmlN: number): CacheBefund {
-  const pinPfad = `/tmp/${name}.html.pin`;
+// `cacheDir` (Default /tmp, Ergänzung 7.10.2026 ARCH-REVIEW cache-tore): nur Tests/Rot-Beweise
+// setzen ein anderes Verzeichnis (LEXMETRIK_FEDLEX_CACHE_DIR, wie fedlex-cache.sh/check-segmente.ts).
+export function pinBefund(
+  name: string,
+  eli: string,
+  konsolidierung: string,
+  htmlN: number,
+  cacheDir = '/tmp',
+): CacheBefund {
+  const pinPfad = `${cacheDir}/${name}.html.pin`;
   const erwartet = pinIdentitaet(eli, konsolidierung, htmlN);
   if (!existsSync(pinPfad)) return { ok: false, grund: `Pin-Marker fehlt (erwartet ${erwartet}) — Neuabruf nötig` };
   let tatsaechlich: string;

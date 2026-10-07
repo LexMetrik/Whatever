@@ -26,6 +26,13 @@ on:
     branches: [main]
     paths:
       - 'scripts/fedlex-pins.ts'
+      # Nachtrag 7.10.2026 (ARCH-REVIEW cache-tore): die Pins selbst stehen in
+      # scripts/fedlex-cache.sh (fedlex-pins.ts PARST sie nur, §5) — der Pfad oben
+      # allein feuerte bei keinem Re-Pin (letzter Lauf 2.9.2026, nur workflow_dispatch;
+      # fedlex-pins.ts zuletzt geändert 11.7.2026). Erst mit diesem Pfad hält der
+      # Satz «der push-Trigger unten deckt das ab» (Kopf) — und die Cache-Tore am
+      # Ende laufen nach jedem Pin-Push auf main.
+      - 'scripts/fedlex-cache.sh'
 
 permissions:
   contents: read
@@ -63,6 +70,7 @@ jobs:
       # enden — der Lauf wird rot, es wird KEIN Release aus unvollständigen
       # Rohdaten veröffentlicht.
       - name: Alle gepinnten Rohfassungen laden (Content-Type-Prüfung wie in fedlex-cache.sh)
+        id: cache
         run: bash scripts/fedlex-cache.sh
 
       # Sammelt NUR die Dateien ein, die scripts/fedlex-pins.ts als Pins
@@ -147,3 +155,19 @@ jobs:
         uses: actions/attest-build-provenance@v2
         with:
           subject-path: ${{ steps.archiv.outputs.datei }}
+
+      # ARCH-REVIEW cache-tore 7.10.2026 (§6.7): check:p-klassen und check:vollstaendigkeit
+      # (Prüfung 1) brauchen den VOLLEN /tmp-Fedlex-Cache. Die PR-CI (ci.yml) lädt ihn nie —
+      # dort melden beide «NICHT GEPRÜFT (kein Cache)». Mit Cache und `--cache-pflicht`
+      # liefen sie bisher NUR im Frische-Arm (fedlex-frische.yml, und nur bei Re-Pin); ein
+      # Re-Pin oder neuer Erlass per Hand-PR (fedlex-cache.sh) wurde nie gegen Fedlex
+      # geprüft. Hier ist der Cache ohnehin vollständig geladen: Pflicht-Lauf nach jedem
+      # Pin-Push auf main — ein Defekt macht diesen Lauf rot. Bewusst NACH dem Release
+      # (`!cancelled()`): die Rohfassungen zu sichern hängt nicht an der Snapshot-
+      # Korrektheit; Bedingung ist nur, dass der Cache-Schritt selbst gelang.
+      - name: Cache-Tore mit Pflicht (p-Klassen · Bund-Vollständigkeit gegen Fedlex)
+        if: ${{ !cancelled() && steps.cache.outcome == 'success' }}
+        run: |
+          set -euo pipefail
+          npm run check:p-klassen -- --cache-pflicht
+          npm run check:vollstaendigkeit -- --cache-pflicht

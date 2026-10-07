@@ -376,6 +376,10 @@ async function main(): Promise<void> {
   // `--cache-pflicht` (nur im Frische-Arm `fedlex-frische.yml` gesetzt, der den Cache
   // selbst frisch fetcht) verlangt die VOLLE Bestandszahl auch bei 0 vorhandenen Caches.
   const cachePflicht = process.argv.includes('--cache-pflicht') || process.env.LEXMETRIK_CACHE_PFLICHT === '1';
+  // Cache-Ort (Ergänzung 7.10.2026, ARCH-REVIEW cache-tore): Default /tmp; nur Tests/Rot-Beweise
+  // setzen LEXMETRIK_FEDLEX_CACHE_DIR (dieselbe Variable wie fedlex-cache.sh/check-segmente.ts),
+  // damit geteilte /tmp-Caches anderer Sessions unberührt bleiben (§12).
+  const cacheDir = process.env.LEXMETRIK_FEDLEX_CACHE_DIR || '/tmp';
 
   const { snapshots: bundSnapshots, snapshotIds: bundSnapshotIds } = ladeBundSnapshots();
   const {
@@ -394,13 +398,14 @@ async function main(): Promise<void> {
   let bundVorhanden = 0; // Gegenprüfung #822 C1: Caches, die ÜBERHAUPT existieren (Existenz, nicht Pin-Gültigkeit)
   let bundFehlendTotal = 0;
   let bundSkipTotal = 0;
+  // ARCH-REVIEW cache-tore 7.10.2026: fehlende Caches gesammelt statt je eine HINWEIS-Zeile
+  // (PR-CI-Lauf 37646635703: 231 Zeilen Rauschen vor einer «GRÜN»-Meldung ohne Prüfung).
+  const ohneCache: string[] = [];
 
   for (const eintrag of cacheEintraege) {
-    const htmlPfad = `/tmp/${eintrag.name}.html`;
+    const htmlPfad = `${cacheDir}/${eintrag.name}.html`;
     if (!existsSync(htmlPfad)) {
-      console.warn(
-        `  HINWEIS: ${eintrag.name}: HTML-Cache /tmp/${eintrag.name}.html fehlt — überspringen (bash scripts/fedlex-cache.sh ausführen).`,
-      );
+      ohneCache.push(eintrag.name);
       continue;
     }
     bundVorhanden++;
@@ -415,7 +420,7 @@ async function main(): Promise<void> {
     // das JEDEN Erlass, `bundFehlendTotal` blieb bei 0 und das Tor meldete «ok» EXIT=0 —
     // ein stiller No-op statt eines Befunds. Jetzt FEHLER wie in struktur-run.ts
     // (cacheGueltig): zählt in `exitCode` UND in der Bestandszahl-Sperre unten.
-    const pin = pinBefund(eintrag.name, eintrag.eli, eintrag.konsolidierung, eintrag.htmlN);
+    const pin = pinBefund(eintrag.name, eintrag.eli, eintrag.konsolidierung, eintrag.htmlN, cacheDir);
     if (!pin.ok) {
       console.error(`  FEHLER ${eintrag.name}: ${pin.grund} — Cache pin-ungültig, Prüfung unzuverlässig.`);
       exitCode = 1;
@@ -485,15 +490,32 @@ async function main(): Promise<void> {
   // (nur im Frische-Arm `fedlex-frische.yml`, der den Cache selbst frisch fetcht) verlangt
   // dort auch bei 0 die volle Zahl. Ein TEILBESTAND (0 < n < alle) ist in JEDEM Kontext ein
   // Befund — halb gefetchte Caches sind kein gültiger Zustand.
+  //
+  // Nachtrag 7.10.2026 (ARCH-REVIEW cache-tore, Ergänzung — der Absatz oben bleibt als
+  // Beleg seines Stands): (1) «0 vorhanden ⇒ grün, HINWEIS» meldete bisher «fehlend: ok»
+  // und «GRÜN — alle 4 Prüfungen bestanden», obwohl Prüfung 1 nichts geprüft hatte
+  // (Beleg: PR-CI-Lauf 37646635703, 7.10.2026, «Bund: 0 Gesetze geprüft … fehlend: ok»).
+  // Jetzt heisst es «NICHT GEPRÜFT (kein Cache)»; Prüfungen 2–4 (offline) laufen und
+  // zählen unverändert. (2) Teilbestand OHNE `--cache-pflicht` (nur lokal denkbar):
+  // vorhandene Erlasse werden geprüft, Ausgabe «TEILGEPRÜFT n/N» statt Rot — wenn 0 Caches
+  // tolerant durchgehen, prüft ein Teilbestand streng mehr; Rot war dort Fehlalarm. MIT
+  // Pflicht bleibt der Teilbestand ein Befund (halb gelungener Fetch). Pin-ungültige
+  // Caches bleiben in JEDEM Fall FEHLER (#808 B4, im Schleifenkörper). Mit Pflicht läuft
+  // das Tor in fedlex-frische.yml (bei Re-Pin) und korpus-raw-release.yml (nach Pin-Push).
+  const bundTeil = bundVorhanden > 0 && bundVorhanden < cacheEintraege.length;
+  let bundPruefVermerk = ''; // leer = voll geprüft
   if (bundVorhanden === 0 && !cachePflicht) {
+    bundPruefVermerk = 'NICHT GEPRÜFT (kein Cache)';
     console.log(
-      `\nHINWEIS: Cache-Prüfung nicht durchgeführt (kein /tmp-Cache; nur im Frische-Arm Pflicht).`,
+      `\nNICHT GEPRÜFT (kein Cache): 0/${cacheEintraege.length} Bund-Erlasse haben einen /tmp-Cache — ` +
+        `Prüfung 1 hat NICHTS geprüft. Volle Prüfung: 'bash scripts/fedlex-cache.sh', dann erneut. ` +
+        `Mit --cache-pflicht läuft sie in fedlex-frische.yml (bei Re-Pin) und korpus-raw-release.yml.`,
     );
-  } else if (bundVorhanden > 0 && bundVorhanden < cacheEintraege.length) {
+  } else if (bundTeil && cachePflicht) {
     console.error(
       `\nFEHLER: nur ${bundVorhanden}/${cacheEintraege.length} Bund-Erlasse haben überhaupt einen ` +
-        `/tmp-Cache (Teilbestand) — entweder ALLE Caches bereitstellen ('bash scripts/fedlex-cache.sh') ` +
-        `oder KEINEN (Prüfung wird dann übersprungen).`,
+        `/tmp-Cache (Teilbestand) — --cache-pflicht verlangt ALLE ('bash scripts/fedlex-cache.sh'). ` +
+        `Ohne Cache: ${ohneCache.join(', ')}`,
     );
     exitCode = 1;
   } else if (bundVorhanden === 0 && cachePflicht) {
@@ -502,20 +524,32 @@ async function main(): Promise<void> {
         `— 'bash scripts/fedlex-cache.sh' lief nicht oder scheiterte vollständig.`,
     );
     exitCode = 1;
-  } else if (bundHtmlGeprüft < cacheEintraege.length) {
-    // Voller Bestand vorhanden (oder --cache-pflicht verlangt es), aber mindestens ein
-    // Cache ist pin-ungültig (bereits oben je einzeln als FEHLER geloggt) — hier nur die
-    // Summenzeile, damit ein Scroll-Log die Ursache nicht verliert.
-    console.error(
-      `\nFEHLER: nur ${bundHtmlGeprüft}/${cacheEintraege.length} Bund-Erlasse tatsächlich geprüft ` +
-        `(pin-ungültige Caches zählen NICHT als bestanden, s. FEHLER-Zeilen oben).`,
-    );
-    exitCode = 1;
+  } else {
+    if (bundTeil) {
+      bundPruefVermerk = `TEILGEPRÜFT ${bundVorhanden}/${cacheEintraege.length}`;
+      console.log(
+        `\nHINWEIS — TEILGEPRÜFT ${bundVorhanden}/${cacheEintraege.length}: nur Bund-Erlasse mit ` +
+          `/tmp-Cache geprüft; ${ohneCache.length} NICHT GEPRÜFT (kein Cache): ${ohneCache.join(', ')}`,
+      );
+    }
+    if (bundHtmlGeprüft < bundVorhanden) {
+      // Mindestens ein vorhandener Cache ist pin-ungültig (bereits oben je einzeln als
+      // FEHLER geloggt) — hier nur die Summenzeile, damit ein Scroll-Log die Ursache
+      // nicht verliert.
+      console.error(
+        `\nFEHLER: nur ${bundHtmlGeprüft}/${bundVorhanden} vorhandene Bund-Caches tatsächlich geprüft ` +
+          `(pin-ungültige Caches zählen NICHT als bestanden, s. FEHLER-Zeilen oben).`,
+      );
+      exitCode = 1;
+    }
   }
 
   const bundStatus = bundFehlendTotal === 0 ? 'ok' : `${bundFehlendTotal} fehlend`;
   console.log(
-    `\nBund: ${bundHtmlGeprüft} Gesetze geprüft, ${bundSnapshots.length} Snapshots, fehlend: ${bundStatus}${bundSkipTotal > 0 ? `, ${bundSkipTotal} leere-Artikel-Skips` : ''}`,
+    `\nBund: ${bundHtmlGeprüft} Gesetze geprüft, ${bundSnapshots.length} Snapshots, fehlend: ` +
+      `${bundVorhanden === 0 && !cachePflicht ? bundPruefVermerk : bundStatus}` +
+      `${bundTeil && !cachePflicht ? ` (${bundPruefVermerk})` : ''}` +
+      `${bundSkipTotal > 0 ? `, ${bundSkipTotal} leere-Artikel-Skips` : ''}`,
   );
 
   // ─── Prüfung 2: Kanton-Zitat-Abdeckung (via Laufzeit-Auflösung) ─────────────
@@ -666,7 +700,11 @@ async function main(): Promise<void> {
   // ─── Gesamtstatus ─────────────────────────────────────────────────────────────
   console.log('\n── Gesamtstatus ─────────────────────────────────────────────────────────');
   if (exitCode === 0) {
-    console.log('check:vollstaendigkeit: GRÜN — alle 4 Prüfungen bestanden.');
+    console.log(
+      bundPruefVermerk === ''
+        ? 'check:vollstaendigkeit: GRÜN — alle 4 Prüfungen bestanden.'
+        : `check:vollstaendigkeit: GRÜN für Prüfungen 2–4; Prüfung 1 (Bund gegen Fedlex-Cache) ${bundPruefVermerk}.`,
+    );
   } else {
     console.error('check:vollstaendigkeit: ROT — Fehler oben beheben!');
   }
