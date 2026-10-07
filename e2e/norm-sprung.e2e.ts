@@ -286,7 +286,7 @@ test.describe('Norm-Sprung in der normalen Suchleiste (A5)', () => {
       page.locator('p[aria-hidden="true"]', { hasText: /\d+ Treffer/ }),
     ).toBeVisible({ timeout: 30_000 })
     // Die Kopfzeile allein deckt nur die Stufe, die `laedt` bindet. Der
-    // Index-Aufbau läuft aber ZWEISTUFIG (`lib/suche/artikelVolltext.ts`): die
+    // Index-Aufbau läuft aber ZWEISTUFIG (`lib/suche/artikelVolltext.ts`, entfallen 7.10.2026): die
     // gestaffelte zweite Stufe setzt `unvollstaendig`, NICHT `laedt`, und wird von
     // `allesGeladen` darum nicht erfasst. Sichtbar ist sie am Vorbehalt «wird noch
     // ergänzt», den die Kopfzeile bei `waechstNoch` anhängt (`SuchResultate.tsx`).

@@ -93,8 +93,8 @@ export function zuruecksetzenOnlineSperre(): void {
 }
 
 /**
- * Interne Artikel-Route — mirror des statischen Client-Helfers
- * (artikelVolltext.ts): `/gesetze/<ebene>/<key>#art-<artikel>`. Der Anker
+ * Interne Artikel-Route — (früher Mirror des Browser-Index-Helfers, entfallen
+ * 7.10.2026): `/gesetze/<ebene>/<key>#art-<artikel>`. Der Anker
  * `art-<artikel>` ist die im Reader gesetzte Artikel-ID (parts.tsx:
  * `<article id={art-${e.artikel}}>`); die Anzeige-Nummer (`330_a`) wird NICHT
  * URL-kodiert (identisch zum bestehenden Helfer), der Routen-Key schon.
