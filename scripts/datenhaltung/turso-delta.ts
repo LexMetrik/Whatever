@@ -17,7 +17,9 @@
 // LESEN IST GUENSTIG, SCHREIBEN TEUER (turso.tech/pricing, Abruf 7.10.2026, Gratisplan):
 // 500 Mio gelesene Zeilen gegen 10 Mio geschriebene je Monat — 50:1. Das Delta tauscht darum
 // Schreibzeilen gegen Lesezeilen: es liest je Lauf ~130 000 Zeilen (Schluessel + Hash,
-// Index-Shadow), um ~40–100 statt ~270 000 zu schreiben.
+// Index-Shadow) — ein zweites Mal zur Verifikation —, um bei einer Handvoll geaenderter
+// Artikel ~40–200 statt ~253 000 Zeilen zu schreiben (Rechnung im PR; Messreihe zum Index-
+// Delta im Kopf von turso-fts-delta.ts).
 //
 // MECHANIK
 //   Basis-Tabellen (`erlasse`, `erlass_fassungen`, `artikel`): jede Ziel-Zeile traegt eine
@@ -32,9 +34,12 @@
 //   `fts_artikel`: siehe turso-fts-delta.ts (Index-Delta ueber lokale Replika).
 //   ALLES in EINER Transaktion (BEGIN … COMMIT ueber baton): ein Abbruch laesst den alten,
 //   vollstaendigen Stand stehen. VOR dem COMMIT, in derselben Transaktion, laufen die
-//   Verifikationen (Inhalt je Zeile, Zeilenzahlen, Index-Fingerabdruck, integrity-check,
-//   MATCH-Proben, rowid-Spannweite) und die Marken (`sig_`/`zeilen_`); schlaegt eine fehl,
-//   wird zurueckgerollt — strenger als der Vollneubau, der erst NACH dem Tausch nachkontrolliert.
+//   Verifikationen (Inhalt je Zeile gegen das lokale Artefakt, Zeilenzahlen, Fingerabdruck
+//   aller Index-Shadow-Zeilen, rowid-Spannweite) und die Marken (`sig_`/`zeilen_`); schlaegt
+//   eine fehl, wird zurueckgerollt — strenger als der Vollneubau, der erst NACH dem Tausch
+//   nachkontrolliert. Die FTS-eigene Sicht (integrity-check, MATCH-Proben) folgt NACH dem
+//   COMMIT auf frischen Verbindungen: eine Verbindung, die FTS5 schon benutzt hat, liest nach
+//   direkten Shadow-Schreibungen in derselben Verbindung veraltet (Probe 7.10.2026).
 //
 // RUECKFALL AUF DEN VOLLNEUBAU (Schatten-Tabellen, unveraendert) bei:
 //   · fehlender sig-Marke einer Tabelle der Gruppe (erster Lauf, unbekannter Stand)
@@ -42,11 +47,15 @@
 //     gegen die Soll-DDL, wie check-turso-frische Pruefung 0)
 //   · fehlendem Index `ix_artikel_erlass`
 //   · Zeilenzahl-Inkonsistenz: Remote-Zahl ≠ protokolliertes `zeilen_<t>` (Verstuemmelung)
-//   · Delta > SCHWELLE_DELTA (30 %) der Zeilen: ein geaenderter Eintrag kostet bis zu
-//     doppelt so viele Schreibungen wie ein Vollneubau-Eintrag (DELETE + INSERT, je mit
-//     Index-Zeilen), dazu kommt das Lesen; ab ~50 % waere das Delta teurer, 30 % laesst
-//     Reserve. Typischer Ausloeser: ein NEUER Erlass mitten in der Reihenfolge verschiebt die
-//     rowids aller Folgezeilen (lokale rowid = Einfuegereihenfolge in ingest.ts).
+//   · Delta-Schreibvolumen > SCHWELLE_DELTA (30 %) des Vollneubau-Schreibvolumens der
+//     betroffenen Tabellen (beides in Zeilen inkl. Index-Zeilen gerechnet, s.
+//     `ZEILEN_JE_BASISZEILE`): ein geaenderter Eintrag kostet beim Verschieben bis zu doppelt
+//     so viele Schreibungen wie ein Vollneubau-Eintrag (DELETE + INSERT, je mit Index-Zeilen),
+//     dazu kommt das Lesen; ab ~50 % waere das Delta teurer, 30 % laesst Reserve. Gerechnet
+//     wird ueber die GRUPPE, nicht je Tabelle: sonst triggerte die Aenderung einer winzigen
+//     Tabelle (2 von 6 Zeilen) den Vollneubau der 60 000-Zeilen-Tabelle daneben. Typischer
+//     Ausloeser: ein NEUER Erlass mitten in der Reihenfolge verschiebt die rowids aller
+//     Folgezeilen (lokale rowid = Einfuegereihenfolge in ingest.ts).
 //   · jeder Fehler/jede Verifikation, die im Delta rot wird (Transaktion zurueckgerollt).
 //   Entscheide (`fts_entscheide_schaufenster`) laufen NICHT ueber das Delta: standalone mit
 //   ~250 MiB Text, ohne Hash-Spalte (die DDL ist durch check-turso-frische Pruefung 0 fixiert)
@@ -236,6 +245,37 @@ export function basisStatements(d: BasisDiff): Stmt[] {
   return stmts;
 }
 
+function wertGleich(a: Wert, b: Wert): boolean {
+  return a instanceof Uint8Array && b instanceof Uint8Array ? Buffer.compare(a, b) === 0 : a === b;
+}
+
+/** Liest die in diesem Delta geschriebenen Zeilen (neu + geaendert) im Inhalt zurueck und zaehlt
+ *  die Abweichungen gegen die lokalen Werte (inkl. rowid bei artikel). */
+export async function inhaltsAbweichungen(lese: Lese, d: BasisDiff): Promise<number> {
+  const t = d.tabelle;
+  const sp = inhaltsSpalten(t);
+  const k = SCHLUESSEL_BASIS[t];
+  const geschrieben = [...d.einfuegen, ...d.aendern];
+  let falsch = 0;
+  const paket = 300;
+  for (let i = 0; i < geschrieben.length; i += paket) {
+    const teil = geschrieben.slice(i, i + paket);
+    const bedingung =
+      k.length === 1
+        ? `${k[0]} IN (${teil.map(() => '?').join(', ')})`
+        : `(${k.join(', ')}) IN (VALUES ${teil.map(() => `(${k.map(() => '?').join(', ')})`).join(', ')})`;
+    const rows = await lese(`SELECT rowid, ${sp.join(', ')} FROM ${t} WHERE ${bedingung}`, teil.flatMap((z) => z.schluesselWerte));
+    const remote = new Map<string, Wert[]>();
+    for (const r of rows) remote.set(schluesselVon(t, r.slice(1)).schluessel, r);
+    for (const z of teil) {
+      const r = remote.get(z.schluessel);
+      const ok = r !== undefined && (!MIT_ROWID[t] || r[0] === z.rowid) && z.werte.every((w, j) => wertGleich(r[1 + j], w));
+      if (!ok) falsch++;
+    }
+  }
+  return falsch;
+}
+
 /** Quelle der Wahrheit fuer die Schreib-Schaetzung eines Basis-Deltas. */
 export function basisSchreibzeilen(d: BasisDiff): number {
   const m = ZEILEN_JE_BASISZEILE[d.tabelle];
@@ -335,17 +375,22 @@ async function versuche(a: DeltaEingabe): Promise<DeltaErgebnis> {
   // ── Diffs ──────────────────────────────────────────────────────────────────────────
   const lokalBasis = new Map<BasisTabelle, BasisZeile[]>();
   const diffs: BasisDiff[] = [];
+  let voll = 0; // Schreibzeilen des Vollneubaus der betroffenen Tabellen
   for (const t of basisNeu) {
     const lokal = leseLokalBasis(a.normtext, t);
     lokalBasis.set(t, lokal);
     const remote = await leseRemoteBasis(fern.lese, t);
     const d = diffBasis(t, lokal, remote);
-    const anteil = diffGroesse(d) / Math.max(lokal.length, remote.length, 1);
-    log(`  Delta ${t}: +${d.einfuegen.length} ~${d.aendern.length} −${d.loeschen.length} (gleich ${d.gleich}; ${(anteil * 100).toFixed(1)} % geaendert)`);
-    if (anteil > schwelle) {
-      return ENTSCHIEDEN(`${t}: ${(anteil * 100).toFixed(1)} % der Zeilen geaendert > Schwelle ${schwelle * 100} % — Vollneubau`);
-    }
+    log(`  Delta ${t}: +${d.einfuegen.length} ~${d.aendern.length} −${d.loeschen.length} (gleich ${d.gleich})`);
+    voll += Math.max(lokal.length, remote.length) * ZEILEN_JE_BASISZEILE[t];
     diffs.push(d);
+  }
+  // Frueher Ausstieg VOR der teuren Index-Rechnung (~13 s bei 60 000 Dokumenten): der Index
+  // kostet im Vollneubau ~ eine Shadow-Zeile je Dokument (`_docsize`).
+  const basisDelta = diffs.reduce((n, d) => n + basisSchreibzeilen(d), 0);
+  if (ftsNeu) voll += a.sollZeilen['fts_artikel'] ?? 0;
+  if (basisDelta > schwelle * voll) {
+    return ENTSCHIEDEN(`Basis-Delta ${basisDelta} Schreibzeilen > ${schwelle * 100} % des Vollneubaus (${voll}) — Vollneubau`);
   }
   // Wird NUR der Index neu gerechnet (artikel uebersprungen, z. B. nach einer Struktur-
   // Sidecar-Aenderung), haengt er an einer Tabelle, die dieser Lauf nicht anfasst: sie muss
@@ -360,10 +405,15 @@ async function versuche(a: DeltaEingabe): Promise<DeltaErgebnis> {
     const remote = await leseSchattenUeber(fern.lese, 'fts_artikel');
     const neu = [...leseFtsSchatten(a.normtext, 'fts_artikel', false)];
     fts = berechneFtsDelta({ ddl: a.ftsDdl, spalten: a.ftsSpalten, remote, neu });
-    const anteil = fts.deltaZeilen / Math.max(fts.remoteZeilen, 1);
-    log(`  Delta fts_artikel: ${fts.geaenderteDokumente} Dokumente → ${fts.deltaZeilen} von ${fts.remoteZeilen} Shadow-Zeilen (${(anteil * 100).toFixed(1)} %)`);
-    if (anteil > schwelle) return ENTSCHIEDEN(`fts_artikel: ${(anteil * 100).toFixed(1)} % der Shadow-Zeilen geaendert > Schwelle — Vollneubau`);
+    log(`  Delta fts_artikel: ${fts.geaenderteDokumente} Dokumente → ${fts.deltaZeilen} von ${fts.remoteZeilen} Shadow-Zeilen`);
+    // Exakte Bezugsgroesse statt der Schaetzung oben: der Vollneubau schreibt ALLE Shadow-Zeilen.
+    voll += fts.remoteZeilen - (a.sollZeilen['fts_artikel'] ?? 0);
+    const gesamt = basisDelta + fts.deltaZeilen;
+    if (gesamt > schwelle * voll) {
+      return ENTSCHIEDEN(`Delta ${gesamt} Schreibzeilen > ${schwelle * 100} % des Vollneubaus (${voll}) — Vollneubau`);
+    }
   }
+  log(`  Delta-Volumen: ${basisDelta + (fts?.deltaZeilen ?? 0)} Schreibzeilen gegen ${voll} im Vollneubau (${((100 * (basisDelta + (fts?.deltaZeilen ?? 0))) / Math.max(voll, 1)).toFixed(2)} %).`);
 
   // ── Statements ─────────────────────────────────────────────────────────────────────
   const stmts: Stmt[] = diffs.flatMap(basisStatements);
@@ -381,7 +431,7 @@ async function versuche(a: DeltaEingabe): Promise<DeltaErgebnis> {
   const schreib: Schreibvolumen = {
     basis: diffs.reduce((s, d) => s + basisSchreibzeilen(d), 0),
     fts: fts?.deltaZeilen ?? 0,
-    marken: markenStmts.length * 2,
+    marken: markenStmts.length,
   };
 
   // ── Transaktion: anwenden → verifizieren → Marken → COMMIT ────────────────────────
@@ -394,6 +444,10 @@ async function versuche(a: DeltaEingabe): Promise<DeltaErgebnis> {
     for (const d of diffs) {
       const nach = diffBasis(d.tabelle, lokalBasis.get(d.tabelle) as BasisZeile[], await leseRemoteBasis(tx.lese, d.tabelle));
       if (diffGroesse(nach) !== 0) rot(`${d.tabelle}: nach dem Delta noch ${diffGroesse(nach)} Abweichungen gegen das lokale Artefakt`);
+      // Der Hash allein bewiese nur, dass die HASH-Spalte stimmt. Darum werden die geschriebenen
+      // Zeilen (neu + geaendert) im INHALT zurueckgelesen und Wert fuer Wert verglichen.
+      const falsch = await inhaltsAbweichungen(tx.lese, d);
+      if (falsch > 0) rot(`${d.tabelle}: ${falsch} geschriebene Zeilen weichen im Inhalt vom lokalen Artefakt ab`);
     }
     // (b) Zeilenzahlen aller Tabellen der Gruppe == Soll (auch uebersprungene). Der Index wird
     //     ueber `_docsize` gezaehlt (eine Zeile je Dokument, gewoehnliche Tabelle) — NICHT ueber

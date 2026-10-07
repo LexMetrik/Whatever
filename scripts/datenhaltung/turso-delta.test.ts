@@ -39,6 +39,8 @@ interface Opt {
   /** globaler Artikel-Index → angehaengter Text (Inhalt aendert sich, rowid bleibt). */
   text?: Record<number, string>;
   titel?: Record<number, string>;
+  /** Erlass-Index → neuer sha der Fassung (UPDATE ueber zusammengesetzten Schluessel). */
+  fassungSha?: Record<number, string>;
   ohneLetzte?: number;
   plus?: number;
   /** ganzer Erlass VORNE eingefuegt → verschiebt die rowid aller Folgezeilen. */
@@ -54,7 +56,7 @@ function korpus(o: Opt = {}) {
   const keys = Array.from({ length: nE }, (_, e) => `E${e}`);
   if (o.erlassVorn) keys.unshift('EA');
   const erlasse = keys.map((k, e) => [k, 'bund', null, `SR ${e}`, `ABK${e}`, o.titel?.[e] ?? `Erlass ${e}`, 'zivilrecht', 'in-kraft']);
-  const fassungen = keys.map((k) => [k, 'F1', '2020-01-01', null, '2026-01-01', `https://fedlex.invalid/${k}`, 'AS 1', '2026-10-01', `sha-${k}`]);
+  const fassungen = keys.map((k, e) => [k, 'F1', '2020-01-01', null, '2026-01-01', `https://fedlex.invalid/${k}`, 'AS 1', '2026-10-01', o.fassungSha?.[e] ?? `sha-${k}`]);
   const art: ArtZeile[] = [];
   let i = 0;
   for (const k of keys) {
@@ -249,7 +251,7 @@ function basisBefund(pfad: string) {
 describe('Delta == Vollneubau (zeilengenau nachfuehren statt Vollneubau)', () => {
   it('geaenderte Texte + Titel + Anhang am Ende: Remote nach Delta == Remote nach Vollneubau', async () => {
     const alt = lokalDb(korpus());
-    const neu = lokalDb(korpus({ text: { 3: 'Verjährung Gläubiger Zusatz', 77: 'neuer Text Miete', 151: 'Kündigung' }, titel: { 2: 'Neuer Titel' }, ohneLetzte: 1, plus: 2 }));
+    const neu = lokalDb(korpus({ text: { 3: 'Verjährung Gläubiger Zusatz', 77: 'neuer Text Miete', 151: 'Kündigung' }, titel: { 2: 'Neuer Titel' }, fassungSha: { 1: 'sha-neu', 4: 'sha-neu2' }, ohneLetzte: 1, plus: 2 }));
     const { remote } = vollLaden(alt, 'alt');
     const { remote: soll } = vollLaden(neu, 'neu');
 
@@ -342,17 +344,31 @@ describe('Rueckfall auf den Vollneubau — Remote bleibt unberuehrt', () => {
     expect(momentaufnahme(remote)).toBe(vor);
   });
 
-  it('Delta ueber Schwelle (50 % der Artikel geaendert)', async () => {
+  it('Delta ueber Schwelle (hier absichtlich auf 0,01 % gesenkt) → Vollneubau', async () => {
     const { remote } = grundlage();
-    const r = await versucheNormtextDelta(eingabe(remote, lokalDb(korpus({ alleAendern: 0.5 })), 'neu'));
-    expect(r).toMatchObject({ ok: false, grund: expect.stringContaining('Schwelle') });
+    const vor = momentaufnahme(remote);
+    const e = eingabe(remote, lokalDb(korpus({ text: { 3: 'x' } })), 'neu');
+    e.schwelle = 0.0001;
+    const r = await versucheNormtextDelta(e);
+    expect(r).toMatchObject({ ok: false, grund: expect.stringContaining('des Vollneubaus') });
+    expect(momentaufnahme(remote)).toBe(vor);
+  });
+
+  it('50 % geaenderte Texte bleiben ein Delta (UPDATE = 1 Schreibzeile statt 3) — und stimmen', async () => {
+    const { remote } = grundlage();
+    const neu = lokalDb(korpus({ alleAendern: 0.5 }));
+    const { remote: soll } = vollLaden(neu, 'neu');
+    const r = await versucheNormtextDelta(eingabe(remote, neu, 'neu'));
+    expect(r).toMatchObject({ ok: true });
+    expect(basisBefund(remote)).toEqual(basisBefund(soll));
+    expect(sucheBefund(remote)).toEqual(sucheBefund(soll));
   });
 
   it('neuer Erlass VORNE verschiebt alle rowids → Schwelle → Vollneubau', async () => {
     const { remote } = grundlage();
     const vor = momentaufnahme(remote);
     const r = await versucheNormtextDelta(eingabe(remote, lokalDb(korpus({ erlassVorn: true })), 'neu'));
-    expect(r).toMatchObject({ ok: false, grund: expect.stringContaining('Schwelle') });
+    expect(r).toMatchObject({ ok: false, grund: expect.stringContaining('des Vollneubaus') });
     expect(momentaufnahme(remote)).toBe(vor);
   });
 
@@ -363,6 +379,22 @@ describe('Rueckfall auf den Vollneubau — Remote bleibt unberuehrt', () => {
     const ohneUpdate = (s: Stmt[]) => s.filter((x) => !x.sql.startsWith('UPDATE artikel'));
     const r = await versucheNormtextDelta(eingabe(remote, neu, 'neu', undefined, ohneUpdate));
     expect(r).toMatchObject({ ok: false, grund: expect.stringContaining('Abweichungen gegen das lokale Artefakt') });
+    expect(momentaufnahme(remote)).toBe(vor);
+  });
+
+  it('Hash stimmt, Inhalt nicht (UPDATE laesst bloecke_json aus) → Inhalts-Rueckles faengt es → Rollback', async () => {
+    const { remote } = grundlage();
+    const vor = momentaufnahme(remote);
+    const neu = lokalDb(korpus({ text: { 3: 'Zusatz Miete' } }));
+    const ohneInhalt = (s: Stmt[]) =>
+      s.map((x) => {
+        if (!x.sql.startsWith('UPDATE artikel')) return x;
+        const args = [...(x.args ?? [])];
+        args.splice(6, 1); // Position von bloecke_json in der SET-Liste
+        return { sql: x.sql.replace('bloecke_json = ?', 'bloecke_json = bloecke_json'), args };
+      });
+    const r = await versucheNormtextDelta(eingabe(remote, neu, 'neu', undefined, ohneInhalt));
+    expect(r).toMatchObject({ ok: false, grund: expect.stringContaining('im Inhalt vom lokalen Artefakt ab') });
     expect(momentaufnahme(remote)).toBe(vor);
   });
 
