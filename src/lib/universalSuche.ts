@@ -31,9 +31,9 @@ import { erlassPfad } from './normtext/erlassAdresse';
 // statischen Gruppen gehängt; er entsteht aus dem Parser normQuery.ts, nicht im
 // synchronen Aggregator unten (deshalb kein sucheAlles-Zweig dafür).
 // 'online' = Gesetzestext-Volltext über die Server-Suche (QS-DATA E2; seit
-// A1-FUNDAMENT 7.10.2026 der EINZIGE Volltext-Weg), von der Komponente hinter die
-// lokalen Gruppen gehängt; sie entsteht in lib/suche/onlineVolltext.ts, nicht im
-// synchronen Aggregator unten (deshalb kein sucheAlles-Zweig dafür).
+// A1-FUNDAMENT 7.10.2026 der EINZIGE Volltext-Weg). Sie entsteht asynchron in
+// lib/suche/onlineVolltext.ts und wird dem Aggregator unten fertig übergeben
+// (`SuchDaten.online`); er setzt sie an ihren Platz in der Relevanz-Reihenfolge.
 export type GruppenId = 'sprung' | 'katalog' | 'preset' | 'gesetz' | 'material' | 'online';
 
 export interface SuchTreffer {
@@ -266,21 +266,28 @@ export interface SuchDaten {
   presets: PresetIndexEintrag[] | null;
   gesetze: BrowseErlass[] | null;
   materialien: BrowseMaterial[] | null;
+  /** Fertige Server-Volltextgruppe (Treffer, Platzhalter `laedt` oder Ausfall
+   *  `nichtVerfuegbar`) — oder null/undefiniert, wenn nichts zu zeigen ist (Begriff
+   *  zu kurz, Server hat nichts gefunden). */
+  online?: SuchGruppe | null;
 }
 
-/** Alle LOKALEN Gruppen in fester Reihenfolge: erst die Rechtsinhalte (Gesetze →
- *  Materialien), dann die Werkzeuge (Rechner & Vorlagen → Fristen-Vorlagen). Der
- *  Norm-Sprung (A5) wird von der Komponente noch DAVOR gehängt (sprungGruppe), die
- *  Server-Volltextgruppe DAHINTER — beides ausserhalb dieses synchronen
- *  Aggregators. Leere (aber geladene) Gruppen entfallen, noch ladende Gruppen
- *  bleiben als Platzhalter sichtbar. */
+/** Alle Gruppen in fester Reihenfolge nach RELEVANZ (A6, David 5.7.2026): erst die
+ *  Rechtsinhalte (Gesetze → Gesetzestext-Volltext vom Server → Materialien), dann die
+ *  Werkzeuge (Rechner & Vorlagen → Fristen-Vorlagen). Der Gesetzestext steht damit
+ *  weiter an seinem Platz hinter den Gesetzen (so stand die frühere Artikel-Gruppe);
+ *  CLS-sicher, weil die Gruppe schon als Platzhalter (`laedt`) dort steht, bevor die
+ *  Serverantwort sie füllt (§15.2). Der Norm-Sprung (A5) wird von der Komponente noch
+ *  DAVOR gehängt (sprungGruppe). Leere (aber geladene) Gruppen entfallen, noch ladende
+ *  Gruppen bleiben als Platzhalter sichtbar, ein Server-Ausfall bleibt als Hinweis stehen. */
 export function sucheAlles(q: string, daten: SuchDaten, kappung = KAPPUNG): SuchGruppe[] {
   if (q.trim() === '') return [];
   const gruppen = [
     gesetzGruppe(daten.gesetze, q, kappung),
+    ...(daten.online ? [daten.online] : []),
     materialGruppe(daten.materialien, q, kappung),
     katalogGruppe(q, kappung),
     presetGruppe(daten.presets, kappung),
   ];
-  return gruppen.filter((g) => g.laedt || g.treffer.length > 0);
+  return gruppen.filter((g) => g.laedt || g.nichtVerfuegbar || g.treffer.length > 0);
 }

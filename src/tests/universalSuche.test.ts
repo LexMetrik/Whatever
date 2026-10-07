@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import {
-  katalogGruppe, presetGruppe, gesetzGruppe, sprungGruppe, bgeSprungGruppe, sucheAlles,
+  katalogGruppe, presetGruppe, gesetzGruppe, sprungGruppe, bgeSprungGruppe, sucheAlles, type SuchGruppe,
 } from '../lib/universalSuche';
 import type { BgeSprung } from '../lib/suche/bgeQuery';
 import type { PresetIndexEintrag } from '../lib/presetIndex';
@@ -152,17 +152,42 @@ describe('universalSuche: Treffer-Dedup (IA-1)', () => {
 });
 
 // A1-FUNDAMENT (Entscheid David 7.10.2026, «nur noch nach gesetzen und werkzeugen
-// suchen lassen. separat für entscheide»; Wortsuche «nur über Server»): der lokale
-// Aggregator kennt WEDER eine Gesetzestext-(Artikel-)Gruppe NOCH eine
-// Rechtsprechungs-Gruppe mehr. Der Volltext kommt als 'online'-Gruppe vom Server
-// (onlineVolltext.ts, dort getestet), Entscheide aus der eigenen Suche /rechtsprechung.
-describe('universalSuche: keine Artikel-/Entscheid-Gruppe mehr im lokalen Aggregator', () => {
-  it('sucheAlles liefert nur lokale Gruppen — nie artikel, entscheid oder online', () => {
-    const erlasse = [{ key: 'OR', ebene: 'bund', kanton: null, kuerzel: 'OR', titel: 'Frist Obligationenrecht', sr: '220', rechtsgebiet: 'or', sprache: 'de', rang: 1, status: 'snapshot', datei: 'x', artikelAnzahl: 1, stand: '2026', quelleUrl: 'x', fassungsToken: 't' }] as unknown as BrowseErlass[];
-    const presets: PresetIndexEintrag[] = [{ key: 'p', regime: 'allgemein', regimeLabel: 'Allgemein', label: 'Frist', norm: '', query: '?fp=x', hash: '' }];
+// suchen lassen. separat für entscheide»; Wortsuche «Ja, nur über Server»): der
+// Aggregator kennt WEDER eine Browser-Artikelgruppe NOCH eine Rechtsprechungs-Gruppe
+// mehr. Der Volltext kommt als 'online'-Gruppe vom Server (onlineVolltext.ts, dort
+// getestet) und wird hier an seinen Relevanz-Platz gesetzt; Entscheide haben ihre
+// eigene Suche /rechtsprechung.
+describe('universalSuche: Server-Volltext-Gruppe im Aggregator', () => {
+  const erlasse = [{ key: 'OR', ebene: 'bund', kanton: null, kuerzel: 'OR', titel: 'Frist Obligationenrecht', sr: '220', rechtsgebiet: 'or', sprache: 'de', rang: 1, status: 'snapshot', datei: 'x', artikelAnzahl: 1, stand: '2026', quelleUrl: 'x', fassungsToken: 't' }] as unknown as BrowseErlass[];
+  const presets: PresetIndexEintrag[] = [{ key: 'p', regime: 'allgemein', regimeLabel: 'Allgemein', label: 'Frist', norm: '', query: '?fp=x', hash: '' }];
+  const treffer = [{ id: 'art:OR:127', label: 'Art. 127 OR', href: '/gesetze/bund/OR#art-127' }];
+  const online: SuchGruppe = { id: 'online', titel: 'Volltext-Suche (online)', treffer, gesamt: 1 };
+
+  it('ohne Server-Gruppe: nie artikel, entscheid oder online', () => {
     const ids = sucheAlles('frist', { presets, gesetze: erlasse, materialien: [] }).map((g) => g.id as string);
     expect(ids).toContain('gesetz');
     for (const verboten of ['artikel', 'entscheid', 'online']) expect(ids).not.toContain(verboten);
+  });
+
+  it('Relevanz-Platz: Gesetze → Volltext (Server) → Materialien → Katalog → Preset', () => {
+    const ids = sucheAlles('frist', { presets, gesetze: erlasse, materialien: [], online }).map((g) => g.id);
+    expect(ids.slice(0, 2)).toEqual(['gesetz', 'online']);
+    if (ids.includes('katalog')) expect(ids.indexOf('online')).toBeLessThan(ids.indexOf('katalog'));
+    expect(ids.indexOf('preset')).toBe(ids.length - 1);
+  });
+
+  it('Platzhalter (laedt) und Ausfall (nichtVerfuegbar) bleiben sichtbar, auch ohne Treffer', () => {
+    const laedt: SuchGruppe = { id: 'online', titel: 'Volltext-Suche (online)', treffer: [], gesamt: 0, laedt: true };
+    const aus: SuchGruppe = { id: 'online', titel: 'Volltext-Suche (online)', treffer: [], gesamt: 0, nichtVerfuegbar: true, hinweis: 'x' };
+    for (const g of [laedt, aus]) {
+      const ids = sucheAlles('zzzznogibtsnicht', { presets: [], gesetze: [], materialien: [], online: g }).map((x) => x.id);
+      expect(ids).toEqual(['online']);
+    }
+  });
+
+  it('eine leere, nicht als Ausfall markierte Server-Gruppe entfällt (Server fand nichts)', () => {
+    const leer: SuchGruppe = { id: 'online', titel: 'Volltext-Suche (online)', treffer: [], gesamt: 0 };
+    expect(sucheAlles('zzzznogibtsnicht', { presets: [], gesetze: [], materialien: [], online: leer })).toEqual([]);
   });
 });
 

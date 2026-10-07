@@ -148,23 +148,21 @@ export function useUniversalSuche(q: string, opt: UniversalSucheOpt = {}): Unive
   const bge = useMemo(() => parseBgeSprung(q, bgeIndex), [q, bgeIndex]);
 
   const gruppen = useMemo(
-    // Reihenfolge (A6): Norm-Sprung (A5) ZUOBERST → lokale Gruppen → Server-Volltext
-    // UNTEN. Die Server-Gruppe hängt IMMER hinter den lokalen Gruppen — CLS-sicher,
-    // weil sie nur unten anwächst und nichts darüber verschiebt (§15.2). Der Sprung
-    // oben ist ein einzelner deterministischer Treffer, der ebenfalls nichts
-    // verdrängt (er ersetzt keine Freitext-Gruppe).
+    // Reihenfolge (A6): Norm-Sprung (A5) ZUOBERST → Gesetze → Server-Volltext →
+    // Materialien → Werkzeuge (Aggregator `sucheAlles`). Der Volltext behält den Platz
+    // der früheren Artikel-Gruppe; CLS-sicher, weil dort von der ersten Berechnung an
+    // ein Platzhalter steht (`onlineGruppe` mit `laedt`), den die Serverantwort nur
+    // füllt (§15.2). Der Sprung oben ist ein einzelner deterministischer Treffer, der
+    // nichts verdrängt (er ersetzt keine Freitext-Gruppe).
     () => {
       const lokal = sucheAlles(q, {
         presets: presetSucheFn ? presetSucheFn(q, 999) : null,
         gesetze,
         materialien,
+        online: onlineGruppe,
       }, kappung);
       const sprung = sprungGruppe(direkt) ?? bgeSprungGruppe(bge);
-      return [
-        ...(sprung ? [sprung] : []),
-        ...lokal,
-        ...(onlineGruppe ? [onlineGruppe] : []),
-      ];
+      return [...(sprung ? [sprung] : []), ...lokal];
     },
     [q, direkt, bge, presetSucheFn, gesetze, materialien, onlineGruppe, kappung],
   );

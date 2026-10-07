@@ -16,7 +16,7 @@
  *       keine Suche).
  *   (5) Unter MIN_ZEICHEN wird der Server nicht gefragt.
  */
-import { act, createElement } from 'react';
+import { act, createElement, useEffect } from 'react';
 import { createRoot, type Root } from 'react-dom/client';
 import { parseHTML } from 'linkedom';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
@@ -24,7 +24,7 @@ import type { SuchGruppe } from '../lib/universalSuche';
 import type { UniversalSucheErgebnis } from '../components/suche/useUniversalSuche';
 
 let antwort: ((g: SuchGruppe | null) => void) | null = null;
-const holeOnlineTreffer = vi.fn((_q: string, _o?: unknown) => new Promise<SuchGruppe | null>((res) => { antwort = res; }));
+const holeOnlineTreffer = vi.fn((...args: unknown[]) => { void args; return new Promise<SuchGruppe | null>((res) => { antwort = res; }); });
 vi.mock('../lib/suche/onlineVolltext', async (orig) => ({
   ...(await orig<typeof import('../lib/suche/onlineVolltext')>()),
   holeOnlineTreffer: (q: string, o?: unknown) => holeOnlineTreffer(q, o),
@@ -47,9 +47,12 @@ vi.mock('../lib/materialien/browse', async (orig) => ({
 const { useUniversalSuche } = await import('../components/suche/useUniversalSuche');
 
 let root: Root | null = null;
-let letzte: UniversalSucheErgebnis | null = null;
+// Der Hook-Rückgabewert wird nach dem Render (im Effekt) in die Sonde geschrieben —
+// nicht im Render selbst (react-hooks/globals).
+const stand: { aktuell: UniversalSucheErgebnis | null } = { aktuell: null };
 function Sonde({ q }: { q: string }) {
-  letzte = useUniversalSuche(q);
+  const erg = useUniversalSuche(q);
+  useEffect(() => { stand.aktuell = erg; });
   return null;
 }
 
@@ -67,11 +70,11 @@ async function rendere(q: string) {
 }
 /** Wartet das Server-Entprellfenster (200 ms) ab. */
 const entprellen = () => act(async () => { await new Promise((r) => setTimeout(r, 260)); });
-const onlineGruppe = () => letzte!.gruppen.find((g) => g.id === 'online');
+const onlineGruppe = () => stand.aktuell!.gruppen.find((g) => g.id === 'online');
 
 beforeEach(() => {
   antwort = null;
-  letzte = null;
+  stand.aktuell = null;
   holeOnlineTreffer.mockClear();
   ladeEntscheidManifest.mockClear();
   fetchSpy.mockClear();
@@ -90,15 +93,18 @@ describe('useUniversalSuche — Volltext über den Server', () => {
     expect(holeOnlineTreffer).toHaveBeenCalledOnce();
     expect(holeOnlineTreffer.mock.calls[0][0]).toBe('miete');
     expect(onlineGruppe()?.laedt).toBe(true);
-    expect(letzte!.allesGeladen).toBe(false); // «Keine Treffer» wäre vor der Serverantwort gelogen (§8)
+    expect(stand.aktuell!.allesGeladen).toBe(false); // «Keine Treffer» wäre vor der Serverantwort gelogen (§8)
 
     await act(async () => { antwort!({ id: 'online', titel: 'Volltext-Suche (online)', treffer, gesamt: 1 }); });
     const g = onlineGruppe()!;
     expect(g.laedt).toBeUndefined();
     expect(g.treffer).toEqual(treffer);
-    expect(letzte!.allesGeladen).toBe(true);
-    // Die Server-Gruppe steht ZULETZT (unten anwachsend, CLS-sicher, §15.2).
-    expect(letzte!.gruppen[letzte!.gruppen.length - 1].id).toBe('online');
+    expect(stand.aktuell!.allesGeladen).toBe(true);
+    // Relevanz-Platz (A6): vor den Werkzeugen (Katalog «Mietvertrag …» trifft «miete»);
+    // der Platzhalter stand von Anfang an dort, die Antwort füllt ihn nur (CLS, §15.2).
+    const ids = stand.aktuell!.gruppen.map((x) => x.id);
+    expect(ids).toContain('katalog');
+    expect(ids.indexOf('online')).toBeLessThan(ids.indexOf('katalog'));
   });
 
   it('Ausfall des Servers → Gruppe mit nichtVerfuegbar + Hinweis, nicht stille Leere', async () => {
@@ -112,7 +118,7 @@ describe('useUniversalSuche — Volltext über den Server', () => {
     const g = onlineGruppe()!;
     expect(g.nichtVerfuegbar).toBe(true);
     expect(g.hinweis).toMatch(/Volltextsuche derzeit nicht verfügbar/);
-    expect(letzte!.allesGeladen).toBe(true);
+    expect(stand.aktuell!.allesGeladen).toBe(true);
   });
 
   it('Server hat geantwortet und nichts gefunden → keine Gruppe, aber allesGeladen', async () => {
@@ -120,7 +126,7 @@ describe('useUniversalSuche — Volltext über den Server', () => {
     await entprellen();
     await act(async () => { antwort!(null); });
     expect(onlineGruppe()).toBeUndefined();
-    expect(letzte!.allesGeladen).toBe(true);
+    expect(stand.aktuell!.allesGeladen).toBe(true);
   });
 
   it('unter MIN_ZEICHEN (2 Zeichen): der Server wird nicht gefragt, kein Platzhalter', async () => {
@@ -128,7 +134,7 @@ describe('useUniversalSuche — Volltext über den Server', () => {
     await entprellen();
     expect(holeOnlineTreffer).not.toHaveBeenCalled();
     expect(onlineGruppe()).toBeUndefined();
-    expect(letzte!.allesGeladen).toBe(true);
+    expect(stand.aktuell!.allesGeladen).toBe(true);
   });
 
   it('die Fläche bestimmt, wie viele Treffer geholt werden (Dropdown: 10)', async () => {
@@ -144,8 +150,8 @@ describe('useUniversalSuche — kein Browser-Index, Entscheide getrennt', () => 
     await entprellen();
     expect(fetchSpy).not.toHaveBeenCalled(); // weder such-index/artikel.json noch sonst eine Datei
     expect(ladeEntscheidManifest).not.toHaveBeenCalled();
-    expect(letzte!.gruppen.map((g) => g.id)).not.toContain('artikel');
-    expect(letzte!.gruppen.map((g) => g.id)).not.toContain('entscheid');
+    expect(stand.aktuell!.gruppen.map((g) => g.id)).not.toContain('artikel');
+    expect(stand.aktuell!.gruppen.map((g) => g.id)).not.toContain('entscheid');
   });
 
   it('BGE-Zitat: lädt das Entscheid-Register nach (Direktsprung ist Navigation, keine Suche)', async () => {
@@ -153,13 +159,13 @@ describe('useUniversalSuche — kein Browser-Index, Entscheide getrennt', () => 
     await entprellen();
     expect(ladeEntscheidManifest).toHaveBeenCalledOnce();
     // Der Sprung meldet sich als eigene Gruppe, nie als Entscheid-Trefferliste.
-    expect(letzte!.gruppen.map((g) => g.id)).toContain('sprung');
-    expect(letzte!.gruppen.map((g) => g.id)).not.toContain('entscheid');
+    expect(stand.aktuell!.gruppen.map((g) => g.id)).toContain('sprung');
+    expect(stand.aktuell!.gruppen.map((g) => g.id)).not.toContain('entscheid');
   });
 
   it('die Abdeckung nennt keine BGE-Zahl mehr (das Register ist nicht geladen)', async () => {
     await rendere('miete');
     await entprellen();
-    expect(letzte!.abdeckung).toEqual({ volltext: 0, kantonTitel: 0 });
+    expect(stand.aktuell!.abdeckung).toEqual({ volltext: 0, kantonTitel: 0 });
   });
 });
