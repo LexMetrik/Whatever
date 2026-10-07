@@ -71,3 +71,54 @@ Normtext-Bewegung gemessen (Fedlex-Filestore, beide Revisionen frisch abgerufen 
 Neue Pins (A2, 281 Bundesgesetze) laufen durch diesen Resolver; bei OFFEN-Meldung Abstract von Hand klären
 (nicht das erste Ergebnis nehmen). `scripts/normtext/bund-stubs-generieren.ts` trägt noch die alte Form
 (`FILTER(str(?sr) = …)` ohne Typ-IRI, kein Currency-Fenster auf dem Abstract) — Nebenfund, nicht Teil dieser Einheit.
+
+## Nachtrag 7.10.2026 (Gegenprüfung Opus: B1–B4, Nachbesserung)
+
+**Regel ergänzt (Schritt 1, jetzt auch beim EINZELNEN Kandidaten):** Ein Abstract im Currency-Fenster gilt nur, wenn
+(a) `jolux:inForceStatus` fehlt oder `…/vocabulary/enforcement-status/0` («In Kraft») ist, (b) `jolux:dateEndApplicability`
+auf dem Abstract fehlt oder `≥ heute` ist (Endtag inklusive) und (c) eine Konsolidierung `heute` deckt. Sonst ist die SR
+OFFEN, Grund «nicht mehr in Kraft: …» (nicht mehr «keine html-Manifestation»). Der alte Pfad `fenster.length === 1 → fertig`
+übersprang (c) und kannte (a)/(b) nicht.
+
+**Befund (live 7.10.2026, Datumsangaben = damaliger Endpoint-Stand):** SR 172.220.111.323.2 → Resolver lieferte
+`cc/2023/787|20240101|2` mit Exit 0, obwohl der Abstract `inForceStatus …/3`, `dateEndApplicability 2025-12-31` und nur die
+Konsolidierung 2024-01-01–2025-12-31 trägt; ebenso SR 0.142.114.239 (`cc/2016/678`, Anwendbarkeit endete 2021-10-06).
+Fedlex setzt bei ausser Kraft getretenen Erlassen häufig kein `dateNoLongerInForce`. Messung am selben Tag über alle
+Abstracts mit Taxonomie-Klassifikation (nicht nur `id-systematique`) ohne `dateNoLongerInForce`: 979 mit Status 3,
+8 mit Status 4, 5 056 mit Status 0.
+
+**Semantik `jolux:inForceStatus` (amtlich):** Objekteigenschaft der JOLUX-Ontologie, Domäne `jolux:Act`, Range
+`jolux:EnforcementStatus`; Kommentar der Ontologie «Indique si la ressource légale est en vigueur ou non.» (Fedlex-Triplestore,
+`<http://data.legilux.public.lu/resource/ontology/jolux#inForceStatus>`, abgerufen 7.10.2026). Werte aus dem Fedlex-Vokabular
+`https://fedlex.data.admin.ch/vocabulary/enforcement-status` (SKOS-ConceptScheme im Triplestore, `skos:prefLabel` de/en, abgerufen 7.10.2026):
+
+| Code | Bezeichnung (de) | Bedeutung für den Pin |
+|---|---|---|
+| 0 | In Kraft | gilt |
+| 1 | Nicht mehr in der SR publiziert | gilt nicht |
+| 2 | Gegenstandslos | gilt nicht |
+| 3 | Nicht mehr in Kraft | gilt nicht |
+| 4 | Noch nicht in Kraft | gilt (noch) nicht |
+| 5 | Sistiert | gilt nicht |
+
+Der Resolver akzeptiert nur «fehlt» oder 0; mehrere Werte am selben Abstract (z. B. 0 und 3) gelten als NICHT in Kraft.
+
+**Wächter `check:fedlex-versionen`:** gleiche Lücke (nur `dateNoLongerInForce`). Die Abfrage liest jetzt zusätzlich
+`inForceStatus` und `dateEndApplicability` des Abstracts; Status ≠ 0 oder Anwendbarkeitsende < heute ⇒ AUFGEHOBEN (ROT).
+Die ANERKANNTE Aufhebung (`src/lib/normtext/aufhebungen.ts`, heute nur BMV) wird weiterhin über `dateNoLongerInForce`
+entschieden, bevor der neue Zweig erreicht wird: `bmv` bleibt «OK (aufgehoben) … bewusst historisch» (live 7.10.2026
+bestätigt, Test `AUSNAHME bmv`). Live-Lauf 7.10.2026 nach der Änderung: Exit 0, keine neue Rot-Meldung.
+
+**Orakel erneut (Nachbesserungs-Stand, 7.10.2026, alle 231 Pins von `scripts/fedlex-cache.sh`, Resolver live):**
+230 identisch in `eli|Konsolidierung|html-N`, 0 offen, 0 Fehler, 1 abweichend = `bmv` (bewusst historisch gepinnt; Resolver
+wählt den Nachfolger `cc/2025/408|20260301|0`). `or` und `finig` sind am PR-Kopf bereits re-gepinnt und deshalb identisch
+(vor dem Re-Pin: 228 + `or`/`finig` + `bmv`, wie oben dokumentiert).
+
+**B2 (Scanner-Tor):** `src/tests/fedlex-eli-aufloesen.test.ts` zerlegt jede Datei unter `scripts/`, die den Fedlex-Endpoint
+anspricht, in String-Literale und verlangt für jedes `LIMIT <Zahl|Interpolation|?var>` ein ORDER BY auf derselben Klammerebene;
+Ausnahmeliste leer. **B3:** Randfälle am Stichtag getestet. **B4:** COUNT-Zähltor auch auf der Abstract-Abfrage.
+
+**Offener Nebenfund:** `scripts/normtext/bund-stubs-generieren.ts` (Abstract-Wahl über `ORDER BY DESC(?date) LIMIT 1`,
+untypisierte Notation, kein Currency-Fenster) bleibt unverändert — die saubere Ablösung über `loeseSr` braucht mehr als 20 Zeilen
+und einen Titel-Abruf. Zudem startet der Import von `scripts/fedlex-eli-aufloesen.ts` ausserhalb von Vitest dessen `main()`
+(Modul-Seiteneffekt); eine Wiederverwendung aus anderen Skripten braucht vorher einen Entry-Guard.
