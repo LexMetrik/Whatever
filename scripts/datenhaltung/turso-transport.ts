@@ -13,6 +13,13 @@
  *  `block`/`term`/`sz`-Spalten sind BLOBs (Hrana kodiert sie base64). */
 export type Wert = string | number | null | Uint8Array;
 
+/** Ein Hrana-Statement (SQL + positionelle Argumente) — die eine Form, die Sync und Delta
+ *  gemeinsam nutzen. */
+export interface Stmt {
+  sql: string;
+  args?: Wert[];
+}
+
 /** SQLite-Bind-Parameter je Statement. Hartes Limit ist SQLITE_MAX_VARIABLE_NUMBER (32766);
  *  8000 lässt Faktor 4 Luft und deckt jede Spaltenzahl unserer Tabellen ab. */
 export const MAX_PARAM_JE_STMT = 8000;
