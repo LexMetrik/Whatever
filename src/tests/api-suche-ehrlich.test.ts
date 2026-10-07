@@ -116,7 +116,7 @@ describe('api/suche — keine Fehlerdetails an Aufrufer (SA-05 / ZP-SA-N1)', () 
       turso((sql) =>
         istCount(sql)
           ? fehler('no such table: artikel_fts at libsql://secret-host.turso.io token=abc123SECRET')
-          : ok(['n'], [['0']]),
+          : ok(['id'], []),
       ),
     );
     const { status, text } = await ruf();
