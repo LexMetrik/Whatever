@@ -29,6 +29,7 @@
 import { createHash } from 'node:crypto';
 import type { DatabaseSync } from 'node:sqlite';
 import type { NormSnapshot } from '../../src/lib/normtext/typen.ts';
+import { artikelRowid, pruefeKollision } from './stabile-rowid';
 
 export interface ErlasseMeta {
   key: string; // erlasse-PK. Bund: == NormSnapshot.quelle (gesetzKey 'OR'). Kanton:
@@ -97,13 +98,19 @@ export function schreibeErlass(db: DatabaseSync, meta: ErlasseMeta, snapshots: N
   ).run(meta.key, fassungsToken, stand, null, stand, basisUrl(s0.quelleUrl), null, abgerufen, fassungsDigest(snapshots));
 
   const artStmt = db.prepare(
-    'INSERT INTO artikel (erlass_key, fassungs_token, art_id, ord, artikel, artikel_label, grundlage, marg, aufgehoben, quelle_url, bloecke_json, sha) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+    'INSERT INTO artikel (rowid, erlass_key, fassungs_token, art_id, ord, artikel, artikel_label, grundlage, marg, aufgehoben, quelle_url, bloecke_json, sha) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
   );
   snapshots.forEach((s, i) => {
+    // rowid = f(erlass_key, art_id), NICHT die Einfuegereihenfolge (stabile-rowid.ts): ein neuer
+    // Erlass verschiebt keine fremde Zeile, das Turso-Delta bleibt ein Delta.
+    const artId = artIdAusId(s.id, meta.ebene, quelle);
+    const rowid = artikelRowid(meta.key, artId);
+    pruefeKollision(db, rowid, meta.key, artId);
     artStmt.run(
+      rowid,
       meta.key,
       fassungsToken,
-      artIdAusId(s.id, meta.ebene, quelle),
+      artId,
       i,
       s.artikel,
       s.artikelLabel,
