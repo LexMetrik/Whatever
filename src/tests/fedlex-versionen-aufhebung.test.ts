@@ -202,7 +202,7 @@ describe('bewerte — inForceStatus / dateEndApplicability (B1)', () => {
   // nicht, sie melden FEHLER ⇒ Exit 1 ohnehin; darum zählt die ZEILE des Sonden-Pins, nicht der Exit.
   const laufMitStatus = async (status: string, endApp: string | null): Promise<string[]> => {
     const SH = '  "sonde|cc/2023/787|20240101|0|art_1|172.220.111.323.2"';
-    const stub = (async (input: RequestInfo | URL, init?: RequestInit) => {
+    const stub = (async (_input: RequestInfo | URL, init?: RequestInit) => {
       const abstract = { value: 'https://fedlex.data.admin.ch/eli/cc/2023/787' };
       const q = decodeURIComponent(String(init?.body ?? '').replace(/^query=/, ''));
       expect(q).toContain('jolux:inForceStatus');
