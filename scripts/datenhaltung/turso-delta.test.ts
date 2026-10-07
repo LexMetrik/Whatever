@@ -12,7 +12,10 @@ import { mkdtempSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createServer } from 'node:http';
-import { ddlFtsArtikel } from './fts';
+import { ddlFtsArtikel, baueFtsArtikel } from './fts';
+import { frischesSchema } from './schema';
+import { schreibeErlass } from './erlass-rows';
+import type { NormSnapshot } from '../../src/lib/normtext/typen';
 import { BM25_GEWICHTE, FTS_ARTIKEL_SPALTEN } from './suche-kern';
 import { BASIS, DDL_BASIS, type Signatur } from './turso-skip';
 import { leseFtsSchatten } from './turso-fts-index';
@@ -464,9 +467,10 @@ interface HranaServer {
   url: string;
   schliesse: () => Promise<void>;
 }
-async function starteHrana(pfad: string): Promise<HranaServer> {
+async function starteHrana(pfad: string, commitFehler?: 'antwort-verlieren' | 'anfrage-verlieren'): Promise<HranaServer> {
   const streams = new Map<string, DatabaseSync>();
   let zaehl = 0;
+  let commitFehlerOffen = commitFehler !== undefined; // nur der ERSTE COMMIT, nicht der spaetere integrity-check
   const dekodiere = (a: { type: string; value?: string; base64?: string }): Wert =>
     a.type === 'null'
       ? null
@@ -501,13 +505,18 @@ async function starteHrana(pfad: string): Promise<HranaServer> {
       }
       if (!db) db = oeffne(pfad);
       let offen = true;
+      // RP-1 (Gegenpruefung #1343): COMMIT wird ausgefuehrt, die ANTWORT aber geht verloren (HTTP 500) —
+      // bzw. der COMMIT-Request kommt nie an (Server verwirft den Stream wie Turso beim Timeout).
+      const verliere = commitFehlerOffen && anfrage.requests.some((r) => r.stmt?.sql === 'COMMIT');
+      if (verliere) commitFehlerOffen = false;
       const results = anfrage.requests.map((r) => {
         if (r.type === 'close') {
           offen = false;
           return { type: 'ok', response: { type: 'close' } };
         }
         try {
-          const st = (db as DatabaseSync).prepare((r.stmt as { sql: string }).sql);
+          const roh = (r.stmt as { sql: string }).sql;
+          const st = (db as DatabaseSync).prepare(verliere && commitFehler === 'anfrage-verlieren' && roh === 'COMMIT' ? 'ROLLBACK' : roh);
           const args = (r.stmt?.args ?? []).map(dekodiere).map((v) => (v instanceof Uint8Array ? new Uint8Array(v) : v));
           if (st.columns().length > 0) {
             const rows = st.all(...(args as Array<string | number | null | Uint8Array>)) as Array<Record<string, Wert>>;
@@ -526,6 +535,10 @@ async function starteHrana(pfad: string): Promise<HranaServer> {
         if (baton) streams.delete(baton);
         db.close();
         baton = null;
+      }
+      if (verliere) {
+        res.writeHead(500).end('{"error":"Antwort verloren"}');
+        return;
       }
       res.writeHead(200, { 'content-type': 'application/json' }).end(JSON.stringify({ baton, results }));
     });
@@ -578,4 +591,132 @@ describe('Delta ueber den echten Hrana-Transport (baton-Transaktion, typisierte 
       await srv.schliesse();
     }
   });
+});
+
+// ─── Stabile rowid (E0-BRANDSCHUTZ, Befund M-1) + COMMIT-Ausgang unklar (T-1) ────────────────
+// `erlasse`/`erlass_fassungen` tragen KEINE tragende rowid (Abgleich ueber den Schluessel, MIT_ROWID
+// false): ein im Delta neu eingefuegter Erlass bekommt dort die naechste freie Nummer, der Vollneubau
+// eine andere — fachlich gleichgueltig (jeder Zugriff geht ueber den Schluessel). Verglichen werden sie
+// darum nach Schluessel, `artikel` dagegen EXAKT samt rowid.
+function basisBefundNachSchluessel(pfad: string) {
+  const db = oeffne(pfad);
+  const aus = [
+    db.prepare('SELECT * FROM erlasse ORDER BY key').all(),
+    db.prepare('SELECT * FROM erlass_fassungen ORDER BY erlass_key, fassungs_token').all(),
+    db.prepare('SELECT rowid AS rid, * FROM artikel ORDER BY rowid').all(),
+  ];
+  db.close();
+  return aus;
+}
+
+// Lokales Artefakt ueber den ECHTEN Schreibpfad (schreibeErlass → rowid aus dem Schluessel,
+// baueFtsArtikel → Index). `sequenziell` stellt die ALTE Vergabe nach (rowid = Einfuegereihenfolge)
+// — fuer die Gegenprobe «Delta waere zum Vollneubau gekippt» und fuer eine Remote der alten Generation.
+interface EchterErlass { key: string; n: number; text?: Record<number, string>; ohne?: number[] }
+function echteLokalDb(spec: EchterErlass[], sequenziell = false): DatabaseSync {
+  const db = new DatabaseSync(':memory:');
+  frischesSchema(db, 'normtext');
+  const reihenfolge: Array<[string, string]> = [];
+  for (const e of spec) {
+    const ids = Array.from({ length: e.n }, (_, a) => a).filter((a) => !(e.ohne ?? []).includes(a));
+    const snaps = ids.map(
+      (a, i) =>
+        ({
+          id: `bund/${e.key}/art_${a}`, ebene: 'bund', quelle: e.key, erlass: e.key, artikel: String(a), artikelLabel: `Art. ${a}`,
+          bloecke: [{ typ: 'absatz', text: `${WOERTER[(a * 3 + e.key.length) % WOERTER.length]} Verjährung ${WOERTER[(a * 5) % WOERTER.length]} ${e.text?.[a] ?? ''}`.trim() }],
+          stand: '2026-01-01', quelleUrl: `https://fedlex.invalid/${e.key}#art_${a}`, abgerufen: '2026-10-01', fassungsToken: 'F1',
+          sha: `sha-${e.key}-${a}-${e.text?.[a] ?? ''}-${i % 1}`,
+        }) as unknown as NormSnapshot,
+    );
+    schreibeErlass(db, { key: e.key, ebene: 'bund', kanton: null, sr: null, abkuerzung: e.key, titel: `Titel ${e.key}`, rechtsgebiet: 'x', status: 'snapshot' }, snaps);
+    for (const a of ids) reihenfolge.push([e.key, `art_${a}`]);
+  }
+  if (sequenziell) reihenfolge.forEach(([k, a], i) => db.prepare('UPDATE artikel SET rowid = ? WHERE erlass_key = ? AND art_id = ?').run(i + 1, k, a));
+  baueFtsArtikel(db);
+  return db;
+}
+const BASIS_ECHT: EchterErlass[] = ['E1', 'E2', 'E3', 'E4', 'E5', 'E6'].map((key) => ({ key, n: 40 }));
+/** Neuer Stand: Erlass VORN eingefuegt, Artikel aus der MITTE entfernt, zwei Texte geaendert. */
+const NEU_ECHT: EchterErlass[] = [{ key: 'E0', n: 12 }, BASIS_ECHT[0], BASIS_ECHT[1], { ...BASIS_ECHT[2], ohne: [17], text: { 5: 'Zusatz Miete' } }, BASIS_ECHT[3], { ...BASIS_ECHT[4], text: { 30: 'Kuendigung' } }, BASIS_ECHT[5]];
+
+describe('Stabile rowid: neue Erlasse und entfernte Artikel halten das Delta ein Delta', () => {
+  it('Erlass alphabetisch VORN + Artikel aus der Mitte entfernt: Delta, Schreibzeilen ~ geaenderte Zeilen, Remote == Vollneubau', async () => {
+    const alt = echteLokalDb(BASIS_ECHT);
+    const neu = echteLokalDb(NEU_ECHT);
+    const { remote } = vollLaden(alt, 'alt');
+    const { remote: soll } = vollLaden(neu, 'neu');
+    const log: string[] = [];
+    const e = eingabe(remote, neu, 'neu');
+    e.log = (z) => log.push(z);
+    const r = await versucheNormtextDelta(e);
+    expect(r, JSON.stringify(r)).toMatchObject({ ok: true });
+    if (!r.ok) return;
+    // Remote nach dem Delta == Remote nach dem Vollneubau: Zeile fuer Zeile (inkl. rowid), Index, Marken.
+    expect(basisBefundNachSchluessel(remote)).toEqual(basisBefundNachSchluessel(soll));
+    expect(sucheBefund(remote)).toEqual(sucheBefund(soll));
+    expect(() => sql(remote, "INSERT INTO fts_artikel(fts_artikel) VALUES('integrity-check')")).not.toThrow();
+    // Es wird NUR geschrieben, was sich geaendert hat: +12 neue, −1 entfernter, 24 geaenderte Artikel.
+    // Vollneubau waere 252·3 (artikel) + 7·2 + 7·2 + 252 (Index) ≈ 1 036 Schreibzeilen.
+    expect(log.join('\n')).not.toContain('rowid-verschoben');
+    // ~24 = 2 geaenderte Texte + die 22 Folgeartikel des entfernten (ihre `ord` rueckt auf: UPDATE,
+    // eine Schreibzeile, KEINE rowid-Aenderung) — der Index sieht nur die 15 Dokumente neu/geaendert/entfernt.
+    expect(log.join('\n')).toContain('Delta artikel: +12 ~24 −1 (gleich 215)');
+    // (12 + 1)·3 + 24 (artikel) + 1·2 (erlasse) + 1·2 + 2 (erlass_fassungen) = 69 Schreibzeilen.
+    expect(r.schreib.basis).toBe(69);
+    expect(r.schreib.basis + r.schreib.fts).toBeLessThan(1036 * 0.3);
+  });
+
+  it('Gegenprobe (§6.7): mit Einfuegereihenfolge-rowid wuerde derselbe Fall zum Vollneubau — und nennt den Grund', async () => {
+    const alt = echteLokalDb(BASIS_ECHT, true);
+    const neu = echteLokalDb(NEU_ECHT, true);
+    const { remote } = vollLaden(alt, 'alt');
+    const vor = momentaufnahme(remote);
+    const r = await versucheNormtextDelta(eingabe(remote, neu, 'neu'));
+    expect(r).toMatchObject({ ok: false, grund: expect.stringContaining('des Vollneubaus') });
+    if (!r.ok) expect(r.grund).toMatch(/Ursache: \d+ Zeilen mit anderer rowid/);
+    expect(momentaufnahme(remote)).toBe(vor);
+  });
+
+  it('Einmal-Migration: Remote der alten Generation (Einfuegereihenfolge) → Vollneubau mit Grund «rowid-Regel gewechselt»', async () => {
+    const { remote } = vollLaden(echteLokalDb(BASIS_ECHT, true), 'alt');
+    const vor = momentaufnahme(remote);
+    const r = await versucheNormtextDelta(eingabe(remote, echteLokalDb(BASIS_ECHT), 'neu'));
+    expect(r).toMatchObject({ ok: false, grund: expect.stringContaining('rowid-Regel gewechselt') });
+    expect(momentaufnahme(remote)).toBe(vor);
+  });
+});
+
+describe('COMMIT-Ausgang unklar (T-1, Muster RP-1): erst den Remote-Stand lesen, dann entscheiden', () => {
+  const fall = async (commitFehler: 'antwort-verlieren' | 'anfrage-verlieren') => {
+    const alt = echteLokalDb(BASIS_ECHT);
+    const neu = echteLokalDb(NEU_ECHT);
+    const { remote } = vollLaden(alt, 'alt');
+    const { remote: soll } = vollLaden(neu, 'neu');
+    const vor = momentaufnahme(remote);
+    const srv = await starteHrana(remote, commitFehler);
+    const log: string[] = [];
+    try {
+      const e = eingabe(remote, neu, 'neu');
+      e.fern = hranaFern(srv.url, 'test-token-ohne-bedeutung');
+      e.log = (z) => log.push(z);
+      return { r: await versucheNormtextDelta(e), remote, soll, vor, log };
+    } finally {
+      await srv.schliesse();
+    }
+  };
+
+  it('COMMIT ausgefuehrt, Antwort verloren (HTTP 500): Delta ist festgeschrieben und verifiziert → KEIN Vollneubau', async () => {
+    const { r, remote, soll, log } = await fall('antwort-verlieren');
+    expect(r, JSON.stringify(r)).toMatchObject({ ok: true });
+    expect(log.join('\n')).toContain('kein Vollneubau');
+    expect(basisBefundNachSchluessel(remote)).toEqual(basisBefundNachSchluessel(soll));
+    expect(sucheBefund(remote)).toEqual(sucheBefund(soll));
+    expect(marke(remote, 'sig_artikel')).toBe(marke(soll, 'sig_artikel'));
+  }, 30_000);
+
+  it('COMMIT nie angekommen: Remote traegt die Kennung nicht → nicht festgeschrieben, Vollneubau, Remote unveraendert', async () => {
+    const { r, remote, vor } = await fall('anfrage-verlieren');
+    expect(r).toMatchObject({ ok: false, grund: expect.stringContaining('nicht festgeschrieben') });
+    expect(momentaufnahme(remote)).toBe(vor);
+  }, 30_000);
 });

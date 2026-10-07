@@ -339,7 +339,7 @@ export const SQL_ARTIKEL_TREFFER = `WITH treffer AS (SELECT rowid AS rid, ${BM25
        SELECT a.erlass_key AS erlass_key, a.art_id AS art_id, a.artikel AS artikel,
               a.artikel_label AS artikel_label, a.quelle_url AS quelle_url,
               a.bloecke_json AS bloecke_json, e.abkuerzung AS abkuerzung,
-              e.ebene AS ebene, e.kanton AS kanton, t.bm AS bm, t.rid AS rid,
+              e.ebene AS ebene, e.kanton AS kanton, t.bm AS bm, a.ord AS ord,
               CASE WHEN h.rid IS NOT NULL THEN 0 WHEN n.rid IS NOT NULL THEN 1 ELSE 2 END AS stufe,
               ${SQL_KERN_RANG} AS kern, ${SQL_EBENEN_RANG} AS ebene_rang,
               ${SQL_ART_NUM} AS art_num, ${SQL_ART_SUF} AS art_suf
@@ -361,7 +361,16 @@ ORDER BY stufe,
          CASE WHEN stufe = 2 THEN '' ELSE erlass_key END,
          CASE WHEN stufe = 2 THEN 0 ELSE art_num END,
          CASE WHEN stufe = 2 THEN '' ELSE art_suf END,
-         bm, rid
+         bm,
+         -- Fachlicher Tie-Break (stabile rowid, E0-BRANDSCHUTZ): bei gleichem bm25 — haeufig, z. B. bei
+         -- gleichlautenden «aufgehoben»-Artikeln — entschied bisher die rowid (rid), die Einfuegereihenfolge
+         -- (Datei-Pfad, dann Position). Die rowid ist jetzt ein Hash und ordnet nichts Fachliches mehr;
+         -- dieselbe Reihenfolge steht darum als Schluessel da: Bund vor Kanton, Dateiname des Erlasses
+         -- (erlass_key || '.json' — NICHT erlass_key allein: 'ZH-242.26.json' sortiert vor
+         -- 'ZH-242.json', der blosse Schluessel umgekehrt; gemessen 7.10.2026, ein Tausch in 1 von
+         -- 110 Anfragen), Position im Erlass, art_id. Fuer Stufe 2 gilt das ebenso (dort sind nur
+         -- die Rang-Schluessel oben neutralisiert, bm25 bleibt der Hauptschluessel).
+         ebene_rang, erlass_key || '.json', ord, art_id
 LIMIT ? OFFSET ?`;
 
 export const SQL_ENTSCHEIDE_COUNT =

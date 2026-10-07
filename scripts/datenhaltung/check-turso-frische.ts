@@ -55,6 +55,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { ddlFtsArtikel, ddlFtsEntscheide } from './fts';
+import { rowidFingerabdruckSql } from './stabile-rowid';
 
 const URL_STD = 'libsql://lexmetrik-ravedave.aws-eu-west-1.turso.io';
 const TOKEN_DATEI = 'daten/turso-token.txt';
@@ -226,19 +227,23 @@ if (istZahlen['artikel'] && istZahlen['fts_artikel'] && istZahlen['artikel'] !==
 // blockiert, wird abgeschaltet und schützt dann gar nicht mehr. min/max/count sind drei
 // billige Aggregate und fangen jede Verschiebung der Kopplung genauso.
 {
-  const spanne = async (t: string) => await abfrage(`SELECT min(rowid) || '-' || max(rowid) FROM ${t}`);
+  // Seit der stabilen rowid (stabile-rowid.ts) sind die Nummern nicht mehr dicht (Hash statt
+  // Einfuegereihenfolge): der Rand allein bewiese die Kopplung nicht mehr. Verglichen wird die
+  // MENGE per Fingerabdruck (Zahl, min, max, zwei Modulo-Summen) — weiterhin billige Aggregate.
+  const spanne = async (t: string) =>
+    await abfrage(t === 'artikel' ? rowidFingerabdruckSql('artikel', 'rowid') : rowidFingerabdruckSql('fts_artikel_docsize', 'id'));
   const a = await spanne('artikel');
   const f = await spanne('fts_artikel');
   // Fehler NICHT zu `null` verschlucken und dann „OK" melden: scheitern beide Abfragen,
   // wären sie sonst gleich (null == null) und der Vergleich meldete grün (Runde 2, Befund 6).
   if (a.fehler || f.fehler || a.wert === null || f.wert === null) {
-    befunde.push(`rowid-Spannweite nicht ermittelbar (artikel: ${a.fehler ?? 'leer'}, fts_artikel: ${f.fehler ?? 'leer'}).`);
+    befunde.push(`rowid-Menge nicht ermittelbar (artikel: ${a.fehler ?? 'leer'}, fts_artikel: ${f.fehler ?? 'leer'}).`);
   } else if (a.wert !== f.wert) {
     befunde.push(
-      `rowid-Spannweite verschoben: artikel ${a.wert}, fts_artikel ${f.wert} — der Such-Join trifft dann fremde Artikel.`,
+      `rowid-Menge verschoben: artikel ${a.wert}, fts_artikel ${f.wert} — der Such-Join trifft dann fremde Artikel.`,
     );
   } else {
-    console.log(`  rowid-Spannweite artikel == fts_artikel: ${a.wert}`);
+    console.log(`  rowid-Menge artikel == fts_artikel: ${a.wert}`);
   }
 }
 

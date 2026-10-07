@@ -5,7 +5,7 @@
 
 > **Rolle (§14):** Detailquelle zu `ROADMAP.md` → Querschnitt **QS-DATA** + Bau-Schritt
 > **W2·6-DATA**. Nie zweiter Einstieg. **Council-Entscheid 2.7.2026** (Richtung entschieden,
-> nicht mehr offen); löst die drei „DAVID-ENTSCHEID"-Punkte aus `PLAN-OCL-ABBAU.md`
+> nicht mehr offen); löst die drei „DAVID-ENTSCHEID"-Punkte aus `archiv/PLAN-OCL-ABBAU.md`
 > (§AUSFÜHRUNGS-STAND + §OFFENE PUNKTE: Zitations-Graph 8,7M · Parquet als Volltext-Quelle ·
 > Breiten-Korpus) auf. Fable plant, Opus baut. Trailer `Roadmap: QS-DATA`.
 
@@ -361,6 +361,60 @@ führen. Nicht auf Turso selbst erprobt (kein Token lokal): getestet gegen SQLit
 einen lokalen Hrana-Server (baton/stmt-Fehler) und das echte Skript samt Wächter
 (`check-turso-frische`) gegen diesen Server; der erste Prod-Lauf nach dem Merge ist der
 Vollneubau-Übergang, der zweite mit Korpus-Änderung der erste echte Delta-Lauf.
+
+### Nachtrag 7.10.2026 (b) — E0-BRANDSCHUTZ: stabile `artikel`-rowid *(Befund M-1 der Gegenprüfung #1343)*
+
+**Befund.** Die «Grenze, ehrlich» oben war kein Randfall: seit 7.9. änderten 13 von 69 Manifest-
+Commits die `artikel`-Zahl, der Bund-Ausbau (231 → ~2150 Erlasse, Lieferungen à ≤ 500) besteht aus
+genau solchen Einfügungen. Gemessen am echten Korpus (60 527 Artikel, lokal, kein Netz): käme der
+Kanton-Erlass `AG-291.150` (22 Artikel) neu hinzu, hiesse das mit Einfügereihenfolge-rowid 34 885
+verschobene Zeilen = **209 376 Schreibzeilen (115 % des Vollneubaus → Vollneubau)**; mit stabiler
+rowid **66 Schreibzeilen (0,04 %)**, 0 verschoben.
+
+**Lösung** (`scripts/datenhaltung/stabile-rowid.ts`, aufgerufen in `erlass-rows.ts`): `artikel.rowid
+= 1 + erste 52 Bit von sha256(erlass_key NUL art_id)`. Zustandslos (kein committetes Register → keine
+Merge-Konflikte zwischen parallelen Lieferungen), ohne `fassungs_token` (der wechselt je Fassung und
+verschöbe sonst jede rowid). 52 Bit, weil `Number` (Hrana, `node:sqlite`) nur bis 2^53−1 exakt ist.
+Kollisionsrisiko (Geburtstagsschranke n²/2^53): 60 000 Zeilen ≈ 4·10⁻⁷, 500 000 ≈ 3·10⁻⁵; eine
+Kollision (oder derselbe Schlüssel zweimal, z. B. zwei Fassungen je Erlass) bricht den Bau rot ab
+(`pruefeKollision`) — keine Sondierung, die die rowid wieder von der Reihenfolge abhängig machte.
+
+**Alle rowid-abhängigen Stellen** (Befund je Stelle in der PR-Beschreibung): `ingest.ts`/
+`erlass-rows.ts` (Ursprung — jetzt Hash) · `fts.ts` (liest `ORDER BY a.rowid`, Schreib-Reihenfolge
+bleibt deterministisch) · `suche-kern.ts` (**Tie-Break `bm, rid` → `bm, ebene_rang, erlass_key||'.json',
+ord, art_id`**: bei gleichem bm25 — häufig, z. B. gleichlautende «aufgehoben»-Artikel — entschied
+bisher die Einfügereihenfolge; mit Hash-rowid wichen 55 von 110 Anfragen ab, mit dem fachlichen
+Schlüssel **0 von 110 Anfragen / 17 700 Treffern**; `erlass_key` allein hätte `ZH-242.26` und `ZH-242`
+vertauscht, darum `||'.json'` = Dateipfad-Ordnung des Ingest) · `turso-skip.ts` (`ROWID_REGEL` geht in
+`sig_artikel` ein — Manifest und DDL sind rowid-blind, ohne die Regel würde `artikel` mit alten rowids
+übersprungen, der Index aber neu gebaut) · Kopplungs-Beweis in `turso-delta.ts`/`turso-sync.ts`/
+`check-turso-frische.ts` (min/max bewiesen nur bei dichten rowids die Mengengleichheit → **Mengen-
+Fingerabdruck**: Zahl, min, max, zwei Modulo-Summen; Index über `_docsize`) · `daten-manifest.json`
+(rowid-blind: `SELECT *`, Zeilen-Strings sortiert — `check:datenhaltung` grün ohne Neuschrieb) ·
+Ranglisten-Oracle/`baue-rangliste` (arbeiten auf `norm_rangliste`/`zitat_kanten` per Text-Schlüssel,
+keine `artikel`-rowid). `erlasse`/`erlass_fassungen`: Abgleich über den Schlüssel, ihre rowid trägt
+nichts und bleibt unverändert.
+
+**Kosten der Hash-rowid, ehrlich (§8).** Sparse 52-Bit-rowids vergrössern die Posting-Listen des
+FTS5-Index (Delta-Kodierung der rowids): `fts_artikel_data` 17,1 → 36,0 MB, Schatten-Zeilen
+67 889 → 75 852 (+11,7 %); `normtext.db` 213 → 238 MiB, HOT-Replika 726 → 751 MiB (Budget 1024).
+Schreib-Delta des Index am echten Korpus: k = 3 Artikel 9 Zeilen (vorher 9), k = 60 **167** (vorher 90)
+— beides vernachlässigbar gegen 75 852.
+
+**Einmal-Migration.** Die rowid-Vergabe ändert alle 60 527 `artikel`-rowids und den Index → ein
+Vollneubau von `artikel` (181 581) + `fts_artikel` (75 852) + Marken ≈ **257 500 Schreibzeilen**
+(`erlasse`/`erlass_fassungen`: Signatur unverändert, nicht betroffen). Landet dieser Schritt am
+selben Tag VOR dem Tageslauf (05:17 UTC) wie #1343 (dessen Übergang baut `erlasse` +
+`erlass_fassungen` + `artikel` + Index: ≈ 263 700 mit dem neuen Index), vergleicht der Sync nur den
+Remote-Stand mit dem Endstand → **EIN Vollneubau (≈ 263 700), nicht zwei**. Läuft der Tageslauf
+dazwischen, kostet es ehrlich einen zweiten (≈ 257 500).
+
+**T-1 (COMMIT-Antwort verloren).** `hranaFern.transaktion` wirft bei Fehler des COMMIT-Requests
+selbst `CommitUnklarFehler` (kein Rollback auf einen womöglich beendeten Stream); `versuche` liest
+dann `sync_meta.delta_kennung` (steht in DERSELBEN Transaktion wie die Daten) — trägt der Remote
+die Kennung dieses Laufs und besteht die Verifikation auf frischen Verbindungen, ist das Delta
+festgeschrieben, kein Vollneubau. Sonst Rückfall wie bisher. Restrisiko: ein COMMIT, der nach der
+Prüfung noch ankäme, wird durch Tursos Stream-Ablauf praktisch ausgeschlossen, hier nicht belegt.
 
 ---
 

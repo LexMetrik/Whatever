@@ -29,13 +29,17 @@
 //     · Schluessel nur remote ........... DELETE
 //     · Schluessel beidseits, Hash ≠ .... UPDATE (eine Zeilen-Schreibung, Index unberuehrt)
 //     · artikel: rowid ≠ ................ DELETE + INSERT (die rowid traegt den Such-Join
-//       `a.rowid = fts_artikel.rowid` UND die Ordnung `bm, rid` in api/suche.ts — sie MUSS
-//       der lokalen entsprechen, sonst ist das Ergebnis nicht gleich dem Vollneubau).
+//       `a.rowid = fts_artikel.rowid` UND (bis 7.10.2026) die Ordnung `bm, rid` in api/suche.ts —
+//       sie MUSS der lokalen entsprechen, sonst ist das Ergebnis nicht gleich dem Vollneubau).
+//       ERGAENZUNG 7.10.2026 (E0-BRANDSCHUTZ, stabile rowid): die lokale rowid ist jetzt ein Hash
+//       aus (erlass_key, art_id) (`stabile-rowid.ts`), nicht mehr die Einfuegereihenfolge — dieser
+//       Zweig tritt im Regelbetrieb nicht mehr auf (`BasisDiff.verschoben` zaehlt ihn und das Log
+//       nennt ihn als Ursache). Der Tie-Break der Suche ist ein fachlicher Schluessel, kein `rid`.
 //   `fts_artikel`: siehe turso-fts-delta.ts (Index-Delta ueber lokale Replika).
 //   ALLES in EINER Transaktion (BEGIN … COMMIT ueber baton): ein Abbruch laesst den alten,
 //   vollstaendigen Stand stehen. VOR dem COMMIT, in derselben Transaktion, laufen die
 //   Verifikationen (Inhalt je Zeile gegen das lokale Artefakt, Zeilenzahlen, Fingerabdruck
-//   aller Index-Shadow-Zeilen, rowid-Spannweite) und die Marken (`sig_`/`zeilen_`); schlaegt
+//   aller Index-Shadow-Zeilen, rowid-Menge) und die Marken (`sig_`/`zeilen_`, `delta_kennung`); schlaegt
 //   eine fehl, wird zurueckgerollt — strenger als der Vollneubau, der erst NACH dem Tausch
 //   nachkontrolliert. Die FTS-eigene Sicht (integrity-check, MATCH-Proben) folgt NACH dem
 //   COMMIT auf frischen Verbindungen: eine Verbindung, die FTS5 schon benutzt hat, liest nach
@@ -54,19 +58,25 @@
 //     dazu kommt das Lesen; ab ~50 % waere das Delta teurer, 30 % laesst Reserve. Gerechnet
 //     wird ueber die GRUPPE, nicht je Tabelle: sonst triggerte die Aenderung einer winzigen
 //     Tabelle (2 von 6 Zeilen) den Vollneubau der 60 000-Zeilen-Tabelle daneben. Typischer
-//     Ausloeser: ein NEUER Erlass mitten in der Reihenfolge verschiebt die rowids aller
-//     Folgezeilen (lokale rowid = Einfuegereihenfolge in ingest.ts).
+//     Ausloeser (bis 7.10.2026): ein NEUER Erlass mitten in der Reihenfolge verschob die rowids
+//     aller Folgezeilen (lokale rowid = Einfuegereihenfolge in ingest.ts). Seit der stabilen rowid
+//     nur noch beim EINMALIGEN Regelwechsel (ROWID_REGEL) — danach ist ein neuer Erlass ein Delta.
 //   · jeder Fehler/jede Verifikation, die im Delta rot wird (Transaktion zurueckgerollt).
+//   KEIN Rueckfall bei unklarem COMMIT-Ausgang (T-1): geht nur die COMMIT-ANTWORT verloren
+//   (`CommitUnklarFehler`), traegt der Remote-Stand die `delta_kennung` dieses Laufs und besteht
+//   die Verifikation auf frischen Verbindungen, ist das Delta festgeschrieben — ein Vollneubau
+//   waere Verschwendung. Fehlt die Kennung, ist es nicht festgeschrieben (Rueckfall wie sonst).
 //   Entscheide (`fts_entscheide_schaufenster`) laufen NICHT ueber das Delta: standalone mit
 //   ~250 MiB Text, ohne Hash-Spalte (die DDL ist durch check-turso-frische Pruefung 0 fixiert)
 //   und nur woechentlich neu — ~30 000 Schreibzeilen je Wochenlauf = ~0,3 % des Kontingents.
-import { createHash } from 'node:crypto';
+import { createHash, randomUUID } from 'node:crypto';
 import type { DatabaseSync } from 'node:sqlite';
 import { istSchreibsperre, schreibeWert, BASIS, DDL_BASIS, SPALTEN_BASIS, SCHLUESSEL_BASIS, type BasisTabelle, type Signatur } from './turso-skip';
 import type { Stmt, Wert } from './turso-transport';
 import { buendeleStatements, gruppiereInserts, loescheStatements } from './turso-stmts';
 import { berechneFtsDelta, leseSchattenUeber, schattenFingerprint, type FtsDelta } from './turso-fts-delta';
 import { leseFtsSchatten } from './turso-fts-index';
+import { rowidFingerabdruckSql } from './stabile-rowid';
 
 /** Ab diesem Anteil geaenderter Zeilen gewinnt der Vollneubau (Begruendung im Kopf). */
 export const SCHWELLE_DELTA = 0.3;
@@ -89,12 +99,21 @@ export interface FernTx {
 /** Die Gegenseite (Turso per Hrana, im Test SQLite). */
 export interface Fern {
   lese: Lese;
-  /** BEGIN … COMMIT. Wirft `fn`, wird zurueckgerollt und der Fehler weitergereicht. */
+  /** BEGIN … COMMIT. Wirft `fn`, wird zurueckgerollt und der Fehler weitergereicht. Geht nur die
+   *  COMMIT-ANTWORT verloren, wirft sie `CommitUnklarFehler` (ohne Rollback-Versuch). */
   transaktion<T>(fn: (tx: FernTx) => Promise<T>): Promise<T>;
 }
 
 /** Verifikation in der Transaktion fehlgeschlagen → Rollback → Rueckfall. */
 export class DeltaVerifikationFehler extends Error {}
+
+/** Das COMMIT wurde abgeschickt, seine Antwort aber ging verloren (Netz, 5xx, unbekannter baton
+ *  beim Wiederholen): der Server KANN festgeschrieben haben. `Fern.transaktion` wirft dies statt
+ *  eines gewoehnlichen Fehlers; `versuche` liest daraufhin den Remote-Stand, statt blind auf den
+ *  Vollneubau (~250 000 Schreibzeilen) auszuweichen (T-1 der Gegenpruefung #1343). Ein COMMIT, das
+ *  der Server MIT Fehlerantwort abweist, ist dagegen eindeutig nicht festgeschrieben und bleibt
+ *  ein gewoehnlicher Fehler. */
+export class CommitUnklarFehler extends Error {}
 
 /** sha256 ueber den Zeileninhalt — laengen-praefixiert und typ-getaggt wie die Signaturen. */
 export function zeilenHash(werte: Wert[]): string {
@@ -184,19 +203,23 @@ export interface BasisDiff {
   /** Remote-Zeilen, die entfallen (bei rowid-Verschiebung auch der alte Stand). */
   loeschen: BasisZeile[];
   gleich: number;
+  /** Zeilen mit gleichem Schluessel, aber anderer rowid (nur artikel). Seit der stabilen rowid
+   *  (stabile-rowid.ts) 0 im Regelbetrieb; > 0 heisst: Regelwechsel oder Reihenfolge-Verschiebung. */
+  verschoben: number;
 }
 
 /** Vergleicht lokal gegen remote ueber den Schluessel (siehe Kopf). */
 export function diffBasis(t: BasisTabelle, lokal: BasisZeile[], remote: BasisZeile[]): BasisDiff {
   const rm = new Map(remote.map((r) => [r.schluessel, r]));
   const lm = new Set(lokal.map((l) => l.schluessel));
-  const d: BasisDiff = { tabelle: t, einfuegen: [], aendern: [], loeschen: [], gleich: 0 };
+  const d: BasisDiff = { tabelle: t, einfuegen: [], aendern: [], loeschen: [], gleich: 0, verschoben: 0 };
   for (const l of lokal) {
     const r = rm.get(l.schluessel);
     if (!r) d.einfuegen.push(l);
     else if (MIT_ROWID[t] && r.rowid !== l.rowid) {
       d.loeschen.push(r);
       d.einfuegen.push(l);
+      d.verschoben++;
     } else if (r.hash !== l.hash) d.aendern.push(l);
     else d.gleich++;
   }
@@ -316,6 +339,10 @@ export interface DeltaEingabe {
   matchProben: string[];
   log: (zeile: string) => void;
   schwelle?: number;
+  /** Kennung DIESES Laufs; steht in derselben Transaktion in `sync_meta.delta_kennung`. Nach einem
+   *  unklaren COMMIT-Ausgang beweist ihr Vorliegen, dass genau dieses Delta festgeschrieben wurde.
+   *  Standard: zufaellig (reine Orchestrierung, kein Teil der Rechenlogik). */
+  kennung?: string;
 }
 
 const ENTSCHIEDEN = (grund: string): DeltaErgebnis => ({ ok: false, grund });
@@ -381,7 +408,7 @@ async function versuche(a: DeltaEingabe): Promise<DeltaErgebnis> {
     lokalBasis.set(t, lokal);
     const remote = await leseRemoteBasis(fern.lese, t);
     const d = diffBasis(t, lokal, remote);
-    log(`  Delta ${t}: +${d.einfuegen.length} ~${d.aendern.length} −${d.loeschen.length} (gleich ${d.gleich})`);
+    log(`  Delta ${t}: +${d.einfuegen.length} ~${d.aendern.length} −${d.loeschen.length} (gleich ${d.gleich}${d.verschoben > 0 ? `, davon rowid-verschoben ${d.verschoben}` : ''})`);
     voll += Math.max(lokal.length, remote.length) * ZEILEN_JE_BASISZEILE[t];
     diffs.push(d);
   }
@@ -389,8 +416,12 @@ async function versuche(a: DeltaEingabe): Promise<DeltaErgebnis> {
   // kostet im Vollneubau ~ eine Shadow-Zeile je Dokument (`_docsize`).
   const basisDelta = diffs.reduce((n, d) => n + basisSchreibzeilen(d), 0);
   if (ftsNeu) voll += a.sollZeilen['fts_artikel'] ?? 0;
+  // Der Grund eines Rueckfalls gehoert ins Log (E0-BRANDSCHUTZ Ziel 4): seit der stabilen rowid
+  // darf eine rowid-Verschiebung nicht mehr vorkommen — taucht sie auf, steht sie hier mit Zahl.
+  const verschoben = diffs.reduce((n, d) => n + d.verschoben, 0);
+  const verschiebung = verschoben > 0 ? ` [Ursache: ${verschoben} Zeilen mit anderer rowid — rowid-Regel gewechselt oder Einfuegereihenfolge verschoben]` : '';
   if (basisDelta > schwelle * voll) {
-    return ENTSCHIEDEN(`Basis-Delta ${basisDelta} Schreibzeilen > ${schwelle * 100} % des Vollneubaus (${voll}) — Vollneubau`);
+    return ENTSCHIEDEN(`Basis-Delta ${basisDelta} Schreibzeilen > ${schwelle * 100} % des Vollneubaus (${voll}) — Vollneubau${verschiebung}`);
   }
   // Wird NUR der Index neu gerechnet (artikel uebersprungen, z. B. nach einer Struktur-
   // Sidecar-Aenderung), haengt er an einer Tabelle, die dieser Lauf nicht anfasst: sie muss
@@ -410,7 +441,7 @@ async function versuche(a: DeltaEingabe): Promise<DeltaErgebnis> {
     voll += fts.remoteZeilen - (a.sollZeilen['fts_artikel'] ?? 0);
     const gesamt = basisDelta + fts.deltaZeilen;
     if (gesamt > schwelle * voll) {
-      return ENTSCHIEDEN(`Delta ${gesamt} Schreibzeilen > ${schwelle * 100} % des Vollneubaus (${voll}) — Vollneubau`);
+      return ENTSCHIEDEN(`Delta ${gesamt} Schreibzeilen > ${schwelle * 100} % des Vollneubaus (${voll}) — Vollneubau${verschiebung}`);
     }
   }
   log(`  Delta-Volumen: ${basisDelta + (fts?.deltaZeilen ?? 0)} Schreibzeilen gegen ${voll} im Vollneubau (${((100 * (basisDelta + (fts?.deltaZeilen ?? 0))) / Math.max(voll, 1)).toFixed(2)} %).`);
@@ -431,22 +462,22 @@ async function versuche(a: DeltaEingabe): Promise<DeltaErgebnis> {
   const schreib: Schreibvolumen = {
     basis: diffs.reduce((s, d) => s + basisSchreibzeilen(d), 0),
     fts: fts?.deltaZeilen ?? 0,
-    marken: markenStmts.length,
+    marken: markenStmts.length + 1, // + delta_kennung
   };
 
-  // ── Transaktion: anwenden → verifizieren → Marken → COMMIT ────────────────────────
-  await fern.transaktion(async (tx) => {
-    for (const req of buendeleStatements(stmts)) await tx.ausfuehren(req);
-    const rot = (m: string): never => {
-      throw new DeltaVerifikationFehler(m);
-    };
+  // ── Verifikation (laeuft in der Transaktion VOR dem COMMIT — und, nach einem unklaren COMMIT-
+  //    Ausgang, auf frischen Verbindungen GEGEN den festgeschriebenen Stand) ───────────────────
+  const rot = (m: string): never => {
+    throw new DeltaVerifikationFehler(m);
+  };
+  const verifiziere = async (lese: Lese): Promise<void> => {
     // (a) Inhalt je Zeile: remote nach dem Delta == lokal (Schluessel, rowid, Hash).
     for (const d of diffs) {
-      const nach = diffBasis(d.tabelle, lokalBasis.get(d.tabelle) as BasisZeile[], await leseRemoteBasis(tx.lese, d.tabelle));
+      const nach = diffBasis(d.tabelle, lokalBasis.get(d.tabelle) as BasisZeile[], await leseRemoteBasis(lese, d.tabelle));
       if (diffGroesse(nach) !== 0) rot(`${d.tabelle}: nach dem Delta noch ${diffGroesse(nach)} Abweichungen gegen das lokale Artefakt`);
       // Der Hash allein bewiese nur, dass die HASH-Spalte stimmt. Darum werden die geschriebenen
       // Zeilen (neu + geaendert) im INHALT zurueckgelesen und Wert fuer Wert verglichen.
-      const falsch = await inhaltsAbweichungen(tx.lese, d);
+      const falsch = await inhaltsAbweichungen(lese, d);
       if (falsch > 0) rot(`${d.tabelle}: ${falsch} geschriebene Zeilen weichen im Inhalt vom lokalen Artefakt ab`);
     }
     // (b) Zeilenzahlen aller Tabellen der Gruppe == Soll (auch uebersprungene). Der Index wird
@@ -457,31 +488,62 @@ async function versuche(a: DeltaEingabe): Promise<DeltaErgebnis> {
     //     Eine ANDERE Verbindung sieht den neuen Stand nach COMMIT korrekt (ebenfalls belegt).
     const tabelle = (t: string) => (t === 'fts_artikel' ? 'fts_artikel_docsize' : t);
     for (const t of NORMTEXT_GRUPPE) {
-      const n = Number((await tx.lese(`SELECT count(*) FROM ${tabelle(t)}`))[0]?.[0]);
+      const n = Number((await lese(`SELECT count(*) FROM ${tabelle(t)}`))[0]?.[0]);
       if (n !== a.sollZeilen[t]) rot(`${t}: ${n} Zeilen ≠ Soll ${a.sollZeilen[t]}`);
     }
     // (c) Index: Fingerabdruck ALLER Shadow-Tabellen == berechneter Zielzustand. Der Zielzustand
     //     hat lokal den FTS5-integrity-check und die Instanz-Gleichheit gegen den neuen Index
     //     bestanden (berechneFtsDelta) — Gleichheit damit uebertraegt beides auf die Gegenseite.
     if (fts) {
-      const ist = await leseSchattenUeber(tx.lese, 'fts_artikel');
+      const ist = await leseSchattenUeber(lese, 'fts_artikel');
       if (schattenFingerprint(ist) !== schattenFingerprint(fts.nachher)) rot('fts_artikel: Shadow-Tabellen weichen vom berechneten Zielzustand ab');
     }
     // (d) rowid-Kopplung artikel == fts_artikel (der Such-Join haengt daran).
-    const spanne = async (t: string, sp: string) => String((await tx.lese(`SELECT min(${sp}) || '-' || max(${sp}) FROM ${tabelle(t)}`))[0]?.[0]);
+    //     Mengen-Fingerabdruck (Zahl, min, max, zwei Modulo-Summen), nicht nur die Spannweite:
+    //     bei Hash-rowids beweist der Rand allein nichts (stabile-rowid.ts).
+    const spanne = async (t: string, sp: string) => String((await lese(rowidFingerabdruckSql(tabelle(t), sp)))[0]?.[0]);
     const [sa, sf] = [await spanne('artikel', 'rowid'), await spanne('fts_artikel', 'id')];
-    if (sa !== sf) rot(`rowid-Spannweite artikel ${sa} ≠ fts_artikel ${sf}`);
-    // (e) Marken — erst nach bestandener Verifikation (Quittung, nicht Absicht).
-    if (markenStmts.length > 0) {
+    if (sa !== sf) rot(`rowid-Menge artikel ${sa} ≠ fts_artikel ${sf}`);
+  };
+
+  // ── Transaktion: anwenden → verifizieren → Marken → COMMIT ────────────────────────
+  const kennung = a.kennung ?? randomUUID();
+  const markenMitKennung: Array<[string, string]> = [...markenStmts, ['delta_kennung', kennung]];
+  try {
+    await fern.transaktion(async (tx) => {
+      for (const req of buendeleStatements(stmts)) await tx.ausfuehren(req);
+      await verifiziere(tx.lese);
+      // (e) Marken — erst nach bestandener Verifikation (Quittung, nicht Absicht). Die Kennung
+      //     dieses Laufs steht in DERSELBEN Transaktion: ihr Vorliegen beweist das COMMIT.
       await tx.ausfuehren([
         {
-          sql: `INSERT INTO sync_meta (schluessel, wert) VALUES ${markenStmts.map(() => '(?, ?)').join(', ')}
+          sql: `INSERT INTO sync_meta (schluessel, wert) VALUES ${markenMitKennung.map(() => '(?, ?)').join(', ')}
                 ON CONFLICT(schluessel) DO UPDATE SET wert = excluded.wert`,
-          args: markenStmts.flat(),
+          args: markenMitKennung.flat(),
         },
       ]);
+    });
+  } catch (e) {
+    if (!(e instanceof CommitUnklarFehler)) throw e;
+    // T-1: COMMIT abgeschickt, Antwort verloren. Erst den Remote-Stand lesen, DANN entscheiden:
+    // traegt er die Kennung dieses Laufs und besteht die Verifikation auf frischen Verbindungen,
+    // ist das Delta festgeschrieben und korrekt — ein Vollneubau waere reine Verschwendung.
+    log(`  COMMIT-Ausgang unklar (${e.message}) — lese die Kennung des Remote-Stands ...`);
+    let ist: Wert | undefined;
+    try {
+      ist = (await fern.lese("SELECT wert FROM sync_meta WHERE schluessel = 'delta_kennung'"))[0]?.[0];
+    } catch (le) {
+      if (istSchreibsperre(le)) throw le;
+      return ENTSCHIEDEN(`COMMIT-Ausgang unklar und der Remote-Stand nicht lesbar (${le instanceof Error ? le.message : String(le)}) — Vollneubau`);
     }
-  });
+    if (ist !== kennung) return ENTSCHIEDEN(`COMMIT-Ausgang unklar (${e.message}); Remote traegt die Kennung dieses Laufs nicht — nicht festgeschrieben, Vollneubau`);
+    try {
+      await verifiziere(fern.lese);
+    } catch (ve) {
+      return ENTSCHIEDEN(`COMMIT-Ausgang unklar; Kennung liegt vor, aber die Verifikation des festgeschriebenen Stands scheitert (${ve instanceof Error ? ve.message : String(ve)}) — Vollneubau`);
+    }
+    log('  COMMIT-Antwort verloren, Delta aber festgeschrieben und auf frischen Verbindungen verifiziert — kein Vollneubau.');
+  }
 
   // NACH dem COMMIT, auf frischen Verbindungen: die FTS-eigene Sicht. Scheitert hier etwas,
   // ist der Stand zwar festgeschrieben, aber der Vollneubau stellt ihn dann (verifiziert) her.

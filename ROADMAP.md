@@ -77,24 +77,23 @@ Staatsverträge (SR 0.*, 3186) verlinken auf Fedlex und kommen später.
 
 Kürzel = Präfix des Arbeitszweigs und Wert des Commit-Trailers `Roadmap:`.
 
-1. **Brandschutz** (`E0-BRANDSCHUTZ`) · E0 · Gegenprüfung ja, soweit `scripts/datenhaltung/`
-   *Fertig, wenn* Turso sparsamer nachführt (Delta-Sync oder nur bei Normtext-Änderung) und die Suche
-   «Suchindex Stand …» zeigt; Such-API meldet DB-Fehler als Fehler statt «0 Treffer», ohne Details an
-   Anonyme, Deploy ohne `vercel@latest` (FB S-18); Vercel-Storage nachgemessen (FB S-21).
-   *Frist:* Turso-Kontingent ~26.10. erschöpft (Extrapolation; David 15.9. «nicht zahlen»).
-   *David-Handgriff:* AUTOMERGE_TOKEN bis 20.10. erneuern (FB S-14); `normen-monatslauf.yml` stösst
-   keine CI an (nächster Lauf 1.11.).
-   *Ort:* Merkzettel `…-turso-serving-sync-…`, `…-hn-11-…`, `…-vercel-deployment-storage-…`.
+1. **Rechtsprechungs-Register aufteilen** (`E0-REGISTER`) · E0 · Gegenprüfung ja, soweit Urteilsdaten
+   *Fertig, wenn* das Rechtsprechungs-Register (839 KB von 900 KiB, 91 %, +7–12 KB/Woche) aufgeteilt ist,
+   bevor `check:perf-budget` jeden PR rot färbt (FB S-26). *Frist:* ~Ende Nov./Dez.
 2. **Fundament für den Bund-Ausbau** (`A1-FUNDAMENT`) · E1·A · Gegenprüfung ja, wo Normdaten
-   *Fertig, wenn* (a) `such-index/artikel.json` (94 %) und `normtext/register.json` (93 % des Deckels,
-   `scripts/perf/daten-budget.ts`) aufgeteilt sind (vor Lieferstart, FAHRPLAN-FEDLEX-PORTFOLIO §21);
+   *Fertig, wenn* (a) der Browser-Suchindex `such-index/artikel.json` entfällt: Wortsuche in Gesetzen nur noch
+   über den Server, Entscheide eigene Suche (David 7.10.: «suche zurückfahren. nur noch nach gesetzen und
+   werkzeugen suchen lassen. separat für entscheide»; Wortsuche «Ja, nur über Server»), und
+   `normtext/register.json` (93 % des Deckels, `scripts/perf/daten-budget.ts`) ist aufgeteilt (vor Lieferstart);
    (b) Pins als Datendatei statt Handzeilen in `scripts/fedlex-cache.sh` + `src/lib/fedlex/tabelle.ts`,
-   Kurzname-/URL-Regel für Erlasse ohne Abkürzung; (c) vervielfachende Fehler zu: ELI-Auflösung
+   Kurzname für Erlasse ohne amtliche Abkürzung `CH-<SR>` (David 7.10.); (c) vervielfachende Fehler zu: ELI-Auflösung
    wählt falsche Fassung (`scripts/fedlex-eli-aufloesen.ts:44-56`, B-07/B-09), Inkrafttretens-Zeile
    fehlt in 86/231 Erlassen (NT-10), «Gilt seit» generisch «lieber leer als falsches Datum» statt
    Handregister (`bibliothek/normtext/generalanweisungen-gilt-seit-2026-10-05.md`), Disp-Text ausserhalb
    Artikel (25.9.: 289 Abschnitte/59 Erlasse), Sidecars nachziehen (B-75), Positivliste (V-02, V-04).
-   *Offen:* Datenablage bei ~2150 Erlassen (81 MB für 231; `.git` 647 MB).
+   *Offen:* Datenablage bei ~2150 Erlassen (81 MB für 231; `.git` ~594 MiB); Turso-Speicher: Replika 751 MiB von
+   1024 MiB (#1350) — vor Lieferstart klären. *Lage:* Vault
+   `03_Projekte/LexMetrik/a1-fundament-2026-10-07/lage.md`.
 3. **Jedes Bundesgesetz** (`A2-BUNDESGESETZE`) · E1·A · Gegenprüfung ja · startet nach JETZT 2
    *Fertig, wenn* eine Lieferung die 256 fehlenden Bundesgesetze (251 + 5 dringliche) und 25
    Verordnungen der Bundesversammlung bringt (281) und die Fortschrittszeile «348/348» zeigt.
@@ -118,6 +117,7 @@ Kürzel = Präfix des Arbeitszweigs und Wert des Commit-Trailers `Roadmap:`.
 *Gestrichen 7.10.:* `GILTSEIT` gebaut (#1298, #1309 5f6c6c12a: ZGB 299/300 2000-01-01, 307 2013-01-01,
 StGB 52 2007-01-01, OR 631 2023-01-01, SVG 89a bewusst ohne) — nur Abnahme David offen, nicht nachfragen.
 `BUNDTEXT`: NT-01 gelandet (#1313); NT-10 → JETZT 2, Rest → EINGANG. `URTEILE` → JETZT 4.
+`E0-BRANDSCHUTZ` gebaut (#1342, #1343, #1350); Rechtsprechungs-Register → JETZT 1.
 
 ---
 
@@ -138,7 +138,8 @@ StGB 52 2007-01-01, OR 631 2023-01-01, SVG 89a bewusst ohne) — nur Abnahme Dav
 - E1·B · 5.10. · Gegenprüfungs-Pin «fedlex OR 20260101» überholt (Cache 20261001) ⇒ Gegenprüfungen der OR-Engines neu fällig
 - E1·B · Abnahme David · Gründungs-Checklisten AG/GmbH nach TJPG — bibliothek/recherche/ag-gruendung.md, gmbh-gruendung.md
 - E1·B · 7.10. · Doku-Widerspruch W-17: FB RV-26 «wartet auf David» vs. FAHRPLAN-RECHTSLOGIK §4 «entschieden 24.9.»; W-09/11/17/22 dort ohne Zeichen
-- E0 · Frist ~Nov./Dez. · Rechtsprechungs-Register 839 KB von 900 KiB (91 %), +7–12 KB/Woche ⇒ danach jeder PR rot (check:perf-budget) — aufteilen; FB S-26
+- E0 · 7.10. · Turso nach #1343/#1350: 1. Lauf Vollneubau ~260k Zeilen, dann Delta-Log «erfolgreich» vs. «expired» (M-2) prüfen — FAHRPLAN-DATENHALTUNG §17
+- E0 · David-Handgriff · AUTOMERGE_TOKEN bis 20.10. erneuern (FB S-14); normen-monatslauf.yml stösst keine CI an (Lauf 1.11.)
 - E3 · Go David 24.9. · Rest «eine Titel- und Abschnittsordnung» (HN-D2 gebaut #1190/#1197): Band-Rezept, Titelschrift — Dach W2·29-WERKBANK-NACHLAUF
 - E3 · Go David 19.9. · Merkliste bauen — Merkzettel 2026-09-18-reiterleisten-abgleich-merkliste-bauen
 - E3 · Go David 8.8. · Kalender-Export: Termine als «frei» — Merkzettel 2026-09-24-kalender-export-…
@@ -150,8 +151,15 @@ StGB 52 2007-01-01, OR 631 2023-01-01, SVG 89a bewusst ohne) — nur Abnahme Dav
 - E3 · Sammel · Sicherheit/Betrieb übrige (FB Bereich 7; E0 je Zeile prüfen); Prüf-Lücken «latent», kein Bauauftrag (FB Teil C)
 - E3·W · Go David 5.10. · CI: Dauer-Wackler an der Wurzel (bibliothek/betrieb/e2e-fang-historie-2026-10-05/), leser-kopf-cls-s3 hängt an Fedlex, Läufer-Kontingent
 - E3·W · 5.10. · Tore/Hooks: tor-schutz.py Quote-Split (Diff 5260e0118), gate-stopp.py, tor-paritaet (GP #1323), Streich-Runde nie fündiger Tore (Freigabe 22.9.) — QS-CPU, QS-TORE-DIAET
-- E3·W · 4.–6.10. · Daten-PR/Läufe: Merge-Treiber regen, Projektionen einzeln rot (#1329), Läufe 5–9 h spät, Fedlex-Netz-Fehlalarm, Materialien-Bot verwirft alle Snapshots
 - E3·W · 5.10. · Rückbau nach Umstieg (flaechenZeile, trendZeile, Rotation, ci.yml:70), Worktrees bleiben liegen, 8.10. CI-Sparplan nachmessen; PLAN_BUCHUNG_TOKEN gegenstandslos (David)
+- E3·W · Go David 7.10. · Cache-Tore ehrlich: p-klassen/vollstaendigkeit/struktur-konsistenz/verklebung melden in PR-CI grün ohne Prüfung — scripts/run-parallel.ts, ci.yml
+- E3 · Go David 7.10. · Nachgeladene JSON prüfen: 29× res.json ungeprüft, pruefeJson (src/data/jsonSchutz.ts) einsetzen, dazu Versions-Parameter — src/pages, src/components
+- E3·W · Go David 7.10. · Leser-Logik (162 .ts unter src/pages|components, ~22k Zeilen) nach src/lib/leser, danach Lint-Grenze — §3 Schichtentrennung
+- E3·W · wartet auf David 7.10. · §5-Text vs. Ist: ingest.ts liest public/*.json → DB, JSON ist faktisch Quelle — Umstellung fertig bauen oder §5 präzisieren — CLAUDE.md §5
+- E3·W · wartet auf David 7.10. · Rechtsprechung-Einzelentscheide (300 MB) als Release-Artefakt statt in git — public/rechtsprechung/
+- E3·W · wartet auf David 7.10. · Doku-Tore check:steuerdeckel + check:steuerflaeche zusammenlegen, nachts statt in der Queue — ci.yml, package.json
+- E3 · wartet auf David 7.10. (§15) · public/rechtsprechung/register.json 9,9 MB aufteilen; norm-index.json 6 MB laut Kommentar UI-ungenutzt — public/
+- E3·W · später 7.10. · noUncheckedIndexedAccess für src/lib (338 Fehler); src/tests nach Schicht ordnen; tabs.ts in rein/Store trennen — tsconfig.app.json, src/tests
 - E4 · Phase 2 · Kantonstext (FB Bereich 2, Dach W2·13-KANTONE-DATEN); ZH-Generator nicht je Erlass fahrbar, 68 ZH_ZURUECKGESTELLT ohne Auflöser
 - E4 · David 21.9./E2 7.10. · Impressum/Datenschutz erst vor Live-Gang (FB S-01); Staatsverträge SR 0.* (28 schon gepinnt) verlinken bis dahin auf Fedlex
 ```

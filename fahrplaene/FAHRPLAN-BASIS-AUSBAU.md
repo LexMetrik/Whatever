@@ -201,7 +201,7 @@ unverändert.
   - → Posten `plan/posten/2026-09-24-17-f13-klaeren-warum-wurde-der-main-lauf-1123b1974-629-cance.md` (§17 F13 klären: Warum wurde der main-Lauf 1123b1974 (#629) «cancelled»?)
   - → Posten `archiv/posten/2026-09-17-check-lizenzen-in-agent-worktrees-ohne-node-modules-immer-ro.md` (Punkt 10: §17 Notizen-Datei: Haupt-Checkout aus einem Worktree nur per Bash schreibbar)
   - → Posten `archiv/posten/2026-09-24-readme-md-ist-ein-fossil.md` (README.md ist ein Fossil)
-  - → Posten `plan/posten/2026-09-24-vercel-deployment-storage-nachmessen-ueberfaellig.md` (Vercel Deployment Storage nachmessen — überfällig)
+  - → Posten `archiv/posten/2026-09-24-vercel-deployment-storage-nachmessen-ueberfaellig.md` (Vercel Deployment Storage nachmessen — überfällig)
   - → Posten `archiv/posten/2026-09-24-shellcheck-fehlt-lokal.md` (shellcheck fehlt lokal)
   - → Posten `plan/posten/2026-09-21-sperrklinke-neue-top-level-helfer-rutschen-an-der-liste-vorbei.md` (Punkt 1: §17 · Steuerdeckel-Glob umgehbar durch Dateinamen-Wahl)
   - → Posten `archiv/posten/2026-09-24-totcode-meldung-wird-echtes-tor-check-tot-blockierend-bei-ne.md` (Totcode-Meldung wird echtes Tor check:tot (blockierend bei neuen Meldungen))

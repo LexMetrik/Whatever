@@ -21,7 +21,7 @@ sie halten den Rest fest, damit der `git mv` nach `archiv/` informationsverlustf
 prüften 12 Agenten; **drei Dateien bleiben begründet im Root**: `FAHRPLAN-PLAN-STEUERUNG.md` (einzige
 Doku der `@meta`-DSL, keine Ersatz-Heimat), `FAHRPLAN-RECHTSPRECHUNG.md` (Detailquelle des noch
 offenen `R-RICHTER`) und `FAHRPLAN-OPENCASELAW-QUELLEN.md` (geltende Grundlage von
-`PLAN-OCL-ABBAU.md`).*
+`archiv/PLAN-OCL-ABBAU.md`).*
 
 ## §0 · Quer-Lektionen
 
