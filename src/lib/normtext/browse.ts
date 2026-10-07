@@ -10,8 +10,14 @@ import { normtextDateiUrl } from './dateiUrl';
 import { ladeJson, ladeJsonStreng, pruefeFelder } from '../ladeJson';
 
 const MANIFEST_PRUEFER = pruefeFelder('normtext/register.json', { erlasse: 'array' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { MANIFEST_PRUEFER as NORMTEXT_MANIFEST_PRUEFER };
 const DATEI_PRUEFER = pruefeFelder('normtext/<Erlass>.json', { eintraege: 'array' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { DATEI_PRUEFER as NORMTEXT_DATEI_PRUEFER };
 const STRUKTUR_PRUEFER = pruefeFelder('normtext/struktur/<Ebene>/<Erlass>.json', {});
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { STRUKTUR_PRUEFER as NORMTEXT_STRUKTUR_PRUEFER };
 /** Die Struktur-Datei fehlt, wenn `vite dev`/`vite preview` statt eines 404 die index.html (200 text/html) liefern. */
 const IST_HTML = (res: Response) => /\btext\/html\b/i.test(res.headers?.get?.('content-type') ?? '');
 

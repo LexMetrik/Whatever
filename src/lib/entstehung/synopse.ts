@@ -29,6 +29,8 @@
 import { ladeJson, pruefeFelder } from '../ladeJson';
 
 const PRUEFER = pruefeFelder('materialien/synopse/<Erlass>.json', { staende: 'array' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { PRUEFER as SYNOPSE_PRUEFER };
 
 /**
  * Version des Normalisierungs-Profils. Ein GELANDETES Profil wird nie editiert — eine

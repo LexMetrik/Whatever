@@ -19,7 +19,11 @@ import { normtextDateiUrl } from './dateiUrl';
 import { ladeJson, pruefeFelder } from '../ladeJson';
 
 const SNAPSHOT_PRUEFER = pruefeFelder('normtext/<Erlass>.json', { eintraege: 'array' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { SNAPSHOT_PRUEFER as NORMTEXT_SNAPSHOT_PRUEFER };
 const KANTON_INDEX_PRUEFER = pruefeFelder('normtext/kanton/index.json', {}, (_k, w) => (typeof w === 'string' ? null : 'Wert ist kein String'));
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { KANTON_INDEX_PRUEFER as NORMTEXT_KANTON_INDEX_PRUEFER };
 
 const dateiCache = new Map<string, Promise<NormSnapshotDatei | null>>();
 

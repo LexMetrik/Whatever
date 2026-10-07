@@ -20,6 +20,8 @@ import { kodiereSchluessel } from '../normtext/dateiUrl';
 import { ladeJson, pruefeFelder } from '../ladeJson';
 
 const PRUEFER = pruefeFelder('verzahnung/artikel-revisionen/<Erlass>.json', { proArtikel: 'objekt' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { PRUEFER as ARTIKEL_REVISIONEN_PRUEFER };
 
 export type { ArtikelRevision } from './revisionen-extrakt';
 

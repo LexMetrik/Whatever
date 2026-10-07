@@ -14,6 +14,8 @@ import { kodiereSchluessel } from './dateiUrl';
 import { ladeJson, pruefeFelder } from '../ladeJson';
 
 const PRUEFER = pruefeFelder('normtext/revisionen/<Erlass>.json', { revisionen: 'array' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { PRUEFER as NORMTEXT_REVISIONEN_PRUEFER };
 
 /** Ein Timeline-Eintrag in Anzeige-Form (Feld-Teilmenge des Sidecars). */
 export interface RevisionBezug {

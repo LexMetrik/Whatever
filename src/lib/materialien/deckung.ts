@@ -14,6 +14,8 @@
 import { ladeJson, pruefeFelder } from '../ladeJson';
 
 const PRUEFER = pruefeFelder('materialien/deckungs-sicht.json', { staende: 'objekt', ebenen: 'objekt' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { PRUEFER as DECKUNG_PRUEFER };
 
 /** Versionierte Bauart — eine geänderte Ableitungsregel entsteht als `/2`
  *  DANEBEN, nie durch Editieren (Muster der Synopse-Normprofile). */

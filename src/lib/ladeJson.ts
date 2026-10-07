@@ -12,6 +12,13 @@
 // BESTEHENDEN Fehlerpfad jedes Aufrufers (catch → null / «fehler»-Zustand /
 // kein Cache-Eintrag), genau wie ein Netz- oder 5xx-Fehler. Keine neue UI.
 //
+// GRENZE: «kein Cache-Eintrag» gilt NUR für die strengen Pfade (Aufrufer, die
+// den Cache bei Wurf verwerfen). Bei anker.ts, synopse.ts, synopse-entwurf.ts,
+// revisionen.ts und rechtsprechung/browse.ts (Register, Richter, Entscheid) bleibt bei
+// Formfehler die Fläche leer und `null` wird gecacht (bisheriges Verhalten,
+// hier bewusst nicht geändert): der Formfehler wird dort wie «keine Daten»
+// behandelt, nicht als Ausfall gezeigt.
+//
 // Prüfer bleiben schlank (Wurzelform + Pflichtfelder, die die Konsumenten
 // wirklich dereferenzieren) — das Muster von `src/data/jsonSchutz.ts`, keine
 // Schema-Bibliothek im Bundle. Reine Ladeschicht, keine Fachlogik (§3).

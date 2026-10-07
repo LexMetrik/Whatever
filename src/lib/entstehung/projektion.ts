@@ -41,6 +41,8 @@ import { kodiereSchluessel } from '../normtext/dateiUrl';
 import { ladeJson, pruefeFelder } from '../ladeJson';
 
 const PRUEFER = pruefeFelder('materialien/entstehung/<Erlass>.json', { aenderungen: 'objekt', botschaften: 'objekt' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { PRUEFER as ENTSTEHUNG_PRUEFER };
 
 /**
  * Versionierte Bauart der Projektion.

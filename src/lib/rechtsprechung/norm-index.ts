@@ -21,8 +21,14 @@ import { kodiereSchluessel } from '../normtext/dateiUrl';
 import { ladeJson, pruefeFelder } from '../ladeJson';
 
 const INDEX_PRUEFER = pruefeFelder('rechtsprechung/norm-index.json', { proNorm: 'objekt' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { INDEX_PRUEFER as NORMINDEX_PRUEFER };
 const ERLASS_PRUEFER = pruefeFelder('rechtsprechung/norm-index-erlasse.json', { proNorm: 'objekt' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { ERLASS_PRUEFER as NORMINDEX_ERLASS_PRUEFER };
 const SHARD_PRUEFER = pruefeFelder('rechtsprechung/norm-index/<Erlass>.json', { proArtikel: 'objekt' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { SHARD_PRUEFER as NORMINDEX_SHARD_PRUEFER };
 
 export interface EntscheidRef {
   key: string;

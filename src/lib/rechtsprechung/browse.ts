@@ -10,8 +10,14 @@ import { ERLASS_REGISTER, GEBIETE, GEBIET_LABEL, gebieteFuerFilter, type Rechtsg
 import { ladeJson, pruefeFelder } from '../ladeJson';
 
 const MANIFEST_PRUEFER = pruefeFelder('rechtsprechung/register.json', { entscheide: 'array' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { MANIFEST_PRUEFER as RSPR_MANIFEST_PRUEFER };
 const RICHTER_PRUEFER = pruefeFelder('rechtsprechung/richter.json', { richter: 'objekt' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { RICHTER_PRUEFER as RSPR_RICHTER_PRUEFER };
 const DATEI_PRUEFER = pruefeFelder('rechtsprechung/<Entscheid>.json', { eintraege: 'array' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { DATEI_PRUEFER as RSPR_DATEI_PRUEFER };
 
 // ── Manifest (einmal, gecacht als laufende Promise) ──────────────────────────
 let manifestPromise: Promise<EntscheidManifest | null> | null = null;

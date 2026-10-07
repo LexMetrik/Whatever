@@ -17,6 +17,8 @@
 import { ladeJson, pruefeFelder } from '../ladeJson';
 
 const PRUEFER = pruefeFelder('materialien/anker/<Botschaft>.json', { anker: 'array' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { PRUEFER as ANKER_PRUEFER };
 
 /** Ein Artikel-Anker im amtlichen Botschafts-HTML. */
 export interface BotschaftAnker {

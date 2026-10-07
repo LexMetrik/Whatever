@@ -23,6 +23,8 @@
 import { ladeJson, pruefeFelder } from '../ladeJson';
 
 const PRUEFER = pruefeFelder('materialien/synopse-entwurf/<Botschaft>.json', { entwurfDok: 'objekt', artikel: 'array' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { PRUEFER as SYNOPSE_ENTWURF_PRUEFER };
 
 /** Wie das Parlament einen Entwurfs-Artikel angefasst hat. */
 type EntwurfArt =

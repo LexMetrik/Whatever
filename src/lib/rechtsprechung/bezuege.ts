@@ -25,6 +25,8 @@ import { kodiereSchluessel } from '../normtext/dateiUrl';
 import { ladeJson, pruefeFelder } from '../ladeJson';
 
 const PRUEFER = pruefeFelder('rechtsprechung/bezuege/<Erlass>.json', { dokumente: 'objekt', proArtikel: 'objekt' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { PRUEFER as BEZUEGE_PRUEFER };
 
 /** Dokument-Kopf — EINMAL je Shard, nicht je Artikel (§15, siehe Generator). */
 interface BezugsDokument {

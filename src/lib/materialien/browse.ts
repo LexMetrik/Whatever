@@ -14,7 +14,11 @@ import type { Rechtsgebiet } from '../normtext/register';
 import { ladeJson, pruefeFelder } from '../ladeJson';
 
 const MANIFEST_PRUEFER = pruefeFelder('materialien/register.json', { materialien: 'array' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { MANIFEST_PRUEFER as MATERIALIEN_MANIFEST_PRUEFER };
 const I18N_PRUEFER = pruefeFelder('materialien/register-i18n.json', { titel: 'objekt' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { I18N_PRUEFER as MATERIALIEN_I18N_PRUEFER };
 
 // ── Manifest (einmal, gecacht als laufende Promise) ──────────────────────────
 let manifestPromise: Promise<MaterialManifest | null> | null = null;

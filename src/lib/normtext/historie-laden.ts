@@ -15,6 +15,8 @@ import { kodiereSchluessel } from './dateiUrl';
 import { ladeJson, pruefeFelder } from '../ladeJson';
 
 const PRUEFER = pruefeFelder('normtext/historie/<Erlass>.json', { artikel: 'objekt' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { PRUEFER as HISTORIE_PRUEFER };
 
 // Der Per-Artikel-Eintrag ist exakt die Generator-Projektion `ArtikelHistorie`
 // ({ giltSeit, aufgehobenSeit?, ereignisse }). Re-Export als Typ (zur Bauzeit

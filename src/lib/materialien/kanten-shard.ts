@@ -29,6 +29,8 @@ import { KANTEN_ERLASSE } from './kanten-erlasse.generated';
 import { ladeJson, pruefeFelder } from '../ladeJson';
 
 const PRUEFER = pruefeFelder('materialien/kanten/<Erlass>.json', { erlass: 'string' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { PRUEFER as KANTEN_PRUEFER };
 
 /** Fundstelle einer aggregierten Kante (Ziffer + optionaler Deep-Link-Suffix). */
 interface ShardFundstelle {
