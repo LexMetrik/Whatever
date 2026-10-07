@@ -18,6 +18,10 @@
 // ganzen Korpus zu ziehen. Alles, was hier gebraucht wird, liegt bereits im
 // Speicher: der Snapshot (Wortlaut, Label, Tabellen, `grundlage`) und das
 // Sidecar (Marginalien, Gliederungspfad, Fussnoten).
+// (Nachtrag 7.10.2026, A1-FUNDAMENT: `artikel.json` und sein Generator
+// `scripts/such-index-generieren.ts` sind entfallen — die globale Wortsuche läuft über
+// den Server. Die Feldklassen unten haben ihre gemeinsame Quelle seither in
+// `scripts/suche-felder.ts` (`baueRecallFelder`), aus der auch der Server-Index baut.)
 //
 // WAS DAMIT NEU FINDBAR WIRD. Die alte Filterregel (`passtAufSuche`, helpers)
 // las AUSSCHLIESSLICH `artikelLabel` und `bloecke[].text`/`items[].text`. Vier
@@ -54,7 +58,8 @@ import type { NormSnapshot } from '../../lib/normtext/typen';
 
 // ─── Felder in Index-Semantik (Spec §4.1) ───────────────────────────────────
 /**
- * Die sechs Feldklassen des Generators (`scripts/such-index-generieren.ts`):
+ * Die sechs Feldklassen des früheren Generators (`scripts/such-index-generieren.ts`,
+ * entfallen 7.10.2026; Quelle der Felder jetzt `scripts/suche-felder.ts`):
  * `t` Fliesstext+Items · `m` primäre Marginalie · `n` nachrangige Marginalie ·
  * `g` Gliederungspfad · `tb` Tabellen+Bild-Alt+`grundlage` · `f` Fussnoten.
  * Die Namen sind bewusst identisch — sie sind die semantische Brücke zum
@@ -65,9 +70,9 @@ export type SuchFeld = 't' | 'm' | 'n' | 'g' | 'tb' | 'f';
 /**
  * Feldgewicht in der Reihenfolge `t > m > n > g > tb > f` (Spec §4.2).
  *
- * SEMANTISCHE QUELLE ist die FlexSearch-Konfiguration von
- * `scripts/such-index-generieren.ts:145–233` — dort und nur dort lebt die
- * Gewichtung für den globalen Index. Sie wird hier NICHT importiert (das Script
+ * SEMANTISCHE QUELLE war die FlexSearch-Konfiguration von
+ * `scripts/such-index-generieren.ts:145–233` (entfallen 7.10.2026; die Gewichtung
+ * des Server-Index steht in `scripts/datenhaltung/suche-kern.ts`). Sie wird hier NICHT importiert (das Script
  * läuft im Build, nicht im Browser), sondern als dieselbe Ordnung nachgebildet;
  * die Zahlen sind reine Ordnungsränge ohne eigene Bedeutung.
  *
@@ -259,7 +264,8 @@ export function baueLeserSuchIndex(
     const segmente: Segment[] = [];
     // 1 · Randtitel-Kette. Die Feldklassen folgen der Generator-Semantik
     //     (`scripts/such-index-generieren.ts:219–221`): `m` = die OBERSTE
-    //     Marginalie-Stufe (Hauptthema), `n` = alle nachrangigen. Nicht dem
+    //     Marginalie-Stufe (Hauptthema), `n` = alle nachrangigen. (Generator entfallen
+    //     7.10.2026; dieselbe Semantik trägt `scripts/suche-felder.ts`.) Nicht dem
     //     Blatt/Ahnen-Schnitt der Darstellung — dieser Schnitt entscheidet nur,
     //     ob die Stufe am Artikel überhaupt gemalt wird (§5: EINE Semantik je
     //     Frage, nicht eine Semantik für beide Fragen).

@@ -5,8 +5,8 @@
 // vorkommt. Bis 5.9.2026 baute `SuchResultate.markiere()` ein eigenes
 // Alternativ-Muster aus den Query-Wörtern («Wörter ab 2 Zeichen, regex-escaped,
 // case-insensitiv») OHNE Wortanfangs-Anker. Der Index arbeitet aber mit
-// FlexSearch `tokenize: 'forward'` (Präfix AB WORTANFANG, s. artikelVolltext.ts
-// `trifftWortgrenze` und artikelRanking.ts `trifft`). Folge, am Prod-Stand
+// FlexSearch `tokenize: 'forward'` (Präfix AB WORTANFANG, s. das frühere
+// artikelVolltext.ts `trifftWortgrenze` — Browser-Index entfallen 7.10.2026). Folge, am Prod-Stand
 // reproduziert (5.9.2026, `/rechner/zpo-fristen`, «OR 257d»): der Marker lag auf
 // «or» mitten in «S·or·gfalt», auf «miete» in «Ver·miete·r», auf «lohn» in
 // «Jahres·lohn·es» — die Hervorhebung behauptete eine Treffer-Begründung, die
@@ -44,7 +44,8 @@ export interface HervorhebungsStelle {
 }
 
 /** Wortzeichen-Klasse — wörtlich dieselbe wie in `trifftWortgrenze`
- *  (artikelVolltext.ts): was davor steht, entscheidet über den Wortanfang. */
+ *  (früher artikelVolltext.ts, entfallen 7.10.2026): was davor steht, entscheidet
+ *  über den Wortanfang. */
 const WORTZEICHEN = /[a-z0-9]/;
 
 /** Hüll-Zeichen für die zeichenweise Normalisierung (s. `normalisiereMitKarte`).

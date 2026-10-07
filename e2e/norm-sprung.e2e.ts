@@ -276,7 +276,7 @@ test.describe('Norm-Sprung in der normalen Suchleiste (A5)', () => {
     // Darum wartet der Warmlauf jetzt auf den Ladezustand, den er zu erreichen
     // behauptet: die SICHTBARE Ergebnis-Kopfzeile erscheint erst, wenn JEDE
     // Suchgruppe fertig ist (`SuchResultate.tsx` hält den reservierten Slot bis
-    // dahin auf `invisible`) — Artikel-Index UND alle Manifeste.
+    // dahin auf `invisible`) — Serverantwort UND alle Manifeste.
     //
     // Das VERSCHÄRFT die Prüfung, statt sie zu lockern: die gedrosselten Latten
     // unten bleiben byte-gleich (12 000/15 000 ms) und lösen mit dem echten
@@ -285,16 +285,11 @@ test.describe('Norm-Sprung in der normalen Suchleiste (A5)', () => {
     await expect(
       page.locator('p[aria-hidden="true"]', { hasText: /\d+ Treffer/ }),
     ).toBeVisible({ timeout: 30_000 })
-    // Die Kopfzeile allein deckt nur die Stufe, die `laedt` bindet. Der
-    // Index-Aufbau läuft aber ZWEISTUFIG (`lib/suche/artikelVolltext.ts`): die
-    // gestaffelte zweite Stufe setzt `unvollstaendig`, NICHT `laedt`, und wird von
-    // `allesGeladen` darum nicht erfasst. Sichtbar ist sie am Vorbehalt «wird noch
-    // ergänzt», den die Kopfzeile bei `waechstNoch` anhängt (`SuchResultate.tsx`).
-    // Erst wenn der weg ist, ist der Index wirklich fertig — sonst blieb ein Rest
-    // der zweiten Stufe im gedrosselten Fenster und damit ein Rest des Rennens.
-    await expect(
-      page.locator('p[aria-hidden="true"]', { hasText: /wird noch ergänzt/ }),
-    ).toHaveCount(0, { timeout: 40_000 })
+    // (Bis 7.10.2026 stand hier eine zweite Latte auf «wird noch ergänzt» — den Vorbehalt
+    // des gestaffelt aufgebauten Browser-Index. Mit dem Index ist er entfallen; die
+    // Kopfzeile oben wartet jetzt auch auf die Serverantwort und deckt damit alles ab.
+    // Eine Latte auf einen Text, der nie mehr erscheinen kann, wäre ein Tor, das nicht
+    // scheitern kann — gestrichen, nicht stillgelegt, §6.7/§17.)
     await feld.fill('')
     await expect(box).toBeHidden()
 

@@ -18,6 +18,7 @@ import { test, expect, type Page } from '@playwright/test'
 import { fehlerSammeln } from './helpers/fehlerSammeln'
 import { sprungZeile } from './helpers/kopfSuche'
 import { OR_LESER_FRIST } from './helpers/orLeser'
+import { mockApiSuche } from './helpers/mockApiSuche'
 
 // CI-Härtung 19.7.2026 (BEFUND 3a): die IA-1-Walks laden EINMAL den ~4-MB-Artikel-
 // Index und warten per 20-s-Latch auf den «Sprung»-Treffer (sprungWalk). Auf dem
@@ -90,6 +91,7 @@ test.describe('IA-1 · Named-Article-Klick-Beweis (§11.6 Punkt 2)', () => {
 
   test('Negativ-Fall (Tippfehler «OR 336z») → Liste mit Treffern, NIE Leerseite', async ({ page }) => {
     const fehler = fehlerSammeln(page)
+    await mockApiSuche(page) // Volltext-Zeilen kommen vom Server (A1-FUNDAMENT 7.10.2026)
     await page.goto('/gesetze')
     const feld = sucheFeld(page)
     await feld.click()
@@ -158,6 +160,7 @@ test.describe('IA-1 · Dedup + Ergebnis-Kopfzeile (§11.3 Zeile 10)', () => {
   })
 
   test('Ergebnis-Kopfzeile «n Treffer, davon x Erlasse / y Artikel» ist sichtbar', async ({ page }) => {
+    await mockApiSuche(page) // «y Artikel» sind die Server-Treffer (A1-FUNDAMENT 7.10.2026)
     await page.goto('/gesetze')
     const feld = sucheFeld(page)
     await feld.click()
@@ -172,7 +175,7 @@ test.describe('IA-1 · Dedup + Ergebnis-Kopfzeile (§11.3 Zeile 10)', () => {
     // Diese Latte ist eine LADE-Synchronisation, kein Interaktions-Prüfschritt:
     // die Kopfzeile wird erst sichtbar, wenn JEDE Suchgruppe fertig geladen ist
     // (`SuchResultate.tsx` hält den bereits reservierten Slot solange auf
-    // `invisible`) — also Artikel-Index UND alle Erlass-Manifeste, eine strikt
+    // `invisible`) — also Serverantwort UND alle Erlass-Manifeste, eine strikt
     // stärkere Bedingung als der «Sprung»-Treffer, auf den `sprungWalk` oben mit
     // 20 s wartet. Der Default von 10 s (playwright.config.ts) ist der Wert für
     // INTERAKTIONS-Assertions und dafür strukturell zu knapp.

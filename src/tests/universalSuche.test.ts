@@ -1,11 +1,10 @@
 import { describe, it, expect } from 'vitest';
 import {
-  katalogGruppe, presetGruppe, gesetzGruppe, entscheidGruppe, artikelGruppe, sprungGruppe, bgeSprungGruppe, sucheAlles, type SuchTreffer,
+  katalogGruppe, presetGruppe, gesetzGruppe, sprungGruppe, bgeSprungGruppe, sucheAlles, type SuchGruppe,
 } from '../lib/universalSuche';
 import type { BgeSprung } from '../lib/suche/bgeQuery';
 import type { PresetIndexEintrag } from '../lib/presetIndex';
 import type { BrowseErlass } from '../lib/normtext/browse-typen';
-import type { BrowseEntscheid } from '../lib/rechtsprechung/register';
 import type { NormQueryTreffer } from '../lib/suche/normQuery';
 
 // Der Aggregator ist reine Abbildung über bestehende Such-/Filter-Funktionen
@@ -152,51 +151,43 @@ describe('universalSuche: Treffer-Dedup (IA-1)', () => {
   });
 });
 
-describe('universalSuche: Rechtsprechung-Gruppe', () => {
-  const liste = [
-    { key: 'bge-1', gericht: 'bger', gerichtName: 'Bundesgericht', kanton: 'CH', nummer: '5A_1', bgeReferenz: 'BGE 150 III 1', datum: '2024-01-01', zitierung: 'BGE 150 III 1', leitcharakter: 'leitentscheid', regesteVorhanden: true, regesteKurz: 'Regeste', sachgebiet: 'zpo', sprache: 'de', normKeys: ['ZPO'], bestand: 'snapshot', kuratierung: 'maschinell', datei: 'bund/bger/x.json', quelle: 'ocl', quelleUrl: 'x', fassungsToken: 't' },
-    { key: 'kg-2', gericht: 'kger-gr', gerichtName: 'Kantonsgericht GR', kanton: 'GR', nummer: 'ZR1', bgeReferenz: null, datum: '2023-06-01', zitierung: 'KGer GR ZR1 2023', leitcharakter: 'normal', regesteVorhanden: false, regesteKurz: null, sachgebiet: 'zpo', sprache: 'de', normKeys: [], bestand: 'snapshot', kuratierung: 'maschinell', datei: 'kanton/gr/x.json', quelle: 'ocl', quelleUrl: 'x', fassungsToken: 't' },
-  ] as unknown as BrowseEntscheid[];
+// A1-FUNDAMENT (Entscheid David 7.10.2026, «nur noch nach gesetzen und werkzeugen
+// suchen lassen. separat für entscheide»; Wortsuche «Ja, nur über Server»): der
+// Aggregator kennt WEDER eine Browser-Artikelgruppe NOCH eine Rechtsprechungs-Gruppe
+// mehr. Der Volltext kommt als 'online'-Gruppe vom Server (onlineVolltext.ts, dort
+// getestet) und wird hier an seinen Relevanz-Platz gesetzt; Entscheide haben ihre
+// eigene Suche /rechtsprechung.
+describe('universalSuche: Server-Volltext-Gruppe im Aggregator', () => {
+  const erlasse = [{ key: 'OR', ebene: 'bund', kanton: null, kuerzel: 'OR', titel: 'Frist Obligationenrecht', sr: '220', rechtsgebiet: 'or', sprache: 'de', rang: 1, status: 'snapshot', datei: 'x', artikelAnzahl: 1, stand: '2026', quelleUrl: 'x', fassungsToken: 't' }] as unknown as BrowseErlass[];
+  const presets: PresetIndexEintrag[] = [{ key: 'p', regime: 'allgemein', regimeLabel: 'Allgemein', label: 'Frist', norm: '', query: '?fp=x', hash: '' }];
+  const treffer = [{ id: 'art:OR:127', label: 'Art. 127 OR', href: '/gesetze/bund/OR#art-127' }];
+  const online: SuchGruppe = { id: 'online', titel: 'Volltext-Suche (online)', treffer, gesamt: 1 };
 
-  it('sortiert neueste zuerst und markiert Leitentscheide', () => {
-    const g = entscheidGruppe(liste, 'ZPO');
-    expect(g.treffer[0].id).toBe('bge-1');
-    expect(g.treffer[0].marke?.text).toBe('Leitentscheid');
-    expect(g.treffer[0].href).toBe('/rechtsprechung/bge-1');
+  it('ohne Server-Gruppe: nie artikel, entscheid oder online', () => {
+    const ids = sucheAlles('frist', { presets, gesetze: erlasse, materialien: [] }).map((g) => g.id as string);
+    expect(ids).toContain('gesetz');
+    for (const verboten of ['artikel', 'entscheid', 'online']) expect(ids).not.toContain(verboten);
   });
 
-  it('«alle N →» trägt den Suchbegriff als ?q= mit (S1)', () => {
-    const g = entscheidGruppe(liste, '1', 1); // «1» steht in beiden Zitierungen
-    expect(g.gesamt).toBe(2);
-    expect(g.mehrHref).toBe('/rechtsprechung?q=1');
+  it('Relevanz-Platz: Gesetze → Volltext (Server) → Materialien → Katalog → Preset', () => {
+    const ids = sucheAlles('frist', { presets, gesetze: erlasse, materialien: [], online }).map((g) => g.id);
+    expect(ids.slice(0, 2)).toEqual(['gesetz', 'online']);
+    if (ids.includes('katalog')) expect(ids.indexOf('online')).toBeLessThan(ids.indexOf('katalog'));
+    expect(ids.indexOf('preset')).toBe(ids.length - 1);
   });
-});
 
-describe('universalSuche: Artikel-Volltext-Gruppe', () => {
-  const treffer: SuchTreffer[] = Array.from({ length: 9 }, (_, i) => ({
-    id: `art:ZPO:${i}`, label: `Art. ${i} ZPO`, untertitel: '… Text …',
-    marke: { text: 'Gesetzestext', ton: 'soft' as const }, href: `/gesetze/bund/ZPO#art-${i}`,
-  }));
-  it('null → Platzhalter (lädt), keine Treffer', () => {
-    const g = artikelGruppe(null);
-    expect(g.id).toBe('artikel');
-    expect(g.laedt).toBe(true);
-    expect(g.treffer).toEqual([]);
-  });
-  it('kappt auf KAPPUNG, gesamt zählt alle', () => {
-    const g = artikelGruppe(treffer, 6);
-    expect(g.treffer.length).toBe(6);
-    expect(g.gesamt).toBe(9);
-    expect(g.laedt).toBeUndefined();
-  });
-  it('sucheAlles fügt die Artikel-Gruppe in fester Reihenfolge ein (nach Gesetze, vor Rechtsprechung)', () => {
-    const g = sucheAlles('x', { presets: [], gesetze: [], artikel: treffer, entscheide: [], materialien: [] });
-    const ids = g.map((x) => x.id);
-    expect(ids).toContain('artikel');
-    if (ids.includes('gesetz') && ids.includes('entscheid')) {
-      expect(ids.indexOf('artikel')).toBeGreaterThan(ids.indexOf('gesetz'));
-      expect(ids.indexOf('artikel')).toBeLessThan(ids.indexOf('entscheid'));
+  it('Platzhalter (laedt) und Ausfall (nichtVerfuegbar) bleiben sichtbar, auch ohne Treffer', () => {
+    const laedt: SuchGruppe = { id: 'online', titel: 'Volltext-Suche (online)', treffer: [], gesamt: 0, laedt: true };
+    const aus: SuchGruppe = { id: 'online', titel: 'Volltext-Suche (online)', treffer: [], gesamt: 0, nichtVerfuegbar: true, hinweis: 'x' };
+    for (const g of [laedt, aus]) {
+      const ids = sucheAlles('zzzznogibtsnicht', { presets: [], gesetze: [], materialien: [], online: g }).map((x) => x.id);
+      expect(ids).toEqual(['online']);
     }
+  });
+
+  it('eine leere, nicht als Ausfall markierte Server-Gruppe entfällt (Server fand nichts)', () => {
+    const leer: SuchGruppe = { id: 'online', titel: 'Volltext-Suche (online)', treffer: [], gesamt: 0 };
+    expect(sucheAlles('zzzznogibtsnicht', { presets: [], gesetze: [], materialien: [], online: leer })).toEqual([]);
   });
 });
 
@@ -263,29 +254,24 @@ describe('universalSuche: BGE-Sprung-Gruppe (UI-NAV S2)', () => {
 
 describe('universalSuche: Aggregation', () => {
   it('leere Suche → keine Gruppen', () => {
-    expect(sucheAlles('', { presets: null, gesetze: null, artikel: null, entscheide: null, materialien: null })).toEqual([]);
+    expect(sucheAlles('', { presets: null, gesetze: null, materialien: null })).toEqual([]);
   });
 
   it('lässt geladene leere Gruppen weg, behält ladende als Platzhalter', () => {
-    const g = sucheAlles('zzzznogibtsnicht', { presets: [], gesetze: [], artikel: [], entscheide: null, materialien: [] });
-    // Gesetz/Artikel/Material/Katalog/Preset geladen+leer → raus; Entscheid lädt noch → bleibt.
-    expect(g.map((x) => x.id)).toEqual(['entscheid']);
+    const g = sucheAlles('zzzznogibtsnicht', { presets: [], gesetze: [], materialien: null });
+    // Gesetz/Katalog/Preset geladen+leer → raus; Material lädt noch → bleibt.
+    expect(g.map((x) => x.id)).toEqual(['material']);
     expect(g[0].laedt).toBe(true);
   });
 
-  it('Relevanz-Reihenfolge (A6): Rechtsinhalte vor Werkzeugen — Gesetz → Artikel → Entscheid → Material → Katalog → Preset', () => {
+  it('Relevanz-Reihenfolge (A6): Rechtsinhalte vor Werkzeugen — Gesetz → Material → Katalog → Preset', () => {
     const erlasse = [{ key: 'OR', ebene: 'bund', kanton: null, kuerzel: 'OR', titel: 'Frist Obligationenrecht', sr: '220', rechtsgebiet: 'or', sprache: 'de', rang: 1, status: 'snapshot', datei: 'x', artikelAnzahl: 1, stand: '2026', quelleUrl: 'x', fassungsToken: 't' }] as unknown as BrowseErlass[];
-    const artikel: SuchTreffer[] = [{ id: 'a', label: 'Art. 1 OR', href: '/gesetze/bund/OR#art-1' }];
-    const entscheide = [{ key: 'e', gericht: 'bger', gerichtName: 'BGer', kanton: 'CH', nummer: '1', bgeReferenz: null, datum: '2024-01-01', zitierung: 'Frist BGE', leitcharakter: 'normal', regesteVorhanden: false, regesteKurz: null, sachgebiet: 'x', sprache: 'de', normKeys: [], bestand: 'snapshot', kuratierung: 'maschinell', datei: 'x', quelle: 'ocl', quelleUrl: 'x', fassungsToken: 't' }] as unknown as BrowseEntscheid[];
     const presets: PresetIndexEintrag[] = [{ key: 'p', regime: 'allgemein', regimeLabel: 'Allgemein', label: 'Frist', norm: '', query: '?fp=x', hash: '' }];
-    // «Frist» trifft Gesetz (Titel), Entscheid (Zitierung), Preset (Label) und den
-    // Katalog (mind. eine Karte); Artikel wird direkt übergeben.
-    const g = sucheAlles('frist', { presets, gesetze: erlasse, artikel, entscheide, materialien: [] });
+    // «Frist» trifft Gesetz (Titel), Preset (Label) und den Katalog (mind. eine Karte).
+    const g = sucheAlles('frist', { presets, gesetze: erlasse, materialien: [] });
     const ids = g.map((x) => x.id);
     // Rechtsinhalte kommen vor den Werkzeugen (katalog/preset).
-    expect(ids.indexOf('gesetz')).toBeLessThan(ids.indexOf('artikel'));
-    expect(ids.indexOf('artikel')).toBeLessThan(ids.indexOf('entscheid'));
-    if (ids.includes('katalog')) expect(ids.indexOf('entscheid')).toBeLessThan(ids.indexOf('katalog'));
+    if (ids.includes('katalog')) expect(ids.indexOf('gesetz')).toBeLessThan(ids.indexOf('katalog'));
     expect(ids.indexOf('preset')).toBe(ids.length - 1);
   });
 });

@@ -38,6 +38,13 @@ export const kb = (n: number): string => `${(n / 1024).toFixed(1)} KB`;
 //    (such-index-generieren.ts `EBENEN_DEFAULT`), kantonaler Volltext kommt aus
 //    der Edge-Suche: 9 974.0 → 5 311.0 KB gzip (−46.8 %), neuer Deckel 5 850 KB.
 //
+//    ENTFALLEN 7.10.2026 (A1-FUNDAMENT, Entscheid David «Ja, nur über Server»): die
+//    beiden Absätze zum Artikel-Suchindex (W2·5, K3) beschreiben einen Zustand, den es
+//    nicht mehr gibt — `public/such-index/artikel.json` wird nicht mehr erzeugt und nicht
+//    mehr geladen, der Budget-Eintrag (5 850 KB, Ist 5 357.8 KB gzip = 91.6 %) ist
+//    gestrichen. Die Wortsuche im Gesetzestext läuft über den Server (api/suche). Die
+//    Absätze bleiben als Belege ihrer Messungen stehen (nicht nachgeführt).
+//
 //    W2·6-NKEY (28.7.2026): `norm-index.json` → `norm-index-erlasse.json` — der
 //    normKeys-Backfill trieb den Monolithen auf 724 KB gzip (Erlass-Ebene allein
 //    93 KB), der Nutzerpfad (kontextEntscheide → Verweis-Popover) braucht aber
@@ -75,7 +82,6 @@ export const DATEN_BUDGET: readonly (readonly [string, number])[] = [
   ['public/rechtsprechung/register.json', 900 * 1024],
   ['public/rechtsprechung/richter.json', 24 * 1024],
   ['public/rechtsprechung/norm-index-erlasse.json', 120 * 1024],
-  ['public/such-index/artikel.json', 5_850 * 1024], // K3, 1.9.2026: Ist 5 311 KB gzip (Bund-only)
   ['public/normtext/register.json', 175 * 1024], // QS-PERF 15.9.2026: Ist 163 KB gzip, s. Begründung oben
   // ── W2·7-BEZUG: die drei grössten Bezugs-Shards ───────────────────────────
   // Ein Nutzer lädt genau EINEN Shard (seinen Erlass), nie die Summe — Schranke

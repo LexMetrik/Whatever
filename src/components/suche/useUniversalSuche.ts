@@ -1,12 +1,11 @@
-import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { sucheAlles, sprungGruppe, bgeSprungGruppe, type SuchGruppe } from '../../lib/universalSuche';
-import { holeOnlineTreffer, MIN_ZEICHEN } from '../../lib/suche/onlineVolltext';
+import { holeOnlineTreffer, passeOnlineGruppeAn, MIN_ZEICHEN } from '../../lib/suche/onlineVolltext';
 import { baueNormIndex, parseNormQuery } from '../../lib/suche/normQuery';
-import { baueBgeIndex, parseBgeSprung } from '../../lib/suche/bgeQuery';
+import { baueBgeIndex, parseBgeSprung, parseBgeZitat } from '../../lib/suche/bgeQuery';
 import { meinenSie } from '../../lib/suche/vorschlag';
 import { vokabularBegriffe } from '../../lib/suche/vokabular';
 import { KATALOG_KARTEN } from '../../lib/startseiteConfig';
-import { SUCHE_OHNE_INDEX, type ArtikelSuche } from '../../lib/suche/artikelVolltext';
 import type { PresetIndexEintrag } from '../../lib/presetIndex';
 import type { BrowseErlass } from '../../lib/normtext/browse-typen';
 import type { BrowseEntscheid } from '../../lib/rechtsprechung/register';
@@ -14,105 +13,122 @@ import type { BrowseMaterial } from '../../lib/materialien/typen';
 
 // ─── Gemeinsamer Such-Hook (Header-Dropdown UND Startseiten-Hero, §5) ────────
 //
-// Kapselt das LAZY-Laden der schweren Such-Daten (Preset-Index, Gesetzes-/
-// Entscheid-Manifest) und die Gruppen-Berechnung über den reinen Aggregator
-// lib/universalSuche (§3 — keine Rechtslogik hier). Erst der erste nicht-leere
-// Query stösst die dynamischen Importe an, danach gecacht — der Start-Chunk
-// bleibt schlank (§6.4: nur Ladezeitpunkt, nie Inhalt/Reihenfolge).
+// Kapselt das LAZY-Laden der Such-Daten (Preset-Index, Gesetzes-/Material-Manifest)
+// und die Gruppen-Berechnung über den reinen Aggregator lib/universalSuche (§3 —
+// keine Rechtslogik hier). Erst der erste nicht-leere Query stösst die dynamischen
+// Importe an, danach gecacht — der Start-Chunk bleibt schlank (§6.4: nur
+// Ladezeitpunkt, nie Inhalt/Reihenfolge).
+//
+// ZUSCHNITT (Entscheid David 7.10.2026, A1-FUNDAMENT: «suche zurückfahren. nur noch
+// nach gesetzen und werkzeugen suchen lassen. separat für entscheide»; Wortsuche
+// «nur über Server»): lokal suchen Gesetze (Titel, Kürzel, SR, Norm-Sprung) und
+// Werkzeuge; die Wortsuche im Gesetzestext fragt die Server-Suche (api/suche); der
+// Browser lädt WEDER einen Artikel-Volltextindex NOCH das Entscheid-Register
+// (10 MB roh) für eine gewöhnliche Suche. Entscheide haben ihre eigene Suche
+// (/rechtsprechung). Einzige Ausnahme: ein BGE-ZITAT («BGE 152 I 65») ist eine
+// Navigation, keine Suche — nur dafür lädt der Hook das Register nach.
 //
 // Vormals lag diese Logik allein in der Hero-Komponente (UniversalSuche.tsx);
 // herausgezogen, damit Header und Hero EINEN Suchweg teilen (Auftrag David:
 // «Resultate überall im Dropdown»).
 
-/** §8-Korpus-Offenlegung (UI-NAV S3/E1): was die Suche wirklich abdeckt. Aus den
- *  ohnehin geladenen Manifesten abgeleitet (kein Zweit-Index, K10). */
+/** §8-Korpus-Offenlegung (UI-NAV S3/E1): was die Suche wirklich abdeckt. Aus dem
+ *  ohnehin geladenen Gesetzes-Manifest abgeleitet (kein Zweit-Index, K10). */
 export interface Abdeckung {
-  /** Bund-Erlasse im Volltext-Suchindex. */
+  /** Bund-Erlasse (inkl. International), deren Gesetzestext die Server-Suche
+   *  im Wortlaut durchsucht. */
   volltext: number;
-  /** BGE/Leitentscheide im Bestand. */
-  bge: number;
-  /** Kantonale Erlasse. Seit der K3-Scharfschaltung (1.9.2026) NICHT im
-   *  statischen Volltext-Index: nach Titel überall, im Volltext nur über die
-   *  Online-Suche. Der Feldname bleibt (er benennt die Menge, nicht den Weg);
-   *  was der Nutzer davon hat, sagt die Abdeckungszeile in SuchResultate.tsx. */
+  /** Kantonale Erlasse im Manifest: nach Titel überall, im Wortlaut ebenfalls nur
+   *  über die Server-Suche. Der Feldname bleibt (er benennt die Menge, nicht den Weg). */
   kantonTitel: number;
 }
 
 export interface UniversalSucheErgebnis {
   gruppen: SuchGruppe[];
-  /** true, sobald alle drei Datenquellen geladen sind (für ehrlichen Leerzustand). */
+  /** true, sobald alle Datenquellen geladen UND die Server-Antwort da ist (für
+   *  ehrlichen Leerzustand: «Keine Treffer» erst, wenn auch der Volltext gefragt wurde). */
   allesGeladen: boolean;
   /** «Meinten Sie …?»-Vorschlag bei mutmasslichem Tippfehler (oder null). */
   vorschlag: string | null;
-  /** §8-Korpus-Offenlegung für die Fusszeile (oder null, solange Manifeste laden). */
+  /** §8-Korpus-Offenlegung für die Fusszeile (oder null, solange das Manifest lädt). */
   abdeckung: Abdeckung | null;
 }
 
-/** Optionen für die /suche-Vollseite (S5): grösseres Artikel-Limit + ungekappte
- *  Gruppen. Ohne Optionen bleibt das Dropdown-Verhalten unverändert (Kappung 6,
- *  40 Artikel-Treffer). */
+/** Optionen für die /suche-Vollseite (S5): mehr Volltext-Treffer + ungekappte
+ *  Gruppen. Ohne Optionen bleibt das Dropdown-Verhalten (Kappung 6, 10 Treffer
+ *  vom Server). */
 export interface UniversalSucheOpt {
-  /** Anzahl gesuchter Artikel-Volltext-Treffer (Default 40 = Dropdown). */
-  artikelLimit?: number;
+  /** Anzahl Volltext-Treffer, die vom Server geholt werden (Default 10 = Dropdown;
+   *  der Server klemmt auf höchstens 50). */
+  volltextLimit?: number;
   /** Kappung je Gruppe (Default 6 = Dropdown; die /suche-Seite gibt grosszügig). */
   kappung?: number;
 }
 
 export function useUniversalSuche(q: string, opt: UniversalSucheOpt = {}): UniversalSucheErgebnis {
-  const artikelLimit = opt.artikelLimit ?? 40;
+  const volltextLimit = opt.volltextLimit ?? 10;
   const kappung = opt.kappung ?? 6;
   const [presetSucheFn, setPresetSucheFn] = useState<((s: string, limit?: number) => PresetIndexEintrag[]) | null>(null);
-  const [artikelSuche, setArtikelSuche] = useState<ArtikelSuche | null>(null);
   const [gesetze, setGesetze] = useState<BrowseErlass[] | null>(null);
   const [entscheide, setEntscheide] = useState<BrowseEntscheid[] | null>(null);
   const [materialien, setMaterialien] = useState<BrowseMaterial[] | null>(null);
-  const [onlineGruppe, setOnlineGruppe] = useState<SuchGruppe | null>(null);
+  // Server-Volltext: `fuer` = der Begriff, zu dem `gruppe` gehört (null-Gruppe = der
+  // Server hat geantwortet und nichts gefunden). So lässt sich «Antwort steht noch
+  // aus» (fuer ≠ aktueller Begriff) von «keine Treffer» unterscheiden (§8).
+  const [online, setOnline] = useState<{ fuer: string; gruppe: SuchGruppe | null }>({ fuer: '', gruppe: null });
   const gestartet = useRef(false);
+  const bgeGestartet = useRef(false);
+  const begriff = q.trim();
+  const volltextGefragt = begriff.length >= MIN_ZEICHEN;
 
   useEffect(() => {
     if (q === '' || gestartet.current) return;
     gestartet.current = true;
     import('../../lib/presetIndex').then((m) => setPresetSucheFn(() => m.presetSuche)).catch(() => setPresetSucheFn(() => () => []));
-    // Artikel-Volltext: Lib + Index lazy in EIGENEM Chunk — er lädt erst HIER,
-    // beim ersten Tastendruck in der Suche (q !== ''), nie beim Seitenaufbau.
-    // Grösse gemessen 25.7.2026 (W2·5, Kanton dazu): 48.0 MB roh / 9.9 MB gzip,
-    // vorher (nur Bund) 26.0 MB / 5.4 MB. Der Zuwachs trifft ausschliesslich den
-    // ersten Suchvorgang, nicht den First Paint — darum bleibt er tragbar (§15).
-    //
-    // GESTAFFELT (W2·5): das erste `then` kommt, sobald der BUND durchsuchbar ist;
-    // der Callback feuert, wenn die kantonale Ebene nachgerückt ist. Beide setzen
-    // denselben State — die neue Objekt-Identität lässt die `artikelTreffer`-Memo
-    // unten neu rechnen, die laufende Suche wertet sich also VON SELBST neu aus.
-    // Niemand muss dieselbe Query ein zweites Mal tippen (Auflage David 25.7.2026).
-    // Bei Fehlschlag bleibt die Gruppe leer statt die ganze Suche zu blockieren (§8).
-    import('../../lib/suche/artikelVolltext')
-      .then((m) => m.ladeArtikelSuche((nachgeladen) => setArtikelSuche(nachgeladen)))
-      .then((erste) => setArtikelSuche(erste))
-      // Totaler Fehlschlag: der Ersatz meldet BEIDE Ebenen als «nur online»
-      // (SUCHE_OHNE_INDEX) — sonst fiele die Gesetzestext-Gruppe ohne Treffer
-      // aus der Liste und die Suche verschwiege, dass sie gar nichts geladen hat (§8).
-      .catch(() => setArtikelSuche(SUCHE_OHNE_INDEX));
     import('../../lib/normtext/browse').then((m) => m.ladeBrowseManifest()).then((m) => setGesetze(m?.erlasse ?? [])).catch(() => setGesetze([]));
-    import('../../lib/rechtsprechung/browse').then((m) => m.ladeEntscheidManifest()).then((m) => setEntscheide(m?.entscheide ?? [])).catch(() => setEntscheide([]));
     import('../../lib/materialien/browse').then((m) => m.ladeMaterialManifest()).then((m) => setMaterialien(m?.materialien ?? [])).catch(() => setMaterialien([]));
   }, [q]);
 
-  // Online-Volltextsuche (QS-DATA E2): zusätzliche Edge-Gruppe, die UNTEN
-  // anwächst. Eigener kleiner Debounce ZUSÄTZLICH zum 120-ms-Debounce der
-  // Wrapper (Netz ist teurer als ein lazy Import); erst ab MIN_ZEICHEN. Bei
-  // Degradation (503/Netz/Timeout) liefert holeOnlineTreffer null → Gruppe
-  // verschwindet, der statische Index trägt weiter (§8). Kein Zustand hält
-  // je einen Volltext — die Edge liefert by design nur Snippets (§15.4).
+  // Entscheid-Register (10 MB roh, ~815 KB gzip) NUR für den BGE-Zitat-Sprung: ein
+  // Zitat wie «BGE 152 I 65» ist eine Navigation auf einen einzelnen Entscheid, keine
+  // Entscheid-SUCHE (die liegt auf /rechtsprechung). Jede andere Query lädt es nicht.
+  const bgeZitat = parseBgeZitat(q) !== null;
+  useEffect(() => {
+    if (!bgeZitat || bgeGestartet.current) return;
+    bgeGestartet.current = true;
+    import('../../lib/rechtsprechung/browse').then((m) => m.ladeEntscheidManifest()).then((m) => setEntscheide(m?.entscheide ?? [])).catch(() => setEntscheide([]));
+  }, [bgeZitat]);
+
+  // Volltextsuche über den Server (A1-FUNDAMENT, Entscheid David 7.10.2026:
+  // «nur über Server»): die EINZIGE Wortsuche im Gesetzestext. Eigener kleiner
+  // Debounce ZUSÄTZLICH zum 120-ms-Debounce der Wrapper (Netz ist teurer als ein
+  // lazy Import); erst ab MIN_ZEICHEN. Die lokalen Gruppen warten NICHT darauf —
+  // sie rendern sofort, die Server-Gruppe wächst unten an (CLS-sicher, §15.2).
+  // Ausfall (503/Netz/Timeout) liefert eine Gruppe MIT Hinweis «Volltextsuche
+  // derzeit nicht verfügbar» statt stiller Leere (§8). Kein Zustand hält je einen
+  // Volltext — die Edge liefert by design nur Snippets (§15.4).
   useEffect(() => {
     let abgebrochen = false;
-    const kurz = q.trim().length < MIN_ZEICHEN;
     // Wall-Clock als Eingabe (§2 — Date.now lebt in der Komponentenschicht, nicht in src/lib).
     const id = setTimeout(() => {
-      if (kurz) { if (!abgebrochen) setOnlineGruppe(null); return; }
-      holeOnlineTreffer(q, { jetzt: () => Date.now() }).then((g) => { if (!abgebrochen) setOnlineGruppe(g); });
-    }, kurz ? 0 : 200);
+      if (!volltextGefragt) { if (!abgebrochen) setOnline((alt) => (alt.fuer === '' && alt.gruppe === null ? alt : { fuer: '', gruppe: null })); return; }
+      holeOnlineTreffer(begriff, { jetzt: () => Date.now(), limit: volltextLimit })
+        .then((g) => { if (!abgebrochen) setOnline({ fuer: begriff, gruppe: g }); });
+    }, volltextGefragt ? 200 : 0);
     return () => { abgebrochen = true; clearTimeout(id); };
-  }, [q]);
+  }, [begriff, volltextGefragt, volltextLimit]);
+
+  // Antwort des Servers steht noch aus: Begriff ist lang genug, aber `online`
+  // gehört zu einem anderen Begriff. Dann zeigt die Liste — falls vorhanden — die
+  // bisherige Server-Gruppe weiter (wie vor dem Umbau), sonst einen Platzhalter,
+  // damit «Keine Treffer» nicht behauptet wird, bevor der Server gefragt wurde (§8).
+  const onlineLaedt = volltextGefragt && online.fuer !== begriff;
+  const onlineGruppe: SuchGruppe | null = useMemo(() => {
+    if (!volltextGefragt) return null;
+    if (online.gruppe) return passeOnlineGruppeAn(online.gruppe, kappung, begriff);
+    if (onlineLaedt) return { id: 'online', titel: 'Volltext-Suche (online)', treffer: [], gesamt: 0, laedt: true };
+    return null;
+  }, [volltextGefragt, online, onlineLaedt, kappung, begriff]);
 
   // Norm-Sprung-Parser (A5, W2·5d): baut den Auflösungs-Index EINMAL pro geladenem
   // Gesetzes-Manifest (KEIN Zweit-Index, K10 — der Parser sitzt auf denselben
@@ -123,7 +139,7 @@ export function useUniversalSuche(q: string, opt: UniversalSucheOpt = {}): Unive
   const direkt = useMemo(() => (normIndex ? parseNormQuery(q, normIndex) : null), [normIndex, q]);
 
   // BGE-Zitat-Direktsprung (UI-NAV S2): analoger, deterministischer Parser auf
-  // demselben Entscheid-Manifest (KEIN Zweit-Index, K10 — `bgeReferenz` trägt die
+  // dem Entscheid-Register (KEIN Zweit-Index, K10 — `bgeReferenz` trägt die
   // Bestands-Info). Solange `entscheide` lädt, ist der Index null → der Parser
   // meldet `laedt` statt voreilig «nicht im Bestand» (§8). Norm- und BGE-Sprung
   // sind exklusiv (eine Query ist Norm ODER BGE), darum EIN Sprung-Slot: der
@@ -131,74 +147,38 @@ export function useUniversalSuche(q: string, opt: UniversalSucheOpt = {}): Unive
   const bgeIndex = useMemo(() => (entscheide ? baueBgeIndex(entscheide) : null), [entscheide]);
   const bge = useMemo(() => parseBgeSprung(q, bgeIndex), [q, bgeIndex]);
 
-  // §15.3/A9: die TEURE Artikel-Volltextsuche (~4 MB-Index, 40 Treffer) vom
-  // reaktiven Pfad ENTKOPPELN. Sie lief bislang synchron IN der `gruppen`-Memo
-  // und blockierte damit den GESAMTEN Trefferaufbau — inkl. des billigen,
-  // deterministischen Norm-Sprungs (A5) — bis der 4-MB-Scan durch war. Unter
-  // CPU-Drossel überschritt das das A9-Budget (norm-sprung «Sprung» >12 s). Mit
-  // `useDeferredValue` rechnet React die Artikelgruppe mit NIEDRIGER Priorität
-  // auf einem nachlaufenden Query: der Sprung + die günstigen Gruppen rendern
-  // sofort am Live-Query, die Artikelgruppe holt einen Tick später auf.
-  // `artikelGruppe` nimmt die Treffer nur ENTGEGEN (kein Re-Ranking über q,
-  // universalSuche.ts) → das Entkoppeln ändert nur das WANN, nicht das WAS (§6.4).
-  const qArtikel = useDeferredValue(q);
-  const artikelTreffer = useMemo(
-    () => (artikelSuche ? artikelSuche.suche(qArtikel, artikelLimit) : null),
-    [artikelSuche, qArtikel, artikelLimit],
-  );
-
-  // Die Ebenen-Felder der Artikel-Suche als EIGENE Abhängigkeiten (Lint
-  // react-hooks/exhaustive-deps, REST S5b 25.9.2026). Verhaltensneutral:
-  // `ladeArtikelSuche` baut beide Arrays je Stufe neu, sie wechseln also genau
-  // dann, wenn auch `artikelTreffer` wechselt — Beweis
-  // `src/tests/universal-suche-memo-deps.test.tsx` (eine Neurechnung je Stufe).
-  const artikelFehlendeEbenen = artikelSuche?.fehlendeEbenen;
-  const artikelNurOnlineEbenen = artikelSuche?.nurOnlineEbenen;
   const gruppen = useMemo(
-    // Presets ungekappt holen (limit 999) — `gesamt` soll die ECHTE Trefferzahl
-    // sein, nicht das Default-Suchlimit (§8). Die Anzeige kappt in der Gruppe.
-    // Reihenfolge (A6): Norm-Sprung (A5) ZUOBERST → statische Relevanz-Gruppen →
-    // Online-Edge-Gruppe (E2) UNTEN. Die Online-Gruppe hängt IMMER hinter den
-    // statischen Gruppen (§11.3 b: Edge als Ergänzung, statischer Index bleibt
-    // Fallback/oben) — CLS-sicher, weil sie nur unten anwächst und nichts darüber
-    // verschiebt (§15.2). Der Sprung oben ist ein einzelner deterministischer
-    // Treffer, der ebenfalls nichts verdrängt (er ersetzt keine Freitext-Gruppe).
+    // Reihenfolge (A6): Norm-Sprung (A5) ZUOBERST → Gesetze → Server-Volltext →
+    // Materialien → Werkzeuge (Aggregator `sucheAlles`). Der Volltext behält den Platz
+    // der früheren Artikel-Gruppe; CLS-sicher, weil dort von der ersten Berechnung an
+    // ein Platzhalter steht (`onlineGruppe` mit `laedt`), den die Serverantwort nur
+    // füllt (§15.2). Der Sprung oben ist ein einzelner deterministischer Treffer, der
+    // nichts verdrängt (er ersetzt keine Freitext-Gruppe).
     () => {
-      const statisch = sucheAlles(q, {
+      const lokal = sucheAlles(q, {
         presets: presetSucheFn ? presetSucheFn(q, 999) : null,
         gesetze,
-        artikel: artikelTreffer,
-        artikelFehlendeEbenen,
-        artikelNurOnlineEbenen,
-        entscheide,
         materialien,
+        online: onlineGruppe,
       }, kappung);
       const sprung = sprungGruppe(direkt) ?? bgeSprungGruppe(bge);
-      return [
-        ...(sprung ? [sprung] : []),
-        ...statisch,
-        ...(onlineGruppe ? [onlineGruppe] : []),
-      ];
+      return [...(sprung ? [sprung] : []), ...lokal];
     },
-    [q, direkt, bge, presetSucheFn, artikelTreffer, artikelFehlendeEbenen, artikelNurOnlineEbenen, gesetze, entscheide, materialien, onlineGruppe, kappung],
+    [q, direkt, bge, presetSucheFn, gesetze, materialien, onlineGruppe, kappung],
   );
-  const allesGeladen = presetSucheFn !== null && artikelSuche !== null && gesetze !== null && entscheide !== null && materialien !== null;
+  const allesGeladen = presetSucheFn !== null && gesetze !== null && materialien !== null && !onlineLaedt;
 
-  // §8-Korpus-Offenlegung (S3/E1): rein aus den geladenen Manifesten (K10). Der
-  // STATISCHE Volltext-Suchindex ist seit der K3-Scharfschaltung (1.9.2026) wieder
-  // Bund-only; kantonaler Volltext kommt ausschliesslich aus der Online-Suche
-  // (api/suche, Edge) — genau so wird es in der Abdeckungszeile gesagt, samt der
-  // Folge, dass er ohne Verbindung fehlt. (Zwischen W2·5 und K3 trug der statische
-  // Index den Kanton mit; der Satz «nur nach Titel» stand in dieser Zeit zu
-  // pessimistisch da — Befund bei der Scharfschaltung, hier mitkorrigiert.)
+  // §8-Korpus-Offenlegung (S3/E1): rein aus dem geladenen Gesetzes-Manifest (K10).
+  // Gesetzestext im Wortlaut durchsucht ausschliesslich die Server-Suche (api/suche,
+  // Bund UND Kantone) — genau so wird es in der Abdeckungszeile gesagt, samt der
+  // Folge, dass es ohne Verbindung fehlt.
   const abdeckung = useMemo<Abdeckung | null>(() => {
-    if (!gesetze || !entscheide) return null;
+    if (!gesetze) return null;
     return {
       volltext: gesetze.filter((e) => e.ebene === 'bund' && e.status === 'snapshot').length,
-      bge: entscheide.filter((e) => e.bgeReferenz).length,
       kantonTitel: gesetze.filter((e) => e.ebene === 'kanton').length,
     };
-  }, [gesetze, entscheide]);
+  }, [gesetze]);
 
   // «Meinten Sie …?» (S3): deterministischer Tippfehler-Vorschlag (§2, kein LLM)
   // gegen Katalog-Titel + Erlass-Kürzel + Such-Vokabular. Kandidaten in

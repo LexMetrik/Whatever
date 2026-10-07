@@ -1,5 +1,6 @@
 // @shard-gruppe: nacht
 import { test, expect } from '@playwright/test';
+import { mockApiSuche } from './helpers/mockApiSuche'
 
 // ─── Klebende Seitenleisten: Abstand unter der Arbeitsleiste (W2·31 Bündel I) ─
 //
@@ -54,6 +55,11 @@ for (const skala of [1, 1.4]) {
           try { window.localStorage.setItem(key, String(wert)); } catch { /* Speicher gesperrt: Standardskala */ }
         }, [SKALA_KEY, skala] as const);
         await page.setViewportSize({ width: breite, height: 900 });
+        // DEKLARIERTE TEST-INFRASTRUKTUR (A1-FUNDAMENT 7.10.2026, §6.3): /suche ist nur dann
+        // lang genug zum Kleben (scrollTo 1500), wenn die Server-Volltextgruppe ihre Zeilen
+        // liefert. Der Browser-Index, der sie früher lokal stellte, ist entfallen; die
+        // Serverantwort stellt der Mock nach. Prüfschritte und Grenzwerte unverändert.
+        if (leiste.route.startsWith('/suche')) await mockApiSuche(page);
         await page.goto(leiste.route);
         const ziel = page.locator(leiste.selector).first();
         await expect(ziel).toBeVisible();

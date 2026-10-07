@@ -1,5 +1,15 @@
 # Suchgüte-Eval — Baseline 16.7.2026
 
+> **Nachtrag 7.10.2026 (A1-FUNDAMENT):** Das Werkzeug (`scripts/suche-eval.ts`,
+> `npm run eval:suche`, Gold-Set `scripts/suche-eval-gold.json`) ist **entfallen** —
+> es mass die Browser-Suche (FlexSearch-Recall + `artikelRanking`), und die gibt es
+> nicht mehr: die Wortsuche im Gesetzestext läuft nur noch über den Server
+> (`api/suche`, Entscheid David «Ja, nur über Server»). Die Messwerte unten sind
+> die Baseline des damaligen Browser-Index und bleiben als Beleg stehen; die Gold-Paare
+> sind im Versionsverlauf (vor dem Commit «Browser-Suchindex entfaellt») nachlesbar. Eine
+> Güte-Messung des Server-Weges wäre ein eigener Schritt (Prod-Smoke `pruefeApiSuche`
+> prüft heute nur Erreichbarkeit und Form).
+
 **Werkzeug:** `scripts/suche-eval.ts` · `npm run eval:suche` · Gold-Set
 `scripts/suche-eval-gold.json` (69 Paare, zweifach verifiziert).
 **Charakter:** advisory — **kein Gate, kein CI-Einbau**, read-only Mess-Werkzeug.

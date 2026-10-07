@@ -49,6 +49,8 @@ e2e-shots/
 
 # Recherche-/MCP-Artefakte (nicht versionieren)
 .playwright-mcp/
+# public/such-index/ entfiel 7.10.2026 (A1-FUNDAMENT: Volltext nur noch über den Server); die Zeile
+# schützt nur alte lokale Reste (26 MB) vor einem versehentlichen Commit.
 public/such-index/
 
 # Gegenprüfungs-Gate (QS-GP): Vor-Commit-Türsteher, an den lokalen Diff gebunden

@@ -3,15 +3,19 @@ import {
   holeOnlineTreffer,
   formatiereIndexStand,
   artikelTrefferHref,
-  entscheidTrefferHref,
+  passeOnlineGruppeAn,
   zuruecksetzenOnlineSperre,
+  HINWEIS_NICHT_VERFUEGBAR,
   MIN_ZEICHEN,
   SPERRE_MS,
 } from '../lib/suche/onlineVolltext';
+import type { SuchGruppe } from '../lib/universalSuche';
 
-// QS-DATA E2 (W2·6-DATA): die Online-Volltextsuche als zusätzliche Treffergruppe.
+// QS-DATA E2 (W2·6-DATA): die Online-Volltextsuche als Treffergruppe; seit
+// A1-FUNDAMENT (7.10.2026) der EINZIGE Weg zur Wortsuche im Gesetzestext.
 // Kern dieser Tests ist die reine Fetch-/Degradations-Logik (holeOnlineTreffer):
-// 200 → Gruppe, 503/Netz/Timeout → GAR keine Gruppe (null), <3 Zeichen → kein Fetch,
+// 200 → Gruppe, 503/502/Netz/Timeout/unlesbar → Gruppe MIT Hinweis «derzeit nicht
+// verfügbar» (§8, früher: still keine Gruppe), <3 Zeichen → kein Fetch,
 // Feature-Detection-Cache (nach Ausfall ~5 min nicht erneut hämmern, dann wieder).
 
 const BASIS = '/';
@@ -35,18 +39,6 @@ const ARTIKEL_ANTWORT = {
       },
     ],
     gesamt: 3,
-    naechsteSeite: null,
-  },
-  entscheide: {
-    treffer: [
-      {
-        id: 'bge-150-III-1',
-        titel: 'BGE 150 III 1',
-        snippet: '… [Verjährung] …',
-        fundstelle: { quelleUrl: 'https://www.bger.ch/...' },
-      },
-    ],
-    gesamt: 1,
     naechsteSeite: null,
   },
 };
@@ -96,11 +88,6 @@ describe('onlineVolltext: URL-Bildung (aus bestehenden Helfern abgeleitet)', () 
     expect(artikelTrefferHref({ erlass: 'ArGV_1', artikel: '13', quelleUrl: 'x' })).toBe('/gesetze/bund/ArGV_1#art-13');
   });
 
-  it('Entscheid → Entscheid-Route über die kanonische id (kodiert)', () => {
-    expect(entscheidTrefferHref('bge-150-III-1')).toBe('/rechtsprechung/bge-150-III-1');
-    expect(entscheidTrefferHref('BGer 4A_1/2020')).toBe('/rechtsprechung/BGer%204A_1%2F2020');
-  });
-
   // ── W2·13-KANTONE K-3 (F35/F36): Kanton-Treffer auf die Kanton-Ebene ──────
   //
   // Vor dem Fix baute der Href über `erlassPfadVonKey(key)` OHNE Ebene — und
@@ -142,25 +129,51 @@ describe('onlineVolltext: URL-Bildung (aus bestehenden Helfern abgeleitet)', () 
 });
 
 describe('onlineVolltext: 200-Fall', () => {
-  it('baut die §8-markierte Gruppe mit Artikel- + Entscheid-Treffern', async () => {
+  it('baut die §8-markierte Gruppe mit Artikel-Treffern und fragt NUR Artikel ab (typ=artikel)', async () => {
     let gerufeneUrl = '';
     const mock = vi.fn(async (url: string) => { gerufeneUrl = url; return jsonRes(ARTIKEL_ANTWORT); });
     const g = await holeOnlineTreffer('verjaehrung', { fetchImpl: mock as unknown as typeof fetch, basisUrl: BASIS });
     expect(mock).toHaveBeenCalledOnce();
-    expect(gerufeneUrl).toBe('/api/suche?q=verjaehrung&limit=10');
+    // Entscheide sucht diese Gruppe nicht mehr (Entscheid David 7.10.2026): kein
+    // Netz-Aufwand und keine Treffer dafür — `typ=artikel` hält sie serverseitig fern.
+    expect(gerufeneUrl).toBe('/api/suche?q=verjaehrung&typ=artikel&limit=10');
     expect(g).not.toBeNull();
     expect(g!.id).toBe('online');
+    expect(g!.nichtVerfuegbar).toBeUndefined();
     expect(g!.hinweis).toMatch(/verlassen dafür den Browser/);
-    // Artikel zuerst, dann Entscheide; gesamt = Summe der Edge-Zählungen.
-    expect(g!.treffer.map((t) => t.href)).toEqual(['/gesetze/bund/OR#art-330_a', '/rechtsprechung/bge-150-III-1']);
-    expect(g!.gesamt).toBe(4);
+    expect(g!.hinweis).not.toMatch(/Leitentscheid/);
+    expect(g!.treffer.map((t) => t.href)).toEqual(['/gesetze/bund/OR#art-330_a']);
+    expect(g!.gesamt).toBe(3); // Zählung des Servers, nicht die Länge der Seite
     // Kein Volltext im Treffer — nur Snippet als Untertitel (§15).
     expect(g!.treffer[0].untertitel).toContain('Zeugnis');
-    // Cowork-Befund 30 (18.8.2026): die FTS5-Snippet-Klammern (`[Verjährung]`)
-    // um den Treffer-Term sind entfernt — der Client hebt selbst mit <mark>
-    // hervor (SuchResultate.markiere); die Klammern wären doppelte Auszeichnung.
-    expect(g!.treffer[1].untertitel).toBe('… Verjährung …');
-    expect(g!.treffer[1].untertitel).not.toMatch(/[[\]]/);
+  });
+
+  it('eine Antwort mit Entscheiden (Alt-Antwort/Cache) erzeugt KEINE Entscheid-Treffer', async () => {
+    const mitEntscheid = jsonRes({
+      ...ARTIKEL_ANTWORT,
+      entscheide: { treffer: [{ id: 'bge-150-III-1', titel: 'BGE 150 III 1', snippet: '…', fundstelle: { quelleUrl: 'x' } }], gesamt: 1, naechsteSeite: null },
+    });
+    const g = await holeOnlineTreffer('verjaehrung', { fetchImpl: vi.fn(async () => mitEntscheid), basisUrl: BASIS });
+    expect(g!.treffer.every((t) => t.href.startsWith('/gesetze/'))).toBe(true);
+    expect(g!.gesamt).toBe(3);
+  });
+
+  it('Snippet-Klammern des Servers (FTS5-Hervorhebung `[Wort]`) werden entfernt', async () => {
+    // Cowork-Befund 30 (18.8.2026): der Client hebt selbst mit <mark> hervor
+    // (SuchResultate.markiere); die Klammern wären doppelte Auszeichnung.
+    const antwort = jsonRes({
+      artikel: { treffer: [{ id: 'a', titel: 'Art. 127 OR', snippet: '… [Verjährung] [10] Jahre …', fundstelle: { erlass: 'OR', artikel: '127', quelleUrl: 'x' } }], gesamt: 1, naechsteSeite: null },
+    });
+    const g = await holeOnlineTreffer('verjaehrung', { fetchImpl: vi.fn(async () => antwort), basisUrl: BASIS });
+    expect(g!.treffer[0].untertitel).toBe('… Verjährung 10 Jahre …');
+    expect(g!.treffer[0].untertitel).not.toMatch(/[[\]]/);
+  });
+
+  it('`limit` der Fläche geht an den Server (/suche holt mehr als das Dropdown)', async () => {
+    let gerufeneUrl = '';
+    const mock = vi.fn(async (url: string) => { gerufeneUrl = url; return jsonRes(ARTIKEL_ANTWORT); });
+    await holeOnlineTreffer('miete', { fetchImpl: mock as unknown as typeof fetch, basisUrl: BASIS, limit: 50 });
+    expect(gerufeneUrl).toBe('/api/suche?q=miete&typ=artikel&limit=50');
   });
 
   it('Kanton-Treffer trägt Ebene-Route, Kürzel-Marke und Label-Suffix (F35/F36)', async () => {
@@ -190,44 +203,63 @@ describe('onlineVolltext: 200-Fall', () => {
     expect(g!.hinweis).toMatch(/verlassen dafür den Browser/);
   });
 
-  it('200 mit leerer Antwort → GAR keine Gruppe (null)', async () => {
+  it('200 mit leerer Antwort → echte Antwort «nichts gefunden» (null), KEIN Ausfall', async () => {
     const fetchImpl = vi.fn(async () => jsonRes({ artikel: { treffer: [], gesamt: 0, naechsteSeite: null } }));
     const g = await holeOnlineTreffer('xyznichttreffer', { fetchImpl, basisUrl: BASIS });
     expect(g).toBeNull();
   });
 });
 
-describe('onlineVolltext: ehrliches Degradieren', () => {
-  it('503 (Turso nicht aktiviert) → null, danach ~5 min NICHT erneut fetchen', async () => {
+describe('onlineVolltext: ehrliches Degradieren (§8)', () => {
+  // Früher: Ausfall ⇒ null ⇒ die Gruppe fehlte still, die Seite wirkte, als gäbe es
+  // keine Treffer. Seit A1-FUNDAMENT ist die Server-Suche der einzige Volltext-Weg,
+  // also sagt die Gruppe den Ausfall ausdrücklich — und führt keinen Zähler.
+  const istAusfall = (g: SuchGruppe | null) => {
+    expect(g).not.toBeNull();
+    expect(g!.id).toBe('online');
+    expect(g!.nichtVerfuegbar).toBe(true);
+    expect(g!.treffer).toEqual([]);
+    expect(g!.hinweis).toBe(HINWEIS_NICHT_VERFUEGBAR);
+    expect(g!.hinweis).toMatch(/Volltextsuche derzeit nicht verfügbar/);
+  };
+
+  it('503 (Turso nicht aktiviert) → Ausfall-Gruppe, danach ~5 min NICHT erneut fetchen', async () => {
     const fetchImpl = vi.fn(async () => jsonRes({ fehler: 'nicht aktiviert' }, false, 503));
     const jetzt = () => 1_000;
     const g1 = await holeOnlineTreffer('verjaehrung', { fetchImpl, basisUrl: BASIS, jetzt });
-    expect(g1).toBeNull();
+    istAusfall(g1);
     expect(fetchImpl).toHaveBeenCalledOnce();
 
-    // Neue Query innerhalb des Sperr-Fensters: KEIN weiterer Fetch.
+    // Neue Query innerhalb des Sperr-Fensters: KEIN weiterer Fetch — aber der Ausfall
+    // bleibt sichtbar (nicht plötzlich «keine Treffer»).
     const g2 = await holeOnlineTreffer('kuendigung', { fetchImpl, basisUrl: BASIS, jetzt: () => 1_000 + SPERRE_MS - 1 });
-    expect(g2).toBeNull();
+    istAusfall(g2);
     expect(fetchImpl).toHaveBeenCalledOnce();
 
     // Nach Ablauf des Fensters (>5 min): wieder probieren.
     const fetchOk = vi.fn(async () => jsonRes(ARTIKEL_ANTWORT));
     const g3 = await holeOnlineTreffer('verjaehrung', { fetchImpl: fetchOk, basisUrl: BASIS, jetzt: () => 1_000 + SPERRE_MS + 1 });
     expect(fetchOk).toHaveBeenCalledOnce();
-    expect(g3).not.toBeNull();
+    expect(g3!.nichtVerfuegbar).toBeUndefined();
+    expect(g3!.treffer.length).toBeGreaterThan(0);
   });
 
-  it('Netzwerkfehler → null + Sperre gesetzt', async () => {
+  it('502 (Abfrage fehlgeschlagen) → Ausfall-Gruppe', async () => {
+    const fetchImpl = vi.fn(async () => jsonRes({ fehler: 'Suche vorübergehend nicht verfügbar' }, false, 502));
+    istAusfall(await holeOnlineTreffer('verjaehrung', { fetchImpl, basisUrl: BASIS, jetzt: () => 2_000 }));
+  });
+
+  it('Netzwerkfehler (offline) → Ausfall-Gruppe + Sperre gesetzt', async () => {
     const fetchImpl = vi.fn(async () => { throw new Error('network down'); });
     const g = await holeOnlineTreffer('verjaehrung', { fetchImpl, basisUrl: BASIS, jetzt: () => 5_000 });
-    expect(g).toBeNull();
-    // Sperre aktiv → nächster Aufruf im Fenster fetcht nicht.
+    istAusfall(g);
+    // Sperre aktiv → nächster Aufruf im Fenster fetcht nicht, meldet aber weiter den Ausfall.
     const g2 = await holeOnlineTreffer('mietrecht', { fetchImpl, basisUrl: BASIS, jetzt: () => 5_100 });
-    expect(g2).toBeNull();
+    istAusfall(g2);
     expect(fetchImpl).toHaveBeenCalledOnce();
   });
 
-  it('Timeout → AbortController bricht ab → null', async () => {
+  it('Timeout → AbortController bricht ab → Ausfall-Gruppe', async () => {
     // fetch, das den Abort-Signal respektiert (rejectet, wenn abgebrochen).
     const fetchImpl = vi.fn((_url: string, init?: { signal?: AbortSignal }) =>
       new Promise<Response>((_res, rej) => {
@@ -235,7 +267,63 @@ describe('onlineVolltext: ehrliches Degradieren', () => {
       }),
     ) as unknown as typeof fetch;
     const g = await holeOnlineTreffer('verjaehrung', { fetchImpl, basisUrl: BASIS, timeoutMs: 10, jetzt: () => 9_000 });
-    expect(g).toBeNull();
+    istAusfall(g);
+  });
+
+  it('200 mit HTML statt JSON (SPA-Rückfall eines Hosts ohne Funktion) → Ausfall, nie «0 Treffer»', async () => {
+    const html = { ok: true, status: 200, json: async () => { throw new SyntaxError('Unexpected token <'); } } as unknown as Response;
+    istAusfall(await holeOnlineTreffer('verjaehrung', { fetchImpl: vi.fn(async () => html), basisUrl: BASIS, jetzt: () => 7_000 }));
+  });
+
+  it('200 ohne `artikel` (keine Suchantwort) → Ausfall', async () => {
+    const fremd = jsonRes({ irgendwas: true });
+    istAusfall(await holeOnlineTreffer('verjaehrung', { fetchImpl: vi.fn(async () => fremd), basisUrl: BASIS, jetzt: () => 8_000 }));
+  });
+
+  it('Ausfall-Gruppe trägt keinen Zähler und keine Treffer (Zähler «0» wäre falsch)', async () => {
+    const g = await holeOnlineTreffer('verjaehrung', { fetchImpl: vi.fn(async () => jsonRes({}, false, 503)), basisUrl: BASIS, jetzt: () => 1 });
+    expect(g!.gesamt).toBe(0);
+    expect(g!.nichtVerfuegbar).toBe(true);
+    expect(g!.laedt).toBeUndefined();
+  });
+});
+
+describe('onlineVolltext: Anpassung an die Fläche (passeOnlineGruppeAn)', () => {
+  const treffer = (n: number) => Array.from({ length: n }, (_, i) => ({
+    id: `art:OR:${i}`, label: `Art. ${i} OR`, href: `/gesetze/bund/OR#art-${i}`,
+  }));
+  const gruppe = (anzahl: number, gesamt: number): SuchGruppe => ({
+    id: 'online', titel: 'Volltext-Suche (online)', treffer: treffer(anzahl), gesamt, hinweis: 'H',
+  });
+
+  it('Dropdown: 10 geholt, 6 gezeigt, Server kennt 223 → gekürzt + «alle N» nach /suche?q=', () => {
+    const g = passeOnlineGruppeAn(gruppe(10, 223), 6, ' Miete ');
+    expect(g.treffer).toHaveLength(6);
+    expect(g.gesamt).toBe(223);
+    expect(g.mehrHref).toBe('/suche?q=Miete');
+  });
+
+  it('Dropdown: alles passt in die Kappung → unverändert, kein «alle N»', () => {
+    const g = gruppe(4, 4);
+    expect(passeOnlineGruppeAn(g, 6, 'miete')).toBe(g);
+  });
+
+  it('Dropdown: 8 Treffer, Kappung 6 → «alle 8» (gesamt > gezeigt), Zähler bleibt 8', () => {
+    const g = passeOnlineGruppeAn(gruppe(8, 8), 6, 'miete');
+    expect(g.treffer).toHaveLength(6);
+    expect(g.mehrHref).toBe('/suche?q=miete');
+  });
+
+  it('/suche: alle geholten gezeigt, Server kennt mehr → ehrlicher Hinweis «die ersten n von N», KEIN Link auf sich selbst', () => {
+    const g = passeOnlineGruppeAn(gruppe(50, 223), 500, 'miete');
+    expect(g.treffer).toHaveLength(50);
+    expect(g.mehrHref).toBeUndefined();
+    expect(g.hinweis).toContain('Angezeigt: die ersten 50 von 223 Treffern');
+  });
+
+  it('Ausfall-Gruppe bleibt unverändert', () => {
+    const aus: SuchGruppe = { id: 'online', titel: 't', treffer: [], gesamt: 0, nichtVerfuegbar: true, hinweis: HINWEIS_NICHT_VERFUEGBAR };
+    expect(passeOnlineGruppeAn(aus, 6, 'x')).toBe(aus);
   });
 });
 
