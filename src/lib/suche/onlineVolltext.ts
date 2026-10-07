@@ -50,6 +50,10 @@ interface ApiAntwort<T> {
 interface SucheApiAntwort {
   artikel?: ApiAntwort<ApiArtikelTreffer>;
   entscheide?: ApiAntwort<ApiEntscheidTreffer>;
+  /** ISO-Zeitstempel des letzten erfolgreichen Sync-Laufs der Server-Replika
+   *  (`sync_meta.stand`, E0-BRANDSCHUTZ). OPTIONAL: fehlt die Marke (oder eine
+   *  gecachte Alt-Antwort), fehlt das Feld — dann KEINE Anzeige, nie ein Raten (§8). */
+  stand?: string;
 }
 
 /** Untergrenze: erst ab 3 Zeichen fetchen (§15.3 — kein Netz je Tastendruck). */
@@ -176,11 +180,31 @@ const HINWEIS =
   'Online-Volltextsuche über Erlasse von Bund und Kantonen + Leitentscheide — läuft nur online, ' +
   'Suchbegriffe verlassen dafür den Browser.';
 
-/** Baut die fertige §8-markierte Online-Gruppe (oder null, wenn leer). */
+const DATUM_CH = new Intl.DateTimeFormat('de-CH', {
+  timeZone: 'Europe/Zurich',
+  day: '2-digit',
+  month: '2-digit',
+  year: 'numeric',
+});
+
+/** ISO-Zeitstempel → «TT.MM.JJJJ» (Kalendertag in Zürich) oder null, wenn kein lesbares
+ *  Datum vorliegt. Reine Darstellung (§3); die Zeitzone ist FEST, damit dieselbe
+ *  Antwort überall dasselbe Datum zeigt (§2-Geist). */
+export function formatiereIndexStand(iso: string | undefined): string | null {
+  if (!iso) return null;
+  const ms = Date.parse(iso);
+  return Number.isNaN(ms) ? null : DATUM_CH.format(new Date(ms));
+}
+
+/** Baut die fertige §8-markierte Online-Gruppe (oder null, wenn leer). Der Hinweis
+ *  nennt zusätzlich, wie frisch die Server-Replika ist («Suchindex Stand TT.MM.JJJJ»)
+ *  — nur wenn der Server einen lesbaren Stand mitgeliefert hat (§8). */
 function baueGruppe(antwort: SucheApiAntwort): SuchGruppe | null {
   const { treffer, gesamt } = baueTreffer(antwort);
   if (treffer.length === 0) return null;
-  return { id: 'online', titel: 'Volltext-Suche (online)', hinweis: HINWEIS, treffer, gesamt };
+  const stand = formatiereIndexStand(antwort.stand);
+  const hinweis = stand ? `${HINWEIS} Suchindex Stand ${stand}.` : HINWEIS;
+  return { id: 'online', titel: 'Volltext-Suche (online)', hinweis, treffer, gesamt };
 }
 
 /**
