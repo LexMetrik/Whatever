@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import {
   holeOnlineTreffer,
+  formatiereIndexStand,
   artikelTrefferHref,
   entscheidTrefferHref,
   zuruecksetzenOnlineSperre,
@@ -252,5 +253,40 @@ describe('onlineVolltext: <3-Zeichen-Fall', () => {
     const g = await holeOnlineTreffer('  a  ', { fetchImpl, basisUrl: BASIS });
     expect(g).toBeNull();
     expect(fetchImpl).not.toHaveBeenCalled();
+  });
+});
+
+// E0-BRANDSCHUTZ (§8): wie frisch ist die Server-Suche? Die Edge liefert `stand`
+// (ISO, letzter erfolgreicher Sync); der Hinweis der Online-Gruppe zeigt ihn als
+// «Suchindex Stand TT.MM.JJJJ». Fehlt/ungültig → keine Anzeige, nie ein erfundenes Datum.
+describe('onlineVolltext: Suchindex-Stand (§8)', () => {
+  const mitStand = (stand?: string) => jsonRes({ ...ARTIKEL_ANTWORT, ...(stand === undefined ? {} : { stand }) });
+  const hole = (res: Response) =>
+    holeOnlineTreffer('verjaehrung', { fetchImpl: (async () => res) as unknown as typeof fetch, basisUrl: BASIS });
+
+  it('formatiert den Kalendertag in Zürich als TT.MM.JJJJ (Tag ≠ Monatserster)', async () => {
+    expect(formatiereIndexStand('2026-10-05T04:17:09.123Z')).toBe('05.10.2026');
+    const g = await hole(mitStand('2026-10-05T04:17:09.123Z'));
+    expect(g!.hinweis).toContain('Suchindex Stand 05.10.2026.');
+    expect(g!.hinweis).toMatch(/verlassen dafür den Browser/); // bisheriger Hinweis bleibt vollständig
+  });
+
+  it('Mitternachts-Rand: 23:30 UTC ist in Zürich schon der Folgetag (Sommer- und Winterzeit)', () => {
+    expect(formatiereIndexStand('2026-10-05T23:30:00Z')).toBe('06.10.2026'); // MESZ, +2
+    expect(formatiereIndexStand('2026-12-31T23:30:00Z')).toBe('01.01.2027'); // MEZ, +1, Jahreswechsel
+    expect(formatiereIndexStand('2026-10-05T21:59:59Z')).toBe('05.10.2026'); // 23:59:59 MESZ
+  });
+
+  it('kein Stand in der Antwort → Hinweis ohne Datumszeile (nichts erfunden)', async () => {
+    const g = await hole(mitStand());
+    expect(g!.hinweis).not.toMatch(/Suchindex Stand/);
+  });
+
+  it('unlesbarer Stand → keine Anzeige', async () => {
+    expect(formatiereIndexStand('gestern')).toBeNull();
+    expect(formatiereIndexStand('')).toBeNull();
+    expect(formatiereIndexStand(undefined)).toBeNull();
+    const g = await hole(mitStand('gestern Abend'));
+    expect(g!.hinweis).not.toMatch(/Suchindex Stand/);
   });
 });

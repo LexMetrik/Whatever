@@ -1,0 +1,8 @@
+{
+  "name": "lexmetrik-vercel-cli",
+  "private": true,
+  "description": "Feste Vercel-CLI-Version für den Prod-Deploy-Job in .github/workflows/ci.yml. Eigenes Manifest, damit die ~500 transitiven Pakete der CLI nicht in jeden npm-ci-Lauf der übrigen Jobs wandern; Dependabot pflegt es (.github/dependabot.yml).",
+  "devDependencies": {
+    "vercel": "62.4.0"
+  }
+}
