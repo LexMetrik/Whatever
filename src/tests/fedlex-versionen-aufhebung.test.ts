@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest';
-import { bewerte, parseKonsolidierungen } from '../../scripts/fedlex-versionen-pruefen';
+import { describe, it, expect, vi } from 'vitest';
+import { bewerte, parseKonsolidierungen, ausserKraftSignal, fuehreAus } from '../../scripts/fedlex-versionen-pruefen';
 import type { Pin } from '../../scripts/fedlex-pins';
 import { ANERKANNTE_AUFHEBUNGEN } from '../lib/normtext/aufhebungen';
 
@@ -147,5 +147,95 @@ describe('parseKonsolidierungen — noLonger-Extraktion aus SPARQL-Bindings', ()
       bind('cc/2000/3', '2020-01-01', '2024-01-01'),
     ]);
     expect(m.get('cc/2000/3')!.noLonger).toBe('2024-01-01');
+  });
+});
+
+// ─── B1 (Gegenprüfung Opus 7.10.2026): Ausser-Kraft ohne dateNoLongerInForce ─────
+// Fedlex setzt bei ausser Kraft getretenen Erlassen oft nur inForceStatus …/3 + dateEndApplicability
+// (live 7.10.2026: SR 172.220.111.323.2 → cc/2023/787, endApp 2025-12-31; SR 0.142.114.239 →
+// cc/2016/678, endApp 2021-10-06). Der Wächter sah nur dateNoLongerInForce und blieb grün.
+describe('bewerte — inForceStatus / dateEndApplicability (B1)', () => {
+  it('inForceStatus 3 ohne noLonger ⇒ AUFGEHOBEN (ROT), Grund im Klartext', () => {
+    const v = bewerte(pin(), ['2024-01-01'], null, HEUTE, { status: ['3'], endApp: null });
+    expect(v.art).toBe('AUFGEHOBEN');
+    expect(v.text).toContain('nicht mehr in Kraft');
+    expect(v.text).toContain('enforcement-status/3');
+  });
+
+  it('nur dateEndApplicability < heute (Status fehlt) ⇒ AUFGEHOBEN, Datum in der Meldung', () => {
+    const v = bewerte(pin(), ['2024-01-01'], null, HEUTE, { status: [], endApp: '2025-12-31' });
+    expect(v.art).toBe('AUFGEHOBEN');
+    expect(v.text).toContain('2025-12-31');
+  });
+
+  it('Grenze: dateEndApplicability == heute zählt noch als in Kraft (Endtag inklusive) ⇒ OK', () => {
+    const v = bewerte(pin({ kons: '2024-01-01' }), ['2024-01-01'], null, HEUTE, { status: ['0'], endApp: HEUTE });
+    expect(v.art).toBe('OK');
+  });
+
+  it('Status 0 «In Kraft» ⇒ kein Signal; Status 0 und 3 gemischt ⇒ Signal', () => {
+    expect(ausserKraftSignal({ status: ['0'], endApp: null }, HEUTE)).toBeNull();
+    expect(ausserKraftSignal(undefined, HEUTE)).toBeNull();
+    expect(ausserKraftSignal({ status: ['0', '3'], endApp: null }, HEUTE)).toContain('enforcement-status/3');
+  });
+
+  it('AUSNAHME bmv: anerkannte Aufhebung bleibt «bewusst historisch» OK, auch mit Status 3 + endApp (Pfad vor dem B1-Zweig)', () => {
+    const a = ANERKANNTE_AUFHEBUNGEN[0];
+    const v = bewerte(pin({ name: 'bmv', eli: a.eli }), ['2020-01-01'], a.seit, HEUTE, { status: ['3'], endApp: '2026-02-28' });
+    expect(v.art).toBe('OK');
+    expect(v.text).toContain('bewusst als historische Fassung geführt');
+  });
+
+  it('parseKonsolidierungen liest status + spätestes endApp, dedupliziert Codes', () => {
+    const b = (status?: string, endApp?: string) => ({
+      abstract: { value: 'https://fedlex.data.admin.ch/eli/cc/2023/787' },
+      date: { value: '2024-01-01' },
+      ...(status ? { status: { value: `https://fedlex.data.admin.ch/vocabulary/enforcement-status/${status}` } } : {}),
+      ...(endApp ? { endApp: { value: `${endApp}T00:00:00` } } : {}),
+    });
+    const m = parseKonsolidierungen([b('3', '2025-12-31'), b('3', '2025-06-30'), b('0')]);
+    expect(m.get('cc/2023/787')).toMatchObject({ status: ['0', '3'], endApp: '2025-12-31' });
+    expect(parseKonsolidierungen([b()]).get('cc/2023/787')).toMatchObject({ status: [], endApp: null });
+  });
+
+  // Ende-zu-Ende durch SPARQL-Text → parse → bewerte. Die pdf-embed-Pins (emrk …) liefert die Attrappe
+  // nicht, sie melden FEHLER ⇒ Exit 1 ohnehin; darum zählt die ZEILE des Sonden-Pins, nicht der Exit.
+  const laufMitStatus = async (status: string, endApp: string | null): Promise<string[]> => {
+    const SH = '  "sonde|cc/2023/787|20240101|0|art_1|172.220.111.323.2"';
+    const stub = (async (input: RequestInfo | URL, init?: RequestInit) => {
+      const abstract = { value: 'https://fedlex.data.admin.ch/eli/cc/2023/787' };
+      const q = decodeURIComponent(String(init?.body ?? '').replace(/^query=/, ''));
+      expect(q).toContain('jolux:inForceStatus');
+      expect(q).toContain('jolux:dateEndApplicability');
+      const b = q.includes('isExemplifiedBy')
+        ? [{ abstract, date: { value: '2024-01-01' }, file: { value: 'https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2023/787/20240101/de/html/fedlex-data-admin-ch-eli-cc-2023-787-20240101-de-html.html' } }]
+        : [{
+            abstract,
+            date: { value: '2024-01-01' },
+            status: { value: `https://fedlex.data.admin.ch/vocabulary/enforcement-status/${status}` },
+            ...(endApp ? { endApp: { value: endApp } } : {}),
+          }];
+      return new Response(JSON.stringify({ results: { bindings: b } }), { headers: { 'content-type': 'application/sparql-results+json' } });
+    }) as typeof fetch;
+    const zeilen: string[] = [];
+    const spy = vi.spyOn(console, 'log').mockImplementation((...a: unknown[]) => void zeilen.push(a.join(' ')));
+    try {
+      await fuehreAus({ fetchImpl: stub, heute: HEUTE, shText: SH });
+    } finally {
+      spy.mockRestore();
+    }
+    return zeilen.filter((z) => z.includes(' sonde:'));
+  };
+
+  it('Lauf-Ende-zu-Ende: inForceStatus 3 + endApp, OHNE noLonger ⇒ Zeile AUFGEHOBEN für den Pin', async () => {
+    const z = await laufMitStatus('3', '2025-12-31');
+    expect(z).toHaveLength(1);
+    expect(z[0]).toMatch(/^AUFGEHOBEN sonde: .*nicht mehr in Kraft.*enforcement-status\/3.*2025-12-31/);
+  });
+
+  it('Kontrolle: derselbe Lauf mit Status 0 ⇒ OK (Rot kommt nur vom Signal)', async () => {
+    const z = await laufMitStatus('0', null);
+    expect(z).toHaveLength(1);
+    expect(z[0]).toMatch(/^OK /);
   });
 });
