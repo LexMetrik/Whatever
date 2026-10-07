@@ -120,6 +120,17 @@ function schluesselVon(t: BasisTabelle, werte: Wert[]): { schluessel: string; sc
   return { schluessel: JSON.stringify(schluesselWerte), schluesselWerte };
 }
 
+/** Spalten + Wert-Tupel fuer den VOLLNEUBAU-Ladepfad (`ladeTabelle` in turso-sync.ts): dieselbe
+ *  Hash-Rechnung wie `leseLokalBasis` — eine Quelle (§5), sonst haette ein Vollneubau Hashes,
+ *  die das naechste Delta als «geaendert» liest. */
+export function ladeZeilenBasis(db: DatabaseSync, t: BasisTabelle): { spalten: string[]; werte: Wert[][] } {
+  const lokal = leseLokalBasis(db, t);
+  return {
+    spalten: insertSpalten(t),
+    werte: lokal.map((z) => [...(MIT_ROWID[t] ? [z.rowid] : []), ...z.werte, z.hash]),
+  };
+}
+
 /** Lokale Zeilen des Artefakts samt Hash. */
 export function leseLokalBasis(db: DatabaseSync, t: BasisTabelle): BasisZeile[] {
   const sp = inhaltsSpalten(t);

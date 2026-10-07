@@ -11,21 +11,21 @@ import { DatabaseSync } from 'node:sqlite';
 import { mkdtempSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import { createServer } from 'node:http';
 import { ddlFtsArtikel } from './fts';
 import { BM25_GEWICHTE, FTS_ARTIKEL_SPALTEN } from './suche-kern';
-import { BASIS, DDL_BASIS, SPALTEN_BASIS, type Signatur } from './turso-skip';
+import { BASIS, DDL_BASIS, type Signatur } from './turso-skip';
 import { leseFtsSchatten } from './turso-fts-index';
 import {
   versucheNormtextDelta,
   zeilenHash,
-  inhaltsSpalten,
-  insertSpalten,
-  MIT_ROWID,
+  ladeZeilenBasis,
   NORMTEXT_GRUPPE,
   type Fern,
   type FernTx,
   type DeltaEingabe,
 } from './turso-delta';
+import { hranaFern } from './turso-hrana';
 import { buendeleStatements, gruppiereInserts, stmtBytes } from './turso-stmts';
 import { MAX_BYTES_JE_REQUEST, MAX_BYTES_JE_STMT, MAX_PARAM_JE_STMT, type Stmt, type Wert } from './turso-transport';
 
@@ -159,14 +159,10 @@ function vollLaden(lokal: DatabaseSync, tag: string): { remote: string; sig: Map
   const remote = oeffne(pfad);
   for (const t of BASIS) {
     remote.exec(DDL_BASIS[t](t));
-    const sp = inhaltsSpalten(t);
-    const rows = lokal.prepare(`SELECT rowid AS __rid, ${sp.join(', ')} FROM ${t} ORDER BY rowid`).all() as Array<Record<string, Wert>>;
-    const cols = insertSpalten(t);
-    const ins = remote.prepare(`INSERT INTO ${t} (${cols.join(', ')}) VALUES (${cols.map(() => '?').join(',')})`);
-    for (const r of rows) {
-      const w = sp.map((s) => r[s] ?? null);
-      ins.run(...([...(MIT_ROWID[t] ? [r.__rid] : []), ...w, zeilenHash(w)] as Array<string | number | null>));
-    }
+    // Derselbe Weg wie der Vollneubau in turso-sync.ts (`ladeTabelle` → `ladeZeilenBasis`).
+    const { spalten, werte } = ladeZeilenBasis(lokal, t);
+    const ins = remote.prepare(`INSERT INTO ${t} (${spalten.join(', ')}) VALUES (${spalten.map(() => '?').join(',')})`);
+    for (const w of werte) ins.run(...(w as Array<string | number | null>));
   }
   remote.exec('CREATE INDEX ix_artikel_erlass ON artikel(erlass_key)');
   remote.exec(ddlFtsArtikel('fts_artikel'));
@@ -405,6 +401,130 @@ describe('Statement-Bau haelt die Transport-Schranken', () => {
     expect(stmts.flatMap((s) => s.args ?? []).length).toBe(300 * 4);
     for (const req of buendeleStatements(stmts)) {
       if (req.length > 1) expect(req.reduce((n, s) => n + stmtBytes(s), 0)).toBeLessThanOrEqual(MAX_BYTES_JE_REQUEST);
+    }
+  });
+});
+
+// ─── Gegen den ECHTEN Hrana-Transport (turso-hrana.ts) ueber lokales HTTP ────────────────
+// Ein Mini-Hrana-Server auf der SQLite-Attrappe: Streams per `baton`, typisierte Zellen,
+// stmt-Fehler INNERHALB einer HTTP-200-Antwort (wie Turso) — damit laufen Delta UND Vollpfad-
+// Bausteine durch denselben Code wie in Produktion (BEGIN/COMMIT ueber baton, Rollback).
+interface HranaServer {
+  url: string;
+  schliesse: () => Promise<void>;
+}
+async function starteHrana(pfad: string): Promise<HranaServer> {
+  const streams = new Map<string, DatabaseSync>();
+  let zaehl = 0;
+  const dekodiere = (a: { type: string; value?: string; base64?: string }): Wert =>
+    a.type === 'null'
+      ? null
+      : a.type === 'integer' || a.type === 'float'
+        ? Number(a.value)
+        : a.type === 'blob'
+          ? new Uint8Array(Buffer.from(a.base64 ?? '', 'base64'))
+          : (a.value ?? '');
+  const kodiere = (v: Wert) =>
+    v === null
+      ? { type: 'null' }
+      : typeof v === 'number'
+        ? Number.isInteger(v)
+          ? { type: 'integer', value: String(v) }
+          : { type: 'float', value: v }
+        : v instanceof Uint8Array
+          ? { type: 'blob', base64: Buffer.from(v).toString('base64') }
+          : { type: 'text', value: v };
+  const server = createServer((req, res) => {
+    let body = '';
+    req.on('data', (c) => (body += c));
+    req.on('end', () => {
+      const anfrage = JSON.parse(body) as {
+        baton?: string;
+        requests: Array<{ type: string; stmt?: { sql: string; args?: Array<{ type: string; value?: string; base64?: string }> } }>;
+      };
+      let baton = anfrage.baton ?? null;
+      let db = baton ? streams.get(baton) : undefined;
+      if (baton && !db) {
+        res.writeHead(400).end('{"error":"baton unbekannt"}');
+        return;
+      }
+      if (!db) db = oeffne(pfad);
+      let offen = true;
+      const results = anfrage.requests.map((r) => {
+        if (r.type === 'close') {
+          offen = false;
+          return { type: 'ok', response: { type: 'close' } };
+        }
+        try {
+          const st = (db as DatabaseSync).prepare((r.stmt as { sql: string }).sql);
+          const args = (r.stmt?.args ?? []).map(dekodiere).map((v) => (v instanceof Uint8Array ? new Uint8Array(v) : v));
+          if (st.columns().length > 0) {
+            const rows = st.all(...(args as Array<string | number | null | Uint8Array>)) as Array<Record<string, Wert>>;
+            return { type: 'ok', response: { type: 'execute', result: { cols: [], rows: rows.map((x) => Object.values(x).map(kodiere)) } } };
+          }
+          st.run(...(args as Array<string | number | null | Uint8Array>));
+          return { type: 'ok', response: { type: 'execute', result: { cols: [], rows: [] } } };
+        } catch (e) {
+          return { type: 'error', error: { message: e instanceof Error ? e.message : String(e) } };
+        }
+      });
+      if (offen) {
+        baton = baton ?? `b${++zaehl}`;
+        streams.set(baton, db);
+      } else {
+        if (baton) streams.delete(baton);
+        db.close();
+        baton = null;
+      }
+      res.writeHead(200, { 'content-type': 'application/json' }).end(JSON.stringify({ baton, results }));
+    });
+  });
+  await new Promise<void>((ok) => server.listen(0, '127.0.0.1', ok));
+  const port = (server.address() as { port: number }).port;
+  return {
+    url: `http://127.0.0.1:${port}`,
+    schliesse: async () => {
+      for (const d of streams.values()) d.close();
+      await new Promise<void>((ok) => server.close(() => ok()));
+    },
+  };
+}
+
+describe('Delta ueber den echten Hrana-Transport (baton-Transaktion, typisierte Zellen)', () => {
+  it('Delta per HTTP == Vollneubau; Fehler im Stream rollt die ganze Transaktion zurueck', async () => {
+    const alt = lokalDb(korpus());
+    const neu = lokalDb(korpus({ text: { 5: 'Zusatz Verjährung', 101: 'Miete Kündigung' }, plus: 1 }));
+    const { remote } = vollLaden(alt, 'alt');
+    const { remote: soll } = vollLaden(neu, 'neu');
+    const srv = await starteHrana(remote);
+    try {
+      const fern = hranaFern(srv.url, 'test-token-ohne-bedeutung');
+      // Rollback-Beweis: ein Statement mit Fehler mitten in der Transaktion → NICHTS bleibt.
+      const vor = momentaufnahme(remote);
+      await expect(
+        fern.transaktion(async (tx) => {
+          await tx.ausfuehren([{ sql: "UPDATE artikel SET marg = 'kaputt'" }, { sql: 'INSERT INTO gibt_es_nicht VALUES (1)' }]);
+        }),
+      ).rejects.toThrow('stmt-Fehler');
+      expect(momentaufnahme(remote)).toBe(vor);
+      // Lesen in der offenen Transaktion sieht die eigenen Schreibungen (Verifikations-Grundlage).
+      await fern
+        .transaktion(async (tx) => {
+          await tx.ausfuehren([{ sql: "UPDATE artikel SET marg = 'x' WHERE rowid = 1" }]);
+          expect((await tx.lese('SELECT marg FROM artikel WHERE rowid = 1'))[0][0]).toBe('x');
+          throw new Error('absichtlich');
+        })
+        .catch(() => undefined);
+      expect(momentaufnahme(remote)).toBe(vor);
+
+      const e = eingabe(remote, neu, 'neu');
+      e.fern = fern;
+      const r = await versucheNormtextDelta(e);
+      expect(r).toMatchObject({ ok: true });
+      expect(basisBefund(remote)).toEqual(basisBefund(soll));
+      expect(sucheBefund(remote)).toEqual(sucheBefund(soll));
+    } finally {
+      await srv.schliesse();
     }
   });
 });

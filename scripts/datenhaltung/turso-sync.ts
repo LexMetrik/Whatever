@@ -102,12 +102,19 @@ import {
   STMT_OVERHEAD,
   TUPEL_TRENNER,
   REQUEST_OVERHEAD,
+  type Stmt,
   type Wert,
 } from './turso-transport';
 import {
-  BASIS, DDL_BASIS, SPALTEN_BASIS, EXIT_SPERRE, SQL_SIG_MARKEN,
+  BASIS, DDL_BASIS, EXIT_SPERRE, type BasisTabelle, SQL_SIG_MARKEN,
   istSchreibsperre, planeSkip, pruefeKopplung, sigMarkenAusText, signaturenLokal, sperrMeldung,
 } from './turso-skip';
+import {
+  NORMTEXT_GRUPPE, ZEILEN_JE_BASISZEILE, ladeZeilenBasis, versucheNormtextDelta,
+  type Schreibvolumen,
+} from './turso-delta';
+import { FTS_ARTIKEL_SPALTEN } from './suche-kern';
+import { abfrage, hranaFern, pipeline, transaktion } from './turso-hrana';
 
 const URL_STD = 'libsql://lexmetrik-ravedave.aws-eu-west-1.turso.io';
 const TOKEN_DATEI = 'daten/turso-token.txt';
@@ -125,10 +132,11 @@ const FTS_TABELLEN = ['fts_artikel', 'fts_entscheide_schaufenster'] as const;
  *  zu LESEN (Lesen ist bei erschoepftem Schreibkontingent nicht gesperrt). */
 let zugang: { url: string; token: string } | null = null;
 
-interface Stmt {
-  sql: string;
-  args?: Wert[];
-}
+/** Geschriebene Zeilen DIESES Laufs (Schaetzung inkl. Index-Zeilen, s. `ZEILEN_JE_BASISZEILE`),
+ *  aufgeteilt Basis / FTS-Shadow / Marken — das Mass fuer Kontingent-Prognosen (E0-BRANDSCHUTZ).
+ *  Annahme: Turso zaehlt jede geschriebene Zeile, auch Index- und Shadow-Zeilen (Gratisplan
+ *  10 Mio/Monat, turso.tech/pricing, Abruf 7.10.2026); DROP/RENAME zaehlen hier nicht mit. */
+const schreib: Schreibvolumen = { basis: 0, fts: 0, marken: 0 };
 
 function httpUrl(basis: string): string {
   return basis.replace(/^libsql:\/\//, 'https://').replace(/\/$/, '');
@@ -144,114 +152,6 @@ function ladeZugang(): { url: string; token: string } {
     process.exit(1);
   }
   return { url: httpUrl(url), token };
-}
-
-/** fetch mit Retry (transienten Netz-/5xx-Fehlern gewachsen — der Lauf ist lang). */
-async function fetchRetry(input: string, init: RequestInit, versuche = 4): Promise<Response> {
-  let letzter: unknown;
-  for (let i = 0; i < versuche; i++) {
-    try {
-      const res = await fetch(input, init);
-      if (res.status >= 500) throw new Error(`HTTP ${res.status}`);
-      return res;
-    } catch (e) {
-      letzter = e;
-      // Nach dem LETZTEN Versuch nicht mehr schlafen — der Fehler fliegt ohnehin
-      // (Gegenprüfungs-Befund B10: bis zu 15 s sinnlose Wartezeit vor dem Werfen).
-      if (i === versuche - 1) break;
-      const wartezeit = [1000, 4000, 10000][i] ?? 15000;
-      process.stdout.write(`\n  retry ${i + 1}/${versuche - 1} in ${wartezeit / 1000}s (${e instanceof Error ? e.message : e})\n`);
-      await new Promise((r) => setTimeout(r, wartezeit));
-    }
-  }
-  throw letzter;
-}
-
-function kodiereArg(v: Wert) {
-  if (v === null) return { type: 'null' as const, value: null };
-  if (typeof v === 'number') return { type: 'integer' as const, value: String(v) };
-  // BLOB (FTS5-Shadow-Spalten `block`/`term`/`sz`): Hrana erwartet `base64`, NICHT `value`.
-  if (v instanceof Uint8Array) return { type: 'blob' as const, base64: Buffer.from(v).toString('base64') };
-  return { type: 'text' as const, value: v };
-}
-
-/** Ein Hrana-Request. `close: false` hält den Stream offen und liefert einen `baton`,
- *  mit dem ein Folge-Request auf DERSELBEN Verbindung (und damit in derselben
- *  Transaktion) weitermacht. Fehler werden zurückgegeben, nicht geworfen — der Aufrufer
- *  entscheidet, ob er COMMIT oder ROLLBACK schickt. */
-async function pipelineRoh(
-  url: string,
-  token: string,
-  stmts: Stmt[],
-  opt: { baton?: string | null; close: boolean },
-): Promise<{ baton: string | null; fehler: string[] }> {
-  const body: Record<string, unknown> = {
-    requests: [
-      ...stmts.map((s) => ({
-        type: 'execute' as const,
-        stmt: { sql: s.sql, args: (s.args ?? []).map(kodiereArg) },
-      })),
-      ...(opt.close ? [{ type: 'close' as const }] : []),
-    ],
-  };
-  if (opt.baton) body.baton = opt.baton;
-  const res = await fetchRetry(`${url}/v2/pipeline`, {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
-  });
-  if (!res.ok) throw new Error(`Turso HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
-  const daten = (await res.json()) as {
-    baton?: string | null;
-    results: Array<{ type: string; error?: { message: string } }>;
-  };
-  const fehler = daten.results
-    .map((r, i) => (r.type === 'error' ? `«${stmts[i]?.sql.slice(0, 60)}…» → ${r.error?.message}` : null))
-    .filter((x): x is string => x !== null);
-  return { baton: daten.baton ?? null, fehler };
-}
-
-async function pipeline(url: string, token: string, stmts: Stmt[]): Promise<void> {
-  const { fehler } = await pipelineRoh(url, token, stmts, { close: true });
-  if (fehler.length > 0) throw new Error(`Turso stmt-Fehler: ${fehler.join(' · ')}`);
-}
-
-/**
- * Führt `stmts` als ECHTE Transaktion aus: BEGIN + Statements in Request 1 (Stream bleibt
- * offen), Ergebnisse prüfen, dann COMMIT — oder bei jedem Fehler ROLLBACK.
- *
- * Warum nicht einfach BEGIN/…/COMMIT in EINEM Request: die Hrana-Pipeline bricht bei einem
- * fehlgeschlagenen Statement NICHT ab. Die Folge-Statements laufen weiter und das
- * mitgeschickte COMMIT gelingt — der Teilzustand wird also festgeschrieben. Empirisch
- * belegt (Gegenprüfung Runde 2): `BEGIN · DROP a · DROP b · RENAME a_neu→a ·
- * RENAME b_neu→b (Fehler) · COMMIT` liess Tabelle `b` DAUERHAFT verschwinden — exakt der
- * Zustand des Vorfalls vom 19.7. Mit getrenntem COMMIT über den `baton` überlebt der alte
- * Stand denselben Fehler unversehrt (ebenfalls empirisch belegt).
- *
- * Stirbt der Prozess zwischen den beiden Requests, wird nie committet — Turso verwirft den
- * offenen Stream, der alte Stand bleibt stehen. Genau das ist hier die gewünschte Semantik.
- */
-async function transaktion(url: string, token: string, stmts: Stmt[]): Promise<void> {
-  const phase1 = await pipelineRoh(url, token, [{ sql: 'BEGIN' }, ...stmts], { close: false });
-  if (phase1.fehler.length > 0) {
-    await pipelineRoh(url, token, [{ sql: 'ROLLBACK' }], { baton: phase1.baton, close: true }).catch(() => undefined);
-    throw new Error(`Transaktion zurückgerollt (Live-Stand unverändert): ${phase1.fehler.join(' · ')}`);
-  }
-  const phase2 = await pipelineRoh(url, token, [{ sql: 'COMMIT' }], { baton: phase1.baton, close: true });
-  if (phase2.fehler.length > 0) throw new Error(`COMMIT fehlgeschlagen: ${phase2.fehler.join(' · ')}`);
-}
-
-async function abfrage(url: string, token: string, sql: string): Promise<string | null> {
-  const res = await fetchRetry(`${url}/v2/pipeline`, {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ requests: [{ type: 'execute', stmt: { sql } }, { type: 'close' }] }),
-  });
-  if (!res.ok) throw new Error(`Turso HTTP ${res.status}`);
-  const daten = (await res.json()) as {
-    results: Array<{ response?: { result?: { rows: Array<Array<{ value: string | null }>> } } }>;
-  };
-  return daten.results[0]?.response?.result?.rows[0]?.[0]?.value ?? null;
 }
 
 // Schranken + Nutzlast-Schätzung leben in einem seiteneffekt-freien Nachbarmodul, damit
@@ -275,15 +175,15 @@ async function ladeTabelle(
   url: string,
   token: string,
   lokal: DatabaseSync,
-  quellTabelle: string,
+  tabelle: BasisTabelle,
   zielTabelle: string,
-  spalten: string[],
 ): Promise<number> {
-  const rows = lokal
-    .prepare(`SELECT ${spalten.join(', ')} FROM ${quellTabelle} ORDER BY rowid`)
-    .all() as Array<Record<string, Wert>>;
-  const werteJeZeile = rows.map((r) => spalten.map((s) => r[s] ?? null));
-  return ladeWerte(url, token, zielTabelle, spalten, werteJeZeile);
+  // Spalten + Hash kommen aus `ladeZeilenBasis` (turso-delta.ts): dieselbe Rechnung, die das
+  // Delta spaeter gegen die Remote-`zeilen_hash`-Spalte haelt (eine Quelle, §5). Die Zeilen
+  // laufen weiter `ORDER BY rowid` (leseLokalBasis).
+  const { spalten, werte } = ladeZeilenBasis(lokal, tabelle);
+  schreib.basis += werte.length * ZEILEN_JE_BASISZEILE[tabelle];
+  return ladeWerte(url, token, zielTabelle, spalten, werte);
 }
 
 /** Kern des Mehrzeilen-Transports — nimmt fertige Wert-Tupel (auch berechnete wie fts_artikel). */
@@ -387,6 +287,7 @@ async function ladeFtsIndex(
   ]);
   for (const ladung of leseFtsSchatten(lokal, quellTabelle, mitContent)) {
     await ladeWerte(url, token, `${zielTabelle}${ladung.suffix}`, ladung.spalten, ladung.werte);
+    schreib.fts += ladung.werte.length;
   }
   return ftsDokumente(lokal, quellTabelle);
 }
@@ -522,17 +423,54 @@ async function main(): Promise<void> {
     ['fts_entscheide_schaufenster', ddlFtsEntscheide('fts_entscheide_schaufenster'),
       leseFtsSchatten(rspr, 'fts_entscheide_schaufenster', true)],
   ]);
+  const sigMarkenRemote = sigMarkenAusText(await abfrage(url, token, SQL_SIG_MARKEN));
   const plan = await planeSkip(
     lokaleSig,
-    async () => sigMarkenAusText(await abfrage(url, token, SQL_SIG_MARKEN)),
+    async () => sigMarkenRemote,
     async (t) => {
       const n = Number(await abfrage(url, token, `SELECT count(*) FROM ${t}`));
       return Number.isFinite(n) ? n : null;
     },
   );
-  /** Wird diese Tabelle in DIESEM Lauf neu gebaut? */
-  const baue = (t: string): boolean => plan.get(t)?.skip !== true;
+  /** Nach dem Skip-Plan: wird diese Tabelle neu gebaut? (Delta-Treffer kommen unten dazu.) */
+  const nachSkipPlan = (t: string): boolean => plan.get(t)?.skip !== true;
   for (const t of SCHATTEN) console.log(`  Skip-Plan ${t}: ${plan.get(t)?.grund ?? 'kein Befund — Neuaufbau'}`);
+
+  // 0ab) DELTA-VERSUCH (E0-BRANDSCHUTZ, 7.10.2026). Sind Tabellen der Normtext-Gruppe nicht
+  //      uebersprungen, wird erst versucht, NUR die geaenderten Zeilen nachzufuehren
+  //      (`turso-delta.ts`: eine Transaktion, Verifikation vor COMMIT, Marken atomar mit den
+  //      Daten). Klappt es, gelten diese Tabellen unten als erledigt; sonst — fehlende Marke,
+  //      DDL-Aenderung, Zeilenzahl-Inkonsistenz, Delta > 30 %, Verifikation rot — laeuft
+  //      unveraendert der Vollneubau ueber Schatten-Tabellen. `schreib` weist das Volumen aus.
+  const imDelta = new Set<string>();
+  const normtextNeu = NORMTEXT_GRUPPE.filter(nachSkipPlan);
+  let deltaModus = normtextNeu.length === 0 ? 'Skip (unveraendert)' : 'Vollneubau';
+  if (normtextNeu.length > 0) {
+    const d = await versucheNormtextDelta({
+      fern: hranaFern(url, token),
+      normtext,
+      nichtSkip: new Set(normtextNeu),
+      lokaleSig,
+      remoteSigMarken: sigMarkenRemote,
+      sollZeilen,
+      ftsDdl: ddlFtsArtikel,
+      ftsSpalten: FTS_ARTIKEL_SPALTEN,
+      matchProben: ['verjahrung'],
+      log: (z) => console.log(z),
+    });
+    if (d.ok) {
+      for (const t of d.tabellen) imDelta.add(t);
+      schreib.basis += d.schreib.basis;
+      schreib.fts += d.schreib.fts;
+      schreib.marken += d.schreib.marken;
+      deltaModus = `Delta (${d.tabellen.join(', ')})`;
+      console.log(`  Delta erfolgreich: ${d.tabellen.join(', ')} zeilengenau nachgefuehrt, in einer Transaktion verifiziert.`);
+    } else {
+      console.log(`  Delta nicht angewandt: ${d.grund}`);
+    }
+  }
+  /** Wird diese Tabelle in DIESEM Lauf per Vollneubau neu gebaut? */
+  const baue = (t: string): boolean => nachSkipPlan(t) && !imDelta.has(t);
 
   // 0b) KORRESPONDENZ-RIEGEL fuer den TEILBAU (Gegenpruefungs-Befund B1, schwerster Befund).
   //     Wird `fts_artikel` neu gebaut, `artikel` aber uebersprungen, zeigt der contentless
@@ -567,7 +505,7 @@ async function main(): Promise<void> {
   const basisNeu = BASIS.filter(baue);
   if (basisNeu.length > 0) {
     await pipeline(url, token, basisNeu.map((t) => ({ sql: DDL_BASIS[t](`${t}_neu`) })));
-    for (const t of basisNeu) zahl[t] = await ladeTabelle(url, token, normtext, t, `${t}_neu`, SPALTEN_BASIS[t]);
+    for (const t of basisNeu) zahl[t] = await ladeTabelle(url, token, normtext, t, `${t}_neu`);
   }
 
   // 3) FTS artikel: CONTENTLESS (content=''), rowid == artikel.rowid. Übertragen wird
@@ -681,7 +619,7 @@ async function main(): Promise<void> {
   //    Tausch ganz — der Lauf schreibt dann nur die Marken aus Schritt 8.
   const gebaut = SCHATTEN.filter(baue);
   if (gebaut.length === 0) {
-    console.log('  Tausch entfaellt: keine Tabelle geaendert (Vollskip) — Live-Stand bleibt, wie er ist.');
+    console.log('  Tausch entfaellt: kein Vollneubau noetig (Skip bzw. Delta) — Live-Stand bleibt, wie er ist.');
   } else {
     const tausch: Stmt[] = [];
     for (const t of [...gebaut].reverse()) tausch.push({ sql: `DROP TABLE IF EXISTS ${t}` });
@@ -775,6 +713,13 @@ async function main(): Promise<void> {
       args: marken.flat(),
     },
   ]);
+  schreib.marken += marken.length;
+  const gesamt = schreib.basis + schreib.fts + schreib.marken;
+  console.log(
+    `  Schreibvolumen (Schaetzung inkl. Index-/Shadow-Zeilen): Basis ${schreib.basis} · FTS ${schreib.fts} · ` +
+      `Marken ${schreib.marken} · gesamt ${gesamt} — Normtext: ${deltaModus}; Entscheide: ` +
+      `${baue('fts_entscheide_schaufenster') ? 'Vollneubau' : 'Skip'} (Gratisplan: 10 Mio Zeilen/Monat).`,
+  );
   console.log(`turso-sync grün: Hot-Replika vollständig + verifiziert (manifest_sha ${manifestSha.slice(0, 12)}…).`);
 }
 
