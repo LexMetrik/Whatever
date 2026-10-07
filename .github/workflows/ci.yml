@@ -406,6 +406,7 @@ jobs:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
+          filter: blob:none  # Partial Clone (ARCH-REVIEW 7.10.2026): Commit-/Tree-Historie voll, Blobs lazy; Job liest keine alten Blobs in Masse
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
       - uses: ./.github/actions/npm-ci
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-018
@@ -920,6 +921,7 @@ jobs:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
+          filter: blob:none  # Partial Clone (ARCH-REVIEW 7.10.2026): Commit-/Tree-Historie voll, Blobs lazy; Job liest keine alten Blobs in Masse
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
       - uses: ./.github/actions/npm-ci
       - name: Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)
