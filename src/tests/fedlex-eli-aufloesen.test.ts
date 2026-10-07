@@ -56,7 +56,7 @@ function endpointAttrappe(
       bindings = [{ n: v(String(fx.kons[eli].length + (opts.zaehlAbweichung ?? 0))) }];
     } else if (q.includes('SELECT DISTINCT ?date ?end')) {
       const eli = /eli\/(cc\/[^>]+)>/.exec(q)![1];
-      bindings = fx.kons[eli].map(([date, end]) => (end ? { date: v(date), end: v(end) } : { date: v(date) }));
+      bindings = fx.kons[eli].map(([date, end]): Record<string, { value: string }> => (end ? { date: v(date), end: v(end) } : { date: v(date) }));
     } else if (q.includes('VALUES ?abstract')) {
       bindings = fx.html.map((h) => ({ abstract: v(ELI + h.abstract), date: v(h.date), file: v(h.file) }));
     } else {
@@ -184,7 +184,7 @@ describe('waehleKonsolidierung / gruppiereAbstracts', () => {
   });
 
   it('gruppiert Zeilen je Abstract unabhängig von der Eingabereihenfolge', () => {
-    const rows = [
+    const rows: Array<Record<string, { value: string }>> = [
       { cc: v(ELI + 'cc/b'), von: v('2001-01-01T00:00:00Z') },
       { cc: v(ELI + 'cc/a'), von: v('1990-01-01'), bis: v('2000-01-01') },
     ];
