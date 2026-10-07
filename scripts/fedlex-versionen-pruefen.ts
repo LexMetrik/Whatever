@@ -11,6 +11,17 @@
 //   → GANZ-AUFHEBUNG des Erlasses (jolux:dateNoLongerInForce, Abstract-Ebene):
 //     ≤ heute ⇒ Erlass ausser Kraft, Snapshot nicht mehr geltend (ROT);
 //     > heute ⇒ Ablösung angekündigt (WARN). (G-AUFH: Aufhebungs-Blindheit)
+//   → AUSSER-KRAFT OHNE dateNoLongerInForce (Gegenprüfung Opus 7.10.2026, B1): Fedlex
+//     setzt bei ausser Kraft getretenen Erlassen oft nur `jolux:inForceStatus
+//     …/vocabulary/enforcement-status/N` (0 «In Kraft»; 1 «Nicht mehr in der SR
+//     publiziert», 2 «Gegenstandslos», 3 «Nicht mehr in Kraft», 4 «Noch nicht in
+//     Kraft», 5 «Sistiert» — amtliches Vokabular, abgerufen 7.10.2026) plus
+//     `jolux:dateEndApplicability` auf dem Abstract (live: SR 172.220.111.323.2 →
+//     cc/2023/787, SR 0.142.114.239 → cc/2016/678). Status ≠ 0 oder
+//     dateEndApplicability < heute ⇒ ROT wie die Ganz-Aufhebung (312 Landesrecht-SR
+//     haben diese Form). Die anerkannte Aufhebung (nächster Absatz) bleibt davon
+//     UNBERÜHRT: sie wird über dateNoLongerInForce verifiziert, bevor dieser
+//     Zweig erreicht wird (bmv: Verhalten unverändert, im Test festgehalten).
 //     AUSNAHME: ist die Aufhebung in src/lib/normtext/aufhebungen.ts ANERKANNT
 //     (bewusst historisch geführt), wird der Repeal LIVE gegen das amtliche
 //     dateNoLongerInForce verifiziert und zu einem ehrlichen OK gehoben — ein
@@ -137,22 +148,40 @@ type SparqlBinding = {
   abstract: { value: string };
   date: { value: string };
   noLonger?: { value: string };
+  status?: { value: string };
+  endApp?: { value: string };
 };
-export type KonsBefund = { daten: string[]; noLonger: string | null };
+/**
+ * `status` = Codes von jolux:inForceStatus (Vokabular enforcement-status, Abstract-Ebene),
+ * `endApp` = spätestes jolux:dateEndApplicability des Abstracts (Endtag inklusive).
+ */
+export type KonsBefund = { daten: string[]; noLonger: string | null; status: string[]; endApp: string | null };
+const STATUS_BASIS = 'https://fedlex.data.admin.ch/vocabulary/enforcement-status/';
 
 export function parseKonsolidierungen(bindings: SparqlBinding[]): Map<string, KonsBefund> {
   const map = new Map<string, KonsBefund>();
   for (const b of bindings) {
     const eli = b.abstract.value.replace('https://fedlex.data.admin.ch/eli/', '');
-    const befund = map.get(eli) ?? { daten: [], noLonger: null };
+    const befund = map.get(eli) ?? { daten: [], noLonger: null, status: [], endApp: null };
     befund.daten.push(b.date.value.slice(0, 10));
+    if (b.status?.value) {
+      const code = b.status.value.replace(STATUS_BASIS, '');
+      if (!befund.status.includes(code)) befund.status.push(code);
+    }
+    if (b.endApp?.value) {
+      const ea = b.endApp.value.slice(0, 10);
+      if (befund.endApp === null || ea > befund.endApp) befund.endApp = ea;
+    }
     if (b.noLonger?.value) {
       const nl = b.noLonger.value.slice(0, 10);
       if (befund.noLonger === null || nl < befund.noLonger) befund.noLonger = nl;
     }
     map.set(eli, befund);
   }
-  for (const befund of map.values()) befund.daten.sort();
+  for (const befund of map.values()) {
+    befund.daten.sort();
+    befund.status.sort();
+  }
   return map;
 }
 
@@ -162,10 +191,12 @@ async function frageKonsolidierungen(pins: Pin[], fetchImpl: typeof fetch): Prom
   // liegt auf der ConsolidationAbstract (?abstract), nicht auf der Consolidation.
   const query = `
 PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>
-SELECT ?abstract ?date ?noLonger WHERE {
+SELECT ?abstract ?date ?noLonger ?status ?endApp WHERE {
   VALUES ?abstract { ${werte} }
   ?c jolux:isMemberOf ?abstract ; jolux:dateApplicability ?date .
   OPTIONAL { ?abstract jolux:dateNoLongerInForce ?noLonger }
+  OPTIONAL { ?abstract jolux:inForceStatus ?status }
+  OPTIONAL { ?abstract jolux:dateEndApplicability ?endApp }
 }`;
   const res = await fetchImpl(ENDPOINT, {
     method: 'POST',
@@ -191,11 +222,25 @@ export type Verdikt =
   | { art: 'AUFHEBUNG'; text: string }
   | { art: 'FEHLER'; text: string };
 
+/** Amtliche Abstract-Angaben ausser dateNoLongerInForce (B1): inForceStatus-Codes + dateEndApplicability. */
+export type AmtlichStatus = { status: string[]; endApp: string | null };
+
+/** Grund, warum der Abstract laut Status/Anwendbarkeitsende NICHT mehr gilt; null = kein solches Signal. */
+export function ausserKraftSignal(a: AmtlichStatus | undefined, heute: string): string | null {
+  if (!a) return null;
+  const teile: string[] = [];
+  const nichtInKraft = a.status.filter((c) => c !== '0');
+  if (nichtInKraft.length) teile.push(`inForceStatus enforcement-status/${nichtInKraft.join(',')} (≠ 0 «In Kraft»)`);
+  if (a.endApp !== null && a.endApp < heute) teile.push(`Anwendbarkeit endete am ${a.endApp} (dateEndApplicability)`);
+  return teile.length ? teile.join('; ') : null;
+}
+
 export function bewerte(
   pin: Pin,
   daten: string[] | undefined,
   noLonger: string | null,
   heute: string,
+  amtlich?: AmtlichStatus,
 ): Verdikt {
   if (!daten || daten.length === 0) {
     // Kein Treffer kann auch heissen: ELI-Schreibweise weicht ab → laut melden.
@@ -248,6 +293,15 @@ export function bewerte(
     return {
       art: 'AUFGEHOBEN',
       text: `AUFGEHOBEN ${pin.name}: Erlass (${pin.eli}) aufgehoben per ${noLonger} — Snapshot nicht mehr geltend, Massnahme nötig (Erlass entfernen/ersetzen, Verweise prüfen)!`,
+    };
+  }
+  // B1: Ausser-Kraft OHNE dateNoLongerInForce (nur inForceStatus ≠ 0 / dateEndApplicability < heute).
+  // Steht NACH der anerkannten Aufhebung (bmv): deren Pfad ist oben bereits entschieden.
+  const signal = ausserKraftSignal(amtlich, heute);
+  if (signal) {
+    return {
+      art: 'AUFGEHOBEN',
+      text: `AUFGEHOBEN ${pin.name}: Erlass (${pin.eli}) nicht mehr in Kraft — ${signal} — Snapshot nicht mehr geltend, Massnahme nötig (Erlass entfernen/ersetzen, Verweise prüfen)!`,
     };
   }
   const geltend = daten.filter((d) => d <= heute);
@@ -327,7 +381,7 @@ async function lauf(opt: LaufOptionen = {}): Promise<number> {
   console.log(`Fedlex-Versions-Monitoring: ${pins.length} gepinnte Gesetze (${cachePins.length} cache.sh + ${pins.length - cachePins.length} pdf-embed; heute: ${heute})\n`);
   for (const pin of pins) {
     const befund = konsolidierungen.get(pin.eli);
-    const v = bewerte(pin, befund?.daten, befund?.noLonger ?? null, heute);
+    const v = bewerte(pin, befund?.daten, befund?.noLonger ?? null, heute, befund ? { status: befund.status, endApp: befund.endApp } : undefined);
     console.log(v.text);
     if (v.art === 'FEHLER' || v.art === 'ÜBERHOLT') ueberholt++;
     else if (v.art === 'AUFGEHOBEN') aufgehoben++;
