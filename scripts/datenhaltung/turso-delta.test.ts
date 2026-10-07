@@ -20,6 +20,7 @@ import {
   versucheNormtextDelta,
   zeilenHash,
   ladeZeilenBasis,
+  normalisiereDdl,
   NORMTEXT_GRUPPE,
   type Fern,
   type FernTx,
@@ -418,6 +419,24 @@ describe('Rueckfall auf den Vollneubau — Remote bleibt unberuehrt', () => {
       },
     };
     await expect(versucheNormtextDelta(e)).rejects.toThrow('SQL write operations are forbidden');
+  });
+});
+
+describe('DDL-Vergleich ueberlebt den RENAME des Vollneubau-Tausches', () => {
+  it('normalisiereDdl(sqlite_master nach ALTER … RENAME) == normalisiereDdl(Soll-DDL)', () => {
+    const db = new DatabaseSync(':memory:');
+    for (const t of BASIS) {
+      db.exec(DDL_BASIS[t](`${t}_neu`));
+      db.exec(`ALTER TABLE ${t}_neu RENAME TO ${t}`);
+    }
+    db.exec(ddlFtsArtikel('fts_artikel_neu'));
+    db.exec('ALTER TABLE fts_artikel_neu RENAME TO fts_artikel');
+    const ist = (n: string) => (db.prepare('SELECT sql FROM sqlite_master WHERE name = ?').get(n) as { sql: string }).sql;
+    for (const t of BASIS) expect(normalisiereDdl(ist(t))).toBe(normalisiereDdl(DDL_BASIS[t](t)));
+    expect(normalisiereDdl(ist('fts_artikel'))).toBe(normalisiereDdl(ddlFtsArtikel('fts_artikel')));
+    // Gegenprobe (§6.7): eine echte Abweichung bleibt sichtbar.
+    db.exec('ALTER TABLE artikel ADD COLUMN extra TEXT');
+    expect(normalisiereDdl(ist('artikel'))).not.toBe(normalisiereDdl(DDL_BASIS.artikel('artikel')));
   });
 });
 

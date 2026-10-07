@@ -2,7 +2,12 @@
 // QS-DATA E2: synchronisiert die HOT-Replika in die Turso-DB (FAHRPLAN-DATENHALTUNG §5 E2 + §6).
 //
 // VOLL-REBUILD-Semantik (Weiche C, §10(7)): jede Synchronisation baut die Ziel-Tabellen
-// komplett neu — determinismus-beweisbar, kein Delta-Drift. Quelle sind die lokalen
+// komplett neu — determinismus-beweisbar, kein Delta-Drift. SEIT 7.10.2026 (E0-BRANDSCHUTZ)
+// gilt das nur noch als RUECKFALL: bei geaenderter Signatur versucht der Sync zuerst, die
+// Normtext-Tabellen ZEILENGENAU nachzufuehren (`turso-delta.ts`, Schritt 0ab unten) — der
+// Vollneubau ueber Schatten-Tabellen laeuft weiter, wenn eine Voraussetzung fehlt, das Delta
+// ueber der Schwelle liegt oder seine Verifikation rot wird. Gruende, Mechanik und Rechnung:
+// Kopf von `turso-delta.ts`, `fahrplaene/FAHRPLAN-DATENHALTUNG.md` §17 Nachtrag 7.10.2026. Quelle sind die lokalen
 // Doktyp-Artefakte (daten/normtext.db + daten/rechtsprechung.db, ihrerseits aus den
 // committeten JSONs reproduzierbar) — die amtliche Quelle bleibt Arbiter, Turso ist reine
 // Serving-Kopie (§0 selbst-gehostet-Prinzip: portabel, Anbieterwechsel = andere URL).

@@ -302,6 +302,66 @@ ehrlich (§8), kein neuer Tor, der nicht scheitern kann (§6.7).
 Lese-Seite; Delta-Sync innerhalb einer Tabelle (Voll-Rebuild je geänderter Tabelle bleibt
 Weiche C, §10(7)).
 
+
+### Nachtrag 7.10.2026 — E0-BRANDSCHUTZ Teil A: zeilengenau nachführen *(Delta-Sync)*
+
+**Anlass.** Der Tageslauf überspringt unveränderte Tabellen (Baustein 2), baute aber bei jeder
+geänderten Signatur `artikel` (60 527 Zeilen), `fts_artikel` (67 889 Schatten-Zeilen) und
+`erlass_fassungen` (1570) KOMPLETT neu — gemessen an den Läufen 36999017054, 37116241358,
+37197504468, 37460148673 (2., 3., 4., 6.10.2026; `gh run view <id> --log`), auch wenn sich drei
+Artikel geändert hatten. Extrapolation Oktober: Kontingent (Gratisplan 10 Mio geschriebene Zeilen/
+Monat; Lesen 500 Mio — turso.tech/pricing, Abruf 7.10.2026) um den 26.10. erschöpft; mit dem
+Bund-Ausbau (231 → ~2150 Erlasse) ein Vielfaches je Vollneubau. Entscheid David 15.9.: nicht
+zahlen, Wurzel-Fix. Das Delta kehrt die damalige Ausschluss-Zeile «Delta-Sync innerhalb einer
+Tabelle … Weiche C» für die Normtext-Gruppe um; Weiche C bleibt als Rückfall.
+
+**Mechanik** (Module `turso-delta.ts`, `turso-fts-delta.ts`, `turso-stmts.ts`, `turso-hrana.ts`):
+Je Basis-Zeile eine Ziel-Spalte `zeilen_hash` (sha256 über den Inhalt; steht in der Ziel-DDL und
+damit in der Signatur — die Einführung erzwingt EINEN Vollneubau). Remote werden nur
+(rowid, Schlüssel, Hash) gelesen (Lesen ist 50:1 billiger), gegen das lokale Artefakt verglichen
+und nur Differenz geschrieben: INSERT/DELETE/UPDATE; bei `artikel` zählt die rowid mit (der
+Such-Join `a.rowid = fts_artikel.rowid` und die Ordnung `bm, rid` in `api/suche.ts` hängen daran).
+Index: der Remote-Index wird lokal als FTS5-Tabelle nachgebaut, der neue lokale Index daneben;
+geänderte Dokumente = exakte Instanz-Differenz (`fts5vocab`); echte FTS5-`delete`/`insert`-
+Operationen (Ersatztexte aus dem Index, weil die Tabelle contentless ist und die alten Feldwerte
+nirgends vorliegen) auf der Kopie; Selbstprüfung (Instanzen, `_docsize`, Durchschnitts-Zeile,
+integrity-check) VOR jedem Upload; hochgeladen wird nur die Differenz der Schatten-Zeilen.
+Alles in EINER baton-Transaktion; vor dem COMMIT: Inhalt der geschriebenen Zeilen zurückgelesen,
+Hash-Vergleich aller Zeilen, Zeilenzahlen, Fingerabdruck aller Index-Schatten-Zeilen,
+rowid-Spannweite, dann die Marken (`sig_`/`zeilen_`) — Teilzustand ausgeschlossen. Nach dem COMMIT
+auf frischen Verbindungen: integrity-check + MATCH-Proben (FTS5 liest in derselben Verbindung nach
+direkten Schatten-Schreibungen veraltet bzw. «corruption», Probe 7.10.2026).
+
+**Rückfall auf den Vollneubau** (Schatten-Tabellen, unverändert): fehlende `sig_`-Marke · DDL-
+Abweichung (Remote-`sqlite_master` gegen Soll-DDL) · fehlender `ix_artikel_erlass` · Remote-
+Zeilenzahl ≠ `zeilen_<t>` (Verstümmelung) · Delta-Schreibvolumen > 30 % des Vollneubaus der Gruppe
+(typisch: neuer Erlass mitten in der Reihenfolge verschiebt alle Folge-rowids) · jede rote
+Verifikation (Rollback). Turso-Schreibsperre wird weitergereicht (Exit 3). `fts_entscheide_
+schaufenster` bleibt Vollneubau (standalone, 250 MiB Text, DDL durch Prüfung 0 fixiert, nur
+wöchentlich; ≈ 30 000 Zeilen/Woche = 0,3 % des Kontingents).
+
+**Rechnung** (Zeilen inkl. Index-/Schatten-Zeilen; Annahme: jede geschriebene Zeile zählt, DELETE
+wie INSERT, UPDATE ohne Indexänderung 1; DROP/RENAME nicht gezählt). Vorher je Normtext-Änderung
+(Log 37460148673): `artikel` 60 527 × 3 (Zeile + PK-Autoindex + `ix_artikel_erlass`) = 181 581 ·
+`erlass_fassungen` 1570 × 2 = 3140 · `fts_artikel` 1 + 4354 + 3007 + 60 527 = 67 889 · Marken ≈ 15 →
+**≈ 252 600**. Nachher bei k geänderten Artikeln (Text, rowid stabil; Index-Messreihe synthetisch,
+60 000 Dokumente, Zipf-Vokabular, Maschine lokal): k = 3 → 3 + 1 + 9 + 21 ≈ **34** · k = 60 →
+60 + ~5 + 100 + 21 ≈ **190** · k = 600 → 600 + ~40 + 1122 + 21 ≈ **1800** · k = 6000 →
+≈ **14 400** (5,7 %). Einmalig beim Übergang: ein Vollneubau (≈ 256 000), weil sich die Ziel-DDL
+(`zeilen_hash`) ändert. Oktober-Hochrechnung (4 Läufe wie oben): 1,0 Mio → < 1000.
+Das Log jedes Laufs weist das Volumen aus: `Schreibvolumen (Schaetzung …): Basis · FTS · Marken ·
+gesamt — Normtext: Delta|Vollneubau|Skip`.
+
+**Grenze, ehrlich (§8).** Die lokale `artikel`-rowid ist die Einfügereihenfolge (`ingest.ts`). Ein
+Erlass, der alphabetisch VOR anderen einsortiert wird, verschiebt deren rowids; das Delta rechnet
+das als DELETE + INSERT und fällt über der 30-%-Schwelle auf den Vollneubau zurück — es bleibt
+korrekt, spart dann aber nichts. Für den Bund-Ausbau lohnt ein Wurzel-Fix (neue Erlasse am Ende
+einfügen bzw. stabile rowid-Vergabe in `ingest.ts`) — ausserhalb dieses Schritts, im EINGANG zu
+führen. Nicht auf Turso selbst erprobt (kein Token lokal): getestet gegen SQLite-Attrappen,
+einen lokalen Hrana-Server (baton/stmt-Fehler) und das echte Skript samt Wächter
+(`check-turso-frische`) gegen diesen Server; der erste Prod-Lauf nach dem Merge ist der
+Vollneubau-Übergang, der zweite mit Korpus-Änderung der erste echte Delta-Lauf.
+
 ---
 
 ## Archivierte Abschnitte *(Plan-Neuschnitt 29.8.2026)*
