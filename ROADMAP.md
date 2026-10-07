@@ -154,6 +154,7 @@ StGB 52 2007-01-01, OR 631 2023-01-01, SVG 89a bewusst ohne) — nur Abnahme Dav
 - E3·W · 5.10. · Rückbau nach Umstieg (flaechenZeile, trendZeile, Rotation, ci.yml:70), Worktrees bleiben liegen, 8.10. CI-Sparplan nachmessen; PLAN_BUCHUNG_TOKEN gegenstandslos (David)
 - E3 · 7.10. · check-merge-schutz.ts:43 nutzt git diff mit Rename-Erkennung: Risiko-Datei, auf Nicht-Risiko-Pfad verschoben, fällt aus dem Tor — Wurzel-Fix --no-renames wie kern.ts — scripts/check-merge-schutz.ts
 - E3 · 7.10. · Daten-Cache-Bruch nach Deploy: Inhalts-Hash je public-Datei im Manifest statt Deploy-SHA-Parameter (#1349 verworfen, entwertet MB-Caches) — vercel.json, src/lib/ladeJson.ts
+- E3 · 7.10. · check:fachaenderung liest den PR-Titel aus dem Ereignis (prTitelAusEreignis): «Re-run» nach Titel-Korrektur bleibt rot, kostete einen CI-Zyklus (#1349) — Titel wie den Body live per API holen (holePrKoerperEcht) — scripts/check-fachaenderung.ts
 - E3·W · Go David 7.10. · Leser-Logik (162 .ts unter src/pages|components, ~22k Zeilen) nach src/lib/leser, danach Lint-Grenze — §3 Schichtentrennung
 - E3·W · wartet auf David 7.10. · §5-Text vs. Ist: ingest.ts liest public/*.json → DB, JSON ist faktisch Quelle — Umstellung fertig bauen oder §5 präzisieren — CLAUDE.md §5
 - E3·W · wartet auf David 7.10. · Rechtsprechung-Einzelentscheide (300 MB) als Release-Artefakt statt in git — public/rechtsprechung/
