@@ -77,7 +77,7 @@ describe('ladeJson — Status und Form', () => {
   });
 
   it('Eintrags-Prüfer läuft auf der Stichprobe der Record-Wurzel', async () => {
-    const p = pruefeFelder('test/map.json', {}, (k, w) => (typeof w === 'string' ? null : 'Wert ist kein String'));
+    const p = pruefeFelder('test/map.json', {}, (_k, w) => (typeof w === 'string' ? null : 'Wert ist kein String'));
     stubFetch({ '/h.json': { status: 200, body: { a: 'x', b: 7 } } });
     await expect(ladeJson('/h.json', p)).rejects.toThrow(/Eintrag «b»: Wert ist kein String/);
   });
