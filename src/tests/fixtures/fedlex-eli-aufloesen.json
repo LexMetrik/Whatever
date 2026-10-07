@@ -4,12 +4,16 @@
    {
     "cc": "cc/1972/644_652_576",
     "von": "1972-03-24",
-    "bis": null
+    "bis": null,
+    "status": "3",
+    "endApp": "1979-12-31"
    },
    {
     "cc": "cc/1979/1573_1573_1573",
     "von": "1980-01-01",
-    "bis": null
+    "bis": null,
+    "status": "0",
+    "endApp": null
    }
   ],
   "kons": {
@@ -138,7 +142,9 @@
    {
     "cc": "cc/1974/2151_2151_2151",
     "von": "1974-11-28",
-    "bis": null
+    "bis": null,
+    "status": "0",
+    "endApp": null
    }
   ],
   "kons": {
@@ -301,12 +307,16 @@
    {
     "cc": "cc/12/369_337_369",
     "von": "1892-07-01",
-    "bis": "1989-01-01"
+    "bis": "1989-01-01",
+    "status": "3",
+    "endApp": null
    },
    {
     "cc": "cc/2018/29",
     "von": "2018-02-01",
-    "bis": null
+    "bis": null,
+    "status": "0",
+    "endApp": null
    }
   ],
   "kons": {
@@ -348,12 +358,16 @@
    {
     "cc": "cc/1951/1211_1217_1249",
     "von": "1952-01-01",
-    "bis": "1991-07-01"
+    "bis": "1991-07-01",
+    "status": "3",
+    "endApp": null
    },
    {
     "cc": "cc/1991/392_392_392",
     "von": "1991-07-01",
-    "bis": null
+    "bis": null,
+    "status": "0",
+    "endApp": null
    }
   ],
   "kons": {
@@ -485,12 +499,16 @@
    {
     "cc": "cc/1997/68_68_68",
     "von": "1997-02-01",
-    "bis": "2020-01-01"
+    "bis": "2020-01-01",
+    "status": "3",
+    "endApp": null
    },
    {
     "cc": "cc/2018/801",
     "von": "2020-01-01",
-    "bis": null
+    "bis": null,
+    "status": "0",
+    "endApp": null
    }
   ],
   "kons": {
@@ -548,5 +566,45 @@
     "file": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2018/801/20261001/de/html/fedlex-data-admin-ch-eli-cc-2018-801-20261001-de-html-1.html"
    }
   ]
+ },
+ "172.220.111.323.2": {
+  "abstracts": [
+   {
+    "cc": "cc/2023/787",
+    "von": "2024-01-01",
+    "bis": null,
+    "status": "3",
+    "endApp": "2025-12-31"
+   }
+  ],
+  "kons": {
+   "cc/2023/787": [
+    [
+     "2024-01-01",
+     "2025-12-31"
+    ]
+   ]
+  },
+  "html": []
+ },
+ "0.142.114.239": {
+  "abstracts": [
+   {
+    "cc": "cc/2016/678",
+    "von": "2016-10-06",
+    "bis": null,
+    "status": "3",
+    "endApp": "2021-10-06"
+   }
+  ],
+  "kons": {
+   "cc/2016/678": [
+    [
+     "2016-10-06",
+     "2021-10-06"
+    ]
+   ]
+  },
+  "html": []
  }
 }

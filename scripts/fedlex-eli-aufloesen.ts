@@ -19,6 +19,17 @@
  *      einer Konsolidierung, deren Anwendbarkeitsfenster `heute` enthält
  *      (dateApplicability ≤ heute, dateEndApplicability fehlt oder ≥ heute).
  *      Bleibt auch dann nicht genau einer, ist die SR OFFEN.
+ *      CURRENCY-PRÜFUNG AUCH BEIM EINZELNEN KANDIDATEN (Gegenprüfung Opus 7.10.2026,
+ *      B1): Fedlex setzt bei ausser Kraft getretenen Erlassen oft KEIN
+ *      dateNoLongerInForce, sondern `jolux:inForceStatus …/enforcement-status/3`
+ *      («Nicht mehr in Kraft») plus `dateEndApplicability` auf dem Abstract
+ *      (live 7.10.2026: SR 172.220.111.323.2 → cc/2023/787, SR 0.142.114.239 →
+ *      cc/2016/678; 312 Landesrecht-SR haben diese Form). Ein Abstract gilt nur,
+ *      wenn (a) inForceStatus fehlt oder 0 «In Kraft» ist (Vokabular
+ *      enforcement-status: 0 In Kraft · 1 Nicht mehr in der SR publiziert ·
+ *      2 Gegenstandslos · 3 Nicht mehr in Kraft · 4 Noch nicht in Kraft ·
+ *      5 Sistiert), (b) dateEndApplicability fehlt oder ≥ heute und (c) eine
+ *      Konsolidierung `heute` deckt. Sonst OFFEN mit zutreffendem Grund.
  *   2. KONSOLIDIERUNG: grösste dateApplicability ≤ heute dieses einen Abstracts
  *      (künftige Fassungen werden NICHT gepinnt, §7). Liste ohne LIMIT, mit
  *      ORDER BY und COUNT-Zähltor (stille Teilergebnisse des Endpoints).
@@ -47,21 +58,41 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>`;
 /** Anläufe, bis ein Zähltor-Widerspruch (stilles Teilergebnis) als Abbruch gilt. */
 const MAX_ANLAEUFE = 3;
 
-export type AbstractKandidat = { eli: string; von: string | null; bis: string | null };
+export type AbstractKandidat = {
+  eli: string;
+  von: string | null;
+  bis: string | null;
+  /** jolux:inForceStatus als Code (0–5) des Vokabulars enforcement-status; mehrere Werte kommagetrennt, sortiert. */
+  status?: string | null;
+  /** jolux:dateEndApplicability auf dem Abstract (spätestes, falls mehrere). */
+  endApp?: string | null;
+};
 export type Aufloesung =
   | { ok: true; sr: string; eli: string; geltend: string; n: number; anzahl: number; naechste: string | null }
   | { ok: false; sr: string; grund: string };
 
 const isoTag = (v: string): string => v.slice(0, 10);
+const STATUS_BASIS = 'https://fedlex.data.admin.ch/vocabulary/enforcement-status/';
+/** Amtliche Bezeichnungen des Vokabulars enforcement-status (Fedlex-Triplestore, abgerufen 7.10.2026). */
+const STATUS_TEXT: Record<string, string> = {
+  '0': 'In Kraft',
+  '1': 'Nicht mehr in der SR publiziert',
+  '2': 'Gegenstandslos',
+  '3': 'Nicht mehr in Kraft',
+  '4': 'Noch nicht in Kraft',
+  '5': 'Sistiert',
+};
 
-/** Gruppiert die Roh-Bindings (?cc ?von ?bis) zu je einem Kandidaten pro Abstract. */
+/** Gruppiert die Roh-Bindings (?cc ?von ?bis ?status ?endApp) zu je einem Kandidaten pro Abstract. */
 export function gruppiereAbstracts(bindings: SparqlBinding[]): AbstractKandidat[] {
-  const je = new Map<string, { von: string[]; bis: string[] }>();
+  const je = new Map<string, { von: string[]; bis: string[]; status: Set<string>; endApp: string[] }>();
   for (const b of bindings) {
     const eli = b.cc.value.replace(ELI_BASIS, '');
-    const e = je.get(eli) ?? { von: [], bis: [] };
+    const e = je.get(eli) ?? { von: [], bis: [], status: new Set<string>(), endApp: [] };
     if (b.von) e.von.push(isoTag(b.von.value));
     if (b.bis) e.bis.push(isoTag(b.bis.value));
+    if (b.status) e.status.add(b.status.value.replace(STATUS_BASIS, ''));
+    if (b.endApp) e.endApp.push(isoTag(b.endApp.value));
     je.set(eli, e);
   }
   return [...je.entries()]
@@ -69,6 +100,8 @@ export function gruppiereAbstracts(bindings: SparqlBinding[]): AbstractKandidat[
       eli,
       von: e.von.length ? e.von.sort()[0] : null, // frühestes Inkrafttreten
       bis: e.bis.length ? e.bis.sort()[0] : null, // frühestes Ausserkrafttreten
+      status: e.status.size ? [...e.status].sort().join(',') : null,
+      endApp: e.endApp.length ? e.endApp.sort()[e.endApp.length - 1] : null, // spätestes Anwendbarkeitsende
     }))
     .sort((a, b) => (a.eli < b.eli ? -1 : a.eli > b.eli ? 1 : 0));
 }
@@ -84,6 +117,26 @@ export function imAbstractFenster(k: AbstractKandidat, heute: string): boolean {
 /** Fenster-Stufe 2: eine Konsolidierung deckt `heute` (date ≤ heute, end fehlt oder ≥ heute). */
 export function deckt(kons: Konsolidierung[], heute: string): boolean {
   return kons.some((c) => c.date <= heute && (c.end === null || c.end >= heute));
+}
+
+/**
+ * Fenster-Stufe 3 (B1): ist der Abstract amtlich noch in Kraft? Liefert den Grund, warum NICHT
+ * (oder null). inForceStatus ≠ 0 und ein abgelaufenes dateEndApplicability sind die Signale, die
+ * Fedlex anstelle von dateNoLongerInForce setzt; dateEndApplicability gilt inklusive des
+ * Endtags (end ≥ heute deckt, wie in `deckt`).
+ */
+export function ausserKraftGrund(k: AbstractKandidat, kons: Konsolidierung[], heute: string): string | null {
+  const gruende: string[] = [];
+  if (k.status != null && k.status !== '0') {
+    const text = k.status
+      .split(',')
+      .map((c) => `${c} «${STATUS_TEXT[c] ?? '?'}»`)
+      .join(', ');
+    gruende.push(`inForceStatus enforcement-status/${text}`);
+  }
+  if (k.endApp != null && k.endApp < heute) gruende.push(`Anwendbarkeit endete am ${k.endApp} (dateEndApplicability)`);
+  if (!deckt(kons, heute)) gruende.push(`keine Konsolidierung deckt ${heute}`);
+  return gruende.length ? `nicht mehr in Kraft: ${gruende.join('; ')}` : null;
 }
 
 /**
@@ -106,12 +159,17 @@ export function waehleAbstract(
   if (fenster.length === 0) {
     return { ok: false, grund: `kein ConsolidationAbstract im Currency-Fenster (in Kraft ≤ ${heute}, nicht ausser Kraft): ${liste}` };
   }
-  if (fenster.length === 1) return { ok: true, eli: fenster[0].eli };
-  const deckend = fenster.filter((k) => deckt(konsOf(k.eli), heute));
-  if (deckend.length === 1) return { ok: true, eli: deckend[0].eli };
+  // B1: die Currency-Prüfung gilt für JEDEN Kandidaten im Fenster, auch für den einzigen.
+  const bewertet = fenster.map((k) => ({ k, grund: ausserKraftGrund(k, konsOf(k.eli), heute) }));
+  const geltend = bewertet.filter((b) => b.grund === null);
+  if (geltend.length === 1) return { ok: true, eli: geltend[0].k.eli };
+  if (geltend.length === 0) {
+    const gruende = bewertet.map((b) => `${b.k.eli}: ${b.grund}`).sort().join('; ');
+    return { ok: false, grund: `${gruende} — Erlass nicht geltend, nichts zu pinnen (${liste})` };
+  }
   return {
     ok: false,
-    grund: `${fenster.length} Abstracts im Currency-Fenster, davon ${deckend.length} mit einer Konsolidierung, die ${heute} deckt — Auswahl nicht eindeutig: ${liste}`,
+    grund: `${fenster.length} Abstracts im Currency-Fenster, davon ${geltend.length} geltend (Status, Anwendbarkeitsende, Konsolidierung die ${heute} deckt) — Auswahl nicht eindeutig: ${liste}`,
   };
 }
 
@@ -130,15 +188,24 @@ function pruefeSr(sr: string): void {
   if (!/^\d+(\.\d+)*$/.test(sr)) throw new Error(`SR-Nummer «${sr}» hat kein gültiges Format (Ziffern, Punkte)`);
 }
 
-export function abstractAbfrage(sr: string): string {
-  pruefeSr(sr);
-  return `${PREFIXE}
-SELECT DISTINCT ?cc ?von ?bis WHERE {
+const abstractRumpf = (sr: string): string => `{
   ?e skos:notation "${sr}"^^<${NOTATION_TYP}> .
   ?cc a jolux:ConsolidationAbstract ; jolux:classifiedByTaxonomyEntry ?e .
   OPTIONAL { ?cc jolux:dateEntryInForce ?von }
   OPTIONAL { ?cc jolux:dateNoLongerInForce ?bis }
-} ORDER BY ?cc ?von ?bis`;
+  OPTIONAL { ?cc jolux:inForceStatus ?status }
+  OPTIONAL { ?cc jolux:dateEndApplicability ?endApp }
+}`;
+export function abstractAbfrage(sr: string): string {
+  pruefeSr(sr);
+  return `${PREFIXE}
+SELECT DISTINCT ?cc ?von ?bis ?status ?endApp WHERE ${abstractRumpf(sr)} ORDER BY ?cc ?von ?bis ?status ?endApp`;
+}
+/** Zähltor über DIESELBE DISTINCT-Projektion (B4: auch die Abstract-Abfrage kann still gekappt werden). */
+export function abstractZaehlAbfrage(sr: string): string {
+  pruefeSr(sr);
+  return `${PREFIXE}
+SELECT (COUNT(*) AS ?n) WHERE { SELECT DISTINCT ?cc ?von ?bis ?status ?endApp WHERE ${abstractRumpf(sr)} }`;
 }
 
 const konsRumpf = (eli: string): string => `{
@@ -151,24 +218,28 @@ export const konsAbfrage = (eli: string): string =>
 export const konsZaehlAbfrage = (eli: string): string =>
   `${PREFIXE}\nSELECT (COUNT(*) AS ?n) WHERE { SELECT DISTINCT ?date ?end WHERE ${konsRumpf(eli)} }`;
 
-/** Konsolidierungen eines Abstracts mit COUNT-Zähltor; frisches Paar je Anlauf. */
-async function konsMitZaehltor(eli: string, fetchImpl: FetchImpl): Promise<Konsolidierung[]> {
+/** Zeilenliste mit COUNT-Zähltor über dieselbe Projektion; frisches Paar je Anlauf, sonst Abbruch. */
+async function mitZaehltor(was: string, zaehlQ: string, zeilenQ: string, fetchImpl: FetchImpl): Promise<SparqlBinding[]> {
   for (let versuch = 1; versuch <= MAX_ANLAEUFE; versuch += 1) {
-    const zaehl = await sparqlSelect(konsZaehlAbfrage(eli), fetchImpl);
-    const zeilen = await sparqlSelect(konsAbfrage(eli), fetchImpl);
+    const zaehl = await sparqlSelect(zaehlQ, fetchImpl);
+    const zeilen = await sparqlSelect(zeilenQ, fetchImpl);
     const soll = Number(zaehl[0]?.n?.value);
-    if (Number.isFinite(soll) && soll === zeilen.length) {
-      return zeilen
-        .filter((z) => z.date)
-        .map((z) => ({ date: isoTag(z.date.value), end: z.end ? isoTag(z.end.value) : null }));
-    }
+    if (Number.isFinite(soll) && soll === zeilen.length) return zeilen;
   }
-  throw new Error(`Konsolidierungen von ${eli}: COUNT-Zähltor widerspricht der Zeilenliste (${MAX_ANLAEUFE} Anläufe) — stilles Teilergebnis des Endpoints`);
+  throw new Error(`${was}: COUNT-Zähltor widerspricht der Zeilenliste (${MAX_ANLAEUFE} Anläufe) — stilles Teilergebnis des Endpoints`);
+}
+
+/** Konsolidierungen eines Abstracts mit COUNT-Zähltor. */
+async function konsMitZaehltor(eli: string, fetchImpl: FetchImpl): Promise<Konsolidierung[]> {
+  const zeilen = await mitZaehltor(`Konsolidierungen von ${eli}`, konsZaehlAbfrage(eli), konsAbfrage(eli), fetchImpl);
+  return zeilen.filter((z) => z.date).map((z) => ({ date: isoTag(z.date.value), end: z.end ? isoTag(z.end.value) : null }));
 }
 
 /** Löst EINE SR-Nummer auf. Wirft nur bei Netz-/Zähltor-Fehlern, alles Fachliche wird `ok:false`. */
 export async function loeseSr(sr: string, heute: string, fetchImpl: FetchImpl = fetch): Promise<Aufloesung> {
-  const kandidaten = gruppiereAbstracts(await sparqlSelect(abstractAbfrage(sr), fetchImpl));
+  const kandidaten = gruppiereAbstracts(
+    await mitZaehltor(`Abstracts der SR ${sr}`, abstractZaehlAbfrage(sr), abstractAbfrage(sr), fetchImpl),
+  );
   // Konsolidierungen nur für Kandidaten im Abstract-Fenster (meist genau einer).
   const konsMap = new Map<string, Konsolidierung[]>();
   for (const k of kandidaten.filter((c) => imAbstractFenster(c, heute))) {
