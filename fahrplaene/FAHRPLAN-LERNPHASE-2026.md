@@ -48,7 +48,7 @@ ab Dezember durch David).
   für Staffel-/Bandgrenzen (`src/tests/tarifInvarianten.test.ts` — fängt Off-by-one; Dev-Dependency,
   seed-deterministisch §2) · **Gate-Kette parallelisieren** (`package.json`-`check` via Promise.all/spawn,
   ~9,6 s → ~2–3 s, Bordmittel) · Myers-`diff`-Package NUR als `golden:diff`-Diagnose — **das Gate selbst
-  bleibt Byte-Vergleich.** Detail `BACKLOG-AUDIT-WERKZEUGE-2026-07.md`. **Stärkste zeitsperre-konforme Arbeit** — macht die
+  bleibt Byte-Vergleich.** Detail `archiv/BACKLOG-AUDIT-WERKZEUGE-2026-07.md`. **Stärkste zeitsperre-konforme Arbeit** — macht die
   Dez-Abnahme billig; dauerhaft begleitend. **Alle drei Werkzeug-Andockungen erfüllt 5.7.2026**
   (PR `feat/lernphase-verifikations-infra`). Detail: `ROADMAP-CHRONIK.md` → LERNPHASE-AB.
   **Status-Korrektur 20.7.2026 (§8):** Die drei Werkzeug-Andockungen sind **fertig** (`9da9a9d4` ·
