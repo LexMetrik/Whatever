@@ -43,7 +43,7 @@ eigenständige Prüfungen (vier `--netz`-Zwillinge, zwei Ketten).
 
 1. **`check:confidence` ist KEIN Waise** — Pflichtschritt der Kantons-Pipeline
    (`korpus-werkstatt/tools/normtext-pipeline.md`), Verifikationsschritt in
-   `PLAN-OCL-ABBAU.md` (W11), getestetes Logikmodul. Aber: gleicher Defekt wie
+   `archiv/PLAN-OCL-ABBAU.md` (W11), getestetes Logikmodul. Aber: gleicher Defekt wie
    `check:tot` (kein Exit ≠ 0). Richtige Massnahme wäre `report:confidence` bzw.
    ein echter Exit-Code — **~14 Referenz-Dateien**, gehört in eine Korpus-Session.
 2. **`check:suchindex` NICHT in `check:seriell` verdrahten** — `public/such-index/`

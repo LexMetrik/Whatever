@@ -152,6 +152,14 @@ StGB 52 2007-01-01, OR 631 2023-01-01, SVG 89a bewusst ohne) — nur Abnahme Dav
 - E3·W · Go David 5.10. · CI: Dauer-Wackler an der Wurzel (bibliothek/betrieb/e2e-fang-historie-2026-10-05/), leser-kopf-cls-s3 hängt an Fedlex, Läufer-Kontingent
 - E3·W · 5.10. · Tore/Hooks: tor-schutz.py Quote-Split (Diff 5260e0118), gate-stopp.py, tor-paritaet (GP #1323), Streich-Runde nie fündiger Tore (Freigabe 22.9.) — QS-CPU, QS-TORE-DIAET
 - E3·W · 5.10. · Rückbau nach Umstieg (flaechenZeile, trendZeile, Rotation, ci.yml:70), Worktrees bleiben liegen, 8.10. CI-Sparplan nachmessen; PLAN_BUCHUNG_TOKEN gegenstandslos (David)
+- E3·W · Go David 7.10. · Cache-Tore ehrlich: p-klassen/vollstaendigkeit/struktur-konsistenz/verklebung melden in PR-CI grün ohne Prüfung — scripts/run-parallel.ts, ci.yml
+- E3 · Go David 7.10. · Nachgeladene JSON prüfen: 29× res.json ungeprüft, pruefeJson (src/data/jsonSchutz.ts) einsetzen, dazu Versions-Parameter — src/pages, src/components
+- E3·W · Go David 7.10. · Leser-Logik (162 .ts unter src/pages|components, ~22k Zeilen) nach src/lib/leser, danach Lint-Grenze — §3 Schichtentrennung
+- E3·W · wartet auf David 7.10. · §5-Text vs. Ist: ingest.ts liest public/*.json → DB, JSON ist faktisch Quelle — Umstellung fertig bauen oder §5 präzisieren — CLAUDE.md §5
+- E3·W · wartet auf David 7.10. · Rechtsprechung-Einzelentscheide (300 MB) als Release-Artefakt statt in git — public/rechtsprechung/
+- E3·W · wartet auf David 7.10. · Doku-Tore check:steuerdeckel + check:steuerflaeche zusammenlegen, nachts statt in der Queue — ci.yml, package.json
+- E3 · wartet auf David 7.10. (§15) · public/rechtsprechung/register.json 9,9 MB aufteilen; norm-index.json 6 MB laut Kommentar UI-ungenutzt — public/
+- E3·W · später 7.10. · noUncheckedIndexedAccess für src/lib (338 Fehler); src/tests nach Schicht ordnen; tabs.ts in rein/Store trennen — tsconfig.app.json, src/tests
 - E4 · Phase 2 · Kantonstext (FB Bereich 2, Dach W2·13-KANTONE-DATEN); ZH-Generator nicht je Erlass fahrbar, 68 ZH_ZURUECKGESTELLT ohne Auflöser
 - E4 · David 21.9./E2 7.10. · Impressum/Datenschutz erst vor Live-Gang (FB S-01); Staatsverträge SR 0.* (28 schon gepinnt) verlinken bis dahin auf Fedlex
 ```

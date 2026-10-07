@@ -1,6 +1,6 @@
 # `he`-Entity-Umstellung — Divergenz-Analyse & Korrektur-Register (3.7.2026)
 
-**Anlass:** Werkzeug-Audit Nulltarif-Paket (`BACKLOG-AUDIT-WERKZEUGE-2026-07.md`
+**Anlass:** Werkzeug-Audit Nulltarif-Paket (`archiv/BACKLOG-AUDIT-WERKZEUGE-2026-07.md`
 §Audit 1 ADOPT): `scripts/normtext/html-entities.ts` ersetzt die handgepflegte
 ~75-Einträge-Tabelle `NAMED_ENTITIES` durch `he.decode` (WHATWG-vollständig,
 2231 benannte Entities; he 1.2.0, devDependency — läuft nur build-time in den

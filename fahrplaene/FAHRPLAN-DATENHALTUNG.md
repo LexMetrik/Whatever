@@ -5,7 +5,7 @@
 
 > **Rolle (§14):** Detailquelle zu `ROADMAP.md` → Querschnitt **QS-DATA** + Bau-Schritt
 > **W2·6-DATA**. Nie zweiter Einstieg. **Council-Entscheid 2.7.2026** (Richtung entschieden,
-> nicht mehr offen); löst die drei „DAVID-ENTSCHEID"-Punkte aus `PLAN-OCL-ABBAU.md`
+> nicht mehr offen); löst die drei „DAVID-ENTSCHEID"-Punkte aus `archiv/PLAN-OCL-ABBAU.md`
 > (§AUSFÜHRUNGS-STAND + §OFFENE PUNKTE: Zitations-Graph 8,7M · Parquet als Volltext-Quelle ·
 > Breiten-Korpus) auf. Fable plant, Opus baut. Trailer `Roadmap: QS-DATA`.
 
