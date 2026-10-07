@@ -1,11 +1,13 @@
 {
+  /* ARCH-REVIEW 7.10.2026: Test-Typen (vitest/globals, node) nur hier, nicht mehr in tsconfig.app.json —
+     App-Code sieht `describe`/`process` nicht mehr. Prüft src/tests/** und colocated *.test.ts(x). */
   "compilerOptions": {
     "incremental": true,
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.test.tsbuildinfo",
     "target": "es2023",
     "lib": ["ES2023", "DOM"],
     "module": "esnext",
-    "types": ["vite/client"],
+    "types": ["vite/client", "vitest/globals", "node"],
     "skipLibCheck": true,
     "strict": true,
 
@@ -23,6 +25,5 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
-  "exclude": ["src/tests", "src/**/*.test.ts", "src/**/*.test.tsx"]
+  "include": ["src/tests", "src/**/*.test.ts", "src/**/*.test.tsx"]
 }

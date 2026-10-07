@@ -769,7 +769,7 @@ speist (`scripts/normtext*`). Detail-/Bau-Spec der UX-Reform:
 Evidenz: das Fedlex-Datenmodell selbst (gecachte amtliche Konsolidierungs-HTMLs
 unter `/tmp/*.html`, Struktur `div#preface` / `div#preamble` / `article` /
 `div.dispositions` / `div.annex` / `div.footnotes`) sowie das
-Vollständigkeits-Audit `AUDIT-FEDLEX-DARSTELLUNG-2026-06-28.md` (33 Lücken
+Vollständigkeits-Audit `archiv/AUDIT-FEDLEX-DARSTELLUNG-2026-06-28.md` (33 Lücken
 bestätigt). Umbau-Plan: `fahrplaene/FAHRPLAN-NORMTEXT-DARSTELLUNG.md`.
 
 ### §N-L0 · Leitsatz (steht über allem)
@@ -1519,7 +1519,7 @@ durchsuchbar**), volle
 `rowspan`-Logik (rowspan/verschachtelte
 Tabelle → ehrlicher Text-Fallback), «N.—»-Spacing,
 `art-`-vs-`art_`-Anker, «Deeplink vom Renderer verworfen» (wird genutzt). Details:
-`AUDIT-FEDLEX-DARSTELLUNG-2026-06-28.md`, Abschnitt «Widerlegt».
+`archiv/AUDIT-FEDLEX-DARSTELLUNG-2026-06-28.md`, Abschnitt «Widerlegt».
 
 > **Korrektur 29.6.2026 (verifiziert gg. Filestore-HTML):** Der Audit-Schluss
 > «`<th>`-Tabellen brauchen kein `colspan` (Kopf+Daten tragen dasselbe)» ist an

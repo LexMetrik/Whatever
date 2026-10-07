@@ -44,7 +44,7 @@ Sortiert nach Ertrag × Aufwand. «Risiko» nach `istRisikoPfad()`: Verweise/Kor
 | **SHAB-API** `shab.ch/api/v1/publications`, `/rubrics` | JSON ohne Schlüssel; Nutzungsbedingungen nicht publiziert → Art.-5-URG-Einordnung nötig | Fristenrechner auf Publikationsdatum (Schuldenruf, Kollokation, Konkurs-Eingaben); Publikations-Nachschlagedienst | hoch |
 | **UID-Register** `uid-wse.admin.ch/V5.0/PublicServices.svc` (WSDL 200) | SOAP/XML, öffentlich (Zefix-REST: 401 seit 7.6.2026 offen) | Partei-Identifikation in Vorlagen: UID → Firma/Sitz/Rechtsform statt Freitext im Rubrum | hoch |
 | **SNB-Datenportal** `data.snb.ch/api/cube/<id>` | JSON, amtlich | Stichtagsbezogene Zinsreihen für Verzugs-/Schadenszins | mittel |
-| **opencaselaw auf HF** `voilaj/swiss-caselaw` | CC0 (EGMR-Teil nicht), täglich, 1,05 Mio. Entscheide, 10 Mio. Zitat-Referenzen mit Konfidenz | Validierungskorpus für `zitat-extraktion.ts`; Delta-Sweep gegen Stand 2.7.2026 (`PLAN-OCL-ABBAU.md`) | hoch |
+| **opencaselaw auf HF** `voilaj/swiss-caselaw` | CC0 (EGMR-Teil nicht), täglich, 1,05 Mio. Entscheide, 10 Mio. Zitat-Referenzen mit Konfidenz | Validierungskorpus für `zitat-extraktion.ts`; Delta-Sweep gegen Stand 2.7.2026 (`archiv/PLAN-OCL-ABBAU.md`) | hoch |
 | **RIS-OGD-API Österreich v2.6** `data.bka.gv.at/ris/api/v2.6` | JSON, keyless, ELI; Lizenzseite 404 → offen | Zielauflösung für AT-Verweise in CH-Texten | mittel |
 | **Browser-Erweiterung «Schweizer Normzitate überall verlinken»** | Eigenbau-Hülle um bestehende Erkennung | Für CH existiert nichts (DE: lawlink, Jura-Links) | mittel |
 | Kantonale Vernehmlassungen BS/SG (opendata.swiss) | CSV/JSON/RDF | Vorwarn-Dienst «welche Norm ändert demnächst» kantonal | mittel |

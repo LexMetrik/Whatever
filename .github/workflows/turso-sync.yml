@@ -154,7 +154,7 @@ jobs:
       # Meldung des Skripts sagt es als ::error::). Der Schritt faellt dann rot — richtig so:
       # die Replika hinkt ab diesem Moment nach, und das soll nicht schweigen (§8). Lesen und
       # Suche laufen dabei weiter; der Reset kommt am 1. des Monats.
-      - name: Turso-Sync (tabellenweiser Rebuild ueber Schatten-Tabellen, determinismus-beweisbar)
+      - name: Turso-Sync (Normtext zeilengenau per Delta, Rueckfall = tabellenweiser Rebuild ueber Schatten-Tabellen)
         env:
           TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
         run: npm run datenhaltung:turso-sync
