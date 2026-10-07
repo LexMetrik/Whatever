@@ -958,12 +958,21 @@ jobs:
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-058
       VERCEL_GIT_COMMIT_SHA: ${{ github.sha }}
       VERCEL_GIT_COMMIT_REF: main
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-059
-      VERCEL_TOKEN: ${{ github.event.inputs.probe != 'ohne-token' && secrets.VERCEL_TOKEN || '' }}
+      # Feste Vercel-CLI-Version statt `npx -y vercel@latest` (E0-BRANDSCHUTZ, HN-11):
+      # `latest` holte jede frisch veröffentlichte Version ungeprüft in den Prod-Pfad
+      # und brach den Deploy am 25.9.2026 (notarget 60.0.1, Lauf 36078028936). Die
+      # Version steht in scripts/ci/vercel-cli/package.json (eigenes Manifest, damit
+      # die ~500 CLI-Pakete nicht in jeden npm-ci-Lauf wandern); Dependabot pflegt sie.
+      VERCEL_BIN: scripts/ci/vercel-cli/node_modules/.bin/vercel
+    # VERCEL_TOKEN steht NICHT auf Job-Ebene, sondern nur in den Schritten, die es
+    # brauchen (checkout/setup-node/npm ci sehen das Secret nicht).
     steps:
       # §6.7: Dieser Schritt ist der scheiterbare Teil des Tors. Rot-Beweis über
       # `workflow_dispatch` mit probe=ohne-token — siehe PR-Body.
       - name: Token-Vorprüfung (Rot ohne Secret)
+        env:
+          # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-059
+          VERCEL_TOKEN: ${{ github.event.inputs.probe != 'ohne-token' && secrets.VERCEL_TOKEN || '' }}
         run: |
           set -euo pipefail
           if [ -z "${VERCEL_TOKEN:-}" ]; then
@@ -978,15 +987,24 @@ jobs:
         with:
           node-version: 22
           cache: npm
+          cache-dependency-path: scripts/ci/vercel-cli/package-lock.json
+      - name: Vercel-CLI installieren (feste Version aus scripts/ci/vercel-cli)
+        run: npm ci --prefix scripts/ci/vercel-cli --ignore-scripts --no-audit --no-fund
       - name: Vercel — Projekt-Einstellungen ziehen (production)
-        run: npx -y vercel@latest pull --yes --environment=production --token="$VERCEL_TOKEN"
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: '"$VERCEL_BIN" pull --yes --environment=production --token="$VERCEL_TOKEN"'
       - name: Vercel — Build (frisch, buildCommand aus vercel.json)
-        run: npx -y vercel@latest build --prod --token="$VERCEL_TOKEN"
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: '"$VERCEL_BIN" build --prod --token="$VERCEL_TOKEN"'
       - name: Vercel — Deploy (prebuilt → Prod)
         id: deploy
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
           set -euo pipefail
-          url=$(npx -y vercel@latest deploy --prebuilt --prod --archive=tgz --token="$VERCEL_TOKEN")
+          url=$("$VERCEL_BIN" deploy --prebuilt --prod --archive=tgz --token="$VERCEL_TOKEN")
           echo "url=${url}" >> "$GITHUB_OUTPUT"
           echo "Deployment-URL: ${url}"
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-060
@@ -1017,4 +1035,5 @@ jobs:
         timeout-minutes: 8
         env:
           AKTUELL_URL: ${{ steps.deploy.outputs.url }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: node scripts/betrieb/vercel-aufraeumen.mjs

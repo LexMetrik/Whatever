@@ -41,13 +41,24 @@ export const config = { runtime: 'edge' };
 declare const process: { env: Record<string, string | undefined> };
 
 type Wert = string | number | null;
+type Zeilen = Array<Record<string, string | null>>;
 
-/** Minimaler Turso-HTTP-Client (Hrana /v2/pipeline) — dependency-frei über fetch. */
-async function tursoAbfrage(
-  basisUrl: string,
-  token: string,
-  anfragen: Array<{ sql: string; args: Wert[] }>,
-): Promise<Array<Array<Record<string, string | null>>>> {
+/** Eine Anweisung der Pipeline. `optional`: ein Fehler dieser Anweisung ist KEIN
+ *  Suchfehler (z. B. die Stand-Marke) — ihr Ergebnis ist dann `null`. */
+interface Anfrage {
+  sql: string;
+  args: Wert[];
+  optional?: boolean;
+}
+
+/** Minimaler Turso-HTTP-Client (Hrana /v2/pipeline) — dependency-frei über fetch.
+ *
+ *  EHRLICHKEIT (§8, E0-BRANDSCHUTZ 7.10.2026): Turso meldet einen SQL-Fehler einer
+ *  EINZELNEN Anweisung als `{type:'error'}` INNERHALB einer HTTP-200-Antwort. Früher
+ *  wurde so ein Ergebnis zu «0 Zeilen» — die Suche behauptete «0 Treffer», obwohl sie
+ *  gar nicht gelaufen war. Jetzt wirft jede Pflicht-Anweisung ohne Ergebnis; nur eine
+ *  als `optional` markierte liefert `null`. */
+async function tursoAbfrage(basisUrl: string, token: string, anfragen: Anfrage[]): Promise<Array<Zeilen | null>> {
   const httpUrl = basisUrl.replace(/^libsql:\/\//, 'https://').replace(/\/$/, '');
   const body = {
     requests: [
@@ -74,14 +85,20 @@ async function tursoAbfrage(
   });
   if (!res.ok) throw new Error(`Turso HTTP ${res.status}`);
   const daten = (await res.json()) as {
-    results: Array<{
+    results?: Array<{
       type: string;
       response?: { result?: { cols: Array<{ name: string }>; rows: Array<Array<{ value: string | null }>> } };
+      error?: { message?: string };
     }>;
   };
-  return anfragen.map((_, i) => {
-    const result = daten.results[i]?.response?.result;
-    if (!result) return [];
+  if (!Array.isArray(daten.results)) throw new Error('Turso-Antwort ohne results');
+  return anfragen.map((a, i) => {
+    const r = daten.results?.[i];
+    const result = r?.type === 'ok' ? r.response?.result : undefined;
+    if (!result) {
+      if (a.optional) return null;
+      throw new Error(`Turso-Anweisung ${i} ohne Ergebnis (${r?.type ?? 'fehlt'}): ${r?.error?.message ?? ''}`);
+    }
     const namen = result.cols.map((c) => c.name);
     return result.rows.map((zeile) => {
       const obj: Record<string, string | null> = {};
@@ -91,6 +108,37 @@ async function tursoAbfrage(
   });
 }
 
+/** Stand der Replika: `sync_meta.stand` = ISO-Zeitstempel des letzten erfolgreichen
+ *  Sync-Laufs (geschrieben von scripts/datenhaltung/turso-sync.ts). Läuft in der
+ *  SELBEN Pipeline-Anfrage wie die Suche — keine Zusatzlatenz. OPTIONAL: fehlt die
+ *  Tabelle/Marke oder ist sie kein Datum, fehlt der Stand in der Antwort (§8: nichts
+ *  erfunden), die Suche selbst scheitert deshalb nie. */
+const STAND_ANFRAGE: Anfrage = {
+  sql: "SELECT wert FROM sync_meta WHERE schluessel = 'stand'",
+  args: [],
+  optional: true,
+};
+
+function leseStand(zeilen: Zeilen | null | undefined): string | null {
+  const wert = zeilen?.[0]?.wert;
+  if (!wert) return null;
+  const ms = Date.parse(wert);
+  return Number.isNaN(ms) ? null : new Date(ms).toISOString();
+}
+
+interface Teilergebnis<T> {
+  antwort: SucheAntwort<T>;
+  /** Nur gesetzt, wenn diese Pipeline-Anfrage den Stand mitgelesen hat. */
+  stand: string | null;
+}
+
+/** Zeilen einer Pflicht-Anweisung (tursoAbfrage wirft bei Fehler; `null` kann hier
+ *  nur durch einen Programmierfehler auftreten — dann ebenfalls Fehler statt «leer»). */
+function pflicht(zeilen: Zeilen | null | undefined): Zeilen {
+  if (!zeilen) throw new Error('Pflicht-Anweisung ohne Zeilen');
+  return zeilen;
+}
+
 async function sucheArtikelEdge(
   url: string,
   token: string,
@@ -98,21 +146,26 @@ async function sucheArtikelEdge(
   match: string,
   limit: number,
   offset: number,
-): Promise<SucheAntwort<ArtikelTreffer>> {
+  mitStand: boolean,
+): Promise<Teilergebnis<ArtikelTreffer>> {
   // Topische Stufung (QS-BASIS (d) K2): zwei zusätzliche, spalten-eingeschränkte
   // MATCH-Ausdrücke über dieselben Terme. Sie ordnen den Artikel, der dem Thema
   // GEWIDMET ist, vor den blossen Texttreffer. bm25 allein legte OR 253 bei «Miete»
   // auf Rang 128 von 165 — ausserhalb jedes Fensters, das die Antwort je zurückgibt.
   const haupt = baueFtsSpaltenMatch(query, FTS_SPALTEN_HAUPT) ?? match;
   const neben = baueFtsSpaltenMatch(query, FTS_SPALTEN_NEBEN) ?? match;
-  const [countRows, treffRows] = await tursoAbfrage(url, token, [
+  const [countRows, treffRows, standRows] = await tursoAbfrage(url, token, [
     { sql: SQL_ARTIKEL_COUNT, args: [match] },
     { sql: SQL_ARTIKEL_TREFFER, args: [match, haupt, neben, limit, offset] },
+    ...(mitStand ? [STAND_ANFRAGE] : []),
   ]);
-  const gesamt = Number(countRows[0]?.n ?? 0);
+  const gesamt = Number(pflicht(countRows)[0]?.n ?? 0);
   // Snippet-Bau braucht den ORIGINAL-Query (nicht den FTS-Match) — explizit durchgereicht.
-  const treffer = (treffRows as unknown as ArtikelRohzeile[]).map((r) => formeArtikelTreffer(r, query));
-  return { treffer, gesamt, naechsteSeite: naechsterOffset(gesamt, offset, limit) };
+  const treffer = (pflicht(treffRows) as unknown as ArtikelRohzeile[]).map((r) => formeArtikelTreffer(r, query));
+  return {
+    antwort: { treffer, gesamt, naechsteSeite: naechsterOffset(gesamt, offset, limit) },
+    stand: leseStand(standRows),
+  };
 }
 
 async function sucheEntscheideEdge(
@@ -121,17 +174,31 @@ async function sucheEntscheideEdge(
   match: string,
   limit: number,
   offset: number,
-): Promise<SucheAntwort<EntscheidTreffer>> {
-  const [countRows, treffRows] = await tursoAbfrage(url, token, [
+  mitStand: boolean,
+): Promise<Teilergebnis<EntscheidTreffer>> {
+  const [countRows, treffRows, standRows] = await tursoAbfrage(url, token, [
     { sql: SQL_ENTSCHEIDE_COUNT, args: [match] },
     { sql: SQL_ENTSCHEIDE_TREFFER, args: [match, limit, offset] },
+    ...(mitStand ? [STAND_ANFRAGE] : []),
   ]);
-  const gesamt = Number(countRows[0]?.n ?? 0);
-  const treffer = (treffRows as unknown as EntscheidRohzeile[]).map(formeEntscheidTreffer);
-  return { treffer, gesamt, naechsteSeite: naechsterOffset(gesamt, offset, limit) };
+  const gesamt = Number(pflicht(countRows)[0]?.n ?? 0);
+  const treffer = (pflicht(treffRows) as unknown as EntscheidRohzeile[]).map(formeEntscheidTreffer);
+  return {
+    antwort: { treffer, gesamt, naechsteSeite: naechsterOffset(gesamt, offset, limit) },
+    stand: leseStand(standRows),
+  };
 }
 
 const LEER: SucheAntwort<never> = { treffer: [], gesamt: 0, naechsteSeite: null };
+
+/** Fehlertext für das Server-Log: Token geschwärzt, Steuerzeichen (CR/LF …) zu Leerzeichen,
+ *  Länge gedeckelt. */
+function fuerLog(e: unknown, token: string): string {
+  const roh = e instanceof Error ? e.message : String(e);
+  const ohneToken = token ? roh.split(token).join('[token]') : roh;
+  // eslint-disable-next-line no-control-regex
+  return ohneToken.replace(/[\u0000-\u001f\u007f]+/g, ' ').slice(0, 500);
+}
 
 export default async function handler(req: Request): Promise<Response> {
   const url = process.env.TURSO_DATABASE_URL;
@@ -156,17 +223,36 @@ export default async function handler(req: Request): Promise<Response> {
   const antwort: {
     artikel?: SucheAntwort<ArtikelTreffer>;
     entscheide?: SucheAntwort<EntscheidTreffer>;
+    /** ISO-Zeitstempel des letzten erfolgreichen Sync-Laufs der Replika (§8) — nur gesetzt,
+     *  wenn die Marke gelesen wurde und ein Datum ist; sonst fehlt der Schlüssel. */
+    stand?: string;
   } = {};
   try {
     if (!match) {
       if (typ !== 'entscheide') antwort.artikel = LEER;
       if (typ !== 'artikel') antwort.entscheide = LEER;
     } else {
-      if (typ !== 'entscheide') antwort.artikel = await sucheArtikelEdge(url, token, q, match, limit, offset);
-      if (typ !== 'artikel') antwort.entscheide = await sucheEntscheideEdge(url, token, match, limit, offset);
+      // Der Stand reist in der ERSTEN Pipeline-Anfrage mit (keine Zusatzlatenz).
+      let standOffen = true;
+      if (typ !== 'entscheide') {
+        const t = await sucheArtikelEdge(url, token, q, match, limit, offset, standOffen);
+        antwort.artikel = t.antwort;
+        if (t.stand) antwort.stand = t.stand;
+        standOffen = false;
+      }
+      if (typ !== 'artikel') {
+        const t = await sucheEntscheideEdge(url, token, match, limit, offset, standOffen);
+        antwort.entscheide = t.antwort;
+        if (t.stand) antwort.stand = t.stand;
+      }
     }
   } catch (e) {
-    return new Response(JSON.stringify({ fehler: 'Suche vorübergehend nicht verfügbar', detail: String(e) }), {
+    // KEINE Fehlerdetails an anonyme Aufrufer (HN-11, SA-05): Turso-Meldungen können SQL,
+    // Hostnamen und — bei einem Token mit Steuerzeichen — den Token selbst enthalten.
+    // Die einzige Diagnosespur bleibt das serverseitige Log; dort wird der Token
+    // geschwärzt und Zeilenumbrüche werden geglättet (kein Log-Injection).
+    console.error(`api/suche: Abfrage fehlgeschlagen — ${fuerLog(e, token)}`);
+    return new Response(JSON.stringify({ fehler: 'Suche vorübergehend nicht verfügbar', code: 'suche-nicht-verfuegbar' }), {
       status: 502,
       headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' },
     });
