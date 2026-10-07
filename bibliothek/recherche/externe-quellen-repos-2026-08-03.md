@@ -393,7 +393,7 @@ sie verhindern, dass eine Folge-Session dieselbe Suche noch einmal bezahlt.
   eigene Wiedervorlage-Anzeige; die Daten selbst holen wir ohnehin amtlich über
   `scripts/fedlex-sparql.ts`.
 - **Dritt-Korpora sind nie Quelle.** Dieselbe Leitplanke wie bei OCL
-  ([PLAN-OCL-ABBAU.md](../../PLAN-OCL-ABBAU.md), Ziff. 1): «Load-bearing = nie
+  ([PLAN-OCL-ABBAU.md](../../archiv/PLAN-OCL-ABBAU.md), Ziff. 1): «Load-bearing = nie
   über OCL zur Laufzeit», Dritt-Repo ist Seed, Diff-Orakel und Technik-Vorlage,
   **nie Mittelsmann**. §7 verlangt amtliche Quelle-URL, Live-Link und
   Drift-Erkennung *gegen die Quelle*; ein Repo dazwischen wäre eine zweite
