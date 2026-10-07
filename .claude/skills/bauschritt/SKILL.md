@@ -158,7 +158,8 @@ Sorgfalt, eigener Commit mit eigenem Roadmap-Trailer).
       `git checkout main && git pull`; den EIGENEN Worktree zuletzt
       (`landung` §Session-Ende). Dazu der
       **Klartext-Schlusssatz an David**: was live ist, «nichts wartet auf dich»
-      oder genau *was* und warum.
+      oder genau *was* und warum. Der Bericht **beginnt mit der Fortschrittszeile**
+      aus `ROADMAP.md` ZIEL, samt Änderung dieser Session (Ebenen-Modell, David 7.10.2026).
 
 Nur wenn Jules oder Gemini an der Session beteiligt war: Messwerte + `npm run
 fremdagenten:messung -- --kontingent` nach Skill `auftrag` Ziff. 4 Punkt 7.
