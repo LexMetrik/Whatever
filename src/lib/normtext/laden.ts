@@ -16,6 +16,10 @@
 
 import type { NormSnapshot, NormSnapshotDatei } from './typen';
 import { normtextDateiUrl } from './dateiUrl';
+import { ladeJson, pruefeFelder } from '../ladeJson';
+
+const SNAPSHOT_PRUEFER = pruefeFelder('normtext/<Erlass>.json', { eintraege: 'array' });
+const KANTON_INDEX_PRUEFER = pruefeFelder('normtext/kanton/index.json', {}, (_k, w) => (typeof w === 'string' ? null : 'Wert ist kein String'));
 
 const dateiCache = new Map<string, Promise<NormSnapshotDatei | null>>();
 
@@ -29,11 +33,8 @@ function pfad(ebene: 'bund' | 'kanton', quelle: string, erlassRef?: string): str
 // nicht — cachebar). Transiente Fehler (5xx, Netz, Parse) WERFEN, damit der
 // Aufrufer (ladeDatei) den Cache-Eintrag verwerfen und später neu versuchen
 // kann. Der 404-Fall ist das einzige gecachte «null».
-async function holeDatei(url: string): Promise<NormSnapshotDatei | null> {
-  const res = await fetch(url);
-  if (res.status === 404) return null;
-  if (!res.ok) throw new Error(`HTTP ${res.status} für ${url}`);
-  return (await res.json()) as NormSnapshotDatei;
+function holeDatei(url: string): Promise<NormSnapshotDatei | null> {
+  return ladeJson<NormSnapshotDatei>(url, SNAPSHOT_PRUEFER);
 }
 
 // Cacht die laufende Promise. Verwirft den Eintrag, wenn die Promise
@@ -63,12 +64,7 @@ let kantonManifestPromise: Promise<Record<string, string> | null> | null = null;
 
 async function ladeKantonManifest(): Promise<Record<string, string> | null> {
   if (!kantonManifestPromise) {
-    const p = (async () => {
-      const res = await fetch(KANTON_MANIFEST_URL);
-      if (res.status === 404) return null;
-      if (!res.ok) throw new Error(`HTTP ${res.status} für ${KANTON_MANIFEST_URL}`);
-      return (await res.json()) as Record<string, string>;
-    })();
+    const p = ladeJson<Record<string, string>>(KANTON_MANIFEST_URL, KANTON_INDEX_PRUEFER);
     // Bei transientem Fehler den Cache zurücksetzen (nächster Zugriff neu).
     p.catch(() => {
       if (kantonManifestPromise === p) kantonManifestPromise = null;

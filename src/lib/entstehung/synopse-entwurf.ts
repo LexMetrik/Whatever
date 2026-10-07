@@ -20,6 +20,10 @@
 //
 // §3 Schichtentrennung: Typen + Lazy-Loader. Keine UI, keine Rechtslogik.
 
+import { ladeJson, pruefeFelder } from '../ladeJson';
+
+const PRUEFER = pruefeFelder('materialien/synopse-entwurf/<Botschaft>.json', { entwurfDok: 'objekt', artikel: 'array' });
+
 /** Wie das Parlament einen Entwurfs-Artikel angefasst hat. */
 type EntwurfArt =
   /** Label in beiden Dokumenten, Wortlaut verschieden. */
@@ -90,8 +94,7 @@ const cache = new Map<string, Promise<EntwurfShard | null>>();
 export function ladeEntwurfShard(botschaftKey: string): Promise<EntwurfShard | null> {
   const vorhanden = cache.get(botschaftKey);
   if (vorhanden) return vorhanden;
-  const p = fetch(`/materialien/synopse-entwurf/${encodeURIComponent(botschaftKey)}.json`)
-    .then((r) => (r.ok ? (r.json() as Promise<EntwurfShard>) : null))
+  const p = ladeJson<EntwurfShard>(`/materialien/synopse-entwurf/${encodeURIComponent(botschaftKey)}.json`, PRUEFER)
     .catch(() => null);
   cache.set(botschaftKey, p);
   return p;

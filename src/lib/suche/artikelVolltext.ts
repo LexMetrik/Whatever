@@ -2,6 +2,9 @@ import type { SuchTreffer } from '../universalSuche';
 import { sucherTerme, rangiere, type RankEintrag } from './artikelRanking';
 import { normalisiereBegriff, expandiereSuchbegriff } from './vokabular';
 import { erlassPfadVonKey } from '../normtext/erlassAdresse';
+import { ladeJsonStreng, pruefeFelder } from '../ladeJson';
+
+const INDEX_PRUEFER = pruefeFelder('such-index/artikel.json', { eintraege: 'array' });
 
 // ─── Artikel-Volltextsuche (ROADMAP Schritt 5, FlexSearch) ──────────────────
 //
@@ -418,10 +421,7 @@ export function baueSuchFn(eintraege: IndexEintrag[], FlexSearch: FlexLike): (q:
 async function baue(): Promise<ArtikelSuche> {
   const [flex, daten] = await Promise.all([
     import('flexsearch'),
-    fetch(import.meta.env.BASE_URL + 'such-index/artikel.json').then((r) => {
-      if (!r.ok) throw new Error('Index ' + r.status);
-      return r.json() as Promise<{ eintraege: IndexEintrag[]; ebenen?: Ebene[] }>;
-    }),
+    ladeJsonStreng<{ eintraege: IndexEintrag[]; ebenen?: Ebene[] }>(import.meta.env.BASE_URL + 'such-index/artikel.json', INDEX_PRUEFER),
   ]);
   const FlexSearch = ((flex as unknown as { default?: unknown }).default ?? flex) as FlexLike;
   const sucher = baueSucher(daten.eintraege, FlexSearch);

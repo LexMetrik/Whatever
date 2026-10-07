@@ -22,6 +22,9 @@
 import type { BezugsFacetten, BezugStatus } from '../verzahnung/facetten';
 import { STATUS_RANG } from '../verzahnung/facetten';
 import { kodiereSchluessel } from '../normtext/dateiUrl';
+import { ladeJson, pruefeFelder } from '../ladeJson';
+
+const PRUEFER = pruefeFelder('rechtsprechung/bezuege/<Erlass>.json', { dokumente: 'objekt', proArtikel: 'objekt' });
 
 /** Dokument-Kopf — EINMAL je Shard, nicht je Artikel (§15, siehe Generator). */
 interface BezugsDokument {
@@ -112,16 +115,14 @@ export async function ladeBezugsShard(erlass: string): Promise<BezugsShard | nul
   if (!p) {
     p = (async () => {
       try {
-        const res = await fetch(`/rechtsprechung/bezuege/${kodiereSchluessel(erlass)}.json`);
-        if (res.status === 404) return null;
-        if (!res.ok) throw new Error(`Bezugs-Shard ${erlass}: HTTP ${res.status}`);
         // SPA-RÜCKFALL = 404: ein Server ohne die Datei, der stattdessen die App
         // ausliefert (`vite dev`/`vite preview`; jede Rewrite-Regel ohne die
         // Ausnahme in vercel.json), antwortet 200 mit HTML. Das ist dieselbe
         // Auskunft wie der 404 — «keine Datei» —, kein Leitungsfehler. Gemessen
         // 23.9.2026 an `vite preview`: ZH-211.11 → 200 text/html.
-        if (!(res.headers?.get('content-type') ?? '').includes('json')) return null;
-        return (await res.json()) as BezugsShard;
+        return await ladeJson<BezugsShard>(`/rechtsprechung/bezuege/${kodiereSchluessel(erlass)}.json`, PRUEFER, {
+          alsFehlend: (res) => !(res.headers?.get('content-type') ?? '').includes('json'),
+        });
       } catch (e) {
         shardPromises.delete(erlass);
         throw e instanceof Error ? e : new Error(String(e));

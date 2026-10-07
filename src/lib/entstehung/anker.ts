@@ -14,6 +14,10 @@
 //
 // §3 Schichtentrennung: Typen + Lazy-Loader, keine UI, keine Rechtslogik.
 
+import { ladeJson, pruefeFelder } from '../ladeJson';
+
+const PRUEFER = pruefeFelder('materialien/anker/<Botschaft>.json', { anker: 'array' });
+
 /** Ein Artikel-Anker im amtlichen Botschafts-HTML. */
 export interface BotschaftAnker {
   /** Amtliche eId im BBl-HTML, z. B. «art_16_c». */
@@ -69,8 +73,7 @@ const cache = new Map<string, Promise<AnkerSidecar | null>>();
 export function ladeAnkerSidecar(botschaftKey: string): Promise<AnkerSidecar | null> {
   const vorhanden = cache.get(botschaftKey);
   if (vorhanden) return vorhanden;
-  const p = fetch(`/materialien/anker/${encodeURIComponent(botschaftKey)}.json`)
-    .then((r) => (r.ok ? (r.json() as Promise<AnkerSidecar>) : null))
+  const p = ladeJson<AnkerSidecar>(`/materialien/anker/${encodeURIComponent(botschaftKey)}.json`, PRUEFER)
     .catch(() => null);
   cache.set(botschaftKey, p);
   return p;

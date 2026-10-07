@@ -12,6 +12,9 @@
 
 import { loeseErbeAuf, type ArtikelHistorie, type HistorieEreignis } from './historie-parse';
 import { kodiereSchluessel } from './dateiUrl';
+import { ladeJson, pruefeFelder } from '../ladeJson';
+
+const PRUEFER = pruefeFelder('normtext/historie/<Erlass>.json', { artikel: 'objekt' });
 
 // Der Per-Artikel-Eintrag ist exakt die Generator-Projektion `ArtikelHistorie`
 // ({ giltSeit, aufgehobenSeit?, ereignisse }). Re-Export als Typ (zur Bauzeit
@@ -42,10 +45,8 @@ export async function ladeHistorieShard(key: string): Promise<HistorieShard | nu
   if (!p) {
     p = (async () => {
       try {
-        const res = await fetch(`/normtext/historie/${kodiereSchluessel(key)}.json`);
-        if (res.status === 404) return null; // kein Shard = kein Fehler (still)
-        if (!res.ok) { shardPromises.delete(key); return null; }
-        return (await res.json()) as HistorieShard;
+        // 404 = kein Shard = kein Fehler (still); Status-/Form-/Netzfehler werfen.
+        return await ladeJson<HistorieShard>(`/normtext/historie/${kodiereSchluessel(key)}.json`, PRUEFER);
       } catch {
         // Transienter Netz-/Parse-Fehler NICHT dauerhaft cachen (wie Leitfall-Shard):
         // ein späterer Artikel-Zugriff darf neu versuchen.

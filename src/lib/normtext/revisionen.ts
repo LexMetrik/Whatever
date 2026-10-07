@@ -11,6 +11,9 @@
 // Übergangslösung bis E1 (dann Projektion aus erlass_fassungen) — siehe Generator.
 
 import { kodiereSchluessel } from './dateiUrl';
+import { ladeJson, pruefeFelder } from '../ladeJson';
+
+const PRUEFER = pruefeFelder('normtext/revisionen/<Erlass>.json', { revisionen: 'array' });
 
 /** Ein Timeline-Eintrag in Anzeige-Form (Feld-Teilmenge des Sidecars). */
 export interface RevisionBezug {
@@ -86,10 +89,7 @@ function ladeSidecar(key: string): Promise<RevisionSidecar | null> {
   if (!p) {
     p = (async () => {
       try {
-        const res = await fetch(`/normtext/revisionen/${kodiereSchluessel(key)}.json`);
-        if (!res.ok) return null;
-        const s = (await res.json()) as RevisionSidecar;
-        return Array.isArray(s.revisionen) ? s : null;
+        return await ladeJson<RevisionSidecar>(`/normtext/revisionen/${kodiereSchluessel(key)}.json`, PRUEFER);
       } catch {
         return null;
       }

@@ -38,6 +38,9 @@
 
 import type { VerfahrensEreignis } from '../materialien/verfahren';
 import { kodiereSchluessel } from '../normtext/dateiUrl';
+import { ladeJson, pruefeFelder } from '../ladeJson';
+
+const PRUEFER = pruefeFelder('materialien/entstehung/<Erlass>.json', { aenderungen: 'objekt', botschaften: 'objekt' });
 
 /**
  * Versionierte Bauart der Projektion.
@@ -137,10 +140,7 @@ export function ladeEntstehungProjektion(erlassKey: string): Promise<EntstehungP
   if (vorhanden) return vorhanden;
   const p = (async () => {
     try {
-      const res = await fetch(`/materialien/entstehung/${kodiereSchluessel(erlassKey)}.json`);
-      if (res.status === 404) return null;
-      if (!res.ok) { cache.delete(erlassKey); return null; }
-      return (await res.json()) as EntstehungProjektion;
+      return await ladeJson<EntstehungProjektion>(`/materialien/entstehung/${kodiereSchluessel(erlassKey)}.json`, PRUEFER);
     } catch {
       cache.delete(erlassKey);
       return null;
