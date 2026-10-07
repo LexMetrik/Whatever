@@ -31,6 +31,16 @@ updates:
         dependency-type: development
         update-types: [minor, patch]
         exclude-patterns: ["@playwright/*", "playwright", "@axe-core/*", "@vitejs/plugin-react"]
+  # Feste Vercel-CLI-Version des Prod-Deploy-Jobs (E0-BRANDSCHUTZ, HN-11): eigenes
+  # Manifest, damit die CLI-Pakete nicht in jeden npm-ci-Lauf wandern. Ein Bump
+  # ändert die Auslieferung — er landet allein; der Deploy-Lauf nach dem Merge ist
+  # der Beleg (Deploy-Log: «Vercel CLI x.y.z»).
+  - package-ecosystem: npm
+    directory: /scripts/ci/vercel-cli
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 1
+    rebase-strategy: disabled
   - package-ecosystem: github-actions
     directory: /
     schedule:

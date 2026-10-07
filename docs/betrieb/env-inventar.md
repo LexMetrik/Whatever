@@ -30,9 +30,27 @@ vollständig statische SPA ohne Backend-Secrets; alle Rechen-/Normdaten sind
 Build-Zeit-Artefakte (`public/*`). Bricht `api/suche` ohne diese Vars, ist das
 **by design** ein ehrlicher 503, kein Ausfall (FAHRPLAN-DATENHALTUNG §5 E2).
 
+**Antwortform von `api/suche` (seit 7.10.2026, E0-BRANDSCHUTZ).** Ein DB-/SQL-Fehler —
+auch einer einzelnen Teil-Anweisung innerhalb einer HTTP-200-Antwort von Turso — endet
+als **502** mit der generischen Kennung `{fehler, code: "suche-nicht-verfuegbar"}`,
+nie als «0 Treffer»; Fehlerdetails (SQL, Host, Token) gehen nicht an den Aufrufer,
+die Diagnose steht nur im Funktions-Log (`console.error`, Token geschwärzt). Die
+Antwort trägt zusätzlich `stand` (ISO-Zeitstempel des letzten erfolgreichen Sync-Laufs
+aus `sync_meta.stand`); die Such-Oberfläche zeigt ihn als «Suchindex Stand TT.MM.JJJJ».
+Fehlt die Marke, fehlt das Feld — keine Anzeige statt eines erfundenen Datums (§8).
+
 ## Build/Deploy
 
 - **Deploy** = Git-Push auf `main` (Vercel-Git-Integration, kein CI-Deploy-Gate).
+  *(Stand bis 7.10.2026; überholt — nachgetragen, nicht umgeschrieben: die
+  Git-Integration ist abgeschaltet (`vercel.json` → `git.deploymentEnabled: false`),
+  ausgeliefert wird vom CI-Job «Deploy (Prod, Vercel CLI)» in `ci.yml` nach grünem
+  Lauf auf `main`. Er braucht das Repo-Secret **`VERCEL_TOKEN`**, das nur in den
+  Schritten steht, die es brauchen, nicht auf Job-Ebene; fehlt es, wird der Job
+  **rot** (Token-Vorprüfung). Die CLI läuft in einer FESTEN Version aus
+  `scripts/ci/vercel-cli/package.json` (seit 7.10.2026, E0-BRANDSCHUTZ; vorher
+  `npx -y vercel@latest`), Dependabot pflegt sie monatlich; die laufende Version
+  steht im Deploy-Log («Vercel CLI x.y.z»).)*
 - **Build-Command / Output**: Projekt-Default (Vite-Build + `scripts/prerender.ts`);
   keine Build-Env-Secrets. Die 7,5-GB-Massendaten laufen bewusst nie im Vercel-Build.
 
