@@ -73,6 +73,18 @@ const SCHATTEN_SPALTEN: Array<{
   { suffix: '_content', spalten: ['id', 'c0', 'c1', 'c2', 'c3', 'c4'], nurStandalone: true },
 ];
 
+/** Shadow-Definitionen einer FTS5-Tabelle (Suffix + Spalten), ohne Daten — das Delta liest
+ *  dieselben Tabellen aus der REMOTE-Replika und braucht dazu dieselbe Liste (§5). */
+export function schattenDefinitionen(
+  mitContent: boolean,
+): Array<{ suffix: string; spalten: string[]; blobSpalten?: string[] }> {
+  return SCHATTEN_SPALTEN.filter((d) => mitContent || !d.nurStandalone).map(({ suffix, spalten, blobSpalten }) => ({
+    suffix,
+    spalten,
+    blobSpalten,
+  }));
+}
+
 /**
  * Liest die Shadow-Tabellen des lokal gebauten FTS5-Index.
  *
