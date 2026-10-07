@@ -120,7 +120,7 @@ export function sperrMeldung(stand: string | null): string {
  * eine echte Aenderung als «unveraendert» durchgehen lassen — der Skip waere dann keine
  * Ersparnis, sondern stiller Datenverlust.
  */
-function schreibeWert(h: Hash, v: Wert): void {
+export function schreibeWert(h: Hash, v: Wert): void {
   if (v === null) {
     h.update('n;');
   } else if (typeof v === 'number') {
@@ -245,14 +245,16 @@ export const BASIS = ['erlasse', 'erlass_fassungen', 'artikel'] as const;
  *  warnt — nur eine Ebene hoeher (§5). Index erst NACH dem Laden (Schritt 6). */
 export const DDL_BASIS: Record<BasisTabelle, (name: string) => string> = {
   erlasse: (n) => `CREATE TABLE ${n} (key TEXT PRIMARY KEY, ebene TEXT NOT NULL, kanton TEXT, sr TEXT,
-            abkuerzung TEXT NOT NULL, titel TEXT NOT NULL, rechtsgebiet TEXT, status TEXT)`,
+            abkuerzung TEXT NOT NULL, titel TEXT NOT NULL, rechtsgebiet TEXT, status TEXT,
+            zeilen_hash TEXT NOT NULL)`,
   erlass_fassungen: (n) => `CREATE TABLE ${n} (erlass_key TEXT NOT NULL, fassungs_token TEXT NOT NULL,
             gueltig_von TEXT, gueltig_bis TEXT, stand TEXT, quelle_url TEXT NOT NULL,
-            as_fundstelle TEXT, abgerufen TEXT, sha TEXT,
+            as_fundstelle TEXT, abgerufen TEXT, sha TEXT, zeilen_hash TEXT NOT NULL,
             PRIMARY KEY (erlass_key, fassungs_token))`,
   artikel: (n) => `CREATE TABLE ${n} (erlass_key TEXT NOT NULL, fassungs_token TEXT NOT NULL,
             art_id TEXT NOT NULL, ord INTEGER, artikel TEXT, artikel_label TEXT, marg TEXT,
             grundlage TEXT, quelle_url TEXT, bloecke_json TEXT NOT NULL, sha TEXT,
+            zeilen_hash TEXT NOT NULL,
             PRIMARY KEY (erlass_key, fassungs_token, art_id))`,
 };
 
@@ -271,6 +273,21 @@ export const SPALTEN_BASIS: Record<BasisTabelle, string[]> = {
     'quelle_url', 'as_fundstelle', 'abgerufen', 'sha'],
   artikel: ['rowid', 'erlass_key', 'fassungs_token', 'art_id', 'ord', 'artikel', 'artikel_label',
     'marg', 'grundlage', 'quelle_url', 'bloecke_json', 'sha'],
+};
+
+/** Natuerliche Schluessel der Basis-Tabellen (== PRIMARY KEY der Ziel-DDL). Das Delta
+ *  (`turso-delta.ts`) gleicht Zeilen ueber diese Schluessel ab, nicht ueber die rowid.
+ *
+ *  `zeilen_hash` (E0-BRANDSCHUTZ, 7.10.2026) ist die LETZTE Spalte jeder Ziel-Tabelle: sha256
+ *  ueber alle uebrigen Inhaltsspalten (ohne rowid), gerechnet beim Laden. Sie macht den
+ *  Remote-Inhalt je Zeile VERGLEICHBAR, ohne ihn herunterzuladen (6 MB statt ~100 MB bei
+ *  `artikel`). Sie steht in der Ziel-DDL und damit in der Signatur — die Einfuehrung der
+ *  Spalte erzwingt genau einmal den Vollneubau. Lokal gibt es sie nicht; sie ist rein
+ *  Sync-Metadatum und wird von api/suche.ts nie gelesen (kein `SELECT *`, geprueft). */
+export const SCHLUESSEL_BASIS: Record<BasisTabelle, string[]> = {
+  erlasse: ['key'],
+  erlass_fassungen: ['erlass_key', 'fassungs_token'],
+  artikel: ['erlass_key', 'fassungs_token', 'art_id'],
 };
 
 /** Liest die Signatur-Marken in EINER Abfrage — ein Request statt fuenf. `ESCAPE` haelt das

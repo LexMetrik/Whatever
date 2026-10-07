@@ -157,14 +157,14 @@ Materialien-Verzahnung weitgehend ab.
    Rechtsgebiet-Facette, deskriptiv, Richter-Gate beachten); Staatsarchiv ZH TEI (OS 1803–1998,
    Zenodo 13347459) und Zentrale Serien (KRP/RRB) für Fussnoten-Apparat, Zeitmaschine und Materialien
    Kanton ZH (FAHRPLAN-KANTONE §5 R3/R7/R12).
-6. **Alt-Plan abgleichen (Nachtrag 18.9.2026, Auftrag David):** `PLAN-OCL-ABBAU.md` (2.7.2026) führt
+6. **Alt-Plan abgleichen (Nachtrag 18.9.2026, Auftrag David):** `archiv/PLAN-OCL-ABBAU.md` (2.7.2026) führt
    die Pakete W4 (Botschaft-/Materialien-Adapter), W5 (Struktur-Splitter), W6 (Instanzenzug), W7
    (Zitationsgraph-UI), W10 (Rechtsetzungs-Tracking), W11 (LexWork `json_content`), W12
    (Bulk-Parquet), W13 (Suchindex-Härtung) und #16 (FR/IT-Mapping) als «wartet auf Davids
    Priorisierung» — ohne ROADMAP-ID. Je Paket entscheiden: erledigt (Beleg: PR/Commit in `main`;
    auch W0/W2/W3/W9 «fertig+committet» gegen `main` prüfen, Branch `feat/ocl-abbau` existiert nicht
    mehr) · geht in einem bestehenden Schritt auf · eigener ROADMAP-Schritt · verworfen. Danach
-   `PLAN-OCL-ABBAU.md` archivieren — ein Plan neben der ROADMAP ist eine zweite Wahrheit (§5).
+   `archiv/PLAN-OCL-ABBAU.md` archivieren — ein Plan neben der ROADMAP ist eine zweite Wahrheit (§5).
 7. **Regulierungsbehörden als mögliches neues Feld (Nachtrag 18.9.2026):** OCL führt Scraper für
    FINMA, WEKO, EDÖB, ElCom, ComCom, PostCom, Preisüberwacher, UBI, ESBK, ESchK, RAB, BAZG, BSV
    (6083 Einträge), OAK BV — in LexMetrik nie geprüft. Nur Mehrwert-Test und amtliche

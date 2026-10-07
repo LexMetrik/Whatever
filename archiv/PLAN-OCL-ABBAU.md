@@ -3,7 +3,7 @@
 **Was das ist.** Der *eine* autoritative Extraktions- + Integrationsplan, den Opus abarbeitet, um aus
 `github.com/jonashertner/caselaw-repo-1` (Code hinter opencaselaw.ch, ~143k LOC Python, Daten CC0 / Code MIT)
 **alles** für Lexmetrik Nützliche zu heben — nicht nur Rechtsprechung. Baut auf
-[`FAHRPLAN-OPENCASELAW-QUELLEN.md`](fahrplaene/FAHRPLAN-OPENCASELAW-QUELLEN.md) auf (8 Vor-Agenten + LexWork-POC; deren
+[`FAHRPLAN-OPENCASELAW-QUELLEN.md`](FAHRPLAN-OPENCASELAW-QUELLEN.md) auf (8 Vor-Agenten + LexWork-POC; deren
 Verdikte gelten hier als *gesetzt*) und ergänzt einen **systematischen Repo-Sweep** (3 neue Agenten:
 OCL-search_stack-Kandidaten · OCL-Peripherie · Lexmetrik-Senke). Dieser Plan **ersetzt keine** Verdikte des
 FAHRPLAN, er **sequenziert** sie und fügt die neu gefundenen Assets ein.
