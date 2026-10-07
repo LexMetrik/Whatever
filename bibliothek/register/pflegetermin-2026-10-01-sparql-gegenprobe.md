@@ -78,4 +78,4 @@ nicht neu geprüft.
 
 ## Verweis
 
-Bau-/Beobachtungsschritt: [`plan/posten/2026-09-20-pflegetermin-1-10-2026.md`](../../plan/posten/2026-09-20-pflegetermin-1-10-2026.md).
+Bau-/Beobachtungsschritt: [`archiv/posten/2026-09-20-pflegetermin-1-10-2026.md`](../../archiv/posten/2026-09-20-pflegetermin-1-10-2026.md) (archiviert 7.10.2026, PLAN-EBENEN).
