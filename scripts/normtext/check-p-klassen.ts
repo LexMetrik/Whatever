@@ -104,6 +104,10 @@ const eintraege = parseFedlexCacheEintraege(shell);
 // `--cache-pflicht` (nur im Frische-Arm `fedlex-frische.yml` gesetzt, der den Cache selbst
 // frisch fetcht) verlangt die VOLLE Bestandszahl auch bei 0 vorhandenen Caches.
 const cachePflicht = process.argv.includes('--cache-pflicht') || process.env.LEXMETRIK_CACHE_PFLICHT === '1';
+// Cache-Ort (Ergänzung 7.10.2026, ARCH-REVIEW cache-tore): Default /tmp; nur Tests/Rot-Beweise
+// setzen LEXMETRIK_FEDLEX_CACHE_DIR (dieselbe Variable wie fedlex-cache.sh/check-segmente.ts),
+// damit geteilte /tmp-Caches anderer Sessions unberührt bleiben (§12).
+const cacheDir = process.env.LEXMETRIK_FEDLEX_CACHE_DIR || '/tmp';
 
 const gefundeneTokens = new Set<string>();
 const beispiel = new Map<string, string>();
@@ -117,16 +121,21 @@ let artScan = 0;
 let pinFehlerTotal = 0;
 let vorhanden = 0; // Gegenprüfung #822 C1: Caches, die ÜBERHAUPT existieren (Existenz, nicht Pin-Gültigkeit)
 
+const ohneCache: string[] = []; // ARCH-REVIEW cache-tore 7.10.2026: für die TEILGEPRÜFT-Ausgabe
+
 for (const e of eintraege) {
-  const pfad = `/tmp/${e.name}.html`;
-  if (!existsSync(pfad)) continue;
+  const pfad = `${cacheDir}/${e.name}.html`;
+  if (!existsSync(pfad)) {
+    ohneCache.push(e.name);
+    continue;
+  }
   vorhanden++;
   // §17 (Gegenprüfung #808 B4): ein VOR einem Re-Pin geschriebener Cache besteht die
   // Existenz-Prüfung anstandslos, stammt aber aus der überholten Manifestation —
   // dieselbe Pin-Sonde wie normtext-snapshot.ts/struktur-run.ts/check-vollstaendigkeit.ts.
   // FEHLER statt HINWEIS (wie struktur-run.ts): ein Pin-Fehlbefund ist kein tolerierbarer
   // Lückenfall, sondern ein unzuverlässiger Cache.
-  const pin = pinBefund(e.name, e.eli, e.konsolidierung, e.htmlN);
+  const pin = pinBefund(e.name, e.eli, e.konsolidierung, e.htmlN, cacheDir);
   if (!pin.ok) {
     console.error(`  FEHLER ${e.name}: ${pin.grund} — Cache pin-ungültig, Prüfung unzuverlässig.`);
     pinFehlerTotal++;
@@ -178,13 +187,34 @@ console.log(`[check:p-klassen] ${artScan} Artikel gescannt, ${gefundeneTokens.si
 // Caches weggelegt stellte JEDEN Nicht-Doku-PR rot). 0 vorhanden ⇒ Prüfung ungefahren
 // (grün, HINWEIS) — ausser `--cache-pflicht` (nur Frische-Arm) verlangt die volle Zahl
 // auch bei 0. Ein TEILBESTAND (0 < n < alle) ist in JEDEM Kontext ein Befund.
+//
+// Nachtrag 7.10.2026 (ARCH-REVIEW cache-tore, Ergänzung — der Absatz oben bleibt als
+// Beleg seines Stands): (1) «0 vorhanden ⇒ grün, HINWEIS» endete bisher trotzdem mit
+// «✓ … keine stillen <p>-Verluste» (Beleg: PR-CI-Lauf 37646635703, 7.10.2026, «0 Artikel
+// gescannt» + ✓-Zeile) — ein Grün-Anschein ohne Prüfung (§6.7). Jetzt: Ausgabe «NICHT
+// GEPRÜFT (kein Cache)» und sofortiger Exit 0, KEINE ✓-Zeile. (2) Teilbestand OHNE
+// `--cache-pflicht` (nur lokal denkbar — PR-CI hat nie einen Cache, die Pflicht-Läufe
+// setzen die Pflicht): prüft die vorhandenen Erlasse und meldet «TEILGEPRÜFT n/N» statt
+// Rot. Begründung: wenn 0 Caches tolerant durchgehen, prüft ein Teilbestand STRENG MEHR
+// — Rot dort war Fehlalarm, kein Schutz. MIT Pflicht bleibt der Teilbestand ein Befund
+// (halb gelungener Fetch). Pin-ungültige Caches bleiben in JEDEM Fall FEHLER (#808 B4).
+// Die Mindestzahl gilt nur für den Vollbestand; im Teilbestand genügt ≥ 1 gescannter
+// Artikel als Kollaps-Sperre. Mit Pflicht läuft das Tor in fedlex-frische.yml (bei
+// Re-Pin) und in korpus-raw-release.yml (nach jedem Pin-Push auf main).
 const MINDEST_ARTIKELZAHL = 10_000;
+const teilbestand = vorhanden > 0 && vorhanden < eintraege.length;
 if (vorhanden === 0 && !cachePflicht) {
-  console.log(`\nHINWEIS: Cache-Prüfung nicht durchgeführt (kein /tmp-Cache; nur im Frische-Arm Pflicht).`);
-} else if (vorhanden > 0 && vorhanden < eintraege.length) {
+  console.log(
+    `\nNICHT GEPRÜFT (kein Cache): 0/${eintraege.length} Bund-Erlasse haben einen /tmp-Cache — ` +
+      `dieses Tor hat NICHTS geprüft; Exit 0 heisst hier nicht «bestanden». ` +
+      `Volle Prüfung: 'bash scripts/fedlex-cache.sh', dann erneut. Mit --cache-pflicht läuft es in ` +
+      `fedlex-frische.yml (bei Re-Pin) und korpus-raw-release.yml (nach Pin-Push auf main).`,
+  );
+  process.exit(0);
+} else if (teilbestand && cachePflicht) {
   console.error(
     `\n❌ FEHLER: nur ${vorhanden}/${eintraege.length} Bund-Erlasse haben überhaupt einen /tmp-Cache ` +
-      `(Teilbestand) — entweder ALLE Caches bereitstellen ('bash scripts/fedlex-cache.sh') oder KEINEN.`,
+      `(Teilbestand) — --cache-pflicht verlangt ALLE ('bash scripts/fedlex-cache.sh').`,
   );
   process.exit(1);
 } else if (vorhanden === 0 && cachePflicht) {
@@ -193,13 +223,20 @@ if (vorhanden === 0 && !cachePflicht) {
       `— 'bash scripts/fedlex-cache.sh' lief nicht oder scheiterte vollständig.`,
   );
   process.exit(1);
-} else if (pinFehlerTotal > 0 || artScan < MINDEST_ARTIKELZAHL) {
+} else if (pinFehlerTotal > 0 || (teilbestand ? artScan === 0 : artScan < MINDEST_ARTIKELZAHL)) {
   console.error(
-    `\n❌ FEHLER: ${artScan} Artikel gescannt (Mindestzahl ${MINDEST_ARTIKELZAHL})` +
+    `\n❌ FEHLER: ${artScan} Artikel gescannt (Mindestzahl ${teilbestand ? 1 : MINDEST_ARTIKELZAHL}` +
+      `${teilbestand ? `, Teilbestand ${vorhanden}/${eintraege.length}` : ''})` +
       (pinFehlerTotal > 0 ? `, ${pinFehlerTotal} Cache(s) pin-ungültig` : '') +
       ' — Prüfung unzuverlässig statt grün.',
   );
   process.exit(1);
+}
+if (teilbestand) {
+  console.log(
+    `\nHINWEIS — TEILGEPRÜFT ${vorhanden}/${eintraege.length}: nur Bund-Erlasse mit /tmp-Cache geprüft; ` +
+      `${ohneCache.length} NICHT GEPRÜFT (kein Cache): ${ohneCache.join(', ')}`,
+  );
 }
 if (neu.length > 0) {
   console.error('\n❌ NEUE, UNENTSCHIEDENE <p>-Drop-Klasse(n) — stiller Normtext-Verlust droht:');
@@ -209,7 +246,12 @@ if (neu.length > 0) {
   console.error('Herleitung: bibliothek/register/p3-drop-klassen-inventar-2026-07-05.md');
   process.exit(1);
 }
-if (verschwunden.length > 0) {
+if (verschwunden.length > 0 && !teilbestand) {
   console.log(`ℹ  Nicht mehr auftretende Manifest-Klassen (ok, Currency-Drift): ${verschwunden.join(', ')}`);
 }
-console.log('✓ Alle Drop-Klassen sind im Manifest entschieden — keine stillen <p>-Verluste.');
+console.log(
+  teilbestand
+    ? `✓ Alle Drop-Klassen der ${vorhanden} geprüften Erlasse sind im Manifest entschieden — ` +
+        `die übrigen ${ohneCache.length} sind NICHT GEPRÜFT (Teilbestand).`
+    : '✓ Alle Drop-Klassen sind im Manifest entschieden — keine stillen <p>-Verluste.',
+);
