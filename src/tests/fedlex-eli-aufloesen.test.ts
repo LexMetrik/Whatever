@@ -429,7 +429,7 @@ describe('Tor: SPARQL-Abfragen mit LIMIT brauchen ORDER BY (gehärtet, B2)', () 
     const src = [
       "import { sparqlSelect } from './fedlex-sparql';",
       "// it's a comment with an apostrophe",
-      "const r = /['\"`]/.test(x);",
+      "const r = /[`\"']/.test(x);",
       '/* don\'t */',
       'const q = `SELECT ?a WHERE { ?a ?b ?c } LIMIT 3`;',
     ].join('\n');
