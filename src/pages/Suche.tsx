@@ -20,9 +20,11 @@ import type { GruppenId } from '../lib/universalSuche';
 // Deep-Link `?q=` ist stabil und teilbar. CLS: der Kopf/das Feld stehen fest,
 // die Treffer wachsen nur darunter (§15.2).
 
-// Anzeige: alle Gruppen ungekappt zeigen, Artikel-Volltext grosszügig suchen.
+// Anzeige: alle Gruppen ungekappt zeigen, den Server-Volltext so weit holen, wie der
+// Server je Abfrage ausgibt (api/suche klemmt auf 50; mehr zeigt die Gruppe ehrlich
+// als «die ersten 50 von N», s. passeOnlineGruppeAn).
 const KAPPUNG_SEITE = 500;
-const ARTIKEL_LIMIT = 200;
+const VOLLTEXT_LIMIT = 50;
 
 export function Suche() {
   const navigate = useNavigate();
@@ -58,7 +60,7 @@ export function Suche() {
   }, [wert]);
 
   const { gruppen, allesGeladen, vorschlag, abdeckung } = useUniversalSuche(q, {
-    artikelLimit: ARTIKEL_LIMIT,
+    volltextLimit: VOLLTEXT_LIMIT,
     kappung: KAPPUNG_SEITE,
   });
 

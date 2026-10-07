@@ -229,7 +229,7 @@ function Gruppe({ g, index, onAuswahl, onNavigate, listboxId, aktivId, q, sektio
             (Board «Unter-Suche»). Das Kopf-Dropdown (1.4.1) bleibt Etikett. */}
         <span className={sektionsRollen ? 'text-body-s font-semibold text-ink-900' : 'lc-overline'}>{g.titel}</span>
         {/* Zähler je Gruppe (A6) — ausser beim einzeiligen Norm-Sprung («1» wäre Lärm). */}
-        {!g.laedt && g.id !== 'sprung' && <span className="num text-xs text-ink-500">{g.gesamt}</span>}
+        {!g.laedt && !g.nichtVerfuegbar && g.id !== 'sprung' && <span className="num text-xs text-ink-500">{g.gesamt}</span>}
         {/* Listbox-Modus: KEIN <a> im Gruppenkopf — ein Link ist als Listbox-Kind
             ein axe-critical aria-required-children-Verstoss. Der «alle N»-Sprung
             wird dort als echte role=option am Gruppenende gerendert (unten). */}
@@ -377,15 +377,6 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
   // §8-ehrlicher Zähler (S3/#5): solange Sektionen laden, ist die Zahl nicht final
   // → «N+ … wird noch durchsucht»; erst wenn alles geladen ist, die feste Zahl.
   const nochLaedt = !allesGeladen || gruppen.some((g) => g.laedt);
-  // `unvollstaendig` (W2·5, gestaffelter Artikel-Index) ist NICHT dasselbe wie
-  // `laedt`: Treffer sind bereits da und brauchbar, die Menge wächst nur noch.
-  // Darum behält die Kopfzeile ihre Aufschlüsselung — der Überblick soll sofort
-  // ablesbar sein — und trägt den Vorbehalt als Zusatz. Die Alternative («mindestens
-  // N …») hätte die Aufschlüsselung bis zum Ende des Nachladens verschluckt und
-  // damit weniger Auskunft gegeben, nicht mehr. Welche Ebene fehlt, sagt der
-  // Hinweis AN der betroffenen Gruppe (universalSuche: EBENEN_FEHLT) — hier
-  // bewusst ebenen-neutral formuliert, damit die Ebene nicht doppelt kodiert ist.
-  const waechstNoch = gruppen.some((g) => g.unvollstaendig);
   const gesamt = gruppen.reduce((n, g) => n + (g.laedt ? 0 : g.gesamt), 0);
   // Ergebnis-Kopfzeile «n Treffer, davon x Erlasse / y Artikel» (IA-1, praxis #10):
   // die Aufschlüsselung nennt nur die tatsächlich getroffenen Inhaltsklassen
@@ -393,12 +384,14 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
   // «0 …»-Lärm (§8), Singular/Plural sauber.
   const zahl = (id: string) => gruppen.find((g) => g.id === id && !g.laedt)?.gesamt ?? 0;
   const erlasse = zahl('gesetz');
-  const artikel = zahl('artikel');
+  const artikel = zahl('online');
   const teile: string[] = [];
   if (erlasse > 0) teile.push(`${erlasse} ${erlasse === 1 ? 'Erlass' : 'Erlasse'}`);
   if (artikel > 0) teile.push(`${artikel} Artikel`);
+  // Ausfall der Server-Suche gehört in die Ansage (§8): wer nur die Zahl hört,
+  // darf nicht schliessen, der Gesetzestext sei durchsucht worden.
   const kopf = `${gesamt} Treffer${teile.length ? `, davon ${teile.join(' / ')}` : ''}`
-    + (waechstNoch ? ' — wird noch ergänzt' : '');
+    + (gruppen.some((g) => g.nichtVerfuegbar) ? ' — Volltextsuche derzeit nicht verfügbar' : '');
   const status = gruppen.length === 0
     ? (allesGeladen ? 'Keine Treffer' : 'wird durchsucht …')
     : nochLaedt ? `mindestens ${gesamt} Treffer, wird noch durchsucht …` : kopf;
@@ -428,14 +421,14 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
            Die Flucht gilt an allen drei Orten gleich (§5). */
         /* F3 · EINE ETIKETT-STUFE. Die Zählzeile stand auf der SATZ-Grösse
            (14 px, `font-medium`) und war damit die vierte Textstufe des Panels,
-           obwohl den Zähler längst jeder Gruppenkopf trägt («Artikel 40»,
-           «Rechtsprechung 12»). Sie steht jetzt auf derselben Etiketten-Stufe
+           obwohl den Zähler längst jeder Gruppenkopf trägt («Gesetze 12»,
+           «Volltext-Suche (online) 40»). Sie steht jetzt auf derselben Etiketten-Stufe
            wie diese Zähler (12 px, ink-500) — die Aufschlüsselung bleibt, sie
            drängt sich nur nicht mehr vor die Treffer.
            BEWUSST NICHT GESTRICHEN (deklarierte Abweichung, §7): zwei
            Lade-Synchronisationen ausserhalb dieses Pakets warten auf genau
            dieses Element — `e2e/gesetze-ia-v2-walks.e2e.ts` («N Treffer, davon
-           …») und `e2e/norm-sprung.e2e.ts` («wird noch ergänzt»); es ist dort
+           …») und `e2e/norm-sprung.e2e.ts` (wartet auf die fertige Kopfzeile); es ist dort
            die einzige Marke dafür, dass JEDE Suchgruppe fertig geladen ist.
            Sie ersatzlos zu entfernen hiesse, zwei fremde Wächter umzubauen. */
         <p aria-hidden className={`px-4 pt-2 pb-1 text-xs text-ink-500${nochLaedt ? ' invisible' : ''}`}>{nochLaedt ? ' ' : (kopf || ' ')}</p>
@@ -480,14 +473,23 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
                 </>)
           : gruppen.map((g, i) => <Gruppe key={g.id} g={g} index={i} onAuswahl={onAuswahl} onNavigate={onNavigate} listboxId={listboxId} aktivId={aktivId} q={q} sektionsRollen={sektionsRollen} />)}
       </div>
+      {/* ENTSCHEIDE LIEGEN NICHT MEHR IN DIESER SUCHE (Entscheid David 7.10.2026,
+          A1-FUNDAMENT: «separat für entscheide»). Die Zeile sagt das und führt mit dem
+          Suchbegriff in die eigene Entscheid-Suche (/rechtsprechung liest `?q=`,
+          useSucheAusUrl) — der Begriff geht nicht verloren (§8, UI-NAV S1). Ausserhalb
+          der Listbox wie die Abdeckungszeile; Inline-Link unterstrichen (F0.8). */}
+      <p className="px-4 pt-2.5 max-w-kleintext text-micro leading-snug text-ink-600">
+        Entscheide stehen nicht in dieser Suche:{' '}
+        <Link to={`/rechtsprechung?q=${encodeURIComponent(q.trim())}`} onClick={onAuswahl}
+          className="text-ink-700 underline hover:text-ink-900">«{q.trim()}» in der Rechtsprechung suchen</Link>.
+      </p>
       {/* §8-Korpus-Offenlegung (S3/E1): was die Suche wirklich durchsucht, ausserhalb
           der Listbox. Link auf die Abdeckungsseite «Was ist drin». Erscheint — wie
-          zuvor — sobald die Manifeste (gesetze+entscheide) da sind, NICHT erst wenn
-          alles fertig geladen ist: das hielte die §8-Offenlegung auf dem langsamen
-          Runner unnötig lange zurück (Fragilität genau dort, wo wir härten). Ihr
-          kleiner, spät durch das Karten-Wachstum ausgelöster Rest-Shift bleibt weit
-          unter Budget; den dominanten A9-Shift trägt die Kopfzeilen-Reservierung
-          oben (§15.2). */}
+          zuvor — sobald das Gesetzes-Manifest da ist, NICHT erst wenn alles fertig
+          geladen ist: das hielte die §8-Offenlegung auf dem langsamen Runner unnötig
+          lange zurück (Fragilität genau dort, wo wir härten). Ihr kleiner, spät durch
+          das Karten-Wachstum ausgelöster Rest-Shift bleibt weit unter Budget; den
+          dominanten A9-Shift trägt die Kopfzeilen-Reservierung oben (§15.2). */}
       {abdeckung && (
         // 11px-Feinschrift in ink-600, nicht ink-500 (Auftrag David 25.6.2026,
         // Muster lc-fineprint): auf brass-getönten Flächen (Hero) fällt ink-500
@@ -500,20 +502,19 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
         // Zeile keinen Fliesstext, sondern eine Zahlen-Bilanz dicht unter dem
         // Trefferzähler.
         <p className="px-4 py-2.5 max-w-kleintext text-micro leading-snug text-ink-600">
-          {/* «Erlasse (Bund + International)», nicht «Bund-Erlasse» (Cowork-Befund
-              32, 18.8.2026): die Zahl zählt alle Volltext-Snapshots der Ebene
-              `bund` — darunter die Staatsverträge/EU-Erlasse, die unter dieser
-              Ebene geführt werden. Die /gesetze-Kachel «Bundesrecht» zählt den
-              Katalog OHNE International (201 vs. 227): zwei Mengen, die ohne
-              Benennung wie ein Widerspruch lasen (§8). */}
-          {/* K3-Scharfschaltung (1.9.2026): der statische Index trägt keine
-              kantonalen Artikel mehr — kantonaler Volltext kommt aus der
-              Online-Suche und fehlt ohne Verbindung. «Nur nach Titel» allein
-              wäre jetzt zu wenig gesagt (die Online-Suche findet sehr wohl im
-              Wortlaut) und «durchsucht» zu viel (offline findet sie nichts);
-              die Zeile nennt darum beides (§8). */}
-          Durchsucht: {abdeckung.volltext} Erlasse im Volltext (Bund + International) · {abdeckung.bge} BGE ·
-          {' '}kantonale Erlasse ({abdeckung.kantonTitel}): nach Titel — im Volltext nur online.{' '}
+          {/* A1-FUNDAMENT (7.10.2026): lokal durchsucht die Suche Titel, Kürzel und
+              SR-Nummer der Erlasse im Katalog sowie die Werkzeuge; der Wortlaut der
+              Gesetzestexte läuft NUR über die Server-Suche. «Erlasse (Bund +
+              International)», nicht «Bund-Erlasse» (Cowork-Befund 32, 18.8.2026):
+              die Zahl zählt alle Volltext-Snapshots der Ebene `bund` — darunter die
+              Staatsverträge/EU-Erlasse, die unter dieser Ebene geführt werden. Die
+              /gesetze-Kachel «Bundesrecht» zählt den Katalog OHNE International
+              (201 vs. 227): zwei Mengen, die ohne Benennung wie ein Widerspruch
+              lasen (§8). Dass der Wortlaut ohne Verbindung fehlt, steht im Satz —
+              die Folge trifft den Nutzer, nicht die Technik (§8). */}
+          Durchsucht: Gesetze nach Titel, Kürzel und SR-Nummer, dazu Werkzeuge · Wortlaut der Gesetzestexte
+          {' '}({abdeckung.volltext} Erlasse Bund + International, {abdeckung.kantonTitel} kantonale Erlasse) nur über die Server-Suche —
+          {' '}ohne Verbindung nicht verfügbar.{' '}
           {/* R3-NACHZUG 6.9.2026 (W2·24, Befund R3-F1): `no-underline` → `underline`.
               Der Verweis steht MITTEN in dieser Scope-Zeile und war allein durch
               die Farbe unterschieden — gemessen von axe 2.06:1 (hell) bzw. 1.85:1

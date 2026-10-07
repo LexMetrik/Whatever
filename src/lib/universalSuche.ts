@@ -9,14 +9,17 @@
 //   Katalog       ← sucheRang (katalogSuche) über KATALOG_KARTEN
 //   Fristen-Preset← presetSuche (presetIndex), als Eintrag übergeben
 //   Gesetze       ← filtern (normtext/browse) über das Browse-Manifest
-//   Rechtsprechung← filterEntscheide (rechtsprechung/browse) über das Manifest
+//   Materialien   ← filtere (materialien/browse) über das Manifest
+//
+// NICHT hier (Entscheid David 7.10.2026, A1-FUNDAMENT): Gesetzestext-Volltext und
+// Rechtsprechung. Der Volltext läuft ausschliesslich über die Server-Suche
+// (lib/suche/onlineVolltext.ts, Gruppe 'online'); Entscheide haben ihre eigene
+// Suche auf /rechtsprechung (die globale Suche verlinkt dorthin).
 
 import { KATALOG_KARTEN, istVerfuegbar } from './startseiteConfig';
 import { sucheRang } from './katalogSuche';
 import type { BrowseErlass } from './normtext/browse-typen';
 import { filtern } from './normtext/browse';
-import type { BrowseEntscheid } from './rechtsprechung/register';
-import { filterEntscheide, nachDatum } from './rechtsprechung/browse';
 import type { PresetIndexEintrag } from './presetIndex';
 import type { BrowseMaterial } from './materialien/typen';
 import { filtere as filtereMaterialien, vergleicheGlobal } from './materialien/browse';
@@ -27,10 +30,11 @@ import { erlassPfad } from './normtext/erlassAdresse';
 // 'sprung' = deterministischer Norm-Direktsprung (A5), von der Komponente VOR die
 // statischen Gruppen gehängt; er entsteht aus dem Parser normQuery.ts, nicht im
 // synchronen Aggregator unten (deshalb kein sucheAlles-Zweig dafür).
-// 'online' = zusätzliche Edge-Volltextgruppe (QS-DATA E2), von der Komponente
-// hinter die statischen Gruppen gehängt; sie entsteht in lib/suche/onlineVolltext.ts,
-// nicht im synchronen Aggregator unten (deshalb kein sucheAlles-Zweig dafür).
-export type GruppenId = 'sprung' | 'katalog' | 'preset' | 'gesetz' | 'artikel' | 'entscheid' | 'material' | 'online';
+// 'online' = Gesetzestext-Volltext über die Server-Suche (QS-DATA E2; seit
+// A1-FUNDAMENT 7.10.2026 der EINZIGE Volltext-Weg), von der Komponente hinter die
+// lokalen Gruppen gehängt; sie entsteht in lib/suche/onlineVolltext.ts, nicht im
+// synchronen Aggregator unten (deshalb kein sucheAlles-Zweig dafür).
+export type GruppenId = 'sprung' | 'katalog' | 'preset' | 'gesetz' | 'material' | 'online';
 
 export interface SuchTreffer {
   id: string;
@@ -52,19 +56,12 @@ export interface SuchGruppe {
   mehrHref?: string;
   /** true, solange die zugrundeliegenden Daten noch nicht geladen sind. */
   laedt?: boolean;
-  /** true, wenn Treffer DA sind, die Menge aber noch wächst (gestaffelter
-   *  Index-Aufbau, W2·5). Anders als `laedt` ersetzt das die Liste nicht — die
-   *  bereits gefundenen Treffer bleiben nutzbar. Wirkt auf den §8-Zähler: die
-   *  Kopfzeile sagt «mindestens N … wird noch durchsucht» statt eine Endzahl zu
-   *  behaupten, die keine ist. */
-  unvollstaendig?: boolean;
-  /** true, wenn die Gruppe DAUERHAFT nur einen Teil ihres Gegenstands abdeckt
-   *  (K3, 1.9.2026: der statische Artikel-Index trägt keine kantonalen Erlasse
-   *  mehr). Hält die Gruppe sichtbar, auch ohne Treffer — sonst verschwände mit
-   *  ihr der Hinweis, und eine kantonale Query läse sich als «nichts gefunden»
-   *  (§8). Bewusst NICHT `unvollstaendig`: dort wächst die Menge noch, hier
-   *  nicht — die Kopfzeile darf darum kein «wird noch ergänzt» versprechen. */
-  eingeschraenkt?: boolean;
+  /** true, wenn die Gruppe ihren Gegenstand gerade GAR NICHT liefern kann (Server-
+   *  Suche nicht erreichbar: 503/502/offline/Timeout, A1-FUNDAMENT 7.10.2026). Hält
+   *  die Gruppe sichtbar, auch ohne Treffer — sonst verschwände mit ihr die Auskunft,
+   *  und eine Wortsuche läse sich als «nichts gefunden» statt als «konnte nicht
+   *  suchen» (§8). Der Gruppenkopf zeigt dann keinen Zähler («0» wäre falsch). */
+  nichtVerfuegbar?: boolean;
   /** Einmalige, dezente §8-Offenlegung unter dem Gruppentitel (z. B. Online-Suche). */
   hinweis?: string;
   /** Externer Amtslink (öffnet in neuem Reiter) — z. B. BGE «nicht im Bestand»
@@ -247,22 +244,6 @@ export function gesetzGruppe(erlasse: BrowseErlass[] | null, q: string, kappung 
   };
 }
 
-export function entscheidGruppe(liste: BrowseEntscheid[] | null, q: string, kappung = KAPPUNG): SuchGruppe {
-  if (liste === null) return { id: 'entscheid', titel: 'Rechtsprechung', treffer: [], gesamt: 0, laedt: true };
-  const getroffen = nachDatum(filterEntscheide(liste, { q }));
-  const treffer: SuchTreffer[] = getroffen.slice(0, kappung).map((e) => ({
-    id: e.key,
-    label: e.zitierung,
-    untertitel: [e.gerichtName, e.regesteKurz].filter(Boolean).join(' — ') || e.gerichtName,
-    marke: e.leitcharakter === 'leitentscheid' ? { text: 'Leitentscheid', ton: 'leitentscheid' as const } : undefined,
-    href: `/rechtsprechung/${encodeURIComponent(e.key)}`,
-  }));
-  return {
-    id: 'entscheid', titel: 'Rechtsprechung', treffer, gesamt: getroffen.length,
-    mehrHref: getroffen.length > kappung ? mehrZiel('/rechtsprechung', q) : undefined,
-  };
-}
-
 function materialGruppe(liste: BrowseMaterial[] | null, q: string, kappung = KAPPUNG): SuchGruppe {
   if (liste === null) return { id: 'material', titel: 'Materialien', treffer: [], gesamt: 0, laedt: true };
   const getroffen = filtereMaterialien(liste, { suche: q }).sort(vergleicheGlobal);
@@ -281,90 +262,25 @@ function materialGruppe(liste: BrowseMaterial[] | null, q: string, kappung = KAP
 
 // ── Aggregation ──────────────────────────────────────────────────────────────
 
-/** Gesetzestext-/Artikel-Volltext-Gruppe. `treffer === null` ⇒ Index noch nicht
- *  geladen (Platzhalter); sonst die bereits via FlexSearch gefundenen Treffer.
- *  `q` (optional): setzt bei Kappung das «alle N →»-Ziel auf die /suche-Seite
- *  (UI-NAV S5) — bis dahin waren die Treffer jenseits der Kappung strukturell
- *  unerreichbar (§8), die Gruppe hatte als einzige kein `mehrHref`. */
-/** Klartext für noch fehlende Ebenen — je Ebene EIN Satz, der sagt, was fehlt.
- *  Bewusst konkret («kantonale Erlasse») statt «lädt noch»: Ein Anwalt, der
- *  keine kantonalen Treffer sieht, schliesst sonst, es gebe keine kantonale
- *  Bestimmung. Genau diesen Fehlschluss verhindert der Satz (§8). */
-const EBENEN_FEHLT: Record<string, string> = {
-  kanton: 'Kantonale Erlasse werden noch geladen — kantonale Treffer fehlen hier noch.',
-  bund: 'Bundeserlasse werden noch geladen — eidgenössische Treffer fehlen hier noch.',
-};
-
-/** Klartext für Ebenen, die der lokale Index GAR NICHT trägt (K3-Scharfschaltung
- *  1.9.2026: der statische Suchindex ist Bund-only, kantonaler Volltext kommt aus
- *  der Online-Suche). Bewusst ein ANDERER Satz als EBENEN_FEHLT: «wird noch
- *  geladen» wäre hier schlicht falsch — es kommt nichts mehr nach. Und die
- *  Offline-Folge steht mit im Satz, weil sie den Nutzer trifft, nicht die Technik:
- *  ohne Verbindung ist die kantonale Ebene gar nicht durchsuchbar (§8). */
-const EBENEN_NUR_ONLINE: Record<string, string> = {
-  kanton: 'Kantonale Erlasse: Volltext nur über die Online-Suche — ohne Verbindung fehlen kantonale Treffer hier ganz.',
-  bund: 'Bundeserlasse: Volltext nur über die Online-Suche — ohne Verbindung fehlen eidgenössische Treffer hier ganz.',
-};
-
-export function artikelGruppe(
-  treffer: SuchTreffer[] | null,
-  kappung = KAPPUNG,
-  q = '',
-  fehlendeEbenen: readonly string[] = [],
-  nurOnlineEbenen: readonly string[] = [],
-): SuchGruppe {
-  if (treffer === null) return { id: 'artikel', titel: 'Gesetzestext', treffer: [], gesamt: 0, laedt: true };
-  // Gestaffelter Index (W2·5): Treffer sind schon da, die Menge wächst aber noch.
-  const fehlt = fehlendeEbenen.filter((eb) => EBENEN_FEHLT[eb]);
-  // K3: dauerhaft nicht im lokalen Index — kein «wächst noch», sondern eine
-  // stehende Einschränkung. Beide Listen können gleichzeitig belegt sein.
-  const online = nurOnlineEbenen.filter((eb) => EBENEN_NUR_ONLINE[eb]);
-  const saetze = [...fehlt.map((eb) => EBENEN_FEHLT[eb]), ...online.map((eb) => EBENEN_NUR_ONLINE[eb])];
-  return {
-    id: 'artikel', titel: 'Gesetzestext', treffer: treffer.slice(0, kappung), gesamt: treffer.length,
-    mehrHref: q.trim() !== '' && treffer.length > kappung ? `/suche?q=${encodeURIComponent(q)}` : undefined,
-    unvollstaendig: fehlt.length > 0 || undefined,
-    eingeschraenkt: online.length > 0 || undefined,
-    hinweis: saetze.length > 0 ? saetze.join(' ') : undefined,
-  };
-}
-
 export interface SuchDaten {
   presets: PresetIndexEintrag[] | null;
   gesetze: BrowseErlass[] | null;
-  /** Bereits gefundene Artikel-Volltext-Treffer (lazy FlexSearch); null = lädt. */
-  artikel: SuchTreffer[] | null;
-  /** Ebenen, die im gestaffelt aufgebauten Artikel-Index noch fehlen (W2·5).
-   *  Leer/undefiniert = vollständig. */
-  artikelFehlendeEbenen?: readonly string[];
-  /** Ebenen, die der statische Artikel-Index gar nicht trägt und die nur die
-   *  Online-Suche abdeckt (K3, 1.9.2026). Leer/undefiniert = keine. */
-  artikelNurOnlineEbenen?: readonly string[];
-  entscheide: BrowseEntscheid[] | null;
   materialien: BrowseMaterial[] | null;
 }
 
-/** Alle Gruppen in fester Reihenfolge nach RELEVANZ (A6, David 5.7.2026): erst
- *  die Rechtsinhalte (Gesetze → Gesetzestext/Artikel → Rechtsprechung →
+/** Alle LOKALEN Gruppen in fester Reihenfolge: erst die Rechtsinhalte (Gesetze →
  *  Materialien), dann die Werkzeuge (Rechner & Vorlagen → Fristen-Vorlagen). Der
- *  Norm-Sprung (A5) wird von der Komponente noch DAVOR gehängt (sprungGruppe),
- *  die Online-Edge-Gruppe DAHINTER — beides ausserhalb dieses synchronen
+ *  Norm-Sprung (A5) wird von der Komponente noch DAVOR gehängt (sprungGruppe), die
+ *  Server-Volltextgruppe DAHINTER — beides ausserhalb dieses synchronen
  *  Aggregators. Leere (aber geladene) Gruppen entfallen, noch ladende Gruppen
  *  bleiben als Platzhalter sichtbar. */
-// UNVOLLSTÄNDIG ⇒ SICHTBAR, auch ohne Treffer (W2·5): Eine rein kantonale Query
-// («Handänderungssteuer») hat während des Nachladens NULL Bund-Treffer. Fiele die
-// Gruppe dann aus der Liste, verschwände mit ihr der Hinweis, dass kantonale
-// Erlasse noch fehlen — und die Suche behauptete stumm «nichts gefunden» über
-// einen Bestand, den sie noch gar nicht gelesen hat (§8).
 export function sucheAlles(q: string, daten: SuchDaten, kappung = KAPPUNG): SuchGruppe[] {
   if (q.trim() === '') return [];
   const gruppen = [
     gesetzGruppe(daten.gesetze, q, kappung),
-    artikelGruppe(daten.artikel, kappung, q, daten.artikelFehlendeEbenen ?? [], daten.artikelNurOnlineEbenen ?? []),
-    entscheidGruppe(daten.entscheide, q, kappung),
     materialGruppe(daten.materialien, q, kappung),
     katalogGruppe(q, kappung),
     presetGruppe(daten.presets, kappung),
   ];
-  return gruppen.filter((g) => g.laedt || g.unvollstaendig || g.eingeschraenkt || g.treffer.length > 0);
+  return gruppen.filter((g) => g.laedt || g.treffer.length > 0);
 }

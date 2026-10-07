@@ -61,8 +61,6 @@ const ALLOWLIST_UNVERDRAHTET: Record<string, string> = {
     'BEWUSST KEIN TOR: die Hülle scripts/report-zitatgraph-warnungen.ts endet stets mit Exit 0 (so im Kopf deklariert) — ein erheblicher Teil der gemessenen Differenz ist bauartbedingtes Rauschen (Fussnoten-Citations, Erlass-Verweise ohne Artikelnummer). Ein Lauf daraus wäre ein Tor, das aus richtigem Verhalten Rot macht (§6.7 lit. a). Bericht auf Abruf: npm run check:zitatgraph.',
   'check:be-sprengel':
     'reine Kommandozeilen-Hülle um pruefeBeSprengel(); DIESELBE Prüfung läuft merge-blockierend als src/tests/beSprengel.test.ts über die Vitest-Suite (und damit in check:seriell und im PR-CI). Ein zweiter Lauf desselben Prädikats prüft nichts Zusätzliches — er verdoppelt nur die Laufzeit (§17-Gegengewicht).',
-  'check:suchindex':
-    'Drift-Tor des Suchindex-Generators — aber `npm run build:dist` beginnt mit `gen:suchindex` und erzeugt den Index vor JEDEM Build neu (package.json, Skript "build:dist"; `npm run build` = `tsc -b` + `build:dist`, seit QS-CI-ZEIT 5.10.2026). Eine Drift kann die Auslieferung darum strukturell nicht erreichen: was gebaut wird, ist immer frisch generiert. Das Tor bleibt als Diagnose für den Zwischenstand im Arbeitsbaum.',
 };
 
 const seriell = seriellTore();
