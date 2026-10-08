@@ -116,7 +116,6 @@ Kürzel = Präfix des Arbeitszweigs und Wert des Commit-Trailers `Roadmap:`.
 
 *Gestrichen 7.10.:* `GILTSEIT` gebaut (#1298, #1309 5f6c6c12a: ZGB 299/300 2000-01-01, 307 2013-01-01,
 StGB 52 2007-01-01, OR 631 2023-01-01, SVG 89a bewusst ohne) — nur Abnahme David offen, nicht nachfragen.
-`BUNDTEXT`: NT-01 gelandet (#1313); NT-10 → JETZT 2, Rest → EINGANG. `URTEILE` → JETZT 4.
 `E0-BRANDSCHUTZ` gebaut (#1342, #1343, #1350); Rechtsprechungs-Register → JETZT 1.
 
 ---
@@ -146,22 +145,13 @@ StGB 52 2007-01-01, OR 631 2023-01-01, SVG 89a bewusst ohne) — nur Abnahme Dav
 - E3 · Entscheid David 1.10./Auftrag 3.10. · Deaktiviert-/Hover-Varianten angleichen; Regelsätze von Belegen entflechten — Merkzettel 2026-10-01-deaktiviert-…, 2026-10-03-regelsaetze-…
 - E3 · Entscheid David 2.10. · Rest-Rückbau tote Rechtsprechungs-Zeilen: revisionFuer nur noch Kommentar (grep 7.10.), data-leitfaelle u. a. prüfen — Merkzettel 2026-10-02-rest-rueckbau-…
 - E3 · Auftrag David 6.10. · Omnilex-Sichtung: 7 Posten U2–U8 (Datums-Tor zu «Gilt seit», Ausgang-Label wartet auf David) — bibliothek/recherche/omnilex-app-sichtung-2026-10-06.md §6
-- E3 · 6.10. · Doku pdf-netz nennt EMRK/NYÜ, seit 14.9. nur NYÜ; Fedlex-Frische-PR-Titel «(Auto-Merge)» irreführend (#1311 ohne CI)
-- E3 · Sammel · Oberfläche und übrige Verweise — FB Bereiche 6, 4
-- E3 · Sammel · Sicherheit/Betrieb übrige (FB Bereich 7; E0 je Zeile prüfen); Prüf-Lücken «latent», kein Bauauftrag (FB Teil C)
+- E3·W · 8.10. · Werkzeug-/Tor-Defekte (zuerst Merge-Schutz-Lücke bei Umbenennung), Tore-Diät, Rückbau nach Umstieg — Merkzettel 2026-10-08-werkzeug-defekte-eingang
 - E3·W · Go David 5.10. · CI: Dauer-Wackler an der Wurzel (bibliothek/betrieb/e2e-fang-historie-2026-10-05/), leser-kopf-cls-s3 hängt an Fedlex, Läufer-Kontingent
-- E3·W · 5.10. · Tore/Hooks: tor-schutz.py Quote-Split (Diff 5260e0118), gate-stopp.py, tor-paritaet (GP #1323), Streich-Runde nie fündiger Tore (Freigabe 22.9.) — QS-CPU, QS-TORE-DIAET
-- E3·W · 5.10. · Rückbau nach Umstieg (flaechenZeile, trendZeile, Rotation, ci.yml:70), Worktrees bleiben liegen, 8.10. CI-Sparplan nachmessen; PLAN_BUCHUNG_TOKEN gegenstandslos (David)
-- E3 · 7.10. · check-merge-schutz.ts:43 nutzt git diff mit Rename-Erkennung: Risiko-Datei, auf Nicht-Risiko-Pfad verschoben, fällt aus dem Tor — Wurzel-Fix --no-renames wie kern.ts — scripts/check-merge-schutz.ts
-- E3 · 7.10. · Daten-Cache-Bruch nach Deploy: Inhalts-Hash je public-Datei im Manifest statt Deploy-SHA-Parameter (#1349 verworfen, entwertet MB-Caches) — vercel.json, src/lib/ladeJson.ts
-- E3 · 7.10. · check:fachaenderung liest den PR-Titel aus dem Ereignis (prTitelAusEreignis): «Re-run» nach Titel-Korrektur bleibt rot, kostete einen CI-Zyklus (#1349) — Titel wie den Body live per API holen (holePrKoerperEcht) — scripts/check-fachaenderung.ts
 - E3·W · Go David 7.10. · Leser-Logik (162 .ts unter src/pages|components, ~22k Zeilen) nach src/lib/leser, danach Lint-Grenze — §3 Schichtentrennung
 - E3·W · wartet auf David 7.10. · §5-Text vs. Ist: ingest.ts liest public/*.json → DB, JSON ist faktisch Quelle — Umstellung fertig bauen oder §5 präzisieren — CLAUDE.md §5
 - E3·W · wartet auf David 7.10. · Rechtsprechung-Einzelentscheide (300 MB) als Release-Artefakt statt in git — public/rechtsprechung/
 - E3·W · wartet auf David 7.10. · Doku-Tore check:steuerdeckel + check:steuerflaeche zusammenlegen, nachts statt in der Queue — ci.yml, package.json
 - E3 · wartet auf David 7.10. (§15) · public/rechtsprechung/register.json 9,9 MB aufteilen; norm-index.json 6 MB laut Kommentar UI-ungenutzt — public/
-- E3·W · später 7.10. · noUncheckedIndexedAccess für src/lib (338 Fehler); src/tests nach Schicht ordnen; tabs.ts in rein/Store trennen — tsconfig.app.json, src/tests
-- E4 · Phase 2 · Kantonstext (FB Bereich 2, Dach W2·13-KANTONE-DATEN); ZH-Generator nicht je Erlass fahrbar, 68 ZH_ZURUECKGESTELLT ohne Auflöser
 - E4 · David 21.9./E2 7.10. · Impressum/Datenschutz erst vor Live-Gang (FB S-01); Staatsverträge SR 0.* (28 schon gepinnt) verlinken bis dahin auf Fedlex
 ```
 
