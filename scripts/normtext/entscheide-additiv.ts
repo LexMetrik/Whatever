@@ -16,6 +16,7 @@
 //    etwas anderes als «0 neu» (alles schon im Bestand) — Letzteres ist kein
 //    Quellausfall und bricht nicht ab.
 import type { EntscheidSnapshot } from '../../src/lib/rechtsprechung/typen';
+import { oclAktenzeichen } from '../../src/lib/rechtsprechung/kantonale-gerichte';
 import type { Zurueckgehalten } from './entscheid-kantonsdatum';
 export type { Zurueckgehalten };
 
@@ -117,7 +118,7 @@ export function fuehreAdditivZusammen(
  * (`nurMitAmtlichemKopf`, entscheid-kantonsdatum.ts). Ein vorhandener Bestandseintrag
  * bleibt dabei UNVERÄNDERT: er tritt im Kandidatenpool an die Stelle des Neuabrufs
  * (Vollbau schreibt den Korpus neu; additiv ist er ohnehin Bestand und fällt in
- * `waehleNeue` heraus). Identität exakt wie der Kopfdatum-Refresh: court + Aktenzeichen.
+ * `waehleNeue` heraus). Identität exakt wie der Kopfdatum-Refresh: court + Aktenzeichen in OCL-Form.
  * Rein, nach id sortiert (§2).
  */
 export function bestandStattZurueckgehalten(
@@ -126,7 +127,9 @@ export function bestandStattZurueckgehalten(
 ): EntscheidSnapshot[] {
   const nr = (s: unknown) => String(s ?? '').replace(/\s+/g, ' ').trim();
   const keys = new Set(zurueck.map((z) => `${z.court}\u0000${nr(z.nummer)}`));
-  return bestand.filter((s) => keys.has(`${s.gericht}\u0000${nr(s.nummer)}`)).sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+  // Bestand führt das amtliche Aktenzeichen (GR seit U-16 «SBK 26 88»), OCL das vierstellige («SBK 2026 88»):
+  // für den Schlüssel die OCL-Form des Bestands, wie im Kopfdatum-Refresh (`oclNr`).
+  return bestand.filter((s) => keys.has(`${s.gericht}\u0000${nr(oclAktenzeichen(s.gericht, s.nummer))}`)).sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
 }
 
 /** Log-Zeile je Gericht (nie still, §8): zurückgehaltene Neuabrufe, nach decisionId sortiert (§2). */
