@@ -73,13 +73,16 @@ export function Datenschutz() {
         </p>
         <p>
           {/* Suchdienst-Offenlegung (§8, Go David 10.10.2026) — ENTWURF, Wortlaut durch David bei der Abnahme zu prüfen.
-              Beleg: useUniversalSuche.ts → holeOnlineTreffer (ab MIN_ZEICHEN, GET api/suche?q=…). */}
-          Die Hauptsuche fragt zusätzlich unseren Suchdienst ab, um den Wortlaut der Gesetzestexte
-          zu durchsuchen: Ab drei Zeichen wird Ihr Suchbegriff an LexMetrik übermittelt und in
-          unserer Gesetzesdatenbank nachgeschlagen. Weil der Begriff Teil der Anfrage-Adresse ist,
-          erscheint er in den Server-Logs des Hosting-Anbieters (Ziff. 4); LexMetrik legt
-          Suchbegriffe nicht ab und verknüpft sie nicht mit anderen Daten. Die Suche innerhalb
-          eines geöffneten Erlasses läuft lokal in Ihrem Browser.
+              Beleg: useUniversalSuche.ts → holeOnlineTreffer (ab MIN_ZEICHEN, GET api/suche?q=… → Turso);
+              LiveSuche.tsx → livesuche.ts (opt-in, entscheidsuche.ch). */}
+          Die Hauptsuche fragt für die Suche im Wortlaut zusätzlich unseren Suchdienst ab: Ab drei
+          Zeichen wird Ihr Suchbegriff an LexMetrik übermittelt und in unserer Datenbank beim
+          Anbieter Turso nachgeschlagen. Weil der Begriff Teil der Anfrage-Adresse ist, erscheint
+          er in den Server-Logs des Hosting-Anbieters (Ziff. 4); LexMetrik legt Suchbegriffe nicht
+          ab und verknüpft sie nicht mit anderen Daten. Die Suche innerhalb eines geöffneten
+          Erlasses läuft lokal in Ihrem Browser. Nur auf Ihren ausdrücklichen Klick («Im gesamten
+          Schweizer Korpus suchen») geht ein Suchbegriff an entscheidsuche.ch; es gelten deren
+          Datenschutzhinweise.
         </p>
       </MetaAbschnitt>
 
