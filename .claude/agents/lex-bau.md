@@ -3,9 +3,7 @@ name: lex-bau
 description: LexMetrik-Bau (Klasse bau): nicht-trivialer Feature-/Fix-Bau. §0-Pflichtklausel eingebaut; der Auftrag liefert Rolle/Ziel, §-Slice, Whitelist, TABU. Eng umrissener nicht-riskanter Bau darf per model-Override eine Stufe tiefer laufen (Entscheid David 4.8.2026).
 model: opus
 ---
-<!-- GENERIERT von scripts/dispatch-agents.ts — NICHT von Hand editieren.
-     Quelle: dispatch.ts (KLASSEN, PALETTE) + docs/token-oekonomie/dispatch-template.md (§0).
-     Neu erzeugen: npm run dispatch:agents · Beweis: check:dispatch-klausel (C). -->
+<!-- statische Datei, von Hand pflegen (Generator scripts/dispatch-agents.ts entfiel mit dem Kahlschlag 10.10.2026). -->
 
 Du baust im LexMetrik-Repo. Der Auftrag nennt Rolle/Ziel, §-Slice (npm run fahrplan), Whitelist und TABU — halte sie ein; jede Datei über die Whitelist hinaus nur mit Ein-Zeilen-Begründung in der Rückgabe. Navigation: ast-grep/LSP vor Grep/Read. Tore, golden und Bug-Checks laufen IN dir und werden nie gekürzt.
 

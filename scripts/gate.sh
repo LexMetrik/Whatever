@@ -73,6 +73,8 @@ fail=0
 # (scripts/analyse/tor-bewaehrung.ts) — früher zusätzlich von
 # `npm run selbstopt:erheben`, entfallen 20.9.2026 (Entscheid David, Rückbau
 # QS-EFFIZIENZ).
+# Der Auswerter `tor:bewaehrung` entfiel mit dem Kahlschlag 10.10.2026; die
+# Spur bleibt als lokales Rohlog ohne Leser.
 #
 # DREI EIGENSCHAFTEN, die nicht verhandelbar sind:
 #  * Das Logging ist ein NEBENEFFEKT. Es schreibt nichts nach stdout/stderr, es
@@ -154,11 +156,6 @@ if [ "$mode" = "voll" ]; then
   # nicht nur in ci.yml. Seit RL-03 (23.9.2026) check:fachaenderung (Nachfolger
   # von check:testtreue); Basis `origin/main` wie im CI-Schritt.
   run "fachaenderung" npm run check:fachaenderung
-  # Wiedervorlage-Register der Prosa-Regeln (QS-BEWAEHRUNG B). Bewusst NUR hier
-  # und nicht in check:seriell/ci.yml: das Tor ist rot nur bei struktureller
-  # Verletzung, seine eigentliche Ausgabe ist die Fälligkeitsliste — die gehört
-  # vor den Deploy und ins Aufräumen, nicht in jeden fremden Produkt-PR.
-  run "regel-wiedervorlage" npm run check:regel-wiedervorlage
   # ── ZH-Vollständigkeit (ZH-Fix-Runde 3, B7) ────────────────────────────────
   # Das Tor hält die ZH-Snapshots gegen das amtliche PDF. Zwei Teile:
   #  · ARTEFAKT — braucht kein PDF (Trennstrich-Enden, Gliederungstitel im

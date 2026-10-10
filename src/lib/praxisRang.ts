@@ -1,4 +1,4 @@
-// Dossier: KATALOG-ROADMAP.md
+// Herkunft: KATALOG-ROADMAP (git 3fd5db8f9:KATALOG-ROADMAP.md)
 
 // ─── Praxis-Rang der Werkzeuge (Auftrag David 10.6.2026) ─────────────────────
 //

@@ -77,6 +77,8 @@ Staatsverträge (SR 0.*, 3186) verlinken auf Fedlex und kommen später.
 
 Kürzel = Präfix des Arbeitszweigs und Wert des Commit-Trailers `Roadmap:`.
 
+0. **Kahlschlag des Überbaus** (`KAHLSCHLAG`) · Herkunft David 10.10. · Gegenprüfung ja (Lösch-Liste)
+
 1. **Rechtsprechungs-Register aufteilen** (`E0-REGISTER`) · E0 · Gegenprüfung ja, soweit Urteilsdaten
    *Fertig, wenn* das Rechtsprechungs-Register (839 KB von 900 KiB, 91 %, +7–12 KB/Woche) aufgeteilt ist,
    bevor `check:perf-budget` jeden PR rot färbt (FB S-26). *Frist:* ~Ende Nov./Dez.

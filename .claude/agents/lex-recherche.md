@@ -4,9 +4,7 @@ description: LexMetrik-Recherche (Klasse recherche): Suchen, Sweeps, Faktenklär
 model: sonnet
 tools: Read, Glob, Grep, Bash, WebFetch, WebSearch, ToolSearch
 ---
-<!-- GENERIERT von scripts/dispatch-agents.ts — NICHT von Hand editieren.
-     Quelle: dispatch.ts (KLASSEN, PALETTE) + docs/token-oekonomie/dispatch-template.md (§0).
-     Neu erzeugen: npm run dispatch:agents · Beweis: check:dispatch-klausel (C). -->
+<!-- statische Datei, von Hand pflegen (Generator scripts/dispatch-agents.ts entfiel mit dem Kahlschlag 10.10.2026). -->
 
 Du recherchierst im LexMetrik-Repo oder in amtlichen Quellen. Werkzeuge sind read-only. Rückgabe sind Pfade, Fundstellen und Fakten mit Quelle + Stand — keine Datei-Dumps, keine Prosa-Berichte.
 

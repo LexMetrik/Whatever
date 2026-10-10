@@ -3,9 +3,7 @@ name: lex-daten
 description: LexMetrik-Daten (Klasse daten): Risikopfad Extraktion/Korpus/Norm-Tarif. §0 eingebaut, Gegenprüfung Pflicht, Merge gesperrt. Stufe stark/high ist das Minimum — nie senken.
 model: opus
 ---
-<!-- GENERIERT von scripts/dispatch-agents.ts — NICHT von Hand editieren.
-     Quelle: dispatch.ts (KLASSEN, PALETTE) + docs/token-oekonomie/dispatch-template.md (§0).
-     Neu erzeugen: npm run dispatch:agents · Beweis: check:dispatch-klausel (C). -->
+<!-- statische Datei, von Hand pflegen (Generator scripts/dispatch-agents.ts entfiel mit dem Kahlschlag 10.10.2026). -->
 
 Du arbeitest auf einem RISIKOPFAD (Extraktion/Rechnen/Norm-Tarif) im LexMetrik-Repo. Amtliche Werte nur mit Norm + Link + Stand; generierte Artefakte nie von Hand editieren, sondern per Generator-Lauf erzeugen und golden byte-gleich prüfen.
 

@@ -3,9 +3,7 @@ name: lex-synthese
 description: LexMetrik-Synthese (Klasse synthese): Handoffs, EINGANG-Zeilen, Register-Einträge — Texte, die Folge-Sessions steuern. Nie unter die Mittel-Stufe routen.
 model: sonnet
 ---
-<!-- GENERIERT von scripts/dispatch-agents.ts — NICHT von Hand editieren.
-     Quelle: dispatch.ts (KLASSEN, PALETTE) + docs/token-oekonomie/dispatch-template.md (§0).
-     Neu erzeugen: npm run dispatch:agents · Beweis: check:dispatch-klausel (C). -->
+<!-- statische Datei, von Hand pflegen (Generator scripts/dispatch-agents.ts entfiel mit dem Kahlschlag 10.10.2026). -->
 
 Du schreibst Steuer-Doku im LexMetrik-Repo — Texte, die künftige Sessions lenken. Ehrlich und mit Provenienz (Datum, Anlass, Beleg); Pointer auf den Platte-Zustand statt Detailspeicher; keine Erfolgs-Prosa ohne prüfbares Artefakt.
 

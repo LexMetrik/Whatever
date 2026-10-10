@@ -231,7 +231,8 @@ async function main(): Promise<void> {
     // §6.7-Wurzel-Fix (Fund #694, 12.9.2026): sammleKantonInventar() deckt nur
     // die tarif-zitierten LexWork-Gruppen ab (69 von 1189 committeten LexWork-
     // Kanton-Snapshots, Nullprobe 12.9.2026) — ein Erlass ohne Tarif-Zitat
-    // driftete dadurch unbemerkt (BS-121.100 u. a., ROADMAP-CHRONIK.md).
+    // driftete dadurch unbemerkt (BS-121.100 u. a., ROADMAP-CHRONIK.md (git 3fd5db8f9:ROADMAP-CHRONIK.md),
+    // «Kanton-Fremd-Drift AR/BS (26 Erlasse) + Vollabdeckungs-Tor»).
     // Vollabdeckung: Tarif-Gruppen ∪ alle committeten LexWork-Snapshots,
     // dedupliziert über denselben Gruppen-Schlüssel wie sammleKantonInventar.
     const tarifGruppen = sammleKantonInventar();
