@@ -98,7 +98,7 @@ gestrichen. Davids einziger Input ist der Bau-Prompt.
   Schritt mit absolutem Pfad anlegen. Einen abgebrochenen Isolations-Agenten neu
   dispatchen, nicht fortsetzen; vor einem Nachzug auf denselben Zweig den alten
   Worktree entfernen. Kein Fixer in einen Worktree mit laufender Prüfung, keine
-  Orchestrator-Commits, wo ein Agent baut (geteilter Index). Scratchpad-Namen agentenspezifisch. Hintergrund-Bash stirbt nach
+  Orchestrator-Commits, wo ein Agent baut (geteilter Index). Scratchpad-Namen agentenspezifisch. Jeder Auftrag endet mit «nach dem Push sofort zurückgeben, keine Warte-/Poll-Schleifen, keine offenen Hintergrundprozesse» (11.10.: Bau-Agent kreiste nach dem Bericht 20 min). Hintergrund-Bash stirbt nach
   10 min. CI-Wächter aus EINER Abfrage je voller SHA. `gh pr merge` immer als
   eigenen Befehl (der Hook blockt sonst den ganzen Mehrfach-Befehl). Kein `[skip ci]` in
   irgendeinem PR-Commit (der Squash trägt alle Betreffe nach main).
