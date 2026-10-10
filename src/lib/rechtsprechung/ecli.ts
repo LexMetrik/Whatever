@@ -19,6 +19,7 @@
 // BGE teilen einen ECLI (Sprache separat über `sprache`/Schema.org inLanguage).
 
 import type { EntscheidSnapshot } from './typen';
+import { oclAktenzeichen } from './kantonale-gerichte';
 
 /** Interne Gerichtscodes → ECLI-Gerichtskomponente (Bundesebene + Regulatoren). */
 const GERICHT_ZU_ECLI: Record<string, string> = {
@@ -175,7 +176,9 @@ export function minteEcli(q: EcliQuelle): string | null {
 export function minteEcliFuerSnapshot(e: EntscheidSnapshot): string | null {
   return minteEcli({
     gericht: e.gericht,
-    nummer: e.nummer,
+    // Persistenter Identifikator: die ECLI bleibt aus der OCL-Form des Aktenzeichens gebildet
+    // (GR: «SBK 2026 88»), auch wenn der Korpus seit U-16 die amtliche Form «SBK 26 88» zeigt.
+    nummer: oclAktenzeichen(e.gericht, e.nummer),
     datum: e.datum,
     bgeReferenz: e.bgeReferenz,
     id: e.id,

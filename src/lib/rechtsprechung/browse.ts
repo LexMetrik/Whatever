@@ -10,6 +10,7 @@ import { projiziereEntscheidIndex, type EntscheidIndex, type EntscheidIndexEintr
 import type { EntscheidSnapshot, EntscheidSnapshotDatei, Gerichtstyp } from './typen';
 import { ERLASS_REGISTER, GEBIETE, GEBIET_LABEL, gebieteFuerFilter, type Rechtsgebiet } from '../normtext/register';
 import { ladeJson, pruefeFelder } from '../ladeJson';
+import { oclAktenzeichen } from './kantonale-gerichte';
 
 const MANIFEST_PRUEFER = pruefeFelder('rechtsprechung/register.json', { entscheide: 'array' });
 /** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
@@ -353,7 +354,8 @@ export function filterEntscheide(liste: BrowseEntscheid[], f: EntscheidFilterWer
     if (f.datumBis && e.datum > f.datumBis) return false;
     if (q) {
       // Suche über das THEMA (inkl. Synth-Zeile) + Identität + Normen + Gericht.
-      const heu = `${themaText(e)} ${e.nummer} ${e.bgeReferenz ?? ''} ${e.zitierung} ${e.gerichtName} ${e.normKeys.join(' ')}`.toLowerCase();
+      // U-16: GR führt das Aktenzeichen amtlich zweistellig («SBK 26 88»); die Suche findet auch die OCL-Form («SBK 2026 88»).
+      const heu = `${themaText(e)} ${e.nummer} ${oclAktenzeichen(e.gericht, e.nummer)} ${e.bgeReferenz ?? ''} ${e.zitierung} ${e.gerichtName} ${e.normKeys.join(' ')}`.toLowerCase();
       if (!heu.includes(q)) return false;
     }
     return true;

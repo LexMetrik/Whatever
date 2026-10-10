@@ -29,6 +29,7 @@ import type { EntscheidSnapshot } from '../../src/lib/rechtsprechung/typen';
 import { mappeEntscheidOCL, jget, API, type OclDecision } from './adapter-entscheide';
 import { kantonsEntscheiddatum, kopfSeitenFallsNoetig, type KantonsDatumQuelle } from './entscheid-kantonsdatum';
 import { schreibeKorpus, ladeBestandSnapshots } from './entscheide-schreiben';
+import { oclAktenzeichen } from '../../src/lib/rechtsprechung/kantonale-gerichte';
 
 export interface KopfRefreshZeile {
   id: string;
@@ -52,6 +53,8 @@ export interface KopfRefreshDeps {
 }
 
 const normNr = (s: unknown) => String(s ?? '').replace(/\s+/g, ' ').trim();
+/** Aktenzeichen in der OCL-Form (GR: vierstelliges Jahr) — der Korpus führt seit U-16 die amtliche Form. */
+const oclNr = (s: EntscheidSnapshot) => normNr(oclAktenzeichen(s.gericht, s.nummer));
 
 /** Betroffen: kantonale OCL-Snapshots (nicht Bund, nicht BS-Eigenimport). */
 export const istKantonalOcl = (s: EntscheidSnapshot): boolean => s.kanton !== 'CH' && s.quelle === 'opencaselaw';
@@ -67,7 +70,7 @@ export async function kopfdatumRefresh(basis: EntscheidSnapshot[], deps: KopfRef
   const plan: Array<{ s: EntscheidSnapshot; datum: string; zitierung: string; datumPortal: string | undefined }> = [];
   for (const s of basis.filter(istKantonalOcl).sort((a, b) => a.id.localeCompare(b.id))) {
     const det = await deps.holeDecision(s);
-    if (!det || String(det.court ?? '') !== s.gericht || normNr(det.docket_number) !== normNr(s.nummer)) {
+    if (!det || String(det.court ?? '') !== s.gericht || normNr(det.docket_number) !== oclNr(s)) {
       ungeloest.push(s.id);
       continue;
     }
@@ -120,9 +123,9 @@ export async function kopfdatumRefresh(basis: EntscheidSnapshot[], deps: KopfRef
  */
 export async function holeKantonDecisionOcl(s: EntscheidSnapshot): Promise<OclDecision | null> {
   type Zeile = { decision_id?: string; court?: string; docket_number?: string };
-  const nr = normNr(s.nummer);
+  const nr = oclNr(s);
   const d = await jget<{ results?: Zeile[]; decisions?: Zeile[] }>(
-    `${API}/decisions?q=${encodeURIComponent(s.nummer)}&fields=compact&limit=15`);
+    `${API}/decisions?q=${encodeURIComponent(oclAktenzeichen(s.gericht, s.nummer))}&fields=compact&limit=15`);
   const hit = (d?.results ?? d?.decisions ?? []).find((r) => r.court === s.gericht && normNr(r.docket_number) === nr);
   const kandidaten = [...new Set([
     hit?.decision_id,

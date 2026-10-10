@@ -586,7 +586,7 @@ test.describe('W2·18 Welle 2 Punkt 7 — Trefferflächen der Reiter-Griffe (WCA
 // (weniger als einen Reiter kann es nicht zeigen) und der Reiter lief trotzdem
 // über. Der Scrollbalken ist per CSS unsichtbar (`.lc-reiter-scroll`), der
 // Überlauf also stumm: Kategorie `a-ueberlauf-ohne-scroller` (R8-Sweep).
-// Die Teile: Kopf «OGer AG» 58 px, Kern «HOR.2024.19» 87 px.
+// Die Teile: Kopf «OGer AG» (seit U-24 «HGer AG») 58 px, Kern «HOR.2024.19» 87 px.
 //
 // F6 SAGT, WER WEICHT: erst der Kopf (das ohnehin abgekürzte Gericht), dann
 // der Kern (die Geschäftsnummer). Genau das baut Welle 3 Punkt 1 — nicht als
@@ -635,11 +635,11 @@ test.describe('W2·18 Welle 3 Punkt 1 — der Reiter läuft auch am Anschlag nic
   // Die GEGENPROBE: der Kopf weicht nur, wo er weichen MUSS. Derselbe Reiter
   // @1440 trägt sein Gericht ganz — sonst wäre aus der Ausnahme eine Regel
   // geworden (und die Leiste verlöre überall die Auskunft, WELCHES Gericht).
-  test('@1440: derselbe Reiter trägt seinen Kopf «OGer AG» unverändert', async ({ page }) => {
+  test('@1440: derselbe Reiter trägt seinen Kopf «HGer AG» unverändert', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 })
     await seed(page, [LANGER_KOPF], LANGER_KOPF)
     const kopf = await page.textContent('[data-reiter-streifen] [data-reiter-teil="kopf"]')
-    expect(kopf?.trim(), 'am breiten Fenster steht der Kopf').toBe('OGer AG')
+    expect(kopf?.trim(), 'am breiten Fenster steht der Kopf').toBe('HGer AG')   // U-24: HOR.2024.19 ist ein Handelsgericht-Entscheid (11.10.2026)
   })
 })
 
@@ -715,7 +715,7 @@ test.describe('W2·18 Welle 3 Punkt 6 — jeder Reiter-Teil trägt seinen Anker'
     const teil = (schluessel: string, was: string) => page.locator(
       `${STREIFEN} [data-reiter-schluessel="${schluessel}"] [data-reiter-teil="${was}"]`)
 
-    await expect(teil('/rechtsprechung/ag_gerichte_HOR_2024_19', 'kopf')).toHaveText('OGer AG')
+    await expect(teil('/rechtsprechung/ag_gerichte_HOR_2024_19', 'kopf')).toHaveText('HGer AG')
     await expect(teil('/rechtsprechung/ag_gerichte_HOR_2024_19', 'kern')).toHaveText('HOR.2024.19')
     // Ein Gesetz hat keinen Kopf — der Anker steht nicht «leer» da (§8).
     await expect(teil('/gesetze/bund/ZGB', 'kopf')).toHaveCount(0)

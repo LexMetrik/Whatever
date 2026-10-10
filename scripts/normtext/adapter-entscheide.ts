@@ -12,6 +12,7 @@ import type { Rechtsgebiet } from '../../src/lib/normtext/register-typen';
 import type { OclParagraph } from './adapter-typen';
 import { normalisiereRegeste, bereinigeFliesstext } from '../../src/lib/rechtsprechung/register';
 import { bereinigeZitierteNormen } from '../../src/lib/rechtsprechung/seitenmarker';
+import { amtlicherGerichtName, amtlichesAktenzeichen } from '../../src/lib/rechtsprechung/kantonale-gerichte';
 import { rubrumFeldPlausibel } from '../../src/lib/rechtsprechung/rubrum';
 import { teileSachverhalt } from '../../src/lib/rechtsprechung/sachverhalt';
 import { sha256EntscheidBloecke } from './sha-entscheide';
@@ -366,14 +367,20 @@ export function mappeEntscheidOCL(
     legalArea: det.legal_area,
     kanton: canton,
   });
-  const gerichtName = gerichtAnzeigename(court, canton, det.court_name as string | undefined);
+  // U-24: Court-Codes, die mehrere Gerichte bündeln (ag_/sg_/gr_gerichte), tragen den amtlichen Namen
+  // des entscheidenden Gerichts (Präfix bzw. Entscheiddatum); sonst der Anzeigename je Court-Code.
+  const gerichtName = canton === 'CH' ? gerichtAnzeigename(court, canton, det.court_name as string | undefined)
+    : (amtlicherGerichtName(court, docket, datumRoh) ?? gerichtAnzeigename(court, canton, det.court_name as string | undefined));
+  // U-16: amtliche Schreibweise des Aktenzeichens (GR: zweistelliges Jahr). Die id bleibt aus der
+  // OCL-Form gebildet (docketSafe unten) — stabile Adressen und Dateinamen.
+  const nummerAmtlich = amtlichesAktenzeichen(court, docket);
   // Rubrum nur fürs Bundesgericht (full_text-Struktur zuverlässig); kantonal null —
   // lieber leer als falsch (Abnahme P1: kantonale Extraktion liefert sonst Erwägungstext).
   const rubrum = canton === 'CH' ? extrahiereRubrum(det.full_text) : null;
   // Zitierung inkl. Aktenzeichen-Norm „5A 229/2017" → „5A_229/2017" (Abnahme P3: Kopf/Tab/Zitat).
   const zitierung = (canton === 'CH'
     ? String(det.citation_string_de ?? `BGer ${docket} vom ${fmtDatumDe(datumRoh)}`)
-    : `${gerichtName} ${docket} vom ${fmtDatumDe(datumRoh)}`).replace(/\b(\d[A-Z])\s+(\d+\/\d{4})/g, '$1_$2');
+    : `${gerichtName} ${nummerAmtlich} vom ${fmtDatumDe(datumRoh)}`).replace(/\b(\d[A-Z])\s+(\d+\/\d{4})/g, '$1_$2');
 
   // Leitentscheid ⟺ amtliche Sammlung (BGE): Court 'bge' ODER BGE-Fundstelle.
   // KEIN '!!regeste'-Glied mehr — eine maschinelle/kantonale Regeste begründet keinen
@@ -395,7 +402,7 @@ export function mappeEntscheidOCL(
     gerichtstyp: gerichtstypFuerCourt(court),
     kanton: canton,
     abteilung: det.chamber ? String(det.chamber) : null,
-    nummer: docket,
+    nummer: nummerAmtlich,
     bgeReferenz: istBge ? docket : (det.bge_reference ? String(det.bge_reference) : null),
     zitierung,
     datum: datumRoh,
