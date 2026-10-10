@@ -83,7 +83,8 @@ Kürzel = Präfix des Arbeitszweigs und Wert des Commit-Trailers `Roadmap:`.
 2. **Fundament für den Bund-Ausbau** (`A1-FUNDAMENT`) · E1·A · Gegenprüfung ja, wo Normdaten
    *Fertig, wenn* (a) der Browser-Suchindex `such-index/artikel.json` entfällt: Wortsuche in Gesetzen nur noch
    über den Server, Entscheide eigene Suche (David 7.10.: «suche zurückfahren. nur noch nach gesetzen und
-   werkzeugen suchen lassen. separat für entscheide»; Wortsuche «Ja, nur über Server»), und
+   werkzeugen suchen lassen. separat für entscheide»; Wortsuche «Ja, nur über Server»),
+   Datenschutz §2 nennt Suchdienst (Go David 10.10.), und
    `normtext/register.json` (93 % des Deckels, `scripts/perf/daten-budget.ts`) ist aufgeteilt (vor Lieferstart);
    (b) Pins als Datendatei statt Handzeilen in `scripts/fedlex-cache.sh` + `src/lib/fedlex/tabelle.ts`,
    Kurzname für Erlasse ohne amtliche Abkürzung `CH-<SR>` (David 7.10.); (c) vervielfachende Fehler zu: ELI-Auflösung
@@ -155,8 +156,8 @@ StGB 52 2007-01-01, OR 631 2023-01-01, SVG 89a bewusst ohne) — nur Abnahme Dav
 - E4 · David 21.9./E2 7.10. · Impressum/Datenschutz erst vor Live-Gang (FB S-01); Staatsverträge SR 0.* (28 schon gepinnt) verlinken bis dahin auf Fedlex
 ```
 
-*Ruhend:* Merkzettel mit Entscheid oder Frage Davids (FB Teil B) — nicht nachfragen. *Berichtigt 7.10.:*
-«371 falsche Selbstlinks» = Links, die ein Guard entfernt **hätte** (Merkzettel `…-des-der-guard-…`, 31.8.).
+*Ruhend:* Merkzettel mit Entscheid oder Frage Davids (FB Teil B) — nicht nachfragen. «371 falsche
+Selbstlinks» berichtigt: Merkzettel `2026-10-08-werkzeug-defekte-eingang` Ziff. 6.
 
 ---
 
