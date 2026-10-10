@@ -60,13 +60,17 @@ export function sgPraefix(nummer: string): string | null {
 /**
  * Amtlicher Gerichtsname (Kurzform «<Gericht> <KT>») eines kantonalen Entscheids oder null,
  * wenn der Court-Code nicht mehrdeutig ist bzw. der Präfix nicht belegt ist.
- * GR hängt am Entscheiddatum: ab 1.1.2025 «Obergericht GR», davor «Kantonsgericht GR».
+ * GR hängt am Entscheiddatum: ab 1.1.2025 «Obergericht GR». Davor bestanden Kantonsgericht und
+ * Verwaltungsgericht nebeneinander (GOG GR, BR 173.000, in Kraft seit 1.1.2025; Übergangsbestimmung:
+ * «Arbeitsverträge zwischen dem Kantonsgericht oder dem Verwaltungsgericht … auf das Obergericht»,
+ * https://www.gr-lex.gr.ch/api/de/texts_of_law/173.000, abgerufen 11.10.2026). Ein amtlich belegtes
+ * Präfix→Gericht gibt es für die Zeit davor nicht ⇒ null, nicht raten (§7).
  */
 export function amtlicherGerichtName(gericht: string, nummer: string, datum: string): string | null {
   switch (gericht) {
     case 'gr_gerichte':
       if (!/^\d{4}-\d{2}-\d{2}$/.test(datum)) return null;
-      return datum >= GR_OBERGERICHT_AB ? 'Obergericht GR' : 'Kantonsgericht GR';
+      return datum >= GR_OBERGERICHT_AB ? 'Obergericht GR' : null;
     case 'ag_gerichte': {
       const p = agPraefix(nummer);
       return p ? AG_PRAEFIX_GERICHT[p] ?? null : null;

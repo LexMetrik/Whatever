@@ -16,10 +16,11 @@ import type { EntscheidSnapshot, EntscheidSnapshotDatei } from '../lib/rechtspre
 //  · SG: publikationen.sg.ch «Stelle: Verwaltungsgericht» (B), «Stelle: Versicherungsgericht» (BV), «Verwaltungsrekurskommission» (I/1).
 
 describe('amtlicher Gerichtsname', () => {
-  it('GR: ab 1.1.2025 Obergericht, davor Kantonsgericht (Grenztag eingeschlossen)', () => {
+  it('GR: ab 1.1.2025 Obergericht (Grenztag eingeschlossen); davor null (Kantons- und Verwaltungsgericht nebeneinander, GOG GR BR 173.000)', () => {
     expect(amtlicherGerichtName('gr_gerichte', 'SBK 2026 88', '2026-09-21')).toBe('Obergericht GR');
     expect(amtlicherGerichtName('gr_gerichte', 'ZR1 2024 196', '2025-01-01')).toBe('Obergericht GR');
-    expect(amtlicherGerichtName('gr_gerichte', 'ZK1 2024 5', '2024-12-31')).toBe('Kantonsgericht GR');
+    expect(amtlicherGerichtName('gr_gerichte', 'ZK1 2024 5', '2024-12-31')).toBeNull();
+    expect(amtlicherGerichtName('gr_gerichte', 'U 24 5', '2024-06-01')).toBeNull();
     expect(amtlicherGerichtName('gr_gerichte', 'SBK 2026 88', '')).toBeNull();
   });
   it('AG: das Gericht hängt am Präfix, unbekannte Präfixe liefern null (nicht raten)', () => {
