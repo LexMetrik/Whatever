@@ -183,7 +183,7 @@ nirgends im Repo. (5) Texte nicht umformuliert (ausser Eszett durch ss ersetzt u
 | K-23 | N | 106 §-Erlasse heissen im Leser «Artikel» (109 Seed-Keys fehlen); Ort (Posten): src/lib/normtext/grundart.generated.ts, scripts/normtext/seed-grundart.mjs | ZH-230 «313 Artikel» | ja | – | 2026-10-02-grundart-seed-luecke-109-keys-fehlen-106-erlasse-heissen-im |
 | K-24 | N | Kürzel-Ableitung spaltet Titel falsch (6 Fälle, 41 Kürzel ≠ Titel); Ort (Posten): scripts/normtext/browse-manifest.ts, src/pages/gesetz-leser/titelSchluss.ts | BS-154.123, ZH-211.12 | ja | – | 2026-10-02-kantonales-register-kuerzel-ableitung-spaltet-bei-4-erlassen |
 
-## 3 · Urteilsdaten (24 Zeilen)
+## 3 · Urteilsdaten (25 Zeilen)
 
 | Nr | Kl. | Klartext | Beispiel | offen? | David? | Postendatei(en) |
 |---|---|---|---|---|---|---|
@@ -209,8 +209,9 @@ nirgends im Repo. (5) Texte nicht umformuliert (ausser Eszett durch ss ersetzt u
 | U-28 | R | BS-Entscheiddatum aus Portal-Metadatum statt Kopf: 23.05.2023 statt 25. Mai 2023 | BEZ.2023.25 | vermutlich erledigt (PR #1303 gemergt: BS-Entscheiddatum aus dem Urteilskopf) | – | 2026-09-25-bs-import-kopfdatum-als-gegenprobe-zum-portal-metadatum |
 | U-29 | R | Seitenvermerk «BGE … S. n» steht in fr./it. BGE weiter mitten im Normzitat («art. 14 BGE 150 I 154 S. 165 al. 2 Cst.»): `seitenmarker.ts:25` kennt nur deutsche Zitatköpfe; zudem Marker nicht an die eigene bgeReferenz gebunden (Fremdzitat ohne «E.» würde umgestellt, Bestand 0) | 30 Dateien `public/rechtsprechung/bund` | ja (Gegenprüfung #1365, 11.10.) | – | – |
 | U-30 | R | Vorinstanz-Genitive ausserhalb des Kopfwort-Musters von `vorinstanz.ts` bleiben stehen («Eidgenössischen Steuerverwaltung», «Präsidenten des Obergerichts») | rubrum.vorinstanz | ja (Gegenprüfung #1365, 11.10.) | – | – |
-| U-31 | R | 8 BGer-Rubren beginnen mit Datums-Vorspann statt Gericht («8. April 2020 und das Urteil …»), Rubrum-Extraktion | BGer-Rubren | ja (Bau #1365, 11.10.) | – | – |
+| U-31 | R | 8 BGE/BGer-Rubren beginnen mit Datums-Vorspann statt Gericht («8. April 2020 und das Urteil …»; 7 BGE, 1 BGer), Rubrum-Extraktion | BGE 149 II 170, 1B_56_2012 | ja (Bau #1365, 11.10.) | – | – |
 | U-32 | N | Erwägungsblock endet auf der Überschrift der nächsten Erwägung («…\n\n4.»): weitere OCL-BGE vermutet (repariert nur 152 III 205, 148 V 70, 150 II 153), über 100 BS-Blöcke aus `scripts/rechtsprechung/bs-parse.ts` | BS-Korpus | ja (Bau #1365, 11.10.) | – | – |
+| U-33 | R | GR vor 1.1.2025: `amtlicherGerichtName` liefert `null`, der Neuzug fällt dann auf den Rückfallnamen «Obergericht GR» zurück (`scripts/normtext/adapter-entscheide.ts:376`, `entscheide-mapping.ts:1176`) — zeitlich falsch, davor bestanden Kantons- und Verwaltungsgericht (GOG GR BR 173.000); Bestand 0 betroffen (alle GR 2026) | GR-Entscheid 2024 | ja (Gegenprüfung #1365, 11.10.) | – | – |
 
 ## 4 · Verweise (10 Zeilen)
 
