@@ -45,6 +45,10 @@ export type PdfDocConfig = {
    *  Modell byte-identisch zum bisherigen PDF (FAHRPLAN-BEGRUENDUNGS-ABSATZ B3-1). */
   begruendung?: string;
   disclaimer: string;                 // domänenspezifischer Disclaimer-Text
+  /** WARNHINWEIS: «Bekannter Fehler – Ergebnis nicht verwenden» direkt unter dem
+   *  Kopf (Inhalt aus lib/bekannteFehler via ErgebnisExport, §5). Fehlt das Feld,
+   *  ist das Modell byte-identisch zum bisherigen PDF. */
+  bekannteFehler?: { titel: string; eintraege: string[] };
 };
 
 type PdfBlock =
@@ -99,6 +103,12 @@ export function buildPdfModel(cfg: PdfDocConfig, jetzt: Date = new Date()): PdfM
     erstellt: format(jetzt, 'dd.MM.yyyy, HH:mm') + ' Uhr',
     aktenzeichen: cfg.aktenzeichen?.trim() ? t(cfg.aktenzeichen.trim()) : undefined,
   });
+
+  // 1b. Bekannter Fehler (WARNHINWEIS) — vor jedem Ergebniswert.
+  if (cfg.bekannteFehler && cfg.bekannteFehler.eintraege.length > 0) {
+    blocks.push({ art: 'hinweisbox', titel: t(cfg.bekannteFehler.titel), eintraege: cfg.bekannteFehler.eintraege.map(t), ton: 'warn' });
+    blocks.push({ art: 'trenner' });
+  }
 
   // 2. Ergebnis-Hero (falls der Rechner eine Hauptkennzahl liefert)
   if (cfg.hero && cfg.sections.length > 0) {

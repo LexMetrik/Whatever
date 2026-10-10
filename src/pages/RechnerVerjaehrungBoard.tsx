@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { BekannteFehlerRahmen } from '../components/BekannterFehler';
 import { Card } from '../components/ui/Card';
 import { DatenTabelle } from '../components/ui/DatenTabelle';
 import { RechnerKopf } from '../components/layout/RechnerKopf';
@@ -27,6 +28,7 @@ const CISG_URL = 'https://www.fedlex.admin.ch/eli/cc/1991/307_307_307/de';
 export function RechnerVerjaehrungBoard() {
   const calc = getCalculator('verjaehrung-board')!;
   return (
+    <BekannteFehlerRahmen werkzeug="verjaehrung-board">
     <div className="space-y-6">
       <RechnerKopf calc={calc} />
 
@@ -108,5 +110,6 @@ export function RechnerVerjaehrungBoard() {
         <GewaehrleistungForm />
       </Card>
     </div>
+    </BekannteFehlerRahmen>
   );
 }

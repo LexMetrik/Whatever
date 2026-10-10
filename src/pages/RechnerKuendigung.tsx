@@ -6,6 +6,7 @@ import { Tabs } from '../components/ui/Tabs';
 import { LohnfortzahlungForm } from '../components/forms/LohnfortzahlungForm';
 import { KuendigungSperrForm } from '../components/forms/KuendigungSperrForm';
 import { KombinierteAnsicht } from '../components/forms/KombinierteAnsicht';
+import { BekannteFehlerRahmen } from '../components/BekannterFehler';
 import { RechnerKopf } from '../components/layout/RechnerKopf';
 import { TagerechnerRueckverweis } from '../components/TagerechnerRueckverweis';
 import { EreignisFristenSektion } from '../components/forms/EreignisFristen';
@@ -77,15 +78,19 @@ export function RechnerKuendigung() {
 
       <Card>
         {tab === 'a' && <LohnfortzahlungForm />}
-        {tab === 'b_c' && <KuendigungSperrForm onBeendigung={setBeendigung} />}
-        {tab === 'kombiniert' && <KombinierteAnsicht />}
+        {/* WARNHINWEIS: Kündigung/Sperrfristen (B+C, auch in «Kombiniert») und
+            die 336b-Fristen unten sind das Werkzeug `kuendigung-sperrfristen`. */}
+        {tab === 'b_c' && <BekannteFehlerRahmen werkzeug="kuendigung-sperrfristen"><KuendigungSperrForm onBeendigung={setBeendigung} /></BekannteFehlerRahmen>}
+        {tab === 'kombiniert' && <BekannteFehlerRahmen werkzeug="kuendigung-sperrfristen"><KombinierteAnsicht /></BekannteFehlerRahmen>}
       </Card>
 
       {/* S-5c (Fristenspiegel-Auflösung): die 336b-Fristen (Einsprache &
           Klagefrist nach der AG-Kündigung) leben auf DIESER Seite; der
           Sperrfristen-Rechner verweist per Anker hierher. */}
-      <EreignisFristenSektion ereignisse={['agkuendigung']} id="ereignis-336b"
-        zustellungVorgabe={beendigung} />
+      <BekannteFehlerRahmen werkzeug="kuendigung-sperrfristen">
+        <EreignisFristenSektion ereignisse={['agkuendigung']} id="ereignis-336b"
+          zustellungVorgabe={beendigung} />
+      </BekannteFehlerRahmen>
 
       {/* Themen-Einstieg (Konsolidierung 7.6.2026, E3): die Schreiben-Masken
           haben keine eigenen Katalog-Karten mehr — hier ist ihr Direktzugang. */}

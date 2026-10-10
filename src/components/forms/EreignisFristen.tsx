@@ -9,6 +9,9 @@ import { BetragsFeld } from '../BetragsFeld';
 import { IcsExportButton } from '../IcsExportButton';
 import { ladeIcs } from '../icsDownload';
 import { LinkTeilenButton } from '../LinkTeilenButton';
+import { BekannterFehlerHinweis } from '../BekannterFehler';
+import { useBekannteFehler } from '../bekannteFehlerKontext';
+import { bekannteFehlerTextblock } from '../../lib/bekannteFehler';
 import { KANTONE } from '../../lib/kantone';
 import { icsSammel } from '../../lib/icsExport';
 import { permalinkKodieren, istISO } from '../../lib/permalink';
@@ -132,6 +135,7 @@ function EreignisFristen({ ereignisse, zustellungVorgabe }: {
   const erlaubt = EREIGNISSE.filter((e) => ereignisse.includes(e.code));
   // Vorbefüllung aus dem Permalink (Brücken-/Redirect-Ziel; SSR-sicher).
   const start = usePermalinkFelder(FSP_LINK_SPEC);
+  const fehler = useBekannteFehler();
 
   const [ereignis, setEreignis] = useState<Ereignis>(
     EREIGNIS_CODES.includes(start.ereignis as Ereignis) && ereignisse.includes(start.ereignis as Ereignis)
@@ -196,13 +200,16 @@ function EreignisFristen({ ereignisse, zustellungVorgabe }: {
   // Download über den geteilten Helfer (Code-Review #8); Wartefristen ohne
   // Vorfrist-Alarm — wie beim Einzel-Export (richtungsverkehrte Mahnung).
   const spiegelQuery = () => permalinkKodieren(FSP_LINK_SPEC, linkWerte());
+  const hinweisZeilen = bekannteFehlerTextblock(fehler);
   const sammelIcs = () => {
     if (!ergebnis) return;
     const url = `${location.origin}${location.pathname}${spiegelQuery()}`;
     const eintraege = ergebnis.zeilen
       .filter((z) => z.endeISO)
       .map((z) => ({
-        titel: z.label, endISO: z.endeISO!, beschreibung: spiegelBeschreibung(z),
+        titel: z.label, endISO: z.endeISO!,
+        // WARNHINWEIS: wie IcsExportButton — der Hinweis reist mit dem Eintrag.
+        beschreibung: [...hinweisZeilen, spiegelBeschreibung(z)].join('\n'),
         aktenzeichen: aktenzeichen.trim() || undefined, url,
         vorfristTage: z.fristnatur === 'wartefrist' ? 0 : 3,
       }));
@@ -336,6 +343,8 @@ function EreignisFristen({ ereignisse, zustellungVorgabe }: {
 
       {ergebnis && (
         <div className="space-y-4">
+          {/* WARNHINWEIS: bekannter Fehler des Werkzeugs über der Tabelle (§8). */}
+          <BekannterFehlerHinweis />
           {/* Fristen-Tabelle: jede Zeile = ein Engine-Resultat */}
           <div className="border border-line overflow-hidden">
             <div className="px-4 py-3 bg-surface border-b border-line flex flex-wrap items-baseline justify-between gap-2">

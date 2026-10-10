@@ -1,4 +1,5 @@
 import { ZpoFristenForm } from '../components/forms/ZpoFristenForm';
+import { BekannteFehlerRahmen } from '../components/BekannterFehler';
 import { Card } from '../components/ui/Card';
 import { EreignisFristenSektion } from '../components/forms/EreignisFristen';
 import { RechnerKopf } from '../components/layout/RechnerKopf';
@@ -12,6 +13,7 @@ import { getCalculator } from '../lib/calculators';
 export function RechnerZpo() {
   const calc = getCalculator('zpo-fristen')!;
   return (
+    <BekannteFehlerRahmen werkzeug="zpo-fristen">
     <div className="space-y-6">
       <RechnerKopf calc={calc} />
       <Card>
@@ -23,5 +25,6 @@ export function RechnerZpo() {
         { to: '/vorlagen/fristerstreckung', label: 'Fristerstreckungsgesuch (Art. 144 ZPO)' },
       ]} />
     </div>
+    </BekannteFehlerRahmen>
   );
 }

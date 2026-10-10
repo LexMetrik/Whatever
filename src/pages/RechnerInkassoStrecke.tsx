@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { BekannteFehlerRahmen } from '../components/BekannterFehler';
 import { Card } from '../components/ui/Card';
 import { RechnerKopf } from '../components/layout/RechnerKopf';
 import { AbschnittKopf } from '../components/layout/AbschnittKopf';
@@ -61,6 +62,7 @@ const STRECKE: Schritt[] = [
 export function RechnerInkassoStrecke() {
   const calc = getCalculator('inkasso-strecke')!;
   return (
+    <BekannteFehlerRahmen werkzeug="inkasso-strecke">
     <div className="space-y-6">
       <RechnerKopf calc={calc} />
 
@@ -101,5 +103,6 @@ export function RechnerInkassoStrecke() {
         <VerzugszinsForm />
       </Card>
     </div>
+    </BekannteFehlerRahmen>
   );
 }

@@ -129,3 +129,8 @@ export function bekannteFehlerFuer(werkzeuge: readonly string[]): BekannterFehle
 
 /** Eine Zeile je Fehler, FB-ID in Klammern — für Anzeige, PDF, Kopie und Kalender. */
 export const bekannterFehlerZeile = (f: BekannterFehler): string => `${f.text} (${f.fb})`;
+
+/** Textblock für Kopie und Kalender: Titel, je Fehler eine Zeile, Leerzeile — leer ohne Fehler. */
+export function bekannteFehlerTextblock(fehler: readonly BekannterFehler[]): string[] {
+  return fehler.length ? [BEKANNTER_FEHLER_TITEL, ...fehler.map((f) => '– ' + bekannterFehlerZeile(f)), ''] : [];
+}

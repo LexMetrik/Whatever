@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { ErgebnisSprung, LiveHeader } from './vorlagen/ui';
+import { BekannterFehlerHinweis } from './BekannterFehler';
 
 // ─── Geteilter Ergebnisblock-Rahmen (DESIGN-REGLEMENT §R-4) ─────────────────
 // EIN Rahmen für jedes Rechner-Ergebnis: Sprungmarke (mobil), Live-Hinweis,
@@ -45,6 +46,8 @@ export function ErgebnisBlock({ id = 'lc-ergebnis', live = true, sprung = true, 
           (index.css, W2·31-BILDSCHIRMBREITE B3) — reine Darstellung. */}
       <div id={id} className="lc-reveal lc-sprungziel space-y-4" aria-live="polite" data-ergebnisplatz="">
         {live && <LiveHeader />}
+        {/* WARNHINWEIS: bekannter Fehler des Werkzeugs, vor dem Verdikt (§8). */}
+        <BekannterFehlerHinweis />
         {children}
       </div>
     </>
