@@ -12,6 +12,7 @@ import type { Rechtsgebiet } from '../../src/lib/normtext/register-typen';
 import type { OclParagraph } from './adapter-typen';
 import { normalisiereRegeste, bereinigeFliesstext } from '../../src/lib/rechtsprechung/register';
 import { bereinigeZitierteNormen } from '../../src/lib/rechtsprechung/seitenmarker';
+import { vorinstanzNominativ } from '../../src/lib/rechtsprechung/vorinstanz';
 import { amtlicherGerichtName, amtlichesAktenzeichen } from '../../src/lib/rechtsprechung/kantonale-gerichte';
 import { rubrumFeldPlausibel } from '../../src/lib/rechtsprechung/rubrum';
 import { teileSachverhalt } from '../../src/lib/rechtsprechung/sachverhalt';
@@ -164,7 +165,8 @@ export function extrahiereRubrum(fullText: string | undefined): EntscheidRubrum 
     besetzung: rubrumFeldPlausibel('besetzung', besetzung) ? besetzung : null,
     parteien: rubrumFeldPlausibel('parteien', parteien) ? parteien : null,
     gegenstand: rubrumFeldPlausibel('gegenstand', gegenstand) ? gegenstand : null,
-    vorinstanz: rubrumFeldPlausibel('vorinstanz', vorinstanz) ? vorinstanz : null,
+    // U-03: das Kopfwort steht im Satz «gegen den Entscheid DES …» im Genitiv; das Feld ist ein Name (Nominativ).
+    vorinstanz: rubrumFeldPlausibel('vorinstanz', vorinstanz) ? vorinstanzNominativ(vorinstanz!) : null,
   };
   if (!rubrum.besetzung && !rubrum.parteien && !rubrum.gegenstand && !rubrum.vorinstanz) return null;
   return rubrum;
