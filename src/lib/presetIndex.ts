@@ -1,4 +1,4 @@
-// Dossier: archiv/FAHRPLAN-FRISTEN-EINHEIT.md
+// Herkunft: FAHRPLAN-FRISTEN-EINHEIT (git 3fd5db8f9:archiv/FAHRPLAN-FRISTEN-EINHEIT.md)
 // ─── FE-3 · EIN Preset-Such-Index über alle Regimes ─────────────────────────
 //
 // Dünner SUCH-INDEX, kein gemeinsamer Preset-Typ (V2-Erkenntnis: kein

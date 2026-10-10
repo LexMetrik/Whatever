@@ -65,7 +65,8 @@ import { performance } from 'node:perf_hooks';
  * `scripts/gate.sh`, eigenes Literal dort), gelesen von
  * `scripts/analyse/tor-bewaehrung.ts` (Konstante `LOKALES_LOG`, ebenfalls
  * eigenes Literal — zwei Konsumenten teilen sich den Pfad als Wert, nicht als
- * Import, weil kein gemeinsamer Kern mehr existiert).
+ * Import, weil kein gemeinsamer Kern mehr existiert). Der Leser
+ * `tor-bewaehrung.ts` entfiel mit dem Kahlschlag 10.10.2026.
  */
 const EREIGNIS_DATEI = '.selbstopt-ereignisse.jsonl';
 
@@ -102,7 +103,8 @@ function leseCheckKette(): string[] {
  * oder schreibgeschützter Baum darf keine Prüfung kosten, und ein Messwert ist
  * nie wichtiger als das Verdikt, das er misst. Deshalb schluckt der `catch`
  * bewusst alles — sichtbar wird der Ausfall trotzdem, weil
- * `scripts/analyse/tor-bewaehrung.ts` ein fehlendes Log als Ausfall vermerkt.
+ * `scripts/analyse/tor-bewaehrung.ts` ein fehlendes Log als Ausfall vermerkt
+ * (Leser entfallen Kahlschlag 10.10.2026; das Log hat seither keinen Leser).
  */
 function protokolliere(name: string, ok: boolean): void {
   try {

@@ -1,206 +1,146 @@
 ---
 name: gegenpruefung
-description: Use when the LexMetrik gate `check:gegenpruefung` is red, or before committing changes to risk paths (Extraktion/Rechnen/Norm-Tarif). Trigger-Beispiele: src/lib/vorlagen, src/lib/tarif, src/lib/normtext, scripts/normtext, scripts/fedlex-*, daten/, scripts/materialien und die Rechen-Engines. Massgeblich (abschliessend): istRisikoPfad() in scripts/gegenpruefung/kern.ts.
+description: Verwenden, wenn das Tor `check:gegenpruefung` rot ist, vor Commits auf Risiko-Pfaden (Extraktion, Rechnen, Norm-Tarif — src/lib/vorlagen, src/lib/tarif, src/lib/normtext, scripts/normtext, scripts/fedlex-*, daten/, scripts/materialien, Rechen-Engines; massgeblich abschliessend istRisikoPfad() in scripts/gegenpruefung/kern.ts) — und bei fachlicher Abnahme: Trigger «Abnahme», «abnehmen», «Abnahme-Paket», «geprüft setzen», «verified:true», «Protokoll nach SCHEMA.md».
 ---
 
-# Gegenprüfung — adversariales Protokoll (QS-GP)
+# Gegenprüfung und Abnahme
 
-*Belege verschobener Passagen («Archiv §…»): `archiv/steuerflaeche-historie-2026-10-02/gegenpruefung.md` (QS-DOKU-DIAET 2.10.2026).*
-
-## Zweck
-
-Die teuersten LexMetrik-Bugs (Tabellen-Drop, Footnote-Leak, `bis`/`ter`-Verlust,
-falsche Frist/Quote — Vorfallswelle Juni/Juli 2026, prominentester Fall PR #309
-am 20.7.2026: elf erfundene Amtsträger:innen ~1 h auf Prod; Tor-Geburtsbeweis
-`f87921e53`) entstanden an **Session-Blindheit**: der Autor prüft seinen eigenen
-Output und übersieht dieselbe Lücke zweimal. Dieser Skill ist der **unabhängige
-Zweitdurchgang** — Auftrag ist nicht «bestätigen», sondern **widerlegen**.
-
-Das Tor `check:gegenpruefung` (in `npm run gate`) blockiert jeden Diff auf einer
-Risiko-Datei, bis genau für diesen Diff ein `bestanden`-Nachweis vorliegt.
+Die teuersten Bugs (Tabellen-Drop, Fussnoten-Leak, `bis`/`ter`-Verlust,
+falsche Frist oder Quote, erfundene Amtsträger auf Prod) entstehen an
+Session-Blindheit: der Autor übersieht dieselbe Lücke zweimal. Die
+Gegenprüfung ist der unabhängige Zweitdurchgang — Auftrag ist **widerlegen**,
+nicht bestätigen. `check:gegenpruefung` (in `npm run gate`) blockiert jeden
+Diff auf einer Risiko-Datei, bis für genau diesen Diff ein
+`bestanden`-Nachweis vorliegt.
 
 ## Eiserne Regeln
 
-1. **Unabhängig & frischer Kontext.** Diesen Durchgang idealerweise als eigener
-   Sub-Agent / eigene Session mit **frischem Kontext** und Modell **Opus**
-   (Daueranweisung David) fahren — nicht im selben Gedankengang, der den Output
-   erzeugt hat.
-2. **Amtliche Quelle vor sich.** Immer gegen die **amtliche** Fassung prüfen
-   (Fedlex-Filestore-HTML für Bund, LexWork/amtlicher Erlass für Kanton), nicht
-   gegen den Code, nicht gegen eine zweite Ableitung — nie ein Snippet
-   (25.9.2026 BGer 9C_396/2018). Bei Unsicherheit zur Quell-Wahl den Skill
-   `scraping-swiss-official-sources` heranziehen.
-3. **Widerlegen, nicht abnicken.** Aktiv nach dem Fehler suchen. Erst wenn ein
-   ernsthafter Widerlegungsversuch scheitert, ist das Verdikt `bestanden`.
-4. **Belegpflicht.** Jeder Befund UND jedes `bestanden` mit konkreter Norm
-   (Artikel/§) + Link + Stand hinterlegen (Daueranweisung David: doppelt
-   verifizieren, jeder Wert mit Norm-Anker). **Gilt sinngemäss ausserhalb der
-   Norm-Prüfung:** ein Befund zu einem technischen Mechanismus (Render-/
-   Lifecycle-Verhalten, Race Conditions) ohne echten Reproduktions-Test ist
-   eine Hypothese, kein Fund. Beleg 15.9.2026 (PR #899): Archiv §Hypothese-899.
-5. **Wer quittiert.** Das Verdikt schreibt der Prüfer, die Quittung
-   (`gegenpruefung:ok`, Register-Zeile, `Gegenpruefung:`-Trailer) setzt der
-   Orchestrator — **nie der Bauer**. Eine Selbstbescheinigung des Bau-Agenten
-   macht den Merge-Schutz formal grün und ist inhaltlich wertlos (Vorfall PR #616, 2.9.2026: Archiv §Quittung-616).
+1. **Unabhängig, frischer Kontext:** eigener Sub-Agent oder eigene Session,
+   Modell Opus, anderes Modell als der Bau — nie im Gedankengang, der den
+   Output erzeugt hat.
+2. **Amtliche Quelle:** gegen die amtliche Fassung prüfen (Fedlex-Filestore-HTML
+   für Bund, amtliche Sammlung für Kantone), nie gegen Code, eine zweite
+   Ableitung oder ein Snippet. Quell-Wahl: Skill
+   `scraping-swiss-official-sources`.
+3. **Widerlegen, nicht abnicken:** erst ein gescheiterter ernsthafter
+   Widerlegungsversuch ergibt `bestanden`.
+4. **Belegpflicht:** jeder Befund und jedes `bestanden` mit Norm (Artikel) +
+   Link + Stand. Technischer Befund (Render, Lifecycle, Race) ohne
+   Reproduktions-Test ist Hypothese. Aussage aus einem einzelnen RDF-Tripel nur
+   als Wiedergabe, nie als Behauptung, wenn das Tripel sie nicht trägt.
+5. **Wer quittiert:** das Verdikt schreibt der Prüfer, die Quittung
+   (`gegenpruefung:ok`, Register-Zeile, Trailer) setzt der Orchestrator —
+   **nie der Bauer**. Vor jeder Landung prüfen, dass die Register-Zeile vom
+   Prüfer stammt.
 
 ## Minimum eines echten Durchgangs
 
-«Ernsthaft widerlegen» (Regel 3) und «echter Durchgang» heissen mindestens,
-**in dieser Prüfsession**:
+In **dieser** Prüfsession:
 
-1. Die amtliche Quelle **tatsächlich geöffnet** — nicht aus Erinnerung zitiert,
-   egal wie lange sie vorhin offen war.
-2. Den unabhängigen Wert/Text **schriftlich notiert, BEVOR** mit dem Output
-   verglichen wird. Wer den Ausgabewert schon gesehen hat — der Autor immer —,
-   ist geankert: dann blind aus der Norm rechnen/ableiten, Resultat hinschreiben,
-   erst danach vergleichen. Den Code zu lesen ist kein Ersatz: Lesen reproduziert
-   dessen Fehler mitsamt der Autoren-Lücke; der Beweis ist das unabhängige
-   Nachrechnen aus der Norm.
-3. Mindestens einen **Randfall** konkret durchgespielt (Staffel-Grenze, Rundung,
+1. Die amtliche Quelle tatsächlich geöffnet.
+2. Den unabhängigen Wert schriftlich notiert, BEVOR mit dem Output verglichen
+   wird — wer den Ausgabewert kennt, ist geankert: blind aus der Norm
+   ableiten, dann vergleichen. Code lesen ist kein Ersatz.
+3. Mindestens einen Randfall durchgespielt (Staffelgrenze, Rundung,
    `bis`/`ter`, Regime-Wechsel).
 
-Fehlt eines davon, ist das Verdikt nicht `bestanden` — egal wie plausibel der
-Output wirkt. Das «idealerweise» in Regel 1 betrifft nur das Vehikel (Sub-Agent
-vs. eigene Session); es erlaubt nie, dass der Autor im selben Gedankengang
-abnickt. **Den Buchstaben der Gegenprüfung erfüllen (Token quittieren ohne
-echten Widerlegungs-Durchgang) verletzt ihren Geist** — `gegenpruefung:ok`
-prüft die Belege technisch nicht, genau deshalb bist du die Prüfung, nicht das
-Tool.
+Fehlt eines, ist das Verdikt nicht `bestanden`. Den Buchstaben erfüllen
+(quittieren ohne echten Durchgang) verletzt den Geist — `gegenpruefung:ok`
+prüft die Belege nicht, darum bist du die Prüfung.
 
-## Praxis-Rezept (Beleg PR #963, 21.9.2026: 2 blockierende Lücken, 14 Mutationen)
+**Praxis:** Erwartungen vor dem Ergebnis festhalten; Sabotage-Proben (Prüflogik
+kaputt machen, Rot beobachten); den Bauer fragen, welcher Stelle er am
+wenigsten traut. Delta-Runde: denselben Prüfer fortsetzen, nie einen
+Bau-Agenten als Prüfer.
 
-- Erwartungen **vor** dem Ergebnis pre-registrieren (Ziff. 2 gilt sinngemäss
-  auch ausserhalb der Norm-Prüfung).
-- **Mutationen/Sabotage-Proben**: Prüf-Logik/Test kaputt machen, beobachten
-  ob sie rot wird (§6.7).
-- Den Bauer fragen, **welcher Stelle er am wenigsten traut**, dort zuerst.
-- Delta-Runde: **denselben Prüfer fortsetzen** (SendMessage), nicht neu
-  dispatchen — nie aber einen BAU-Agenten als Prüfer fortsetzen (Skill
-  `auftrag` Ziff. 6).
+## Red Flags — STOP, dann `referenz-ausreden.md`
 
-## Red Flags — STOP und neu ansetzen
+- Quittieren, ohne die amtliche URL in dieser Session geöffnet zu haben.
+- Einziger Nachweis ist ein Kopf-Überschlag oder die Erinnerung an den Fix.
+- Code gelesen statt aus der Norm gerechnet.
+- Begründen, warum **diesmal** kein frischer Kontext oder Randfall nötig ist.
+- «Nur noch die Quittung»; Grund ist Uhrzeit, wartender Merge, Sunk Cost.
+- Verdikt aus Stichprobe oder früherem Durchgang auf den geänderten Diff
+  übertragen.
 
-Wenn eines davon zutrifft, bist du gerade am Abnicken — dann **zuerst
-`referenz-ausreden.md`** im Skill-Ordner lesen: die dreizehn belegten
-Ausreden und warum keine zählt (ausgelagert QS-EFFIZIENZ 15.8.2026, Wortlaut
-unverändert; Muster `landung/referenz-ausnahmen.md`).
+## Auftrag an den Prüfer
 
-- Du willst quittieren, ohne die amtliche URL **in dieser Prüfsession** geöffnet
-  zu haben.
-- Dein einziger «Nachweis» ist ein Überschlag im Kopf oder die Erinnerung an den
-  eigenen Fix.
-- Du hast den Code gelesen statt aus der Norm gerechnet.
-- Du formulierst gerade, warum **diesmal** kein frischer Kontext / kein Randfall
-  nötig ist.
-- Du denkst «nur noch die Quittung» oder «Prüf-Theater».
-- Der Grund fürs Quittieren ist die Uhrzeit, ein wartender Merge oder die bereits
-  investierte Zeit — nicht ein gescheiterter Widerlegungsversuch.
-- Du überträgst ein Verdikt aus einer Stichprobe oder einem früheren Durchgang
-  auf den ganzen, inzwischen geänderten Diff.
+- **Übergeben werden darf** die Beschaffung: gepinnter amtlicher
+  Filestore-Pfad (`scripts/fedlex-cache.sh`) und der Scope-Anker aus der roten
+  Tor-Meldung. **Beim Prüfer bleibt** die Re-Derivation aus der Norm.
+- **Common-Mode-Schutz:** Currency-Check selbst fahren
+  (`check:fedlex-versionen`/`check:caches`), Pin nur bei eigenem Grün
+  übernehmen, sonst live holen. Nie den Grün-Status des Bau-Pfads übernehmen.
+- **Geprüfter Stand = benannter SHA:** Auftrag nennt den Ziel-SHA, Prüfer
+  bestätigt ihn (`git rev-parse HEAD`) und nennt ihn im Verdikt; ohne SHA gilt
+  das Verdikt als nicht erfolgt.
+- Stützt sich der Bau auf einen Entscheid Davids, zitiert der Auftrag Wortlaut
+  und Quelle, nicht eine Paraphrase.
 
-## Beschaffung als Sub-Agent — was übergeben werden darf (QS-TOK/T11)
+## Modus
 
-Wird dieser Durchgang als **eigener Sub-Agent** gefahren (Regel 1, empfohlen),
-darf der Orchestrator dir die **Beschaffung** abnehmen — **nie die Prüfung**:
+**Extraktion/Darstellung** (`scripts/normtext/**`, `src/lib/normtext/**`,
+`public/normtext/**.json`): Output zeichenweise gegen die Quellfassung; jagen:
+Drop (Artikel, Absätze, lit., Ziff.), Leak (Fussnoten, Navigation),
+zerrissene Abkürzungen, `bis`/`ter`-Verlust, Tabellenzellen,
+Tausendertrenner, falsches «aufgehoben». Vollständigkeit: alle Artikel des
+Erlasses, nicht nur die zitierten.
 
-- **Übergeben werden darf:** der **gepinnte amtliche Filestore-HTML-Pfad** (via
-  `scripts/fedlex-cache.sh`) und der **Scope-Anker aus der roten Tor-Meldung**.
-- **Bei dir bleibt vollständig:** die **Re-Derivation aus der Norm** (unabhängig
-  rechnen, Randfall, schriftlicher Wert VOR dem Vergleich, Beleg mit
-  §/Link/Stand). Der Pin ersetzt das Öffnen der Quelle nicht — er IST die
-  Quelle, die du öffnest.
-
-**Common-Mode-Schutz (nicht verhandelbar):** Currency-Check **selbst** fahren
-(`check:fedlex-versionen`/`check:caches`) und den Pin nur bei eigenem Grün
-übernehmen — sonst die geltende Fassung **live** holen (Skill
-`scraping-swiss-official-sources`). Nie den Grün-Status des Bau-Pfads
-übernehmen, nie auf den Code oder eine zweite Ableitung zeigen (Regel 2 +
-Minimum Ziff. 2 — der frühere Verweis «Regeln 2+5» lief ins Leere, es gibt nur
-vier eiserne Regeln; korrigiert 15.8.2026).
-Ein übergebener Pin ist ein Start-Artefakt, kein Verdikt.
-
-**Geprüfter Stand = benannter SHA (Beleg 23.9.2026, V2d-Gegenprüfung):** Der
-Auftrag nennt den Ziel-SHA; der Prüfer bestätigt ihn zuerst mit
-`git fetch && git rev-parse HEAD` (sonst `git checkout --detach <ref>`) und
-nennt den geprüften SHA im Verdikt. (Beleg 23.9.2026, V2d: Archiv §SHA-V2d) — ein Verdikt ohne SHA gilt als nicht erfolgt
-(§14.7).
-
-**David-Entscheide im Wortlaut:** Stützt sich der Bau auf einen Entscheid
-Davids, zitiert der Prüfauftrag Wortlaut, Datum und Quelle (Nutzer-Turn bzw.
-Fahrplan-§) — der Prüfer sah ihn am 23.9.2026 (START S1) nur als Paraphrase
-des Koordinators und konnte ihn nicht gegenlesen.
-
-## Modus wählen
-
-Sieh dir die geänderten Risiko-Dateien an (die rote Tor-Meldung listet sie):
-
-### Modus Extraktion / Darstellung
-für `scripts/normtext/**`, `src/lib/normtext/**`, `public/normtext/**.json`,
-Snapshot-/Struktur-Outputs.
-
-- Output **zeichenweise** gegen die amtliche Quellfassung vergleichen.
-- Gezielt jagen: **Drop** (fehlende Artikel/Absätze/`items`/lit./Ziff.),
-  **Leak** (Fussnoten-/Navigations-Text im Normtext), **zerrissene
-  Abkürzungen**, **`bis`/`ter`-Verlust** (`art_335_c` etc.), Tabellen-Zellen,
-  Tausendertrenner, falsches «aufgehoben».
-- Vollständigkeit prüfen: **alle** Artikel des Erlasses vorhanden, nicht nur die
-  zitierten (§7 Build-Regel).
-
-### Modus Rechnen
-für `src/lib/vorlagen/**`, `src/lib/tarif/**`, `src/data/tarif/**`,
-`src/lib/fristenspiegel/**` und die Rechen-Engines
-(`verjaehrung|streitwert|schkg|beurkundung|gruendung|frist|kosten|gebuehr|
-zustaendigkeit|straf|bger`).
-
-- **Unabhängig aus der Norm nachrechnen — den Code NICHT lesen.** Artikel für
-  Artikel selbst rechnen (Frist, Quote, Gebühr, Zuständigkeit, Streitwert) und
-  erst danach mit dem Ausgabewert vergleichen. Den Code zu lesen reproduziert
-  dessen Fehler.
-- Randfälle konstruieren: Grenzwerte der Staffeln, Rundung, Feiertags-/Computus-
-  Verschiebung, Regime-Wechsel (§4 regime-treu — verschiedene Rechtsregimes
-  dürfen nicht kollabiert sein).
-
-### Station Phase-3-Zählung (QS-FREMDAGENTEN)
-
-Läuft eine Prüfung Norm gegen Ausgabewert/Extrakt, kann der Prüfer zusätzlich
-einen Gemini-Durchgang als Diskrepanz-Finder fahren (Aufruf: Skill
-`korpus-werkstatt`); Verdikt bleibt beim Prüfer. Jeder Durchgang wird in
-`fahrplaene/FAHRPLAN-FREMDAGENTEN.md` §5 Tabelle «Phase 3» gezählt
-(echt/Schein/verpasst); nach fünf Durchgängen Rückbau-Schwelle §3 anwenden.
+**Rechnen** (`src/lib/vorlagen/**`, `src/lib/tarif/**`, `src/data/tarif/**`,
+`src/lib/fristenspiegel/**`, Rechen-Engines): unabhängig aus der Norm
+nachrechnen, **Code nicht lesen**; Randfälle an Staffelgrenzen, Rundung,
+Feiertags-/Computus-Verschiebung, Regime-Wechsel (Regimes nie kollabiert).
 
 ## Ergebnis
 
-- **`widerlegt`** → Befunde mit Norm-Beleg zurückgeben; NICHT quittieren. Erst
-  fixen, dann erneut prüfen.
-- **`bestanden`** → im Repo-Wurzelverzeichnis quittieren:
+- **`widerlegt`** → Befunde mit Norm-Beleg zurück, nicht quittieren; fixen,
+  neu prüfen.
+- **`bestanden`** → im Repo-Wurzelverzeichnis:
 
   ```
   npm run gegenpruefung:ok -- --verdikt=bestanden \
-    --engine="<Snapshot/Engine>" \
-    --quelle="fedlex <name> <YYYYMMDD>" \
-    --notiz="<kurzer Beleg: was gegen welche Norm/Quelle geprüft>"
+    --engine="<Snapshot/Engine>" --quelle="fedlex <name> <YYYYMMDD>" \
+    --notiz="<was gegen welche Norm/Quelle geprüft>"
   ```
 
-  Das berechnet den Diff-Hash (gleiche Kernfunktion wie das Tor), schreibt
-  `bibliothek/.gegenpruefung-pending` und hängt die Register-Zeile an. Danach
-  ist das Tor grün — solange die Dateien unverändert bleiben (erneutes Editieren
-  kippt den Hash ⇒ neuer Durchgang nötig).
+  Berechnet den Diff-Hash, schreibt `bibliothek/.gegenpruefung-pending`, hängt
+  die Register-Zeile an. Jeder weitere Edit kippt den Hash ⇒ neuer Durchgang.
+  Auflagen vorher einbauen; das Werkzeug kennt nur `bestanden`.
+- **Trailer:** `Gegenpruefung: bestanden (Opus, <Linsen>) — <Befunde>`,
+  Befund-Teil ≥ 15 Zeichen (nie nur «keine», sondern «keine: <Beleg>»), bzw.
+  `Gegenpruefung: n/a — reine Prüflogik`. Einzeilig, im letzten Absatz, nur
+  Trailer-Zeilen dort.
 
-- **Commit-Trailer** setzen (§14 Trailer-Konvention):
-  `Gegenpruefung: bestanden (Opus, <Linsen>) — <Befunde>` — Befund-Teil
-  ≥ 15 Zeichen (`check:merge-schutz`), also nie nur «keine», sondern
-  «keine: <Beleg-Kurzfassung>» (RL-39 25.9.2026, Trailer nachgetragen)
-  bzw. bei reiner Tor-/Test-Änderung `Gegenpruefung: n/a — reine Prüflogik`.
-  **EINZEILIG, im letzten Absatz, nur Trailer-Zeilen dort** (Falle 15.8.2026,
-  QS-TYP-LUECKE): `git`'s `%(trailers)`-Parser erkennt den Block nur, wenn
-  jede Zeile des letzten Absatzes ein `Key: Wert` ist — ein Zeilenumbruch
-  mitten im Verdikt-Wert oder ein Prosa-Satz darunter macht den Trailer
-  unsichtbar, `check:merge-schutz` bleibt rot trotz Register-Zeile.
-  `gegenpruefung:ok` akzeptiert als Verdikt nur `bestanden` — Auflagen
-  vorher einbauen, dann `bestanden` mit Auflagen-Vermerk im Prüfer-Feld.
+Kein Aufweichen eines anderen Tors; alte Nachweise sind nicht recyclebar.
 
-## Nicht-Ziele
+## Abnahme (Status entwurf → geprüft)
 
-- Kein Aufweichen eines anderen Tors, kein `--verdikt=bestanden` ohne echten
-  Durchgang. Der Nachweis ist an genau diesen Diff gebunden; Recyceln alter
-  Token ist ausgeschlossen (der Hash passt dann nicht).
+`verified: true` und «geprüft» setzt nur Davids ausdrückliches Verdikt zu
+GENAU dieser Karte (CLAUDE.md §7) — auch nicht teilweise. Verbindlich:
+`abnahme/SCHEMA.md` und `abnahme/VORLAGE.md`; `src/tests/abnahmeGate.test.ts`
+bricht die Suite bei Status ohne Protokoll.
+
+**Phase 1 — Paket** (ohne David), für die Karten-ID aus
+`src/lib/startseiteConfig.ts`, als `.scratch/abnahme-paket-<id>.md`
+(nicht committen):
+1. Bausteine wortwörtlich (Vorlagen per Generator, z. B. `npm run abnahme:ag`;
+   Rechner: alle Ergebnis-Sätze, Warnungen, Annahmen aus den Golden-Outputs).
+2. Normgrundlage als Tabelle: Norm, ELI, Stand (`scripts/fedlex-cache.sh`),
+   Fedlex-Link `art_x` daneben; Anker-Count des Caches vorher prüfen.
+3. Golden-Referenzfälle mit amtlichem Beleg; fehlt einer, recherchieren und
+   als Test ergänzen.
+4. Edge-Case-Checkliste nach SCHEMA.md Ziff. 4 mit Ist-Befund.
+5. Offene Annahmen und Known Limitations sammeln.
+David den Pfad und die 3–5 wichtigsten Entscheidpunkte nennen. Ohne Verdikt
+ist Phase 1 der fertige Stand — nicht drängen.
+
+**Phase 2 — nur nach Davids Verdikt** (abgenommen / mit Auflagen /
+zurückgewiesen): Auflagen als deklarierte fachliche Änderung umsetzen;
+Protokoll `abnahme/<karten-id>.md` nach VORLAGE.md (Prüfer David Graf,
+Abnahme-Art ehrlich); erst dann Status heben (startseiteConfig, `verified:true`);
+Tore `npm test` · `npm run lint` · `npx tsc -b` · `npm run golden:vergleich`.
+
+Red Flags: «David sagte mach fertig» ist kein Verdikt · Selbstabnahme gilt für
+David, nie für einen Agenten · «teilweise geprüft» gibt es nicht. Eine
+fachliche Änderung nach Abnahme macht das Protokoll ungültig (Status zurück
+auf `entwurf`).

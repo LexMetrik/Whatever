@@ -1,4 +1,4 @@
-// Dossier: archiv/FAHRPLAN-FRISTEN-EINHEIT.md · archiv/FAHRPLAN-STRUKTUR-UMBAU.md
+// Herkunft: FAHRPLAN-FRISTEN-EINHEIT · FAHRPLAN-STRUKTUR-UMBAU (git 3fd5db8f9:archiv/)
 // ─── S-5b · Informationsarchitektur der Fristen-Kategorie ───────────────────
 //
 // Auftrag David 10.6.2026 abends: «Fristen soll unterteilt werden in

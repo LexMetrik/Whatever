@@ -1,0 +1,14 @@
+{
+  "grenze_woerter": 323200,
+  "gesetzt": "2026-10-10: Ist 307734 + 5 %",
+  "flaechen": [
+    "Wurzel-*.md",
+    ".claude/** (alle Dateitypen)",
+    "fahrplaene/**",
+    "plan/**",
+    "docs/**",
+    "abnahme/**/*.md",
+    "bibliothek/**/*.md ausser register|behoerden|kosten|normen|recherche|muster",
+    "nie: *.test.ts(x)"
+  ]
+}

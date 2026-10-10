@@ -97,17 +97,9 @@ scripts/cowork/
 # Arbeitsablage tmp/ — nie einchecken (§5; bis 5.10.2026 Lagebild-Projektion)
 tmp/
 
-# Tor-Ereignis-Log: je Zeile ein gelaufenes Tor {ts, tor, ok}, geschrieben von
-# scripts/gate.sh und scripts/run-parallel.ts. Bewusst LOKAL: es beschreibt die
-# Läufe DIESER Maschine, kollidierte bei jedem Parallel-PR und wäre committet
-# ein Merge-Konflikt-Generator. Gelesen von scripts/analyse/tor-bewaehrung.ts
-# (Konstante LOKALES_LOG dort). Bis 20.9.2026 hielt zusätzlich die committete
-# messwerte/selbstopt-zeitreihe.json fest, was daraus dauerhaft galt — mit
-# retro:17/selbstopt:erheben entfallen (Entscheid David, Rückbau QS-EFFIZIENZ).
+# Tor-Ereignis-Log {ts, tor, ok}, geschrieben von scripts/gate.sh und
+# scripts/run-parallel.ts; lokal, je Maschine eigen.
 .selbstopt-ereignisse.jsonl
-
-# gate-stopp Grün-Fingerabdruck (Vorschlag 7.8.2026)
-.gate-stopp-gruen
 
 # Volllog eines roten Tores (QS-EFFIZIENZ, Kondensat 5.9.2026): scripts/gate.sh
 # druckt bei Rot nur ein Kondensat in den Chat und schreibt die volle Ausgabe
@@ -117,10 +109,7 @@ tmp/
 # nie committen (Streudateien in #1283, 2.10.2026) — Logs gehören unter .gate/.
 .gate-*
 
-# Nachlass des Hooks abschluss-wache.py (QS-HOOKS-AUSBAU 14.8.2026):
-# Session-Ende-Befund über die Session-Grenze — lokal, nie committen.
-# (subagent-wache.py führt seit den Gegenprüfungs-Auflagen keine eigene
-# Merkdatei mehr — Loop-Schutz läuft über stop_hook_active.)
+# Lokale Session-Merkdatei früherer Hooks — nie committen.
 .session-nachlass.json
 
 # Bausteinliste zur AG-Abnahme — Erzeugnis, kein Bestand (Entscheid David 14.8.2026).
@@ -136,5 +125,5 @@ __pycache__/
 /raw/
 
 # Session-Notizen (§17, Weisung David 15.9.2026): Nebenfunde/Lehren-Kandidaten
-# je Session, lokal im Haupt-Checkout — nie committen (docs/token-oekonomie/session-notizen-vorlage.md).
+# je Session, lokal im Haupt-Checkout — nie committen.
 .claude/notizen/

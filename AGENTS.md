@@ -65,7 +65,7 @@ src/lib/vorlagen/**
 ```
 
 **(b) Steuer-Doku und Infrastruktur:** `CLAUDE.md`, `AGENTS.md`, `ROADMAP.md`,
-`ROADMAP-CHRONIK.md`, `STRUKTUR.md`, `fahrplaene/**`, `plan/**`, `archiv/**`,
+`STRUKTUR.md`, `fahrplaene/**`, `plan/**`,
 `bibliothek/**`,
 `.claude/**`, `.github/**`, `package.json` und Lockfile, `scripts/**`
 insgesamt.
@@ -86,8 +86,8 @@ liegen lassen.
 4. `npm run gate` — **grün**; die Ausgabe gehört in die PR-Beschreibung.
 
 - **Keine neuen Abhängigkeiten** ohne ausdrücklichen Auftrag im Issue.
-- **Keine Datei über die Schlankheits-Grenze** — `npm run check:schlankheit`
-  hält Dateien ab 800 Zeilen fest und lässt keine Baseline wachsen.
+- **Keine Datei über die Schlankheits-Grenze** (~800 Zeilen, Skill
+  `refactoring` §6.6).
 - **Golden byte-gleich**, wo berührt (`npm run golden:vergleich`).
 - **Jules-Branches: CI prüft Assertion-Diff + Dateigrenzen automatisch**
   (CI-Schritt «Fremd-PR-Tor» im Job «Tore», T6 3.9.2026) — das gilt zusätzlich zu 3./4.

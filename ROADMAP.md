@@ -1,186 +1,162 @@
 # LexMetrik — Bauplan
 
-> **Zweck:** wohin (ZIEL), was gerade (JETZT), was ansteht (EINGANG). Das *Wie* in `fahrplaene/`
-> (eingefroren, `npm run fahrplan -- <datei> <§>`), Einzelbefunde in `plan/posten/`.
->
-> **Provenienz:** Modell seit 5.10.2026 (U1–U8, Vault `03_Projekte/LexMetrik/inventar-optimierung-2026-10-04/
-> umstieg-schlanker-plan-2026-10-05.md`; Alt-Fassung `archiv/ROADMAP-bis-2026-10-05.md`). **Ebenen seit
-> 7.10.2026** (David E1–E4, Chat): «ich will das so gebaut wird, dass das wichtige zuerst kommt».
-> *FB* = Anhang «Fehlerbestand» (gleicher Ordner), IDs wie B-76 nur dort gültig; vor Behebung amtlich
-> prüfen (§7). **Grenze:** Budget/Kosten und Merkzettel mit Davids Frage oder Abnahme nur auf sein Wort.
+> Das *Wie* in `fahrplaene/` (eingefroren, `npm run fahrplan -- <datei> <§>`), Einzelbefunde in
+> `plan/FEHLERBESTAND.md` (*FB*, IDs nur dort gültig; vor Behebung amtlich prüfen, §7). Budget/Kosten
+> und Befunde mit Davids Frage oder Abnahme nur auf sein Wort.
 
-**Regeln**
+1. **Form:** ZIEL mit Fortschrittszeile, JETZT ≤ 5, EINGANG ≤ 30 Zeilen, Zurückgestellt; Datei ≤ 15 KB.
+2. **Ebenen** (David 7.10.); JETZT: E0 vor E1, Spur A und B je mindestens ein Platz.
+   - **E0 Brandschutz:** nur was Nutzer oder Betrieb ausfallen lässt, still falsch auskunftet oder eine
+     Frist < 30 Tage hat; eigene Werkzeuge/CI **nie**.
+   - **E1·A Bundestext** (Hauptspur): A1 Fundament → A2 jedes Bundesgesetz → A3 Bundesrats-VO →
+     A4 Departements-/Amts-VO; daneben Messlauf und Leser-Kernfehler. **E1·B falsche Rechtsergebnisse**
+     (eigene Session): B1 Warnhinweis + Urteile → B2 Werkzeuge nach Schaden.
+   - **E3 Kleinkram** (Feinschliff, Design-Nachlauf, Doku): jede fünfte gelandete Korrektur, Davids
+     Alltagsfunde zuerst. **E3·W** Werkzeug-Pflege nur, wenn sie den Bau nachweislich blockiert.
+   - **E4 geparkt:** Kantone (Phase 2), Phase 3, Breitbild-Design, VPS, Impressum, Staatsverträge.
+3. **EINGANG:** je Sache eine Zeile ≤ 200 Zeichen `- <Herkunft>: <Klartext> — <Ort>` unter ihrer Ebene.
+   Über 30 Zeilen fällt die älteste E3/E3·W/E4-Zeile ohne Go und ohne «David» weg.
 
-1. **Form:** ZIEL (mit Fortschrittszeile) · JETZT (höchstens 5) · EINGANG (höchstens 30 Zeilen) ·
-   Zurückgestellt. Datei ≤ 15 KB (Grössenwächter warnt, kein Tor).
-2. **Ebenen** (E1 David 7.10.: «Ja, so übernehmen»; ersetzt «S > R > N > F»):
-   - **E0 Brandschutz** — nur was Nutzer oder Betrieb ausfallen lässt, eine stille Falschauskunft
-     erzeugt oder eine Frist < 30 Tage hat. Pflege eigener Werkzeuge/CI ist **nie** E0.
-   - **E1, zwei parallele Spuren.** **A Bundestext** (Hauptspur): A1 Fundament → A2 jedes Bundesgesetz →
-     A3 Bundesrats-Verordnungen → A4 Departements-/Amtsverordnungen; daneben Messlauf und Leser-Kernfehler.
-     **B falsche Rechtsergebnisse** (eigene Session): B1 Warnhinweis + Urteile → B2 Werkzeuge nach Schaden.
-   - **Kleinkram-Anteil:** jede fünfte gelandete Korrektur kommt aus E3, Davids Alltagsfunde zuerst.
-   - **E3 Kleinkram:** Oberflächen-Feinschliff, Design-Nachlauf, Doku. **E3·W** Werkzeug-Pflege nur,
-     wenn sie den laufenden Bau nachweislich blockiert — dann sofort, sonst nicht.
-   - **E4 geparkt:** Kantone (Phase 2), Phase 3, Breitbild-Design, VPS, Impressum vor Live-Gang,
-     Staatsverträge.
-
-   JETZT: E0 vor E1; Spur A und B je mindestens ein Platz.
-3. **EINGANG:** eine Zeile je Sache, ≤ 200 Zeichen, `- <Ebene> · <Herkunft TT.MM.> · <Klartext> — <Ort>`;
-   Ebene = E0, E1·A, E1·B, E3, E3·W, E4. Erledigt = Zeile im erledigenden PR löschen. Über 30 Zeilen
-   fällt die älteste E3/E3·W/E4-Zeile ohne Go und ohne Herkunft «David» weg (git behält sie).
-
-Der letzte PR eines Vorhabens streicht es aus JETZT, legt erledigte Merkzettel nach `archiv/posten/`,
-rückt nach Regel 2 nach und führt die Fortschrittszeile nach. *Merkzettel* = `plan/posten/*.md`,
-Gruppen über `dach:` (`grep -l '^dach: <DACH>' plan/posten/*.md`).
-
----
+Der letzte PR eines Vorhabens streicht es aus JETZT, löscht erledigte FB-Zeilen bzw. markiert sie mit
+PR-Nummer, rückt nach und führt die Fortschrittszeile nach.
 
 ## ZIEL
 
-**Nordstern (David 7.8.2026):** «In einem Jahr eine wirklich tolle und funktionierende Webseite, die
-von allen Juristen und Rechtsanwendern gerne und häufig genutzt wird.» Seit 22.9.: **Produkt vor
-Prozess.**
+**Nordstern (David 7.8.):** «In einem Jahr eine wirklich tolle und funktionierende Webseite, die
+von allen Juristen und Rechtsanwendern gerne und häufig genutzt wird.» **Produkt vor Prozess** (22.9.).
 
-**Phasen (Mandat 14.9.2026):** 1 · Bund fertig (läuft) · 2 · Kantone, erst nach gelandeter Phase 1 ·
-3 · Mehr als Fedlex, erst nach gelandeter Phase 2.
+**Phasen (Mandat 14.9.):** 1 Bund fertig (läuft); 2 Kantone, nach gelandeter Phase 1; 3 Mehr als
+Fedlex, nach gelandeter Phase 2.
 
 **Phase 1 ist fertig, wenn** ein Schweizer Jurist **jedes** Bundesgesetz bei uns **vollständig**,
 **strukturgleich** (Gliederung, Randtitel, Fussnoten, Schlusstitel, Anhänge, Tabellen) und **schneller
-als auf Fedlex** liest (FAHRPLAN-BUND-FERTIG §0, 14.9.). **«Jedes»** = alle geltenden Landesrecht-Erlasse mit
-deutscher Fassung, ~2150 (E2 David 7.10.: «Nein, Phase 1 = Landesrecht»; löst U3 (a) «~5100» ab).
-Staatsverträge (SR 0.*, 3186) verlinken auf Fedlex und kommen später.
+als auf Fedlex** liest (FAHRPLAN-BUND-FERTIG §0). **«Jedes»** = alle geltenden Landesrecht-Erlasse mit
+deutscher Fassung, ~2150 (David 7.10.).
 
-**Nicht jetzt:** Ebene 4 (Regel 2, mit Staatsverträgen), Reichweite/Domain (21.9.). «Geprüft» setzt nur David.
+**Nicht jetzt:** E4, Reichweite/Domain (21.9.). «Geprüft» setzt nur David.
 
-**Fortschritt** (bei uns/geltend; jeder Abschlussbericht an David beginnt damit; nachführen, wer sie ändert):
+**Fortschritt** (bei uns/geltend; eröffnet jeden Abschlussbericht; nachführen, wer sie ändert):
 
 > **7.10.2026:** Bundesgesetze 97/348 (dringliche 0/5) · VO der Bundesversammlung 0/25 · Bundesrats-VO
 > 90/926 · Departements-VO 4/340 · Amts-VO 4/303 · **Landesrecht 202/2150** · falsche Rechtsergebnisse
 > offen (FB Klasse A): Rechner/Vorlagen 37 belegt + 12 Verdacht, Urteile 8
 
-*Zählung:* geltend = Fedlex-SPARQL 7.10. je Erlass-Typ (±2 %); bei uns = 231 Pins (`lesePins`) × Typ:
+*Zählung:* geltend = Fedlex-SPARQL 7.10. je Erlass-Typ (±2 %); bei uns = 231 Pins (`lesePins`):
 202 Landesrecht, 28 Staatsverträge, 1 aufgehoben (BMV `cc/2009/423`).
 
-**Messung Phase 1** — U2 (a): je Merkmal ein Messlauf, kein Tor.
+**Messung Phase 1** — je Merkmal ein Messlauf je Lieferung (≤ 500 Erlasse), kein Tor:
 
-| Merkmal | Messung je Lieferung von ≤ 500 Erlassen | erfüllt, wenn | heute |
-|---|---|---|---|
-| jedes | Fedlex-Abfrage: geltendes Landesrecht (deutsch), das bei uns fehlt | 0 | 7.10.: 231 Pins = 231 Dateien in `public/normtext/bund/`; «238» war die Registerzahl 2.9. — Differenz 0 |
-| vollständig | offene Fehler Textverlust/«aufgehoben»/«Gilt seit» + Stichprobe ≥ 10 Erlasse | 0, Stichprobe ohne Abweichung | 5.10.: 83 R-Zeilen FB Bereich 1 |
-| strukturgleich | je Erlass Zählung der Strukturteile bei uns und bei Fedlex | 0 Abweichungen | nicht gemessen |
-| schneller | Zeit bis zum ersten lesbaren Artikel: OR, ZGB, grosse Verordnung | alle drei schneller | nicht gemessen (OR 3,5 s oder 11,3 s) |
-
----
+- *jedes:* geltendes deutsches Landesrecht laut Fedlex, das bei uns fehlt = 0; heute 0 (7.10.: 231 Pins =
+  231 Dateien in `public/normtext/bund/`)
+- *vollständig:* offene Fehler Textverlust/«aufgehoben»/«Gilt seit» = 0, Stichprobe ≥ 10 Erlasse ohne
+  Abweichung; heute 83 R-Zeilen FB Bereich 1 (5.10.)
+- *strukturgleich:* Strukturteile je Erlass bei uns = bei Fedlex; nicht gemessen
+- *schneller:* erster lesbarer Artikel bei OR, ZGB, grosser Verordnung schneller als Fedlex; nicht
+  gemessen (OR 3,5 s oder 11,3 s)
 
 ## JETZT
 
-Kürzel = Präfix des Arbeitszweigs und Wert des Commit-Trailers `Roadmap:`.
+Kürzel = Zweig-Präfix und Trailer `Roadmap:`.
 
 1. **Rechtsprechungs-Register aufteilen** (`E0-REGISTER`) · E0 · Gegenprüfung ja, soweit Urteilsdaten
-   *Fertig, wenn* das Rechtsprechungs-Register (839 KB von 900 KiB, 91 %, +7–12 KB/Woche) aufgeteilt ist,
-   bevor `check:perf-budget` jeden PR rot färbt (FB S-26). *Frist:* ~Ende Nov./Dez.
+   *Fertig, wenn* aufgeteilt (839 KB von 900 KiB, +7–12 KB/Woche), bevor `check:perf-budget` jeden PR
+   rot färbt (FB S-26). *Frist:* ~Ende Nov./Dez.
 2. **Fundament für den Bund-Ausbau** (`A1-FUNDAMENT`) · E1·A · Gegenprüfung ja, wo Normdaten
-   *Fertig, wenn* (a) der Browser-Suchindex `such-index/artikel.json` entfällt: Wortsuche in Gesetzen nur noch
-   über den Server, Entscheide eigene Suche (David 7.10.: «suche zurückfahren. nur noch nach gesetzen und
-   werkzeugen suchen lassen. separat für entscheide»; Wortsuche «Ja, nur über Server»), und
-   `normtext/register.json` (93 % des Deckels, `scripts/perf/daten-budget.ts`) ist aufgeteilt (vor Lieferstart);
-   (b) Pins als Datendatei statt Handzeilen in `scripts/fedlex-cache.sh` + `src/lib/fedlex/tabelle.ts`,
-   Kurzname für Erlasse ohne amtliche Abkürzung `CH-<SR>` (David 7.10.); (c) vervielfachende Fehler zu: ELI-Auflösung
-   wählt falsche Fassung (`scripts/fedlex-eli-aufloesen.ts:44-56`, B-07/B-09), Inkrafttretens-Zeile
-   fehlt in 86/231 Erlassen (NT-10), «Gilt seit» generisch «lieber leer als falsches Datum» statt
-   Handregister (`bibliothek/normtext/generalanweisungen-gilt-seit-2026-10-05.md`), Disp-Text ausserhalb
-   Artikel (25.9.: 289 Abschnitte/59 Erlasse), Sidecars nachziehen (B-75), Positivliste (V-02, V-04).
-   *Offen:* Datenablage bei ~2150 Erlassen (81 MB für 231; `.git` ~594 MiB); Turso-Speicher: Replika 751 MiB von
-   1024 MiB (#1350) — vor Lieferstart klären. *Lage:* Vault
-   `03_Projekte/LexMetrik/a1-fundament-2026-10-07/lage.md`.
-3. **Jedes Bundesgesetz** (`A2-BUNDESGESETZE`) · E1·A · Gegenprüfung ja · startet nach JETZT 2
-   *Fertig, wenn* eine Lieferung die 256 fehlenden Bundesgesetze (251 + 5 dringliche) und 25
-   Verordnungen der Bundesversammlung bringt (281) und die Fortschrittszeile «348/348» zeigt.
-   *Ort:* FAHRPLAN-FEDLEX-PORTFOLIO §21.
-4. **Warnhinweis und Urteile** (`WARNHINWEIS`) · E1·B · Gegenprüfung nein (Warnhinweis: Darstellung;
-   Urteile: David 25.9.) — das Tor greift trotzdem bei `scripts/normtext/**`, `scripts/rechtsprechung/**`
+   *Fertig, wenn* (a) `such-index/artikel.json` entfällt (Gesetzes-Wortsuche nur über Server,
+   Entscheide eigene Suche; David 7.10.) und `normtext/register.json` (93 % des Deckels,
+   `scripts/perf/daten-budget.ts`) vor Lieferstart aufgeteilt ist; (b) Pins als Datendatei statt
+   Handzeilen in `scripts/fedlex-cache.sh` + `src/lib/fedlex/tabelle.ts`, Kurzname ohne amtliche
+   Abkürzung `CH-<SR>`; (c) vervielfachende Fehler: ELI-Auflösung wählt falsche Fassung
+   (`scripts/fedlex-eli-aufloesen.ts:44-56`, B-07/B-09), Inkrafttretens-Zeile fehlt in 86/231 (NT-10),
+   «Gilt seit» generisch «lieber leer als falsches Datum» statt Handregister
+   (`bibliothek/normtext/generalanweisungen-gilt-seit-2026-10-05.md`), Disp-Text ausserhalb Artikel
+   (289 Abschnitte/59 Erlasse), Sidecars (B-75), Positivliste (V-02, V-04).
+   *Offen, vor Lieferstart:* Datenablage bei ~2150 Erlassen (81 MB für 231, `.git` ~594 MiB),
+   Turso-Replika 751 von 1024 MiB (#1350). *Lage:* Vault `03_Projekte/LexMetrik/a1-fundament-2026-10-07/lage.md`.
+3. **Jedes Bundesgesetz** (`A2-BUNDESGESETZE`) · E1·A · Gegenprüfung ja · nach JETZT 2
+   *Fertig, wenn* eine Lieferung die 256 fehlenden Bundesgesetze (251+5 dringliche) und 25 VO der
+   Bundesversammlung bringt (281), Fortschrittszeile «348/348». *Ort:* FAHRPLAN-FEDLEX-PORTFOLIO §21.
+4. **Warnhinweis und Urteile** (`WARNHINWEIS`) · E1·B · Gegenprüfung nein (Urteile: David 25.9.); Tor
+   greift trotzdem bei `scripts/{normtext,rechtsprechung}/**`
    *Fertig, wenn* Rechner mit belegt falschem Ergebnis «bekannter Fehler, Ergebnis nicht verwenden»
-   zeigen (E3 David 7.10.; FB Bereich 5 Klasse A, v. a. notariat-grundbuch RV-17…20/24/25/27/82,
+   zeigen (FB Bereich 5 Klasse A, v. a. notariat-grundbuch RV-17…20/24/25/27/82,
    prozesskosten RV-21…23/28, Fristenrechner RV-49/52/53/54/58/59/63; Uri rechnet laut W-14 nicht mehr);
    kein Phantomzitat «Art. … BGE» (U-04; 7.10.: 85 Treffer/64 Dateien,
    `grep -roE 'Art\. [0-9]+[a-z]{0,9} BGE' public/rechtsprechung`); «SBK 26 88» (U-16); Gerichtsname
    amtlich (U-24: «Kantonsgericht GR» statt «Obergericht», `entscheide-mapping.ts:1174`; Tor
    Präfix→Gericht für ag_/sg_); Vorinstanz im Nominativ (U-03); U-06/10/13/15/25. Trailer Urteile: `URTEILE`.
-5. **Rechtslogik nach Schaden** (`RECHTSLOGIK`) · E1·B · Gegenprüfung ja
-   *Herkunft:* Go David 23./24.9.; seit 7.10. im Mandat (bisher U5 (a) «ausserhalb»).
-   *Fertig, wenn* behoben, in dieser Reihenfolge: notariat-grundbuch (Welle 2b, 8 A-Fälle) → Fristenrechner
+5. **Rechtslogik nach Schaden** (`RECHTSLOGIK`) · E1·B · Go David 23./24.9. · Gegenprüfung ja
+   *Fertig, wenn* behoben in der Reihenfolge notariat-grundbuch (Welle 2b, 8 A-Fälle) → Fristenrechner
    (7) → prozesskosten (4) → Vorlagen (RV-06, RV-30, RV-31, RV-47, RV-74, RV-77); je Werkzeug
    Warnhinweis entfernen. RL-43 berührt `historie-parse.ts`/`revisionen-extrakt.ts` ⇒ seriell zu Spur A.
-   *Ort:* Dach `W2·30-RL-*`, `QS-CODE-PROP`; `fahrplaene/FAHRPLAN-RECHTSLOGIK.md` §4 (W-01…W-22).
+   *Ort:* FB Bereich 5; `fahrplaene/FAHRPLAN-RECHTSLOGIK.md` §4 (W-01…W-22).
 
-*Gestrichen 7.10.:* `GILTSEIT` gebaut (#1298, #1309 5f6c6c12a: ZGB 299/300 2000-01-01, 307 2013-01-01,
-StGB 52 2007-01-01, OR 631 2023-01-01, SVG 89a bewusst ohne) — nur Abnahme David offen, nicht nachfragen.
-`E0-BRANDSCHUTZ` gebaut (#1342, #1343, #1350); Rechtsprechungs-Register → JETZT 1.
-
----
+*Gestrichen 7.10.:* `GILTSEIT` gebaut (#1298, #1309: ZGB 299/300 2000-01-01, 307 2013-01-01, StGB 52
+2007-01-01, OR 631 2023-01-01, SVG 89a bewusst ohne) — nur Abnahme David offen, nicht nachfragen.
 
 ## EINGANG
 
 ```
-- E1·A · Auftrag 7.10. · Messlauf Phase 1 strukturgleich + schneller (1 PR, 6–10 h, kein Tor; Zählung wie segmente-logik.ts; Tempo mit Fedlex-Arm, gleiche Drossel, n ≥ 5)
-- E1·A · FB · Leser-Kernfehler Navigation: ?p=-Link überschreibt Split-Panes (O-27), Einzelmodus-Zurück (O-31), Weiterlesen (O-34), Deep-Link OR (O-38) — FB Bereich 6
-- E1·A · FB · Leser-Kernfehler Suche: Stack-Überlauf (O-36), Fehler geschluckt (O-19), OR-Tempo/Suchlatenz (O-20…O-23); O-15 «3 statt 20» zuerst klären — FB Bereich 6
-- E1·A · HN-05 · Bundestext-Rest: Zwischentitel (NT-03), AHVG-Anhang (B-21, erst reproduzieren), B-02, B-17 — Merkzettel 2026-09-25-hn-05-…
-- E1·A · Go David 24.9. · Fehllinks SchKG 39, ChemRRV Anh. 1/2, BGG 123/124 (V-02, HN-09), 12 Fussnoten-Selbstlinks (V-07); danach Normverweis öffnet eigenen Leser (HN-D1) — FB V-06
-- E1·A · 12.9. · BMV-Pin cc/2009/423 seit 1.3.2026 aufgehoben noch im Bestand, «Art. 9 BMV» löst darauf auf (daneben bmv_2025) — FB V-08; src/lib/fedlex/tabelle.ts
-- E1·A · Mandat 14.9. · Tabellen (W2·5l): 0 Brüche, 29 % Legacy-Darstellung, kein Inhaltsverlust — FAHRPLAN-NORMTEXT-DARSTELLUNG
-- E1·A · 5.10. · check:zitate: TJPG (SR 955.3) fehlt in Linktabelle/Korpus/Muster; Zitate auf aufgehobene Artikel bleiben grün, solange das Element besteht (OR 697j/790a)
-- E1·A · Mandat 14.9. · Folge-Lieferungen A3 Bundesrats-Verordnungen (836 fehlend, 2 Lieferungen), A4 Departements-/Amtsverordnungen (635) — FAHRPLAN-FEDLEX-PORTFOLIO §21
-- E1·A · Sammel · übriger Bundestext — FB Bereich 1
-- E1·B · Sammel · übrige Rechner/Vorlagen und Urteilsdaten — FB Bereiche 3, 5; Dach W2·30-RL-*, QS-KORPUS
-- E1·B · 5.10. · Gegenprüfungs-Pin «fedlex OR 20260101» überholt (Cache 20261001) ⇒ Gegenprüfungen der OR-Engines neu fällig
-- E1·B · Abnahme David · Gründungs-Checklisten AG/GmbH nach TJPG — bibliothek/recherche/ag-gruendung.md, gmbh-gruendung.md
-- E1·B · 7.10. · Doku-Widerspruch W-17: FB RV-26 «wartet auf David» vs. FAHRPLAN-RECHTSLOGIK §4 «entschieden 24.9.»; W-09/11/17/22 dort ohne Zeichen
-- E0 · 7.10. · Turso nach #1343/#1350: 1. Lauf Vollneubau ~260k Zeilen, dann Delta-Log «erfolgreich» vs. «expired» (M-2) prüfen — FAHRPLAN-DATENHALTUNG §17
-- E0 · David-Handgriff · AUTOMERGE_TOKEN bis 20.10. erneuern (FB S-14); normen-monatslauf.yml stösst keine CI an (Lauf 1.11.)
-- E3 · Go David 24.9. · Rest «eine Titel- und Abschnittsordnung» (HN-D2 gebaut #1190/#1197): Band-Rezept, Titelschrift — Dach W2·29-WERKBANK-NACHLAUF
-- E3 · Go David 19.9. · Merkliste bauen — Merkzettel 2026-09-18-reiterleisten-abgleich-merkliste-bauen
-- E3 · Go David 8.8. · Kalender-Export: Termine als «frei» — Merkzettel 2026-09-24-kalender-export-…
-- E3 · Entscheid David 1.10./Auftrag 3.10. · Deaktiviert-/Hover-Varianten angleichen; Regelsätze von Belegen entflechten — Merkzettel 2026-10-01-deaktiviert-…, 2026-10-03-regelsaetze-…
-- E3 · Entscheid David 2.10. · Rest-Rückbau tote Rechtsprechungs-Zeilen: revisionFuer nur noch Kommentar (grep 7.10.), data-leitfaelle u. a. prüfen — Merkzettel 2026-10-02-rest-rueckbau-…
-- E3 · Auftrag David 6.10. · Omnilex-Sichtung: 7 Posten U2–U8 (Datums-Tor zu «Gilt seit», Ausgang-Label wartet auf David) — bibliothek/recherche/omnilex-app-sichtung-2026-10-06.md §6
-- E3·W · 8.10. · Werkzeug-/Tor-Defekte (zuerst Merge-Schutz-Lücke bei Umbenennung), Tore-Diät, Rückbau nach Umstieg — Merkzettel 2026-10-08-werkzeug-defekte-eingang
-- E3·W · Go David 5.10. · CI: Dauer-Wackler an der Wurzel (bibliothek/betrieb/e2e-fang-historie-2026-10-05/), leser-kopf-cls-s3 hängt an Fedlex, Läufer-Kontingent
-- E3·W · Go David 7.10. · Leser-Logik (162 .ts unter src/pages|components, ~22k Zeilen) nach src/lib/leser, danach Lint-Grenze — §3 Schichtentrennung
-- E3·W · wartet auf David 7.10. · §5-Text vs. Ist: ingest.ts liest public/*.json → DB, JSON ist faktisch Quelle — Umstellung fertig bauen oder §5 präzisieren — CLAUDE.md §5
-- E3·W · wartet auf David 7.10. · Rechtsprechung-Einzelentscheide (300 MB) als Release-Artefakt statt in git — public/rechtsprechung/
-- E3·W · wartet auf David 7.10. · Doku-Tore check:steuerdeckel + check:steuerflaeche zusammenlegen, nachts statt in der Queue — ci.yml, package.json
-- E3 · wartet auf David 7.10. (§15) · public/rechtsprechung/register.json 9,9 MB aufteilen; norm-index.json 6 MB laut Kommentar UI-ungenutzt — public/
-- E4 · David 21.9./E2 7.10. · Impressum/Datenschutz erst vor Live-Gang (FB S-01); Staatsverträge SR 0.* (28 schon gepinnt) verlinken bis dahin auf Fedlex
+E0
+- 7.10.: Turso nach #1343/#1350: 1. Lauf Vollneubau ~260k Zeilen, dann Delta-Log «erfolgreich» vs. «expired» (M-2) prüfen — FAHRPLAN-DATENHALTUNG §17
+- David-Handgriff: AUTOMERGE_TOKEN bis 20.10. erneuern (FB S-14); normen-monatslauf.yml stösst keine CI an (Lauf 1.11.)
+E1·A
+- David 7.10.: Messlauf Phase 1 strukturgleich + schneller (1 PR, 6–10 h, kein Tor; Zählung wie segmente-logik.ts; Tempo mit Fedlex-Arm, gleiche Drossel, n ≥ 5)
+- FB Bereich 6: Leser-Navigation: ?p=-Link überschreibt Split-Panes (O-27), Einzelmodus-Zurück (O-31), Weiterlesen (O-34), Deep-Link OR (O-38)
+- FB Bereich 6: Leser-Suche: Stack-Überlauf (O-36), Fehler geschluckt (O-19), OR-Tempo/Suchlatenz (O-20…O-23); O-15 «3 statt 20» zuerst klären
+- HN-05: Bundestext-Rest: Zwischentitel (NT-03), AHVG-Anhang (B-21, erst reproduzieren), B-02, B-17 — FB B-16
+- Go David 24.9.: Fehllinks SchKG 39, ChemRRV Anh. 1/2, BGG 123/124 (V-02, HN-09), 12 Fussnoten-Selbstlinks (V-07), dann Normverweis im eigenen Leser (HN-D1) — FB V-06
+- 12.9.: BMV-Pin cc/2009/423 (aufgehoben 1.3.2026) noch im Bestand, «Art. 9 BMV» löst darauf auf (daneben bmv_2025) — FB V-08; src/lib/fedlex/tabelle.ts
+- 14.9.: Tabellen (W2·5l): 0 Brüche, 29 % Legacy-Darstellung, kein Inhaltsverlust — FAHRPLAN-NORMTEXT-DARSTELLUNG
+- 5.10.: check:zitate: TJPG (SR 955.3) fehlt in Linktabelle/Korpus/Muster; Zitate auf aufgehobene Artikel bleiben grün, solange das Element besteht (OR 697j/790a)
+- 14.9.: Folge-Lieferungen A3 Bundesrats-VO (836 fehlend, 2 Lieferungen), A4 Departements-/Amts-VO (635) — FAHRPLAN-FEDLEX-PORTFOLIO §21
+- Sammel: übriger Bundestext — FB Bereich 1
+E1·B
+- Sammel: übrige Rechner/Vorlagen und Urteilsdaten — FB Bereiche 3, 5
+- 5.10.: Gegenprüfungs-Pin «fedlex OR 20260101» überholt (Cache 20261001) ⇒ Gegenprüfungen der OR-Engines neu fällig
+- Abnahme David: Gründungs-Checklisten AG/GmbH nach TJPG — bibliothek/recherche/ag-gruendung.md, gmbh-gruendung.md
+- 7.10.: Widerspruch W-17: FB RV-26 «wartet auf David» vs. FAHRPLAN-RECHTSLOGIK §4 «entschieden 24.9.»; W-09/11/17/22 dort ohne Zeichen
+E3
+- Go David 24.9.: Rest «eine Titel- und Abschnittsordnung» (HN-D2 gebaut #1190/#1197): Band-Rezept, Titelschrift — FB Teil B, N10-14
+- Go David 19.9.: Reiterleisten-Abgleich + Merkliste bauen — FB Teil B
+- Go David 8.8.: Kalender-Export: Termine als «frei» — FB Teil B
+- David 1.10./3.10.: Deaktiviert-/Hover-Varianten angleichen; Regelsätze von Belegen entflechten — FB Teil B
+- David 2.10.: Rest-Rückbau tote Rechtsprechungs-Zeilen: revisionFuer nur noch Kommentar, data-leitfaelle u. a. prüfen — FB Teil B
+- David 6.10.: Omnilex-Sichtung: 7 Posten U2–U8 (Datums-Tor zu «Gilt seit», Ausgang-Label wartet auf David) — bibliothek/recherche/omnilex-app-sichtung-2026-10-06.md §6
+- wartet auf David 7.10. (§15): public/rechtsprechung/register.json 9,9 MB aufteilen; norm-index.json 6 MB laut Kommentar UI-ungenutzt — public/
+E3·W
+- Go David 5.10.: CI: Dauer-Wackler an der Wurzel (git 3fd5db8f9:bibliothek/betrieb/e2e-fang-historie-2026-10-05/), leser-kopf-cls-s3 hängt an Fedlex, Läufer-Kontingent
+- 10.10. Kahlschlag-Nachlauf: erlass-klassifikation.json (88k Wörter, 28 % des Deckels) von docs/ nach daten/ (seed-grundart.mjs:23); veraltete Skill-Namen auftrag/perf/abnahme in fachaenderung-kern.ts:222, fedlex-frische.yml:309, Fixture merge-schutz-squash-921.txt; gitFlaechen.ts:427 nennt aufraeumen:git und DESIGN-REGLEMENT Z. 235/365 «Wortlaut im Archiv» (beide Test-gekoppelt, git-SHA); tor-schutz Amend-Regel trifft Heredoc-/Kommentartext (3 Fehlalarme 10.10.; Kommando-Position ohne die zwei Umgehungen aus Gegenprüfung #1359)
+- wartet auf David 10.10.: scripts/archiv/ (9 Skripte) vs. Sperre «kein archiv/» — löschen oder umbenennen
+- Go David 7.10.: Leser-Logik (162 .ts unter src/pages|components, ~22k Zeilen) nach src/lib/leser, danach Lint-Grenze — §3
+- wartet auf David 7.10.: §5 vs. Ist: ingest.ts liest public/*.json in die DB (JSON faktisch Quelle); Umstellung bauen oder §5 präzisieren
+- wartet auf David 7.10.: Rechtsprechung-Einzelentscheide (300 MB) als Release-Artefakt statt in git — public/rechtsprechung/
+E4
+- David 21.9./7.10.: Impressum/Datenschutz erst vor Live-Gang (FB S-01); Staatsverträge SR 0.* (3186, 28 gepinnt) verlinken bis dahin auf Fedlex
 ```
 
-*Ruhend:* Merkzettel mit Entscheid oder Frage Davids (FB Teil B) — nicht nachfragen. «371 falsche
-Selbstlinks» berichtigt: `docs/token-oekonomie/dispatch-template.md` §0 2b.
-
----
+*Ruhend:* FB Teil B (Entscheide/Fragen Davids), nicht nachfragen. «371 falsche Selbstlinks»
+berichtigt: `git 3fd5db8f9:docs/token-oekonomie/dispatch-template.md` §0 2b.
 
 ## Zurückgestellt und ruhende Fragen
 
-*Nicht nachfragen, nicht erinnern.* Wortlaut: Alt-Fassung, `@blockers`/`@david-fragen`.
+*Nicht nachfragen, nicht erinnern.* Wortlaut: `git 3fd5db8f9:archiv/ROADMAP-bis-2026-10-05.md`,
+`@blockers`/`@david-fragen`.
 
-- **VPS** — erst nach Phase 2 (David 14.9.); `bibliothek/betrieb/vps-bestell-dossier-2026-07-17.md`.
-- **Richter-Analytik** (W3·15-RICHTER) — RANKING/PROGNOSE gesperrt (David 22.9.); Filter frei, gebaut.
-- **Zielbild-Rückstellung 1.9.** — Rechner-/Vorlagen-Ausbau, Design-Wärme, FINMA ruhen bis Phase 2
+- **VPS** nach Phase 2: `bibliothek/betrieb/vps-bestell-dossier-2026-07-17.md`.
+- **Richter-Analytik:** RANKING/PROGNOSE gesperrt (David 22.9.); Filter frei, gebaut.
+- **Zielbild-Rückstellung** (1.9.): Rechner-/Vorlagen-Ausbau, Design-Wärme, FINMA ruhen bis Phase 2
   (FINMA vorziehen bei externem Termin).
-- **BS-Lizenzanfrage** (R12a) — optional (data.bs.ch CC BY 4.0); ob die Sperre fällt: David.
+- **BS-Lizenzanfrage** (R12a): optional (data.bs.ch CC BY 4.0); ob die Sperre fällt: David.
 - Fragen: `aufgehobene-normen-schalter` (FAHRPLAN-ARCHIV-RESTPUNKTE §20) · `dienstjahr-stichtag`,
-  `sperrtage-anzeige`, `export-antworten`, `gebv-schkg-rundung` (archiv/HANDLUNGSPLAN.md Z. 211–217;
+  `sperrtage-anzeige`, `export-antworten`, `gebv-schkg-rundung` (`git 3fd5db8f9:archiv/HANDLUNGSPLAN.md` Z. 211–217;
   verwandt W-22) · **Auto-Merge beim Fedlex-Abgleich** (Freigabe 16.7. vs. «Gesetzesdaten nie
   automatisch mergen»: abschalten, nur Abrufstand automatisch, oder lassen?).
-
----
 
 ## Prüfung nach vier Wochen (ab Anfang November 2026)
 
 - Fortschrittszeile gestiegen (7.10.: Landesrecht 202/2150); mindestens zwei JETZT-Vorhaben fertig.
-- `ls plan/posten/*.md | wc -l` — schrumpft (Start 472 nach L3 — #1314 nennt 492; 7.10.: 483).
-- `wc -c ROADMAP.md` — unter 15 KB.
-- `npm run prozess:kennzahlen` — Prozessanteil unter 30 % (25.9.: 207/582 = 35,6 % alte Regel; 5.10.:
-  193/635 = 30,4 %; 7.10.: 171/593 = 28,8 %; Teilfenster 22.9.–7.10.: 75/353 = 21,2 %, `istProzessCommit`).
+- `wc -c ROADMAP.md` unter 15 KB.
+- `npm run check:deckel` — Wert in `messwerte/deckel.json` gesunken oder gleich (Start: Wert nach
+  Kahlschlag, siehe Commit).
 - `grep -n 'Go David' ROADMAP.md` — keine Marke älter als 14 Tage ohne Grund im Abschlussbericht.

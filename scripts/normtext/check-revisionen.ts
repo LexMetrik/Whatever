@@ -24,7 +24,8 @@
 //       `baueRevisionen` erneut aufzurufen — dieselbe Fremd-SR belegt (raw.bBindings trägt
 //       für den oc eine `rectifies`-Bindung UND raw.rectifiesInfoProOc löst sie auf eine von
 //       `sidecar.sr` abweichende SR auf). Rot-Beweis (§6.7): manuell ein `plausibilitaet`
-//       ohne Rückhalt in raw eingefügt → dieser Ast schlägt fehl (s. ROADMAP-CHRONIK.md).
+//       ohne Rückhalt in raw eingefügt → dieser Ast schlägt fehl (s. ROADMAP-CHRONIK.md (git 3fd5db8f9:ROADMAP-CHRONIK.md),
+//       «Revisionen: Plausibilitäts-Marker … (Gegenprüfung #703)», Nachtrag 12.9.2026 lit. d).
 //   (9)-(12) Pfad (c), S6-D1 23.9.2026 (Befunde AE-2..AE-5) — direkt aus raw.kontext, OHNE
 //       baueRevisionen: (9) kein Eintrag ist der Stammerlass (`kontext.basicAct`); (10) jeder
 //       Marker verlinkt die Fassung seines Datums (`/eli/<abstract>/<YYYYMMDD>/de`) und das
@@ -119,7 +120,8 @@ for (const m of meta) {
     // (8b) Auflage d (Gegenprüfung PR #827, §6.7): unabhängige Rückhalt-Prüfung DIREKT aus
     // raw — kein erneuter Aufruf von baueRevisionen/baueOcZuRectifiesSr. Ein Marker ohne
     // passende rectifies-Bindung + abweichende Fremd-SR in raw ist unbelegt (Handedit oder
-    // Regression) und macht diesen Ast rot (Rot-Beweis in ROADMAP-CHRONIK.md).
+    // Regression) und macht diesen Ast rot (Rot-Beweis in ROADMAP-CHRONIK.md (git 3fd5db8f9:ROADMAP-CHRONIK.md),
+    // «Revisionen: Plausibilitäts-Marker … (Gegenprüfung #703)», Nachtrag 12.9.2026 lit. d).
     if (r.plausibilitaet === 'berichtigung-fremdes-as-dokument') {
       const rawEintrag = raw.bBindings.find((b) => b.oc?.value === r.ocUri);
       const rectifiesZiel = rawEintrag?.rectifies?.value;
