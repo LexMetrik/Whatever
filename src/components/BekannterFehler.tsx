@@ -20,8 +20,8 @@ export function BekannterFehlerHinweis() {
   return (
     <div role="status" className="lc-notice-danger space-y-2 text-body-s" data-bekannter-fehler="">
       <p className="font-semibold">{BEKANNTER_FEHLER_TITEL}</p>
-      <p className="max-w-reading">{BEKANNTER_FEHLER_SATZ}</p>
-      <ul className="list-disc space-y-1 pl-5 max-w-reading">
+      <p className="max-w-reading-s">{BEKANNTER_FEHLER_SATZ}</p>
+      <ul className="list-disc space-y-1 pl-5 max-w-reading-s">
         {fehler.map((f) => <li key={`${f.fb}-${f.text}`}>{bekannterFehlerZeile(f)}</li>)}
       </ul>
     </div>
