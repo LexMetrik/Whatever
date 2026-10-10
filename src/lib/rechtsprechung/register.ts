@@ -6,6 +6,7 @@
 // Sachgebiet teilt die Rechtsgebiet-Achse der Gesetze (Verzahnung, §5).
 
 import type { Rechtsgebiet } from '../normtext/register';
+import { verlegeSeitenmarkerVorNormzitat } from './seitenmarker';
 import type {
   EntscheidSprache, Entscheidquelle, Bestandstatus,
   Kuratierungsstatus, Leitcharakter, Gerichtstyp,
@@ -183,7 +184,7 @@ export function kuerzeRegeste(text: string, max = 240): string {
  * glätten. Die Norm-Verlinkung übernimmt danach <NormText> auf dem sauberen Text.
  */
 export function bereinigeFliesstext(roh: string): string {
-  return String(roh)
+  const text = String(roh)
     .replace(/\[([^\]]+)\]\((?:https?:|\/)[^)]*\)/g, '$1') // Markdown-Link -> reiner Text
     .replace(/\s*<https?:\/\/[^>]*>/g, '')                 // freistehende <URL>-Autolinks entfernen
     .replace(/\r\n/g, '\n')
@@ -197,4 +198,6 @@ export function bereinigeFliesstext(roh: string): string {
     .replace(/ +([.,;:!?)\]])/g, '$1')   // kein Leerzeichen vor Satzzeichen/Klammer-zu
     .replace(/([([]) +/g, '$1')          // kein Leerzeichen nach Klammer-auf
     .trim();
+  // U-04: der Kolumnentitel der Sammlung steht nie mitten im Normzitat (sonst «Art. 257d BGE»).
+  return verlegeSeitenmarkerVorNormzitat(text);
 }

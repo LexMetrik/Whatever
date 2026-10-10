@@ -39,7 +39,7 @@ deutscher Fassung, ~2150 (David 7.10.).
 
 > **7.10.2026:** Bundesgesetze 97/348 (dringliche 0/5) · VO der Bundesversammlung 0/25 · Bundesrats-VO
 > 90/926 · Departements-VO 4/340 · Amts-VO 4/303 · **Landesrecht 202/2150** · falsche Rechtsergebnisse
-> offen (FB Klasse A): Rechner/Vorlagen 37 belegt + 12 Verdacht, Urteile 8
+> offen (FB Klasse A): Rechner/Vorlagen 37 belegt + 12 Verdacht, Urteile 1 + 4 neu (11.10., #1365) · Warnhinweis an 17 Rechnern (11.10., #1364)
 
 *Zählung:* geltend = Fedlex-SPARQL 7.10. je Erlass-Typ (±2 %); bei uns = 231 Pins (`lesePins`):
 202 Landesrecht, 28 Staatsverträge, 1 aufgehoben (BMV `cc/2009/423`).
@@ -73,20 +73,13 @@ Kürzel = Zweig-Präfix und Trailer `Roadmap:`.
 2. **Jedes Bundesgesetz** (`A2-BUNDESGESETZE`) · E1·A · Gegenprüfung ja · nach JETZT 1
    *Fertig, wenn* eine Lieferung die 256 fehlenden Bundesgesetze (251+5 dringliche) und 25 VO der
    Bundesversammlung bringt (281), Fortschrittszeile «348/348». *Ort:* FAHRPLAN-FEDLEX-PORTFOLIO §21.
-3. **Warnhinweis und Urteile** (`WARNHINWEIS`) · E1·B · Gegenprüfung nein (Urteile: David 25.9.); Tor
-   greift trotzdem bei `scripts/{normtext,rechtsprechung}/**`
-   *Fertig, wenn* Rechner mit belegt falschem Ergebnis «bekannter Fehler, Ergebnis nicht verwenden»
-   zeigen (FB Bereich 5 Klasse A, v. a. notariat-grundbuch RV-17…20/24/25/27/82,
-   prozesskosten RV-21…23/28, Fristenrechner RV-49/52/53/54/58/59/63; Uri rechnet laut W-14 nicht mehr);
-   kein Phantomzitat «Art. … BGE» (U-04; 7.10.: 85 Treffer/64 Dateien,
-   `grep -roE 'Art\. [0-9]+[a-z]{0,9} BGE' public/rechtsprechung`); «SBK 26 88» (U-16); Gerichtsname
-   amtlich (U-24: «Kantonsgericht GR» statt «Obergericht», `entscheide-mapping.ts:1174`; Tor
-   Präfix→Gericht für ag_/sg_); Vorinstanz im Nominativ (U-03); U-06/10/13/15/25. Trailer Urteile: `URTEILE`.
-4. **Rechtslogik nach Schaden** (`RECHTSLOGIK`) · E1·B · Go David 23./24.9. · Gegenprüfung ja
+3. **Rechtslogik nach Schaden** (`RECHTSLOGIK`) · E1·B · Go David 23./24.9. · Gegenprüfung ja
    *Fertig, wenn* behoben in der Reihenfolge notariat-grundbuch (Welle 2b, 8 A-Fälle) → Fristenrechner
    (7) → prozesskosten (4) → Vorlagen (RV-06, RV-30, RV-31, RV-47, RV-74, RV-77); je Werkzeug
-   Warnhinweis entfernen. RL-43 berührt `historie-parse.ts`/`revisionen-extrakt.ts` ⇒ seriell zu Spur A.
+   Warnhinweis entfernen (Zeile in `src/lib/bekannteFehler.ts`, #1364). RL-43 berührt `historie-parse.ts`/`revisionen-extrakt.ts` ⇒ seriell zu Spur A.
    *Ort:* FB Bereich 5; `fahrplaene/FAHRPLAN-RECHTSLOGIK.md` §4 (W-01…W-22).
+
+*Gestrichen 11.10.:* `WARNHINWEIS` gebaut (#1364 Warnhinweis an 17 Rechnern, Auswahlregel im Kopf von `src/lib/bekannteFehler.ts`; #1365 Urteile U-03/04/10/13/16/24/25, U-06 schon #1149; U-15 offen in FB).
 
 *Gestrichen 7.10.:* `GILTSEIT` gebaut (#1298, #1309: ZGB 299/300 2000-01-01, 307 2013-01-01, StGB 52
 2007-01-01, OR 631 2023-01-01, SVG 89a bewusst ohne) — nur Abnahme David offen, nicht nachfragen.

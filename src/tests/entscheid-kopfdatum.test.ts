@@ -178,8 +178,9 @@ describe('mappeEntscheidOCL — Entscheiddatum aus dem Kopf (kantonal) ', () => 
 
 describe('kopfdatumRefresh — Bestand über den Generator (nur datum + zitierung)', () => {
   const snap = (over: Partial<EntscheidSnapshot>): EntscheidSnapshot => ({
-    id: 'kanton/GR/gr_gerichte/SBK202638', gericht: 'gr_gerichte', gerichtName: 'Kantonsgericht GR', kanton: 'GR',
-    nummer: 'SBK 2026 38', datum: '2026-06-24', zitierung: 'Kantonsgericht GR SBK 2026 38 vom 24.06.2026',
+    id: 'kanton/GR/gr_gerichte/SBK202638', gericht: 'gr_gerichte', gerichtName: 'Obergericht GR', kanton: 'GR',
+    // Bestandsform seit U-16/U-24: amtliches Aktenzeichen (zweistelliges Jahr) und Obergericht (GR ab 1.1.2025).
+    nummer: 'SBK 26 38', datum: '2026-06-24', zitierung: 'Obergericht GR SBK 26 38 vom 24.06.2026',
     quelle: 'opencaselaw', quelleUrl: 'https://entscheidsuche.gr.ch/x', abgerufen: '2026-06-26', fassungsToken: 'h', sha: 's',
     abschnitte: [], ...over,
   } as EntscheidSnapshot);
@@ -199,12 +200,12 @@ describe('kopfdatumRefresh — Bestand über den Generator (nur datum + zitierun
     const z = await kopfdatumRefresh([gr, bund, bs], { holeDecision: async () => det(), holeSeiten: keineSeiten });
     expect(z).toHaveLength(1);
     expect(gr.datum).toBe('2026-04-28');
-    expect(gr.zitierung).toBe('Kantonsgericht GR SBK 2026 38 vom 28.04.2026');
+    expect(gr.zitierung).toBe('Obergericht GR SBK 26 38 vom 28.04.2026');
     expect([gr.sha, gr.abgerufen, gr.fassungsToken]).toEqual(['s', '2026-06-26', 'h']);
     expect(JSON.stringify([bund, bs])).toBe(vorher);
   });
   it('Refresh trägt datumPortal nach (Hinweis-Feld); ein zweiter Lauf ist idempotent', async () => {
-    const gr = snap({ datum: '2026-04-28', zitierung: 'Kantonsgericht GR SBK 2026 38 vom 28.04.2026' });
+    const gr = snap({ datum: '2026-04-28', zitierung: 'Obergericht GR SBK 26 38 vom 28.04.2026' });
     await kopfdatumRefresh([gr], { holeDecision: async () => det(), holeSeiten: keineSeiten });
     expect(gr.datumPortal).toBe('2026-06-24');
     const eins = JSON.stringify(gr);

@@ -101,12 +101,15 @@ const PARTEI_RE =
 // «Yanick Felley (président du collège)», E-1016/2022 «(présidente du collège)»): der
 // Zusatz gehört zum Rollenwort; ohne ihn blieb «( du collège)» im Namen stehen und
 // erzeugte den Phantom-Slug `felley-du-college-yanick` (check:besetzung FIDELITY + G5).
+// `vize-?pr[äa]sident(in|en)?` (U-10, 11.10.2026): die deutsche Form analog zu «vice-présidente» —
+// ohne eigene Alternative griff nur «präsident», das Präfix «Vize» blieb als Phantom-Richter «vize»
+// mit Rolle vorsitz stehen und der vorangehende Name («Roy Garré, Vizepräsident») verlor den Vorsitz.
 // Nacktes `\bVorsitz\b` (Auflage A1 Gegenprüfung #1117, 25.9.2026): BStGer SN.2026.4
 // «Stefan Heimgartner, Vorsitz Martin Stupf und …» (Zeilenumbruch im Amtstext
 // verloren) ergab den Phantom-Richter `martin-stupf-vorsitz` (Vorname «Vorsitz»).
 // Die Wortgrenze schliesst «Vorsitzende…» aus (eigene Alternative oben).
 const VORSITZ_RE =
-  /vice-?\s?p\s?r[ée]sident(?:e|s)?|\(\s*Vorsitz\s*\)|\bVorsitz\b|Vorsitzende(?:r|n)?|P\s?r[äa]sident(?:in|en)?|p\s?r[ée]sident(?:e|s)?(?:\s+(?:du\s+coll[èe]ge|del\s+collegio))?|p\s?r[ée]sidant(?:e|s)?|P\s?residente|pr[äa]sidierendes?\s+Mitglied|Einzelrichter(?:in)?|Einzelgericht|juge\s+unique|giudic[ea]\s+unic[ao]/i;
+  /vize-?\s?p\s?r[äa]sident(?:in|en)?|vice-?\s?p\s?r[ée]sident(?:e|s)?|\(\s*Vorsitz\s*\)|\bVorsitz\b|Vorsitzende(?:r|n)?|P\s?r[äa]sident(?:in|en)?|p\s?r[ée]sident(?:e|s)?(?:\s+(?:du\s+coll[èe]ge|del\s+collegio))?|p\s?r[ée]sidant(?:e|s)?|P\s?residente|pr[äa]sidierendes?\s+Mitglied|Einzelrichter(?:in)?|Einzelgericht|juge\s+unique|giudic[ea]\s+unic[ao]/i;
 
 /**
  * Referenten-Marker — wird entfernt, setzt aber KEINE Rolle.

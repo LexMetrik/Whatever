@@ -232,6 +232,13 @@ describe('Befund D — Generator-Kantonszweig: zurückhalten statt Plattformdatu
     expect(zurueckhalteZeile('sg_gerichte', zz, 0)).toBe(zurueckhalteZeile('sg_gerichte', [...zz].reverse(), 0));
     expect(zurueckhalteZeile('sg_gerichte', zz, 0)).toBe('[kanton] sg_gerichte: 2 zurückgehalten (kein eigener Urteilskopf; davon 0 Bestand unverändert): A 1 (g); B 2 (g)');
   });
+  it('bestandStattZurueckgehalten: GR-Bestand «SBK 26 88» (amtlich, U-16) trifft den zurückgehaltenen OCL-Eintrag «SBK 2026 88»', () => {
+    const gr = { ...bestand(), id: 'kanton/GR/gr_gerichte/SBK2026_88', gericht: 'gr_gerichte', nummer: 'SBK 26 88' };
+    const z = (court: string, nummer: string): Zurueckgehalten => ({ decisionId: 'x', court, nummer, grund: 'g' });
+    expect(bestandStattZurueckgehalten([z('gr_gerichte', 'SBK 2026 88')], [gr])).toEqual([gr]);
+    expect(bestandStattZurueckgehalten([z('gr_gerichte', 'SBK 2026 89')], [gr])).toEqual([]);
+    expect(bestandStattZurueckgehalten([z('sg_gerichte', 'SBK 2026 88')], [gr])).toEqual([]);
+  });
   it('additiv: ein zurückgehaltener Neuabruf lässt den Bestandseintrag unverändert und löscht nichts', () => {
     const b = bestand();
     const vorher = JSON.stringify(b);

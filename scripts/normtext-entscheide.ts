@@ -12,6 +12,7 @@ import {
 } from './normtext/adapter-entscheide';
 import { schreibeKorpus, ladeBestandSnapshots, berichteBezuege } from './normtext/entscheide-schreiben';
 import { kopfdatumRefreshLauf } from './normtext/entscheide-kopfdatum-refresh';
+import { aktenzeichenRefreshLauf } from './normtext/entscheide-aktenzeichen-refresh';
 import {
   normKeysVonSnapshot, remapNormKeys, undeklarierteAltKeys, literaturEntfernteNormKeys,
   sperrEntfernteNormKeys,
@@ -118,6 +119,9 @@ const rubrumRefresh = process.argv.includes('--rubrum-refresh');
 // `zitierung` aus dem amtlichen Urteilskopf. NETZ-Lauf; Kern + Tore in
 // scripts/normtext/entscheide-kopfdatum-refresh.ts.
 const kopfdatumRefresh = process.argv.includes('--kopfdatum-refresh');
+// --aktenzeichen-refresh (U-25, 11.10.2026): BStGer-Snapshots — `nummer` + `zitierung` aus dem Urteilskopf
+// verbundener Verfahren («RR.2025.198-199»). NETZ-Lauf; Kern in scripts/normtext/entscheide-aktenzeichen-refresh.ts.
+const aktenzeichenRefresh = process.argv.includes('--aktenzeichen-refresh');
 /**
  * DEKLARIERTE Alt-Key-Bewahrung (Linse 3, 28.7.2026) — die Ratsche bekommt eine
  * Sperre.
@@ -355,6 +359,7 @@ const docketSlug = (d: string) => d.replace(/\s+/g, '').replace(/[^A-Za-z0-9]/g,
 
 async function main() {
   if (kopfdatumRefresh) { await kopfdatumRefreshLauf(datum); return; }
+  if (aktenzeichenRefresh) { await aktenzeichenRefreshLauf(datum); return; }
   // ── Rubrum-Satzzeichen (LM-127/LM-132) — OFFLINE, vor allen Netz-Zweigen ────
   if (rubrumRefresh) {
     const basis = ladeBestandSnapshots();

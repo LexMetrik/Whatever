@@ -11,6 +11,10 @@ import type {
 import type { Rechtsgebiet } from '../../src/lib/normtext/register-typen';
 import type { OclParagraph } from './adapter-typen';
 import { normalisiereRegeste, bereinigeFliesstext } from '../../src/lib/rechtsprechung/register';
+import { bereinigeZitierteNormen } from '../../src/lib/rechtsprechung/seitenmarker';
+import { vorinstanzNominativ } from '../../src/lib/rechtsprechung/vorinstanz';
+import { verbundenesAktenzeichen, zitierungMitVerbundenemAz } from '../../src/lib/rechtsprechung/verbundene-verfahren';
+import { amtlicherGerichtName, amtlichesAktenzeichen } from '../../src/lib/rechtsprechung/kantonale-gerichte';
 import { rubrumFeldPlausibel } from '../../src/lib/rechtsprechung/rubrum';
 import { teileSachverhalt } from '../../src/lib/rechtsprechung/sachverhalt';
 import { sha256EntscheidBloecke } from './sha-entscheide';
@@ -162,7 +166,8 @@ export function extrahiereRubrum(fullText: string | undefined): EntscheidRubrum 
     besetzung: rubrumFeldPlausibel('besetzung', besetzung) ? besetzung : null,
     parteien: rubrumFeldPlausibel('parteien', parteien) ? parteien : null,
     gegenstand: rubrumFeldPlausibel('gegenstand', gegenstand) ? gegenstand : null,
-    vorinstanz: rubrumFeldPlausibel('vorinstanz', vorinstanz) ? vorinstanz : null,
+    // U-03: das Kopfwort steht im Satz «gegen den Entscheid DES …» im Genitiv; das Feld ist ein Name (Nominativ).
+    vorinstanz: rubrumFeldPlausibel('vorinstanz', vorinstanz) ? vorinstanzNominativ(vorinstanz!) : null,
   };
   if (!rubrum.besetzung && !rubrum.parteien && !rubrum.gegenstand && !rubrum.vorinstanz) return null;
   return rubrum;
@@ -365,14 +370,21 @@ export function mappeEntscheidOCL(
     legalArea: det.legal_area,
     kanton: canton,
   });
-  const gerichtName = gerichtAnzeigename(court, canton, det.court_name as string | undefined);
+  // U-24: Court-Codes, die mehrere Gerichte bündeln (ag_/sg_/gr_gerichte), tragen den amtlichen Namen
+  // des entscheidenden Gerichts (Präfix bzw. Entscheiddatum); sonst der Anzeigename je Court-Code.
+  const gerichtName = canton === 'CH' ? gerichtAnzeigename(court, canton, det.court_name as string | undefined)
+    : (amtlicherGerichtName(court, docket, datumRoh) ?? gerichtAnzeigename(court, canton, det.court_name as string | undefined));
+  // U-16: amtliche Schreibweise des Aktenzeichens (GR: zweistelliges Jahr). Die id bleibt aus der
+  // OCL-Form gebildet (docketSafe unten) — stabile Adressen und Dateinamen.
+  // U-25: verbundene Verfahren des Bundesstrafgerichts tragen im Urteilskopf alle Nummern («RR.2025.198-199»).
+  const nummerAmtlich = court === 'bstger' ? verbundenesAktenzeichen(docket, det.full_text) : amtlichesAktenzeichen(court, docket);
   // Rubrum nur fürs Bundesgericht (full_text-Struktur zuverlässig); kantonal null —
   // lieber leer als falsch (Abnahme P1: kantonale Extraktion liefert sonst Erwägungstext).
   const rubrum = canton === 'CH' ? extrahiereRubrum(det.full_text) : null;
   // Zitierung inkl. Aktenzeichen-Norm „5A 229/2017" → „5A_229/2017" (Abnahme P3: Kopf/Tab/Zitat).
   const zitierung = (canton === 'CH'
-    ? String(det.citation_string_de ?? `BGer ${docket} vom ${fmtDatumDe(datumRoh)}`)
-    : `${gerichtName} ${docket} vom ${fmtDatumDe(datumRoh)}`).replace(/\b(\d[A-Z])\s+(\d+\/\d{4})/g, '$1_$2');
+    ? zitierungMitVerbundenemAz(String(det.citation_string_de ?? `BGer ${docket} vom ${fmtDatumDe(datumRoh)}`), docket, nummerAmtlich)
+    : `${gerichtName} ${nummerAmtlich} vom ${fmtDatumDe(datumRoh)}`).replace(/\b(\d[A-Z])\s+(\d+\/\d{4})/g, '$1_$2');
 
   // Leitentscheid ⟺ amtliche Sammlung (BGE): Court 'bge' ODER BGE-Fundstelle.
   // KEIN '!!regeste'-Glied mehr — eine maschinelle/kantonale Regeste begründet keinen
@@ -394,7 +406,7 @@ export function mappeEntscheidOCL(
     gerichtstyp: gerichtstypFuerCourt(court),
     kanton: canton,
     abteilung: det.chamber ? String(det.chamber) : null,
-    nummer: docket,
+    nummer: nummerAmtlich,
     bgeReferenz: istBge ? docket : (det.bge_reference ? String(det.bge_reference) : null),
     zitierung,
     datum: datumRoh,
@@ -411,7 +423,8 @@ export function mappeEntscheidOCL(
     regesteAmtlich,
     abschnitte,
     dispositivOrders: Array.isArray(str?.dispositiv_orders) ? str.dispositiv_orders.map(String) : [],
-    zitierteNormen: Array.isArray(det.statutes) ? det.statutes.map(String) : [],
+    // U-04: Phantom-Einträge «Art. N BGE» (Seitenvermerk im Normzitat) fallen heraus.
+    zitierteNormen: Array.isArray(det.statutes) ? bereinigeZitierteNormen(det.statutes.map(String)) : [],
     // Wird direkt nach der Zusammensetzung gefüllt (braucht den fertigen Snapshot).
     normKeys: [],
     zitierteEntscheide,
@@ -704,7 +717,7 @@ export async function holeBgeLeitentscheid(
       ...(azaSnap?.normKeys ?? []),
     ]),
     zitierteNormen: [
-      ...(Array.isArray(det.statutes) ? det.statutes.map(String) : []),
+      ...(Array.isArray(det.statutes) ? bereinigeZitierteNormen(det.statutes.map(String)) : []),
       ...(azaSnap?.zitierteNormen ?? []),
     ],
     legalArea: det.legal_area,

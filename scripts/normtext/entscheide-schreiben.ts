@@ -23,6 +23,7 @@ import {
   serialisiereShard, type BezugsIndex,
 } from './bezuege-bauen';
 import { kantoneOhneResolver } from './kanton-norm-resolver';
+import { bereinigeBestandSnapshot } from './entscheide-bestandsbereinigung';
 
 // Identitäts-Primitive (keyVon/kanonZitat/selbstTokens) leben seit W2·7-BEZUG in
 // entscheide-identitaet.ts — der generische Bezugs-Bau braucht sie, darf diesen
@@ -348,6 +349,11 @@ export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root
     const sauber = bereinigeBesetzungsFreitext(ft);
     if (sauber !== ft) snap.rubrum!.besetzung = sauber;
   }
+
+  // Bestandsregeln (idempotent, EINE Stelle je Regel, §5): U-04 Seitenvermerk im Normzitat u.a.
+  // — siehe entscheide-bestandsbereinigung.ts. Läuft vor jeder Projektion, damit Dateien,
+  // Manifest, Norm-Index und Bezüge aus demselben bereinigten Stand entstehen.
+  for (const snap of auswahl) bereinigeBestandSnapshot(snap);
 
   const besetzungRoh = new Map<string, ReturnType<typeof parseBesetzung>['richter']>();
   const kanonInput: KanonEintrag[] = [];

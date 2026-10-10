@@ -1171,7 +1171,9 @@ const GERICHT_ANZEIGE: Record<string, string> = {
   be_zivilstraf: 'Obergericht BE',
   ag_gerichte: 'Obergericht AG',
   sg_gerichte: 'Verwaltungs-/Versicherungsgericht SG',
-  gr_gerichte: 'Kantonsgericht GR',
+  // Seit 1.1.2025 Obergericht (GOG GR); der Name hängt am Entscheiddatum und wird je Entscheid aus
+  // src/lib/rechtsprechung/kantonale-gerichte.ts gesetzt (U-24) — dies ist nur der Rückfall.
+  gr_gerichte: 'Obergericht GR',
   // BS-Tranche (§3.1): Kopf-Instanz «Aufsichtskommission …» (Anwaltsaufsicht, BGFA).
   bs_aufsichtskommission: 'Aufsichtskommission über die Anwältinnen und Anwälte BS',
 };
