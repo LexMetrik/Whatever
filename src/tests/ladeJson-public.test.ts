@@ -29,7 +29,7 @@ import { NORMTEXT_REVISIONEN_PRUEFER } from '../lib/normtext/revisionen';
 import { NORMTEXT_MANIFEST_PRUEFER, NORMTEXT_DATEI_PRUEFER, NORMTEXT_STRUKTUR_PRUEFER } from '../lib/normtext/browse';
 import { NORMTEXT_SNAPSHOT_PRUEFER, NORMTEXT_KANTON_INDEX_PRUEFER } from '../lib/normtext/laden';
 import { HISTORIE_PRUEFER } from '../lib/normtext/historie-laden';
-import { RSPR_MANIFEST_PRUEFER, RSPR_RICHTER_PRUEFER, RSPR_DATEI_PRUEFER } from '../lib/rechtsprechung/browse';
+import { RSPR_MANIFEST_PRUEFER, RSPR_INDEX_PRUEFER, RSPR_RICHTER_PRUEFER, RSPR_DATEI_PRUEFER } from '../lib/rechtsprechung/browse';
 import { NORMINDEX_PRUEFER, NORMINDEX_ERLASS_PRUEFER, NORMINDEX_SHARD_PRUEFER } from '../lib/rechtsprechung/norm-index';
 import { BEZUEGE_PRUEFER } from '../lib/rechtsprechung/bezuege';
 import { ARTIKEL_REVISIONEN_PRUEFER } from '../lib/verzahnung/artikel-revisionen';
@@ -87,6 +87,7 @@ const EINZELN: Array<[string, JsonPruefer]> = [
   ['normtext/register.json', NORMTEXT_MANIFEST_PRUEFER],
   ['normtext/kanton/index.json', NORMTEXT_KANTON_INDEX_PRUEFER],
   ['rechtsprechung/register.json', RSPR_MANIFEST_PRUEFER],
+  ['rechtsprechung/entscheid-index.json', RSPR_INDEX_PRUEFER],
   ['rechtsprechung/richter.json', RSPR_RICHTER_PRUEFER],
   ['rechtsprechung/norm-index.json', NORMINDEX_PRUEFER],
   ['rechtsprechung/norm-index-erlasse.json', NORMINDEX_ERLASS_PRUEFER],

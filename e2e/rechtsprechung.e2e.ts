@@ -583,3 +583,45 @@ test.describe('V5 — Erwägungs-Rail im Entscheid-Leser', () => {
     expect(fehler).toEqual([])
   })
 })
+
+// ── E0-REGISTER Teil 2 (10.10.2026, §15): Urteilsseite lädt den schlanken Index ─
+//
+// Jede Urteilsseite lud bisher das ganze Register (`register.json`, ~730 KB gzip) nur
+// für Existenz, Weiterleitung, Besetzungs-Links, Seitenkopf, Reiter und Verzahnung.
+// Seither holt sie `entscheid-index.json` (zehn Felder je Eintrag, ~240 KB gzip). Der Name
+// enthält bewusst NICHT `register.json` (die Streichproben in startseite-blatt.e2e.ts
+// matchen per Teilzeichenfolge). ROT ZU BEKOMMEN: in `ladeEntscheidIndex()`
+// (lib/rechtsprechung/browse.ts) wieder `/rechtsprechung/register.json` laden — dann meldet
+// der Test die geladene Register-URL (§6.7). Läuft nur in der CI-Queue.
+test.describe('Urteilsseite: schlanker Entscheid-Index statt Register (§15)', () => {
+  test('/rechtsprechung/<key> fragt den Index an, nie register.json; Seite und Verzahnung rendern', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    const register: string[] = []
+    const index: string[] = []
+    page.on('request', (r) => {
+      if (r.url().includes('/rechtsprechung/register.json')) register.push(r.url())
+      if (r.url().includes('/rechtsprechung/entscheid-index.json')) index.push(r.url())
+    })
+    await page.goto('/rechtsprechung/bge_152_V_52')
+    await expect(page.getByRole('heading', { level: 1, name: /152 V 52/ })).toBeVisible()
+    // Die rückwärtige Gruppe der Verzahnung löst ihre Treffer über den Index auf
+    // (bge_152_V_52 zitiert u.a. BGE 147 I 73, BGE 148 V 321, BGE 149 II 381 — am Korpus
+    // gemessen 10.10.2026: 3 von 15 Zitaten im Korpus aufgelöst).
+    await expect(page.getByText('Zitierte Entscheide', { exact: false }).first()).toBeVisible({ timeout: 10_000 })
+    await expect(page.getByRole('link', { name: /147 I 73/ }).first()).toBeVisible()
+    await page.waitForLoadState('networkidle')
+    expect(register, `Urteilsseite hat das ganze Register geladen: ${JSON.stringify(register)}`).toEqual([])
+    expect(index, `Index-Anfragen: ${JSON.stringify(index)}`).toHaveLength(1)
+    expect(fehler).toEqual([])
+  })
+
+  test('Direktaufruf eines Verweis-Keys (__voll) leitet über den Index auf das Ziel-BGE weiter', async ({ page }) => {
+    const register: string[] = []
+    page.on('request', (r) => { if (r.url().includes('/rechtsprechung/register.json')) register.push(r.url()) })
+    await page.goto('/rechtsprechung/bge_152_V_52__voll')
+    await expect(page).toHaveURL(/\/rechtsprechung\/bge_152_V_52\?ansicht=voll/)
+    await expect(page.getByRole('heading', { level: 1, name: /152 V 52/ })).toBeVisible()
+    await page.waitForLoadState('networkidle')
+    expect(register, `Weiterleitung hat das ganze Register geladen: ${JSON.stringify(register)}`).toEqual([])
+  })
+})

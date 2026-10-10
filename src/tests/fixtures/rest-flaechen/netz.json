@@ -3,6 +3,7 @@
   "zweck": "Eingefrorene Fetch-Antworten der Flächen-Ratsche REST (S0) — URL → JSON-Körper; null = 404.",
   "quelle": "public/ auf Commit 8f13be7d2",
   "extrahiertAm": "2026-09-25",
+  "entscheidIndex": "10.10.2026 (E0-REGISTER Teil 2, deklarierte Änderung §6.3): '/rechtsprechung/entscheid-index.json' ist die Projektion der drei Register-Einträge dieser Auswahl auf die zehn Index-Felder (Stand wie oben); '/rechtsprechung/register.json' entfiel, weil keine Rest-Route das ganze Register mehr lädt.",
   "auswahl": {
    "entscheide": [
     "bge_149_IV_213",
@@ -24,37 +25,17 @@
   }
  },
  "antworten": {
-  "/rechtsprechung/register.json": {
+  "/rechtsprechung/entscheid-index.json": {
    "erzeugt": "2026-09-23",
    "entscheide": [
     {
      "key": "bge_149_IV_213",
-     "gericht": "bge",
-     "gerichtName": "Bundesgericht",
-     "gerichtstyp": "bundesgericht",
-     "kanton": "CH",
      "nummer": "149 IV 213",
      "bgeReferenz": "149 IV 213",
      "datum": "2023-04-06",
      "zitierung": "BGE 149 IV 213",
      "leitcharakter": "leitentscheid",
-     "regesteVorhanden": true,
-     "regesteKurz": "Art. 81 Abs. 1 BGG; Beschwerderecht im Ausstandsverfahren. Der Richter oder die Richterin kann den Entscheid, mit dem ein gegen ihn bzw. sie eingereichtes Ablehnungsbegehren gutgeheissen wurde, nicht mit Beschwerde in Strafsachen anfechten…",
-     "sachgebiet": "prozess",
-     "sprache": "de",
-     "normKeys": [
-      "BGG",
-      "BV",
-      "STPO",
-      "VWVG",
-      "ZGB"
-     ],
-     "bestand": "snapshot",
-     "kuratierung": "maschinell",
      "datei": "bund/bge/149_IV_213.json",
-     "quelle": "opencaselaw",
-     "quelleUrl": "https://search.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?lang=de&type=highlight_simple_query&page=13&from_date=&to_date=&from_year=2023&to_year=2023&sort=relevance&insertion_date=&from_date_push=&top_subcollection_clir=bge&query_words=&part=all&de_fr=&de_it=&fr_de=&fr_it=&it_de=&it_fr=&orig=&translation=&rank=130&highlight_docid=atf%3A%2F%2F149-IV-213%3Ade&number_of_ranks=189&azaclir=clir",
-     "fassungsToken": "c24520aa6a5a9db26a773ef648ac018edd4bb3e5e88a9c67fa072609df38cc77",
      "richter": [
       {
        "s": "kneubuhler",
@@ -84,58 +65,21 @@
     },
     {
      "key": "bger_12T_3_2025",
-     "gericht": "bger",
-     "gerichtName": "Bundesgericht",
-     "gerichtstyp": "bundesgericht",
-     "kanton": "CH",
      "nummer": "12T_3/2025",
      "bgeReferenz": null,
      "datum": "2026-06-15",
      "zitierung": "BGer 12T_3/2025 vom 15. Juni 2026",
      "leitcharakter": "routine",
-     "regesteVorhanden": false,
-     "regesteKurz": null,
-     "sachgebiet": "oeffentlich",
-     "sprache": "de",
-     "normKeys": [
-      "ASYLG",
-      "BGG",
-      "VGG",
-      "VWVG"
-     ],
-     "bestand": "snapshot",
-     "kuratierung": "maschinell",
-     "datei": "bund/bger/12T_3_2025.json",
-     "quelle": "opencaselaw",
-     "quelleUrl": "http://relevancy.bger.ch/php/aza/http/index.php?highlight_docid=aza://15-06-2026-12T_3-2025&lang=de&type=show_document",
-     "fassungsToken": "fcf298092e572c35960df03344dc3ac39b939b584f431e3ef2f5b1051ae98623"
+     "datei": "bund/bger/12T_3_2025.json"
     },
     {
      "key": "bs_appellationsgericht_BEZ.2024.66",
-     "gericht": "bs_appellationsgericht",
-     "gerichtName": "Appellationsgericht BS",
-     "gerichtstyp": "kantonal",
-     "kanton": "BS",
      "nummer": "BEZ.2024.66",
      "bgeReferenz": null,
      "datum": "2024-11-28",
      "zitierung": "Appellationsgericht BS BEZ.2024.66 vom 28.11.2024",
      "leitcharakter": "routine",
-     "regesteVorhanden": false,
-     "regesteKurz": "Betreibung",
-     "sachgebiet": "privat",
-     "sprache": "de",
-     "normKeys": [
-      "BGG",
-      "SCHKG",
-      "ZPO"
-     ],
-     "bestand": "snapshot",
-     "kuratierung": "maschinell",
      "datei": "kanton/BS/bs_appellationsgericht/BEZ.2024.66.json",
-     "quelle": "gerichte-bs",
-     "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=77701&Template=search_result_document.html",
-     "fassungsToken": "2025-08-14",
      "richter": [
       {
        "s": "steiner-olivier",

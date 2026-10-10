@@ -77,7 +77,7 @@ export const kb = (n: number): string => `${(n / 1024).toFixed(1)} KB`;
 export const DATEN_BUDGET: readonly (readonly [string, number])[] = [
   ['public/rechtsprechung/register.json', 900 * 1024],
   // entscheid-index.json (E0-REGISTER Teil 2, 10.10.2026): lädt jede Urteilsseite und jede
-  // Seite mit Urteils-Reiter. Gemessen 10.10.2026 mit gz() (Node-Default): 239 716 B ≈
+  // Seite mit Urteils-Reiter. Gemessen 10.10.2026 mit gz() (Node-Default): 239 200 B ≈
   // 234 KB; Budget = Ist + ~10 % Kopffreiheit, absichtlich eng — die Datei wächst mit dem
   // Korpus (6815 Einträge, ~35 B gzip je Eintrag) und soll nicht unbemerkt davonlaufen.
   ['public/rechtsprechung/entscheid-index.json', 260 * 1024],

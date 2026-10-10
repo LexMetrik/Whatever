@@ -31,7 +31,7 @@ const MATERIALIEN = {
 beforeEach(() => {
   vi.stubGlobal('fetch', vi.fn(async (url: string) => {
     const body = url.includes('/normtext/register.json') ? GESETZE
-      : url.includes('/rechtsprechung/register.json') ? ENTSCHEIDE
+      : url.includes('/rechtsprechung/entscheid-index.json') ? ENTSCHEIDE
       : url.includes('/materialien/register.json') ? MATERIALIEN
       : null;
     return { ok: body !== null, json: async () => body } as unknown as Response;
