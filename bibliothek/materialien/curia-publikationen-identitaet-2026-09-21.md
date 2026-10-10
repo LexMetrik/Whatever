@@ -222,7 +222,7 @@ Geschäfte 02.035 und 02.078 sind Jahrgang 2002 und haben Daten, weil ihre Schlu
 - **Neu offen an seiner Stelle:** die Kommissions-Vorberatungen. Dort fallen 65 % der amtlichen
   Zeilen zusammen (2249 amtlich → 792 gespeichert über 386 Shards, Prüfer-Messung; eigene Messung
   über 385 Shards: 2093 → 790). Ob das gewollt ist, ist ein fachlicher Entscheid und liegt bei
-  David — Posten `plan/posten/2026-09-21-curia-vorberatungen-62-der-amtlichen-zeilen-fallen-zusammen.md`.
+  David — Posten `git 3fd5db8f9:plan/posten/2026-09-21-curia-vorberatungen-62-der-amtlichen-zeilen-fallen-zusammen.md`.
 
 ## 5 · Negativbefund (S5)
 

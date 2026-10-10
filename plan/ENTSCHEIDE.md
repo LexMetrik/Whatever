@@ -1,6 +1,7 @@
 # Entscheide David (Register)
 Zweck: Register datierter Entscheide Davids, die bis 10.10.2026 in Regeltexten standen; Herkunft künftig nur Commit-Message und Vault. Stand-SHA: 3fd5db8f9.
 Wortlaut in Anführungszeichen = Davids Worte; ohne = Paraphrase der Regeldatei. Zeilen bei HEAD; C/R/S/DR/B = CLAUDE/ROADMAP/STRUKTUR/DESIGN-REGLEMENT/BETRIEB, WV/WR/PB/SP/KR = gelöschte Wurzeldateien, sk/ag/ru = .claude/skills/agents/rules.
+Entscheide aus gelöschten Fahrplänen/Posten/Audits: `plan/ENTSCHEIDE-FAHRPLAENE.md`.
 
 Datum | Entscheid | Grenze/Geltung | Quelle | Vault
 ---|---|---|---|---

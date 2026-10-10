@@ -63,15 +63,14 @@ jobs:
           # ("billigster Job der Kette", siehe Kommentar unten) — ein
           # `vite-node`-Aufruf bräuchte Checkout + `npx -y npm@11 ci` bei JEDEM Lauf,
           # nicht nur bei code-fernen. Dieselbe Regel liegt zusätzlich als
-          # reine, Vitest-getestete Funktion in scripts/ci/diff-klassieren.ts
-          # (§6.7-Beweis dort, `npx vitest run src/tests/steuerwerkzeuge.
-          # test.ts`) — die Pfadliste hier ist wortgleich zu deren
+          # reine Funktion in scripts/ci/diff-klassieren.ts (ihr Test
+          # steuerwerkzeuge.test.ts ist gelöscht 10.10., git 3fd5db8f9) — die Pfadliste hier ist wortgleich zu deren
           # CODE_FERNE_MUSTER, damit beide Fassungen nicht auseinanderlaufen.
           CODE_FERN_RE='(\.md$|^scripts/cowork/|^\.claude/|^docs/|^bibliothek/|^messwerte/|^archiv/)'
           # Trotz `.md`-Endung KEIN reiner Doku-Fall (Anlass PR #619, 2.9.2026):
           # .claude/agents/lex-bau.md wurde von Hand geändert, der reine-.md-
           # Kurzschluss unten stufte den Diff als `doku` ein, der Tore-Job
-          # (check:dispatch-klausel) lief nicht (§6.7). Wortgleich zu
+          # (check:dispatch-klausel, gelöscht 10.10., git 3fd5db8f9) lief nicht (§6.7). Wortgleich zu
           # WERKZEUG_TROTZ_MD_MUSTER in scripts/ci/diff-klassieren.ts.
           WERKZEUG_TROTZ_MD_RE='(^\.claude/agents/|^docs/token-oekonomie/dispatch-template\.md$)'
           # UMBENENNUNGEN (Auflage Gegenprüfung 19.9.2026): Compare- und

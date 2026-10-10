@@ -10,7 +10,7 @@
 > mit «Messung 14.9.2026» gekennzeichnet.
 > **Lebendige Spec.** Diese Datei wird fortgeschrieben, nicht rückwirkend korrigiert: datierte
 > Mess- und Reproduktionsangaben werden **ergänzt**, nie an einen neuen Ist-Stand nachgeführt
-> (Dispatch-§0 Ziff. 2b). Erledigtes wird in ROADMAP.md abgehakt und in ROADMAP-CHRONIK.md
+> (Dispatch-§0 Ziff. 2b). Erledigtes wird in ROADMAP.md abgehakt und in git 3fd5db8f9:ROADMAP-CHRONIK.md
 > nachgetragen.
 
 ---

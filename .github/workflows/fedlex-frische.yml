@@ -77,7 +77,7 @@ jobs:
         with:
           # Volle Historie wie der Tore-Job in ci.yml (seit 18.9.2026, §17): der Schritt
           # «Offline-Tore vor dem PR» fährt die VOLLE Tor-Menge, also auch `npm test` —
-          # und `hooks-wache.test.ts` (seit #688, 5.9.2026) löst `HEAD~1` auf. Im flachen
+          # und `hooks-wache.test.ts` (seit #688, 5.9.2026; gelöscht 10.10., git 3fd5db8f9) löst `HEAD~1` auf. Im flachen
           # Default-Checkout (Tiefe 1) gibt es den Vorgänger nicht ⇒ der Test war hier
           # strukturell rot, verdeckt durch das frühere `check:verfall-ui`-Rot
           # (Lauf 35352220607). Gleiche Tore brauchen gleiche Bedingungen.
@@ -306,13 +306,13 @@ jobs:
             # ── §17-Wurzelfix (18.9.2026, dritter Einzelfall derselben Klasse nach
             # #902/gen:verfall und #904/Checkout-Historie, Lauf 35358212138) ─────────
             # Dieser Arm fuhr die VOLLE Projektions-Kaskade nach einem Normtext-
-            # Re-Pin nicht (Skill `auftrag` Ziff. 6 (g)): `check:entstehung` meldete
+            # Re-Pin nicht (Skill `bauschritt` Ziff. 6 (g)): `check:entstehung` meldete
             # 4 veraltete Projektions-Dateien, weil `gen:entstehung-projektion`
             # fehlte. Die Kaskade (entstehung-projektion/-deckung,
             # verweis-inventar, e2e-shards, Manifest→confidence-Sandwich) bündelt
             # jetzt EIN Skript (§5/§17-Gegengewicht: ersetzen statt eine zweite
             # Liste im Workflow zu pflegen) — `npm run projektionen:normtext`,
-            # dasselbe Skript, das Skill `auftrag` Ziff. 6 (g) künftig auch für
+            # dasselbe Skript, das Skill `bauschritt` Ziff. 6 (g) künftig auch für
             # Hand-PRs nach Normtext-Berührung nennt.
             npm run projektionen:normtext -- --datum=${{ steps.datum.outputs.iso }}
             # Gegenprüfung #822 D1: DIESER Zweig hat `bash scripts/fedlex-cache.sh`

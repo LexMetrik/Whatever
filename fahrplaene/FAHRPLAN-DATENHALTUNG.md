@@ -5,7 +5,7 @@
 
 > **Rolle (§14):** Detailquelle zu `ROADMAP.md` → Querschnitt **QS-DATA** + Bau-Schritt
 > **W2·6-DATA**. Nie zweiter Einstieg. **Council-Entscheid 2.7.2026** (Richtung entschieden,
-> nicht mehr offen); löst die drei „DAVID-ENTSCHEID"-Punkte aus `archiv/PLAN-OCL-ABBAU.md`
+> nicht mehr offen); löst die drei „DAVID-ENTSCHEID"-Punkte aus `git 3fd5db8f9:archiv/PLAN-OCL-ABBAU.md`
 > (§AUSFÜHRUNGS-STAND + §OFFENE PUNKTE: Zitations-Graph 8,7M · Parquet als Volltext-Quelle ·
 > Breiten-Korpus) auf. Fable plant, Opus baut. Trailer `Roadmap: QS-DATA`.
 
@@ -40,7 +40,7 @@ Entscheide (SSoT, Andockpunkt, Quellen) stehen im nachfolgenden Abschnitt
   Bau-Strang = **W2·6-DATA**; Detailquelle **`FAHRPLAN-DATENHALTUNG.md`**. **Stand 3.7.2026: E0/E0+/E1/E1-Rest-A + E2-Vorarbeiten durch** — **E2 offen NUR: Turso-Hot-Daten laden/synchronisieren [David-Handschritt; Prod-Edge liefert aktuell 200-leer] → dann perf-budget/Payload-Grenz-Test greifen**. **§11.2 Leitfälle-Chips (3.7.2026): das tote `proNormArtikel`-Modell ist verdrahtet; Weiche-B-Masse-Anteil «+n weitere (online)» offen bis E2-live.** Details am Schritt W2·6-DATA. Trailer `Roadmap: W2·6-DATA`.
   **Sync-Transport + Frische-Wächter repariert 20.7.2026 — E2 betriebsfest** (Mehrzeilen-INSERT in
   BEGIN/COMMIT über den Hrana-`baton`, 33 → 1429 Zeilen/s, Schatten-Tabellen mit atomarem Tausch,
-  neues vierfaches Tor **`check:turso-frische`**). Detail: `ROADMAP-CHRONIK.md` → QS-DATA.
+  neues vierfaches Tor **`check:turso-frische`**). Detail: `git 3fd5db8f9:ROADMAP-CHRONIK.md` → QS-DATA.
   HOT-Artefakte (lokal gebaute FTS-DBs, das Budget-Mass aus `build.ts`) **651.99 MiB / 1024 MiB (63.7 %)** — Treiber ist die
   `eintrag`-Tabelle der rechtsprechung.db (465.93 MiB). **Gekoppelter Folgeschritt:** der
   Quell-Riegel hasht via `manifestDb()` die ganze DB (~1.9 GiB Spitzen-Heap, Reserve 2.3× zum
@@ -67,7 +67,7 @@ Entscheide (SSoT, Andockpunkt, Quellen) stehen im nachfolgenden Abschnitt
       E3 zuerst, W3·12 danach, David 2.7., `FAHRPLAN-DATENHALTUNG.md` §10(1)) → **E4** Zitat-Graph → **E5** Kanton-Rechtsprechung (26×, Slot-Kette #4) → **E6a**
       Verwaltungsverordnungen (Kreisschreiben — Bund-Strang, kein Slot; Nordstern-Doktyp) → **E6b**
       Materialien-Vollausbau (Detail `FAHRPLAN-DATENHALTUNG.md` §5). E0–E2 golden-neutral zu den Gesetzen; jede Projektions-
-      Änderung golden byte-gleich (§6) + `QS-GP`; OCL-Pakete W12 (Bulk-Parquet) + F2 gehen hier auf. **E0 ✅ 2.7. (PR #80/81, check:paritaet in der Gate-Kette) · E0+ ✅ 3.7. (Ziel-Schema §3, Partitionierung je Doktyp, Parität 1796 Dateien) · E1 (Generator-Flip Bund + Tor `check:datenhaltung`) ✅ 3.7. · E2 (Edge-Suche `api/suche.ts` + Turso; Sync-Timeout-Wurzel behoben 20.7., PR #313) ✅ · E3 (`rechtsprechung.db`, 488 MB) ✅** — Wortlaut/Beweise → `ROADMAP-CHRONIK.md` → W2·6-DATA (22.7.2026). **VORBEHALT:** alter Direktpfad bleibt Wächter (Entfernen = eigener §6-Schritt); Kanton/Rechtsprechung/Materialien noch Blob-Weg. **Weichen entschieden 3.7.:** Kontext-Auslieferung = Hybrid (Shards+Edge, §10(6)/§11.5) · Massen-Rebuild = Voll-Rebuild (§10(7)). **Klarstellung Leitprinzip 4:** Reverse-Ingest committeter Daten öffnet KEINEN 26×-Slot.
+      Änderung golden byte-gleich (§6) + `QS-GP`; OCL-Pakete W12 (Bulk-Parquet) + F2 gehen hier auf. **E0 ✅ 2.7. (PR #80/81, check:paritaet in der Gate-Kette) · E0+ ✅ 3.7. (Ziel-Schema §3, Partitionierung je Doktyp, Parität 1796 Dateien) · E1 (Generator-Flip Bund + Tor `check:datenhaltung`) ✅ 3.7. · E2 (Edge-Suche `api/suche.ts` + Turso; Sync-Timeout-Wurzel behoben 20.7., PR #313) ✅ · E3 (`rechtsprechung.db`, 488 MB) ✅** — Wortlaut/Beweise → `git 3fd5db8f9:ROADMAP-CHRONIK.md` → W2·6-DATA (22.7.2026). **VORBEHALT:** alter Direktpfad bleibt Wächter (Entfernen = eigener §6-Schritt); Kanton/Rechtsprechung/Materialien noch Blob-Weg. **Weichen entschieden 3.7.:** Kontext-Auslieferung = Hybrid (Shards+Edge, §10(6)/§11.5) · Massen-Rebuild = Voll-Rebuild (§10(7)). **Klarstellung Leitprinzip 4:** Reverse-Ingest committeter Daten öffnet KEINEN 26×-Slot.
       **Korrektur 20.7.2026 (§8 — die alte Zeile «Nächstes: E4 — hält den 26×-Slot» war doppelt falsch):**
       **E4 ist seit 3.7.2026 LOKAL FERTIG** (`FAHRPLAN-DATENHALTUNG.md` §5/E4, Bericht
       `bibliothek/register/e4-lokal-2026-07-03.md`, Oracle-Tor grün, 0 UNERKLÄRT) — E0/E0+/E1/E2/E3/E4 sind
@@ -99,7 +99,7 @@ Basis `f283f5cb4`. **Merge gesperrt bis zur Gegenprüfung** (Risikopfad
 
 > **Spec-Zugriff korrigiert (31.8.2026).** Der Bau-Auftrag verwies auf «5. Etappen»
 > und «10. Entscheide» *dieser* Datei. Beide Abschnitte liegen seit dem
-> Plan-Neuschnitt 29.8.2026 in `archiv/fahrplaene/FAHRPLAN-DATENHALTUNG.md`; die
+> Plan-Neuschnitt 29.8.2026 in `git 3fd5db8f9:archiv/fahrplaene/FAHRPLAN-DATENHALTUNG.md`; die
 > lebende Datei trägt nur noch §0/§13/§14. Der Verweis war also nicht falsch, aber
 > nicht mehr auflösbar — hier festgehalten, damit die nächste Session nicht
 > dieselbe Suche fährt. Massgeblich waren: Archiv «12.1 Vier technische Posten»
@@ -421,7 +421,7 @@ Prüfung noch ankäme, wird durch Tursos Stream-Ablauf praktisch ausgeschlossen,
 ## Archivierte Abschnitte *(Plan-Neuschnitt 29.8.2026)*
 
 15 Abschnitt(e) dieser Datei sind wörtlich nach
-[`archiv/fahrplaene/FAHRPLAN-DATENHALTUNG.md`](../archiv/fahrplaene/FAHRPLAN-DATENHALTUNG.md) ausgelagert — sie tragen keine offene
+`archiv/fahrplaene/FAHRPLAN-DATENHALTUNG.md` (git 3fd5db8f9:archiv/fahrplaene/FAHRPLAN-DATENHALTUNG.md) ausgelagert — sie tragen keine offene
 ROADMAP-Bindung mehr. Titel:
 
 - 0. Entschiedene Richtung (bindend)

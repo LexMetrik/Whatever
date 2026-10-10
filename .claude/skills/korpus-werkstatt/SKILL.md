@@ -8,7 +8,7 @@ description: "Verwenden bei «neuen Bundeserlass/Kantonserlass hinzufügen», «
 Die Orchestrierungs- und Verifikations-Schicht VOR Abnahme und Deploy: einen
 neuen Erlass/Entscheid extrahieren, jeden Wert mit Norm+Link+Stand belegen,
 Render und Extraktion adversarial prüfen. Sie übernimmt weder das §9-Deploy-Tor
-(→ `landung`) noch die fachliche Abnahme (→ `abnahme`), sondern bringt den
+(→ `landung`) noch die fachliche Abnahme (→ `gegenpruefung`, Abschnitt Abnahme), sondern bringt den
 Korpus prüffertig bis zu deren Eingang.
 
 Dieser Skill wird **selten** aufgerufen — er setzt darum nichts voraus und

@@ -30,7 +30,7 @@ BEWUSSTE GRENZEN (ehrlich, §8):
   - Ob `agent_type` zur Laufzeit wirklich «lex-bau» etc. trägt, kann nur ein
     Live-Dispatch beweisen (Feld im Binary-Schema vorhanden; Wertquelle nicht
     zurückverfolgt — Gegenprüfung 14.8.2026 «nicht prüfbar»). Leeres Feld ⇒
-    stiller No-op; src/tests/hooks-wache.test.ts friert die übrige Logik ein.
+    stiller No-op; die übrige Logik fror src/tests/hooks-wache.test.ts ein (Test gelöscht 10.10.).
   - Artefakt-Muster sind Heuristik und kontextgebunden (ein SHA zählt nur mit
     «Commit/SHA/HEAD» in der Nähe — Auflage B4), aber fälschbar: der Hook
     erzwingt die FORM des Nachweises; die Orchestrator-Pflicht, gegen

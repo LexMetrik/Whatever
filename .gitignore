@@ -81,10 +81,6 @@ abnahme/design-d5/*.png
 # lokaler PDF-Cache für SG-2935-Reparatur (nie committen)
 .pdf-cache/
 
-# QS-TOK/T8: generierte Repo-/Symbol-Map (on-demand via `npm run map -- --out`,
-# nie committen — kollidiert sonst bei jedem Parallel-PR, DIRTY-Kaskade)
-.repo-map.generated.md
-
 # Playwright-JSON-Report (CI-Artefakt für das Shard-Balancing, nie committen)
 playwright-report.json
 
@@ -98,7 +94,7 @@ scripts/cowork/
 tmp/
 
 # Tor-Ereignis-Log {ts, tor, ok}, geschrieben von scripts/gate.sh und
-# scripts/run-parallel.ts; lokal, je Maschine eigen.
+# scripts/run-parallel.ts; lokal, je Maschine eigen; ohne Leser seit 10.10.
 .selbstopt-ereignisse.jsonl
 
 # Volllog eines roten Tores (QS-EFFIZIENZ, Kondensat 5.9.2026): scripts/gate.sh
