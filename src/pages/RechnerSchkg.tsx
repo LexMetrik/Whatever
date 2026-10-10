@@ -1,4 +1,5 @@
 import { SchkgFristenForm } from '../components/forms/SchkgFristenForm';
+import { BekannteFehlerRahmen } from '../components/BekannterFehler';
 import { Card } from '../components/ui/Card';
 import { EreignisFristenSektion } from '../components/forms/EreignisFristen';
 import { RechnerKopf } from '../components/layout/RechnerKopf';
@@ -11,6 +12,7 @@ import { getCalculator } from '../lib/calculators';
 export function RechnerSchkg() {
   const calc = getCalculator('schkg-fristen')!;
   return (
+    <BekannteFehlerRahmen werkzeug="schkg-fristen">
     <div className="space-y-6">
       <RechnerKopf calc={calc} />
       <Card>
@@ -22,5 +24,6 @@ export function RechnerSchkg() {
         { to: '/vorlagen/nichtbekanntgabe-betreibung', label: 'Gesuch um Nichtbekanntgabe der Betreibung (Art. 8a SchKG)' },
       ]} />
     </div>
+    </BekannteFehlerRahmen>
   );
 }

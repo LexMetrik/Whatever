@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import type { PdfDocConfig } from '../lib/pdf/pdfModel';
 import { FehlerBox } from './vorlagen/ui';
+import { useBekannteFehler } from './bekannteFehlerKontext';
+import { BEKANNTER_FEHLER_SATZ, BEKANNTER_FEHLER_TITEL, bekannterFehlerZeile } from '../lib/bekannteFehler';
 
 // Schlanker Export-Button. Jeder Rechner liefert seine PdfDocConfig (Titel,
 // Domäne, Eingaben, Ergebnisse, einschlägige Normen, Disclaimer); gerendert
@@ -10,6 +12,9 @@ import { FehlerBox } from './vorlagen/ui';
 export function PdfExportButton({ config }: { config: PdfDocConfig }) {
   const [fehler, setFehler] = useState<string | null>(null);
   const [laedt, setLaedt] = useState(false);
+  // WARNHINWEIS: bekannte Fehler des Werkzeugs (Rahmen der Seite) gehen ins PDF —
+  // dieselbe Quelle wie der Ergebnisblock (§5/§8). Ohne Rahmen: config unverändert.
+  const bekannte = useBekannteFehler();
   if (config.sections.length === 0) return null;
   // Async-Klick mit try/catch: scheitert das Nachladen des Renderers oder die
   // PDF-Erzeugung, erscheint eine sichtbare Meldung statt einer stillen
@@ -21,7 +26,9 @@ export function PdfExportButton({ config }: { config: PdfDocConfig }) {
     setLaedt(true);
     try {
       const { exportPdf } = await import('../lib/pdf/pdfRender');
-      exportPdf(config);
+      exportPdf(bekannte.length > 0
+        ? { ...config, bekannteFehler: { titel: BEKANNTER_FEHLER_TITEL, eintraege: [BEKANNTER_FEHLER_SATZ, ...bekannte.map(bekannterFehlerZeile)] } }
+        : config);
     } catch (e) {
       setFehler(e instanceof Error ? e.message : 'Der PDF-Export ist fehlgeschlagen. Bitte erneut versuchen.');
     } finally {

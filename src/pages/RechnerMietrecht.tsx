@@ -1,4 +1,5 @@
 import { MietrechtForm } from '../components/forms/MietrechtForm';
+import { BekannteFehlerRahmen } from '../components/BekannterFehler';
 import { Card } from '../components/ui/Card';
 import { ThemenEinstieg } from '../components/ThemenEinstieg';
 import { RechnerKopf } from '../components/layout/RechnerKopf';
@@ -9,6 +10,7 @@ import { getCalculator } from '../lib/calculators';
 export function RechnerMietrecht() {
   const calc = getCalculator('mietrecht')!;
   return (
+    <BekannteFehlerRahmen werkzeug="mietrecht">
     <div className="space-y-6">
       <RechnerKopf calc={calc} />
       <TagerechnerRueckverweis />
@@ -23,5 +25,6 @@ export function RechnerMietrecht() {
         { to: '/vorlagen/kuendigung-vermieter', label: 'Vermieter:innen: Checkliste (amtliches Formular)' },
       ]} />
     </div>
+    </BekannteFehlerRahmen>
   );
 }

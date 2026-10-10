@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Card } from '../components/ui/Card';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ZustaendigkeitForm } from '../components/forms/ZustaendigkeitForm';
+import { BekannteFehlerRahmen } from '../components/BekannterFehler';
 import { RechnerKopf } from '../components/layout/RechnerKopf';
 import { getCalculator } from '../lib/calculators';
 import type { Rechtsweg } from '../lib/zustaendigkeit';
@@ -38,6 +39,14 @@ const HERO_JE_RECHTSWEG: Record<Exclude<Rechtsweg, 'zivil' | 'verwaltung'>, {
 
 // Hash-Anker der Katalog-Split-Karten (schkg-/straf-zustaendigkeit, 6.6.2026)
 // → Rechtsweg-Vorauswahl, Muster wie RechnerKuendigung (#lohnfortzahlung).
+/** Karten-id je Rechtsweg für den Warnhinweis (`lib/bekannteFehler`). */
+const WERKZEUG_JE_RECHTSWEG: Record<Rechtsweg, string> = {
+  zivil: 'zustaendigkeit',
+  verwaltung: 'zustaendigkeit',
+  schkg: 'schkg-zustaendigkeit',
+  straf: 'straf-zustaendigkeit',
+};
+
 const HASH_WEG: Record<string, Rechtsweg> = {
   '#schkg': 'schkg',
   '#straf': 'straf',
@@ -78,7 +87,10 @@ export function RechnerZustaendigkeit() {
         normenOverride={hero?.normen}
       />
       <Card>
-        <ZustaendigkeitForm onRechtswegChange={wegWechsel} rechtswegVorwahl={HASH_WEG[hash]} />
+        {/* WARNHINWEIS: Karte je Rechtsweg (zivil/verwaltung → zustaendigkeit). */}
+        <BekannteFehlerRahmen werkzeug={WERKZEUG_JE_RECHTSWEG[rechtsweg]}>
+          <ZustaendigkeitForm onRechtswegChange={wegWechsel} rechtswegVorwahl={HASH_WEG[hash]} />
+        </BekannteFehlerRahmen>
       </Card>
     </div>
   );

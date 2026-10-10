@@ -1,6 +1,8 @@
 import { useLocation } from 'react-router-dom';
 import { icsFuerFrist } from '../lib/icsExport';
 import { ladeIcs } from './icsDownload';
+import { useBekannteFehler } from './bekannteFehlerKontext';
+import { bekannteFehlerTextblock } from '../lib/bekannteFehler';
 
 // ─── «In Kalender (.ics)»-Button — geteilter Baustein (FAHRPLAN-PRAXIS 1.1) ─
 // Kapselt den clientseitigen Download (geteilt: components/icsDownload.ts);
@@ -23,9 +25,12 @@ export function IcsExportButton({ titel, endISO, beschreibung, aktenzeichen, que
   className?: string;
 }) {
   const { pathname, hash } = useLocation();
+  // WARNHINWEIS: ein Kalendereintrag mit möglicherweise falschem Datum trägt den Hinweis mit (§8).
+  const fehler = useBekannteFehler();
   if (!endISO || !/^\d{4}-\d{2}-\d{2}$/.test(endISO)) return null;
+  const mitHinweis = fehler.length ? [...bekannteFehlerTextblock(fehler), beschreibung ?? ''].join('\n') : beschreibung;
   const laden = () => ladeIcs(dateiName, icsFuerFrist({
-    titel, endISO, beschreibung, vorfristTage,
+    titel, endISO, beschreibung: mitHinweis, vorfristTage,
     aktenzeichen: aktenzeichen?.trim() || undefined,
     // Hash MITFÜHREN wie der LinkTeilenButton (Tab-/Rechtsweg-Weiche).
     url: query ? `${location.origin}${pathname}${query()}${hash}` : undefined,

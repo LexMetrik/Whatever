@@ -2,6 +2,7 @@ import { Suspense, useId, useRef, useState, type KeyboardEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { lazyRetry } from '../../lazyRetry';
 import { EinfacheFristForm } from '../forms/EinfacheFristForm';
+import { BekannteFehlerRahmen } from '../BekannterFehler';
 import { Ladeanzeige } from '../ui/Ladeanzeige';
 import { StartFlaeche } from './StartFlaeche';
 import { SCHNELL_WAHLEN, leseSchnellWahl, speichereSchnellWahl, type SchnellWahl } from './schnellwerkzeugWahl';
@@ -115,7 +116,7 @@ export function Schnellwerkzeug() {
         data-schnell-panel={wahl} className="flex flex-col min-h-start-schnell-eng @[16.5rem]:min-h-start-schnell">
         {wahl === 'frist' ? (
           <div className="flex flex-1 flex-col gap-3">
-            <EinfacheFristForm minimal />
+            <BekannteFehlerRahmen werkzeug="tagerechner"><EinfacheFristForm minimal /></BekannteFehlerRahmen>
             <p className="mt-auto font-sans text-xs leading-relaxed text-ink-500">
               Rückwärtsrechnung, Zustellart, Hemmung und Kalender im{' '}
               <Link to="/rechner/tagerechner" className="underline hover:text-reg-w">Fristenrechner</Link>.
@@ -123,7 +124,10 @@ export function Schnellwerkzeug() {
           </div>
         ) : (
           <Suspense fallback={<Ladeanzeige text="Rechner wird geladen …" className="py-6" />}>
-            {wahl === 'verzugszins' ? <VerzugszinsSchnellForm /> : <VerjaehrungSchnellForm />}
+            {/* WARNHINWEIS: dieselben Engines wie die Voll-Rechner → deren Karten-id. */}
+            {wahl === 'verzugszins'
+              ? <BekannteFehlerRahmen werkzeug="verzugszins"><VerzugszinsSchnellForm /></BekannteFehlerRahmen>
+              : <VerjaehrungSchnellForm />}
           </Suspense>
         )}
       </div>

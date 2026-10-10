@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { BekannteFehlerRahmen } from '../components/BekannterFehler';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { EinfacheFristForm } from '../components/forms/EinfacheFristForm';
 import { FristKalenderKompakt, type FristMarkierung } from '../components/forms/FristKalenderKompakt';
@@ -142,6 +143,7 @@ export function RechnerTagerechner() {
   };
 
   return (
+    <BekannteFehlerRahmen werkzeug="tagerechner">
     <div className="space-y-6">
       <RechnerKopf calc={calc} />
       {/* S-5a (FAHRPLAN-STRUKTUR-UMBAU, Auftrag David 10.6.2026 abends):
@@ -318,9 +320,12 @@ export function RechnerTagerechner() {
             §1: zwei rechtlich verschiedene Regimes nie stillschweigend
             gleich behandeln). */}
         {verfahren === 'allgemein' && <AllgemeineFristForm key={presetNonce} live={live?.ferien === 'keine' ? live : undefined} />}
-        {verfahren === 'zpo' && <ZpoFristenForm key={presetNonce} live={live?.ferien === 'zpo' ? live : undefined} />}
-        {verfahren === 'schkg' && <SchkgFristenForm key={presetNonce} live={live?.ferien === 'schkg' ? live : undefined} />}
+        {/* WARNHINWEIS: eingebettete ZPO-/SchKG-Rechner tragen zusätzlich die
+            Fehler ihres eigenen Werkzeugs (Rahmen vereinigen sich). */}
+        {verfahren === 'zpo' && <BekannteFehlerRahmen werkzeug="zpo-fristen"><ZpoFristenForm key={presetNonce} live={live?.ferien === 'zpo' ? live : undefined} /></BekannteFehlerRahmen>}
+        {verfahren === 'schkg' && <BekannteFehlerRahmen werkzeug="schkg-fristen"><SchkgFristenForm key={presetNonce} live={live?.ferien === 'schkg' ? live : undefined} /></BekannteFehlerRahmen>}
       </Card>
     </div>
+    </BekannteFehlerRahmen>
   );
 }

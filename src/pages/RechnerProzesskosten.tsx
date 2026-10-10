@@ -1,4 +1,5 @@
 import { ProzesskostenForm } from '../components/forms/ProzesskostenForm';
+import { BekannteFehlerRahmen } from '../components/BekannterFehler';
 import { Card } from '../components/ui/Card';
 import { RechnerKopf } from '../components/layout/RechnerKopf';
 import { getCalculator } from '../lib/calculators';
@@ -10,11 +11,13 @@ import { getCalculator } from '../lib/calculators';
 export function RechnerProzesskosten() {
   const calc = getCalculator('prozesskosten')!;
   return (
+    <BekannteFehlerRahmen werkzeug="prozesskosten">
     <div className="space-y-6">
       <RechnerKopf calc={calc} />
       <Card>
         <ProzesskostenForm />
       </Card>
     </div>
+    </BekannteFehlerRahmen>
   );
 }

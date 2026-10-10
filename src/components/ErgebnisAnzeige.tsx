@@ -7,6 +7,8 @@ import { AbschnittKopf } from './layout/AbschnittKopf';
 // ist die EINE Fedlex-Chip-Komponente (deckt «bemerkung» jetzt mit ab).
 import { KopierButton, NormLink } from './vorlagen/ui';
 import { meldungspunkt } from './vorlagen/meldungspunkt';
+import { useBekannteFehler } from './bekannteFehlerKontext';
+import { bekannteFehlerTextblock, type BekannterFehler } from '../lib/bekannteFehler';
 
 // Status-Badges (Design-Doc 5.8): gesichert→sage · umstritten/kein Anspruch→warn · nichtig/unzulässig→danger.
 // «verdikt» färbt den Hauptsatz (Design-Review 6.6.2026): ok bleibt neutrale
@@ -64,8 +66,9 @@ function useDruckErzwingtOffen(): boolean {
   return drucktGerade;
 }
 
-function ergebnisAlsText(titel: string, e: Berechnungsergebnis): string {
-  const z: string[] = [titel, '', e.ergebnis, '', 'Rechenweg:'];
+function ergebnisAlsText(titel: string, e: Berechnungsergebnis, fehler: readonly BekannterFehler[]): string {
+  // WARNHINWEIS: der Hinweis reist mit der Kopie (§8) — ohne Eintrag byte-gleich.
+  const z: string[] = [...bekannteFehlerTextblock(fehler), titel, '', e.ergebnis, '', 'Rechenweg:'];
   e.rechenweg.forEach((s, i) => z.push(`${i + 1}. ${s.beschreibung}: ${s.zwischenergebnis}`));
   if (e.normverweise.length) z.push('', 'Normverweise: ' + e.normverweise.map((n) => n.artikel).join(', '));
   if (e.warnungen.length) { z.push('', 'Hinweise / Vorbehalte:'); e.warnungen.forEach((w) => z.push('– ' + w)); }
@@ -84,7 +87,8 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
   const cfg = STATUS_CONFIG[ergebnis.status];
   // Der Kopier-Text hing zuvor am Klick; als Prop des KopierButton liefe er
   // sonst bei JEDER Live-Neuberechnung mit (§15) — darum memoisiert.
-  const kopierText = useMemo(() => ergebnisAlsText(titel, ergebnis), [titel, ergebnis]);
+  const fehler = useBekannteFehler();
+  const kopierText = useMemo(() => ergebnisAlsText(titel, ergebnis, fehler), [titel, ergebnis, fehler]);
 
   return (
     // Einblendung + aria-live trägt der umgebende ErgebnisBlock (R4) — eine

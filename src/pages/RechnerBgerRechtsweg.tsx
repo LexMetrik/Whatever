@@ -1,4 +1,5 @@
 import { BgerRechtswegForm } from '../components/forms/BgerRechtswegForm';
+import { BekannteFehlerRahmen } from '../components/BekannterFehler';
 import { Card } from '../components/ui/Card';
 import { ThemenEinstieg } from '../components/ThemenEinstieg';
 import { RechnerKopf } from '../components/layout/RechnerKopf';
@@ -9,6 +10,7 @@ import { getCalculator } from '../lib/calculators';
 export function RechnerBgerRechtsweg() {
   const calc = getCalculator('bgg-fristen')!;
   return (
+    <BekannteFehlerRahmen werkzeug="bgg-fristen">
     <div className="space-y-6">
       <RechnerKopf calc={calc} />
       <Card>
@@ -23,5 +25,6 @@ export function RechnerBgerRechtsweg() {
         ]}
       />
     </div>
+    </BekannteFehlerRahmen>
   );
 }
