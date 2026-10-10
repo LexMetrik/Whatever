@@ -24,7 +24,7 @@ function e(teil: Partial<BrowseEntscheid> & { key: string }): BrowseEntscheid {
     zitierung: 'BGer 5A_1/2025', leitcharakter: 'routine', regesteVorhanden: false,
     regesteKurz: null, sachgebiet: 'privat', sprache: 'de', normKeys: [],
     bestand: 'vollstaendig', kuratierung: 'maschinell', datei: null,
-    quelle: 'opencaselaw', quelleUrl: 'https://example.invalid', fassungsToken: 'x',
+    quelle: 'opencaselaw', quelleUrl: 'https://example.invalid',
     ...teil,
   } as BrowseEntscheid;
 }

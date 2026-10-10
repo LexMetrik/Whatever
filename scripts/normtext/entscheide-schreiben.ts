@@ -9,7 +9,8 @@ import { mkdirSync, writeFileSync, rmSync, existsSync, readFileSync } from 'node
 import { join, resolve } from 'node:path';
 import { kuerzeRegeste, normalisiereRegeste } from '../../src/lib/rechtsprechung/register';
 import type { EntscheidSnapshot, EntscheidSnapshotDatei } from '../../src/lib/rechtsprechung/typen';
-import type { BrowseEntscheid, EntscheidManifest, RichterRef, RichterRegister } from '../../src/lib/rechtsprechung/register';
+import type { BrowseEntscheidVoll, EntscheidManifest, RichterRef, RichterRegister } from '../../src/lib/rechtsprechung/register';
+import { teileRegister } from './register-teilen';
 import { parseBesetzung, kanonisiere, bereinigeBesetzungsFreitext, type KanonEintrag } from '../../src/lib/rechtsprechung/besetzung';
 import type { EntscheidRef, LeitfallRef, LeitfallShard } from '../../src/lib/rechtsprechung/norm-index';
 import { minteEcliFuerSnapshot } from '../../src/lib/rechtsprechung/ecli';
@@ -323,7 +324,7 @@ export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root
   if (existsSync(PUB)) rmSync(PUB, { recursive: true, force: true });
   mkdirSync(PUB, { recursive: true });
 
-  const manifest: BrowseEntscheid[] = [];
+  const manifest: BrowseEntscheidVoll[] = [];
   const proNorm: Record<string, EntscheidRef[]> = {};
 
   // ── Richter-Projektion, Durchgang 1: Besetzungs-Freitexte korpusweit parsen ──
@@ -478,8 +479,11 @@ export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root
   // also genau das, was diese Zeile vermeiden soll. Wer die Unabhängigkeit auch
   // hier will, entscheidet damit über einen Voll-Reorder — eigener Schritt (§14).
   manifest.sort((a, b) => (a.datum < b.datum ? 1 : a.datum > b.datum ? -1 : 0));
-  const manifestObj: EntscheidManifest = { erzeugt: datum, entscheide: manifest };
-  writeFileSync(join(PUB, 'register.json'), serialisiere(manifestObj), 'utf8');
+  // E0-REGISTER (10.10.2026): Kern (Browser) + Provenienz (nur Build/Prüftore) aus
+  // EINEM Vollregister — `teileRegister` ist die einzige Stelle, die trennt (§5).
+  const { kern, provenienz } = teileRegister({ erzeugt: datum, entscheide: manifest });
+  writeFileSync(join(PUB, 'register.json'), serialisiere(kern), 'utf8');
+  writeFileSync(join(PUB, 'register-provenienz.json'), serialisiere(provenienz), 'utf8');
   // ── Richter-Register (Slug → Anzeigename + Trefferzahl) ──
   // Eigene, schlanke Projektion: die Facette in Block B lädt sie lazy für Labels
   // und Zähler, damit das grosse register.json slug-schlank bleibt (§15).

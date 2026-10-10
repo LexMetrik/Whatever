@@ -47,6 +47,10 @@ export const NORMTEXT_STRUKTUR_DIR = 'public/normtext/struktur'; // rekursiv: bu
 export const NORMTEXT_REVISIONEN_DIR = 'public/normtext/revisionen';
 export const RECHTSPRECHUNG_MANIFESTE = [
   'public/rechtsprechung/register.json',
+  // register-provenienz.json (E0-REGISTER, 10.10.2026): `fassungsToken` je Register-
+  // Eintrag, aus register.json herausgelöst (Namensvorbild public/materialien/
+  // register-provenienz.json). Ohne diese Zeile meldete `ungedeckteTopLevelJson` rot.
+  'public/rechtsprechung/register-provenienz.json',
   'public/rechtsprechung/norm-index.json',
   // richter.json (Spruchkörper-Projektion, R-RICHTER) war als NEUE committete
   // Datei unter public/rechtsprechung/ nirgends registriert und lief damit an

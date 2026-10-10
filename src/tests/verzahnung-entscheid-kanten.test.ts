@@ -14,7 +14,7 @@ const eintrag = (over: Partial<BrowseEntscheid>): BrowseEntscheid => ({
   regesteKurz: null, sachgebiet: 'privat',
   sprache: 'de', normKeys: [], bestand: 'snapshot', kuratierung: 'maschinell',
   datei: 'bund/bger/x.json', quelle: 'opencaselaw', quelleUrl: 'https://example.org',
-  fassungsToken: 't', ...over,
+  ...over,
 });
 
 const ABSCHNITTE: EntscheidAbschnitt[] = [

@@ -39,7 +39,7 @@ const entscheid: BrowseEntscheid = {
   zitierung: 'BGer 1C_1/2025 vom 1. Januar 2025', leitcharakter: 'routine',
   regesteVorhanden: false, regesteKurz: null, sachgebiet: 'oeffentlich', sprache: 'de',
   normKeys: ['OR', 'ZGB'], bestand: 'snapshot', kuratierung: 'maschinell',
-  datei: 'bund/bger/x.json', quelle: 'opencaselaw', quelleUrl: 'https://x', fassungsToken: 't',
+  datei: 'bund/bger/x.json', quelle: 'opencaselaw', quelleUrl: 'https://x',
 };
 
 const material: BrowseMaterial = {

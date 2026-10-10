@@ -73,6 +73,9 @@ export const kb = (n: number): string => `${(n / 1024).toFixed(1)} KB`;
 //    QS-PERF «Rechtsprechungs-Register aufteilen» — die Anhebung ersetzt ihn nicht.
 export const DATEN_BUDGET: readonly (readonly [string, number])[] = [
   ['public/rechtsprechung/register.json', 900 * 1024],
+  // register-provenienz.json (E0-REGISTER, 10.10.2026: `fassungsToken` je Eintrag) steht
+  // bewusst NICHT hier: kein Browser-Pfad lädt sie (Leser nur Build und Prüftore) —
+  // ein Browser-Budget wäre ein Tor ohne Gegenstand (§6.7).
   ['public/rechtsprechung/richter.json', 24 * 1024],
   ['public/rechtsprechung/norm-index-erlasse.json', 120 * 1024],
   ['public/such-index/artikel.json', 5_850 * 1024], // K3, 1.9.2026: Ist 5 311 KB gzip (Bund-only)

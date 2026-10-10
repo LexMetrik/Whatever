@@ -75,7 +75,12 @@ export interface BrowseEntscheid {
   datei: string | null;
   quelle: Entscheidquelle;
   quelleUrl: string;
-  fassungsToken: string;
+  // `fassungsToken` steht NICHT mehr hier, sondern in der eigenen Provenienz-
+  // Projektion `register-provenienz.json` (`EntscheidProvenienz`): kein Browser-Pfad
+  // liest ihn (E0-REGISTER, Entscheid David 10.10.2026) — er machte ~14 % der
+  // register.json-gzip-Grösse aus. `quelleUrl` BLEIBT: EntscheidKarte.tsx rendert
+  // daraus den «↗ amtlich»-Link jeder Karte (Gegenprüfung #1361, FB S-26).
+  // Wer `fassungsToken` braucht (Prüftore, Wochenlauf), liest `BrowseEntscheidVoll`.
   /**
    * Spruchkörper (Richter-Facette). Nur gesetzt, wenn der amtliche Besetzungs-Block
    * strukturiert werden konnte — fehlt er, fehlt das Feld (nie leeres Array, nie
@@ -95,6 +100,32 @@ export interface BrowseEntscheid {
 export interface EntscheidManifest {
   erzeugt: string;
   entscheide: BrowseEntscheid[];
+}
+
+/** Provenienz-Feld je Entscheid (§7) — Inhalt von `register-provenienz.json`. */
+export interface EntscheidProvenienz {
+  fassungsToken: string;
+}
+
+/**
+ * `public/rechtsprechung/register-provenienz.json`: das Provenienz-Feld je
+ * Register-Eintrag, geschlüsselt nach `key` (Reihenfolge = Reihenfolge des Kerns).
+ * Wird NICHT im Browser geladen — Leser sind nur `check-entscheide.ts` und der
+ * Roundtrip-Test `register-teilen.test.ts`; Prerender braucht sie nicht.
+ * Namensvorbild: `public/materialien/register-provenienz.json`.
+ */
+export interface EntscheidProvenienzRegister {
+  erzeugt: string;
+  eintraege: Record<string, EntscheidProvenienz>;
+}
+
+/** Kern-Eintrag samt Provenienz (Erzeuger- und Build-Seite; nie im Browser). */
+export type BrowseEntscheidVoll = BrowseEntscheid & EntscheidProvenienz;
+
+/** Das vereinigte Register (Kern + Provenienz) — Form des Registers VOR der Aufteilung. */
+export interface EntscheidManifestVoll {
+  erzeugt: string;
+  entscheide: BrowseEntscheidVoll[];
 }
 
 /**

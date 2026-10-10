@@ -12,7 +12,7 @@ import { vergleicheLeitfaelle } from './entscheide-schreiben';
 import { bandjahrDiffPlausibel } from './bge-bandjahr';
 import { findeFremdeFundstelleImBody } from './entscheide-koerper-konflation';
 import type { EntscheidSnapshotDatei } from '../../src/lib/rechtsprechung/typen';
-import type { EntscheidManifest } from '../../src/lib/rechtsprechung/register';
+import type { EntscheidManifest, EntscheidProvenienzRegister } from '../../src/lib/rechtsprechung/register';
 import type { LeitfallRef, NormEntscheidIndex, LeitfallShard } from '../../src/lib/rechtsprechung/norm-index';
 
 const ROOT = process.cwd();
@@ -151,6 +151,27 @@ function main() {
   }
   const manifest = JSON.parse(readFileSync(join(PUB, 'register.json'), 'utf8')) as EntscheidManifest;
   const keys = new Set(manifest.entscheide.map((e) => e.key));
+
+  // Provenienz-Projektion (E0-REGISTER, 10.10.2026): `fassungsToken` steht nicht mehr im
+  // Kern-Register, sondern in register-provenienz.json — gleiche Pflicht (§7), anderer Ort.
+  // Jeder Kern-Key braucht genau einen Eintrag mit nicht-leerem Token; Waisen sind ein Fehler.
+  const provPfad = join(PUB, 'register-provenienz.json');
+  if (!existsSync(provPfad)) {
+    fehler.push('register-provenienz.json fehlt — fassungsToken (§7-Provenienz) ohne Träger');
+  } else {
+    const prov = JSON.parse(readFileSync(provPfad, 'utf8')) as EntscheidProvenienzRegister;
+    if (prov.erzeugt !== manifest.erzeugt) {
+      fehler.push(`register-provenienz.json: erzeugt ${prov.erzeugt} ≠ register.json ${manifest.erzeugt}`);
+    }
+    for (const e of manifest.entscheide) {
+      const p = Object.prototype.hasOwnProperty.call(prov.eintraege, e.key) ? prov.eintraege[e.key] : undefined;
+      if (!p) fehler.push(`${e.key}: kein Eintrag in register-provenienz.json`);
+      else if (!p.fassungsToken) fehler.push(`${e.key}: Provenienz-Feld 'fassungsToken' fehlt`);
+    }
+    for (const k of Object.keys(prov.eintraege)) {
+      if (!keys.has(k)) fehler.push(`${k}: Waise in register-provenienz.json (kein Eintrag in register.json)`);
+    }
+  }
   const azaKeys: Record<string, string[]> = {};   // aza-Key → BGE-Keys (Kollisions-Backstop)
 
   // Mindestzahl-Ast: siehe Begründung an MINDESTZAHL_ENTSCHEIDE oben.
@@ -173,7 +194,7 @@ function main() {
       continue;
     }
     // Provenienz (§7)
-    for (const f of ['datum', 'quelleUrl', 'quelle', 'fassungsToken'] as const) {
+    for (const f of ['datum', 'quelleUrl', 'quelle'] as const) {
       if (!e[f]) fehler.push(`${e.key}: Provenienz-Feld '${f}' fehlt`);
     }
     // §8-Invariante: 'leitentscheid' ⟺ amtlicher BGE (bgeReferenz). Eine maschinelle/
