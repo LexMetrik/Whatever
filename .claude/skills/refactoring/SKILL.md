@@ -1,142 +1,117 @@
 ---
 name: refactoring
-description: Protokoll für jeden Struktur-Umbau ohne Verhaltensänderung — Golden-Beweis, Reihenfolge der Tore, Datei-Schlankheit, Fassaden-Muster, sparsame Diagnose und die vollständige Tor-Definition. Verwenden bei Refactoring, Umbau, Aufteilen grosser Dateien, Entdopplung, Engine-Verschmelzung, Code-Splitting, Lazy Loading und beim Bau eines neuen `check:*`-Tors.
+description: Verwenden bei jedem Struktur-Umbau ohne Verhaltensänderung und bei Performance-Arbeit — Trigger «Refactoring», «Umbau», «grosse Datei aufteilen», «Entdopplung», «Engine-Verschmelzung», «Code-Splitting», «Lazy Loading», «Performance», «Lighthouse», «Bundle», «Ladezeit», «langsam», «neues check:*-Tor». Golden-Beweis, Reihenfolge der Tore, Datei-Schlankheit (§6), Geräte-Last mit Logikverlust-Bewertung (§15), Tor-Bedingungen.
 ---
 
-# Refactoring — verhaltensneutral und bewiesen
+# Refactoring und Performance — verhaltensneutral und bewiesen
 
-Ein Refactoring behauptet, nichts geändert zu haben. Diese Behauptung ist zu
-beweisen. Grundlage ist §1 der `CLAUDE.md`: Korrektheit schlägt jede
-Strukturverbesserung.
+Konkordanz: §6.1/6.2 → Ziff. 1 · §6.3 → 2 · §6.4 → 5 · §6.5 → 6 · §6.6 → 4 ·
+§6.7 → 7 · §15.1–15.6 → Bauregel 1–6 in Ziff. 5.
 
 ## 1. Ablauf
 
-1. **Vorher grün.** CI-Lauf grün (Lauf-ID; lokal je Iteration nur gezielte Tests, Regel David 5.10.2026). Die
-   Einzelbefehle `npx tsc -b` · `npm test` · `npm run lint` · `npm run build`
-   mit **voller Ausgabe** nur zur Diagnose eines roten Gates, nie `tail -1`.
-   Der Wrapper kürzt ausschliesslich die grüne Ausgabe.
+1. **Vorher grün:** CI-Lauf grün (Lauf-ID); lokal nur gezielte Tests, volle
+   Ausgabe, nie `tail -1`.
 2. **Golden festhalten**, wo Texte oder Dokumente entstehen (assemble,
-   PDF-Modell, Warnungen): Snapshot bzw. Vergleichslauf **vor** dem Umbau.
+   PDF-Modell, Warnungen) — vor dem Umbau.
 3. **Umbauen.**
-4. **Nachher beweisen.** `npm run golden:vergleich` byte-gleich, Gate grün.
-   Vor jedem Kontrolllauf, der Code austauscht (`git checkout <ref> -- <pfad>`,
-   `stash`, Branch-Wechsel): `git status --short` muss **leer** sein — sonst
-   überschreibt der Vergleich uncommittete Arbeit (Vorfall 5.8.2026: drei
-   Nachträge eines Bau-Agenten verloren und neu geschrieben).
+4. **Nachher beweisen:** `npm run golden:vergleich` byte-gleich, CI grün. Vor
+   jedem Kontrolllauf, der Code austauscht (Checkout, stash, Zweigwechsel),
+   muss `git status --short` leer sein — sonst überschreibt er uncommittete
+   Arbeit. Vorher/Nachher nie per `git checkout <sha> -- <datei>`, sondern
+   WIP-Commit oder `git show <sha>:<pfad> > <tmp>`.
 
-## 2. Die zwei nicht verhandelbaren Sätze
+## 2. Die zwei nicht verhandelbaren Sätze (§6.3)
 
-- **Tests werden bei Refactorings nicht angepasst.** Muss ein Test geändert
-  werden, ist es eine fachliche Änderung → eigener, deklarierter Schritt mit
-  Begründung. Ein angepasster Test ist kein Beweis, sondern dessen Aufgabe.
-- **Kein `npm run golden` zum Reparieren einer Abweichung.** Golden neu zu
-  schreiben, weil der Vergleich rot ist, zerstört das Orakel.
+- **Tests werden bei Refactorings nicht angepasst.** Muss einer geändert
+  werden, ist es eine fachliche Änderung: eigener, deklarierter Schritt.
+- **Kein `npm run golden`, um eine Abweichung zu reparieren** — das zerstört
+  das Orakel.
 
-Ergänzend zum ersten Satz: **Ein Test fällt nur mit dem Code, den er
-prüft.** Vor dem Mitlöschen jeder Testdatei ihre Importe lesen: zeigt einer auf ein Modul, das bleibt,
-bleibt der Test (Umstieg L1, 5.10.2026: `plan-fremdagenten.test.ts`
-mitgelöscht, obwohl `fremdagenten-messung.ts` weiterlebt — Gegenprüfung
-fand es; Lehre aufgenommen auf Wort David 5.10.2026).
+Ein Test fällt nur mit dem Code, den er prüft: vor dem Mitlöschen die Importe
+lesen; zeigt einer auf ein Modul, das bleibt, bleibt der Test.
 
-## 3. Was verschmolzen werden darf — und was nicht
+## 3. Verschmelzen
 
-Engine-Verschmelzung ist erlaubt unter zwei Bedingungen:
+Engine-Verschmelzung nur mit Golden byte-gleich UND Regime-Treue: verschiedene
+Rechtsregimes bleiben als interne Verzweigung erkennbar, nie zu einer Regel
+kollabiert. Risikoärmste zuerst (geteilte Infrastruktur); materielle
+Rechtsregeln nie teilen (§4). Aufteilen ist immer erlaubt.
 
-1. **Golden-Protokoll** nach Ziff. 1, Ergebnis byte-gleich.
-2. **Regime-Treue:** Verschiedene Rechtsregimes bleiben im verschmolzenen Code
-   als interne Verzweigung erkennbar. Sie werden nie zu einer gemeinsamen Regel
-   kollabiert.
+## 4. Datei-Schlankheit (§6.6)
 
-Risikoärmste Merges zuerst — geteilte Infrastruktur hinter den Regime-Engines.
-Materielle Rechtsregeln werden nie geteilt (§4).
+Darstellungs- oder Datenschicht-Datei (`src/pages/`, `src/components/`,
+Vorlagen-Schemas, Config, Datentabellen) über ~800 Zeilen ⇒ Split in
+Geschwister plus Fassade (`export * from './geschwister'`), Importpfade
+unverändert, Beweis Byte-Identität des Outputs. **Split einer Risiko-Datei:**
+neue Pfade gegen `istRisikoPfad()` (`scripts/gegenpruefung/kern.ts`) belegen —
+sonst verliert ausgelagerte Engine-Logik still die Risiko-Klassifikation;
+fehlender Ordner-Zweig gehört in denselben PR. Geteilte Infrastruktur statt
+Kopie (`lib/format.ts`, `datumsUtils.ts`); Abweichung nur fachlich begründet
+am Fundort.
 
-**Gegenrichtung:** Aufteilen ist immer erlaubt und erwünscht. Es ist das
-Gegenteil der eingeschränkten Verschmelzung.
+## 5. Performance und Geräte-Last (§6.4, §15)
 
-## 4. Datei-Schlankheit
+Nicht merklich langsamer — **solange kein Logikverlust entsteht**; bei
+Konflikt gewinnt die Treue. Lazy Loading und Splitting ändern nur das
+**Wann**, nie Inhalt oder Reihenfolge der Logik. Logikverlust = Verlust an
+Inhalts-Treue (Normtext, Tabellen, Fussnoten), Rechtsregel-Treue,
+Funktions-Treue (Ctrl+F übers ganze Gesetz, `#art_`-Anker, Deep-Links,
+Druck/PDF, Scroll-Spy, TOC, Split-View-Zustand), Golden-Gleichheit oder
+sichtbare Einbusse eines ausdrücklichen David-Wunsches (das Opfer «wartet auf
+David», Wirkung vorher messen). **Jede Perf-Massnahme trägt eine explizite
+Logikverlust-Bewertung, sonst kein Merge.**
 
-Eine Datei der **Darstellungs- oder Datenschicht** (`src/pages/`,
-`src/components/`, Vorlagen-Schemas, Config- und Datentabellen) über **~800
-Zeilen** wird in Geschwister-Dateien plus schlankes Barrel gesplittet,
-verhaltensneutral nach Ziff. 1.
+1. Keine DOM-entfernende Virtualisierung von Normtext — nur
+   `content-visibility: auto` + `contain-intrinsic-size`; jeder Artikel bleibt
+   im DOM.
+2. CLS = 0 durch reservierten Platz (token-basierte Mindesthöhe am
+   prerenderten Element), nie durch weniger Inhalt; Client-Initialstate auf
+   den Server-Zustand pinnen, Abweichung per `useEffect`.
+3. Schwere Features lazy und off-critical-path (`requestIdleCallback`,
+   Worker); der volle Parse bleibt.
+4. Memoisierung ist Pflicht (React Compiler aus): `React.memo` mit
+   Default-Komparator, vollständige Deps, `useMemo` via WeakMap auf die
+   Datenreferenz, nie globaler Token-Key. Falle
+   `react-hooks/preserve-manual-memoization`: `ref.current`-Helfer auf
+   Modulebene, in die Deps nur Primitive und die Ref.
+5. Render-then-replace bleibt, kein naives `hydrateRoot` (Mismatch = stiller
+   Normtext-Verlust); JSX-Textsegmente für SSR als EIN Template-Literal.
+   Splitting/Sharding nur bei byte-identischer Union.
+6. On-demand-Inhalt trägt dieselben Treue-Pflichten (Ctrl+F, Anker, Druck,
+   Provenienz §7, ehrlicher Fehlerzustand §8).
+7. Mess-Sonden nie neben e2e-Suite oder Build (Last-Scheinfehler).
 
-**Fassaden-Muster beim Split:** Inhalt in Geschwister-Dateien verschieben, das
-alte Modul wird zur schlanken Fassade (`export * from './geschwister'`),
-Konsumenten-Importpfade bleiben unverändert. Beweis ist **Byte-Identität des
-Outputs**, nicht nur ein grünes `tsc`.
+**Messung:** `check:perf-budget` = gzip-Bundle-Budgets (lokal lauffähig,
+Pflicht vor Merge); `check:perf-lighthouse` läuft nachts gegen main — lokales
+Grün belegt keine Lighthouse-Werte. Tempo zählt nur, wenn `golden:vergleich`,
+`check:normtext` und `check:struktur-konsistenz` grün bleiben. Hand-Messreihen:
+Scroll-Kadenz in die Tabelle; Paint-Aussagen mit Ruhe-Kontrolllauf;
+synthetisches Scrollen über das Seitenende erzeugt Leer-Frames;
+`page.screenshot` erzwingt einen Paint und maskiert Compositor-Befunde (CDP
+`Page.startScreencast` nehmen); IntersectionObserver feuert in der versteckten
+Pane nicht (Playwright nehmen); macOS-Geometrie ≠ Linux-Runner (Fallback-Fonts);
+Flake-Raten nur mit Messbedingung und Stichprobengrösse.
 
-**Split einer Risiko-Datei ⇒ `istRisikoPfad()` mitprüfen (§17, 4.8.2026):**
-`scripts/gegenpruefung/kern.ts` klassifiziert teils über exakte Pfade bzw.
-`^src/lib/[^/]+\.ts$` — wandert Engine-Logik in einen Unterordner, verliert
-sie SONST still die Risiko-Klassifikation (nur noch die leere Fassade träfe).
-Beim Split empirisch belegen: neue Modul-Pfade → `RISIKO`; fehlt der
-Ordner-Zweig in `kern.ts`, gehört er in denselben PR. Zweifach belegt am
-4.8.2026 (besetzung- und zustaendigkeit-Split, unabhängig gefunden).
+## 6. Diagnose sparsam (§6.5)
 
-**Geteilte Infrastruktur statt lokaler Kopie:** Zahl- und CHF-Parser,
-Datums-Formatter aus `lib/format.ts` (fachneutral), Datums-Rechnen und
--Validierung aus `datumsUtils.ts`. Ausnahme nur, wenn die Semantik fachlich
-bewusst abweicht — dann am Fundort begründen (§1).
+Rotes vitest: nur die rote Datei (`npx vitest run src/tests/<datei>`).
+Golden-Abweichung: `npm run golden:diff -- <id>`. `golden/*.json`, `dist/`,
+`package-lock.json` nicht lesen.
 
-## 5. Performance-Massnahmen
+## 7. Wann ein Tor ein Tor ist (§6.7)
 
-Lazy Loading und Code-Splitting ändern nur den **Ladezeitpunkt**, nie Inhalt
-oder Reihenfolge der Logik. Bauregeln und Logikverlust-Bewertung: Skill `perf`.
+Alle vier Bedingungen:
+- **(a) Unabhängige Referenz** — andere Datenbasis, nie die eigene Ladung
+  desselben Laufs.
+- **(b) Kein stilles Grün** — fehlende Voraussetzung ⇒ rot oder explizit `SKIP`.
+- **(c) Nicht-Laufen sichtbar** — `cancelled`/`skipped` zählen als rot
+  (`check:ci-laeufe` über jeden `schedule:`-Workflow).
+- **(d) Identitäts-Treffer mit Wortgrenze**, nie Substring.
 
-## 6. Diagnose sparsam
-
-- Rotes vitest: zuerst nur die rote Datei nachfahren
-  (`npx vitest run src/tests/<datei>`), nicht die Suite.
-- Golden-Abweichung je Fall: `npm run golden:diff -- <id>`.
-- Die Lese-Verbote (`golden/*.json`, `dist/`, `package-lock.json`) erzwingt
-  `lese-schutz.py` und nennt in der Fehlermeldung das richtige Werkzeug.
-
-**Vorher/Nachher-Messung nie per `git checkout <sha> -- <datei>` (2.9.2026, W2·22 Z5):**
-der Befehl überschreibt uncommittete Änderungen der Datei stillschweigend. Für
-Messungen gegen einen älteren Stand: eigenen Commit setzen (WIP) und danach
-`git diff`, oder `git stash push -- <datei>` … `git stash pop`, oder den alten
-Stand per `git show <sha>:<pfad> > /tmp/…` daneben legen.
-
-## 7. Wann ein Tor ein Tor ist
-
-Ein `check:*` zählt erst als Tor, wenn alle vier Bedingungen erfüllt sind:
-
-- **(a) Unabhängige Referenz.** Es prüft nie gegen die eigene Ladung desselben
-  Laufs.
-- **(b) Kein stilles Grün.** Bei fehlender Voraussetzung wird es rot oder
-  protokolliert explizit `SKIP`.
-- **(c) Sein Nicht-Laufen ist sichtbar.** `cancelled` und `skipped` zählen als
-  rot; ein grauer Lauf ist kein bestandener Lauf. Erzwungen durch
-  `check:ci-laeufe` (`waechter.yml`, täglich) über jeden `schedule:`-Workflow.
-- **(d) Identitäts-Treffer mit Wortgrenze**, nie Substring-Präsenz.
-
-**Sabotage-Probe:** Wer ein Tor baut, zeigt es einmal rot. Ein Tor, das nicht
-scheitern kann, ist gefährlicher als keines.
-
-**Kennzahl-Regel bei UND-Bedingungen** (Gegenprüfung PR #828 Runde D1, 12.9.2026):
-Bei Wächtern mit UND-verknüpften Bedingungen genügt «einmal rot, einmal grün»
-nicht — eine UND-Verknüpfung kann still 0 statt der erwarteten Trefferzahl
-messen, ohne dass der Test es bemerkt, wenn keine Teilbedingung je einzeln
-geprüft wird. Die Ist-Kennzahl JEDER Teilbedingung gehört einmal in den
-Testbeweis, nicht nur das 0/&gt;0-Gesamtergebnis. Beleg: der Vollabdeckungs-
-Wächter im `--nur`-Pfad (Kanton-Fremd-Drift, PR #828) prüfte die Bedingung
-`erlassNr === '' && erlassName === ''` — sie mass 0, obwohl die richtige
-Teil-Kennzahl `erlassNr === ''` bei 267 lag (Mehrheits-Heuristik statt
-1:1-Übernahme hatte `erlassName` unbemerkt mitbefüllt).
-
-**Einordnung beim Bau** (Klassierung, damit die lokale Kette nicht monoton
-wächst):
-
-- **K1** — schützt Rechtsinhalt oder Datentreue → `gate`-Kette (PR-Lauf).
-- **K2** — schützt Konsistenz oder Stil → nur CI.
-
-Ein neues Tor ohne Klasse wird nicht aufgenommen.
-
-## 8. §-Konkordanz (für Alt-Verweise im Bestand)
-
-Die Unterparagraphen von §6 sind seit dem A4-Umzug (25.7.2026) hier; rund 220
-Bestands-Verweise zeigen weiterhin auf die alten Nummern. Volle
-Auflösungs-Tabelle: **`referenz-konkordanz.md`** im Skill-Ordner — nur laden,
-wenn wirklich ein «§6.x» aufzulösen ist. Merkhilfe: §6.1/§6.2 → Ziff. 1,
-§6.3 → Ziff. 2, §6.4 → Ziff. 5, §6.5 → Ziff. 6, §6.6 → Ziff. 4,
-§6.7 → Ziff. 7.
+Wer ein Tor baut, zeigt es einmal rot UND einmal grün; bei UND-Bedingungen die
+Ist-Kennzahl jeder Teilbedingung. Neue Sperre vorher gegen den unveränderten
+Bestand und die echte CI-Umgebung laufen lassen. Klasse: **K1** (Rechtsinhalt,
+Datentreue) → `gate`; **K2** (Konsistenz, Stil) → nur CI.
+**Nachwachs-Sperre:** ein neues Tor nur mit Streichung eines bestehenden,
+ausser es fängt einen datierten Fehler in Rechtsdaten oder Rechtslogik.

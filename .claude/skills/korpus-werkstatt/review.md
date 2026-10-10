@@ -8,7 +8,7 @@ Wenn das kommt, fahre diesen Audit.
 **Abgrenzung (zwingend lesen):** Dies ist **NICHT** der §14.4-Pflicht-Pass. Die adversariale
 Gegenprüfung nach jeder Extraktions-Produktion auf einem Risiko-Pfad läuft **verpflichtend**
 zum Produktionsabschluss und wird vom Tor `check:gegenpruefung` erzwungen (§14.4 — seit
-25.7.2026 im Skill `auftrag`, Ziff. 4; siehe `SKILL.md`). `review.md` dagegen
+im Skill `bauschritt`, Definition of Done; siehe `SKILL.md`). `review.md` dagegen
 ist der **zusätzliche, on-demand** Audit, den David eigens anstösst. Er ersetzt den
 Pflicht-Pass nicht und wird **nicht** bei jeder Antwort automatisch gefahren.
 

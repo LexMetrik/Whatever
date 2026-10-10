@@ -1,9 +1,9 @@
 # BETRIEB.md — Runbook LexMetrik
 
-**Zweck (STRATEGIE-PLATTFORM.md F1.3, Bus-Faktor 1):** Alles, was eine
+**Zweck (Bus-Faktor 1):** Alles, was eine
 übernehmende Person zum Weiterbetrieb braucht und was NICHT aus dem Code
-hervorgeht. Fachliche Arbeitsweise: `CLAUDE.md` · Stand: `STRUKTUR.md` ·
-Vorgehen: `ROADMAP.md` (früher HANDLUNGSPLAN.md) + `STRATEGIE-PLATTFORM.md`.
+hervorgeht. Fachliche Arbeitsweise: `CLAUDE.md` · Architektur: `STRUKTUR.md` ·
+Vorgehen: `ROADMAP.md`.
 
 ## Konten & Infrastruktur
 

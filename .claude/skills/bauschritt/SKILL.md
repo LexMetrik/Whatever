@@ -1,203 +1,169 @@
 ---
 name: bauschritt
-description: Verwenden für einen Bau-Auftrag von David oder ein Vorhaben aus ROADMAP.md (JETZT) — Trigger «Baue …», «bau das», «nimm das nächste Vorhaben». Kodifiziert Einstieg → Bau → Prüfung → Landung → Weiterbau → Abschluss sowie, via aufraeumen.md, das Steuer-Doku-Aufräumen («räum die Roadmap auf», «Ceiling gerissen», «struktur-rotieren.py --check rot», «ROADMAP zu gross», «Steuer-Doku verschlanken», «aufraeumen:git»).
+description: Verwenden für einen Bau-Auftrag oder ein Vorhaben aus ROADMAP.md (JETZT) — Trigger «Baue …», «bau das», «nimm das nächste Vorhaben», «Auftrag aufnehmen», «neuer Auftrag», «neuer Wunsch», «Fahrplan anlegen», «Dispatch», «Sub-Agent beauftragen», «räum die Roadmap auf». Lebenszyklus Einstieg → Bau → Prüfung → Landung → Weiterbau → Abschluss; dazu Aufnahme und Einordnung (§14.1–14.3), Definition of Done (§14.4), Trailer (§14.5), Delegation und Kontext-Hygiene (§14.6), Rahmen vor Feature (§10).
 ---
 
-# Bauschritt — Standard-Lebenszyklus einer Bau-Session
+# Bauschritt — Aufnahme und Lebenszyklus einer Bau-Session
 
-**Anlass-Kopf — Ritual-Diät 29.8.2026 (Auftrag David: «Kontrolle abbauen, wo
-sie nichts trägt»).** Der frühere «leichte Pfad» ist ab hier der NORMALFALL:
-Station A hat 4 Punkte (Nachtrag 15.9.2026: Session-Notizen-Datei), Station E 3
-(Abschluss-Diät 20.9.2026). Was gestrichen wurde und warum, steht
-unten unter «Gestrichene Pflichten» — **Station C (Prüfung) ist unverändert**,
-und §9/§12/§14.7/§18 bleiben Wort für Wort in Kraft.
+Eine Bau-Einheit = ein Vorhaben: angefangen, geprüft, gelandet, aus JETZT
+gestrichen. Davids einziger Input ist der Bau-Prompt.
 
-**Dünne Klammer, keine Kopien:** entscheidet nur *was wann* dran ist, nicht
-*wie* (§5). **Eine Bau-Einheit = ein Vorhaben:** angefangen, geprüft, gelandet,
-aus JETZT gestrichen; Neues unterwegs → EINGANG (Station B), nicht in die
-Session. Nach Landung baut eine tragfähige Session automatisch weiter
-(Station W). Davids einziger Input ist der Bau-Prompt — alles Übrige läuft
-ohne Rückfrage nach diesem Zyklus.
+## Aufnahme (§14.1–§14.3)
 
-## Station A — Einstieg (4 Punkte)
+- **Eingang ist `ROADMAP.md`** (ZIEL · JETZT · EINGANG; Form, Grenzen und
+  Reihenfolge-Regel im ROADMAP-Kopf). Neuer Fehler → Zeile in
+  `plan/FEHLERBESTAND.md` Teil A oder EINGANG; Frist, offenes Go, Idee →
+  EINGANG; sessionfähiges Vorhaben → JETZT. Spec-Prosa in Detailplan bzw.
+  Fahrplan, nie als zweiter Einstieg.
+- Vorhaben nennen Ziel und Grenzen, nicht den Weg. Kürzel mit sprechendem
+  Namensteil plus Klartext-Titel; bestehende Kürzel nie umbenennen
+  (Verweis-Anker).
+- Bau-Go von David ⇒ im selben Zug EINGANG- oder JETZT-Zeile mit Go-Marke;
+  sie verfällt nie, nach 14 Tagen ohne Bau nennt der Abschlussbericht sie
+  einmal.
+- **Bündeln** bei gleicher Fläche (Dateien, Subsystem, Prüf-Fläche). **Nie
+  Risiko-Klassen mischen** (Rechtsinhalt ≠ reines UI); nie zwei Vollausbauten
+  über alle Kantone parallel. Klein trägt nie allein, mittel ist ein
+  Session-Teil, gross nur bei echtem Serialisierungs- oder Risikozwang
+  schneiden. Überschneidung ⇒ zusammenführen statt daneben.
+- **Rahmen vor Feature (§10):** neue Vorlagen und Rechner nutzen Engine-Muster,
+  Wizard-Rahmen, `ui.tsx`, Renderer; fehlt der Rahmen, wird erst er gebaut
+  (Skill `refactoring`).
 
-1. **Startabfrage** (Regel 6 unten): `git fetch --prune`;
-   `gh pr list --state open`; `git worktree list`;
-   `gh issue list --state open --author "github-actions[bot]"` (Bot-Alarme —
-   einziger Leser seit 5.10.2026). Dann `ROADMAP.md` lesen (ZIEL · JETZT ·
-   EINGANG). Fremder Zweig, Worktree oder PR auf derselben Fläche =
-   Kollision → melden, nie parallel in dieselbe Fläche bauen.
-2. **Was gebaut wird:** was David im Chat aufträgt, sonst das oberste freie
-   JETZT-Vorhaben. Belegt (Zweig, Worktree oder PR, dessen Name mit dem Kürzel beginnt —
-   Worktrees/PRs aus Ziff. 1, gepushte Zweige ohne PR per
-   `git branch -r | grep -iE '^ *origin/<Kürzel>(/|-|$)'`) ⇒
-   **STOPP, melden**.
-3. **Sichtbar werden** (F6, Regel 7 unten): Zweig anlegen und **pushen,
-   bevor der Detailplan entsteht** — nie main (main nimmt seit 19.9.2026 nur
-   die Merge-Queue, kein Bypass; Hook `tor-schutz.py` blockt, Skill
-   `landung` Ziff. 7). Parallel-Session ⇒ eigener Worktree (§12). Detailplan
-   danach aus Fahrplan-Slice (`npm run fahrplan -- <fahrplan-datei> <§>`)
-   und Merkzetteln des Themas, geprüft gegen den Ist-Stand.
-4. **Notizen-Datei anlegen** (§17, Weisung David 15.9.2026): aus der Vorlage
-   `docs/token-oekonomie/session-notizen-vorlage.md` unter
-   `<Haupt-Checkout>/.claude/notizen/<YYYY-MM-DD>-<session-slug>.md`
-   (gitignored; aus einem Worktree per Bash, `cat > … <<'EOF'` — das
-   Write-Werkzeug sperrt `<Haupt-Checkout>/.claude/`). Liegt dort eine
-   Vorgänger-Datei mit offenen Punkten, wird sie ÜBERNOMMEN (weiterführen),
-   nicht ignoriert.
-   **Falle (Beleg 20.9.2026):** `tor-schutz.py` blockt das Bash-Kommando
-   schon, wenn die Hauptzweig-Push-Zeichenfolge nur als ZITAT im
-   Heredoc-Text der Notiz steht (keine Ausführung) — solche Zitate beim
-   Formulieren umschreiben; ohne Worktree (Haupt-Session) geht `Write`/`Edit`
-   mit dem absoluten Haupt-Checkout-Pfad direkt, statt des Heredoc-Umwegs.
+## A — Einstieg
 
-### Plan-Regeln (Umstieg 5.10.2026, Freigabe David)
+1. **Startabfrage:** `git fetch --prune` · `gh pr list --state open` ·
+   `git worktree list` · `gh issue list --state open --author
+   "github-actions[bot]"` (Bot-Alarme); dann `ROADMAP.md`.
+2. **Was gebaut wird:** Davids Chat-Auftrag, sonst das oberste freie
+   JETZT-Vorhaben. Belegt (Zweig, Worktree oder PR beginnt mit dem Kürzel;
+   Remote ohne PR: `git branch -r | grep -iE '^ *origin/<Kürzel>(/|-|$)'`)
+   ⇒ STOPP, melden.
+3. **Sichtbar werden:** Zweig `<Kürzel>/<slug>` anlegen und pushen, BEVOR der
+   Detailplan entsteht (nur so sieht eine zweite Session die Belegung); main
+   nimmt nur die Merge-Queue. Parallel-Session ⇒ eigener Worktree (§12).
+   Detailplan aus dem Slice `npm run fahrplan -- <datei> <§>`, geprüft gegen
+   den Ist-Stand.
+4. **Notizen-Datei** `<Haupt-Checkout>/.claude/notizen/<YYYY-MM-DD>-<slug>.md`
+   (gitignored; aus einem Worktree per Bash-Heredoc, weil Write dort sperrt;
+   `tor-schutz.py` blockt auch eine bloss zitierte Hauptzweig-Push-Zeichenfolge). Vorgänger-Datei mit offenen Punkten weiterführen. Gerüst:
 
-4. Gibt David ein Bau-Go, schreibt die Session den Gedächtnis-Eintrag und im
-   selben Zug eine EINGANG- oder JETZT-Zeile mit der Marke «Go David
-   TT.MM.»; sie verfällt nie; nach 14 Tagen ohne Bau nennt der
-   Abschlussbericht sie einmal mit Grund.
-5. Jede Änderung an JETZT steht als eine Zeile im Abschlussbericht (Davids
-   Veto).
-6. Die Startabfrage (Station A Ziff. 1) ersetzt den Lage-Block von
-   `plan:next`.
-7. Der Zweigname beginnt mit dem Vorhaben-Kürzel; der Zweig wird
-   hochgeladen, BEVOR der Detailplan geschrieben wird (so sieht eine zweite
-   Session die Belegung).
+   ```
+   Session: <Datum> <slug> · Vorhaben: <Kürzel oder Chat-Auftrag>
+   ## Korrekturen David (Wortlaut)
+   ## Nebenfunde (→ FEHLERBESTAND oder EINGANG)
+   ## Lehren-Kandidaten (Skill lehren)
+   ## Wartet auf David
+   ```
 
-## Station B — Bau
+## B — Bau
 
-- Nach **Bau-Prompt + Fahrplan-Spec**, nicht nach Erinnerung.
-- **Lebendige Spec (David 15.8.2026):** Weicht die Spec vom Ist-Code ab, wird
-  sie **sofort in der Fahrplan-Datei korrigiert** (datiert, Anlass-Halbsatz)
-  und weitergebaut — nie gegen die veraltete Spec bauen, nie die Abweichung
-  nur im Chat vermerken. Spec-Korrektur bleibt erlaubt; «eingefroren»
-  betrifft nur Fortschritts-Häkchen und Bau-Stand.
-- **Delegation:** Klassen/Stufen/Dispatch-Vorlage → Skill `auftrag` Ziff. 6;
-  diese Session orchestriert und landet.
-- **WIP-Commit nach jedem Teilschritt** (F5) — nie über längere Arbeit
-  uncommittet bleiben.
-- **Auftrags-Wachstum ⇒ neuer Agent.** Zusatzpunkte (Prüfer-Befunde,
-  David-Anmerkungen) bekommen einen frischen Agent mit frischem Kontext als
-  eigenen Nachzug — nie in den laufenden Bau nachschieben (16.8.2026:
-  H2-Agent lieferte nach ~470k Token sichtbar weniger als beauftragt).
-- **Im «run till dry» nie mit leerer Antwort enden.** Nach jeder Agenten-Rückmeldung
-  folgt der nächste Zug oder ein ausdrücklicher Zwischenstand — eine leere Antwort
-  archiviert die Session, und der Bau steht bis zum nächsten Menschen still (Nacht
-  5./6.9.2026).
-- **Nebenfunde** nie in diese Session oder als Chip: neuer echter Fehler ⇒
-  eine EINGANG-Zeile in `ROADMAP.md`, sonst verwerfen; weiterbauen.
-- **Jeder Agentenbericht: Punkt «Nebenfunde/Abweichungen» und jede
-  aufkommende Lehre SOFORT in die Notizen-Datei**, vor dem nächsten Dispatch —
-  der Chat ist kein Speicher (Kompaktierung bei 700k; Weisung David
-  15.9.2026). Auch Arbeitslisten langer Läufe (Inventar, Befundliste): nie nur
-  im Scratchpad — der App-Neustart leerte ihn (2.10.2026: 464 Funktionen,
-  ~45 Befunddateien weg).
+- Weicht die Spec vom Ist-Code ab: sofort in der Fahrplan-Datei korrigieren,
+  dann weiterbauen.
+- WIP-Commit nach jedem Teilschritt.
+- Zusatzpunkte (Prüfer-Befunde, Davids Anmerkungen) bekommen einen frischen
+  Agenten als Nachzug, nie den laufenden Bau.
+- Nie mit leerer Antwort enden — sie archiviert die Session.
+- Nebenfunde nie in diese Session und nie als Chip: echter Fehler ⇒ eine
+  Zeile (FEHLERBESTAND/EINGANG), sonst verwerfen.
+- Nebenfunde, Abweichungen und Lehren aus jedem Agentenbericht sofort in die
+  Notizen-Datei, vor dem nächsten Dispatch; Arbeitslisten langer Läufe nie nur
+  im Scratchpad.
 
-## Station C — Prüfung (unverändert)
+## Delegation und Kontext-Hygiene (§14.6)
 
-- Genannte **Tore nackt fahren** (kein `--silent`, keine Filter, volle
-  Ausgabe lesen); Abschluss = CI-Lauf grün am Kopf-SHA (Lauf-ID), kein lokales gate.
-- **Rot-Beweise (§6.7) nur mit sauberem Index:** erst eigene neue Dateien
-  committen, DANN Wegwerf-Probe-Commit anlegen/verwerfen — `git reset
-  --hard` danach verschluckt sonst untracked Neu-Dateien und uncommittete
-  Nachbar-Änderungen (Beleg: 8.8.2026, QS-AUDIT-VERWEISE).
-- **Risiko-Pfad** (`istRisikoPfad`, `scripts/gegenpruefung/kern.ts`) im
-  Diff ⇒ Skill **`gegenpruefung`** Pflicht, Merge gesperrt bis Verdikt.
-- Verhaltensändernd ⇒ golden byte-gleich (§6, Skill `refactoring`).
+- **Weg:** Agent-Typen `lex-<klasse>` (bau · daten · pruefung · recherche ·
+  mechanisch · synthese). Der Auftrag trägt Rolle, Whitelist, TABU,
+  Rückgabe-Schema und CLAUDE.md §14.7 wörtlich; lange Specs als Datei-Zeiger.
+  Webseiten-Sichtung: `.claude/rules/webseiten-pruefung.md` mitgeben.
+- **Last:** höchstens 3–4 Agenten gleichzeitig; erst ein Recherche-Agent,
+  nachfassen statt doppeln, vorher `bibliothek/` greppen.
+- **Selbst macht der Orchestrator:** Plan- und Doku-Buchhaltung,
+  Landungsmechanik, kleine verifizierte Fixes, Notizen-Datei.
+  **Delegationspflichtig:** Gegenprüfung, Risiko-Pfad-Bau, Parallelisierbares,
+  Kontextschweres.
+- **Modell:** anspruchsvoller Bau stark, eng umrissener nicht-riskanter Bau
+  mittel, Mechanik klein, Synthese mindestens mittel; Gegenprüfung stets auf
+  einem anderen Modell als der Bau (bei Obergrenze Opus: Risikopfad-Bau Sonnet,
+  Prüfung Opus, im Bericht offenlegen).
+- **Fortsetzen statt neu spawnen** bei Folge-Slices derselben Fläche — nie für
+  die Gegenprüfung, nie über Klassengrenzen, nicht ab ~300k Token Last.
+- **Agenten-Behauptungen:** «Vorbestand/Flake per Nullprobe» gilt nur mit
+  Kommando und Ausgabe; «es gibt kein X» nur nach repo-weiter Suche;
+  verhaltensneutral an mehreren Stellen ⇒ je Stelle Zusicherung und Rot-Probe.
+- **Fallen:** Bau-Agenten isoliert (`isolation: "worktree"`, eigenes
+  `npm ci --prefer-offline`, nie `node_modules`-Symlink); Worktrees als eigener
+  Schritt mit absolutem Pfad anlegen. Einen abgebrochenen Isolations-Agenten neu
+  dispatchen, nicht fortsetzen; vor einem Nachzug auf denselben Zweig den alten
+  Worktree entfernen. Kein Fixer in einen Worktree mit laufender Prüfung, keine
+  Orchestrator-Commits, wo ein Agent baut (geteilter Index). Scratchpad-Namen agentenspezifisch. Hintergrund-Bash stirbt nach
+  10 min. CI-Wächter aus EINER Abfrage je voller SHA. Kein `[skip ci]` in
+  irgendeinem PR-Commit (der Squash trägt alle Betreffe nach main).
+  Normtext-Bewegung ⇒ `npm run projektionen:normtext -- --datum=…`, Materialien
+  ⇒ `npm run materialien:kaskade -- --datum=…`, nie Einzelbefehle. Vor dem
+  ersten Push eines Daten- oder Bot-PR die Schritte von «Tore · Checks» einzeln
+  fahren (der Job bricht beim ersten Rot ab).
 
-## Station D — Landung
+## C — Prüfung
 
-Skill **`landung`** Schritt für Schritt (§12 + §9: Tore vor Merge, Bug-Check,
-Einreihen in die Merge-Queue, CI-Grün, Nachkontrolle). **JETZT nachführen
-gehört IN den PR**, der das Vorhaben abschliesst: der letzte PR streicht es
-aus JETZT, legt erledigte Merkzettel nach `archiv/posten/` und rückt nach
-(Reihenfolge-Regel im ROADMAP-Kopf; `landung` Ziff. 9) — nicht hinter die
-Landung.
+- Tore nackt, volle Ausgabe; lange Ausgaben `npm run <tor> > <log> 2>&1; echo $?`
+  und bei Exit ≠ 0 gezielt lesen. Abschluss = CI-Lauf grün am Kopf-SHA
+  (Lauf-ID), kein lokales gate.
+- Rot-Beweise (§6.7) nur mit sauberem Index: erst eigene Dateien committen,
+  dann Probe-Commit — sonst verschluckt `git reset --hard` Untracked.
+- Risiko-Pfad (`istRisikoPfad`) im Diff ⇒ Skill `gegenpruefung`, Merge
+  gesperrt bis Verdikt.
 
-**Kein Stillstand ohne David (Auftrag 16.8.2026, nach 7 h stummem Warten):**
-Wer eine Landekette per Wächter begleitet, setzt einen **Stillstands-Anker** —
-Hintergrund-Bash mit `until … done` (alle 5 min `git fetch`; 60 min
-[Check-Timeout der Queue; Durchlauf belegt ~30 min] kein neuer main-Merge
-UND noch Einträge in der Queue ⇒ «STILLSTAND»), worauf die Session SELBST
-eingreift (Konflikt lösen; nach Rauswurf ERST den `merge_group`-Lauf lesen,
-dann neu einreihen — `landung` §Merge-Queue).
-Keine Monitor-Streams — die liefen am 16.8.2026 mehrfach still aus. Massgeblich
-ist der Merge-Zeitstempel auf origin/main.
+## Definition of Done (§14.4)
 
-## Station W — Weiterbau (David 8.8.2026)
+1. CI grün am Kopf-SHA. 2. Risiko-Pfade: Gegenprüfung gelaufen,
+`npm run gegenpruefung:ok`. 3. Struktur-Umbau: golden byte-gleich (Skill
+`refactoring`). 4. Status-Marker (§8). 5. Regeländerung: alle Stellen
+greppen, die sie zitieren (Reglemente, `.claude/rules/*`, Skills). 6. JETZT
+und EINGANG im abschliessenden PR nachgeführt.
 
-Gelandet + Session tragfähig ⇒ **nicht abschliessen**, weiterbauen:
-(a) nächster offener Merkzettel desselben Vorhabens; (b) oberstes freies
-JETZT-Vorhaben **gleicher Risikoklasse** (Startabfrage als
-Kollisionsprüfung); (c) nichts Sinnvolles mehr ⇒ Station E.
+## Trailer (§14.5)
 
-Je Weiterbau voller Zyklus im Kleinen (Zweig zuerst hochladen, volle
-Sorgfalt, eigener Commit mit eigenem Roadmap-Trailer).
-**NIE sortenrein-widrig auf Risikopfade wechseln**; Schluss
-**spätestens bevor der Kontext zur Neige geht** — lieber sauber landen.
+- `Roadmap: <Kürzel>` · Risiko-Pfad `Gegenpruefung: <Verdikt> (<Modell>,
+  <Linsen>) — <Befunde ≥ 15 Zeichen>` bzw. `Gegenpruefung: n/a — reine
+  Prüflogik` · geänderte Assertion in Risiko-Engine-Tests oder Golden-Diff:
+  `Fachaenderung: <Norm> — <Begründung ≥ 15 Zeichen>`.
+- Block-Form: eine Leerzeile davor, keine darin, jede Zeile einzeilig (git
+  liest nur den letzten Absatz). Prüfen: `git log -1
+  --format='%(trailers:key=Roadmap,valueonly)'` und `npm run check:merge-schutz`.
+  PR-Body: Prosa → «🤖 Generated with …» → Leerzeile → Trailer-Block (Skill
+  `landung`).
 
-## Station E — Abschluss (3 Punkte)
+## D — Landung · W — Weiterbau
 
-- [ ] **Notizen-Datei überführen:** «Nebenfunde»/«Wartet auf David» von Hand
-      als EINGANG-Zeilen in `ROADMAP.md`; der Rest an seinen Repo-Ort
-      (Skill, Tor) oder verwerfen. Einzeilig dabei der **§17-Lehren-Check**: Lehre aufgekommen
-      ⇒ verankert nach Formregel Skill `lehren` (Tor > Dispatch-§0 > Skill >
-      Prosa) — nur im Chat gilt als nicht gezogen. Danach Datei löschen;
-      Übergabe: Datei bleibt, Pfad im Chip. Einen PR/Zweig nennt die Übergabe
-      nur mit Beleg «fertig» (CI-Lauf grün + Kopf-SHA), sonst «in Arbeit» —
-      Beleg D2/#1072 (24.9.2026): «fertig, nicht eingereicht», war gate-rot
-      mit 5 Tests, Lint und Schlankheit (§14.7).
-- [ ] **JETZT nachgeführt** im abschliessenden PR (Station D); jede
-      Änderung an JETZT als Zeile im Abschlussbericht (Regel 5), Go-Marken
-      nach Regel 4. Ein **separater Doku-PR nur dann**,
-      wenn danach wirklich noch Rest-Doku offen ist (Skill `landung` Ziff. 7)
-      — nicht als Ritual.
-- [ ] **Bau-Flächen abräumen:** `npm run aufraeumen:git` (räumt nur LOKAL;
-      Remote-Zweige ungelandeter Arbeit von Hand) + Scratch-Dateien,
-      `git checkout main && git pull`; den EIGENEN Worktree zuletzt
-      (`landung` §Session-Ende). Dazu der
-      **Klartext-Schlusssatz an David**: was live ist, «nichts wartet auf dich»
-      oder genau *was* und warum. Der Bericht **beginnt mit der Fortschrittszeile**
-      aus `ROADMAP.md` ZIEL, samt Änderung dieser Session (Ebenen-Modell, David 7.10.2026).
+Skill `landung`. Der PR, der das Vorhaben abschliesst, streicht es aus JETZT
+und rückt nach. Begleitet die Session eine Landekette: Stillstands-Anker als
+Hintergrund-`until`-Schleife (alle 5 min `git fetch`; 60 min kein main-Merge
+bei Queue-Einträgen ⇒ «STILLSTAND»), dann selbst eingreifen; keine
+Monitor-Streams.
 
-Nur wenn Jules oder Gemini an der Session beteiligt war: Messwerte + `npm run
-fremdagenten:messung -- --kontingent` nach Skill `auftrag` Ziff. 4 Punkt 7.
+Gelandet und Kontext tragfähig ⇒ weiterbauen: nächster Teil desselben
+Vorhabens, sonst oberstes freies JETZT-Vorhaben **gleicher Risikoklasse**
+(Startabfrage als Kollisionsprüfung), sonst E. Je Weiterbau voller Zyklus;
+Schluss, bevor der Kontext knapp wird.
 
-### Gestrichene Pflichten (29.8.2026, ergänzt 20.9.2026) — je mit Anlass
+## E — Abschluss
 
-- **Volle Session-Karte als Default** — nur noch bei Risikopfad/Lehre;
-  15.8.2026 gemessen: 51 % aller Commits waren reine Doku-/Plan-Pflege.
-- **`npm run plan:bild`** — Lagebild abgebaut 5.10.2026 (Umstieg).
-- **`struktur-rotieren.py --check`** — läuft als SessionStart-Hook, dort nur
-  prüfend (`LEXMETRIK_NO_ROTATE=1` in `.claude/settings.json` schaltet die
-  Rotation ab; sie läuft von Hand, wenn der Wächter meldet), UND als CI-Tor
-  `check:steuerdeckel`; eine dritte Handprüfung fängt nichts — ausser
-  nach einem Edit an `.claude/hooks/*.py` oder `scripts/check-*.ts`: dort
-  einmal von Hand vor dem Push (Flächen-Deckel; Beleg #895, 15.9.2026: ein
-  CI-Lauf verloren).
-- **Karten-ZEILE / Session-Karte in `STRUKTUR.md`** (20.9.2026) — kein
-  Werkzeug liest den Karten-INHALT: `struktur-aktuell.py` (abgebaut
-  5.10.2026) mass nur den git-Abstand, `struktur-rotieren.py` nur Grösse und Alter; gemessen ~1 500
-  geänderte Zeilen in 14 Tagen reine Ablage. Ersatz ist der PR-Body.
-  STRUKTUR.md bleibt als Struktur-Nachschlagewerk.
-- **Fremdagenten-Messwerte und Kontingent-Lauf als Pflichtpunkte** (20.9.2026)
-  — jetzt bedingt (Station E, letzter Absatz): Jules-Suggestions sind seit
-  14.9.2026 aus.
-- **Memory-Durchsicht** — nur wenn die Session das Memory berührt hat.
-- **Grössen-Check (`groesse:`)** — Feld existiert nicht mehr.
+- Notizen-Datei überführen: Nebenfunde und «Wartet auf David» →
+  FEHLERBESTAND/EINGANG, Lehren → Skill `lehren`, Rest verwerfen; Datei
+  löschen. Bei Übergabe bleibt sie, Pfad in den Chip.
+- «Fertig» nur mit CI grün und Kopf-SHA, sonst «in Arbeit».
+- Jede Änderung an JETZT als Zeile im Abschlussbericht (Davids Veto); ein
+  separater Doku-PR nur bei echtem Rest.
+- Bau-Flächen abräumen (Skill `landung` Session-Ende), eigener Worktree zuletzt.
+- Bericht beginnt mit der Fortschrittszeile aus ROADMAP ZIEL samt Änderung;
+  Schlusssatz: was live ist, was auf David wartet und warum.
 
----
+## Plan-Pflege und Rückbau
 
-## Token-Regeln (in jeder Station)
-
-- **Slices statt Dateien:** `fahrplan -- <datei> <§>`; STRUKTUR nie am
-  Stück gelesen.
-- **Nichts doppelt lesen:** Unteragenten-Bericht ist das Ergebnis.
-- **Mechanik nach unten delegieren** (Verschieben/Formatieren/Umbenennen/
-  Sweeps auf günstigere Stufe, Skill `auftrag` Klassen-Palette).
-- **Lange Tor-Ausgaben in eine Logdatei, Exit-Code lesen** (Orchestrator):
-  `npm run <tor> > <scratchpad>/x.log 2>&1; echo $?` ist keine Pipe (der Hook
-  lässt es zu) und hält 200+ Zeilen aus dem Kontext — `check:fedlex-versionen`
-  druckt 232 Zeilen (Beleg 18.9.2026). Bei Exit ≠ 0 die Logdatei gezielt lesen.
-- **Antworten kurz:** kein Nacherzählen von Tool-Ausgaben.
+Vor jeder Streichung: «Steuert der Eintrag noch etwas?» — Streichung mit
+Begründungszeile im Commit. Code fällt nur mit Beweis vorher: keine
+eingehenden Verweise (nur `git ls-files`-Bestand; Backlink-Suche ohne
+Verzeichnis-Ausschluss; `*.test.ts` ist nie verwaist), Tore und Golden grün
+danach, bei Rechtslogik kein ungetesteter Rechtsfall daran. Wer einen
+gefangenen Defekt fixt, nennt den Fänger («gefangen von `<spec/tor>`»).

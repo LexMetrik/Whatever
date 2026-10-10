@@ -1,4 +1,4 @@
-# Anlass/Belege: archiv/ci-yml-kommentare.md#ci-001
+# Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-001
 name: CI
 
 on:
@@ -6,7 +6,7 @@ on:
     branches: [main]
   # BEWUSST OHNE paths/paths-ignore — siehe K3/K12 im Kopf.
   pull_request:
-  # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-002
+  # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-002
   merge_group:
   workflow_dispatch:
     inputs:
@@ -18,18 +18,18 @@ on:
 
 concurrency:
   group: ci-${{ github.ref }}
-  # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-003
+  # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-003
   cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 jobs:
-  # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-004
+  # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-004
   diff:
     name: Diff-Klassierung (Code vs. Code-fern vs. Doku)
     runs-on: ubuntu-latest
     permissions:
       contents: read
       pull-requests: read
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-005
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-005
       actions: read
     outputs:
       art: ${{ steps.klassieren.outputs.art }}
@@ -180,7 +180,7 @@ jobs:
               fi
             else
               echo "art=doku" >> "$GITHUB_OUTPUT"
-              echo "Reiner Doku-Queue-Eintrag (${anzahl} Datei(en)) — Merge-Schutz, Fachänderungs-Riegel und check:bibliothek laufen ECHT, restliche Code-Tore quittieren; Perf-Budget meldet 'skipped'."
+              echo "Reiner Doku-Queue-Eintrag (${anzahl} Datei(en)) — Merge-Schutz, Fachänderungs-Riegel, check:deckel und check:bibliothek laufen ECHT, restliche Code-Tore quittieren; Perf-Budget meldet 'skipped'."
             fi
             exit 0
           fi
@@ -255,7 +255,7 @@ jobs:
               fi
             else
               echo "art=doku" >> "$GITHUB_OUTPUT"
-              echo "Reiner Doku-Push (${anzahl} Datei(en)) — Merge-Schutz, Fachänderungs-Riegel und check:bibliothek laufen ECHT, restliche Code-Tore quittieren."
+              echo "Reiner Doku-Push (${anzahl} Datei(en)) — Merge-Schutz, Fachänderungs-Riegel, check:deckel und check:bibliothek laufen ECHT, restliche Code-Tore quittieren."
             fi
             exit 0
           fi
@@ -292,10 +292,10 @@ jobs:
             fi
           else
             echo "art=doku" >> "$GITHUB_OUTPUT"
-            echo "Reine .md-Änderung (${anzahl} Datei(en)) — Merge-Schutz und check:bibliothek laufen ECHT, restliche Code-Tore quittieren."
+            echo "Reine .md-Änderung (${anzahl} Datei(en)) — Merge-Schutz, check:deckel und check:bibliothek laufen ECHT, restliche Code-Tore quittieren."
           fi
 
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-006
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-006
       - name: Push-Diät prüfen (grüner merge_group-Lauf am gepushten SHA)
         id: diaet
         env:
@@ -360,8 +360,8 @@ jobs:
   bau:
     name: Bau (dist-Artefakt)
     needs: diff
-    # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-007
-    # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-068
+    # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-007
+    # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-068
     if: >-
       !cancelled()
       && github.event_name != 'pull_request'
@@ -371,11 +371,11 @@ jobs:
     env:
       TZ: Europe/Zurich
     steps:
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-008
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-008
       - uses: actions/checkout@v7
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-071
       - uses: ./.github/actions/npm-ci
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-067
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-067
       - name: Build (ohne Typprüfung — die macht `tore-typen`)
         run: npm run build:dist
       - name: dist-Artefakt hochladen (für tore + e2e-Shards + perf)
@@ -386,7 +386,7 @@ jobs:
           retention-days: 1
           include-hidden-files: true
 
-  # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-063
+  # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-063
   tore-tests:
     name: Tore · Tests (vitest ${{ matrix.shard }}/2)
     needs: diff
@@ -402,14 +402,14 @@ jobs:
       matrix:
         shard: [1, 2]
     steps:
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-064
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-064
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
           filter: blob:none  # Partial Clone (ARCH-REVIEW 7.10.2026): Commit-/Tree-Historie voll, Blobs lazy; Job liest keine alten Blobs in Masse
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-071
       - uses: ./.github/actions/npm-ci
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-018
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-018
       - name: Tests (volle Ausgabe, Shard ${{ matrix.shard }}/2)
         run: npm test -- --shard=${{ matrix.shard }}/2
 
@@ -425,12 +425,12 @@ jobs:
       TZ: Europe/Zurich
     steps:
       - uses: actions/checkout@v7
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-071
       - uses: ./.github/actions/npm-ci
       - name: Lint (volle Ausgabe, nie tail!)
         run: npm run lint
 
-  # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-067
+  # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-067
   tore-typen:
     name: Tore · Typen (tsc -b)
     needs: diff
@@ -443,12 +443,12 @@ jobs:
       TZ: Europe/Zurich
     steps:
       - uses: actions/checkout@v7
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-071
       - uses: ./.github/actions/npm-ci
       - name: Typprüfung (tsc -b, alle drei Projekte)
         run: npx tsc -b
 
-  # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-065
+  # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-065
   tore:
     name: Tore (Tests · Lint · Checks)
     needs: [diff, tore-tests, tore-lint, tore-typen, tore-checks]
@@ -492,28 +492,28 @@ jobs:
   tore-checks:
     name: Tore · Checks (Riegel · Kanon · Projektionen)
     needs: diff
-    # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-009
+    # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-009
     if: >-
       !cancelled()
       && needs.diff.outputs.push_diaet != 'true'
     runs-on: ubuntu-latest
     env:
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-010
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-010
       TZ: Europe/Zurich
     steps:
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-011
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-011
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-071
       - uses: ./.github/actions/npm-ci
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-013
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-013
       - name: Fachänderungs-Riegel (§6.3 + Fachaenderung-Trailer)
         env:
           GH_TOKEN: ${{ github.token }}
           FACHAENDERUNG_PR: ${{ github.event.pull_request.number }}
         run: npm run check:fachaenderung
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-014
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-014
       - name: Squash-Schutz (kein [skip ci] in PR-Commits)
         if: github.event_name == 'pull_request'
         env:
@@ -530,7 +530,7 @@ jobs:
             exit 1
           fi
           echo "Squash-Schutz grün — kein [skip ci] in den PR-Commits."
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-015
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-015
       - name: Fremd-PR-Tor (Dateigrenzen + Kommentar-Bilanz, Jules-Branches)
         if: github.event_name == 'pull_request'
         env:
@@ -547,10 +547,13 @@ jobs:
           fi
           npx vite-node scripts/analyse/kommentar-bilanz.ts "$basis" HEAD 'src/*.ts' 'src/*.tsx'
           echo "Fremd-PR-Tor grün ($HEAD_REF, Basis ${basis:0:8})"
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-019
-      - name: Bibliotheks-Standards (S1–S10)
+      # Nachwachs-Sperre Nicht-Produkt-Text (Wörter, Klinke gegen origin/main aus fetch-depth: 0)
+      - name: Deckel (Nicht-Produkt-Text)
+        run: npm run check:deckel
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-019
+      - name: Amtsquellen-Whitelist (S4)
         run: npm run check:bibliothek
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-020
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-020
       - name: Abnahme-Dossiers synchron zu den Schemas (§5-Projektion)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:dossiers
@@ -563,7 +566,7 @@ jobs:
       - name: SSR-Smoke (alle Seiten)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:smoke
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-021
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-021
       - name: Spruchkörper-Projektion (Leak · Konsistenz · Determinismus)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:besetzung
@@ -573,44 +576,44 @@ jobs:
       - name: Entscheid-Korpus (BS)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:bs-entscheide
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-022
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-022
       - name: normKeys-Abdeckung (Verzahnung Rechtsprechung ↔ Gesetz)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:normkeys
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-023
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-023
       - name: Bezugs-Schicht (Facetten · Projektion · Grundgesamtheit)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:bezuege
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-024
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-024
       - name: Kantonale Zitat-Bruecke (Referenz-Integritaet)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:normkeys-kanton
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-025
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-025
       - name: Tor-Parität (CI/lokal)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:tor-paritaet
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-043
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-043
       # Seit 5.10.2026 hier statt im Shard-Job (ci-068): läuft so auch im
       # PR-Lauf, in dem die Shards nicht mehr starten, und nur einmal statt 8×.
       - name: e2e-Shard-Union-Wächter (Gruppen == playwright --list)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:e2e-shards
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-026
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-026
       - name: Lizenz-Tor (Abhängigkeiten)
         run: npm run check:lizenzen
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-027
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-027
       - name: Darstellungs-Kanon (Tokens · Drift · Farbwelt · Linien · p-Klassen)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:design-tokens && npm run check:tokens-drift && npm run check:farbwelt && npm run check:linien-kanon && npm run check:p-klassen && npm run check:segmente
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-028
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-028
       - name: UI-Normzitate (Korpus-Abgleich)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:ui-normzitate
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-029
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-029
       - name: Verweis-Inventar (Basislinie)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:verweis-inventar
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-030
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-030
       - name: Artikel-Bestand (Projektion gegen Snapshots)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:artikel-bestand
@@ -623,49 +626,49 @@ jobs:
       - name: Normtext-Struktur (Tabellen · Grundart · Invarianten)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:tabellen && npm run check:grundart && npm run check:invarianten
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-032
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-032
       - name: Entstehung (Deckel · Anker-Provenienz · Deckung je Erlass)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:entstehung
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-033
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-033
       - name: Kantonale Materialien BS (Herkunft · Personendaten · Reproduktion)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:bs-materialien
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-034
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-034
       - name: ZH-Vollständigkeit (Artefakt-Teil, ohne PDF)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:zh-vollstaendigkeit -- --artefakt
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-035
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-035
       - name: ZH-Randtitel (Artefakt-Teil, ohne PDF)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:zh-randtitel -- --artefakt
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-036
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-036
       - name: Normtext-Korpus (Drift/Coverage · Struktur-Konsistenz · Verklebung · Stand-Zukunft)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:normtext && npm run check:struktur-konsistenz && npm run check:verklebung && npm run check:stand-zukunft
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-037
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-037
       - name: Normtext-Leerstellen (aufgehoben strukturell, Zuwachs-Riegel)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:leerstellen
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-038
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-038
       - name: Confidence-Frische (korpus.sha ↔ daten-manifest.json)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:confidence-frische
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-039
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-039
       - name: Golden-Vollständigkeit (Normtext-Index ⊇⊆ Snapshots)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:golden-normtext
       - name: Quellen-Projektionen (PDF · PDF-Quellen · Bilder)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:pdf && npm run check:pdf-quellen && npm run check:bilder
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-040
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-040
       - name: Datenhaltungs-Manifest · Byte-Parität DB↔Projektion · Feed
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:datenhaltung && npm run check:paritaet && npm run check:feed
       - name: SEO-Index · Verfall-UI
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:seo-index && npm run check:verfall-ui
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-012
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-012
       # Am Job-Ende + !cancelled() (25.9.2026, Lauf 36140683376: erster Schritt
       # rot bis zum Verdikt, 43 Tore übersprungen); Job bleibt rot, wenn rot.
       - name: Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)
@@ -673,14 +676,14 @@ jobs:
         run: npm run check:merge-schutz
       - name: Kurzquittung (Doku-/Leer-Diff)
         if: needs.diff.outputs.art == 'doku'
-        run: echo "Kein Code im Diff — Merge-Schutz und check:bibliothek sind oben ECHT gelaufen; die übrigen Code-Tore sind nicht betroffen."
+        run: echo "Kein Code im Diff — Merge-Schutz, check:deckel und check:bibliothek sind oben ECHT gelaufen; die übrigen Code-Tore sind nicht betroffen."
 
   e2e:
     name: Browser-Smoke Shard ${{ matrix.gruppe }}/${{ strategy.job-total }} (Playwright)
     needs: [diff, bau]
-    # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-041
-    # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-068
-    # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-072
+    # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-041
+    # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-068
+    # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-072
     if: >-
       !cancelled()
       && github.event_name != 'pull_request'
@@ -689,7 +692,7 @@ jobs:
       && needs.diff.outputs.art != 'code-fern'
       && needs.diff.outputs.push_diaet != 'true'
     runs-on: ubuntu-latest
-    # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-042
+    # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-042
     timeout-minutes: 28
     env:
       TZ: Europe/Zurich
@@ -699,26 +702,26 @@ jobs:
         gruppe: [1, 2, 3, 4, 5, 6]
     steps:
       - uses: actions/checkout@v7
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-071
       - uses: ./.github/actions/npm-ci
       - name: dist-Artefakt herunterladen (aus `bau`, nicht neu bauen)
         uses: actions/download-artifact@v8
         with:
           name: dist
           path: dist
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-071
       - name: Playwright-Browser-Cache (nur lesen, gespeichert nachts auf main)
         uses: actions/cache/restore@v6
         with:
           path: ~/.cache/ms-playwright
           key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-044
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-044
       - name: Playwright-Browser (Chromium)
         run: bash scripts/ci/playwright-install.sh
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-045
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-045
       - name: Browser-Smoke (Playwright, e2e/ gegen dist — Gruppe ${{ matrix.gruppe }}/${{ strategy.job-total }})
         run: npm run test:e2e:gruppe -- ${{ matrix.gruppe }}
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-046
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-046
       - name: Playwright-JSON-Report ablegen (Shard-Balancing-Datengrundlage)
         if: always()
         continue-on-error: true
@@ -728,8 +731,8 @@ jobs:
           path: playwright-report.json
           retention-days: 7
           if-no-files-found: warn
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-047
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-069
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-047
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-069
       - name: Flacker-Wächter (Retry-Grün = Warnung + Zettel, Dauer-Rot = rot)
         if: ${{ !cancelled() }}
         env:
@@ -744,7 +747,7 @@ jobs:
           path: flake-funde-gruppe-${{ matrix.gruppe }}.json
           retention-days: 1
           if-no-files-found: ignore
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-048
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-048
       - name: Playwright-Traces ablegen (nur bei rotem Shard)
         if: failure()
         uses: actions/upload-artifact@v7
@@ -754,14 +757,14 @@ jobs:
           retention-days: 7
           if-no-files-found: ignore
 
-  # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-049
+  # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-049
   e2e-ergebnis:
     name: Browser-Smoke (Ergebnis)
     needs: [diff, e2e]
-    # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-050
+    # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-050
     if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
-    # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-069
+    # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-069
     permissions:
       actions: read
       contents: read
@@ -806,7 +809,7 @@ jobs:
           ART: ${{ needs.diff.outputs.art }}
           DIAET: ${{ needs.diff.outputs.push_diaet }}
           EVENT: ${{ github.event_name }}
-        # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-068
+        # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-068
         run: |
           set -euo pipefail
           echo "e2e=${ERGEBNIS} · art=${ART:-<leer>} · push_diaet=${DIAET:-<leer>} · event=${EVENT}"
@@ -829,16 +832,16 @@ jobs:
           echo "::error::Browser-Smoke nicht bestanden: needs.e2e.result=${ERGEBNIS}, art=${ART:-<leer>}, push_diaet=${DIAET:-<leer>}, event=${EVENT}. Ein Skip ist nur bei event=pull_request, art=doku, art=code-fern oder push_diaet=true zulässig."
           exit 1
 
-  # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-066
+  # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-066
   perf:
     name: Perf-Budget (§15 — nur bei grüner Treue)
-    # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-051
+    # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-051
     if: >-
       !cancelled()
       && github.event_name != 'pull_request'
       && needs.diff.outputs.art == 'code'
       && needs.diff.outputs.bau_perf_belegt != 'true'
-    # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-052
+    # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-052
     needs: [diff, tore, e2e-ergebnis, perf-messung]
     runs-on: ubuntu-latest
     steps:
@@ -871,7 +874,7 @@ jobs:
           fi
           echo "Treue grün (Tore + Browser-Smoke) und Bundle-Budget eingehalten. Lighthouse misst nächtlich (perf-nacht.yml)."
 
-  # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-070
+  # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-070
   perf-messung:
     name: Perf-Messung (Bundle-Topologie, parallel zu den Shards)
     if: >-
@@ -886,7 +889,7 @@ jobs:
       TZ: Europe/Zurich
     steps:
       - uses: actions/checkout@v7
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-071
       - uses: ./.github/actions/npm-ci
       - name: dist-Artefakt herunterladen (aus `bau`, nicht neu bauen)
         uses: actions/download-artifact@v8
@@ -898,10 +901,10 @@ jobs:
       # Lighthouse-Metriken: seit 5.10.2026 nächtlich gegen main
       # (.github/workflows/perf-nacht.yml), nicht mehr hier — ci-070.
 
-  # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-054
+  # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-054
   merge-schutz:
     name: Merge-Schutz (Required-Kontext)
-    # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-055
+    # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-055
     if: github.event_name != 'push'
     runs-on: ubuntu-latest
     steps:
@@ -909,12 +912,12 @@ jobs:
         with:
           fetch-depth: 0
           filter: blob:none  # Partial Clone (ARCH-REVIEW 7.10.2026): Commit-/Tree-Historie voll, Blobs lazy; Job liest keine alten Blobs in Masse
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-071
       - uses: ./.github/actions/npm-ci
       - name: Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)
         run: npm run check:merge-schutz
 
-  # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-056
+  # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-056
   deploy:
     name: Deploy (Prod, Vercel CLI)
     needs: [diff, tore, bau, e2e]
@@ -934,7 +937,7 @@ jobs:
     timeout-minutes: 20
     permissions:
       contents: read
-    # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-057
+    # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-057
     concurrency:
       group: prod-deploy
       cancel-in-progress: false
@@ -944,7 +947,7 @@ jobs:
       TZ: Europe/Zurich
       VERCEL_ORG_ID: team_jfUx2xb2Jo3RVYUFYsIW94lG
       VERCEL_PROJECT_ID: prj_1xdIoeM6YjmelXq6DSMpywDOXq2x
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-058
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-058
       VERCEL_GIT_COMMIT_SHA: ${{ github.sha }}
       VERCEL_GIT_COMMIT_REF: main
       # Feste Vercel-CLI-Version statt `npx -y vercel@latest` (E0-BRANDSCHUTZ, HN-11):
@@ -960,7 +963,7 @@ jobs:
       # `workflow_dispatch` mit probe=ohne-token — siehe PR-Body.
       - name: Token-Vorprüfung (Rot ohne Secret)
         env:
-          # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-059
+          # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-059
           VERCEL_TOKEN: ${{ github.event.inputs.probe != 'ohne-token' && secrets.VERCEL_TOKEN || '' }}
         run: |
           set -euo pipefail
@@ -996,7 +999,7 @@ jobs:
           url=$("$VERCEL_BIN" deploy --prebuilt --prod --archive=tgz --token="$VERCEL_TOKEN")
           echo "url=${url}" >> "$GITHUB_OUTPUT"
           echo "Deployment-URL: ${url}"
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-060
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-060
       - name: Nachkontrolle — live ausgelieferter Build == dieser Commit
         run: |
           set -euo pipefail
@@ -1017,10 +1020,10 @@ jobs:
           done
           echo "::error::Prod liefert '${ist:-<leer>}' statt '${soll}' — Deploy gemeldet, aber nicht live. Nicht mergen/weiterbauen, bis geklärt (docs/betrieb/rollback-runbook.md)."
           exit 1
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-061
+      # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-061
       - name: Vercel — alte Stände aufräumen (Deployment Storage)
         continue-on-error: true
-        # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-062
+        # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-062
         timeout-minutes: 8
         env:
           AKTUELL_URL: ${{ steps.deploy.outputs.url }}

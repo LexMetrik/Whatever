@@ -116,7 +116,7 @@ nicht in der UI.
 `tools/normtext-pipeline.md`). «aufgehoben»/Geltung wird auf **Snapshot-Ebene**
 behandelt, nicht im Register (der Status «aufgehoben» bleibt sichtbar, die
 Zitatzeile erscheint auf Klick). **DoD ist mehr als grüne Tore** (§14.4/§14.5 —
-Skill `auftrag`, Ziff. 4/5):
+Skill `bauschritt`, Definition of Done/Trailer):
 - Pflicht-Gegenprüfung gelaufen — eine Bund-Neu-Extraktion (`public/normtext/**/*.json`,
   `scripts/normtext-snapshot.ts`, `scripts/fedlex-*`) ist ein Risiko-Pfad, die
   adversariale Gegenprüfung ist verpflichtend, nicht auf Abruf; das Tor

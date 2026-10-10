@@ -64,12 +64,12 @@ geroutet wird: eine Fehlroute riskiert verifizierte Kantons-Snapshots (vgl.
 - **Dach:** `CLAUDE.md` §2 (Determinismus), §5 (Single Source of Truth), §7
   (Kernsatz + Zitat-Ausnahme (a)–(d); die Build-Regeln stehen seit 25.7.2026
   **in diesem Skill**), §8 (Status/Ehrlichkeit), §11 (Wissensablage);
-  §14.4/§14.5 im Skill `auftrag`.
+  §14.4/§14.5 im Skill `bauschritt`.
 - **Bibliotheks-Standards:** `bibliothek/STANDARDS.md` — **S2**
   (Status-Vokabular, koppelt an `verifiziert`/«geprüft»), **S5**
   (Negativbefunde), **S6** (Datiertes ins Verfallsregister), **S8**
   (Korrektur-Protokoll).
-- **Übergabe:** Release → Skill `landung`. Fachliche Abnahme → Skill `abnahme`.
+- **Übergabe:** Release → Skill `landung`. Fachliche Abnahme → Skill `gegenpruefung` (Abschnitt Abnahme).
 - **Nicht-Ziele:** kein Endnutzer-Feature, keine LLM-Schicht in der App (§2);
   keine Tarife/Vorlagen; keine Fremd-/Sekundärliteratur (Art. 5 URG);
   zustandslos.
@@ -82,7 +82,7 @@ geroutet wird: eine Fehlroute riskiert verifizierte Kantons-Snapshots (vgl.
   `Date.now()`/kein abgetipptes Datum).
 - **`verifiziert`/«geprüft»/`verified:true` nie automatisch** — das setzt Davids
   fachliche Abnahme voraus (§7/§8, Zeitsperre bis 1.12.2026); Hebung nur über den
-  Skill `abnahme`.
+  Skill `gegenpruefung` (Abschnitt Abnahme).
 - **Jeder Rechtswert mit Norm + Link + Stand** (§13 D1, verzahnt mit §7).
 - **Nur amtliche / URG-freie Quellen** (Art. 5 URG, S3): Fedlex (Bund), kantonale
   Erlasssammlungen via API, amtliche Gerichts-/Behördenseiten — keine Kommentare.
@@ -271,12 +271,12 @@ ein Sprachmodell am schlechtesten kann und ein Diff perfekt.
   eine eingeschobene Formel-Grafik zerteilt wird — DBG Art. 22), meldet der
   Diff einen Versatz, den unser Snapshot korrekt aufgelöst hat.
 
-Funde als EINGANG-Zeile (Klasse R); gleichartige Kleinbefunde als Merkzettel
-mit `dach: QS-KORPUS` (Sammelzeile «übrige Urteilsdaten»).
+Funde als EINGANG-Zeile (Klasse R) oder als Zeile in `plan/FEHLERBESTAND.md`
+(Sammelzeile «übrige Urteilsdaten»).
 
 ## Definition of Done (§14.4/§14.5 — am Produktionsabschluss abhaken)
 
-Wortlaut von §14.4/§14.5 seit 25.7.2026 im Skill `auftrag`, Ziff. 4/5.
+Wortlaut von §14.4/§14.5 im Skill `bauschritt` (Definition of Done, Trailer).
 
 - [ ] §6-/§9-Tore grün (Tor-Status pro Schritt notiert).
 - [ ] Pflicht-Gegenprüfung gelaufen (Risiko-Pfad, §14.4).
