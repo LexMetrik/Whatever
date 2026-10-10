@@ -1,7 +1,8 @@
 // ─── Korpus schreiben (geteilt: Live-Generator, Offline-Seed, Tests) ─────────
 //
 // Schreibt aus einer Auswahl EntscheidSnapshots die public/rechtsprechung-Dateien:
-// je Entscheid eine Datei + register.json (Manifest) + norm-index.json +
+// je Entscheid eine Datei + register.json (Manifest) + entscheid-index.json (schlanke
+// Leser-Projektion des Registers) + norm-index.json +
 // norm-index-erlasse.json (schlanke Laufzeit-Projektion der Erlass-Ebene) +
 // erfasste-keys.generated.ts (interne Verlinkung). Eine Stelle, kein Duplikat (§5).
 
@@ -11,6 +12,7 @@ import { kuerzeRegeste, normalisiereRegeste } from '../../src/lib/rechtsprechung
 import type { EntscheidSnapshot, EntscheidSnapshotDatei } from '../../src/lib/rechtsprechung/typen';
 import type { BrowseEntscheidVoll, EntscheidManifest, RichterRef, RichterRegister } from '../../src/lib/rechtsprechung/register';
 import { teileRegister } from './register-teilen';
+import { projiziereEntscheidIndex } from '../../src/lib/rechtsprechung/entscheid-index';
 import { parseBesetzung, kanonisiere, bereinigeBesetzungsFreitext, type KanonEintrag } from '../../src/lib/rechtsprechung/besetzung';
 import type { EntscheidRef, LeitfallRef, LeitfallShard } from '../../src/lib/rechtsprechung/norm-index';
 import { minteEcliFuerSnapshot } from '../../src/lib/rechtsprechung/ecli';
@@ -484,6 +486,13 @@ export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root
   const { kern, provenienz } = teileRegister({ erzeugt: datum, entscheide: manifest });
   writeFileSync(join(PUB, 'register.json'), serialisiere(kern), 'utf8');
   writeFileSync(join(PUB, 'register-provenienz.json'), serialisiere(provenienz), 'utf8');
+  // E0-REGISTER Teil 2 (10.10.2026): schlanker Entscheid-Index für Urteils-Leser, Seitenkopf,
+  // Reiter und Verzahnung (zehn Felder, ALLE Einträge in Register-Reihenfolge) — aus dem
+  // KERN projiziert, mit der Funktion, die auch der Browser und check:entscheide nutzen (§5).
+  // Nachpflege, die nur Felder ausserhalb dieser zehn ändert (regeste-kurz-refresh: nur
+  // regesteKurz), lässt die Datei byte-gleich — sie wird dort bewusst nicht neu geschrieben;
+  // check:entscheide prüft «serialisiere(projiziere(register)) == Datei» und fängt jede Drift.
+  writeFileSync(join(PUB, 'entscheid-index.json'), serialisiere(projiziereEntscheidIndex(kern)), 'utf8');
   // ── Richter-Register (Slug → Anzeigename + Trefferzahl) ──
   // Eigene, schlanke Projektion: die Facette in Block B lädt sie lazy für Labels
   // und Zähler, damit das grosse register.json slug-schlank bleibt (§15).

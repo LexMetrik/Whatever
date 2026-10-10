@@ -274,7 +274,7 @@ export function Shell({ children }: { children: ReactNode }) {
           ? import('../../lib/normtext/browse').then((m) => m.ladeBrowseManifest()).catch(() => null)
           : Promise.resolve(null),
         brauchtEntscheide
-          ? import('../../lib/rechtsprechung/browse').then((m) => m.ladeEntscheidManifest()).catch(() => null)
+          ? import('../../lib/rechtsprechung/browse').then((m) => m.ladeEntscheidIndex()).catch(() => null)
           : Promise.resolve(null),
       ]);
       // Verschmelzen statt ersetzen: ein einmal geladenes Manifest bleibt gültig

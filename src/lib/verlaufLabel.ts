@@ -13,7 +13,7 @@
 
 import { metaFuerPfad } from './seo';
 import type { BrowseManifest, BrowseErlass } from './normtext/browse-typen';
-import type { EntscheidManifest } from './rechtsprechung/register';
+import type { EntscheidIndex } from './rechtsprechung/entscheid-index';
 import type { MaterialManifest } from './materialien/typen';
 import type { StelleDatenMap } from './reiterStelle';
 import { sicherDekodiert } from './sicherDekodieren';
@@ -75,7 +75,7 @@ export interface VerlaufManifeste {
    *  `useStelleDaten` — nie vom Manifest selbst, das die Einträge nicht trägt. */
   artikel?: StelleDatenMap;
   gesetze?: BrowseManifest | null;
-  entscheide?: EntscheidManifest | null;
+  entscheide?: EntscheidIndex | null;
   materialien?: MaterialManifest | null;
 }
 

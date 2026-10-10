@@ -276,7 +276,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     void (async () => {
       const [g, ent, mat] = await Promise.all([
         brauchtG ? import('../../lib/normtext/browse').then((m) => m.ladeBrowseManifest()).catch(() => null) : Promise.resolve(null),
-        brauchtE ? import('../../lib/rechtsprechung/browse').then((m) => m.ladeEntscheidManifest()).catch(() => null) : Promise.resolve(null),
+        brauchtE ? import('../../lib/rechtsprechung/browse').then((m) => m.ladeEntscheidIndex()).catch(() => null) : Promise.resolve(null),
         brauchtM ? import('../../lib/materialien/browse').then((m) => m.ladeMaterialManifest()).catch(() => null) : Promise.resolve(null),
       ]);
       if (lebt) setManifeste((alt) => ({

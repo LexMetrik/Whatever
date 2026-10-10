@@ -24,7 +24,10 @@ export const kb = (n: number): string => `${(n / 1024).toFixed(1)} KB`;
 
 // gzip-Budgets. (Gegenprüfung 20.7.2026: Tor prüfte nur dist/assets/*.js,
 // register.json-Wachstum +118 KB gzip blieb unentdeckt — public/**/*.json
-// seither im Budget; register.json lädt jede Leserseite.)
+// seither im Budget; register.json lud damals jede Leserseite. Seit E0-REGISTER Teil 2
+// (10.10.2026) lädt jede Urteilsseite nur noch entscheid-index.json; das ganze
+// register.json laden nur noch die Übersicht /rechtsprechung, das Start-Blatt und die
+// Suche.)
 //
 //    W2·5 (25.7.2026): Artikel-Suchindex dazu — lazy, aber gedeckelt, weil der
 //    kantonale Korpus weiterwächst und der clientseitige Indexaufbau mit der
@@ -73,6 +76,11 @@ export const kb = (n: number): string => `${(n / 1024).toFixed(1)} KB`;
 //    QS-PERF «Rechtsprechungs-Register aufteilen» — die Anhebung ersetzt ihn nicht.
 export const DATEN_BUDGET: readonly (readonly [string, number])[] = [
   ['public/rechtsprechung/register.json', 900 * 1024],
+  // entscheid-index.json (E0-REGISTER Teil 2, 10.10.2026): lädt jede Urteilsseite und jede
+  // Seite mit Urteils-Reiter. Gemessen 10.10.2026 mit gz() (Node-Default): 239 716 B ≈
+  // 234 KB; Budget = Ist + ~10 % Kopffreiheit, absichtlich eng — die Datei wächst mit dem
+  // Korpus (6815 Einträge, ~35 B gzip je Eintrag) und soll nicht unbemerkt davonlaufen.
+  ['public/rechtsprechung/entscheid-index.json', 260 * 1024],
   // register-provenienz.json (E0-REGISTER, 10.10.2026: `fassungsToken` je Eintrag) steht
   // bewusst NICHT hier: kein Browser-Pfad lädt sie (Leser nur Build und Prüftore) —
   // ein Browser-Budget wäre ein Tor ohne Gegenstand (§6.7).

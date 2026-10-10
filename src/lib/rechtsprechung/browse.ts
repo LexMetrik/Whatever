@@ -1,10 +1,12 @@
 // ─── Client-Schicht der Rubrik «Rechtsprechung» ─────────────────────────────
 //
-// Lädt das Entscheid-Manifest (public/rechtsprechung/register.json) und die
-// einzelnen Entscheid-Dateien lazy, plus reine Gruppier-/Filter-Helfer.
+// Lädt das Entscheid-Manifest (public/rechtsprechung/register.json), den schlanken
+// Entscheid-Index (public/rechtsprechung/entscheid-index.json) und die einzelnen
+// Entscheid-Dateien lazy, plus reine Gruppier-/Filter-Helfer.
 // Reine Ladeschicht (§3) — kein Inhalt erzeugt.
 
 import type { EntscheidManifest, BrowseEntscheid, RichterRegister } from './register';
+import { projiziereEntscheidIndex, type EntscheidIndex, type EntscheidIndexEintrag } from './entscheid-index';
 import type { EntscheidSnapshot, EntscheidSnapshotDatei, Gerichtstyp } from './typen';
 import { ERLASS_REGISTER, GEBIETE, GEBIET_LABEL, gebieteFuerFilter, type Rechtsgebiet } from '../normtext/register';
 import { ladeJson, pruefeFelder } from '../ladeJson';
@@ -12,6 +14,9 @@ import { ladeJson, pruefeFelder } from '../ladeJson';
 const MANIFEST_PRUEFER = pruefeFelder('rechtsprechung/register.json', { entscheide: 'array' });
 /** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
 export { MANIFEST_PRUEFER as RSPR_MANIFEST_PRUEFER };
+const INDEX_PRUEFER = pruefeFelder('rechtsprechung/entscheid-index.json', { entscheide: 'array' });
+/** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
+export { INDEX_PRUEFER as RSPR_INDEX_PRUEFER };
 const RICHTER_PRUEFER = pruefeFelder('rechtsprechung/richter.json', { richter: 'objekt' });
 /** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
 export { RICHTER_PRUEFER as RSPR_RICHTER_PRUEFER };
@@ -21,18 +26,47 @@ export { DATEI_PRUEFER as RSPR_DATEI_PRUEFER };
 
 // ── Manifest (einmal, gecacht als laufende Promise) ──────────────────────────
 let manifestPromise: Promise<EntscheidManifest | null> | null = null;
+/** Das fertig geladene Register (erst gesetzt, wenn die Promise erfüllt ist) — nur für `ladeEntscheidIndex`. */
+let manifestGeladen: EntscheidManifest | null = null;
 
 export async function ladeEntscheidManifest(): Promise<EntscheidManifest | null> {
   if (!manifestPromise) {
     manifestPromise = (async () => {
       try {
-        return await ladeJson<EntscheidManifest>('/rechtsprechung/register.json', MANIFEST_PRUEFER);
+        const m = await ladeJson<EntscheidManifest>('/rechtsprechung/register.json', MANIFEST_PRUEFER);
+        manifestGeladen = m;
+        return m;
       } catch {
         return null;
       }
     })();
   }
   return manifestPromise;
+}
+
+// ── Entscheid-Index (einmal, gecacht als laufende Promise) ───────────────────
+//
+// E0-REGISTER Teil 2 (10.10.2026): Urteilsseite, Seitenkopf, Reiter und Verzahnung
+// brauchen aus dem Register nur zehn Felder (`entscheid-index.ts`). Sie laden
+// darum diese schlanke Projektion (~240 KB gzip statt ~730 KB), nicht das ganze
+// Register. Die Übersichten (Rechtsprechung, Start-Blatt, Suche) lesen weiter
+// `ladeEntscheidManifest`. Liegt das Register schon im Speicher (Übersicht davor
+// besucht), wird der Index daraus gerechnet — mit DERSELBEN Funktion wie der
+// Generator (§5), kein zweiter Abruf.
+let indexPromise: Promise<EntscheidIndex | null> | null = null;
+
+export async function ladeEntscheidIndex(): Promise<EntscheidIndex | null> {
+  if (!indexPromise) {
+    indexPromise = (async () => {
+      if (manifestGeladen) return projiziereEntscheidIndex(manifestGeladen);
+      try {
+        return await ladeJson<EntscheidIndex>('/rechtsprechung/entscheid-index.json', INDEX_PRUEFER);
+      } catch {
+        return null;
+      }
+    })();
+  }
+  return indexPromise;
 }
 
 // ── Richter-Register (Slug → Anzeigename, eigene schlanke Projektion) ────────
@@ -55,9 +89,9 @@ export async function ladeRichterRegister(): Promise<RichterRegister | null> {
   return richterPromise;
 }
 
-/** Manifest-Eintrag eines Schlüssels. */
-export async function ladeEntscheidEintrag(key: string): Promise<BrowseEntscheid | null> {
-  const m = await ladeEntscheidManifest();
+/** Index-Eintrag eines Schlüssels (nur die zehn Index-Felder; der Leser liest den Rest aus dem Snapshot). */
+export async function ladeEntscheidEintrag(key: string): Promise<EntscheidIndexEintrag | null> {
+  const m = await ladeEntscheidIndex();
   return m?.entscheide.find((e) => e.key === key) ?? null;
 }
 

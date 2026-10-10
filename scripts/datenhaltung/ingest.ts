@@ -51,6 +51,10 @@ export const RECHTSPRECHUNG_MANIFESTE = [
   // Eintrag, aus register.json herausgelöst (Namensvorbild public/materialien/
   // register-provenienz.json). Ohne diese Zeile meldete `ungedeckteTopLevelJson` rot.
   'public/rechtsprechung/register-provenienz.json',
+  // entscheid-index.json (E0-REGISTER Teil 2, 10.10.2026): schlanke Leser-Projektion des
+  // Registers (zehn Felder, ALLE Einträge) — liegt auf dem Laufzeitpfad jeder Urteilsseite.
+  // Ohne diese Zeile meldete `ungedeckteTopLevelJson` rot (dieselbe Lektion wie oben).
+  'public/rechtsprechung/entscheid-index.json',
   'public/rechtsprechung/norm-index.json',
   // richter.json (Spruchkörper-Projektion, R-RICHTER) war als NEUE committete
   // Datei unter public/rechtsprechung/ nirgends registriert und lief damit an
