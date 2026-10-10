@@ -41,7 +41,7 @@ probleme = []
 TOR_MUSTER = re.compile(
     r"npm run lint|npm test\b|npx vitest|npx tsc|golden:vergleich"
     r"|golden-outputs|npm run check|npm run golden|npx playwright test|npm run test:e2e"
-    r"|bibliothek-check\.sh|scripts/check-[a-z-]+\.(?:ts|sh)"
+    r"|check-amtsquellen\.sh|scripts/check-[a-z-]+\.(?:ts|sh)"
 )
 STARTER = re.compile(
     r"^(?:[A-Za-z_]\w*=\S+|sudo|env|time|command|nice|xargs"

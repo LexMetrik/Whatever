@@ -11,7 +11,7 @@ Dokuments benannt). *Nachtrag 14.8.2026 (QS-PLAN-EINFACH): die früheren Teil-Et
 ## §0 · Zweck und Quer-Regeln
 
 > **Fahrplan-§-Diät 15.8.2026 (`aufraeumen.md` §4b).** Die vier ausgeführten Pakete **2, 5, 3, 4**
-> stehen im vollen, unveränderten Wortlaut in [`archiv/FAHRPLAN-FEDLEX-PORTFOLIO-erledigt.md`](../archiv/FAHRPLAN-FEDLEX-PORTFOLIO-erledigt.md);
+> stehen im vollen, unveränderten Wortlaut in `archiv/FAHRPLAN-FEDLEX-PORTFOLIO-erledigt.md` (git 3fd5db8f9:archiv/FAHRPLAN-FEDLEX-PORTFOLIO-erledigt.md);
 > hier hält je eine Stub-Zeile den §-Anker. Offen und darum **hier** geblieben sind Paket 1
 > (nur P1-a/b gebaut), Bridge B1 und die §§ 15–20.
 
@@ -118,7 +118,7 @@ Fedlex-Stelle (SPARQL-Endpoint + Filestore-HTML) — nie ein Dritt-Repo.
 ## §17 · Kanonik-Arbiter meldet `fza`/`cmr` NICHT-KANONISCH (`QS-CURRENCY-KANON`, Befund 2.8.2026)
 
 *24.9.2026: `QS-CURRENCY-KANON` ist in `QS-KORPUS` aufgegangen (Posten «fza/cmr NICHT-KANONISCH
-klären …» dort; ROADMAP-CHRONIK.md, Fusionen 2026-09-24). Die Spec hier gilt unverändert.*
+klären …» dort; git 3fd5db8f9:ROADMAP-CHRONIK.md, Fusionen 2026-09-24). Die Spec hier gilt unverändert.*
 
 **Befund, reproduziert.** `npm run check:fedlex-versionen` endet mit **Exit 1**; im Abschnitt
 «Kanonik-Arbiter (html-N vs. `isExemplifiedBy`)» stehen zwei Erlasse:
@@ -175,7 +175,7 @@ allein dieser §.*
 
 ### §18.1 `QS-FRIT-DRIFT` — FR/IT-Drift-Wächter Stufe 1
 
-*24.9.2026: `QS-FRIT-DRIFT` ist in `W2·5g-ZEIT` aufgegangen (Posten Stufe 2 dort; ROADMAP-CHRONIK.md, Fusionen 2026-09-24).*
+*24.9.2026: `QS-FRIT-DRIFT` ist in `W2·5g-ZEIT` aufgegangen (Posten Stufe 2 dort; git 3fd5db8f9:ROADMAP-CHRONIK.md, Fusionen 2026-09-24).*
 
 - **Anlass:** sämtliche Norm-Verifikationen vom 3.8.2026 liefen **nur auf DE**. Eine
   französische oder italienische Fassung könnte längst abweichen, ohne dass ein Tor es sieht.
@@ -422,7 +422,7 @@ heisst für den Bund: die ganze SR, nicht nur der Kern.
 ## Archivierte Abschnitte *(Plan-Neuschnitt 29.8.2026)*
 
 19 Abschnitt(e) dieser Datei sind wörtlich nach
-[`archiv/fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md`](../archiv/fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) ausgelagert — sie tragen keine offene
+`archiv/fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md` (git 3fd5db8f9:archiv/fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) ausgelagert — sie tragen keine offene
 ROADMAP-Bindung mehr. Titel:
 
 - 0. Portfolio-Überblick
@@ -431,11 +431,11 @@ ROADMAP-Bindung mehr. Titel:
 - 0c. Gemeinsame Bausteine (wiederverwendbar über alle Pakete) — Opus-Bauplan
 - 0d. Moat-Hebel (die 2–3 Verknüpfungen, die den Burggraben vertiefen) — Opus-Bauplan
 - Paket 1 — Gesetze-Currency & Coverage (P0)
-- Paket 2 — Botschaften / Bundesblatt (P1, Vorzeige-Paket) ✅ (erledigt 10.7.2026 — AUSGEFÜHRT, Wortlaut: `archiv/FAHRPLAN-FEDLEX-PORTFOLIO-erledigt.md`)
+- Paket 2 — Botschaften / Bundesblatt (P1, Vorzeige-Paket) ✅ (erledigt 10.7.2026 — AUSGEFÜHRT, Wortlaut: `git 3fd5db8f9:archiv/FAHRPLAN-FEDLEX-PORTFOLIO-erledigt.md`)
 - Bridge B1 — Norm-Kontext-Bus verdrahten (Moat-Kern, nach Paket 2, vor Paket 5)
-- Paket 5 — Änderungshistorie / Amtliche Sammlung (P1.5) ✅ (erledigt 10.7.2026 — AUSGEFÜHRT, Wortlaut: `archiv/FAHRPLAN-FEDLEX-PORTFOLIO-erledigt.md`)
-- Paket 3 — Vernehmlassungen (P2) ✅ (erledigt 10.7.2026 — AUSGEFÜHRT, Wortlaut: `archiv/FAHRPLAN-FEDLEX-PORTFOLIO-erledigt.md`)
-- Paket 4 — Staatsverträge (P3) ✅ (erledigt 10.7.2026 — AUSGEFÜHRT, Wortlaut: `archiv/FAHRPLAN-FEDLEX-PORTFOLIO-erledigt.md`)
+- Paket 5 — Änderungshistorie / Amtliche Sammlung (P1.5) ✅ (erledigt 10.7.2026 — AUSGEFÜHRT, Wortlaut: `git 3fd5db8f9:archiv/FAHRPLAN-FEDLEX-PORTFOLIO-erledigt.md`)
+- Paket 3 — Vernehmlassungen (P2) ✅ (erledigt 10.7.2026 — AUSGEFÜHRT, Wortlaut: `git 3fd5db8f9:archiv/FAHRPLAN-FEDLEX-PORTFOLIO-erledigt.md`)
+- Paket 4 — Staatsverträge (P3) ✅ (erledigt 10.7.2026 — AUSGEFÜHRT, Wortlaut: `git 3fd5db8f9:archiv/FAHRPLAN-FEDLEX-PORTFOLIO-erledigt.md`)
 - Paket 6 — Was Fedlex NICHT hergibt (ehrliche Abgrenzung)
 - 5. Recht/Lizenz-Leitplanken (Do/Don't)
 - 6. Offene Verifikationspunkte für Opus (empirisch VOR Bau prüfen)

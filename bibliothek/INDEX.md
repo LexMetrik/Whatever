@@ -7,7 +7,7 @@ Wahrheit, keine von Hand geschriebene Kopfzahl).
 Verbindlich seit 6.6.2026: **CLAUDE.md §11** — jede Recherche mündet hier in eine
 geordnete, engine-orientierte Übersichtsliste mit INDEX-Eintrag.
 **Verbindliche Mindeststandards S1–S10: [STANDARDS.md](STANDARDS.md)** —
-maschinell durchgesetzt via `bash scripts/bibliothek-check.sh` (Teil des
+maschinell durchgesetzt via `bash scripts/check-amtsquellen.sh` (seit 10.10. nur Regel S4; S1–S10-Beschreibung gilt als Konvention ohne Tor) (Teil des
 §9-Bug-Checks). Kurzregeln:
 
 1. **Nur amtliche Quellen als Beleg**, immer mit URL und Abrufdatum (§7);

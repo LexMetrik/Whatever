@@ -123,7 +123,7 @@ Skill `bauschritt`, Definition of Done/Trailer):
   `check:gegenpruefung` erzwingt sie (Muster `AUDIT-TARIF-…md`, siehe
   `tools/verifikation.md`).
 - Status-Marker §8 gesetzt — «verifiziert»/«geprüft» NIE automatisch (Zeitsperre
-  bis 1.12.2026, Status-Hebung nur über den `abnahme`-Skill).
+  bis 1.12.2026, Status-Hebung nur über den `gegenpruefung`-Skill (Abschnitt Abnahme)).
 - §14.5-Trailer am Commit: `Roadmap: <Kürzel>` + auf dem Risiko-Pfad
   `Gegenpruefung: <Verdikt> (<Modell>, <Linsen>) — <Befunde>`.
 - Bei rotem Tor: kein Push, keine Übergabe an `landung`.
@@ -227,5 +227,5 @@ für kantonale Erlasse analog, mit dem Abnahme-Status ehrlich auf «Erstrecherch
 Festhalten: SR-Nr + ELI + gepinnte Konsolidierung, die geänderten
 Editier-Stellen (`cache.sh`/`register.ts`), die durchlaufenen Tore mit Status, das
 Gegenprüfungs-Verdikt (Risiko-Pfad) und den §11-Ablage-Eintrag mit
-Abnahme-Status. Übergabe an `landung` (Release) bzw. `abnahme` (fachliche
+Abnahme-Status. Übergabe an `landung` (Release) bzw. `gegenpruefung` (Abschnitt Abnahme; fachliche
 Abnahme) — dieser Skill löst weder das eine noch das andere aus.

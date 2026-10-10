@@ -21,7 +21,7 @@ sie halten den Rest fest, damit der `git mv` nach `archiv/` informationsverlustf
 prüften 12 Agenten; **drei Dateien bleiben begründet im Root**: `FAHRPLAN-PLAN-STEUERUNG.md` (einzige
 Doku der `@meta`-DSL, keine Ersatz-Heimat), `FAHRPLAN-RECHTSPRECHUNG.md` (Detailquelle des noch
 offenen `R-RICHTER`) und `FAHRPLAN-OPENCASELAW-QUELLEN.md` (geltende Grundlage von
-`archiv/PLAN-OCL-ABBAU.md`).*
+`git 3fd5db8f9:archiv/PLAN-OCL-ABBAU.md`).*
 
 ## §0 · Quer-Lektionen
 
@@ -33,13 +33,13 @@ offenen `R-RICHTER`) und `FAHRPLAN-OPENCASELAW-QUELLEN.md` (geltende Grundlage v
   der David-Abnahme-Vermerk mit Datum an denselben Punkt. Fällt ein ganzer § leer, bleibt
   die Überschrift stehen und bekommt den Vermerk «vollständig erledigt» — sonst rutschen die
   §-Nummern und die Einzeiler in der ROADMAP zeigen ins Falsche.
-- **Datei-Historie** (welche Datei wann und warum ins Archiv ging): `archiv/README.md`.
+- **Datei-Historie** (welche Datei wann und warum ins Archiv ging): `git 3fd5db8f9:archiv/README.md`.
   Die archivierten Fahrpläne selbst bleiben byte-genau historisch stehen — ihre Köpfe sind
   teilweise stale und werden dort **nicht** nachgeführt.
 
 ## §1 · Beurkundungs-Ausbau
 
-*(→ `archiv/FAHRPLAN-BEURKUNDUNGS-AUSBAU.md`)*
+*(→ `git 3fd5db8f9:archiv/FAHRPLAN-BEURKUNDUNGS-AUSBAU.md`)*
 
 - **BEURKUNDUNG Tarif-Lücken (72 Zellen):** in `src/data/tarif/beurkundung.ts` tragen 72 von 546
   (Geschäftsart × Kanton)-Kombinationen keinen Sondertarif → Engine `status: 'offen'`, UI «In
@@ -50,7 +50,7 @@ offenen `R-RICHTER`) und `FAHRPLAN-OPENCASELAW-QUELLEN.md` (geltende Grundlage v
   der im Plan vorgesehene Default `GENERELLER_WERTTARIF` ist ein **leeres** Objekt (Z.31), der
   Fallback in `tarifFuer()` läuft nie. Je Zelle **erheben oder als tariflos begründen** (freies
   Notariat ZG/SO/BL: Honorar frei → «nach Vereinbarung» statt «in Recherche»). Heimat
-  `archiv/FAHRPLAN-BEURKUNDUNGS-AUSBAU.md` §3 + `archiv/FAHRPLAN-LUECKEN-SCHLIESSEN.md`
+  `git 3fd5db8f9:archiv/FAHRPLAN-BEURKUNDUNGS-AUSBAU.md` §3 + `git 3fd5db8f9:archiv/FAHRPLAN-LUECKEN-SCHLIESSEN.md`
   (L2-Nachfolge, dort bisher nur die 3 prozeduralen Arten inventarisiert). Risiko-Pfad ⇒ `QS-GP`.
   `[OF]`
 - **Gründungs-Tarif doppelt gepflegt (§5):** neben der 26-Kt-Schicht `src/lib/beurkundung.ts`/
@@ -75,10 +75,10 @@ offenen `R-RICHTER`) und `FAHRPLAN-OPENCASELAW-QUELLEN.md` (geltende Grundlage v
 
 ## §10 · Vertrags-Varianten
 
-*(→ `archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md`)*
+*(→ `git 3fd5db8f9:archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md`)*
 
 - **VERTRAGS-VARIANTEN — Restbestand neuer Basistypen** *(Heimat
-  `archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md` §2/§5; Bau-Anker `W3-AUSBAU (Zeile Vorlagen-Breite, vormals W3·13, Konsolidierung 15.8.2026)`)*: **P3-Rest** Tausch (237) ·
+  `git 3fd5db8f9:archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md` §2/§5; Bau-Anker `W3-AUSBAU (Zeile Vorlagen-Breite, vormals W3·13, Konsolidierung 15.8.2026)`)*: **P3-Rest** Tausch (237) ·
   Gebrauchsleihe (305) · Miet-Untertypen Parkplatz/möbliert — **P4-Rest** Schuldanerkennung
   (82 SchKG) · Garantievertrag (111) — **P5** Mäkler (412 ff.) · Agentur (418a ff.) · Kommission
   (425) · Lizenz (innominat) · Kooperation/JV · Franchise — **P6** einfache Gesellschaft (530 ff.)
@@ -89,7 +89,7 @@ offenen `R-RICHTER`) und `FAHRPLAN-OPENCASELAW-QUELLEN.md` (geltende Grundlage v
   sechs Vertrags-Karten durch, der **Untertyp**-Rollout nicht — offen: Auftrag
   (Beratung/Treuhand/Inkasso/Mandat) · NDA (Personal/M&A/IT) · Werkvertrag-Experte-Module
   (Zahlungsplan/Bauhandwerkerpfand-Hinweis/Pönale/Abnahmeprotokoll) · Konkubinat-Module. Detail
-  `archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md` §2/§5-P2.
+  `git 3fd5db8f9:archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md` §2/§5-P2.
 - **VERTRAGS-VARIANTEN P1f — Zähl-Hygiene**: `src/lib/vorlagen/variantenInventar.ts` +
   `src/tests/variantenInventar.test.ts` sind der ehrliche Fortschrittszähler (Stand 168 erzeugbare
   Dokumente = 17 % des 1000-Ziels) — **bei jeder neuen Vertrags-Karte und jedem neuen Untertyp
@@ -98,7 +98,7 @@ offenen `R-RICHTER`) und `FAHRPLAN-OPENCASELAW-QUELLEN.md` (geltende Grundlage v
 - **Abnahme-Warteschlange, Ergänzung Rang 2 (Form-Gate-Vorlagen)**: Lehrvertrag
   (Schriftform-Gültigkeit Art. 344a I) · Handelsreisendenvertrag (347–350a) · Heimarbeitsvertrag
   (351–354) — gebaut 14.6.2026, Anker am Fedlex-Cache 20260101 verifiziert, golden additiv;
-  **fachliche Abnahme David ausstehend** (Detail `archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md` §7).
+  **fachliche Abnahme David ausstehend** (Detail `git 3fd5db8f9:archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md` §7).
 - **Stale Doku-Köpfe**: Teileintrag «VERTRAGS-VARIANTEN «1000»» ist mit der Archivierung 31.7.2026
   **gestrichen** — der Kopf bleibt im Archiv byte-genau stehen, die Zähl-Wahrheit trägt jetzt
   `variantenInventar` (Stand 168 = 17 %).
@@ -110,7 +110,7 @@ offenen `R-RICHTER`) und `FAHRPLAN-OPENCASELAW-QUELLEN.md` (geltende Grundlage v
 
 ## §20 · UX-Punkteliste
 
-*(→ `archiv/FAHRPLAN-UX-PUNKTELISTE.md`)*
+*(→ `git 3fd5db8f9:archiv/FAHRPLAN-UX-PUNKTELISTE.md`)*
 
 **Zählung (31.7.2026, R2-22):** **2 Restpunkte** (A3-Abnahme · E-Optional), **dazu 1
 Statusbefund** (der dritte Spiegelstrich stellt nur fest, dass `W2·9` auf genau diese zwei
@@ -125,7 +125,7 @@ Sektionen weiter oben.
   Höhen; der Commit `3ccfd9d7e` deklariert das selbst offen («Felder bereits zeilen-aligned an
   Desktop/Tablet verifiziert — zur Abnahme geflaggt»). Entweder David nimmt die abweichende Lösung
   ab oder `auto-rows-fr`/`h-full` nachziehen. Reine Darstellung (§3), kein Risiko-Pfad. Detail
-  `archiv/FAHRPLAN-UX-PUNKTELISTE.md` A3. **Stand 24.9.2026 (W2·29-WERKBANK-RECHNER R2): gegenstandslos** — seit U2 (6.9.2026) tragen die Felder keinen Rahmen mehr, es gibt keine sichtbaren «Kacheln», deren Höhe abweichen könnte; gemessen @1280 `/rechner/betreibungskosten`: Feld-Oberkanten je Reihe gleich (0/0 · 193/193 · 305/305 px), `items-start` hält Label und Eingabe bündig. Rest-Befunde LM-066 (Bedienhöhen 36/50 px) → RECHNER R4, LM-032 (Normzeile) bleibt fachlich.
+  `git 3fd5db8f9:archiv/FAHRPLAN-UX-PUNKTELISTE.md` A3. **Stand 24.9.2026 (W2·29-WERKBANK-RECHNER R2): gegenstandslos** — seit U2 (6.9.2026) tragen die Felder keinen Rahmen mehr, es gibt keine sichtbaren «Kacheln», deren Höhe abweichen könnte; gemessen @1280 `/rechner/betreibungskosten`: Feld-Oberkanten je Reihe gleich (0/0 · 193/193 · 305/305 px), `items-start` hält Label und Eingabe bündig. Rest-Befunde LM-066 (Bedienhöhen 36/50 px) → RECHNER R4, LM-032 (Normzeile) bleibt fachlich.
 - **UX-PUNKTELISTE E-Optional · globaler Schalter «aufgehobene Normen ausblenden» nie gebaut**
   *(Batch E «Optional», verzahnt mit C2)*: das Ansicht-Menü des Lesers kennt nur
   `linien|fussnoten|verweise|leitfaelle` (`src/pages/gesetz-leser/leserOptionen.ts:65`,
@@ -133,7 +133,7 @@ Sektionen weiter oben.
   Artikel sind heute fix eine gedämpfte Einzeile mit
   AS-Aufhebungsnotiz (`ArtikelLeser.tsx:431/450`), ohne Ausblende-Option. Entweder als fünftes
   `OptFeld` nachziehen **oder** bewusst streichen mit der Begründung, dass eine ausgeblendete Norm
-  dem Leser eine Lücke verschweigt (§8). Detail `archiv/FAHRPLAN-UX-PUNKTELISTE.md` Batch E,
+  dem Leser eine Lücke verschweigt (§8). Detail `git 3fd5db8f9:archiv/FAHRPLAN-UX-PUNKTELISTE.md` Batch E,
   letzter Spiegelstrich. `[OF]`
 - **UX-PUNKTELISTE · `W2·9` ist gegenstandslos geworden** *(Befund 31.7.2026)*: Der Schritt
   verlangt eine Mapping-Tabelle «alt-Punkt → Code-Pfad → Status», *bevor* die Restpunkte **C2/C5**
@@ -141,11 +141,11 @@ Sektionen weiter oben.
   `ArtikelLeser.tsx:169/450`; C5 = Ingress/Erlassformel als M5,
   `scripts/normtext/kopf-extrahiere.ts` + `parts/ErlassKopfBlock.tsx`). Von den 20 Anweisungen
   sind 18 live, Batch D ist über IV-1/IV-2 gemappt, Batch F über
-  `archiv/FAHRPLAN-KANTONALE-ENTSCHEIDE.md`. **Verbleibender Restbestand = genau die beiden Zeilen
+  `git 3fd5db8f9:archiv/FAHRPLAN-KANTONALE-ENTSCHEIDE.md`. **Verbleibender Restbestand = genau die beiden Zeilen
   oben (A3-Abnahme, E-Optional).** `W2·9` darum abhaken oder auf diese zwei Punkte verengen; der
   Datei-Kopf «Status: reiner Plan. Noch nichts umgesetzt.» ist seit dem 26.6.2026 stale und bleibt
   im Archiv nur historisch stehen — die Status-Wahrheit trägt die Session-Karte
-  `archiv/STRUKTUR-SESSIONKARTEN.md` («16/20 live + D-Teil + 2 Pläne»).
+  `git 3fd5db8f9:archiv/STRUKTUR-SESSIONKARTEN.md` («16/20 live + D-Teil + 2 Pläne»).
 
 ---
 
@@ -155,7 +155,7 @@ Sektionen weiter oben.
 ## Archivierte Abschnitte *(Plan-Neuschnitt 29.8.2026)*
 
 18 Abschnitt(e) dieser Datei sind wörtlich nach
-[`archiv/fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md`](../archiv/fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md) ausgelagert — sie tragen keine offene
+`archiv/fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md` (git 3fd5db8f9:archiv/fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md) ausgelagert — sie tragen keine offene
 ROADMAP-Bindung mehr. Titel:
 
 - §2 · BGer-Rechtsweg

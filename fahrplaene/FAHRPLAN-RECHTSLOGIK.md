@@ -6,7 +6,7 @@
 > «Rechtslogik — Befunde Prüfung 23.9.2026») — nie zweiter Einstieg, immer nur
 > verlinkte Detailquelle. Je RL-Einheit liegt zusätzlich EIN Posten unter dem
 > Dach ihrer Welle (`npm run plan:posten -- info RL-xx` bzw. Verzeichnis
-> `plan/posten/`).
+> `git 3fd5db8f9:plan/posten/`).
 
 **Provenienz:** Prüfung Rechtslogik 23.9.2026 (fünf unabhängige Miner-Teile A–D +
 Judge, Details: `~/Documents/David/03_Projekte/LexMetrik/pruefung-rechtslogik-2026-09-23/`)
@@ -54,7 +54,7 @@ Golden-Namen und Blocker-Verweise gegen den Plan verifizierbar bleiben.
 
 **RL-01 Bauplan-Eintrag und Befund-Buchhaltung** (D-D7 Teil 1; S-X1)
 - Inhalt: nach W-01 Fahrplan/ROADMAP-Schritt(e) mit eigenem `feld:` (`rechtslogik`)
-  anlegen; je RL-Einheit ein Posten in `plan/posten/` mit Befund-IDs; Altbefunde
+  anlegen; je RL-Einheit ein Posten in `git 3fd5db8f9:plan/posten/` mit Befund-IDs; Altbefunde
   S3/S3b/S3c (§7 Zuordnungstabelle unten) als Posten; R2-09 und die
   Recherche-Posten aus §5 (Quellenfragen) als Posten. Befundliste um die
   falsifizierte «Phantom-URL»-Zeile (S1-17) ergänzen (§0 Ziff. 2b, nicht
@@ -187,8 +187,8 @@ sind Koordinationspunkte mit der VORLAGEN-Session — §4 unten.)*
 | **RL-49** Quellbelegte Fallsammlung | S1-03, S1-15, Brücke S-X1 (`it.fails` mit `offenerBefund`) (D-D3) | src/tests/faelle/**, Sperrklinken-Tor | prüfsystem | stichprobenweise für neu formulierte Erwartungen | Saat: soll-und-laeufe/<Bereich>/soll.md (~1'900) + AV (107 Fälle); Sperrklinke «herkunft≠hand je Risiko-Engine sinkt nicht» | 1 Rahmen + 4–6 | RL-02 · **darf ab Welle 1 parallel** | — |
 | **RL-50** Gegenprüfung messbar | S1-04 (D-D4) | scripts/gegenpruefung-ok.ts:14/:140/:221, Skill gegenpruefung SKILL.md:52–66/:180, bibliothek/register/gegenpruefung-register.md | prüfsystem | freiwillig (W-02) | `--vorab`-Pflicht rot ohne Datei; Verdikt `widerlegt` registrierbar | 1 | RL-02 | W-02 |
 | **RL-51** Testlücken + Test-Orakel | D-Abschnitt 3 (S2/S2b, alle Zeilen), S1-10, S1-13, S1-14 (Stryker-Monitor), VS4; A-B12: F1-03, F3-06, F4-06 (Kündigungsteil), R1-06, R5-08 | src/tests/**, Monitor-Skript, vite.config.ts:137–152, scripts/logik-sweep.ts | prüfsystem | empfohlen (Erwartungswerte blind aus Norm) | zuerst S2-28/29/32, S2b-19/33; R5-08 Tor-Test über PRESET_INDEX einmal rot (§6.7) | 3–6 | RL-02; Soll erst nach dem jeweiligen Fix grün (sonst `it.fails`) | **W-21** (nur Stryker) |
-| **RL-52** Stammdaten- und Tarif-Drift | S1-09 = B2-11, S1-11, S1-12, S1-16, AV-08 (D-D6 + B-P1) | scripts/tarif/tarif-drift.ts:10–22, package.json:105, ci.yml/normen-monitor, feiertage-gegenprobe.test.ts:7/:27/:39, check-lik-frische.ts, plan/posten/2026-09-20-v7-feiertags-gegenprobe.md, bibliothek/recherche/fremdnutzen-suchrunde-2-2026-09-06.md:15/:19 | prüfsystem | empfohlen | Sperrklinke «unklar» (Rot-Beweis: Adapter entfernen); Adapter VD/GE/NE/SZ/JU/TI; JAHRE 2024–2045 | 2–3 | RL-22 (gleiche Testdatei feiertage-gegenprobe) | — |
-| **RL-53** Befund-Buchhaltung Rest | S3-g, S-X1 (3)/(4) (D-D7 Teil 2) | scripts/check-sediment.ts (neue Gattung TODO/FIXME ohne Posten-Anker), PLAN-OCL-ABBAU.md (archivieren) | prüfsystem/doku | nein | Rot-Beweis TODO ohne Anker | 1 | RL-01 | — |
+| **RL-52** Stammdaten- und Tarif-Drift | S1-09 = B2-11, S1-11, S1-12, S1-16, AV-08 (D-D6 + B-P1) | scripts/tarif/tarif-drift.ts:10–22, package.json:105, ci.yml/normen-monitor, feiertage-gegenprobe.test.ts:7/:27/:39, check-lik-frische.ts, git 3fd5db8f9:plan/posten/2026-09-20-v7-feiertags-gegenprobe.md, bibliothek/recherche/fremdnutzen-suchrunde-2-2026-09-06.md:15/:19 | prüfsystem | empfohlen | Sperrklinke «unklar» (Rot-Beweis: Adapter entfernen); Adapter VD/GE/NE/SZ/JU/TI; JAHRE 2024–2045 | 2–3 | RL-22 (gleiche Testdatei feiertage-gegenprobe) | — |
+| **RL-53** Befund-Buchhaltung Rest | S3-g, S-X1 (3)/(4) (D-D7 Teil 2) | git 3fd5db8f9:scripts/check-sediment.ts (neue Gattung TODO/FIXME ohne Posten-Anker), PLAN-OCL-ABBAU.md (archivieren) | prüfsystem/doku | nein | Rot-Beweis TODO ohne Anker | 1 | RL-01 | — |
 | **RL-54** Kleinhygiene | S1-07, S1-17, S1-19 (D-D8) | src/tests/abnahmeGate.test.ts:28, messwerte/tor-bewaehrung.json (git 3fd5db8f9), Hook tor-schutz.py | prüfsystem | nein | Negativ-Fixture «nicht abgenommen» | 1 | — | — |
 
 ### Welle 4 — Verschlankung (`W2·30-RL-W4`, ≈ 1 Session, 2–4 PRs)
