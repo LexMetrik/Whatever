@@ -527,6 +527,22 @@ describe('Nachzug 25.9.2026 — «vice-présidente» ist ein Rollenwort', () => 
   });
 });
 
+// U-10 (plan/FEHLERBESTAND.md; Gegenprüfung #1117): die DEUTSCHE Form «Vizepräsident(in)» hinterliess das
+// Präfix «Vize» als Phantom-Richter «vize» mit Rolle vorsitz, der vorangehende Name verlor den Vorsitz.
+describe('U-10 — «Vizepräsident(in)» ist ein Rollenwort wie «vice-présidente»', () => {
+  it('«Roy Garré, Vizepräsident»: kein Richter «vize», Vorsitz bei Garré', () => {
+    const r = slugs('Bundesstrafrichter Roy Garré, Vizepräsident, Miriam Forni und Nathalie Zufferey, Gerichtsschreiberin Salomé Jaques', 'bstger');
+    expect(r).toEqual([
+      'garre-roy:vorsitz', 'forni-miriam:mitglied', 'zufferey-nathalie:mitglied', 'jaques-salome:gerichtsschreiber',
+    ]);
+    expect(r.some((x) => x.startsWith('vize'))).toBe(false);
+  });
+  it('weibliche Form, mit Bindestrich und nachgestellt', () => {
+    expect(slugs('Bundesstrafrichterin Miriam Forni, Vizepräsidentin, Roy Garré und Nathalie Zufferey, Gerichtsschreiber Marc Meier', 'bstger')[0]).toBe('forni-miriam:vorsitz');
+    expect(slugs('Bundesstrafrichter Roy Garré, Vize-Präsident, Miriam Forni, Gerichtsschreiber Marc Meier', 'bstger').some((x) => x.startsWith('vize'))).toBe(false);
+  });
+});
+
 // Auflage A1 der Gegenprüfung #1117 (25.9.2026): drei Phantom-Richter aus dem Nachzug.
 describe('Auflage A1 25.9.2026 — Phantom-Richter aus Rollenwort und Titel mitten im Namen', () => {
   it('BStGer SN.2026.4: nacktes «Vorsitz» ist ein Rollenwort, kein Vorname', () => {
