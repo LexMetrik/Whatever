@@ -11,6 +11,7 @@ import type {
 import type { Rechtsgebiet } from '../../src/lib/normtext/register-typen';
 import type { OclParagraph } from './adapter-typen';
 import { normalisiereRegeste, bereinigeFliesstext } from '../../src/lib/rechtsprechung/register';
+import { bereinigeZitierteNormen } from '../../src/lib/rechtsprechung/seitenmarker';
 import { rubrumFeldPlausibel } from '../../src/lib/rechtsprechung/rubrum';
 import { teileSachverhalt } from '../../src/lib/rechtsprechung/sachverhalt';
 import { sha256EntscheidBloecke } from './sha-entscheide';
@@ -411,7 +412,8 @@ export function mappeEntscheidOCL(
     regesteAmtlich,
     abschnitte,
     dispositivOrders: Array.isArray(str?.dispositiv_orders) ? str.dispositiv_orders.map(String) : [],
-    zitierteNormen: Array.isArray(det.statutes) ? det.statutes.map(String) : [],
+    // U-04: Phantom-Einträge «Art. N BGE» (Seitenvermerk im Normzitat) fallen heraus.
+    zitierteNormen: Array.isArray(det.statutes) ? bereinigeZitierteNormen(det.statutes.map(String)) : [],
     // Wird direkt nach der Zusammensetzung gefüllt (braucht den fertigen Snapshot).
     normKeys: [],
     zitierteEntscheide,
@@ -704,7 +706,7 @@ export async function holeBgeLeitentscheid(
       ...(azaSnap?.normKeys ?? []),
     ]),
     zitierteNormen: [
-      ...(Array.isArray(det.statutes) ? det.statutes.map(String) : []),
+      ...(Array.isArray(det.statutes) ? bereinigeZitierteNormen(det.statutes.map(String)) : []),
       ...(azaSnap?.zitierteNormen ?? []),
     ],
     legalArea: det.legal_area,
