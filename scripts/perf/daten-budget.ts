@@ -76,11 +76,13 @@ export const kb = (n: number): string => `${(n / 1024).toFixed(1)} KB`;
 //    QS-PERF «Rechtsprechungs-Register aufteilen» — die Anhebung ersetzt ihn nicht.
 export const DATEN_BUDGET: readonly (readonly [string, number])[] = [
   ['public/rechtsprechung/register.json', 900 * 1024],
+  // Budget 300 KiB (Auflage Gegenprüfung 10.10.2026): Ist 239'200 B, ~35 B gzip je Eintrag,
+  // ~2,6 KB/Woche Regelzuwachs ⇒ 28 % Luft ≈ 20 Wochen plus ein Sammelimport (wie 25.9.: +374).
   // entscheid-index.json (E0-REGISTER Teil 2, 10.10.2026): lädt jede Urteilsseite und jede
   // Seite mit Urteils-Reiter. Gemessen 10.10.2026 mit gz() (Node-Default): 239 200 B ≈
-  // 234 KB; Budget = Ist + ~10 % Kopffreiheit, absichtlich eng — die Datei wächst mit dem
-  // Korpus (6815 Einträge, ~35 B gzip je Eintrag) und soll nicht unbemerkt davonlaufen.
-  ['public/rechtsprechung/entscheid-index.json', 260 * 1024],
+  // 234 KB; die Datei wächst mit dem Korpus (6815 Einträge) und soll nicht unbemerkt
+  // davonlaufen — die Luft entspricht der des Registers (900 gegen 713 KiB, ~26 %).
+  ['public/rechtsprechung/entscheid-index.json', 300 * 1024],
   // register-provenienz.json (E0-REGISTER, 10.10.2026: `fassungsToken` je Eintrag) steht
   // bewusst NICHT hier: kein Browser-Pfad lädt sie (Leser nur Build und Prüftore) —
   // ein Browser-Budget wäre ein Tor ohne Gegenstand (§6.7).

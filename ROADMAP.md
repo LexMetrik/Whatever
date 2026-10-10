@@ -58,10 +58,7 @@ deutscher Fassung, ~2150 (David 7.10.).
 
 Kürzel = Zweig-Präfix und Trailer `Roadmap:`.
 
-1. **Rechtsprechungs-Register aufteilen** (`E0-REGISTER`) · E0 · Gegenprüfung ja, soweit Urteilsdaten
-   *Fertig, wenn* aufgeteilt (839 KB von 900 KiB, +7–12 KB/Woche), bevor `check:perf-budget` jeden PR
-   rot färbt (FB S-26). *Frist:* ~Ende Nov./Dez.
-2. **Fundament für den Bund-Ausbau** (`A1-FUNDAMENT`) · E1·A · Gegenprüfung ja, wo Normdaten
+1. **Fundament für den Bund-Ausbau** (`A1-FUNDAMENT`) · E1·A · Gegenprüfung ja, wo Normdaten
    *Fertig, wenn* (a) `such-index/artikel.json` entfällt (Gesetzes-Wortsuche nur über Server,
    Entscheide eigene Suche; David 7.10.) und `normtext/register.json` (93 % des Deckels,
    `scripts/perf/daten-budget.ts`) vor Lieferstart aufgeteilt ist; (b) Pins als Datendatei statt
@@ -73,10 +70,10 @@ Kürzel = Zweig-Präfix und Trailer `Roadmap:`.
    (289 Abschnitte/59 Erlasse), Sidecars (B-75), Positivliste (V-02, V-04).
    *Offen, vor Lieferstart:* Datenablage bei ~2150 Erlassen (81 MB für 231, `.git` ~594 MiB),
    Turso-Replika 751 von 1024 MiB (#1350). *Lage:* Vault `03_Projekte/LexMetrik/a1-fundament-2026-10-07/lage.md`.
-3. **Jedes Bundesgesetz** (`A2-BUNDESGESETZE`) · E1·A · Gegenprüfung ja · nach JETZT 2
+2. **Jedes Bundesgesetz** (`A2-BUNDESGESETZE`) · E1·A · Gegenprüfung ja · nach JETZT 1
    *Fertig, wenn* eine Lieferung die 256 fehlenden Bundesgesetze (251+5 dringliche) und 25 VO der
    Bundesversammlung bringt (281), Fortschrittszeile «348/348». *Ort:* FAHRPLAN-FEDLEX-PORTFOLIO §21.
-4. **Warnhinweis und Urteile** (`WARNHINWEIS`) · E1·B · Gegenprüfung nein (Urteile: David 25.9.); Tor
+3. **Warnhinweis und Urteile** (`WARNHINWEIS`) · E1·B · Gegenprüfung nein (Urteile: David 25.9.); Tor
    greift trotzdem bei `scripts/{normtext,rechtsprechung}/**`
    *Fertig, wenn* Rechner mit belegt falschem Ergebnis «bekannter Fehler, Ergebnis nicht verwenden»
    zeigen (FB Bereich 5 Klasse A, v. a. notariat-grundbuch RV-17…20/24/25/27/82,
@@ -85,7 +82,7 @@ Kürzel = Zweig-Präfix und Trailer `Roadmap:`.
    `grep -roE 'Art\. [0-9]+[a-z]{0,9} BGE' public/rechtsprechung`); «SBK 26 88» (U-16); Gerichtsname
    amtlich (U-24: «Kantonsgericht GR» statt «Obergericht», `entscheide-mapping.ts:1174`; Tor
    Präfix→Gericht für ag_/sg_); Vorinstanz im Nominativ (U-03); U-06/10/13/15/25. Trailer Urteile: `URTEILE`.
-5. **Rechtslogik nach Schaden** (`RECHTSLOGIK`) · E1·B · Go David 23./24.9. · Gegenprüfung ja
+4. **Rechtslogik nach Schaden** (`RECHTSLOGIK`) · E1·B · Go David 23./24.9. · Gegenprüfung ja
    *Fertig, wenn* behoben in der Reihenfolge notariat-grundbuch (Welle 2b, 8 A-Fälle) → Fristenrechner
    (7) → prozesskosten (4) → Vorlagen (RV-06, RV-30, RV-31, RV-47, RV-74, RV-77); je Werkzeug
    Warnhinweis entfernen. RL-43 berührt `historie-parse.ts`/`revisionen-extrakt.ts` ⇒ seriell zu Spur A.
@@ -123,7 +120,7 @@ E3
 - David 1.10./3.10.: Deaktiviert-/Hover-Varianten angleichen; Regelsätze von Belegen entflechten — FB Teil B
 - David 2.10.: Rest-Rückbau tote Rechtsprechungs-Zeilen: revisionFuer nur noch Kommentar, data-leitfaelle u. a. prüfen — FB Teil B
 - David 6.10.: Omnilex-Sichtung: 7 Posten U2–U8 (Datums-Tor zu «Gilt seit», Ausgang-Label wartet auf David) — bibliothek/recherche/omnilex-app-sichtung-2026-10-06.md §6
-- wartet auf David 7.10. (§15): public/rechtsprechung/register.json 9,9 MB aufteilen; norm-index.json 6 MB laut Kommentar UI-ungenutzt — public/
+- 10.10. E0-REGISTER-Rest: wartet auf David quelleUrl auslagern (≈115 KB, Karten-Link ändern); norm-index.json 6 MB UI-ungenutzt; 4 Prüf-Nachzüge — FB S-26
 E3·W
 - Go David 5.10.: CI: Dauer-Wackler an der Wurzel (git 3fd5db8f9:bibliothek/betrieb/e2e-fang-historie-2026-10-05/), leser-kopf-cls-s3 hängt an Fedlex, Läufer-Kontingent
 - 10.10. Kahlschlag-Nachlauf: erlass-klassifikation.json docs/→daten/; alte Skill-Namen; gitFlaechen.ts:427, DESIGN-REGLEMENT Z.235/365 Test-gekoppelt; tor-schutz Amend-Fehlalarme; .selbstopt-ereignisse.jsonl ohne Leser; diff-klassieren.ts ohne Test
