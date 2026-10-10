@@ -36,6 +36,18 @@ describe('vorinstanzNominativ', () => {
     expect(vorinstanzNominativ('Bundesverwaltungs- gerichts vom 27. Oktober 2022 (A-691/2021)')).toBe('Bundesverwaltungsgericht vom 27. Oktober 2022 (A-691/2021)');
     expect(vorinstanzNominativ('Versicherungsgerichtsdes Kantons Aargau vom 8. Dezember 2023')).toBe('Versicherungsgericht des Kantons Aargau vom 8. Dezember 2023');
   });
+  it('Ergänzungsstrich vor Bindewort bleibt (kein «Bauund …»); echte Trennung wird weiter zusammengezogen', () => {
+    for (const t of [
+      'Bau- und Justizdepartements des Kantons Solothurn vom 3. Mai 2021',
+      'Sicherheits- und Justizdepartements des Kantons St. Gallen vom 3. Mai 2021',
+      'Justiz- und Sicherheitsdepartements des Kantons Luzern vom 3. Mai 2021',
+      'Bau- oder Umweltdepartements des Kantons Aargau vom 3. Mai 2021',
+      'Justiz- et police departements du canton de Vaud',
+    ]) expect(vorinstanzNominativ(t), t).toBe(t);
+    expect(vorinstanzNominativ('Bundesverwaltungs- gerichts vom 27. Oktober 2022')).toBe('Bundesverwaltungsgericht vom 27. Oktober 2022');
+    // Wortanfang «e…»/«o…» ist kein Bindewort
+    expect(vorinstanzNominativ('Bundesverwaltungs- erichts vom 1. Mai 2020')).toBe('Bundesverwaltungserichts vom 1. Mai 2020');
+  });
   it('fr./it. Namen, Datums-/Satzreste und Nominative bleiben zeichengleich; idempotent', () => {
     const unveraendert = [
       'Tribunal cantonal du canton de Vaud, Chambre des recours pénale, du 29 novembre 2021',

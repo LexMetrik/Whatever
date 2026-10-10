@@ -15,12 +15,16 @@
 /** Optionales Adjektiv (Genitiv) + Kopfwort; das Kopfwort wird unten auf die Endung geprüft. */
 const KOPF = /^((?:(?:Kantonalen|Interkantonalen|Eidgenössischen|Grossen|Kleinen)\s+)?)(\p{Lu}[\p{L}-]*)(?=[\s,]|$)/u;
 /** Genitiv-Endung → Geschlecht (steuert das Adjektiv: Neutrum «-es», Maskulinum «-er»). */
+/** Silbentrennung «Wortanfang- ende», aber nicht vor einem Bindewort (Ergänzungsstrich). */
+const BINDESTRICH_TRENNUNG = /^((?:\p{Lu}[\p{L}]*\s+)?\p{Lu}[\p{L}]*)- (?!(?:und|oder|bzw|sowie|et|ou|e|o)(?!\p{L}))([a-zäöü])/u;
 const ENDUNG = /(gerichts|departements|amts|rats)$/i;
 const MASKULIN = /rats$/i;
 
 export function vorinstanzNominativ(roh: string): string {
-  // Silbentrennung im Kopfwort («Bundesverwaltungs- gerichts vom …»): zusammenziehen.
-  let t = roh.replace(/^((?:\p{Lu}[\p{L}]*\s+)?\p{Lu}[\p{L}]*)- ([a-zäöü])/u, '$1$2');
+  // Silbentrennung im Kopfwort («Bundesverwaltungs- gerichts vom …»): zusammenziehen — ausser beim
+  // Ergänzungsstrich («Bau- und Justizdepartements …»): folgt ein Bindewort (und, oder, bzw., sowie;
+  // fr. et/ou, it. e/o), ist der Bindestrich Teil des Namens und bleibt.
+  let t = roh.replace(BINDESTRICH_TRENNUNG, '$1$2');
   // Quell-Tippfehler «Versicherungsgerichtsdes Kantons …» (Leerzeichen fehlt).
   t = t.replace(/^(\p{Lu}[\p{L}-]*gerichts)(des|der)(?=\s)/u, '$1 $2');
   const m = KOPF.exec(t);
