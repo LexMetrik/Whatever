@@ -89,15 +89,18 @@ gestrichen. Davids einziger Input ist der Bau-Prompt.
 - **Fortsetzen statt neu spawnen** bei Folge-Slices derselben Fläche — nie für
   die Gegenprüfung, nie über Klassengrenzen, nicht ab ~300k Token Last.
 - **Agenten-Behauptungen:** «Vorbestand/Flake per Nullprobe» gilt nur mit
-  Kommando und Ausgabe; «es gibt kein X» nur nach repo-weiter Suche;
-  verhaltensneutral an mehreren Stellen ⇒ je Stelle Zusicherung und Rot-Probe.
+  Kommando und Ausgabe; «es gibt kein X» nur nach repo-weiter Suche — auch für
+  den Orchestrator: nie `head` auf einen Negativ-Grep (#1361: Treffer abgeschnitten,
+  Gewinn halbiert); verhaltensneutral an mehreren Stellen ⇒ je Stelle Zusicherung
+  und Rot-Probe.
 - **Fallen:** Bau-Agenten isoliert (`isolation: "worktree"`, eigenes
   `npm ci --prefer-offline`, nie `node_modules`-Symlink); Worktrees als eigener
   Schritt mit absolutem Pfad anlegen. Einen abgebrochenen Isolations-Agenten neu
   dispatchen, nicht fortsetzen; vor einem Nachzug auf denselben Zweig den alten
   Worktree entfernen. Kein Fixer in einen Worktree mit laufender Prüfung, keine
   Orchestrator-Commits, wo ein Agent baut (geteilter Index). Scratchpad-Namen agentenspezifisch. Hintergrund-Bash stirbt nach
-  10 min. CI-Wächter aus EINER Abfrage je voller SHA. Kein `[skip ci]` in
+  10 min. CI-Wächter aus EINER Abfrage je voller SHA. `gh pr merge` immer als
+  eigenen Befehl (der Hook blockt sonst den ganzen Mehrfach-Befehl). Kein `[skip ci]` in
   irgendeinem PR-Commit (der Squash trägt alle Betreffe nach main).
   Normtext-Bewegung ⇒ `npm run projektionen:normtext -- --datum=…`, Materialien
   ⇒ `npm run materialien:kaskade -- --datum=…`, nie Einzelbefehle. Vor dem
