@@ -79,7 +79,7 @@ export interface BrowseEntscheid {
   // Projektion `register-provenienz.json` (`EntscheidProvenienz`): kein Browser-Pfad
   // liest ihn (E0-REGISTER, Entscheid David 10.10.2026) — er machte ~14 % der
   // register.json-gzip-Grösse aus. `quelleUrl` BLEIBT: EntscheidKarte.tsx rendert
-  // daraus den «↗ amtlich»-Link jeder Karte (Abweichung vom Auftrag, siehe Bericht).
+  // daraus den «↗ amtlich»-Link jeder Karte (Gegenprüfung #1361, FB S-26).
   // Wer `fassungsToken` braucht (Prüftore, Wochenlauf), liest `BrowseEntscheidVoll`.
   /**
    * Spruchkörper (Richter-Facette). Nur gesetzt, wenn der amtliche Besetzungs-Block
@@ -110,7 +110,8 @@ export interface EntscheidProvenienz {
 /**
  * `public/rechtsprechung/register-provenienz.json`: das Provenienz-Feld je
  * Register-Eintrag, geschlüsselt nach `key` (Reihenfolge = Reihenfolge des Kerns).
- * Wird NICHT im Browser geladen — Leser sind nur Build (Prerender) und Prüftore.
+ * Wird NICHT im Browser geladen — Leser sind nur `check-entscheide.ts` und der
+ * Roundtrip-Test `register-teilen.test.ts`; Prerender braucht sie nicht.
  * Namensvorbild: `public/materialien/register-provenienz.json`.
  */
 export interface EntscheidProvenienzRegister {

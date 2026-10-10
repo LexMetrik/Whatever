@@ -11,7 +11,8 @@
 //   register-provenienz.json   { erzeugt, eintraege: { <key>: { fassungsToken } } }
 //
 // `quelleUrl` bleibt im Kern: EntscheidKarte.tsx:165 liest sie für den «↗ amtlich»-
-// Link (der Auftrag nahm an, kein Browser-Pfad lese sie — falsifiziert 10.10.2026).//
+// Link (der Auftrag nahm an, kein Browser-Pfad lese sie — falsifiziert 10.10.2026).
+//
 // Beide Funktionen sind rein und deterministisch (§2). `vereinigeRegister` ist die
 // Umkehrung von `teileRegister`: Roundtrip byte-gleich unter `serialisiere()` — das
 // ist der Verhaltensneutralitäts-Beweis (§6) und wird im Test geführt.
