@@ -15,23 +15,3 @@ Wortlaut der fünf EINGANG-Zeilen (Stand ROADMAP 7.10.2026), unverändert:
 Stand 8.10.2026 zu Ziff. 2: Worktree `nostalgic-pike-a7edae` samt Zweig `claude/nifty-feynman-86ce82` entfernt (gelandet, sauber); `e0-brandschutz` bleibt (A1-FUNDAMENT läuft). `PLAN_BUCHUNG_TOKEN` steht noch in den GitHub-Secrets (gesetzt 14.8.2026, von keinem Workflow gelesen) — Löschen ist Davids Handgriff.
 
 Vorrang: Ziff. 3 ist eine Lücke im Merge-Schutz für Risiko-Pfade — zuerst.
-
-## Nachtrag 10.10.2026 — StarNet-Sichtung (Go David 10.10.)
-
-Herkunft: Sichtung `bibliothek/recherche/starnet-sichtung-2026-10-10.md`; David wählte im Chat alle drei
-empfohlenen Punkte, Ablage «In Bestehendes» (Punkt 1 steht in ROADMAP JETZT 2).
-
-6. **Faktenschutz beim Verdichten und Lektorieren** — `docs/token-oekonomie/dispatch-template.md` §0 Ziff. 2b
-   um einen Satz erweitern (kein neuer Abschnitt): Wer Text kürzt, zusammenfasst oder glättet, ändert nie
-   eine Zahl, ein Datum, eine Verneinung oder eine Modalität («hätte» ≠ «hat»); Zweifel ⇒ Wortlaut stehen
-   lassen. Vorfall: #1310 (95c025591) machte aus Links, die ein Guard entfernt **hätte**, «371 falsche
-   Selbstlinks» (Merkzettel `…-des-der-guard-…`, 31.8.; berichtigt 7.10.). Parallele aus StarNet-Praxistest:
-   Stil-Lektorin strich inhaltlich «Im Sommer». Hinweis, kein Tor (Prozess-Entscheid 25.9.).
-7. **Rückbau der toten Token-Messkette** (§17-Gegengewicht) — `.claude/settings.json` env
-   `OTEL_METRICS_EXPORTER` + `CLAUDE_CODE_ENABLE_TELEMETRY`, `token_ablesen()` in
-   `.claude/hooks/abschluss-wache.py` (Z. ~121–147; Docstring nennt das gelöschte `selbstopt:erheben`),
-   gitignorte Spool `messwerte/token-spool.jsonl` (140 Zeilen, letzter Eintrag 25.9., kein Leser).
-   Verbrauch misst `plan/posten/anhang/2026-09-21-verbrauch-summe.py` aus den Transkripten. Hook-Teil als
-   Diff an David (Klassifizierer blockt Hook-Edits). Vorher klären: nutzt David Port 9464 privat?
-   Schliesst die archivierten, unbehobenen Merkzettel `2026-09-20-hook-prosa-nennt-retro-17-…` und
-   `2026-09-21-token-spool-jsonl-leser-pruefen`.
