@@ -10,6 +10,8 @@
 //   U-04  Seitenvermerk mitten im Normzitat → Marker vor das Zitat, Phantom-`zitierteNormen` raus
 //         (src/lib/rechtsprechung/seitenmarker.ts).
 //   U-03  Vorinstanz im Rubrum im Nominativ statt Genitiv (src/lib/rechtsprechung/vorinstanz.ts).
+//   U-13  Phantom-Erwägungen aus Kommentar-Zitaten («n° 10 ad art. 45») und verschluckte Haupt-
+//         Überschriften «5.»/«6.» (scripts/normtext/erwaegung-normalisieren.ts).
 //   U-24  amtlicher Gerichtsname kantonaler Court-Codes (GR: Obergericht ab 1.1.2025; AG/SG je
 //         Aktenzeichen-Präfix) und U-16 amtliches GR-Aktenzeichen («SBK 26 88») in
 //         `gerichtName`, `nummer` und `zitierung` (src/lib/rechtsprechung/kantonale-gerichte.ts).
@@ -17,10 +19,11 @@ import type { EntscheidAbschnitt, EntscheidSnapshot } from '../../src/lib/rechts
 import { bereinigeZitierteNormen, verlegeSeitenmarkerVorNormzitat } from '../../src/lib/rechtsprechung/seitenmarker';
 import { amtlicherGerichtName, amtlichesAktenzeichen, zitierungNachKorrektur } from '../../src/lib/rechtsprechung/kantonale-gerichte';
 import { vorinstanzNominativ } from '../../src/lib/rechtsprechung/vorinstanz';
+import { repariereErwaegungsBloecke } from './erwaegung-normalisieren';
 import { sha256EntscheidBloecke } from './sha-entscheide';
 
 /** Ein Befund-Zähler je Regel (für Lauf-Protokolle und Tests). */
-export type Bereinigung = Record<'seitenmarker' | 'zitierteNormen' | 'gerichtName' | 'aktenzeichen' | 'vorinstanz', number>;
+export type Bereinigung = Record<'seitenmarker' | 'zitierteNormen' | 'gerichtName' | 'aktenzeichen' | 'vorinstanz' | 'erwaegungen', number>;
 
 function bereinigeAbschnitte(abschnitte: EntscheidAbschnitt[] | undefined): { neu: EntscheidAbschnitt[] | undefined; n: number } {
   if (!abschnitte) return { neu: abschnitte, n: 0 };
@@ -43,9 +46,19 @@ function bereinigeAbschnitte(abschnitte: EntscheidAbschnitt[] | undefined): { ne
  * Abschnitte (Typ + Marke + Text) und hält so das Drift-Tor `check:entscheide` grün.
  */
 export function bereinigeBestandSnapshot(snap: EntscheidSnapshot): Bereinigung {
-  const out: Bereinigung = { seitenmarker: 0, zitierteNormen: 0, gerichtName: 0, aktenzeichen: 0, vorinstanz: 0 };
+  const out: Bereinigung = { seitenmarker: 0, zitierteNormen: 0, gerichtName: 0, aktenzeichen: 0, vorinstanz: 0, erwaegungen: 0 };
 
+  // U-13: Phantom-Blöcke aus Kommentar-Zitaten und verschluckte Haupt-Überschriften (nur OCL-Herkunft;
+  // der BS-Eigenimport hat einen anderen Parser).
+  if (snap.quelle === 'opencaselaw') {
+    for (const a of snap.abschnitte) {
+      if (a.typ !== 'erwaegung') continue;
+      const neu = repariereErwaegungsBloecke(a.bloecke);
+      if (JSON.stringify(neu) !== JSON.stringify(a.bloecke)) { a.bloecke = neu; out.erwaegungen++; }
+    }
+  }
   const abs = bereinigeAbschnitte(snap.abschnitte);
+  if (out.erwaegungen && !abs.n) snap.sha = sha256EntscheidBloecke(snap.abschnitte);
   if (abs.n && abs.neu) { snap.abschnitte = abs.neu; snap.sha = sha256EntscheidBloecke(abs.neu); }
   const aus = bereinigeAbschnitte(snap.auszugAbschnitte);
   if (aus.n && aus.neu) snap.auszugAbschnitte = aus.neu;

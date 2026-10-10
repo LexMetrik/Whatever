@@ -125,6 +125,73 @@ export function spalteMonolith(text: string): EntscheidBlock[] | null {
   return bloecke.length >= 2 ? bloecke : null;
 }
 
+// ── U-13: Kommentar-Zitat-Fragmente und verschluckte Haupt-Überschriften reparieren ──────────
+//
+// OCL gliedert den Volltext nach Zahlen am Absatzanfang. Zwei Fehlgriffe (BGE 152 III 205 = Urteil
+// 4A_129/2024, Messung 11.10.2026 gegen mcp.opencaselaw.ch/api/structure/bger_4A_129_2024):
+//  (a) Zitat «…, 2e éd. 2019, n° 5 ad art. 34 CL; …, n° 10 ad art. 45 …» — OCL setzt die Zahl nach «n o»
+//      als Erwägungs-Nummer: Phantom-Blöcke «E. 5» (Text «ad art. 34 CL; …») und «E. 10» («ad art. 45 …»),
+//      die Zahl selbst steht nur noch in e_number;
+//  (b) die echten Haupt-Überschriften «5.» und «6.» bleiben als eigener Absatz «5.» / «6.» im Text der
+//      vorangehenden Erwägung stehen (E. 4.7 bzw. E. 5.4).
+// Beide Reparaturen sind fail-closed (§1/§8): (a) nur, wenn ein früherer Block auf «n o» endet UND das
+// Fragment klein beginnt; (b) nur, wenn die Zahl genau der nächste Haupt-Rang ist, kein Block mit dieser
+// Marke existiert und ein grossgeschriebener Absatz folgt. Wort-erhaltend: (a) fügt die verlorene
+// Zahl wieder ein, (b) verschiebt die Zahl vom Text in die Marke.
+
+const KLEIN_START = /^[a-zäöüéèàç]/;
+const ENDET_AUF_NR = /\bn\s*(?:\n+\s*)?(?:os?|°)\s*$/;
+const LONE_HAUPT = /^(\d{1,2})\.$/;
+const GROSS_START = /^[A-ZÄÖÜÉÈÀ«"(]/;
+
+const topVon = (marke: string | null): number | null => {
+  const m = /^E\.\s*(\d+)/.exec(marke ?? '');
+  return m ? Number(m[1]) : null;
+};
+
+export function repariereErwaegungsBloecke(eingang: readonly EntscheidBlock[]): EntscheidBlock[] {
+  // (a) Zitat-Fragmente an den Block zurückführen, dessen Text auf «n o» abbricht. OCL hängt das Fragment
+  // nach seiner (falschen) e_number ein, es steht darum NICHT neben seinem Ursprung (BGE 152 III 205:
+  // der Ursprung ist E. 4.3, das Fragment «E. 5» steht hinter E. 4.7, «E. 10» ganz am Ende) — gesucht wird
+  // rückwärts der nächste offene Block. Ohne offenen Block bleibt das Fragment, wie es ist.
+  const a: EntscheidBlock[] = [];
+  for (const b of eingang) {
+    const nr = /^E\.\s*(\d+)$/.exec(b.marke ?? '')?.[1];
+    if (nr && KLEIN_START.test(b.text)) {
+      let k = a.length - 1;
+      while (k >= 0 && !ENDET_AUF_NR.test(a[k].text)) k--;
+      if (k >= 0) {
+        a[k] = { ...a[k], text: `${a[k].text} ${nr} ${b.text}` };
+        continue;
+      }
+    }
+    a.push(b);
+  }
+  // (b) Verschluckte Haupt-Überschriften «N.» abspalten.
+  const vorhanden = new Set(a.map((b) => b.marke).filter(Boolean));
+  const out: EntscheidBlock[] = [];
+  for (const b of a) {
+    let cur = b;
+    for (let guard = 0; guard < 50; guard++) {
+      const top = topVon(cur.marke);
+      if (top === null) break;
+      const paras = cur.text.split(/\n{2,}/);
+      const i = paras.findIndex((p, k) => {
+        const m = LONE_HAUPT.exec(p.trim());
+        return k >= 1 && !!m && Number(m[1]) === top + 1 && !vorhanden.has(`E. ${m[1]}`)
+          && k + 1 < paras.length && GROSS_START.test(paras[k + 1].trim());
+      });
+      if (i < 0) break;
+      const nr = LONE_HAUPT.exec(paras[i].trim())![1];
+      out.push({ ...cur, text: paras.slice(0, i).join('\n\n') });
+      cur = { marke: `E. ${nr}`, tiefe: 1, text: paras.slice(i + 1).join('\n\n') };
+      vorhanden.add(cur.marke!);
+    }
+    out.push(cur);
+  }
+  return out;
+}
+
 /**
  * EINZIGE Eintrittsfunktion. Vereinheitlicht einen Erwägungs-Abschnitt zu
  * konsistenten {marke, tiefe?, text}-Blöcken. Pure, deterministisch (§2).
@@ -155,7 +222,7 @@ export function normalisiereErwaegung(
         return { marke: `E. ${p.e_number}`, tiefe, text };
       })
       .filter((b) => b.text);
-    return bloecke;
+    return repariereErwaegungsBloecke(bloecke);   // U-13
   }
   // Kein paras (Bestand ohne Cache): nur Monolith-Veredelung, sonst unverändert.
   if (vorhandeneBloecke.length === 1 && !vorhandeneBloecke[0].marke) {
