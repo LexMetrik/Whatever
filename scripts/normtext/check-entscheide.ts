@@ -8,11 +8,12 @@
 import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { sha256EntscheidBloecke } from './sha-entscheide';
-import { vergleicheLeitfaelle } from './entscheide-schreiben';
+import { vergleicheLeitfaelle, serialisiere } from './entscheide-schreiben';
 import { bandjahrDiffPlausibel } from './bge-bandjahr';
 import { findeFremdeFundstelleImBody } from './entscheide-koerper-konflation';
 import type { EntscheidSnapshotDatei } from '../../src/lib/rechtsprechung/typen';
 import type { EntscheidManifest, EntscheidProvenienzRegister } from '../../src/lib/rechtsprechung/register';
+import { projiziereEntscheidIndex } from '../../src/lib/rechtsprechung/entscheid-index';
 import type { LeitfallRef, NormEntscheidIndex, LeitfallShard } from '../../src/lib/rechtsprechung/norm-index';
 
 const ROOT = process.cwd();
@@ -171,6 +172,18 @@ function main() {
     for (const k of Object.keys(prov.eintraege)) {
       if (!keys.has(k)) fehler.push(`${k}: Waise in register-provenienz.json (kein Eintrag in register.json)`);
     }
+  }
+  // Entscheid-Index ≡ Projektion des Registers (E0-REGISTER Teil 2, 10.10.2026, §5):
+  // `entscheid-index.json` ist die Datei, die jede Urteilsseite statt des Registers lädt. Zwei
+  // Dateien mit überlappendem Inhalt sind nur so lange EINE Quelle, wie das jemand nachprüft —
+  // ein Nachpflege-Skript, das nur register.json anfasst, servierte die UI sonst still auf
+  // Altstand. Byte-scharf (2-Space, Newline, Feld- und Eintragsreihenfolge): erwartet wird
+  // exakt, was `schreibeKorpus` mit derselben Funktion `projiziereEntscheidIndex` schreibt.
+  const indexPfad = join(PUB, 'entscheid-index.json');
+  if (!existsSync(indexPfad)) {
+    fehler.push('entscheid-index.json fehlt — jede Urteilsseite lädt diese Datei; Korpus neu schreiben (npm run entscheide -- --remap).');
+  } else if (readFileSync(indexPfad, 'utf8') !== serialisiere(projiziereEntscheidIndex(manifest))) {
+    fehler.push('entscheid-index.json ≠ Projektion von register.json — zweite Wahrheit auf dem Laufzeitpfad jeder Urteilsseite (§5). Korpus neu schreiben (npm run entscheide -- --remap).');
   }
   const azaKeys: Record<string, string[]> = {};   // aza-Key → BGE-Keys (Kollisions-Backstop)
 

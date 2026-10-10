@@ -15,7 +15,7 @@
 // Erwägungs-Fundstelle als Spalten — dann speist die Edge-Query diese Kanten
 // auch für Long-Tail-Entscheide ohne Client-Parse (FAHRPLAN §V2).
 
-import type { BrowseEntscheid } from '../rechtsprechung/register';
+import type { EntscheidIndexEintrag } from '../rechtsprechung/entscheid-index';
 import type { EntscheidAbschnitt, Leitcharakter } from '../rechtsprechung/typen';
 import { ersteTextFundstelle } from '../rechtsprechung/abschnitte';
 
@@ -50,13 +50,13 @@ function normZitat(z: string): string {
  */
 export function aufloeseZitierteEntscheide(
   zitierte: readonly string[],
-  manifest: readonly BrowseEntscheid[],
+  manifest: readonly EntscheidIndexEintrag[],
   abschnitte: EntscheidAbschnitt[],
   selbstKey: string,
 ): ZitierteEntscheide {
   // Nachschlage-Karten einmalig (kein O(n·m)): nur echte Einträge mit Datei.
-  const nachBge = new Map<string, BrowseEntscheid>();
-  const nachNummer = new Map<string, BrowseEntscheid>();
+  const nachBge = new Map<string, EntscheidIndexEintrag>();
+  const nachNummer = new Map<string, EntscheidIndexEintrag>();
   for (const e of manifest) {
     if (e.verweis || !e.datei || e.key === selbstKey) continue;
     if (e.bgeReferenz && !nachBge.has(e.bgeReferenz)) nachBge.set(e.bgeReferenz, e);

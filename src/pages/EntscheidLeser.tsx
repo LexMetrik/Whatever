@@ -14,7 +14,8 @@ import { NormText } from '../components/NormText';
 import { KontextPanel } from '../components/kontext/KontextPanel';
 import { ladeEntscheidEintrag, ladeEntscheid } from '../lib/rechtsprechung/browse';
 import { kopfModell, type KopfLabelKey } from '../lib/rechtsprechung/kopf';
-import { normalisiereRegeste, type BrowseEntscheid } from '../lib/rechtsprechung/register';
+import { normalisiereRegeste } from '../lib/rechtsprechung/register';
+import type { EntscheidIndexEintrag } from '../lib/rechtsprechung/entscheid-index';
 import { GEBIET_LABEL } from '../lib/normtext/register';
 import {
   ENTSCHEID_HIGHLIGHT_INSTANZ, ankunftsAnker,
@@ -214,12 +215,13 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
   const hashRoh = (imPane ? paneLoc.hash : typeof window !== 'undefined' ? window.location.hash : '').slice(1);
   const meldeInhaltsKopf = useMeldeInhaltsKopf();
   const [snap, setSnap] = useState<EntscheidSnapshot | null>(null);
-  // Manifest-Eintrag desselben Entscheids — trägt die korpus-kanonisierten
+  // Index-Eintrag desselben Entscheids (E0-REGISTER Teil 2: schlanker Entscheid-
+  // Index statt Register, nur zehn Felder) — trägt die korpus-kanonisierten
   // Richter-Slugs für die Besetzungs-Verlinkung. Bewusst im SELBEN Lade-Schritt
   // gesetzt wie `snap` (der Eintrag ist ohnehin schon geladen, bevor der
   // Snapshot geholt wird): kein zweiter async-Sprung, also kein Nachwachsen und
   // kein Layout-Shift (§15.2).
-  const [eintrag, setEintrag] = useState<BrowseEntscheid | null>(null);
+  const [eintrag, setEintrag] = useState<EntscheidIndexEintrag | null>(null);
   const [zustand, setZustand] = useState<'laden' | 'fehlt' | 'da'>('laden');
   const { kopiert, kopieren } = useKopieren();
   // LM-210: der Lesemodus lag bisher nur im lokalen State — nicht teilbar, nach

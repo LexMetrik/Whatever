@@ -60,8 +60,8 @@ export async function loeseZuletztTitel(path: string): Promise<string | null> {
   const ent = entscheidPfad(path);
   if (ent) {
     try {
-      const { ladeEntscheidManifest } = await import('./rechtsprechung/browse');
-      const m = await ladeEntscheidManifest();
+      const { ladeEntscheidIndex } = await import('./rechtsprechung/browse');
+      const m = await ladeEntscheidIndex();
       const e = m?.entscheide.find((x) => x.key === ent.key);
       return e ? kuerze(e.zitierung) : null;
     } catch {

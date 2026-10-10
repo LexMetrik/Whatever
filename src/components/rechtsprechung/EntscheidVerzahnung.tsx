@@ -10,9 +10,9 @@ import {
   type RevisionShard, type ArtikelRevision,
 } from '../../lib/verzahnung/artikel-revisionen';
 import type { Datumspraezision } from '../../lib/verzahnung/typen';
-import { ladeEntscheidManifest } from '../../lib/rechtsprechung/browse';
+import { ladeEntscheidIndex } from '../../lib/rechtsprechung/browse';
 import { bundSnapshotRef } from '../../lib/normtext/bundRef';
-import type { BrowseEntscheid } from '../../lib/rechtsprechung/register';
+import type { EntscheidIndexEintrag } from '../../lib/rechtsprechung/entscheid-index';
 import type { EntscheidSnapshot } from '../../lib/rechtsprechung/typen';
 import { erlassPfadVonKey } from '../../lib/normtext/erlassAdresse';
 
@@ -161,11 +161,11 @@ export function ZitiertGruppe({ zitierteEntscheide, abschnitte, selbstKey }: {
   selbstKey: string;
 }) {
   const { oeffneDaneben, kannOeffnen, istOffen } = usePaneSteuerung();
-  const [manifest, setManifest] = useState<BrowseEntscheid[] | null>(null);
+  const [manifest, setManifest] = useState<EntscheidIndexEintrag[] | null>(null);
   useEffect(() => {
     if (zitierteEntscheide.length === 0) return;
     let lebt = true;
-    void ladeEntscheidManifest().then((m) => { if (lebt) setManifest(m?.entscheide ?? []); });
+    void ladeEntscheidIndex().then((m) => { if (lebt) setManifest(m?.entscheide ?? []); });
     return () => { lebt = false; };
   }, [zitierteEntscheide.length]);
 
