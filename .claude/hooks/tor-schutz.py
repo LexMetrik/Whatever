@@ -63,8 +63,8 @@ for seg in re.split(r"&&|;|\n", cmd):
                         "verloren. Nackt laufen lassen bzw. in Datei umleiten.")
         break
 
-# ── 4. git commit --amend (an Kommando-Position, nicht in grep-Argumenten) ──
-if re.search(r"(?:^|[;&|\n(])\s*(?:[A-Za-z_]\w*=\S+\s+)*git\s+commit\b[^\n;&|]*--amend", cmd):
+# ── 4. Amend-Verbot — jedes Textvorkommen, wortgleich zur Vorfassung ──
+if re.search(r"git\s+commit\b[^\n]*--amend", cmd):
     probleme.append("BLOCKIERT: git commit --amend ist verboten — Nachzügler als "
                     "eigenen, additiven Commit.")
 

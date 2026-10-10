@@ -125,8 +125,9 @@ E3
 - David 6.10.: Omnilex-Sichtung: 7 Posten U2–U8 (Datums-Tor zu «Gilt seit», Ausgang-Label wartet auf David) — bibliothek/recherche/omnilex-app-sichtung-2026-10-06.md §6
 - wartet auf David 7.10. (§15): public/rechtsprechung/register.json 9,9 MB aufteilen; norm-index.json 6 MB laut Kommentar UI-ungenutzt — public/
 E3·W
-- 8.10.: Werkzeug-/Tor-Defekte (zuerst Merge-Schutz-Lücke bei Umbenennung), Tore-Diät — FB N10-03
-- Go David 5.10.: CI: Dauer-Wackler an der Wurzel (bibliothek/betrieb/e2e-fang-historie-2026-10-05/), leser-kopf-cls-s3 hängt an Fedlex, Läufer-Kontingent
+- Go David 5.10.: CI: Dauer-Wackler an der Wurzel (git 3fd5db8f9:bibliothek/betrieb/e2e-fang-historie-2026-10-05/), leser-kopf-cls-s3 hängt an Fedlex, Läufer-Kontingent
+- 10.10. Kahlschlag-Nachlauf: erlass-klassifikation.json (88k Wörter, 28 % des Deckels) von docs/ nach daten/ (seed-grundart.mjs:23); veraltete Skill-Namen auftrag/perf/abnahme in fachaenderung-kern.ts:222, fedlex-frische.yml:309, Fixture merge-schutz-squash-921.txt; gitFlaechen.ts:427 nennt aufraeumen:git und DESIGN-REGLEMENT Z. 235/365 «Wortlaut im Archiv» (beide Test-gekoppelt, git-SHA); tor-schutz Amend-Regel trifft Heredoc-/Kommentartext (3 Fehlalarme 10.10.; Kommando-Position ohne die zwei Umgehungen aus Gegenprüfung #1359)
+- wartet auf David 10.10.: scripts/archiv/ (9 Skripte) vs. Sperre «kein archiv/» — löschen oder umbenennen
 - Go David 7.10.: Leser-Logik (162 .ts unter src/pages|components, ~22k Zeilen) nach src/lib/leser, danach Lint-Grenze — §3
 - wartet auf David 7.10.: §5 vs. Ist: ingest.ts liest public/*.json in die DB (JSON faktisch Quelle); Umstellung bauen oder §5 präzisieren
 - wartet auf David 7.10.: Rechtsprechung-Einzelentscheide (300 MB) als Release-Artefakt statt in git — public/rechtsprechung/
