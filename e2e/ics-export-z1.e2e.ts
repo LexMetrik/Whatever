@@ -45,7 +45,11 @@ test.describe('Z1 · Kalender-Ausleitung im Schnell-/Tagerechner', () => {
 
     const { name, text } = await icsHolen(page, () => knopf.click())
     expect(name, 'Dateiname endet auf .ics').toMatch(/\.ics$/)
-    const zeilen = text.replace(/\r\n /g, '').split('\r\n')
+    // RFC 5545 §3.1: Inhaltszeilen werden nach 75 Oktetten gefaltet («\r\n » als
+    // Fortsetzung) — Inhaltsprüfungen lesen darum den entfalteten Text, sonst
+    // trifft ein Umbruch mitten in «keine Rechtsberatung» die Prüfung (WARNHINWEIS).
+    const entfaltet = text.replace(/\r\n /g, '')
+    const zeilen = entfaltet.split('\r\n')
     expect(zeilen[0]).toBe('BEGIN:VCALENDAR')
     expect(zeilen.filter((z) => z === 'BEGIN:VEVENT')).toHaveLength(1)
     expect(text, 'Ganztages-DATE statt zeitzonenabhängigem Zeitstempel').toContain('DTSTART;VALUE=DATE:')
@@ -58,8 +62,8 @@ test.describe('Z1 · Kalender-Ausleitung im Schnell-/Tagerechner', () => {
     expect(dtstart, `DTSTART ${dtstart} entspricht der Anzeige «${angezeigt}»`).toBe(`${jjjj}${mm}${tt}`)
 
     // §8: die Vorbehalte der Anzeige reisen mit, der Export erfindet nichts.
-    expect(text, 'zentrale Fusszeile «keine Rechtsberatung»').toContain('keine Rechtsberatung')
-    expect(text, 'das gewählte Fristenlauf-Regime steht im Beschrieb').toContain('Fristenlauf')
+    expect(entfaltet, 'zentrale Fusszeile «keine Rechtsberatung»').toContain('keine Rechtsberatung')
+    expect(entfaltet, 'das gewählte Fristenlauf-Regime steht im Beschrieb').toContain('Fristenlauf')
   })
 
   // ── §9-Bug-Check M-1 (mittel, §1/§5) ────────────────────────────────────
