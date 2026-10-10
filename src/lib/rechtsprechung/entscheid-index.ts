@@ -49,7 +49,7 @@ const FELD_MENGE: ReadonlySet<string> = new Set(ENTSCHEID_INDEX_FELDER);
 export function projiziereEntscheidIndex(register: EntscheidManifest): EntscheidIndex {
   return {
     erzeugt: register.erzeugt,
-    entscheide: register.entscheide.filter((e) => !e.verweis).map(
+    entscheide: register.entscheide.map(
       (e) => Object.fromEntries(Object.entries(e).filter(([feld]) => FELD_MENGE.has(feld))) as unknown as EntscheidIndexEintrag,
     ),
   };
