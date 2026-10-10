@@ -20,6 +20,7 @@
 
 import type { EntscheidSnapshot } from './typen';
 import { oclAktenzeichen } from './kantonale-gerichte';
+import { erstesAktenzeichen } from './verbundene-verfahren';
 
 /** Interne Gerichtscodes → ECLI-Gerichtskomponente (Bundesebene + Regulatoren). */
 const GERICHT_ZU_ECLI: Record<string, string> = {
@@ -178,7 +179,8 @@ export function minteEcliFuerSnapshot(e: EntscheidSnapshot): string | null {
     gericht: e.gericht,
     // Persistenter Identifikator: die ECLI bleibt aus der OCL-Form des Aktenzeichens gebildet
     // (GR: «SBK 2026 88»), auch wenn der Korpus seit U-16 die amtliche Form «SBK 26 88» zeigt.
-    nummer: oclAktenzeichen(e.gericht, e.nummer),
+    // Verbundene Verfahren (U-25): die ECLI bleibt auf der ersten Nummer («RR.2025.198-199» → «RR.2025.198»).
+    nummer: erstesAktenzeichen(oclAktenzeichen(e.gericht, e.nummer)),
     datum: e.datum,
     bgeReferenz: e.bgeReferenz,
     id: e.id,

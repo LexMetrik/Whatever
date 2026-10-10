@@ -13,6 +13,7 @@ import type { OclParagraph } from './adapter-typen';
 import { normalisiereRegeste, bereinigeFliesstext } from '../../src/lib/rechtsprechung/register';
 import { bereinigeZitierteNormen } from '../../src/lib/rechtsprechung/seitenmarker';
 import { vorinstanzNominativ } from '../../src/lib/rechtsprechung/vorinstanz';
+import { verbundenesAktenzeichen, zitierungMitVerbundenemAz } from '../../src/lib/rechtsprechung/verbundene-verfahren';
 import { amtlicherGerichtName, amtlichesAktenzeichen } from '../../src/lib/rechtsprechung/kantonale-gerichte';
 import { rubrumFeldPlausibel } from '../../src/lib/rechtsprechung/rubrum';
 import { teileSachverhalt } from '../../src/lib/rechtsprechung/sachverhalt';
@@ -375,13 +376,14 @@ export function mappeEntscheidOCL(
     : (amtlicherGerichtName(court, docket, datumRoh) ?? gerichtAnzeigename(court, canton, det.court_name as string | undefined));
   // U-16: amtliche Schreibweise des Aktenzeichens (GR: zweistelliges Jahr). Die id bleibt aus der
   // OCL-Form gebildet (docketSafe unten) — stabile Adressen und Dateinamen.
-  const nummerAmtlich = amtlichesAktenzeichen(court, docket);
+  // U-25: verbundene Verfahren des Bundesstrafgerichts tragen im Urteilskopf alle Nummern («RR.2025.198-199»).
+  const nummerAmtlich = court === 'bstger' ? verbundenesAktenzeichen(docket, det.full_text) : amtlichesAktenzeichen(court, docket);
   // Rubrum nur fürs Bundesgericht (full_text-Struktur zuverlässig); kantonal null —
   // lieber leer als falsch (Abnahme P1: kantonale Extraktion liefert sonst Erwägungstext).
   const rubrum = canton === 'CH' ? extrahiereRubrum(det.full_text) : null;
   // Zitierung inkl. Aktenzeichen-Norm „5A 229/2017" → „5A_229/2017" (Abnahme P3: Kopf/Tab/Zitat).
   const zitierung = (canton === 'CH'
-    ? String(det.citation_string_de ?? `BGer ${docket} vom ${fmtDatumDe(datumRoh)}`)
+    ? zitierungMitVerbundenemAz(String(det.citation_string_de ?? `BGer ${docket} vom ${fmtDatumDe(datumRoh)}`), docket, nummerAmtlich)
     : `${gerichtName} ${nummerAmtlich} vom ${fmtDatumDe(datumRoh)}`).replace(/\b(\d[A-Z])\s+(\d+\/\d{4})/g, '$1_$2');
 
   // Leitentscheid ⟺ amtliche Sammlung (BGE): Court 'bge' ODER BGE-Fundstelle.
