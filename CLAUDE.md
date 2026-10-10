@@ -58,6 +58,8 @@ automatische Drift-Erkennung gegen die Quelle. Fehlt eines davon, ist der
 Snapshot kein Zitat, sondern eine zweite Wahrheit (§5) — dann nicht speichern.
 Massgeblich ist nie das Artefakt, immer die amtliche Fassung.
 
+Quell-Wahl, Adapter und Build-Regeln der Norm-Snapshots: Skill `korpus-werkstatt`.
+
 ## §8 Ehrlichkeit gegenüber Nutzern
 Das Status-Modell (entwurf / geprüft / geplant) zeigt den echten Prüfungsstand.
 Unsicherheiten, offene kantonale Verifikationen und methodische Annahmen werden

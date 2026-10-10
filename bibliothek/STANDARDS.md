@@ -3,7 +3,7 @@
 **Erlassen 7.6.2026** (Auftrag David: «notwendige Mindeststandards für die
 Library»). Konkretisiert CLAUDE.md **§7** (verifizieren, nicht vertrauen)
 und **§11** (geordnete Ablage) zu prüfbaren Regeln. **Durchsetzung:**
-`bash scripts/bibliothek-check.sh` (Exit 1 bei Verstoss) — gehört zum
+`bash scripts/check-amtsquellen.sh` (seit 10.10. nur Regel S4; S1–S10-Beschreibung gilt als Konvention ohne Tor) (Exit 1 bei Verstoss) — gehört zum
 Bug-Check §9 vor jedem Deploy, der Bibliotheks-Änderungen enthält.
 
 ## S1 — Pflichtkopf jedes Dossiers
@@ -97,7 +97,7 @@ Prosa-Sammlungen ohne Regel-Destillat erfüllen den Standard nicht.
 
 ## S10 — Prüfung
 
-`scripts/bibliothek-check.sh` prüft maschinell: INDEX-Vollständigkeit ·
+`scripts/check-amtsquellen.sh` (seit 10.10. nur Regel S4; S1–S10-Beschreibung gilt als Konvention ohne Tor) prüft maschinell: INDEX-Vollständigkeit ·
 tote relative Links · Pflichtkopf (Erstellt/Status) · verbotene
 /tmp-Verweise (ausserhalb der Cache-Whitelist) · unregistrierte
 «Verfallsregister-Kandidat»-Marker. Der Check ist Teil des §9-Bug-Checks;

@@ -97,7 +97,7 @@ Nicht nur «Tore grün», sondern die volle Definition of Done (§14.4):
    «Vorsitz Martin Stupf», «Mark»/«Schweizer»). Davon getrennt der user-getriggerte
    `review.md`-Audit («prüf das») — das ist **nicht** dieser Pflicht-Pass.
 3. **Status-Marker (§8)** gesetzt — `verifiziert`/«geprüft» **nie automatisch**
-   (Zeitsperre bis 1.12.2026; Status-Hebung nur über den `abnahme`-Skill).
+   (Zeitsperre bis 1.12.2026; Status-Hebung nur über den `gegenpruefung`-Skill (Abschnitt Abnahme)).
 4. **§14.5-Trailer** am Produktions-Commit: `Roadmap: <Kürzel>` und auf diesem
    Risiko-Pfad zusätzlich
    `Gegenpruefung: <Verdikt> (<Modell>, <Linsen>) — <Befunde>`.

@@ -10,13 +10,13 @@ zusätzlich Grundlage für `W2·5g-ZEIT` (zeit-historik-poc). Kein eigener `@met
 ## §0 · Zweck
 
 Konsolidierter Masterplan für den Normtext-Umbau Bund/DE: Davids 12 Punch-Punkte +
-33 Audit-Lücken (`archiv/AUDIT-FEDLEX-DARSTELLUNG-2026-06-28.md`). **Scope: Bund, DE.**
+33 Audit-Lücken (`git 3fd5db8f9:archiv/AUDIT-FEDLEX-DARSTELLUNG-2026-06-28.md`). **Scope: Bund, DE.**
 Kein Deploy (bauen+gaten), isolierter Worktree `feat/normtext-bund-de`. Regelwerk:
 `DESIGN-REGLEMENT.md` §N.
 
 > **Stand 28.6.2026.** Konsolidierter Masterplan (ultracode: 5 Oberflächen-Karten → 3 unabhängige
 > Cluster-Strategien → Synthese). Deckt Davids 12 Punch-Punkte + 33 Audit-Lücken
-> (`archiv/AUDIT-FEDLEX-DARSTELLUNG-2026-06-28.md`). **Scope: Bund, DE.** Kein Deploy (bauen+gaten),
+> (`git 3fd5db8f9:archiv/AUDIT-FEDLEX-DARSTELLUNG-2026-06-28.md`). **Scope: Bund, DE.** Kein Deploy (bauen+gaten),
 > isolierter Worktree `feat/normtext-bund-de`. Regelwerk: `DESIGN-REGLEMENT-NORMTEXT.md` (seit 23.9.2026: `DESIGN-REGLEMENT.md` §N).
 
 ## B2 — eigener Pass direkt nach B1
@@ -51,7 +51,7 @@ Kein Deploy (bauen+gaten), isolierter Worktree `feat/normtext-bund-de`. Regelwer
 ## Archivierte Abschnitte *(Plan-Neuschnitt 29.8.2026)*
 
 9 Abschnitt(e) dieser Datei sind wörtlich nach
-[`archiv/fahrplaene/FAHRPLAN-NORMTEXT-DARSTELLUNG.md`](../archiv/fahrplaene/FAHRPLAN-NORMTEXT-DARSTELLUNG.md) ausgelagert — sie tragen keine offene
+`archiv/fahrplaene/FAHRPLAN-NORMTEXT-DARSTELLUNG.md` (git 3fd5db8f9:archiv/fahrplaene/FAHRPLAN-NORMTEXT-DARSTELLUNG.md) ausgelagert — sie tragen keine offene
 ROADMAP-Bindung mehr. Titel:
 
 - ▶ Bau-Fortschritt (Branch `feat/normtext-bund-de`, nicht deployt)

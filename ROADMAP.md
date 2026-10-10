@@ -17,8 +17,8 @@
 3. **EINGANG:** je Sache eine Zeile ≤ 200 Zeichen `- <Herkunft>: <Klartext> — <Ort>` unter ihrer Ebene.
    Über 30 Zeilen fällt die älteste E3/E3·W/E4-Zeile ohne Go und ohne «David» weg.
 
-Der letzte PR eines Vorhabens streicht es aus JETZT, löscht erledigte FB-Zeilen bzw. markiert sie mit
-PR-Nummer, rückt nach und führt die Fortschrittszeile nach.
+Der letzte PR eines Vorhabens streicht es aus JETZT, erledigt FB-Zeilen (löschen oder PR-Nummer) und
+führt die Fortschrittszeile nach.
 
 ## ZIEL
 
@@ -126,8 +126,8 @@ E3
 - wartet auf David 7.10. (§15): public/rechtsprechung/register.json 9,9 MB aufteilen; norm-index.json 6 MB laut Kommentar UI-ungenutzt — public/
 E3·W
 - Go David 5.10.: CI: Dauer-Wackler an der Wurzel (git 3fd5db8f9:bibliothek/betrieb/e2e-fang-historie-2026-10-05/), leser-kopf-cls-s3 hängt an Fedlex, Läufer-Kontingent
-- 10.10. Kahlschlag-Nachlauf: erlass-klassifikation.json (88k Wörter, 28 % des Deckels) von docs/ nach daten/ (seed-grundart.mjs:23); veraltete Skill-Namen auftrag/perf/abnahme in fachaenderung-kern.ts:222, fedlex-frische.yml:309, Fixture merge-schutz-squash-921.txt; gitFlaechen.ts:427 nennt aufraeumen:git und DESIGN-REGLEMENT Z. 235/365 «Wortlaut im Archiv» (beide Test-gekoppelt, git-SHA); tor-schutz Amend-Regel trifft Heredoc-/Kommentartext (3 Fehlalarme 10.10.; Kommando-Position ohne die zwei Umgehungen aus Gegenprüfung #1359)
-- wartet auf David 10.10.: scripts/archiv/ (9 Skripte) vs. Sperre «kein archiv/» — löschen oder umbenennen
+- 10.10. Kahlschlag-Nachlauf: erlass-klassifikation.json docs/→daten/; alte Skill-Namen; gitFlaechen.ts:427, DESIGN-REGLEMENT Z.235/365 Test-gekoppelt; tor-schutz Amend-Fehlalarme; .selbstopt-ereignisse.jsonl ohne Leser; diff-klassieren.ts ohne Test
+- wartet auf David 10.10.: scripts/archiv/ (9 Skripte) löschen oder umbenennen
 - Go David 7.10.: Leser-Logik (162 .ts unter src/pages|components, ~22k Zeilen) nach src/lib/leser, danach Lint-Grenze — §3
 - wartet auf David 7.10.: §5 vs. Ist: ingest.ts liest public/*.json in die DB (JSON faktisch Quelle); Umstellung bauen oder §5 präzisieren
 - wartet auf David 7.10.: Rechtsprechung-Einzelentscheide (300 MB) als Release-Artefakt statt in git — public/rechtsprechung/
@@ -135,22 +135,20 @@ E4
 - David 21.9./7.10.: Impressum/Datenschutz erst vor Live-Gang (FB S-01); Staatsverträge SR 0.* (3186, 28 gepinnt) verlinken bis dahin auf Fedlex
 ```
 
-*Ruhend:* FB Teil B (Entscheide/Fragen Davids), nicht nachfragen. «371 falsche Selbstlinks»
-berichtigt: `git 3fd5db8f9:docs/token-oekonomie/dispatch-template.md` §0 2b.
+*Ruhend:* FB Teil B (Entscheide/Fragen Davids), nicht nachfragen.
 
 ## Zurückgestellt und ruhende Fragen
 
-*Nicht nachfragen, nicht erinnern.* Wortlaut: `git 3fd5db8f9:archiv/ROADMAP-bis-2026-10-05.md`,
+Wortlaut: `git 3fd5db8f9:archiv/ROADMAP-bis-2026-10-05.md`,
 `@blockers`/`@david-fragen`.
 
-- **VPS** nach Phase 2: `bibliothek/betrieb/vps-bestell-dossier-2026-07-17.md`.
-- **Richter-Analytik:** RANKING/PROGNOSE gesperrt (David 22.9.); Filter frei, gebaut.
+- **VPS** nach Phase 2: `git 3fd5db8f9:bibliothek/betrieb/vps-bestell-dossier-2026-07-17.md`.
+- **Richter-Analytik:** RANKING/PROGNOSE gesperrt (David 22.9.); Filter gebaut.
 - **Zielbild-Rückstellung** (1.9.): Rechner-/Vorlagen-Ausbau, Design-Wärme, FINMA ruhen bis Phase 2
   (FINMA vorziehen bei externem Termin).
 - **BS-Lizenzanfrage** (R12a): optional (data.bs.ch CC BY 4.0); ob die Sperre fällt: David.
 - Fragen: `aufgehobene-normen-schalter` (FAHRPLAN-ARCHIV-RESTPUNKTE §20) · `dienstjahr-stichtag`,
-  `sperrtage-anzeige`, `export-antworten`, `gebv-schkg-rundung` (`git 3fd5db8f9:archiv/HANDLUNGSPLAN.md` Z. 211–217;
-  verwandt W-22) · **Auto-Merge beim Fedlex-Abgleich** (Freigabe 16.7. vs. «Gesetzesdaten nie
+  `sperrtage-anzeige`, `export-antworten`, `gebv-schkg-rundung` (`git 3fd5db8f9:archiv/HANDLUNGSPLAN.md` Z. 211–217) · **Auto-Merge beim Fedlex-Abgleich** (Freigabe 16.7. vs. «Gesetzesdaten nie
   automatisch mergen»: abschalten, nur Abrufstand automatisch, oder lassen?).
 
 ## Prüfung nach vier Wochen (ab Anfang November 2026)

@@ -150,7 +150,7 @@ Für den Entscheid-Korpus zusätzlich (re-fetch über `bgeReferenz`/`azaUrteil`/
   Abrufdatum). Fehlt eines, ist es kein Zitat, sondern eine zweite Wahrheit (§5).
 - **Status-Ehrlichkeit (§7/§8)** — das `verifiziert`-Feld / der Status «geprüft» ist korrekt
   gesetzt; **nie 'geprüft'/`verified:true` ohne Davids Abnahme** (fachkundige Person,
-  Zeitsperre bis 1.12.2026; Status-Hebung nur über den `abnahme`-Skill, das Gate
+  Zeitsperre bis 1.12.2026; Status-Hebung nur über den `gegenpruefung`-Skill (Abschnitt Abnahme), das Gate
   `src/tests/abnahmeGate.test.ts` bricht die Suite sonst). Kantonale Confidence misst nur die
   Extraktions-**Treue** zur Quelle, nicht die juristische Korrektheit — hohe Confidence bleibt
   Status «entwurf».
@@ -178,4 +178,4 @@ führen (datiertes wandert zusätzlich ins Verfallsregister, **S6**). Ein **Nega
 
 **Abschluss-Regel:** Bei einem roten Tor (Stand-Drift Exit 1, Gate rot) **kein Push, keine
 Übergabe an `landung`** (§9). `review.md` deckt auf und korrigiert; Release bleibt bei
-`landung`, die fachliche Abnahme bei `abnahme` — kein Duplikat (§5).
+`landung`, die fachliche Abnahme bei `gegenpruefung` (Abschnitt Abnahme) — kein Duplikat (§5).
