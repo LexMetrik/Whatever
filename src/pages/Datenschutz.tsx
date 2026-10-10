@@ -71,6 +71,16 @@ export function Datenschutz() {
           über PLZ, Gemeinde und Strasse funktioniert alternativ vollständig offline in Ihrem
           Browser.
         </p>
+        <p>
+          {/* Suchdienst-Offenlegung (§8, Go David 10.10.2026) — ENTWURF, Wortlaut durch David bei der Abnahme zu prüfen.
+              Beleg: useUniversalSuche.ts → holeOnlineTreffer (ab MIN_ZEICHEN, GET api/suche?q=…). */}
+          Die Hauptsuche fragt zusätzlich unseren Suchdienst ab, um den Wortlaut der Gesetzestexte
+          zu durchsuchen: Ab drei Zeichen wird Ihr Suchbegriff an LexMetrik übermittelt und in
+          unserer Gesetzesdatenbank nachgeschlagen. Weil der Begriff Teil der Anfrage-Adresse ist,
+          erscheint er in den Server-Logs des Hosting-Anbieters (Ziff. 4); LexMetrik legt
+          Suchbegriffe nicht ab und verknüpft sie nicht mit anderen Daten. Die Suche innerhalb
+          eines geöffneten Erlasses läuft lokal in Ihrem Browser.
+        </p>
       </MetaAbschnitt>
 
       <MetaAbschnitt titel="3. Keine Analyse, kein Tracking">

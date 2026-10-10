@@ -118,44 +118,11 @@ def messen(reason: str) -> dict:
     }
 
 
-def token_ablesen() -> None:
-    """Token-Zähler der Session beim Ende ablesen (QS-EFFIZIENZ 14.8.2026).
-
-    Der OTel-Endpunkt lebt nur, solange eine Session läuft — wer nicht beim
-    Ende abliest, verliert die Zahl. Eine Zeile JSON in die gitignorierte
-    Spool-Datei; `selbstopt:erheben` konsumiert sie beim nächsten Lauf.
-    2-s-Timeout, jeder Fehler still (nie das Session-Ende stören).
-    """
-    import re as _re
-    import time
-    import urllib.request
-    try:
-        with urllib.request.urlopen("http://localhost:9464/metrics", timeout=2) as r:
-            text = r.read().decode("utf-8", "replace")
-        zaehler: dict[str, float] = {}
-        for m in _re.finditer(r'^(claude_code[._]\w+)\{([^}]*)\}\s+([0-9.eE+]+)',
-                              text, _re.MULTILINE):
-            name, labels, wert = m.groups()
-            typ = _re.search(r'type="([^"]+)"', labels)
-            schluessel = f"{name}:{typ.group(1)}" if typ else name
-            zaehler[schluessel] = zaehler.get(schluessel, 0.0) + float(wert)
-        if not zaehler:
-            return
-        zeile = json.dumps({"zeit": int(time.time()), "zaehler": zaehler},
-                           ensure_ascii=False)
-        with open(os.path.join(REPO, "messwerte", "token-spool.jsonl"),
-                  "a", encoding="utf-8") as f:
-            f.write(zeile + "\n")
-    except Exception:
-        pass
-
-
 def modus_ende() -> None:
     try:
         data = json.load(sys.stdin)
     except Exception:
         data = {}
-    token_ablesen()
     # Feldname laut Binary 2.1.220: `reason` (Gegenprüfungs-Auflage B5 —
     # die Web-Doku nannte end_reason; die Binary ist die härtere Quelle).
     befund = messen(str(data.get("reason") or "unbekannt"))

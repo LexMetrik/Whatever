@@ -63,6 +63,9 @@ zusammengestellt.
   ERGAENZT («damals /gesetze/bund/EMRK; seit Befund 45 kanonisch …/international/…»).
   Ein Beleg, der seinem Datum widerspricht, ist falsifiziert, kein Update
   (2 Vorfaelle 29.8.2026, Intl-Routing M7/M8 — Skill lehren F8).
+  Gleiches beim Kuerzen, Zusammenfassen, Lektorieren: Zahl, Datum, Verneinung
+  und Modalitaet («haette» ≠ «hat») bleiben wortgleich; im Zweifel den Wortlaut
+  stehen lassen (#1310: «371 falsche Selbstlinks» statt «haette entfernt», 7.10.2026).
 3 VERTEILUNG STATT EINZELWERT. Ein gerissenes Budget ist ein VERDACHT, keine
   Ursache. Vor jeder Zuschreibung an ein Feature: (a) Nullprobe — reiner
   Doku-PR (ci.yml klassiert ihn als art=doku) oder Re-Run auf unveraendertem
@@ -180,6 +183,9 @@ Voll-Block — beide Fences haben damit nur eine Quelle (§5).
   ERGAENZT («damals /gesetze/bund/EMRK; seit Befund 45 kanonisch …/international/…»).
   Ein Beleg, der seinem Datum widerspricht, ist falsifiziert, kein Update
   (2 Vorfaelle 29.8.2026, Intl-Routing M7/M8 — Skill lehren F8).
+  Gleiches beim Kuerzen, Zusammenfassen, Lektorieren: Zahl, Datum, Verneinung
+  und Modalitaet («haette» ≠ «hat») bleiben wortgleich; im Zweifel den Wortlaut
+  stehen lassen (#1310: «371 falsche Selbstlinks» statt «haette entfernt», 7.10.2026).
 3 VERTEILUNG STATT EINZELWERT. Ein gerissenes Budget ist ein VERDACHT, keine
   Ursache. Vor jeder Zuschreibung an ein Feature: (a) Nullprobe — reiner
   Doku-PR (ci.yml klassiert ihn als art=doku) oder Re-Run auf unveraendertem
