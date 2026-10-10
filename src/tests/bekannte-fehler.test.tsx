@@ -6,7 +6,14 @@
 // verdrahtet, (4) Hinweis, PDF-Modell und Vereinigung verschachtelter Rahmen.
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { renderToStaticMarkup } from 'react-dom/server';
+import type { ReactElement } from 'react';
+import { renderToStaticMarkup, renderToString } from 'react-dom/server';
+import { MemoryRouter } from 'react-router-dom';
+import { LocaleProvider } from '../components/locale';
+import { RechnerKuendigung } from '../pages/RechnerKuendigung';
+import { RechnerMietrecht } from '../pages/RechnerMietrecht';
+import { RechnerTagerechner } from '../pages/RechnerTagerechner';
+import { RechnerVerjaehrung } from '../pages/RechnerVerjaehrung';
 import { describe, expect, it } from 'vitest';
 import { BEKANNTE_FEHLER, BEKANNTER_FEHLER_TITEL, bekannteFehlerFuer } from '../lib/bekannteFehler';
 import { ALLE_KARTEN } from '../lib/startseiteConfig';
@@ -88,6 +95,23 @@ describe('WARNHINWEIS · Anzeige', () => {
     expect(zpo).toContain('(RV-52)');
     const schkg = bekannteFehlerFuer(['tagerechner', 'schkg-fristen']).map((f) => f.fb);
     expect(schkg).toEqual(expect.arrayContaining(['RV-49', 'RV-52', 'RV-53', 'RV-63']));
+  });
+});
+
+describe('WARNHINWEIS · echte Seiten (Vorgabewerte tragen schon ein Ergebnis)', () => {
+  const seite = (C: () => ReactElement, pfad: string) => renderToString(
+    <LocaleProvider><MemoryRouter initialEntries={[pfad]}><C /></MemoryRouter></LocaleProvider>);
+
+  it('Mietrecht, Tagerechner, Kündigung (B+C) zeigen ihre Fehler; Verjährung (ohne Eintrag) nicht', () => {
+    const miete = seite(RechnerMietrecht, '/rechner/mietrecht');
+    for (const id of ['RV-06', 'RV-33', 'RV-40']) expect(miete).toContain(`(${id})`);
+    const tage = seite(RechnerTagerechner, '/rechner/tagerechner');
+    for (const id of ['RV-49', 'RV-52', 'RV-53']) expect(tage).toContain(`(${id})`);
+    const kuend = seite(RechnerKuendigung, '/rechner/kuendigung#kuendigung');
+    for (const id of ['RV-33', 'RV-44']) expect(kuend).toContain(`(${id})`);
+    const verj = seite(RechnerVerjaehrung, '/rechner/verjaehrung');
+    expect(verj).toContain('id="lc-ergebnis');
+    expect(verj).not.toContain(BEKANNTER_FEHLER_TITEL);
   });
 });
 
