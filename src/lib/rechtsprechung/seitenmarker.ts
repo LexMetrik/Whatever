@@ -6,8 +6,8 @@
 // plan/FEHLERBESTAND.md):
 //   · im Text liest jede Zitat-Erkennung «Art. 257d BGE» als Norm-Zitat (Phantom);
 //   · die OCL-Roh-Extraktion `statutes[]` übernimmt das Phantom als Eintrag
-//     «Art. 257d BGE» in `zitierteNormen` (Messung 11.10.2026: 40× «Art. N BGE» und
-//     14× «Art. N Abs. N BGE» in 63 Dateien, alle unter public/rechtsprechung/bund/bge).
+//     «Art. 257d BGE» in `zitierteNormen` (Messung 11.10.2026, Stand vor U-04: 40× «Art. N BGE» und
+//     14× «Art. N Abs. N BGE» = 54 Phantom-Einträge in 53 Dateien, alle unter public/rechtsprechung/bund/bge).
 //
 // Wurzel-Fix: der Vermerk wird VOR das Normzitat gestellt («… von BGE 147 III 218 S. 221
 // Art. 257d Abs. 1 OR»), nicht gelöscht — die Seitenzahl bleibt erhalten (die Anzeige macht
