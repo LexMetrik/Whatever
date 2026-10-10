@@ -74,8 +74,11 @@ export interface BrowseEntscheid {
   /** Pfad relativ zu public/rechtsprechung, z.B. 'bund/bger/5A_1100_2025.json'. */
   datei: string | null;
   quelle: Entscheidquelle;
-  quelleUrl: string;
-  fassungsToken: string;
+  // `quelleUrl` + `fassungsToken` stehen NICHT mehr hier, sondern in der eigenen
+  // Provenienz-Projektion `register-provenienz.json` (`EntscheidProvenienz`):
+  // kein Browser-Pfad liest sie (E0-REGISTER, Entscheid David 10.10.2026) — sie
+  // machten ~25 % des register.json-Budgets aus. Wer beide Felder braucht
+  // (Prerender, Wochenlauf, Prüftore), liest `BrowseEntscheidVoll`.
   /**
    * Spruchkörper (Richter-Facette). Nur gesetzt, wenn der amtliche Besetzungs-Block
    * strukturiert werden konnte — fehlt er, fehlt das Feld (nie leeres Array, nie
@@ -95,6 +98,32 @@ export interface BrowseEntscheid {
 export interface EntscheidManifest {
   erzeugt: string;
   entscheide: BrowseEntscheid[];
+}
+
+/** Provenienz-Felder je Entscheid (§7) — Inhalt von `register-provenienz.json`. */
+export interface EntscheidProvenienz {
+  quelleUrl: string;
+  fassungsToken: string;
+}
+
+/**
+ * `public/rechtsprechung/register-provenienz.json`: die zwei Provenienz-Felder je
+ * Register-Eintrag, geschlüsselt nach `key` (Reihenfolge = Reihenfolge des Kerns).
+ * Wird NICHT im Browser geladen — Leser sind nur Build (Prerender) und Prüftore.
+ * Namensvorbild: `public/materialien/register-provenienz.json`.
+ */
+export interface EntscheidProvenienzRegister {
+  erzeugt: string;
+  eintraege: Record<string, EntscheidProvenienz>;
+}
+
+/** Kern-Eintrag samt Provenienz (Erzeuger- und Build-Seite; nie im Browser). */
+export type BrowseEntscheidVoll = BrowseEntscheid & EntscheidProvenienz;
+
+/** Das vereinigte Register (Kern + Provenienz) — Form des Registers VOR der Aufteilung. */
+export interface EntscheidManifestVoll {
+  erzeugt: string;
+  entscheide: BrowseEntscheidVoll[];
 }
 
 /**
