@@ -15,7 +15,7 @@
 import { describe, it, expect, vi, afterEach } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { act, Suspense } from 'react';
+import { act, Suspense, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { MemoryRouter, useLocation } from 'react-router-dom';
 import { parseHTML } from 'linkedom';
@@ -47,10 +47,10 @@ const angefragt: string[] = [];
 let aufgeraeumt: Array<() => void> = [];
 afterEach(() => { for (const f of aufgeraeumt) f(); aufgeraeumt = []; vi.unstubAllGlobals(); angefragt.length = 0; });
 
-let ortSpur = '';
+const ortSpur = { wert: '' };
 function OrtSpur() {
   const l = useLocation();
-  ortSpur = l.pathname + l.search;
+  useEffect(() => { ortSpur.wert = l.pathname + l.search; }, [l.pathname, l.search]);
   return null;
 }
 
@@ -110,7 +110,7 @@ async function oeffne(href: string): Promise<{ ort: string; html: string }> {
     vorher = jetzt;
   }
   if (stabil < 5) throw new Error(`${href}: Fläche wurde nicht stabil`);
-  return { ort: ortSpur, html: ziel.innerHTML };
+  return { ort: ortSpur.wert, html: ziel.innerHTML };
 }
 
 describe('Direktaufruf eines Verweis-Keys (__voll)', () => {
