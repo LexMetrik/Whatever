@@ -68,14 +68,18 @@ Laufdatum) je Bund-Volltext-Erlass geerntet — Fedlex führt künftige Fassunge
 bereits im Triplestore. Jede Zeile ist eine angekündigte künftige Fassung; am
 genannten Tag `scripts/fedlex-cache.sh` neu pinnen + §7-Verifikation. Massgeblich
 bleibt stets die amtliche Quelle. NICHT von Hand editieren — Block wird von
-`npm run gen:fedlex-wiedervorlage` regeneriert. Stand des Laufs: 2026-10-01.
+`npm run gen:fedlex-wiedervorlage` regeneriert. Stand des Laufs: 2026-10-12.
 
 | Erlass (künftige Fassung) | Fundstelle | Aktuell gepinnt | Rhythmus | Nächste Prüfung |
 |---|---|---|---|---|
+| Künftige Fassung AIG (SR 142.20) | `scripts/fedlex-cache.sh` (AIG) | gepinnt 12.6.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.11.2026 |
+| Künftige Fassung ZEMIS-V (SR 142.513) | `scripts/fedlex-cache.sh` (ZEMIS_V) | gepinnt 1.10.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.11.2026 |
+| Künftige Fassung VGG (SR 173.32) | `scripts/fedlex-cache.sh` (VGG) | gepinnt 12.6.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.11.2026 |
+| Künftige Fassung StGB (SR 311.0) | `scripts/fedlex-cache.sh` (STGB) | gepinnt 1.10.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.11.2026 |
 | Künftige Fassung BBV (SR 412.101) | `scripts/fedlex-cache.sh` (BBV) | gepinnt 1.10.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.11.2026 |
 | Künftige Fassung RPV (SR 700.1) | `scripts/fedlex-cache.sh` (RPV) | gepinnt 1.7.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.11.2026 |
+| Künftige Fassung LFG (SR 748.0) | `scripts/fedlex-cache.sh` (LFG) | gepinnt 1.1.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.11.2026 |
 | Künftige Fassung ChemRRV (SR 814.81) | `scripts/fedlex-cache.sh` (CHEMRRV) | gepinnt 16.7.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.12.2026 |
-| Künftige Fassung AIG (SR 142.20) | `scripts/fedlex-cache.sh` (AIG) | gepinnt 12.6.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung AsylG (SR 142.31) | `scripts/fedlex-cache.sh` (ASYLG) | gepinnt 12.6.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung VG (SR 170.32) | `scripts/fedlex-cache.sh` (VG) | gepinnt 15.6.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung ParlG (SR 171.10) | `scripts/fedlex-cache.sh` (PARLG) | gepinnt 2.3.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
@@ -83,10 +87,10 @@ bleibt stets die amtliche Quelle. NICHT von Hand editieren — Block wird von
 | Künftige Fassung VwVG (SR 172.021) | `scripts/fedlex-cache.sh` (VWVG) | gepinnt 1.7.2022 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung BPG (SR 172.220.1) | `scripts/fedlex-cache.sh` (BPG) | gepinnt 1.1.2024 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung BPV (SR 172.220.111.3) | `scripts/fedlex-cache.sh` (BPV) | gepinnt 1.7.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
-| Künftige Fassung VGG (SR 173.32) | `scripts/fedlex-cache.sh` (VGG) | gepinnt 12.6.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung MSchV (SR 232.111) | `scripts/fedlex-cache.sh` (MSCHV) | gepinnt 1.7.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung DesV (SR 232.121) | `scripts/fedlex-cache.sh` (DESV) | gepinnt 1.7.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung PatG (SR 232.14) | `scripts/fedlex-cache.sh` (PATG) | gepinnt 1.7.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
+| Künftige Fassung StPO (SR 312.0) | `scripts/fedlex-cache.sh` (STPO) | gepinnt 1.4.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung BBG (SR 412.10) | `scripts/fedlex-cache.sh` (BBG) | gepinnt 1.10.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung MWSTV (SR 641.201) | `scripts/fedlex-cache.sh` (MWSTV) | gepinnt 1.1.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung CO2-Gesetz (SR 641.71) | `scripts/fedlex-cache.sh` (CO2_GESETZ) | gepinnt 1.1.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |

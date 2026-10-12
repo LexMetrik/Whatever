@@ -1,9 +1,25 @@
 {
   "erlassKey": "ZEMIS_V",
   "sr": "142.513",
-  "abgerufen": "2026-10-01",
+  "abgerufen": "2026-10-12",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2026-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/513",
+      "dateDocument": "2026-09-18",
+      "roFundstelle": "AS 2026 513",
+      "titelDe": "Verordnung über das Zentrale Migrationsinformationssystem (ZEMIS-Verordnung)",
+      "titelFr": "Ordonnance sur le système d’information central sur la migration (Ordonnance SYMIC)",
+      "titelIt": "Ordinanza concernente il sistema d’informazione centrale sulla migrazione (Ordinanza SIMIC)",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/513/de",
+      "sha": "23c0b192d3a2d094dcd9317983f0e2323a1a9a62e9ceae0b0dd6a804544d25bd"
+    },
     {
       "art": "aenderung",
       "dateEntryInForce": "2026-10-01",
@@ -713,5 +729,5 @@
       "sha": "509e7b22613546560d1e36883c9ec32fce8a8368a2969478863a0cb4a567bbfd"
     }
   ],
-  "sha": "b462682db3bef5b6cb2a12febb837ff99f1b4a17ae8cabf673a331f480f1286b"
+  "sha": "a9552ef9b1d03897f45547b6987ab0af988945777c1e03721a9deb560e5c5f54"
 }

@@ -46,7 +46,7 @@ mkdir -p "$CACHE_DIR"
 # kein Sachinhalt): Details bibliothek/register/fedlex-currency-2026-07-05.md.
 # EMRK/NYÜ (pdf-embed) separat in src/lib/normtext/pdf-embed.ts re-gepinnt.
 EINTRAEGE=(
-  "or|cc/27/317_321_377|20261001|2|art_11,art_32,art_77,art_104,art_216,art_324_a,art_335_c,art_336_c,art_396,art_493|220"
+  "or|cc/27/317_321_377|20261001|3|art_11,art_32,art_77,art_104,art_216,art_324_a,art_335_c,art_336_c,art_396,art_493|220"
   # Re-Pin 20260101→20260701 (§7-Nachverifikation 1.7.2026, AS 2026 94 gewaltfreie
   # Erziehung art_302 + AS 2026 16 Besitzesschutz art_926 ff.). Alle 6 zitierten Anker
   # byte-identisch, Inventar 1099→1099 (art_302 Intra-Artikel, kein neuer Anker).
@@ -225,7 +225,7 @@ EINTRAEGE=(
   "pueg|cc/1986/895_895_895|20260508|1|art_1|942.20"
   "fidleg|cc/2019/758|20261001|3|art_1|950.1"
   "kag|cc/2006/822|20261001|2|art_1|951.31"
-  "finig|cc/2018/801|20261001|0|art_1|954.1"
+  "finig|cc/2018/801|20261001|1|art_1|954.1"
   "finfrag|cc/2015/853|20240201|5|art_1|958.1"
   "vag|cc/2005/734|20240901|6|art_1|961.01"
   # ── Punkt 12 Batch 2 (24.6.2026, Bund-VERORDNUNGEN Volltext, Promotion aus
@@ -289,7 +289,7 @@ EINTRAEGE=(
   "ambv|cc/2018/786|20250315|1|art_1|812.212.1"
   "mepv|cc/2020/552|20260701|2|art_1|812.213"
   "epv|cc/2015/298|20250101|2|art_1|818.101.1"
-  "bpv|cc/2001/319|20260701|0|art_1|172.220.111.3"
+  "bpv|cc/2001/319|20260701|1|art_1|172.220.111.3"
   "rvov|cc/1999/170|20261001|0|art_1|172.010.1"
   "vgke|cc/2008/321|20100401|6|art_1|173.320.2"
   "betmkv|cc/2011/362|20230123|3|art_1|812.121.1"
