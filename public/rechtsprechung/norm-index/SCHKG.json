@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-10-12",
   "erlass": "SCHKG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -4429,6 +4429,18 @@
         "datum": "2024-04-29",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "32a": [
+      {
+        "key": "bge_152_II_518__voll",
+        "zitierung": "Urteil 9C_205/2025 (nicht publ. in BGE 152 II 518)",
+        "regesteKurz": null,
+        "datum": "2026-03-26",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-10-12",
   "erlass": "DBG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -1170,7 +1170,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
         "key": "bge_148_II_313",
@@ -1191,6 +1191,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_501",
+        "zitierung": "BGE 152 II 501",
+        "regesteKurz": "Art. 33 Abs. 3 DBG; Art. 9 Abs. 2 lit. m StHG; Abzugsfähigkeit der Kinderbetreuungskosten; Begriff der Drittbetreuung. Auslegung des Begriffs der Drittbetreuung im Sinne von Art. 33 Abs. 3 DBG (E. 6). Dieser Begriff muss mit Hilfe mehrerer…",
+        "datum": "2026-01-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_V_343",
@@ -1231,34 +1241,34 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_148_II_189",
-        "zitierung": "BGE 148 II 189",
-        "regesteKurz": "Art. 32k Abs. 1 Satz 3 BPG; Art. 33 Abs. 1 lit. d DBG; Art. 9 Abs. 2 lit. d StHG; Art. 79b Abs. 3 BVG; die Kapitaleinlage seitens der Arbeitnehmerin oder des Arbeitnehmers zwecks Äufnung einer Überbrückungsrente bei vorzeitigem…",
-        "datum": "2021-12-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "34": [
-      {
-        "key": "bge_149_II_27",
-        "zitierung": "BGE 149 II 27",
-        "regesteKurz": "Art. 32 Abs. 2 DBG; Unterhaltskosten für Liegenschaften; Abzug von Instandstellungskosten bei \"wirtschaftlichem Neubau\" (Praxisänderung). Zu den Unterhaltskosten gehören gemäss der am 1. Januar 2010 in Kraft getretenen Fassung von Art. 32…",
-        "datum": "2023-02-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
       {
         "key": "bge_149_II_19",
         "zitierung": "BGE 149 II 19",
         "regesteKurz": "Art. 25 DBG i.V.m. Art. 23 lit. f und Art. 33 Abs. 1 lit. c DBG; Besteuerung von Unterhaltsbeiträgen als Einkommen; Begriff der Gewinnungskosten; keine Abzugsfähigkeit von zwecks Erlangung von Unterhaltsbeiträgen aufgewendeten…",
         "datum": "2022-09-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_501",
+        "zitierung": "BGE 152 II 501",
+        "regesteKurz": "Art. 33 Abs. 3 DBG; Art. 9 Abs. 2 lit. m StHG; Abzugsfähigkeit der Kinderbetreuungskosten; Begriff der Drittbetreuung. Auslegung des Begriffs der Drittbetreuung im Sinne von Art. 33 Abs. 3 DBG (E. 6). Dieser Begriff muss mit Hilfe mehrerer…",
+        "datum": "2026-01-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_II_27",
+        "zitierung": "BGE 149 II 27",
+        "regesteKurz": "Art. 32 Abs. 2 DBG; Unterhaltskosten für Liegenschaften; Abzug von Instandstellungskosten bei \"wirtschaftlichem Neubau\" (Praxisänderung). Zu den Unterhaltskosten gehören gemäss der am 1. Januar 2010 in Kraft getretenen Fassung von Art. 32…",
+        "datum": "2023-02-23",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1495,6 +1505,16 @@
     ],
     "56": [
       {
+        "key": "bge_151_II_581",
+        "zitierung": "BGE 151 II 581",
+        "regesteKurz": "Art. 56 lit. g DBG; Art. 23 Abs. 1 lit. f StHG; Steuerbefreiung wegen Gemeinnützigkeit; Erfordernis der Uneigennützigkeit; Wirkung des Entzugs der Steuerbefreiung in zeitlicher Hinsicht. Der ein Hotel und eine gemeinnützige Herberge…",
+        "datum": "2024-10-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_147_II_287",
         "zitierung": "BGE 147 II 287",
         "regesteKurz": "Art. 56 lit. g DBG; Art. 23 Abs. 1 lit. f StHG; direkte Steuer; Steuerbefreiung; juristische Person; öffentlicher oder gemeinnütziger Zweck; unternehmerischer Zweck; Stiftung; Holdinggesellschaft. Voraussetzungen der Steuerbefreiung einer…",
@@ -1505,10 +1525,20 @@
         "gewicht": 1
       },
       {
-        "key": "bge_151_II_581",
-        "zitierung": "BGE 151 II 581",
-        "regesteKurz": "Art. 56 lit. g DBG; Art. 23 Abs. 1 lit. f StHG; Steuerbefreiung wegen Gemeinnützigkeit; Erfordernis der Uneigennützigkeit; Wirkung des Entzugs der Steuerbefreiung in zeitlicher Hinsicht. Der ein Hotel und eine gemeinnützige Herberge…",
-        "datum": "2024-10-28",
+        "key": "bge_146_II_359",
+        "zitierung": "BGE 146 II 359",
+        "regesteKurz": "Art. 56 lit. g DBG; Steuerbefreiung einer Privatschule. Kriterien für die Steuerbefreiung von Privatschulen; Relevanz der Praxishinweise der Schweizerischen Steuerkonferenz. Vorliegend bietet die betroffene Privatschule keine vollständige…",
+        "datum": "2020-07-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_518",
+        "zitierung": "BGE 152 II 518",
+        "regesteKurz": "Art. 56 lit. g DBG; Art. 23 Abs. 1 lit. f StHG; Art. 32a Abs. 3 USG; Steuerbefreiung; öffentlicher Zweck; Abfallverbrennungsanlage; erforderliche Rückstellungen. Zusammenfassung der Rechtsprechung zur Definition des öffentlichen Zwecks (E.…",
+        "datum": "2026-03-26",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1529,16 +1559,6 @@
         "zitierung": "BGE 146 V 341",
         "regesteKurz": "a Art. 61 BVG; Art. 3 BVV 1; Zuständigkeit der kantonalen BVG-Aufsichtsbehörde. Seit dem Inkrafttreten von Art. 3 BVV 1 in der per 1. Januar 2012 geltenden Fassung (nach der Änderung des BVG vom 19. März 2010 [Strukturreform]) gibt es neu…",
         "datum": "2020-09-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_146_II_359",
-        "zitierung": "BGE 146 II 359",
-        "regesteKurz": "Art. 56 lit. g DBG; Steuerbefreiung einer Privatschule. Kriterien für die Steuerbefreiung von Privatschulen; Relevanz der Praxishinweise der Schweizerischen Steuerkonferenz. Vorliegend bietet die betroffene Privatschule keine vollständige…",
-        "datum": "2020-07-22",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1565,6 +1585,16 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_518",
+        "zitierung": "BGE 152 II 518",
+        "regesteKurz": "Art. 56 lit. g DBG; Art. 23 Abs. 1 lit. f StHG; Art. 32a Abs. 3 USG; Steuerbefreiung; öffentlicher Zweck; Abfallverbrennungsanlage; erforderliche Rückstellungen. Zusammenfassung der Rechtsprechung zur Definition des öffentlichen Zwecks (E.…",
+        "datum": "2026-03-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_152_II_422",
@@ -1607,6 +1637,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_518",
+        "zitierung": "BGE 152 II 518",
+        "regesteKurz": "Art. 56 lit. g DBG; Art. 23 Abs. 1 lit. f StHG; Art. 32a Abs. 3 USG; Steuerbefreiung; öffentlicher Zweck; Abfallverbrennungsanlage; erforderliche Rückstellungen. Zusammenfassung der Rechtsprechung zur Definition des öffentlichen Zwecks (E.…",
+        "datum": "2026-03-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_152_II_422",
@@ -1756,7 +1796,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
+      },
+      {
+        "key": "bge_152_II_518",
+        "zitierung": "BGE 152 II 518",
+        "regesteKurz": "Art. 56 lit. g DBG; Art. 23 Abs. 1 lit. f StHG; Art. 32a Abs. 3 USG; Steuerbefreiung; öffentlicher Zweck; Abfallverbrennungsanlage; erforderliche Rückstellungen. Zusammenfassung der Rechtsprechung zur Definition des öffentlichen Zwecks (E.…",
+        "datum": "2026-03-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_II_802",
@@ -1802,6 +1852,16 @@
       }
     ],
     "69": [
+      {
+        "key": "bge_152_II_486",
+        "zitierung": "BGE 152 II 486",
+        "regesteKurz": "Art. 10 Abs. 1 ter , Art. 29 Abs. 2 und 3 MWSTG; Art. 37 VGG; Art. 12 und 13 VwVG; Auslegung des Begriffs der Beteiligung; Untersuchungsgrundsatz und Mitwirkungspflicht im Verfahren vor Bundesverwaltungsgericht. Die Auslegung von Art. 29…",
+        "datum": "2026-04-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_148_II_243",
         "zitierung": "BGE 148 II 243",
@@ -2503,10 +2563,50 @@
     ],
     "146": [
       {
+        "key": "bge_151_II_435__voll",
+        "zitierung": "Urteil 9C_42/2024 (nicht publ. in BGE 151 II 435)",
+        "regesteKurz": null,
+        "datum": "2024-12-05",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_II_581__voll",
+        "zitierung": "Urteil 9C_165/2024 (nicht publ. in BGE 151 II 581)",
+        "regesteKurz": null,
+        "datum": "2024-10-28",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_149_II_19__voll",
+        "zitierung": "Urteil 2C_382/2021 (nicht publ. in BGE 149 II 19)",
+        "regesteKurz": null,
+        "datum": "2022-09-23",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_147_II_287__voll",
         "zitierung": "Urteil 2C_166/2020 (nicht publ. in BGE 147 II 287)",
         "regesteKurz": null,
         "datum": "2021-05-10",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_146_II_359__voll",
+        "zitierung": "Urteil 2C_1050/2019 (nicht publ. in BGE 146 II 359)",
+        "regesteKurz": null,
+        "datum": "2020-07-22",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -2533,50 +2633,10 @@
         "gewicht": 1
       },
       {
-        "key": "bge_152_II_422__voll",
-        "zitierung": "Urteil 9C_606/2025 (nicht publ. in BGE 152 II 422)",
+        "key": "bge_152_II_518__voll",
+        "zitierung": "Urteil 9C_205/2025 (nicht publ. in BGE 152 II 518)",
         "regesteKurz": null,
-        "datum": "2026-02-24",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_152_II_98__voll",
-        "zitierung": "Urteil 9C_416/2024 (nicht publ. in BGE 152 II 98)",
-        "regesteKurz": null,
-        "datum": "2025-08-14",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_II_381__voll",
-        "zitierung": "Urteil 9C_75/2024 (nicht publ. in BGE 151 II 381)",
-        "regesteKurz": null,
-        "datum": "2025-02-25",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_II_435__voll",
-        "zitierung": "Urteil 9C_42/2024 (nicht publ. in BGE 151 II 435)",
-        "regesteKurz": null,
-        "datum": "2024-12-05",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_II_581__voll",
-        "zitierung": "Urteil 9C_165/2024 (nicht publ. in BGE 151 II 581)",
-        "regesteKurz": null,
-        "datum": "2024-10-28",
+        "datum": "2026-03-26",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",

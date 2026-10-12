@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-10-12",
   "erlass": "BV",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -426,7 +426,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 22
+        "gewicht": 25
       },
       {
         "key": "bge_148_IV_409",
@@ -2894,7 +2894,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 4
+        "gewicht": 5
       },
       {
         "key": "bge_146_I_83",
@@ -2905,6 +2905,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_535",
+        "zitierung": "BGE 152 II 535",
+        "regesteKurz": "Art. 89 Abs. 1 und 2 lit. c BGG; Beschwerdelegitimation einer Gemeinde bzw. einer kommunalen Baubehörde. Eine Gemeinde ist grundsätzlich nicht legitimiert, gegen die Verweigerung einer Baubewilligung Beschwerde beim Bundesgericht zu…",
+        "datum": "2026-04-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_152_II_276",
@@ -2951,16 +2961,6 @@
         "zitierung": "BGE 147 I 433",
         "regesteKurz": "Art. 29 Abs. 2 und Art. 50 BV, Art. 85 und 95 KV/ZH, Art. 4 und 9 f. RPG, Art. 31 Abs. 1 USG, Art. 4 f. VVEA, § 23 f. und 35 AbfG/ZH; Abfall- und Deponieplanung; Festsetzung der Deponiestandorte im Richtplan; Mitwirkung der Gemeinden und…",
         "datum": "2021-02-04",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_146_II_367",
-        "zitierung": "BGE 146 II 367",
-        "regesteKurz": "Art. 18a Abs. 4 und Art. 33 Abs. 3 lit. b RPG. Beurteilungsspielraum des Kantonsgerichts bei der Auslegung eines Gemeindereglements; Interesse an der Produktion von Solarenergie. Das Kantonsgericht prüfte einzig, ob die von der Gemeinde…",
-        "datum": "2020-06-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

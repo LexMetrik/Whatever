@@ -1,6 +1,6 @@
 # Rechtsprechungs-Register — alle zitierten Bundesgerichtsentscheide
 
-Generiert: `npx vite-node scripts/bge-register-generieren.ts` · Stand 2026-10-03
+Generiert: `npx vite-node scripts/bge-register-generieren.ts` · Stand 2026-10-12
 
 **Quelle + Stand:** SSoT ist `src/data/verifikation.ts` (93 Einträge);
 Links deterministisch aus `src/lib/bge.ts`. **URL-Schemata empirisch verifiziert**
@@ -125,7 +125,7 @@ Linkschema zweifach geprüft (Stichproben + Suite). Die Spalte Status zeigt:
 | BGE 81 II 56 | Prüf- und Rügeobliegenheit (Art. 201 OR) gilt analog beim Grundstückkauf und für zugesicherte Eigenschaften. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F81-II-56%3Ade&lang=de&type=show_document) | src/data/verifikation.ts | zu verifizieren |
 | BGE 98 II 191 | Massstab der sofortigen Mängelrüge; wenige Kalendertage nach Kenntnis genügen stets. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F98-II-191%3Ade&lang=de&type=show_document) | src/data/verifikation.ts | zu verifizieren |
 
-## Lücken: im Code zitiert, aber NICHT im Verifikations-Register (62)
+## Lücken: im Code zitiert, aber NICHT im Verifikations-Register (63)
 
 - **1A.122/2005** — src/lib/rechtsprechung/zitat-extraktion.ts
 - **1B_154/2007** — src/lib/strafRechtsmittel.ts
@@ -165,6 +165,7 @@ Linkschema zweifach geprüft (Stichproben + Suite). Die Spalte Status zeigt:
 - **BGE 147 II 454** — src/lib/rechtsprechung/besetzung/parser.ts
 - **BGE 147 III 121** — src/lib/rechtsprechung/zitat-extraktion.ts
 - **BGE 147 III 209** — src/components/verzahnung/KantenChip.tsx · src/lib/verzahnung/glossar.ts
+- **BGE 147 III 218** — src/lib/rechtsprechung/seitenmarker.ts
 - **BGE 147 III 440** — src/lib/rechtsprechung/besetzung/parser.ts
 - **BGE 148 III 57** — src/components/suche/trefferAnatomie.ts
 - **BGE 148 V 114** — src/lib/rechtsprechung/besetzung/parser.ts

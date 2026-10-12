@@ -1,17 +1,20 @@
 {
-"erzeugt":"2026-10-04",
+"erzeugt":"2026-10-12",
 "erlass":"BEWV",
 "erlassEbene":"bund",
 "dokumente":{
 "bge_147_II_281":{"zitierung":"BGE 147 II 281","regesteKurz":"Art. 1, Art. 2 Abs. 2 lit. a und Abs. 3, Art. 9 Abs. 1 lit. a BewG; Art. 3 BewV; fehlende Rechtsgrundlage für den bewilligungsfreien Erwerb eines Grundstücks, welches mit Personalwohnungen überbaut werden soll, durch eine Person im…","datum":"2021-03-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_152_II_473":{"zitierung":"BGE 152 II 473","regesteKurz":"Art. 1, 3, 7 lit. b und Art. 9 Abs. 2 BewG; Art. 8 lit. a BewV; Bewilligungspflichtigkeit der Übertragung einer Ferienwohnung auf einen Trust. Kognition des Bundesgerichts (E. 2). Streitgegenstand, rechtliche Ausgangslage nach dem BewG…","datum":"2026-02-05","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bs_appellationsgericht_VD.2021.24":{"zitierung":"Appellationsgericht BS VD.2021.24 vom 16.03.2022","regesteKurz":"Bundesgesetz über den Erwerb von Grundstücken durch Personen im Ausland","datum":"2022-03-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
-"1":[{"key":"bs_appellationsgericht_VD.2021.24","gewicht":null}],
-"3":[{"key":"bge_147_II_281","gewicht":0}]
+"1":[{"key":"bge_152_II_473","gewicht":0},{"key":"bs_appellationsgericht_VD.2021.24","gewicht":null}],
+"3":[{"key":"bge_147_II_281","gewicht":0}],
+"8":[{"key":"bge_152_II_473","gewicht":0}]
 },
 "gesamtProArtikel":{
-"1":{"kantonal":1},
-"3":{"bge":1}
+"1":{"bge":1,"kantonal":1},
+"3":{"bge":1},
+"8":{"bge":1}
 }
 }

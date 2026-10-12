@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-10-12",
   "erlass": "BGG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -335,6 +335,16 @@
         "gewicht": 20
       },
       {
+        "key": "bge_150_II_346",
+        "zitierung": "BGE 150 II 346",
+        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
+        "datum": "2024-05-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 16
+      },
+      {
         "key": "bge_146_II_276",
         "zitierung": "BGE 146 II 276",
         "regesteKurz": "Art. 83 lit. f Ziff. 2 BGG; Art. 1 Abs. 3 lit. d, Art. 13 lit. f und Art. 18 Abs. 1 der Interkantonalen Vereinbarung vom 25. November 1994/15. März 2001 über das öffentliche Beschaffungswesen; Wirtschaftlichkeitsgrundsatz; Wirkung der…",
@@ -343,16 +353,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 16
-      },
-      {
-        "key": "bge_150_II_346",
-        "zitierung": "BGE 150 II 346",
-        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
-        "datum": "2024-05-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 15
       },
       {
         "key": "bge_147_I_333",
@@ -745,6 +745,16 @@
         "gewicht": 87
       },
       {
+        "key": "bge_150_II_346",
+        "zitierung": "BGE 150 II 346",
+        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
+        "datum": "2024-05-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 36
+      },
+      {
         "key": "bge_146_IV_88",
         "zitierung": "BGE 146 IV 88",
         "regesteKurz": "Art. 91a Abs. 1 i.V.m. Art. 55 Abs. 1 und 2 SVG und Art. 10 Abs. 2 SKV; Verweigerung von Massnahmen zur Feststellung der Fahrunfähigkeit; Betäubungsmittelvortests; hinreichende Verdachtsmomente zur Durchführung; Beweiswert. Für die…",
@@ -753,16 +763,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 33
-      },
-      {
-        "key": "bge_150_II_346",
-        "zitierung": "BGE 150 II 346",
-        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
-        "datum": "2024-05-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 32
       },
       {
         "key": "bge_148_I_160",
@@ -812,7 +812,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 17
+        "gewicht": 18
       }
     ],
     "43": [
@@ -1631,6 +1631,18 @@
         "gewicht": 1
       }
     ],
+    "56": [
+      {
+        "key": "bge_152_II_518__voll",
+        "zitierung": "Urteil 9C_205/2025 (nicht publ. in BGE 152 II 518)",
+        "regesteKurz": null,
+        "datum": "2026-03-26",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "57": [
       {
         "key": "bge_147_I_478",
@@ -2136,7 +2148,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 36
+        "gewicht": 39
       },
       {
         "key": "bge_148_I_160",
@@ -2290,7 +2302,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 37
+        "gewicht": 39
       },
       {
         "key": "bge_148_I_160",
@@ -3830,7 +3842,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 27
+        "gewicht": 31
       },
       {
         "key": "bge_148_I_160",
@@ -3994,7 +4006,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 5
+        "gewicht": 6
       },
       {
         "key": "bge_148_IV_155",
@@ -4057,10 +4069,10 @@
         "gewicht": 2
       },
       {
-        "key": "bge_146_III_217__voll",
-        "zitierung": "Urteil 5A_127/2019 (nicht publ. in BGE 146 III 217)",
+        "key": "bge_148_II_285__voll",
+        "zitierung": "Urteil 2C_398/2021 (nicht publ. in BGE 148 II 285)",
         "regesteKurz": null,
-        "datum": "2020-05-04",
+        "datum": "2021-12-23",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -4076,7 +4088,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 12
+        "gewicht": 13
       },
       {
         "key": "bge_148_IV_155",
@@ -4223,6 +4235,16 @@
         "gewicht": 38
       },
       {
+        "key": "bge_150_II_346",
+        "zitierung": "BGE 150 II 346",
+        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
+        "datum": "2024-05-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 37
+      },
+      {
         "key": "bge_147_IV_73",
         "zitierung": "BGE 147 IV 73",
         "regesteKurz": "Art. 146 Abs. 1 StGB; Betrug; Entgelt für sexuelle Dienstleistungen; Täuschung über die Zahlungsbereitschaft; Arglist; Vermögensschaden. Die Vorspiegelung der Zahlungsbereitschaft ist als Täuschung über innere Tatsachen grundsätzlich…",
@@ -4231,16 +4253,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 35
-      },
-      {
-        "key": "bge_150_II_346",
-        "zitierung": "BGE 150 II 346",
-        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
-        "datum": "2024-05-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 33
       },
       {
         "key": "bge_148_I_160",
@@ -4404,7 +4416,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 23
+        "gewicht": 25
       },
       {
         "key": "bge_148_I_160",
@@ -4538,7 +4550,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 12
+        "gewicht": 13
       },
       {
         "key": "bge_148_I_160",
@@ -4558,7 +4570,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 5
+        "gewicht": 6
       },
       {
         "key": "bge_148_IV_356__voll",
@@ -4591,20 +4603,20 @@
         "gewicht": 3
       },
       {
-        "key": "bge_147_IV_409__voll",
-        "zitierung": "Urteil 6B_257/2020 (nicht publ. in BGE 147 IV 409)",
+        "key": "bge_150_II_321__voll",
+        "zitierung": "Urteil 9C_591/2023 (nicht publ. in BGE 150 II 321)",
         "regesteKurz": null,
-        "datum": "2021-06-24",
+        "datum": "2024-04-02",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 3
       },
       {
-        "key": "bge_147_III_226__voll",
-        "zitierung": "Urteil 5A_827/2019 (nicht publ. in BGE 147 III 226)",
+        "key": "bge_147_IV_409__voll",
+        "zitierung": "Urteil 6B_257/2020 (nicht publ. in BGE 147 IV 409)",
         "regesteKurz": null,
-        "datum": "2021-03-18",
+        "datum": "2021-06-24",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -4630,7 +4642,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 33
+        "gewicht": 37
       },
       {
         "key": "bge_148_I_160",
@@ -4817,6 +4829,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_II_535",
+        "zitierung": "BGE 152 II 535",
+        "regesteKurz": "Art. 89 Abs. 1 und 2 lit. c BGG; Beschwerdelegitimation einer Gemeinde bzw. einer kommunalen Baubehörde. Eine Gemeinde ist grundsätzlich nicht legitimiert, gegen die Verweigerung einer Baubewilligung Beschwerde beim Bundesgericht zu…",
+        "datum": "2026-04-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_II_884",
         "zitierung": "BGE 151 II 884",
         "regesteKurz": "a Art. 29 Abs. 1 BGG; Art. 38 f. StG; Anträge und Rügen vor Bundesgericht; Änderungen des Streitgegenstands im Rechtsmittelverfahren; Verwirkung der Einrede der funktionellen Unzuständigkeit. Grenzen der Zulässigkeit von Anträgen und Rügen…",
@@ -4827,30 +4849,20 @@
         "gewicht": 0
       },
       {
+        "key": "bge_152_II_518__voll",
+        "zitierung": "Urteil 9C_205/2025 (nicht publ. in BGE 152 II 518)",
+        "regesteKurz": null,
+        "datum": "2026-03-26",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_152_II_1__voll",
         "zitierung": "Urteil 9C_113/2025 (nicht publ. in BGE 152 II 1)",
         "regesteKurz": null,
         "datum": "2025-09-27",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_152_II_289__voll",
-        "zitierung": "Urteil 1C_200/2024 (nicht publ. in BGE 152 II 289)",
-        "regesteKurz": null,
-        "datum": "2025-08-13",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_152_II_196__voll",
-        "zitierung": "Urteil 2C_68/2024 (nicht publ. in BGE 152 II 196)",
-        "regesteKurz": null,
-        "datum": "2025-06-30",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -5020,7 +5032,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 37
+        "gewicht": 41
       },
       {
         "key": "bge_148_IV_356",
@@ -5095,6 +5107,16 @@
         "gewicht": 46
       },
       {
+        "key": "bge_150_II_346",
+        "zitierung": "BGE 150 II 346",
+        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
+        "datum": "2024-05-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 39
+      },
+      {
         "key": "bge_148_I_160",
         "zitierung": "BGE 148 I 160",
         "regesteKurz": "Art. 8 Abs. 2, 15 und 36 BV; Art. 9 EMRK; Art. 3, 6 und 7 des Gesetzes über die Laizität des Staates des Kantons Genf vom 26. April 2018 (LLE/GE); Glaubens- und Gewissensfreiheit; Verbot von Diskriminierungen; abstrakte Normenkontrolle.…",
@@ -5103,16 +5125,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 36
-      },
-      {
-        "key": "bge_150_II_346",
-        "zitierung": "BGE 150 II 346",
-        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
-        "datum": "2024-05-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 35
       },
       {
         "key": "bge_148_IV_356",

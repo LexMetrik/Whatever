@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-10-04",
+"erzeugt":"2026-10-12",
 "erlass":"DSG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -45,7 +45,8 @@
 "bs_appellationsgericht_ZB.2022.30":{"zitierung":"Appellationsgericht BS ZB.2022.30 vom 08.12.2022","regesteKurz":"Auskunftsrecht","datum":"2022-12-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_ZB.2023.47":{"zitierung":"Appellationsgericht BS ZB.2023.47 vom 05.03.2024","regesteKurz":"Forderung (BGer 4A_42/2024, 4A_246/2024 vom 8. Mai 2024)","datum":"2024-03-05","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_IV.2021.166":{"zitierung":"Sozialversicherungsgericht BS IV.2021.166 vom 11.05.2022","regesteKurz":"Beschwerde abgewiesen. Kein invalidisierender Gesundheitsschaden vorhanden.","datum":"2022-05-11","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
-"bs_sozialversicherungsgericht_IV.2025.3":{"zitierung":"Sozialversicherungsgericht BS IV.2025.3 vom 28.10.2025","regesteKurz":"Herausgabe von Akten der Invalidenversicherung an die Haftpflichtversicherung rechtmässig; Beschwerdeabweisung.","datum":"2025-10-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
+"bs_sozialversicherungsgericht_IV.2025.3":{"zitierung":"Sozialversicherungsgericht BS IV.2025.3 vom 28.10.2025","regesteKurz":"Herausgabe von Akten der Invalidenversicherung an die Haftpflichtversicherung rechtmässig; Beschwerdeabweisung.","datum":"2025-10-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
+"bvger_A_1078_2026":{"zitierung":"BVGer A-1078/2026 vom 30. September 2026","regesteKurz":"Datenschutz","datum":"2026-09-30","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bvger","status":"eidg"}}
 },
 "proArtikel":{
 "1":[{"key":"bge_148_II_349","gewicht":0}],
@@ -53,7 +54,7 @@
 "3":[{"key":"bge_149_II_337","gewicht":0},{"key":"bge_149_V_29","gewicht":0},{"key":"bge_148_I_226","gewicht":0},{"key":"bge_148_II_349","gewicht":0},{"key":"bge_147_II_408","gewicht":0},{"key":"bge_147_II_227","gewicht":1},{"key":"bge_147_I_346","gewicht":1},{"key":"bge_147_III_139","gewicht":0},{"key":"bge_147_I_280","gewicht":1},{"key":"bge_147_IV_16","gewicht":0},{"key":"bge_148_I_233__voll","gewicht":0,"erwaegungen":["E. 3.3.1"]},{"key":"bs_sozialversicherungsgericht_IV.2025.3","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.51","gewicht":null}],
 "4":[{"key":"bge_148_II_349","gewicht":0},{"key":"bge_147_II_227","gewicht":1},{"key":"bge_147_I_346","gewicht":0},{"key":"bge_147_III_139","gewicht":0},{"key":"bge_147_IV_16","gewicht":0},{"key":"bge_147_IV_9","gewicht":0},{"key":"bge_146_IV_226","gewicht":1},{"key":"bge_149_IV_153__voll","gewicht":0,"erwaegungen":["E. 2.2","E. 2.3.2","E. 2.4.1","E. 2.4.2"]},{"key":"bs_appellationsgericht_SB.2022.109","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.67","gewicht":null},{"key":"bs_appellationsgericht_SB.2018.45","gewicht":null}],
 "5":[{"key":"bge_149_II_302","gewicht":0},{"key":"bge_148_II_349","gewicht":1},{"key":"bge_152_I_9__voll","gewicht":0,"erwaegungen":["E. 4.3.4"]},{"key":"bge_148_I_233__voll","gewicht":0,"erwaegungen":["E. 3.3.1"]},{"key":"bge_147_II_227__voll","gewicht":1,"erwaegungen":["E. 4.2"]},{"key":"bge_147_IV_16__voll","gewicht":0,"erwaegungen":["E. 2.3"]},{"key":"bs_appellationsgericht_BES.2024.76","gewicht":null}],
-"6":[{"key":"bge_151_V_30","gewicht":0},{"key":"bge_149_II_302","gewicht":0},{"key":"bge_148_II_349__voll","gewicht":1,"erwaegungen":["E. 3.4"]},{"key":"bs_appellationsgericht_SB.2023.1","gewicht":null}],
+"6":[{"key":"bge_151_V_30","gewicht":0},{"key":"bge_149_II_302","gewicht":0},{"key":"bge_148_II_349__voll","gewicht":1,"erwaegungen":["E. 3.4"]},{"key":"bvger_A_1078_2026","gewicht":null},{"key":"bs_appellationsgericht_SB.2023.1","gewicht":null}],
 "7":[{"key":"bge_149_V_29","gewicht":0},{"key":"bge_148_II_349","gewicht":0},{"key":"bge_147_II_227__voll","gewicht":1,"erwaegungen":["E. 4.2"]},{"key":"bge_147_IV_16__voll","gewicht":0,"erwaegungen":["E. 2.3"]}],
 "8":[{"key":"bge_148_II_349","gewicht":0},{"key":"bge_147_II_408","gewicht":0},{"key":"bge_147_II_227","gewicht":1},{"key":"bge_147_III_139","gewicht":0},{"key":"bge_147_I_280","gewicht":1},{"key":"bge_147_IV_16","gewicht":0},{"key":"bs_appellationsgericht_VD.2023.17","gewicht":null}],
 "9":[{"key":"bge_147_II_408","gewicht":0},{"key":"bge_147_III_139__voll","gewicht":0,"erwaegungen":["E. 1.5"]},{"key":"bs_appellationsgericht_VD.2023.17","gewicht":null},{"key":"bs_appellationsgericht_ZB.2022.30","gewicht":null}],
@@ -72,6 +73,7 @@
 "34":[{"key":"bge_147_III_139","gewicht":0}],
 "35":[{"key":"bs_appellationsgericht_BES.2022.156","gewicht":null}],
 "38":[{"key":"bge_148_I_233","gewicht":0}],
+"41":[{"key":"bvger_A_1078_2026","gewicht":null}],
 "60":[{"key":"bs_appellationsgericht_BES.2024.76","gewicht":null}],
 "61":[{"key":"bs_appellationsgericht_BES.2024.76","gewicht":null}],
 "62":[{"key":"bs_appellationsgericht_BES.2024.76","gewicht":null},{"key":"bs_appellationsgericht_BES.2023.99","gewicht":null}],
@@ -85,7 +87,7 @@
 "3":{"bge":10,"bger":1,"kantonal":2},
 "4":{"bge":7,"bger":1,"kantonal":3},
 "5":{"bge":2,"bger":4,"kantonal":1},
-"6":{"bge":2,"bger":1,"kantonal":1},
+"6":{"bge":2,"bger":1,"eidg":1,"kantonal":1},
 "7":{"bge":2,"bger":2},
 "8":{"bge":6,"kantonal":1},
 "9":{"bge":1,"bger":1,"kantonal":2},
@@ -104,6 +106,7 @@
 "34":{"bge":1},
 "35":{"kantonal":1},
 "38":{"bge":1},
+"41":{"eidg":1},
 "60":{"kantonal":1},
 "61":{"kantonal":1},
 "62":{"kantonal":2},
