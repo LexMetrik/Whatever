@@ -96,6 +96,11 @@ export function useEinzelModus(
   const gemerkt = useLeserAnsicht();
   const navTyp = useNavigationType();
   // BG-07: besuchte Einträge (location.key) und die zuletzt gewählte Lesart samt Einträgen davor.
+  // BEKANNTE GRENZE (LESER-NAV, 15.10.2026): dieser Zustand lebt nur im Ref, er ist nach einem
+  // Reload oder einem Erlasswechsel (`LeserRahmenV3 key={schluessel}`) leer. «Zurück» auf einen
+  // Eintrag von davor kippt dann in dessen Lesart (Fehlerbild BG-07 für diesen Rest). Eine saubere
+  // Lösung braucht einen sitzungsweiten Speicher über alle Erlasse (sessionStorage oder history.state
+  // je Eintrag) samt Regel, wie weit eine Lesart-Wahl über Erlasse hinweg gilt — mehr als ein Fix.
   const besucht = useRef<string[]>([]);
   const wechsel = useRef<{ modus: LeserModus; davor: ReadonlySet<string> } | null>(null);
   // ── DER EINZELMODUS GILT NUR IN DER PRIMÄREN ANSICHT ──────────────────────

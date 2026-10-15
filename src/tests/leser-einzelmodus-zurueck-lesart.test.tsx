@@ -12,8 +12,10 @@
  * Sonde: der ECHTE Hook `useEinzelModus` (linkedom + react-dom/client + MemoryRouter,
  * kein Browser) mit dem echten Options-Speicher.
  *
- * ROT ZU BEKOMMEN (§6.7): in `useEinzelModus.ts` den Effekt «Zurück über den Wechsel»
- * (`ueberschreibe`-Zweig) entfernen ⇒ (a) und (c) fallen.
+ * ROT ZU BEKOMMEN (§6.7): in `useEinzelModus.ts` im ersten `useEffect` die Zeilen
+ * `const w = wechsel.current;` bis zum schliessenden `}` des `if (fuehrtAdresse && navTyp === 'POP' …)`
+ * (den `navigate(…, { replace: true })`-Zweig) entfernen ⇒ (a) und (c) fallen, (b) und (d) bleiben grün
+ * (gemessen 15.10.2026).
  */
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { parseHTML } from 'linkedom';
