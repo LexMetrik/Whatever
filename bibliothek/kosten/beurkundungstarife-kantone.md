@@ -595,4 +595,39 @@ JU «Sockel 300 bis 100'000 Kapital» (Kapitalschwelle, kein Gebührenrahmen).
 ---
 **Abnahme-Status:** Erstrecherche, 4-fach verifiziert; Davids Abnahme ausstehend.
 
+---
+## Nachtrag 15.10.2026 (RL-33): Mehrwertsteuer auf Notariatsgebühren je Kanton
+
+Frühere Annahme «nur freies Notariat rechnet MwSt» ist überholt (alte Werte oben bleiben stehen, nicht nachgeführt).
+Bund: MWSTG SR 641.20 Art. 25 Abs. 1 (8,1 %, Stand 31.3.2025), Art. 10 Abs. 2 lit. a (Umsatzgrenze CHF 100 000), Art. 12 Abs. 3/4;
+MWSTV SR 641.201 Art. 14 Ziff. 13 (Tätigkeiten von Amtsnotaren unternehmerisch, Stand 1.1.2025) — https://www.fedlex.admin.ch/eli/cc/2009/615/de, https://www.fedlex.admin.ch/eli/cc/2009/828/de.
+Daten: `src/data/tarif/mwst-notariat.ts` (`MWST_BEHANDLUNG`). Am 15.10.2026 selbst geöffnet: ZG, BE, NW, OW, LU, GL, BL, GR, AG, VS (JSON-API der Portale), AR, SG (PDF), ZH nur Dienstanweisung FD 22.11.2023 (NotGebV-Wortlaut über JS-Portal nicht abrufbar); übrige aus Dossier RL-33 (nicht neu geöffnet).
+
+| Kt | MwSt | Grundlage | Stelle | Stand |
+|---|---|---|---|---|
+| ZH | zusätzlich; vollmacht (Ziff. 4.5.1) inbegriffen, buergschaft (4.4.1) bis Gebühr 199 inbegriffen | Tarif | NotGebV § 2; DA FD 22.11.2023 § 2 | 1.1.2024 |
+| BE | zusätzlich | Tarif | GebVN Art. 1 Abs. 3 «in der Gebühr nicht enthalten» | 1.3.2022 |
+| LU | zusätzlich | Tarif | BeurkGebV § 9 Abs. 1 | 1.1.2022 |
+| SZ | zusätzlich | Tarif | GebT § 2 Abs. 2 (Dossier) | 1.2.2021 |
+| OW | zusätzlich | Tarif | Art. 6 Abs. 2 | 1.1.2013 |
+| NW | zusätzlich | Tarif | § 3a Abs. 1 Ziff. 3 | 1.1.2016 |
+| GL | zusätzlich | Tarif | Art. 10 Abs. 3 | 1.1.2009 |
+| ZG | inbegriffen (kein Aufschlag) | Tarif | Verwaltungsgebührentarif BGS 641.1 Ziff. 109bis; Anwalts-Urkundspersonen offen | 22.8.2025 |
+| BL | zusätzlich | Tarif | NotGebV § 11 Abs. 1 | 1.11.2012 |
+| AR | zusätzlich | Tarif | Gebührentarif Gemeinden Art. 12 Abs. 1 | 1.1.2018 |
+| SG | zusätzlich | Tarif | Gebührentarif sGS 821.5 Fn. 5 | 1.1.2026 |
+| GR | zusätzlich | Tarif | NotGebV Art. 1 Abs. 1 | 1.1.2024 |
+| AG | zusätzlich | Tarif | Notariatstarif § 9 Abs. 1 | 1.1.2025 |
+| TG | zusätzlich | Tarif (Preisliste GNI, Rang 4) | Preisliste | 1.1.2026 |
+| VS | zusätzlich | Tarif | Art. 10 al. 1 | 1.1.2011 |
+| NE | zusätzlich | Tarif | Art. 14 (HTML «Etat au 13 mai 2015», Aktualität ungeprüft) | 13.5.2015 |
+| FR, GE, TI, SO, SH, AI | zusätzlich | Bundesrecht (W-16 a, Tarif schweigt) | MWSTG/MWSTV | – |
+| BS, VD, JU | zusätzlich wie bisher | Bundesrecht, Tarif schweigt; Zuordnung wartet auf David | MWSTG/MWSTV | – |
+| UR | offen | kein amtlicher Tarif (RL-26) | – | – |
+
+### Nachzug 15.10.2026 (RL-33, nach Gegenprüfung)
+- TG: Preisliste GNI (Stand 1.1.2026, https://gni.tg.ch/public/upload/assets/123369/Preisliste%20Grundbuchamt%20und%20Notariat.pdf) ist kein Erlass; sie nennt MWST nur bei Beurkundungen von Grundstücksgeschäften, Depotgebühren, Gesellschaftsrecht, Stundenansätzen und *-markierten Erbschaftsgeschäften, schweigt zu Beglaubigungen, Bürgschaften, Familien-/Erbrecht; RB 632.1 schweigt. Grundlage neu «Bundesrecht» (W-16 a), Betrag unverändert (Tabelle oben: TG nicht mehr «Tarif»).
+- SG: für grundstücksbezogene Beurkundungen zusätzlich GB-GebV sGS 914.5 Art. 3 «Soweit die Gebühren der Mehrwertsteuer unterliegen, wird diese hinzugerechnet.» (in Vollzug seit 1.6.2020, https://www.gesetzessammlung.sg.ch/app/de/texts_of_law/914.5, am 15.10.2026 geöffnet).
+- SZ: SRSZ 213.512 § 2 Abs. 2 «wird diese zusätzlich in Rechnung gestellt» (PDF https://www.sz.ch/public/upload/assets/7361/213_512.pdf, am 15.10.2026 geöffnet) bestätigt. Kopfzeile trägt «SRSZ 1.2.2027», Fn. 1 nennt Änderung vom 27.5.2026; «in Kraft 1.7.2026» steht im PDF nicht. Stand in den Daten bleibt 1.2.2021 (offengelegt, nicht belegt nachgeführt).
+
 **Nachtrag 15.10.2026 (RL-28 Nachzug):** schuldbrief AG — Minimum 200 (⅔ × 300, Lesart von SAR 295.250 § 3 Abs. 1; vorher 300); schuldbrief SZ — § 5 Abs. 1 Nr. 2 «bzw. Bruchteile davon», Pfandsumme auf 50'000 aufgerundet, Stand 1.7.2026; schuldbrief OW — Art. 4 (Erhöhung bis zur Hälfte) und Art. 5 lit. a (Herabsetzung um einen Drittel) offengelegt, nicht gerechnet. Belege: notariat-grundbuch-kantone.md, Nachtrag 15.10.2026 (Nachzug).
