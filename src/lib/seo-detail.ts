@@ -19,6 +19,7 @@
 // Stand, s. Block unten (snapshot ≠ in Kraft — TODO(David), Welle ab 1.12.2026).
 
 import { SITE_URL, type RouteMetadaten } from './seo';
+import { istLeerMarke } from './listenMarke';
 import { AMTLICHE_FASSUNG, AMTLICHE_FASSUNG_AUFGEHOBEN, AMTLICHE_FASSUNG_NOMEN, MASSGEBLICH_SATZ } from './benennung';
 import {
   aufgehobenSeitSatz,
@@ -308,7 +309,7 @@ function bloeckeHtml(
     if (b.text) out += `<p>${marke}${esc(b.text)}</p>`;
     else if (b.absatz) out += `<p>${marke}</p>`;
     if (b.items?.length) {
-      out += '<ul>' + b.items.map((i) => `<li>${i.marke === '' ? '' : `<b>${esc(i.marke)}</b> `}${esc(i.text)}</li>`).join('') + '</ul>';
+      out += '<ul>' + b.items.map((i) => `<li>${istLeerMarke(i.marke) ? '' : `<b>${esc(i.marke)}</b> `}${esc(i.text)}</li>`).join('') + '</ul>';
     }
     if (b.tabelle?.length) {
       out +=
