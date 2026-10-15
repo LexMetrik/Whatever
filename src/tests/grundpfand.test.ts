@@ -330,13 +330,15 @@ describe('RL-28 Teil 2 Grundpfand Romandie/TI — Beurkundung + Eintrag (RV-19)'
     expect(SONDERTARIFE.schuldbrief!.NE!.regel.typ).toBe('staffel_inklusiv');
   });
 
-  it('TI: Sockel der Notariatsstaffel exakt (…,50 statt gerundet), Lesart A im Hinweis mit Lesart B offengelegt', () => {
+  it('TI: Sockel der Notariatsstaffel exakt (…,50 statt gerundet); Lesart A kodiert, Lesart B im Posten-Hinweis offengelegt', () => {
     const t = SONDERTARIFE.schuldbrief!.TI!;
     if (t.regel.typ !== 'staffel_sockel_prozent') throw new Error('unerwarteter Regeltyp');
     const sockel = t.regel.baender.map((b) => b.sockelChf);
     expect(sockel).toEqual([0, 500, 875, 1375, 1812.5, 2187.5, 3437.5, 6437.5, 8937.5, 18937.5]);
-    expect(t.hinweis).toMatch(/Lesart B/);
-    expect(t.hinweis).toMatch(/1’937\.50|1’937,50|1'937\.50/);
+    // Golden bk:schuldbrief:TI bleibt byte-gleich: die Offenlegung der Lesarten steht im Posten Grundpfand.
+    expect(GRUNDPFAND.TI.hinweis).toMatch(/Lesart A/);
+    expect(GRUNDPFAND.TI.hinweis).toMatch(/Lesart B/);
+    expect(GRUNDPFAND.TI.hinweis).toMatch(/1 937\.50/);
   });
 
   it('TI: der Eintragsteil hat kein Minimum von 30 (LTORF Art. 20 ist eine Fixgebühr für andere Vorgänge)', () => {
