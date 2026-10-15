@@ -43,7 +43,9 @@ export const MWST_BEHANDLUNG: Record<KantonCode, MwstBehandlung> = {
   LU: { art: 'zusaetzlich', grundlage: 'tarif', erlassName: 'Verordnung über die Beurkundungsgebühren (BeurkGebV)', erlassNr: 'SRL 258', artikel: '§ 9 Abs. 1', stand: '1.1.2022', quelleUrl: 'https://srl.lu.ch/app/de/texts_of_law/258' },
   // UR: kein amtlicher Tarif (RL-26) → keine Aussage.
   UR: { art: 'offen', grundlage: 'bundesrecht', erlassName: 'Notariatsverordnung (NotV)', erlassNr: 'RB 9.2311', artikel: 'Kein Gebührentarif, keine MWST-Klausel', stand: '1.1.2001', quelleUrl: 'https://rechtsbuch.ur.ch/app/de/texts_of_law/9.2311', vermerk: 'Uri hat keinen amtlichen Notariatstarif; MWST nicht beziffert.' },
-  // SZ: «wird diese zusätzlich in Rechnung gestellt».
+  // SZ: «wird diese zusätzlich in Rechnung gestellt». Stand: amtliches PDF (sz.ch assets/7361) trägt im Kopf
+  // «SRSZ 1.2.2027» (Datum unplausibel/zukünftig, vom 15.10.2026 offengelegt) und in Fn. 1 die Änderung vom
+  // 27.5.2026; ein Inkrafttreten 1.7.2026 steht im PDF nicht. Stand daher unverändert 1.2.2021 (nicht belegbar nachgeführt).
   SZ: { art: 'zusaetzlich', grundlage: 'tarif', erlassName: 'Gebührentarif für Notare und Grundbuchverwalter sowie freiberufliche Urkundspersonen', erlassNr: 'SRSZ 213.512', artikel: '§ 2 Abs. 2', stand: '1.2.2021', quelleUrl: 'https://www.sz.ch/public/upload/assets/7361/213_512.pdf' },
   // OW: «Anspruch auf die Mehrwertsteuer auf Gebühr, Honorar und Auslagen, soweit mehrwertsteuerpflichtig».
   OW: { art: 'zusaetzlich', grundlage: 'tarif', erlassName: 'Verordnung über die Beurkundungsgebühren', erlassNr: 'GDB 210.32', artikel: 'Art. 6 Abs. 2', stand: '1.1.2013', quelleUrl: 'https://gdb.ow.ch/app/de/texts_of_law/210.32' },
@@ -65,13 +67,18 @@ export const MWST_BEHANDLUNG: Record<KantonCode, MwstBehandlung> = {
   AR: { art: 'zusaetzlich', grundlage: 'tarif', erlassName: 'Gesetz über die Gebühren der Gemeinden (Gebührentarif für die Gemeinden)', erlassNr: 'bGS 153.2', artikel: 'Art. 12 Abs. 1', stand: '1.1.2018', quelleUrl: 'https://ar.clex.ch/api/de/versions/1203/pdf_file' },
   AI: { art: 'zusaetzlich', grundlage: 'bundesrecht', erlassName: 'Gebührentarif', erlassNr: 'GS 172.513', artikel: BUNDESRECHT_ARTIKEL, stand: '1.1.2026', quelleUrl: 'https://ai.clex.ch/app/de/texts_of_law/172.513' },
   // SG: Fn. 5 «Die Gebühren verstehen sich ohne Mehrwertsteuer … wird die Gebühr um den Steuerbetrag erhöht.»
-  SG: { art: 'zusaetzlich', grundlage: 'tarif', erlassName: 'Gebührentarif für die Kantons- und Gemeindeverwaltung', erlassNr: 'sGS 821.5', artikel: 'Fussnote 5 (Gebühren ohne Mehrwertsteuer)', stand: '1.1.2026', quelleUrl: 'https://www.gesetzessammlung.sg.ch/api/de/versions/3849/pdf_file' },
+  // Grundstücksbezogene Beurkundungen: GB-GebV sGS 914.5 Art. 3 «Soweit die Gebühren der Mehrwertsteuer
+  // unterliegen, wird diese hinzugerechnet.» (in Vollzug seit 1.6.2020; gesetzessammlung.sg.ch, 15.10.2026 geöffnet)
+  SG: { art: 'zusaetzlich', grundlage: 'tarif', erlassName: 'Gebührentarif für die Kantons- und Gemeindeverwaltung', erlassNr: 'sGS 821.5', artikel: 'Fussnote 5 (Gebühren ohne Mehrwertsteuer); grundstücksbezogen auch sGS 914.5 Art. 3 (Mehrwertsteuer)', stand: '1.1.2026', quelleUrl: 'https://www.gesetzessammlung.sg.ch/api/de/versions/3849/pdf_file' },
   // GR: «… Ersatz der notwendigen Auslagen und der Mehrwertsteuer, die offen auszuweisen ist».
   GR: { art: 'zusaetzlich', grundlage: 'tarif', erlassName: 'Verordnung über die Notariatsgebühren (NotGebV)', erlassNr: 'BR 210.370', artikel: 'Art. 1 Abs. 1', stand: '1.1.2024', quelleUrl: 'https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370' },
   // AG: «… sowie auf die von ihr zu entrichtende Mehrwertsteuer».
   AG: { art: 'zusaetzlich', grundlage: 'tarif', erlassName: 'Dekret über den Notariatstarif', erlassNr: 'SAR 295.250', artikel: '§ 9 Abs. 1', stand: '1.1.2025', quelleUrl: 'https://gesetzessammlungen.ag.ch/app/de/texts_of_law/295.250' },
-  // TG: Preisliste Grundbuchamt und Notariat (GNI): Leistungen «unterliegen der Mehrwertsteuer» (Rang 4, GGG RB 632.1 schweigt).
-  TG: { art: 'zusaetzlich', grundlage: 'tarif', erlassName: 'Preisliste Grundbuchamt und Notariat (GNI)', erlassNr: 'Preisliste GNI', artikel: 'Preisliste (Hinweis Mehrwertsteuer)', stand: '1.1.2026', quelleUrl: 'https://gni.tg.ch/public/upload/assets/123369/Preisliste%20Grundbuchamt%20und%20Notariat.pdf' },
+  // TG: Gegenprüfung 15.10.2026: Die Preisliste GNI (Stand 1.1.2026) ist kein Erlass; sie nennt MWST nur bei
+  // Beurkundungen von Grundstücksgeschäften, Depotgebühren, Gesellschaftsrecht, Stundenansätzen und
+  // *-markierten Erbschaftsgeschäften und schweigt zu Beglaubigungen, Bürgschaften, Familien-/Erbrecht;
+  // GGG RB 632.1 schweigt. Darum Bundesrecht (W-16 a), Betrag unverändert.
+  TG: { art: 'zusaetzlich', grundlage: 'bundesrecht', erlassName: 'Preisliste Grundbuchamt und Notariat (GNI)', erlassNr: 'Preisliste GNI', artikel: BUNDESRECHT_ARTIKEL, stand: '1.1.2026', quelleUrl: 'https://gni.tg.ch/public/upload/assets/123369/Preisliste%20Grundbuchamt%20und%20Notariat.pdf', vermerk: 'Preisliste GNI nennt MWST für Grundstücks- und Gesellschaftsgeschäfte; im Übrigen Bundesrecht (MWSTG).' },
   TI: { art: 'zusaetzlich', grundlage: 'bundesrecht', erlassName: 'Legge sulla tariffa notarile', erlassNr: 'RL 952.300', artikel: BUNDESRECHT_ARTIKEL, stand: '1.7.2015', quelleUrl: 'https://m3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/pdfatto/atto/148' },
   // VD: Tarif schweigt (0 Treffer TVA); Zuordnung wartet auf David.
   VD: { art: 'zusaetzlich', grundlage: 'bundesrecht', erlassName: 'Tarif des honoraires dus aux notaires pour des opérations ministérielles (TNo)', erlassNr: 'BLV 178.11.2', artikel: BUNDESRECHT_ARTIKEL, stand: '1.3.2016', quelleUrl: 'https://www.lexfind.ch/tolv/210344/fr', vermerk: BR_OFFEN_VERMERK },

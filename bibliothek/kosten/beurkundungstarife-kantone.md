@@ -624,3 +624,8 @@ Daten: `src/data/tarif/mwst-notariat.ts` (`MWST_BEHANDLUNG`). Am 15.10.2026 selb
 | FR, GE, TI, SO, SH, AI | zusätzlich | Bundesrecht (W-16 a, Tarif schweigt) | MWSTG/MWSTV | – |
 | BS, VD, JU | zusätzlich wie bisher | Bundesrecht, Tarif schweigt; Zuordnung wartet auf David | MWSTG/MWSTV | – |
 | UR | offen | kein amtlicher Tarif (RL-26) | – | – |
+
+### Nachzug 15.10.2026 (RL-33, nach Gegenprüfung)
+- TG: Preisliste GNI (Stand 1.1.2026, https://gni.tg.ch/public/upload/assets/123369/Preisliste%20Grundbuchamt%20und%20Notariat.pdf) ist kein Erlass; sie nennt MWST nur bei Beurkundungen von Grundstücksgeschäften, Depotgebühren, Gesellschaftsrecht, Stundenansätzen und *-markierten Erbschaftsgeschäften, schweigt zu Beglaubigungen, Bürgschaften, Familien-/Erbrecht; RB 632.1 schweigt. Grundlage neu «Bundesrecht» (W-16 a), Betrag unverändert (Tabelle oben: TG nicht mehr «Tarif»).
+- SG: für grundstücksbezogene Beurkundungen zusätzlich GB-GebV sGS 914.5 Art. 3 «Soweit die Gebühren der Mehrwertsteuer unterliegen, wird diese hinzugerechnet.» (in Vollzug seit 1.6.2020, https://www.gesetzessammlung.sg.ch/app/de/texts_of_law/914.5, am 15.10.2026 geöffnet).
+- SZ: SRSZ 213.512 § 2 Abs. 2 «wird diese zusätzlich in Rechnung gestellt» (PDF https://www.sz.ch/public/upload/assets/7361/213_512.pdf, am 15.10.2026 geöffnet) bestätigt. Kopfzeile trägt «SRSZ 1.2.2027», Fn. 1 nennt Änderung vom 27.5.2026; «in Kraft 1.7.2026» steht im PDF nicht. Stand in den Daten bleibt 1.2.2021 (offengelegt, nicht belegt nachgeführt).

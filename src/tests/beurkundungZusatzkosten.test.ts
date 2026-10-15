@@ -142,9 +142,9 @@ describe('MWST_BEHANDLUNG — Tabelle', () => {
   it('Zuordnung: Tarifklausel / Bundesrecht (W-16 a) / inbegriffen / offen', () => {
     const wo = (f: (z: (typeof MWST_BEHANDLUNG)[KantonCode]) => boolean) => KANTONE.filter((k) => f(MWST_BEHANDLUNG[k])).sort();
     expect(wo((z) => z.art === 'zusaetzlich' && z.grundlage === 'tarif'))
-      .toEqual(['ZH', 'BE', 'LU', 'SZ', 'OW', 'NW', 'GL', 'BL', 'AR', 'SG', 'GR', 'AG', 'TG', 'VS', 'NE'].sort());
+      .toEqual(['ZH', 'BE', 'LU', 'SZ', 'OW', 'NW', 'GL', 'BL', 'AR', 'SG', 'GR', 'AG', 'VS', 'NE'].sort());
     expect(wo((z) => z.art === 'zusaetzlich' && z.grundlage === 'bundesrecht'))
-      .toEqual(['FR', 'GE', 'TI', 'SO', 'SH', 'AI', 'BS', 'VD', 'JU'].sort());
+      .toEqual(['FR', 'GE', 'TI', 'SO', 'SH', 'AI', 'BS', 'VD', 'JU', 'TG'].sort());
     expect(wo((z) => z.art === 'inbegriffen')).toEqual(['ZG']);
     expect(wo((z) => z.art === 'offen')).toEqual(['UR']);
   });
