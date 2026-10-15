@@ -84,3 +84,22 @@ describe('Grundbuch — amtliche Stützstellen (3-fach verifiziert: find→Doppe
     expect(r.posten!.ergebnis.deterministisch).toBe(false);
   });
 });
+
+describe('RL-29 Teil 3: TG Vormerkung (GGG § 14 Abs. 2 Ziff. 16 gerechnet, Ziff. 17–19 offengelegt)', () => {
+  it('Hinweis nennt Vorkaufsrecht mit ½ ‰ und die nicht gerechneten Ziffern 17, 18, 19 (§8)', () => {
+    const t = tarifFuerGb('vormerkung', 'TG')!.tarif;
+    const h = t.hinweis ?? '';
+    expect(h).toContain('Vorkaufsrecht');
+    expect(h).toContain('½ ‰');
+    expect(h).toMatch(/Ziff\. 17/);
+    expect(h).toMatch(/Ziff\. 18/);
+    expect(h).toMatch(/Ziff\. 19/);
+    expect(h).toContain('nicht gerechnet');
+  });
+  it('gerechneter Fall bleibt Ziff. 16 (1 ‰ min. 100 max. 5’000)', () => {
+    const r = berechneGrundbuchgebuehr({ eintragsart: 'vormerkung', kanton: 'TG', wertCHF: 400_000 });
+    const e = r.posten!.ergebnis;
+    if (!e.deterministisch) throw new Error('deterministisch erwartet');
+    expect(e.betragChf).toBe(400);
+  });
+});
