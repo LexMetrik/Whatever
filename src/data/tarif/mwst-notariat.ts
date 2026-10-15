@@ -43,10 +43,11 @@ export const MWST_BEHANDLUNG: Record<KantonCode, MwstBehandlung> = {
   LU: { art: 'zusaetzlich', grundlage: 'tarif', erlassName: 'Verordnung über die Beurkundungsgebühren (BeurkGebV)', erlassNr: 'SRL 258', artikel: '§ 9 Abs. 1', stand: '1.1.2022', quelleUrl: 'https://srl.lu.ch/app/de/texts_of_law/258' },
   // UR: kein amtlicher Tarif (RL-26) → keine Aussage.
   UR: { art: 'offen', grundlage: 'bundesrecht', erlassName: 'Notariatsverordnung (NotV)', erlassNr: 'RB 9.2311', artikel: 'Kein Gebührentarif, keine MWST-Klausel', stand: '1.1.2001', quelleUrl: 'https://rechtsbuch.ur.ch/app/de/texts_of_law/9.2311', vermerk: 'Uri hat keinen amtlichen Notariatstarif; MWST nicht beziffert.' },
-  // SZ: «wird diese zusätzlich in Rechnung gestellt». Stand: amtliches PDF (sz.ch assets/7361) trägt im Kopf
-  // «SRSZ 1.2.2027» (Datum unplausibel/zukünftig, vom 15.10.2026 offengelegt) und in Fn. 1 die Änderung vom
-  // 27.5.2026; ein Inkrafttreten 1.7.2026 steht im PDF nicht. Stand daher unverändert 1.2.2021 (nicht belegbar nachgeführt).
-  SZ: { art: 'zusaetzlich', grundlage: 'tarif', erlassName: 'Gebührentarif für Notare und Grundbuchverwalter sowie freiberufliche Urkundspersonen', erlassNr: 'SRSZ 213.512', artikel: '§ 2 Abs. 2', stand: '1.2.2021', quelleUrl: 'https://www.sz.ch/public/upload/assets/7361/213_512.pdf' },
+  // SZ: «wird diese zusätzlich in Rechnung gestellt» (§ 2 Abs. 2, eingefügt 20.12.2005, in allen Fassungen gleich).
+  // Stand: das amtliche PDF (sz.ch assets/7361, abgerufen 15.10.2026) trägt im Kopf «SRSZ 1.2.2027» und in Fn. 1
+  // als letzte Änderung GS 28-9c vom 27.5.2026 — 1.2.2027 ist damit wohl deren Inkrafttreten (Amtsblatt nicht
+  // geöffnet); «1.2.2021» ist durch nichts belegt (Änderung davor GS 26-6 vom 19.5.2020). Darum ehrlich: Fassung unklar.
+  SZ: { art: 'zusaetzlich', grundlage: 'tarif', erlassName: 'Gebührentarif für Notare und Grundbuchverwalter sowie freiberufliche Urkundspersonen', erlassNr: 'SRSZ 213.512', artikel: '§ 2 Abs. 2', stand: 'Fassung unklar (PDF Kopf 1.2.2027, abgerufen 15.10.2026)', quelleUrl: 'https://www.sz.ch/public/upload/assets/7361/213_512.pdf' },
   // OW: «Anspruch auf die Mehrwertsteuer auf Gebühr, Honorar und Auslagen, soweit mehrwertsteuerpflichtig».
   OW: { art: 'zusaetzlich', grundlage: 'tarif', erlassName: 'Verordnung über die Beurkundungsgebühren', erlassNr: 'GDB 210.32', artikel: 'Art. 6 Abs. 2', stand: '1.1.2013', quelleUrl: 'https://gdb.ow.ch/app/de/texts_of_law/210.32' },
   // NW: «In der Gebühr nicht inbegriffen ist: … 3. die Mehrwertsteuer.»
