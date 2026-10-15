@@ -23,9 +23,10 @@ describe('AI Schlichtung — eine Zahl in beiden Tarif-Tabellen (§5, GGV AI Art
     expect(SCHLICHTUNG_NV.AI.hinweis).toContain('200–1000');
   });
 
-  it('VS: nv-Rahmen 60–500 ist Art. 15 Abs. 2 LTar; Abs. 1 (50–100 + 120–250) im Hinweis', () => {
-    expect(SCHLICHTUNG_NV.VS.regel).toEqual({ typ: 'rahmen', vonChf: 60, bisChf: 500 });
-    expect(SCHLICHTUNG_NV.VS.hinweis).toContain('Abs. 2');
+  it('VS: nv-Rahmen 50–350 = Art. 15 Abs. 1 LTar (Vorladung 50–100 + Sitzung 120–250); Abs. 2 nur vermögensrechtlich', () => {
+    expect(SCHLICHTUNG_NV.VS.regel).toEqual({ typ: 'rahmen', vonChf: 50, bisChf: 350 });
+    expect(SCHLICHTUNG_NV.VS.hinweis).toContain('Abs. 1 lit. a');
     expect(SCHLICHTUNG_NV.VS.hinweis).toContain('120–250');
+    expect(SCHLICHTUNG_NV.VS.hinweis).toContain('vermögensrechtliche');
   });
 });
