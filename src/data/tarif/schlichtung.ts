@@ -179,7 +179,7 @@ export const SCHLICHTUNG: Record<KantonCode, KantonalerTarif> = {
     kanton: 'TG', erlassName: 'Verordnung über die Gebühren der Strafverfolgungs- und Gerichtsbehörden (VGG)', erlassNr: 'RB 638.1',
     artikel: '§ 7', stand: '1.1.2022', verifiziert: 'doppelt',
     quelleUrl: 'https://www.rechtsbuch.tg.ch/app/de/texts_of_law/638.1',
-    hinweis: 'Vermittlungsvorstand streitwertgestuft; Klageabschreibung nach Vorladung CHF 50.',
+    hinweis: 'Vermittlungsvorstand streitwertgestuft; Klageabschreibung nach Vorladung CHF 100.',
     regel: { typ: 'staffel_rahmen', baender: [
       { grenzeChf: 2000, minChf: 100, maxChf: 150 },
       { grenzeChf: 8000, minChf: 120, maxChf: 200 },

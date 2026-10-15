@@ -118,4 +118,31 @@ describe('RL-36 Teil 2 · Konsistenz Zuständigkeits-Anzeige = Tarifquellen, all
       }
     }
   });
+
+  it("SZ Gericht: Hinweis nennt Gebührenrahmen (§ 33 Ziff. 4/6 GebO SZ 173.111), keine Streitwertgrenzen", () => {
+    const h = ZUSTAENDIGKEIT_KOSTEN.SZ.gericht.hinweis ?? '';
+    expect(h).toContain("100–50'000");
+    expect(h).toContain("100–100'000");
+    expect(h).toContain('Gebührenrahmen');
+    expect(h).not.toContain('bis Streitwert');
+  });
+
+  it('Gericht: kein Zusatz «unabhängig vom Streitwert» (AI Art. 15 GGV, AR Art. 20 GebO, SG Art. 11 GKV erhöhen nach Streitwert)', () => {
+    for (const k of ['AI', 'AR', 'SG'] as const) {
+      const g = ZUSTAENDIGKEIT_KOSTEN[k].gericht;
+      expect(g.text, k).not.toContain('unabhängig vom Streitwert');
+      expect(g.hinweis ?? '', k).toMatch(/streitwert/i);
+    }
+    for (const k of KANTONE) expect(ZUSTAENDIGKEIT_KOSTEN[k].gericht.text, k).not.toContain('unabhängig vom Streitwert');
+  });
+
+  it('TI Schlichtung: Verzicht bei Einigung (Art. 5 Abs. 3 LTG) bleibt im Hinweis', () => {
+    expect(ZUSTAENDIGKEIT_KOSTEN.TI.schlichtung.hinweis ?? '').toContain('verzichtet');
+  });
+
+  it("TG Schlichtung (Tarifquelle): Klageabschreibung nach Vorladung CHF 100 (§ 7 Ziff. 3 VGG TG 638.1)", () => {
+    const h = SCHLICHTUNG.TG.hinweis ?? '';
+    expect(h).toContain('Klageabschreibung nach Vorladung CHF 100');
+    expect(h).not.toContain('CHF 50.');
+  });
 });

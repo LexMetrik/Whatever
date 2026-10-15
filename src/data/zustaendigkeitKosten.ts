@@ -149,7 +149,9 @@ function schlichtungText(regel: TarifRegel): string {
 function gerichtText(regel: TarifRegel): string {
   if (regel.typ === 'rahmen') {
     const w = wert(regel, SW_BIS);
-    return `${spanne(w.von, w.bis)} (Rahmen unabhängig vom Streitwert)`;
+    // Kein Zusatz zur Streitwertabhängigkeit: in den Tarifdaten nicht maschinell erkennbar
+    // (AI/AR/SG erhöhen den Rahmen nach Streitwert, nur im Tarif-Hinweis beschrieben).
+    return spanne(w.von, w.bis);
   }
   const kopf = `Streitwert ${fmt(SW_VON)}–${fmt(SW_BIS)}: `;
   if (regel.typ === 'staffel_rahmen') {
@@ -247,7 +249,7 @@ const HAND: Record<Kanton, Hand> = {
     familie: { text: "CHF 500–10'000 (familienrechtliche Verfahren inkl. Summarverfahren)", erlass: 'GGebR Art. 8, RB 2.3232' },
   },
   SZ: {
-    gerichtHinweis: "Einzelrichter bis Streitwert 50'000, Bezirksgericht bis 100'000",
+    gerichtHinweis: "Gebührenrahmen Einzelrichter CHF 100–50'000, Bezirksgericht CHF 100–100'000 (§ 33 Ziff. 4/6 GebO)",
     gerichtHinweisAusTarif: true,
     nv: {
       auffang: { instanz: 'Bezirksgericht' },
@@ -352,6 +354,7 @@ const HAND: Record<Kanton, Hand> = {
     nv: { hinweis: 'soweit nicht Ziff. 1 nach vermögensrechtlichen Ansprüchen anwendbar' },
   },
   TI: {
+    schlichtungHinweisAusTarif: true,
     nv: { hinweis: 'summarisch (Art. 9) bzw. vereinfacht (Art. 8) je die Hälfte' },
     familie: { text: (nv) => `Scheidung ist ausdrücklich in Art. 7 cpv. 2 erfasst (${nv})`, erlass: 'LTG Art. 7 cpv. 2, RL 178.200' },
   },

@@ -464,7 +464,7 @@ export function ZustErgebnisEinleitung({ z }: { z: ZustaendigkeitFormModell }) {
                   </p>
                 )}
                 <p className="text-xs text-ink-500">
-                  Rahmen aus den hinterlegten kantonalen Tarifen (Erlass und Stand je Angabe in der Klammer bzw. im Prozesskostenrechner) — die konkrete Festsetzung liegt bei der Behörde.
+                  Rahmen aus den hinterlegten kantonalen Tarifen (Erlass je Angabe in der Klammer; Stand der Tarife im Prozesskostenrechner) — die konkrete Festsetzung liegt bei der Behörde.
                   Hinzu kommen ggf. eigene Anwaltskosten; die unterliegende Partei trägt im Gerichtsverfahren in der Regel die
                   Kosten und eine Parteientschädigung (Art. 106 ZPO).
                 </p>
