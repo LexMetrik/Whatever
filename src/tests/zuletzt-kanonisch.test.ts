@@ -7,7 +7,8 @@
 // Erlasses beim Merken weg.
 //
 // ROT ZU BEKOMMEN (§6.7): in `lib/zuletztVerwendet.ts` die `kanonisierePfad`-Aufrufe in
-// `merkeBesuch` entfernen ⇒ (a), (b), (c) fallen.
+// `merkeBesuch` UND `holeZuletzt` entfernen ⇒ (a)–(d) fallen (gemessen 15.10.2026). Das Lesen allein sichert
+// `zuletzt-kanonisch-lesen.test.ts` (Alt-Bestand ohne neuen Besuch).
 import { beforeEach, describe, expect, it } from 'vitest';
 import { holeZuletzt, merkeBesuch } from '../lib/zuletztVerwendet';
 import { kanonisierePfad } from '../lib/normtext/erlassAdresse';

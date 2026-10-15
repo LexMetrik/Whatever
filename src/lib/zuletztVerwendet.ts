@@ -59,7 +59,10 @@ export function typVonRoute(route: string): ZuletztTyp {
 }
 
 /** Die zuletzt besuchten Einträge, neueste zuerst, gekappt auf MAX. Alt-Einträge
- *  ohne `typ` (frühere Fassung) werden aus der Route migriert (kein Verwerfen). */
+ *  ohne `typ` (frühere Fassung) werden aus der Route migriert (kein Verwerfen).
+ *  Routen werden beim Lesen kanonisiert und je Route dedupliziert, der neueste
+ *  Eintrag gewinnt (LESER-NAV, FB O-27 BG-09): ein Alt-Bestand mit Alt- UND
+ *  Neu-Adresse eines umgezogenen Erlasses (EMRK) zeigt sonst zwei Chips. */
 export function holeZuletzt(): ZuletztEintrag[] {
   try {
     const roh = lokalSpeicher.lies(KEY);
@@ -68,12 +71,11 @@ export function holeZuletzt(): ZuletztEintrag[] {
     return arr
       .filter((e): e is { route: string; titel: string; typ?: unknown; zeit: number } =>
         !!e && typeof e.route === 'string' && typeof e.titel === 'string' && typeof e.zeit === 'number')
-      .map((e) => ({
-        route: e.route,
-        titel: e.titel,
-        typ: istTyp(e.typ) ? e.typ : typVonRoute(e.route),
-        zeit: e.zeit,
-      }))
+      .map((e) => {
+        const route = kanonisierePfad(e.route);
+        return { route, titel: e.titel, typ: istTyp(e.typ) ? e.typ : typVonRoute(route), zeit: e.zeit };
+      })
+      .filter((e, i, alle) => alle.findIndex((x) => x.route === e.route) === i)
       .slice(0, MAX);
   } catch {
     return [];
@@ -96,9 +98,9 @@ export function merkeBesuch({ route: roh, titel, typ, zeit }: { route: string; t
   if (!roh || !titel) return; // ohne auflösbaren Titel kein Chip (§8: kein Rohpfad)
   // LESER-NAV (FB O-27 BG-09): umgezogene Erlass-Adressen kanonisch merken — der Tracker läuft vor
   // dem Umzugs-Sprung und sah Alt- und Neu-Adresse als zwei Besuche (EMRK doppelt). Dieselbe
-  // Funktion wie bei Panes und Reitern (§5); Alt-Einträge im Bestand räumt der Vergleich mit weg.
+  // Funktion wie bei Panes und Reitern (§5); `holeZuletzt` kanonisiert den Bestand beim Lesen.
   const route = kanonisierePfad(roh);
-  const ohne = holeZuletzt().filter((e) => kanonisierePfad(e.route) !== route);
+  const ohne = holeZuletzt().filter((e) => e.route !== route);
   const neu: ZuletztEintrag = { route, titel, typ: typ ?? typVonRoute(route), zeit: zeit ?? 0 };
   // Kein Speicher / Quota → false: «Zuletzt» ist reiner Komfort, kein Event.
   if (lokalSpeicher.schreib(KEY, JSON.stringify([neu, ...ohne].slice(0, MAX)))) melde();
