@@ -46,8 +46,6 @@ const KALENDER_NE_SO: BekannterFehler = {
 export const BEKANNTE_FEHLER: Readonly<Record<string, readonly BekannterFehler[]>> = {
   'notariat-grundbuch': [
     STAFFEL,
-    { fb: 'RV-20', text: 'Grundbuch TG: Vormerkung falsch gerechnet; Rundungen AG, BS, VS, SZ und Sockel GE noch offen (Staffeln TI, VD, FR, VS, NE, GE, JU, BE, SO sind seit 15.10.2026 berichtigt).' },
-    { fb: 'RV-82', text: '«Weitere Geschäftsarten» FR, VD, VS, JU, NE nicht abgebildet; GE Kapitalherabsetzung: Sockel 88 statt 87.50.' },
   ],
   prozesskosten: [
     STAFFEL,

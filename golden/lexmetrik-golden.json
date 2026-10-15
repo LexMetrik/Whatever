@@ -8335,24 +8335,25 @@
     "deterministisch": true,
     "betragChf": 500,
     "schritte": [
+     "Bemessungsbasis auf CHF 1'000 aufgerundet: 500'000.",
      "1 ‰ von CHF 500'000 = CHF 500"
     ]
    },
    "quelle": {
     "erlassName": "Verordnung zum EG ZGB",
     "erlassNr": "SG 211.110",
-    "artikel": "§ 51",
+    "artikel": "§ 51 Abs. 1 lit. a/b, Abs. 2 lit. a",
     "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.110",
     "stand": "1.5.2025",
     "verifiziert": "recherche",
-    "hinweis": "Promille gemäss amtl. Merkblatt GVA; § 51-Volltext im Doppelcheck gegenlesen."
+    "hinweis": "Handänderung 1 ‰ des Wertes bzw. Preises (§ 51 Abs. 2 lit. a), mindestens CHF 200, höchstens CHF 50’000 je Eintragung (Abs. 1 lit. a); der Wert bzw. Preis wird für die Gebührenberechnung auf volle Tausend aufgerundet (Abs. 1 lit. b)."
    }
   },
   "herkunft": "eigentum_kauf",
   "status": "ok",
   "hinweise": [
    "Grundbuchgebühr (Eintragung) nach kantonalem Tarif; Notariats-/Beurkundungsgebühr, Handänderungssteuer, Auslagen und MwSt. sind nicht enthalten.",
-   "Promille gemäss amtl. Merkblatt GVA; § 51-Volltext im Doppelcheck gegenlesen."
+   "Handänderung 1 ‰ des Wertes bzw. Preises (§ 51 Abs. 2 lit. a), mindestens CHF 200, höchstens CHF 50’000 je Eintragung (Abs. 1 lit. a); der Wert bzw. Preis wird für die Gebührenberechnung auf volle Tausend aufgerundet (Abs. 1 lit. b)."
   ]
  },
  "gb:eigentum_kauf:500k:TI": {
@@ -8578,17 +8579,18 @@
     "deterministisch": true,
     "betragChf": 800,
     "schritte": [
+     "Bemessungsbasis auf CHF 1'000 aufgerundet: 800'000.",
      "1 ‰ von CHF 800'000 = CHF 800"
     ]
    },
    "quelle": {
     "erlassName": "Verordnung zum EG ZGB",
     "erlassNr": "SG 211.110",
-    "artikel": "§ 51",
+    "artikel": "§ 51 Abs. 1 lit. a/b, Abs. 2 lit. a",
     "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.110",
     "stand": "1.5.2025",
     "verifiziert": "recherche",
-    "hinweis": "Promille gemäss amtl. Merkblatt GVA; § 51-Volltext im Doppelcheck gegenlesen."
+    "hinweis": "Handänderung 1 ‰ des Wertes bzw. Preises (§ 51 Abs. 2 lit. a), mindestens CHF 200, höchstens CHF 50’000 je Eintragung (Abs. 1 lit. a); der Wert bzw. Preis wird für die Gebührenberechnung auf volle Tausend aufgerundet (Abs. 1 lit. b)."
    }
   },
   "gesamtGebuehren": {
@@ -8759,17 +8761,18 @@
     "deterministisch": true,
     "betragChf": 800,
     "schritte": [
+     "Bemessungsbasis auf CHF 1'000 aufgerundet: 800'000.",
      "1 ‰ von CHF 800'000 = CHF 800"
     ]
    },
    "quelle": {
     "erlassName": "Verordnung zum EG ZGB",
     "erlassNr": "SG 211.110",
-    "artikel": "§ 51",
+    "artikel": "§ 51 Abs. 1 lit. a/b, Abs. 2 lit. a",
     "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.110",
     "stand": "1.5.2025",
     "verifiziert": "recherche",
-    "hinweis": "Promille gemäss amtl. Merkblatt GVA; § 51-Volltext im Doppelcheck gegenlesen."
+    "hinweis": "Handänderung 1 ‰ des Wertes bzw. Preises (§ 51 Abs. 2 lit. a), mindestens CHF 200, höchstens CHF 50’000 je Eintragung (Abs. 1 lit. a); der Wert bzw. Preis wird für die Gebührenberechnung auf volle Tausend aufgerundet (Abs. 1 lit. b)."
    }
   },
   "handaenderungssteuer": {

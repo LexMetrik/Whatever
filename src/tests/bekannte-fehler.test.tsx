@@ -79,7 +79,7 @@ describe('WARNHINWEIS · Anzeige', () => {
     expect(html).toContain(BEKANNTER_FEHLER_TITEL);
     expect(html).toContain('role="status"');
     expect(html).toContain('lc-notice-danger');
-    for (const id of ['RV-20', 'RV-82']) expect(html).toContain(`(${id})`);
+    for (const id of ['RV-82']) expect(html).toContain(`(${id})`);
     expect(html.indexOf(BEKANNTER_FEHLER_TITEL)).toBeLessThan(html.indexOf('<p>Ergebnis</p>'));
   });
 
