@@ -18,8 +18,16 @@ export { DATEI_PRUEFER as NORMTEXT_DATEI_PRUEFER };
 const STRUKTUR_PRUEFER = pruefeFelder('normtext/struktur/<Ebene>/<Erlass>.json', {});
 /** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
 export { STRUKTUR_PRUEFER as NORMTEXT_STRUKTUR_PRUEFER };
-/** Die Struktur-Datei fehlt, wenn `vite dev`/`vite preview` statt eines 404 die index.html (200 text/html) liefern. */
-const IST_HTML = (res: Response) => /\btext\/html\b/i.test(res.headers?.get?.('content-type') ?? '');
+/** Die Struktur-Datei fehlt, wenn `vite dev`/`vite preview` statt eines 404 die index.html (200 text/html) liefern.
+ *  Jede ANDERE HTML-Antwort auf eine Datendatei (Captive-Portal, Proxy-Fehlerseite;
+ *  in Prod gibt es für Fehlendes einen echten 404) ist keine Auskunft über die
+ *  Datei, sondern ein Ladefehler: sie WIRFT statt «Datei fehlt» (O-35 b). Der
+ *  SPA-Rückfall ist an der Wurzel der App erkennbar (`id="root"`, index.html). */
+const IST_SPA_RUECKFALL = async (res: Response): Promise<boolean> => {
+  if (!/\btext\/html\b/i.test(res.headers?.get?.('content-type') ?? '')) return false;
+  if ((await res.clone().text()).includes('id="root"')) return true;
+  throw new Error('Antwort ist keine Datendatei');
+};
 
 // ── Manifest (einmal, gecacht als laufende Promise; Fehlschläge nicht, s. u.) ─
 let manifestPromise: Promise<BrowseManifest> | null = null;
@@ -285,7 +293,7 @@ function ladeStrukturDocStreng(ebene: string, key: string): Promise<StrukturDoc 
     // «Datei fehlt» wie ein 404 — nicht «Ausfall» (BG-04-Nachzug, Gegenprüfung
     // PR #1282: falsche Ausfallzeile bei PRHG/DSGVO/NYUE lokal). Mocks ohne
     // Header-Objekt gelten als JSON.
-    p = ladeJson<StrukturDoc>(url, STRUKTUR_PRUEFER, { alsFehlend: IST_HTML });
+    p = ladeJson<StrukturDoc>(url, STRUKTUR_PRUEFER, { alsFehlend: IST_SPA_RUECKFALL });
     p.catch(() => {
       if (strukturCache.get(url) === p) strukturCache.delete(url);
     });
