@@ -265,3 +265,130 @@ describe('RL-28 Datenprüfung Rundungsangaben (B1/B2)', () => {
     expect(GRUNDPFAND.SZ.regel.typ).not.toBe('summe');
   });
 });
+
+// ─── RL-28 Teil 2: Grundpfand Romandie und Tessin = Beurkundung + Eintrag ────
+// Prüfwerte von Hand aus den am 15.10.2026 geöffneten amtlichen Erlassen
+// gerechnet (Quellen und Artikel in grundpfand.ts), nicht aus dem Code abgeleitet.
+describe('RL-28 Teil 2 Grundpfand Romandie/TI — Beurkundung + Eintrag (RV-19)', () => {
+  const faelle: Array<[KantonCode, number, number, string]> = [
+    // FR: Tarif notaires RSF 261.16 Art. 4 ch. 3 + Tarif émoluments fixes RF RSF 214.5.16 Art. 2 ch. 11 lit. a (fix 100)
+    ['FR', 100_000, 550, 'N 100 + 225 + 125 = 450, G 100'],
+    ['FR', 1_000_000, 2600, 'N 2500 + G 100'],
+    ['FR', 10_000_000, 9100, 'N 9000 + G 100'],
+    // GE: REmNot RSG E 6 05.03 Art. 16 al. 1 + REmORFDIT RSG E 1 50.06 Art. 4 (0,085 %, max 20’000)
+    ['GE', 100_000, 585, 'N 500 + G 85'],
+    ['GE', 1_000_000, 4550, 'N 3700 + G 850'],
+    ['GE', 10_000_000, 26200, 'N 17700 + G 8500 (Deckel 20’000 greift erst ab 23,53 Mio.)'],
+    // VS: Tarif notaires RS 178.104 Art. 13 al. 2 + OcRF RS 211.611 Art. 32 al. 2 lit. c, al. 3 (Basis auf 1000 aufgerundet)
+    ['VS', 100_000, 750, 'N 650 + G 100'],
+    ['VS', 1_000_000, 3950, 'N 2950 + G 1000'],
+    ['VS', 1_000_001, 3951, 'G auf Basis 1’001’000 = 1001, N 2950 (1 ‰ von 1 Franken = 0.001)'],
+    ['VS', 10_000_000, 14450, 'N 11950 + G 2500 (Deckel Art. 32 al. 2 lit. c)'],
+    // VD: TNo BLV 178.11.2 Art. 20 al. 3 + LRF BLV 211.61 Art. 28 (1,5 ‰, 100–20’000)
+    ['VD', 100_000, 650, 'N 500 + G 150'],
+    ['VD', 1_000_000, 4175, 'N 2675 + G 1500'],
+    ['VD', 50_000_000, 35425, 'N 15425 + G 20000 (Deckel)'],
+    // NE: Tarif notaires RSN 166.31 Ziff. 44 (Pauschalstufen) + LERF RSN 215.411.6 Art. 10 (2 ‰ bis 2 Mio, 1,5 ‰ darüber, min 50)
+    ['NE', 100_000, 700, 'N 500 + G 200 (Stufe «jusqu’à 100.000» gehört noch zur ersten Stufe)'],
+    ['NE', 100_001, 900.0, 'N 700 (Stufe 100.001–200.000) + G 200.002 → 200'],
+    ['NE', 1_000_000, 4300, 'N 2300 + G 2000'],
+    ['NE', 1_000_001, 4500, 'N 2500 (Stufe 1.000.001–1.100.000) + G 2000'],
+    ['NE', 1_300_000, 5500, 'N 2900 + G 2600'],
+    ['NE', 3_000_000, 10100, 'N 4600 + G 4000 + 1500'],
+    ['NE', 10_000_000, 20700, 'N 4700 (ab 3.000.001) + G 4000 + 12000'],
+    // TI: LTN RL 952.300 Art. 6 (Lesart A: voller Satz bis 100’000, halbe Sätze auf dem Mehrbetrag) + LTORF RL 216.200 Art. 25 (7 ‰)
+    ['TI', 1_000_000, 9187.5, 'N 2187.50 + G 7000'],
+    ['TI', 400_000, 3975, 'N 1175 + G 2800 (kein Minimum 30 im Eintragsteil)'],
+    ['TI', 10_000, 570, 'N 500 (Minimum Art. 5) + G 70: LTORF Art. 25 kennt kein Minimum'],
+    ['TI', 10_000_000, 78937.5, 'N 8937.50 + G 70000'],
+    // JU: Décret notaires RSJU 189.61 Art. 10 + Décret RF RSJU 176.331 Art. 7 (1 ‰ in Franken, 40–10’000 Punkte à 1.05) + Art. 8 Ziff. 4 lit. a (70 Punkte)
+    ['JU', 100_000, 673.5, 'N 500 + G 100 + Forfait 73.50'],
+    ['JU', 1_000_000, 3873.5, 'N 2800 + G 1000 + Forfait 73.50'],
+    ['JU', 10_000_000, 21873.5, 'N 11800 + G 10000 (1 ‰ = 10’000, unter dem Maximum 10’500) + Forfait 73.50'],
+  ];
+  for (const [k, summe, soll, was] of faelle) {
+    it(`${k} Pfandsumme ${summe.toLocaleString('de-CH')} = ${soll} (${was})`, () => {
+      expect(betrag(k, summe)).toBeCloseTo(soll, 2);
+    });
+  }
+
+  it('NE: Stufen aus Ziff. 44 — Tippfehler «1.000.101» im Quelltext gelesen als 1.100.001 (Stufe 2.700 bis 1.200.000)', () => {
+    // 1.100.001–1.200.000 = 2.700; 1.200.001–1.300.000 = 2.900; 1.300.001–1.400.000 = 3.000
+    const n = (w: number) => {
+      const e = auswertenTarif(SONDERTARIFE.schuldbrief!.NE.regel, w);
+      if (!e.deterministisch) throw new Error('nicht beziffert');
+      return e.betragChf;
+    };
+    expect(n(1_100_000)).toBe(2500);
+    expect(n(1_100_001)).toBe(2700);
+    expect(n(1_200_000)).toBe(2700);
+    expect(n(1_200_001)).toBe(2900);
+    expect(n(1_300_000)).toBe(2900);
+    expect(n(1_300_001)).toBe(3000);
+    expect(n(3_000_000)).toBe(4600);
+    expect(n(3_000_001)).toBe(4700);
+    expect(SONDERTARIFE.schuldbrief!.NE.regel.typ).toBe('staffel_inklusiv');
+  });
+
+  it('TI: Sockel der Notariatsstaffel exakt (…,50 statt gerundet), Lesart A im Hinweis mit Lesart B offengelegt', () => {
+    const t = SONDERTARIFE.schuldbrief!.TI;
+    if (t.regel.typ !== 'staffel_sockel_prozent') throw new Error('unerwarteter Regeltyp');
+    const sockel = t.regel.baender.map((b) => b.sockelChf);
+    expect(sockel).toEqual([0, 500, 875, 1375, 1812.5, 2187.5, 3437.5, 6437.5, 8937.5, 18937.5]);
+    expect(t.hinweis).toMatch(/Lesart B/);
+    expect(t.hinweis).toMatch(/1’937\.50|1’937,50|1'937\.50/);
+  });
+
+  it('TI: der Eintragsteil hat kein Minimum von 30 (LTORF Art. 20 ist eine Fixgebühr für andere Vorgänge)', () => {
+    const g = GRUNDBUCH_EINTRAG.grundpfand!.TI;
+    expect(g.regel).toEqual({ typ: 'promille', promille: 7 });
+    expect(g.hinweis).toMatch(/Art\. 20/);
+  });
+
+  it('VS: Eintragsteil rundet die Pfandsumme auf volle 1’000 auf (OcRF Art. 32 al. 3); Hinweis ohne «2,5 ‰ max. 3’000»', () => {
+    const g = GRUNDBUCH_EINTRAG.grundpfand!.VS;
+    expect(g.regel).toEqual({ typ: 'promille', promille: 1, minChf: 100, maxChf: 2500, basisRundung: { schrittChf: 1000, richtung: 'auf' } });
+    expect(g.hinweis ?? '').not.toMatch(/3['’]000/);
+  });
+
+  it('JU: ‰-Satz in Franken (1 ‰), nur Minimum/Maximum in Punkten (40/10’000 × 1.05)', () => {
+    expect(GRUNDBUCH_EINTRAG.grundpfand!.JU.regel).toEqual({ typ: 'promille', promille: 1, minChf: 42, maxChf: 10500 });
+    expect(GRUNDBUCH_EINTRAG.grundpfand!.JU.hinweis).toMatch(/Lesart/);
+  });
+
+  it('GE: Artikel-Feld «Art. 4» (nicht «Art. 4 al. 6»); VD: URL der Fassung 1.3.2016 (lexfind 210344)', () => {
+    expect(GRUNDBUCH_EINTRAG.grundpfand!.GE.artikel).not.toMatch(/al\. 6/);
+    expect(SONDERTARIFE.schuldbrief!.VD.quelleUrl).toBe('https://www.lexfind.ch/tolv/210344/fr');
+  });
+
+  it('Hinweise der Posten FR, GE, VS, VD, JU verweisen auf den separaten Posten Pfandsteuer', () => {
+    for (const k of ['FR', 'GE', 'VS', 'VD', 'JU'] as KantonCode[]) {
+      expect(GRUNDPFAND[k].hinweis, k).toMatch(/Pfandsteuer .*separat/);
+    }
+    expect(GRUNDPFAND.VD.hinweis).not.toMatch(/vom droit de mutation ausgenommen/);
+  });
+
+  it('Romandie/TI: summe-Regel mit Beurkundung und Grundbucheintrag; Stand-Felder in Tagesform', () => {
+    for (const k of ['FR', 'GE', 'VS', 'VD', 'NE', 'TI', 'JU'] as KantonCode[]) {
+      expect(GRUNDPFAND[k].regel.typ, k).toBe('summe');
+      expect(GRUNDPFAND[k].stand, k).toMatch(/\d{1,2}\.\d{1,2}\.\d{4}/);
+      expect(GRUNDPFAND[k].stand, k).not.toMatch(/\d{4}\/\d{4}/);
+    }
+    for (const k of ['BE', 'ZG', 'SO', 'BL', 'AR', 'AI'] as KantonCode[]) {
+      expect(GRUNDPFAND[k].stand, k).toMatch(/\d{1,2}\.\d{1,2}\.\d{4}/);
+      expect(GRUNDPFAND[k].stand, k).not.toMatch(/\d{4}\/\d{4}/);
+    }
+  });
+
+  it('Monotonie: Romandie/TI sinken nirgends mit wachsender Pfandsumme (Raster; NE-Stufen, VS-Aufrundung)', () => {
+    for (const k of ['FR', 'GE', 'VS', 'VD', 'NE', 'TI', 'JU'] as KantonCode[]) {
+      let vorher = -1;
+      for (let w = 0; w <= 25_000_000; w += w < 3_500_000 ? 12_500 : 250_000) {
+        const e = auswertenTarif(GRUNDPFAND[k].regel, w);
+        if (!e.deterministisch) throw new Error(`${k} ${w}: nicht beziffert`);
+        expect(e.betragChf, `${k} ${w}`).toBeGreaterThanOrEqual(vorher - 1e-9);
+        vorher = e.betragChf;
+      }
+    }
+  });
+});

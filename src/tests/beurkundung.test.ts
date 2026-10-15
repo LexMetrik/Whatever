@@ -191,3 +191,30 @@ describe('Beurkundung — AG-Gründung: Adapter liefert Engine-Wert (RL-36, erse
     expect(kanonSpezial('BE', 50_000_000)).toEqual({ kind: 'rahmen', von: 16450, bis: 27350 });
   });
 });
+
+// ─── RL-28 Teil 2: Schuldbrief NE (Pauschalstufen Ziff. 44), TI-Sockel, VD-Quelle ───
+describe('Beurkundung Schuldbrief — NE, TI, VD nach Norm (RL-28 Teil 2)', () => {
+  const b = (kanton: KantonCode, wert: number): number => {
+    const e = berechneBeurkundung({ geschaeftsart: 'schuldbrief', kanton, geschaeftswertCHF: wert }).posten?.ergebnis;
+    if (!e || !e.deterministisch) throw new Error(`${kanton}: nicht beziffert`);
+    return e.betragChf;
+  };
+  it('NE: RSN 166.31 Ziff. 44 — 500 bis 100’000, +200 je 100’000 bis 1,3 Mio, +100 darüber, ab 3’000’001 4’700', () => {
+    expect(b('NE', 100_000)).toBe(500);
+    expect(b('NE', 100_001)).toBe(700);
+    expect(b('NE', 1_000_000)).toBe(2300);
+    expect(b('NE', 1_000_001)).toBe(2500);
+    expect(b('NE', 3_000_000)).toBe(4600);
+    expect(b('NE', 3_000_001)).toBe(4700);
+    expect(b('NE', 50_000_000)).toBe(4700);
+  });
+  it('TI: Sockel exakt (1 Mio 2187.50 statt gerundet 2188); 400’000 unverändert 1175', () => {
+    expect(b('TI', 1_000_000)).toBe(2187.5);
+    expect(b('TI', 750_000)).toBe(1812.5);
+    expect(b('TI', 400_000)).toBe(1175);
+  });
+  it('VD: Quelle zeigt auf die Fassung 1.3.2016 (lexfind 210344), nicht auf die Fassung 2005 (128150)', () => {
+    expect(SONDERTARIFE.schuldbrief!.VD.quelleUrl).toBe('https://www.lexfind.ch/tolv/210344/fr');
+    expect(SONDERTARIFE.schuldbrief!.VD.stand).toBe('01.03.2016');
+  });
+});
