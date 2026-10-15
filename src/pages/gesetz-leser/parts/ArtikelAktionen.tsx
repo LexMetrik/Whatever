@@ -3,6 +3,8 @@ import { useKopieren } from '../../../components/useKopieren';
 import { NEUER_TAB } from '../../../lib/benennung';
 import { zitatMitAusweis, heuteIso } from '../../../lib/format';
 import { urlMitHash } from '../../../lib/liveUrlSync';
+import { holeLeserAnsicht } from '../leserOptionen';
+import { permalinkMitLesart } from '../v3/einzelModus';
 
 // ═══ DIE AKTIONEN DES ARTIKELS (Inventar 2.3.10) ═════════════════════════════
 //
@@ -91,9 +93,16 @@ export function ArtikelAktionen({ artikel, basisPfad, zitat, zitatVoll, amtlich,
    *  Halbgeviert («22 a», «36–42», «10. 1») auseinander; ein Leerzeichen im
    *  Permalink bricht zusätzlich die Auto-Verlinkung in Mail und Chat. */
   const ursprung = typeof window !== 'undefined' ? window.location.origin : 'https://lexmetrik.ch';
-  const permalink = urlMitHash(`${ursprung}${basisPfad}`, `art-${artikel}`);
+  const permalinkSchlicht = urlMitHash(`${ursprung}${basisPfad}`, `art-${artikel}`);
 
   const kopiere = (was: 'zitat' | 'link') => {
+    // BG-08 (LESER-NAV): der geteilte Link (NUR «Link», nicht das Zitat im Schriftsatz) trägt im
+    // Einzelmodus des PRIMÄREN Panes die Lesart. Das sekundäre Pane zeigt immer den ganzen Erlass;
+    // `window.location` gehört dort dem Primären. Zum KLICK gelesen: die Lesart kann wechseln,
+    // ohne dass dieser Artikel neu rendert.
+    const permalink = was === 'link' && !istSekundaer && typeof window !== 'undefined'
+      ? permalinkMitLesart(permalinkSchlicht, window.location.search, holeLeserAnsicht())
+      : permalinkSchlicht;
     // B-6 (QS-BASIS): die Zitat-Kopie trägt den Stand-Ausweis (§7 a–d) —
     // `zitatVoll` liefert bereits «… (Stand …)», der Baustein ergänzt
     // Abrufdatum + Permalink (kein doppeltes Standdatum, §5). W2·10-UI-NAV/R3:
