@@ -86,7 +86,7 @@ export function Materialien() {
       />
 
       {fehler && (
-        <div className="lc-notice lc-notice-warn">
+        <div role="alert" className="lc-notice lc-notice-warn">
           Die Übersicht konnte nicht geladen werden. Bitte die Seite neu laden.
         </div>
       )}
