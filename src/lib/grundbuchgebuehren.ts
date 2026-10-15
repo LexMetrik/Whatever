@@ -33,7 +33,7 @@ export function tarifFuerGb(art: GbEintragsartId, kanton: KantonCode): { tarif: 
 }
 
 /** Regel-Typen, die sich am Wert bemessen (Wertfeld in der UI nötig). */
-const WERT_TYPEN = ['promille', 'sockel_prozent', 'staffel_inklusiv', 'staffel_exklusiv', 'staffel_sockel_prozent', 'staffel_voll_prozent', 'staffel_rahmen'];
+const WERT_TYPEN = ['promille', 'sockel_prozent', 'staffel_inklusiv', 'staffel_exklusiv', 'staffel_sockel_prozent', 'staffel_voll_prozent', 'staffel_rahmen', 'summe'];
 
 /** true, wenn der für (Eintragungsart, Kanton) aufgelöste Tarif wertbasiert ist. */
 export function istWertbasiertGb(art: GbEintragsartId, kanton: KantonCode): boolean {

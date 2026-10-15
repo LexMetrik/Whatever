@@ -47,7 +47,7 @@ export const BEKANNTE_FEHLER: Readonly<Record<string, readonly BekannterFehler[]
   'notariat-grundbuch': [
     STAFFEL,
     { fb: 'RV-19', text: 'Grundpfand: Pauschalsätze in 14 Kantonen falsch.' },
-    { fb: 'RV-20', text: 'Notariats- und Grundbuch-Staffeln falsch (TI bis 5-fach; VD, FR, VS, NE, GE, JU, BE).' },
+    { fb: 'RV-20', text: 'Grundbuch TG: Vormerkung falsch gerechnet; Rundungen AG, BS, VS, SZ und Sockel GE noch offen (Staffeln TI, VD, FR, VS, NE, GE, JU, BE, SO sind seit 15.10.2026 berichtigt).' },
     { fb: 'RV-24', text: 'Mehrwertsteuer auf Notariatsgebühren fehlt oder ist falsch (7 Kantone).' },
     { fb: 'RV-25', text: 'Emissionsabgabe fehlt ohne Hinweis im Ergebnis (bis CHF 40’000).' },
     { fb: 'RV-27', text: 'Kopierte Tarifdaten weichen voneinander ab (u. a. Beurkundung VS).' },
