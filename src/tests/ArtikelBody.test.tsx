@@ -592,13 +592,17 @@ const ohneKlassen = (s: string) => s.replace(/ class="[^"]*"/g, '');
  *  AUSNAHME Fall «T-D kopflos (T-D6)» (AsylV 1 Anhang 2), LESER-NAV 15.10.2026 (deklarierte
  *  Darstellungsänderung, FB O-36 e): der Anhang-Zwischentitel trägt in der Lesespalte jetzt den Anker
  *  `id="anh-annex_2-1"` (Bedingung war verkehrt); beide Hashes neu, Diff gegenüber vorher genau dieses
- *  eine Attribut, Text und Aufbau sonst gleich. */
+ *  eine Attribut, Text und Aufbau sonst gleich.
+ *  NACHZUG zur Gegenprüfung (L2, 15.10.2026): derselbe Anker trägt jetzt die Klasse `nt-anker`
+ *  (scroll-margin-top, damit ein Sprung auf `#anh-…` nicht unter dem klebenden Kopf landet). Nur der
+ *  [voll]-Hash dieses Falls ist neu gezogen; der [struktur]-Hash (Markup OHNE class-Attribute)
+ *  `49da29ab…` ist unverändert — belegt, dass sich ausschliesslich das class-Attribut unterscheidet. */
 const KERN_ERWARTET: Record<string, [string, string]> = {
   'OR Art. 257d (Prosa, zwei Absätze)': ['42d989dc4feb377764bd10d812bc812340bb16327f276c99df56d1d4bdb1c29b', '3781a2a8bb5f7c1daa9c37d11b4f302e27f2be3ec899ec2e3682c79387caf27e'],
   'T-A Staffel-Spanne verdichtet (bereich)': ['ebf3fb58723c22e4ba46a98863f05f14762f7b85dfa033974db50326b3c930df', 'f2cd0ac7f0ff74c40b14b1b6377327c1f3f9593a0b4487f478435aa6a9fee62b'],
   'T-B mehrspaltig, ≥3 Zahlspalten': ['9558daa48b214f8b33c66c77a4c328c214d4babe2a125d9ec921ca1c5ed5ea27', 'bd240ec295dbec0c91fcba3df6dedd4cde70f2894b969cd631e652240946c63d'],
   'T-C Einzel-Leerzelle bleibt (T-C7)': ['19821352e368b4951759e9ad3690dd7bc063e6c0a983d09b240eff4ca652d72a', '6740acc8ce7e3df0523dd5dbbe35cb814f28ed4c460f00f82a6de5ea8e2d0fde'],
-  'T-D kopflos (T-D6)': ['62ece036e5452613e9aa010fa17b38c006feb34481ac5ac4b8922273ee87ff9d', '49da29ab05a76778786574430fade928ad6b28b0a9d05cb0f510a3931a6ccec4'],
+  'T-D kopflos (T-D6)': ['feea8bd15de253ff7b206bf0ffe5efa99953ad328c2ec45e4e0e3238212e2005', '49da29ab05a76778786574430fade928ad6b28b0a9d05cb0f510a3931a6ccec4'],
   'T-E Alt-Form ohne Spalten-Vektor (Rückfallpfad)': ['e2615deff69be8c55a63b60769cd0a95c835cd461d4e3b5098ad6eff7d4d8407', '7c1673da257ee42152116168dc9cf8fbf6b58bfde0180cf89fe914fc038700ef'],
   'T-F Leitfall GebV SchKG Art. 20 (T-F4)': ['39877124098e7d44dddc02400e1e976d3fd1d218eda9def6417383344d20320c', 'eb72abb30e66fb45f96e0ceef22f67955d5e579fcea1053ff76f0eb89c004c31'],
   'T-B5 Kurzform tabelle (Kanton)': ['26e2d365456ec053e12c864353909d6fe04fdffa2e6ee94b94b41eb7f7273f5d', 'ad119a6f2413cb360f9570634315a99d7b3d075cd2ce7b220c1d670cc88b8be5'],

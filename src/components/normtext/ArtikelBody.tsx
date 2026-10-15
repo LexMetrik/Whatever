@@ -540,7 +540,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
               // zweimal im DOM steht). Index i ist die stabile Block-Position
               // im Snapshot (deterministisch, §2).
               id={zA[i]?.id ?? (zitierKontext ? `anh-${artikel}-${i}` : undefined)}
-              className={`${zitierKontext ? '' : 'text-body-s '}${zA[i] ? 'nt-anker ' : ''}font-semibold text-ink-800 ${flach ? 'mt-3' : 'mt-2'} ${zk ? 'pl-9 [text-indent:0]' : ''}`}
+              className={`${zitierKontext ? '' : 'text-body-s '}${zA[i] || zitierKontext ? 'nt-anker ' : ''}font-semibold text-ink-800 ${flach ? 'mt-3' : 'mt-2'} ${zk ? 'pl-9 [text-indent:0]' : ''}`}
             >
               {b.text}
             </p>

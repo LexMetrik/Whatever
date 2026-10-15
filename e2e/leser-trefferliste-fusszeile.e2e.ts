@@ -19,7 +19,34 @@
 // ROT ZU BEKOMMEN (§6.7): in `components/layout/Footer.tsx` `relative z-sticky`
 // vom `<footer>` streichen ⇒ 7 von 8 Links werden von der Liste verdeckt
 // (gemessen 15.10.2026).
-import { test, expect } from '@playwright/test'
+//
+// ZWEITER FALL (Nachzug zur Gegenprüfung 15.10.2026, M1): die Fusszeile steht
+// über der Liste, ABER sie darf die Treffer-Landkarte nicht verdecken. Die
+// Landkarte ist `fixed` am Fensterrand und steht nur bei GESCHLOSSENER Liste.
+// Gemessen vorher (1440×900, OR/«Kündigung», Liste zu, Dokument-Ende): Fusszeile
+// ab y=565, Landkarte 174–876 ⇒ 311 von 702 px (44 %) der Marken lagen unter der
+// Fusszeile, Klicks dort trafen die Fusszeile. Ursache: beide `z-sticky`, die
+// Fusszeile steht später im DOM. Jetzt trägt die Landkarte `z-entscheid-sticky`.
+// ROT ZU BEKOMMEN (§6.7): in `components/leser/TrefferLandkarte.tsx`
+// `z-entscheid-sticky` wieder auf `z-sticky` setzen.
+import { test, expect, type Page } from '@playwright/test'
+
+// Ans Dokument-Ende und dort bleiben: die Seite ist lang und wächst beim
+// Scrollen (content-visibility). Statt fester Pausen wird gepollt, bis die
+// Dokumenthöhe zwischen zwei Messungen gleich ist und der Rest-Abstand 0 beträgt.
+async function ansDokumentEnde(page: Page) {
+  let vorher = -1
+  await expect.poll(async () => {
+    const [h, rest] = await page.evaluate(() => {
+      window.scrollTo(0, document.documentElement.scrollHeight)
+      return [document.documentElement.scrollHeight,
+        Math.round(document.documentElement.scrollHeight - window.scrollY - window.innerHeight)]
+    })
+    const stabil = h === vorher && rest <= 1
+    vorher = h
+    return stabil
+  }, { message: 'Dokument-Ende erreicht und Höhe stabil', timeout: 30000, intervals: [150, 250] }).toBe(true)
+}
 
 test('offene Trefferliste verdeckt am Dokument-Ende keinen Fusszeilen-Link', async ({ page }) => {
   test.slow() // ganzer OR mit Suche
@@ -33,12 +60,8 @@ test('offene Trefferliste verdeckt am Dokument-Ende keinen Fusszeilen-Link', asy
   await feld.click()
   await feld.fill('Kündigung')
   await expect(page.locator('[data-treffer-liste]').first()).toBeVisible({ timeout: 20000 })
-  // Die Liste bleibt offen (kein Enter, kein Esc). Mehrfach ans Ende: die Seite
-  // ist lang und wächst beim Scrollen (content-visibility).
-  for (let i = 0; i < 4; i++) {
-    await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight))
-    await page.waitForTimeout(400)
-  }
+  // Die Liste bleibt offen (kein Enter, kein Esc).
+  await ansDokumentEnde(page)
   expect(await page.evaluate(() => document.visibilityState), 'Scroll-Messung braucht einen sichtbaren Tab').toBe('visible')
   await expect(page.locator('[data-v3-treffer-spalte-scroller]')).toBeVisible()
 
@@ -57,3 +80,40 @@ test('offene Trefferliste verdeckt am Dokument-Ende keinen Fusszeilen-Link', asy
   expect(r.gesamt, 'keine Fusszeilen-Links — Vorbedingung fehlt (§6.7)').toBeGreaterThanOrEqual(6)
   expect(r.verdeckt, `${r.verdeckt.length} von ${r.gesamt} Fusszeilen-Links liegen unter der Trefferliste`).toEqual([])
 })
+
+for (const breite of [1280, 1440]) {
+  test(`Fusszeile verdeckt am Dokument-Ende die Treffer-Landkarte nicht (${breite} px)`, async ({ page }) => {
+    test.slow() // ganzer OR mit Suche
+    await page.emulateMedia({ reducedMotion: 'reduce' })
+    await page.setViewportSize({ width: breite, height: 900 })
+    await page.goto('/gesetze/bund/OR')
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible({ timeout: 30000 })
+    const feld = page.locator('[data-v3-suchsprung] input').first()
+    await expect(feld).toBeVisible({ timeout: 20000 })
+    await page.evaluate(() => document.fonts?.ready)
+    await feld.click()
+    await feld.fill('Kündigung')
+    await expect(page.locator('[data-treffer-liste]').first()).toBeVisible({ timeout: 20000 })
+    await feld.press('Enter') // Liste zu ⇒ die Landkarte steht
+    await expect(page.locator('[data-treffer-liste]')).toHaveCount(0)
+    await expect(page.locator('[data-treffer-landkarte]')).toBeVisible()
+    await ansDokumentEnde(page)
+    expect(await page.evaluate(() => document.visibilityState), 'Scroll-Messung braucht einen sichtbaren Tab').toBe('visible')
+
+    const r = await page.evaluate(() => {
+      const k = document.querySelector('[data-treffer-landkarte]')!
+      const kb = k.getBoundingClientRect()
+      const fuss = document.querySelector('footer')!.getBoundingClientRect()
+      const proben = 12
+      const verdeckt: string[] = []
+      for (let i = 0; i < proben; i++) {
+        const y = kb.top + 4 + ((kb.height - 8) * i) / (proben - 1)
+        const el = document.elementFromPoint(kb.left + kb.width / 2, y)
+        if (!(el && k.contains(el))) verdeckt.push(`y=${Math.round(y)} unter ${el?.tagName ?? 'null'}`)
+      }
+      return { proben, verdeckt, kartenfuss: Math.round(kb.bottom), fussTop: Math.round(fuss.top) }
+    })
+    expect(r.fussTop, 'Vorbedingung: die Fusszeile reicht in den Bereich der Landkarte (§6.7)').toBeLessThan(r.kartenfuss)
+    expect(r.verdeckt, `${r.verdeckt.length} von ${r.proben} Landkarten-Punkten liegen unter der Fusszeile`).toEqual([])
+  })
+}

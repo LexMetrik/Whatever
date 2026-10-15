@@ -144,7 +144,14 @@ export function TrefferLandkarte({
       // vier Dateien der Fläche ENTSCHEID-Leser ab, nicht `gesetz-leser/v3`.
       // Für die v3-Naht gibt es heute keinen Wächter; der Verweis ist darum
       // gestrichen statt ersetzt — geraten wird keiner.)
-      className="fixed right-3 z-sticky hidden cursor-pointer border border-line bg-well print:hidden xl:block"
+      // STAPEL (Nachzug LESER-NAV 15.10.2026): `z-entscheid-sticky` (15), nicht
+      // `z-sticky` (10). Die Fusszeile trägt `z-sticky` und steht später im DOM;
+      // bei gleicher Stufe malte sie am Dokument-Ende über den fixen Streifen
+      // (gemessen 1440×900: 311 von 702 px der Marken darunter, Klicks dort
+      // trafen die Fusszeile). Der Streifen steht nur bei geschlossener Liste;
+      // die offene Liste (`z-sticky` in der Lese-Zelle) bleibt unter der
+      // Fusszeile. Wächter: `e2e/leser-trefferliste-fusszeile.e2e.ts`.
+      className="fixed right-3 z-entscheid-sticky hidden cursor-pointer border border-line bg-well print:hidden xl:block"
       style={{ top: `calc(var(${obenVar}, 7rem) + 0.5rem)`, bottom: '1.5rem', width: `${BREITE}px` }}>
       <svg aria-hidden viewBox={`0 0 ${BREITE} ${HOEHE}`} preserveAspectRatio="none"
         className="block h-full w-full">
