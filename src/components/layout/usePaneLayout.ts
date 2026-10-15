@@ -70,8 +70,9 @@ function ladeGespeicherte(): string[] {
 interface PaneStart {
   panes: string[];
   /** true, wenn ein geteilter `?p=`-Link eine nicht leere gespeicherte Eigen-Ordnung
-   *  überdeckt: bis zur ersten eigenen Änderung darf der Link-Satz nicht in den
-   *  Speicher (LESER-NAV, FB O-27 BG-06 — sonst gingen die eigenen Panes verloren). */
+   *  überdeckt: solange diese Seite offen ist, schreibt weder der Link-Satz noch eine
+   *  Änderung daran in den Speicher (LESER-NAV, FB O-27 BG-06 — sonst gingen die
+   *  eigenen Panes durch Schliessen/«Daneben öffnen» im Link-Kontext verloren). */
   eigenSchuetzen: boolean;
 }
 
@@ -122,8 +123,11 @@ export interface PaneLayout {
 export function usePaneLayout(): PaneLayout {
   const [start] = useState(ladePanes);
   const [sekundaer, setSekundaer] = useState<string[]>(start.panes);
-  // Link-Satz, der die Eigen-Ordnung überdeckt: gilt nur für diese Ansicht (siehe PaneStart).
-  const schutz = useRef(start.eigenSchuetzen ? start.panes : null);
+  // Eigen-Ordnung überdeckt (siehe PaneStart): der Speicher bleibt für die ganze
+  // Lebensdauer dieser Seite unberührt. Das Layout des Links (samt Änderungen daran)
+  // gilt nur für diese Sitzung; ein Reload bringt die Eigen-Ordnung zurück. Den Link-
+  // Kontext «verlassen» kann man nicht erkennen — darum nie schreiben statt raten.
+  const schutz = useRef(start.eigenSchuetzen);
 
   // B-5: ?p= war nur Seed (geteilter Link) → nach dem Übernehmen aus der URL
   // entfernen, damit ein Reload den dann lokalen Zustand nutzt (localStorage),
@@ -138,10 +142,7 @@ export function usePaneLayout(): PaneLayout {
   }, []);
 
   useEffect(() => {
-    // Jede eigene Änderung erzeugt eine neue Array-Identität (No-ops geben `s` zurück),
-    // der unveränderte Link-Satz ist also an der Identität erkennbar.
-    if (schutz.current === sekundaer) return;
-    schutz.current = null;
+    if (schutz.current) return;
     lokalSpeicher.schreib(PANES_KEY, JSON.stringify(sekundaer)); // gesperrt → nur für die Sitzung
   }, [sekundaer]);
 

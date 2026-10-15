@@ -1,8 +1,9 @@
 // @vitest-environment node
 // LESER-NAV · FB O-27 / BG-06 (Datenverlust): ein geteilter Layout-Link `?p=`
 // darf die EIGENEN gespeicherten Split-Panes nicht überschreiben. Der Link gilt
-// für diese Ansicht; die gespeicherte Eigen-Ordnung bleibt, bis der Nutzer
-// selbst am Layout ändert. Gegenprobe: ohne gespeicherten Stand wird der Seed
+// für diese Ansicht; die gespeicherte Eigen-Ordnung bleibt auch dann, wenn der
+// Nutzer im Link-Layout Panes schliesst oder daneben öffnet (Reload bringt sie
+// zurück). Gegenprobe: ohne gespeicherten Stand wird der Seed
 // weiter persistiert (e2e international-adresse-b45 M3).
 //
 // Sonde: der ECHTE Hook `usePaneLayout` (linkedom + react-dom/client, kein Browser)
@@ -63,11 +64,20 @@ describe('usePaneLayout — geteilter ?p=-Link vs. gespeicherte Eigen-Ordnung (B
     expect(url.search).not.toContain('p='); // Seed wird weiterhin aus der URL entfernt
   });
 
-  it('erst eine eigene Änderung schreibt den Speicher neu', async () => {
+  it('Schliessen im Link-Kontext lässt die gespeicherte Eigen-Ordnung stehen', async () => {
     const { layout } = await oeffne('/gesetze/bund/OR?p=' + encodeURIComponent('/gesetze/bund/BV'), eigen);
     await act(async () => layout().schliesse(0));
     expect(layout().sekundaer).toEqual([]);
-    expect(gespeichert()).toEqual([]);
+    expect(gespeichert()).toEqual(eigen);
+  });
+
+  it('«Daneben öffnen» im Link-Kontext lässt die gespeicherte Eigen-Ordnung stehen', async () => {
+    const { layout } = await oeffne('/gesetze/bund/OR?p=' + encodeURIComponent('/gesetze/bund/BV'), eigen);
+    await act(async () => layout().oeffneDaneben('/gesetze/bund/ZPO'));
+    expect(layout().sekundaer).toEqual(['/gesetze/bund/BV', '/gesetze/bund/ZPO']);
+    await act(async () => layout().verschiebe(0, 1));
+    await act(async () => layout().ersetze(0, '/gesetze/bund/OR'));
+    expect(gespeichert()).toEqual(eigen);
   });
 
   it('Gegenprobe: ohne gespeicherten Stand wird der Link-Satz wie bisher gespeichert', async () => {
