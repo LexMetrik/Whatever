@@ -102,6 +102,13 @@ gestrichen. Davids einziger Input ist der Bau-Prompt.
   10 min. CI-Wächter aus EINER Abfrage je voller SHA. `gh pr merge` immer als
   eigenen Befehl (der Hook blockt sonst den ganzen Mehrfach-Befehl). Kein `[skip ci]` in
   irgendeinem PR-Commit (der Squash trägt alle Betreffe nach main).
+  Tarif-Daten-Aufträge (15.10.): Testliste immer mit Rundungs-Inventar
+  (`tarifStaffelErweiterung.property`), Export-Ratsche (`rechner-export-ratsche`)
+  und `grundpfand` (B1/B2); Trailer-Zeilen vorformuliert und gezählt (< 72
+  Zeichen, Form `<Norm> — <Begründung>`); Lesarten als Frage, nie als Vorgabe
+  (drei Orchestrator-Vorgaben waren selbst falsch); «Abschluss-Commit mit
+  Inhalt» = der letzte Änderungs-Commit trägt Betreff und Trailer, nie
+  `--allow-empty` (4× in einer Session).
   Normtext-Bewegung ⇒ `npm run projektionen:normtext -- --datum=…`, Materialien
   ⇒ `npm run materialien:kaskade -- --datum=…`, nie Einzelbefehle. Vor dem
   ersten Push eines Daten- oder Bot-PR die Schritte von «Tore · Checks» einzeln

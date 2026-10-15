@@ -78,12 +78,12 @@ Kürzel = Zweig-Präfix und Trailer `Roadmap:`.
    (7) → prozesskosten (4) → Vorlagen (RV-06, RV-30, RV-31, RV-47, RV-74, RV-77); je Werkzeug
    Warnhinweis entfernen (Zeile in `src/lib/bekannteFehler.ts`, #1364). RL-43 berührt `historie-parse.ts`/`revisionen-extrakt.ts` ⇒ seriell zu Spur A.
    *Ort:* FB Bereich 5; `fahrplaene/FAHRPLAN-RECHTSLOGIK.md` §4 (W-01…W-22).
-   *Stand 15.10.:* notariat-grundbuch Welle 2b gelandet: RL-26 Uri (#1379), RL-27 Staffel-Primitiv
-   (#1380), RL-29 T1 Staffeln Romandie/TI/BE/SO (#1382), RL-28 T1 Grundpfand Deutschschweiz (#1385),
-   RL-33 T1 MWST (#1388), RL-36 Tarifkopien + Zuständigkeitskosten (#1392); RV-17/20/24/27 erledigt,
-   RV-19/25/82 eingeengt. Offen: RL-29 T3 Rundungen (BS/AG/VS/SZ, GE-Sockel), RL-28 T2/T3
-   (Romandie/TI, Pfandsteuer GE/VS), RL-33 T2 (Hinweistexte/Formulare), RL-34 Emissionsabgabe,
-   RV-82 Rest — Startauftrag im Übergabe-Chip.
+   *Stand 15.10. (abends):* notariat-grundbuch Welle 2b GELANDET: RL-26 Uri (#1379), RL-27 Staffel-Primitiv
+   (#1380), RL-29 T1 Staffeln (#1382) + T3 Rundungen (#1397), RL-28 T1 Deutschschweiz (#1385) + T2/3
+   Romandie/TI + Pfandsteuer (#1398), RL-33 T1 MWST (#1388) + T2 Hinweise/Formulare (#1399), RL-34
+   Emissionsabgabe (#1400), RL-36 Tarifkopien (#1392); RV-17/19/20/24/25/27 erledigt, RV-82 Rest «weitere
+   Geschäftsarten» FR/VD/VS/JU/NE offen; GP-Nebenfunde FB RV-96…102. Nächster Teil: Fristenrechner (7
+   A-Fälle) — Fahrplan §4; Warnhinweis-Zeilen RV-19/20/24/25 entfernt.
 
 *Gestrichen 11.10.:* `WARNHINWEIS` gebaut (#1364 Warnhinweis an 17 Rechnern, Auswahlregel im Kopf von `src/lib/bekannteFehler.ts`; #1365 Urteile U-03/04/10/13/16/24/25, U-06 schon #1149; U-15 offen in FB).
 
@@ -109,14 +109,13 @@ E1·A
 - 14.9.: Folge-Lieferungen A3 Bundesrats-VO (836 fehlend, 2 Lieferungen), A4 Departements-/Amts-VO (635) — FAHRPLAN-FEDLEX-PORTFOLIO §21
 - Sammel: übriger Bundestext — FB Bereich 1
 E1·B
-- 15.10. RECHTSLOGIK-Rest aus GP: GE Kapitalherabsetzung — Code deckelt Promille-Anteil bei 1000, REmNot Art. 25 Abs. 4 deckelt nur die feste Gebühr bei Sanierung (Lesart, beurkundung.ts:351); TG Schlichtungshinweis fehlt in der Zuständigkeits-Anzeige (schlichtungHinweisAusTarif); AI/AR/SG Haupttext 50–100k nur Grundrahmen; JU Punktwert 2026 (Arrêté 176.210.12) amtlich unbelegt; MWST_BEHANDLUNG (mwst-notariat.ts) nicht im Drift-Inventar; SZ Tarif-Stand «Fassung unklar (PDF-Kopf 1.2.2027)» — FB RV-94/95
-- wartet auf David 15.10.: W-16 MWST BS/VD/JU «zuzüglich 8,1 % nach Bundesrecht» (Empfehlung ja); AG Grundpfand-Minimum Notariatsteil 200 (⅔, umgesetzt) oder 300
+- 15.10. RECHTSLOGIK-Rest aus GP: GE-Deckel, Rundungsnormen übrige Grundbuch-Posten, Pfandsteuer-Rappen, JU/TI-Lesarten, Golden-Lücke, Hinweis-Kleinkram, TG Schlichtungshinweis — FB RV-94…102
+- wartet auf David 15.10.: W-16 MWST BS/VD/JU «zuzüglich 8,1 % nach Bundesrecht» (Empfehlung ja); AG Grundpfand-Minimum Notariatsteil 200 (umgesetzt) oder 300; A1-FUNDAMENT #1351/#1352 offen
 - Sammel: übrige Rechner/Vorlagen und Urteilsdaten — FB Bereiche 3, 5
 - 5.10.: Gegenprüfungs-Pin «fedlex OR 20260101» überholt (Cache 20261001) ⇒ Gegenprüfungen der OR-Engines neu fällig
 - Abnahme David: Gründungs-Checklisten AG/GmbH nach TJPG — bibliothek/recherche/ag-gruendung.md, gmbh-gruendung.md
 - 7.10.: Widerspruch W-17: FB RV-26 «wartet auf David» vs. FAHRPLAN-RECHTSLOGIK §4 «entschieden 24.9.»; W-09/11/17/22 dort ohne Zeichen
 E3
-- 15.10. Uri-Texte nach RL-26: VorlageVorsorgeauftrag.tsx:92, BeurkundungForm.tsx:80, NotariatGrundbuchForm.tsx:61, beurkundung.ts:103 sagen «Rahmen/aufwandabhängig» statt «kein amtlicher Tarif»; Karte «Grundpfand (Schuldbrief)» umfasst bei UR nur den Eintrag; Gründungsmaske zeigt Schritt-Texte/Engine-Hinweise nicht
 - Go David 24.9.: Rest «eine Titel- und Abschnittsordnung» (HN-D2 gebaut #1190/#1197, Band-Rezept #1373): Titelschrift — FB Teil B
 - Go David 8.8.: Kalender-Export: Termine als «frei» — FB Teil B
 - David 1.10./3.10.: Deaktiviert-/Hover-Varianten angleichen; Regelsätze von Belegen entflechten — FB Teil B
@@ -124,14 +123,10 @@ E3
 - David 6.10.: Omnilex-Sichtung: 7 Posten U2–U8 (Datums-Tor zu «Gilt seit», Ausgang-Label wartet auf David) — bibliothek/recherche/omnilex-app-sichtung-2026-10-06.md §6
 - 10.10. E0-REGISTER-Rest: wartet auf David quelleUrl auslagern (≈115 KB, Karten-Link ändern); norm-index.json 6 MB UI-ungenutzt; 4 Prüf-Nachzüge — FB S-26
 E3·W
-- 15.10. RECHTSLOGIK-Prozess: scripts/fedlex-cache.sh schreibt /tmp/<erlass>.html; Export-Ratsche ist Golden-Schwester (Dossiers nennen sie); Bau-Agenten liefern leere Abschluss-Commits (3×, Auftragsvorlage); 3 verwaiste Worktrees (blissful-jackson-183301, e0-brandschutz, interesting-jones-e007af)
+- 15.10. RECHTSLOGIK-Prozess: Pflicht-Testliste Tarif-PRs (Rundungs-Inventar, Export-Ratsche, grundpfand B1/B2), Trailer < 72 Z., Abschluss-Commit mit Inhalt, Alias-Doppelzählung — Skill bauschritt
 - Go David 5.10.: CI: Dauer-Wackler an der Wurzel (git 3fd5db8f9:bibliothek/betrieb/e2e-fang-historie-2026-10-05/), leser-kopf-cls-s3 hängt an Fedlex, Läufer-Kontingent
-- 10.10. Kahlschlag-Nachlauf: erlass-klassifikation.json docs/→daten/; alte Skill-Namen; gitFlaechen.ts:427, DESIGN-REGLEMENT Z.235/365 Test-gekoppelt; tor-schutz Amend-Fehlalarme; .selbstopt-ereignisse.jsonl ohne Leser; diff-klassieren.ts ohne Test
-- 15.10. LESER-NAV: vitest-Config schliesst **/.claude/** aus ⇒ in Worktrees keine Tests ohne Hilfs-Config; landung-kette.sh hält bei Queue-Eintrag ohne PR-Lauf fälschlich an
-- wartet auf David 10.10.: scripts/archiv/ (9 Skripte) löschen oder umbenennen
 - Go David 7.10.: Leser-Logik (162 .ts unter src/pages|components, ~22k Zeilen) nach src/lib/leser, danach Lint-Grenze — §3
-- wartet auf David 7.10.: §5 vs. Ist: ingest.ts liest public/*.json in die DB (JSON faktisch Quelle); Umstellung bauen oder §5 präzisieren
-- wartet auf David 7.10.: Rechtsprechung-Einzelentscheide (300 MB) als Release-Artefakt statt in git — public/rechtsprechung/
+- wartet auf David 7.10./10.10.: §5 vs. Ist (ingest.ts liest public/*.json in die DB); Rechtsprechung-Einzelentscheide (300 MB) als Release-Artefakt statt git; scripts/archiv/ (9 Skripte) löschen
 E4
 - David 21.9./7.10.: Impressum/Datenschutz erst vor Live-Gang (FB S-01); Staatsverträge SR 0.* (3186, 28 gepinnt) verlinken bis dahin auf Fedlex
 ```
