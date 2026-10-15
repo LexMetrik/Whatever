@@ -91,6 +91,25 @@ export function einzelAdresse(basisPfad: string, search: string, token: string, 
 }
 
 /**
+ * Der Permalink im Einzelmodus trägt die Lesart: `…/OR?ansicht=artikel#art-336_c`.
+ *
+ * LESER-NAV (FB O-27 BG-08): der Permalink wurde aus `basisPfad` + Anker gebaut und kannte die
+ * Lesart nicht — wer im Einzelmodus «Link» kopierte, teilte einen Link, der beim Empfänger je
+ * nach SEINER gemerkten Wahl den ganzen Erlass zeigte. Die Adresse schlägt die Präferenz
+ * (Kap. 15.6, `modusEntscheid`): ein geteilter Link zeigt, was der Absender meinte. Gilt der
+ * Einzelmodus nicht, bleibt der Permalink unverändert (schweigt zur Lesart, wie bisher).
+ *
+ * Der Eingang ist der fertig kodierte Permalink (`urlMitHash`, §5 — EINE Kodierung des Ankers);
+ * hier wird nur der Query-Teil gesetzt, über dieselbe Regel wie jede andere Adresse (`sucheMitModus`).
+ */
+export function permalinkMitLesart(permalink: string, search: string, gemerkt: LeserModus): string {
+  if (modusEntscheid(modusAusSuche(search), gemerkt) !== 'artikel') return permalink;
+  const u = new URL(permalink);
+  u.search = sucheMitModus(u.search, 'artikel');
+  return u.toString();
+}
+
+/**
  * Der Artikel-Token aus einem Anker `#art-336_c` — `null`, wenn der Hash keiner
  * ist (leer, `#oben`, ein Sektions-Anker).
  *
