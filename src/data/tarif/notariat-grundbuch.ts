@@ -14,6 +14,28 @@ import type { KantonCode, KantonalerTarif } from './typen';
 const INF = Infinity;
 const R = 'recherche' as const;
 
+// ─── Uri: kein amtlicher Notariatstarif ──────────────────────────────────────
+// RB 9.2311 Art. 38 Abs. 3 verweist auf einen «beigefügten Tarif», der in der
+// amtlichen Fassung (Version 812, in Kraft seit 1.1.2001) nicht enthalten ist.
+// Der Konventionaltarif des Urner Anwalts- und Notarenverbands ist kein Erlass
+// und wird nicht gerechnet (W-14, 23.9.2026; RL-26). Eine Quelle für alle UR-
+// Einträge hier und in beurkundung.ts (§5).
+const UR_OHNE_TARIF_HINWEIS =
+  'Uri hat keinen amtlichen Notariatstarif (RB 9.2311 Art. 38 Abs. 3 verweist auf einen Tarif, der amtlich nicht publiziert ist); Gebühr beim Notariat erfragen. ' +
+  'Der Urner Anwalts- und Notarenverband führt einen privaten Konventionaltarif (Stand 17.3.2015); er ist kein amtlicher Erlass und wird hier nicht gerechnet.';
+
+export const urOhneAmtlichenTarif = (): KantonalerTarif => ({
+  kanton: 'UR',
+  erlassName: 'Verordnung über das Notariat (NotV)',
+  erlassNr: 'RB 9.2311',
+  artikel: 'Art. 38 Abs. 3',
+  stand: '1.1.2001',
+  verifiziert: R,
+  quelleUrl: 'https://rechtsbuch.ur.ch/app/de/texts_of_law/9.2311',
+  hinweis: UR_OHNE_TARIF_HINWEIS,
+  regel: { typ: 'formel_extern', hinweis: UR_OHNE_TARIF_HINWEIS },
+});
+
 // ─── 1. Notariat / Beurkundung Kaufvertrag (über Kaufpreis) ─────────────────
 export const NOTARIAT: Record<KantonCode, KantonalerTarif> = {
   ZH: { kanton: 'ZH', erlassName: 'Notariatsgebührenverordnung (NotGebV)', erlassNr: 'LS 243', artikel: 'Anhang Ziff. 1.1.1', stand: '1.1.2024', verifiziert: R, quelleUrl: 'https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-243-2009_03_09-2009_07_01-123.html', hinweis: 'Amtsnotariat (staatlicher Fixtarif).', regel: { typ: 'promille', promille: 1, minChf: 100 } },
@@ -39,11 +61,7 @@ export const NOTARIAT: Record<KantonCode, KantonalerTarif> = {
     { bisChf: 10000000, sockelChf: 10750, abChf: 5000000, prozent: 0.1, maxChf: 15750 },
     { bisChf: INF, sockelChf: 15750, abChf: 10000000, prozent: 0, maxChf: 15750 },
   ] } },
-  UR: { kanton: 'UR', erlassName: 'Notariatstarif der Urner Notarinnen und Notare (Verbands-Konventionaltarif)', erlassNr: 'urilaw.ch (RB 9.2311)', artikel: 'Ziff. 5.2', stand: '25.3.2014/17.3.2015', verifiziert: R, quelleUrl: 'https://www.urilaw.ch/fileadmin/user_upload/documents/Notariatstarif-Uri.pdf', hinweis: 'KEIN kantonaler Gebührenerlass, sondern Verbandstarif; >5 Mio nach Vereinbarung. Marginal kodiert (~CHF 2’625 bei 1 Mio).', regel: { typ: 'staffel_sockel_prozent', baender: [
-    { bisChf: 250000, sockelChf: 0, abChf: 0, prozent: 0.3, minChf: 500 },
-    { bisChf: 1000000, sockelChf: 750, abChf: 250000, prozent: 0.25 },
-    { bisChf: INF, sockelChf: 2625, abChf: 1000000, prozent: 0.2, maxChf: 30000 },
-  ] } },
+  UR: urOhneAmtlichenTarif(),
   SZ: { kanton: 'SZ', erlassName: 'Gebührentarif Notare/Grundbuchverwalter', erlassNr: 'SRSZ 213.512', artikel: '§ 5 Abs. 1 Nr. 1', stand: '1.2.2021', verifiziert: R, quelleUrl: 'https://www.sz.ch/public/upload/assets/7361/213_512.pdf', hinweis: 'CHF 45 je (auch angefangene) CHF 50’000 (≈ 0,9‰); bei Werten über 10 Mio. wird die Gebühr auf dem Mehrbetrag um 50 % reduziert, höchstens 13’500. QS-GP 2.7.2026: −50 %-Degression >10 Mio. am amtlichen PDF verifiziert und ergänzt. HINWEIS: die Tranchen-Aufrundung «je CHF 50’000 bzw. Bruchteile davon» (Aufrundung auf die nächsten 50’000) ist noch flach als Promille angenähert.', regel: { typ: 'staffel_sockel_prozent', baender: [
     { bisChf: 10000000, sockelChf: 0, abChf: 0, prozent: 0.09, maxChf: 13500 },
     { bisChf: INF, sockelChf: 9000, abChf: 10000000, prozent: 0.045, maxChf: 13500 },
@@ -216,7 +234,7 @@ export const GRUNDPFAND: Record<KantonCode, KantonalerTarif> = {
   ZH: { kanton: 'ZH', erlassName: 'NotGebV', erlassNr: 'LS 243', artikel: 'Anhang Ziff. 1.2.1 + 2.3.1', stand: '1.1.2024', verifiziert: R, quelleUrl: 'https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-243-2009_03_09-2009_07_01-123.html', hinweis: 'Beurkundung 1‰ + Eintrag 1‰.', regel: { typ: 'promille', promille: 2, minChf: 200 } },
   BE: { kanton: 'BE', erlassName: 'GebVN / GebV', erlassNr: 'BSG 169.81 / 154.21', artikel: 'Art. 18 / Anhang 4B Ziff. 3.3.1', stand: '1.3.2022', verifiziert: R, quelleUrl: 'https://www.belex.sites.be.ch/app/de/texts_of_law/169.81', regel: { typ: 'formel_extern', hinweis: 'Beurkundung nach Zeitaufwand (min. 200) + Eintrag 100 TP — KEIN Promille.' } },
   LU: { kanton: 'LU', erlassName: 'BeurkGebV / GBGT', erlassNr: 'SRL 258 / 228', artikel: '§ 29 / § 8', stand: '1.1.2026', verifiziert: R, quelleUrl: 'https://srl.lu.ch/app/de/texts_of_law/258', hinweis: 'Beurkundung Staffel (max. 7’125) + Eintrag 2‰ + Titel 40.', regel: { typ: 'promille', promille: 2, minChf: 350 } },
-  UR: { kanton: 'UR', erlassName: 'Notariatstarif / Grundbuchgebührentarif', erlassNr: 'urilaw / RB 9.3408', artikel: 'Ziff. 6.2 / Art. 5', stand: '2014/2025', verifiziert: R, quelleUrl: 'https://www.ur.ch/online-schalter/2127/download', hinweis: 'Beurkundung Tarif B + Eintrag 2‰ (max. 10’000).', regel: { typ: 'promille', promille: 2, minChf: 70, maxChf: 10000 } },
+  UR: { kanton: 'UR', erlassName: 'Grundbuchgebührentarif (Tarifordnung der Justizdirektion Uri vom 4. Dezember 2024)', erlassNr: 'gestützt auf RB 3.2521 Art. 8a und RB 9.3408 Art. 2 Abs. 2', artikel: 'Grundbuchgebührentarif UR Art. 5 Abs. 1 und 2', stand: '4.12.2024', verifiziert: R, quelleUrl: 'https://www.ur.ch/online-schalter/2127/download', hinweis: 'Nur Eintragsgebühr (amtlicher Grundbuchgebührentarif); Beurkundung durch freies Notariat ohne amtlichen Tarif — beim Notariat erfragen.', regel: { typ: 'promille', promille: 2, minChf: 70, maxChf: 10000 } },
   SZ: { kanton: 'SZ', erlassName: 'Gebührentarif Notare/Grundbuchverwalter', erlassNr: 'SRSZ 213.512', artikel: '§ 5 Abs. 1 Nr. 2', stand: '1.2.2021', verifiziert: R, quelleUrl: 'https://www.sz.ch/public/upload/assets/7361/213_512.pdf', hinweis: 'CHF 45 je (auch angefangene) CHF 50’000 (≈ 0,9‰); bei Pfandsumme über 8 Mio. wird die Gebühr auf dem Mehrbetrag um 50 % reduziert, höchstens 10’350. QS-GP 2.7.2026: −50 %-Degression >8 Mio. am amtlichen PDF verifiziert und ergänzt (Tranchen-Aufrundung noch flach angenähert).', regel: { typ: 'staffel_sockel_prozent', baender: [
     { bisChf: 8000000, sockelChf: 0, abChf: 0, prozent: 0.09, maxChf: 10350 },
     { bisChf: INF, sockelChf: 7200, abChf: 8000000, prozent: 0.045, maxChf: 10350 },

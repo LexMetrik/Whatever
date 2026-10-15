@@ -45,7 +45,6 @@ const KALENDER_NE_SO: BekannterFehler = {
 
 export const BEKANNTE_FEHLER: Readonly<Record<string, readonly BekannterFehler[]>> = {
   'notariat-grundbuch': [
-    { fb: 'RV-17', text: 'Uri: rechnet weiter nach dem Verbandstarif der Urner Notare (23 Einträge), obwohl entschieden ist, ihn nicht mehr anzuwenden.' },
     STAFFEL,
     { fb: 'RV-19', text: 'Grundpfand: Pauschalsätze in 14 Kantonen falsch.' },
     { fb: 'RV-20', text: 'Grundbuch TG: Vormerkung falsch gerechnet; Rundungen AG, BS, VS, SZ und Sockel GE noch offen (Staffeln TI, VD, FR, VS, NE, GE, JU, BE, SO sind seit 15.10.2026 berichtigt).' },
