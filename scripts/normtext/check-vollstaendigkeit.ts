@@ -143,7 +143,7 @@ const BEKANNTE_LUECKEN: BekannteLuecke[] = [
   // ── UR/9.2311 (Verordnung über das Notariat, rechtsbuch.ur.ch = LexWork):
   // seit RL-26 (15.10.2026) Zitat-Ziel der 22 Uri-Notariatseinträge, die nicht
   // mehr gerechnet werden (Art. 38 Abs. 3 verweist auf einen amtlich nicht
-  // publizierten Tarif). Uri-Erlasse sind noch nicht gesnapshottet (Kantone =
+  // publizierten Tarif). RB 9.2311 ist nicht gesnapshottet (Kantone =
   // Phase 2); Live-Link massgeblich. Nachzug als EINGANG-Zeile geführt.
   {
     snapshotId: 'kanton/UR/9.2311/art_38',
