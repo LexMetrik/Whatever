@@ -24,7 +24,17 @@ describe('Notariat/Grundbuch — amtliche Stützstellen bei Kaufpreis CHF 1 Mio'
     expect(det(bei1Mio('SG').beurkundung)).toBe(2000);
     expect(det(bei1Mio('SZ').beurkundung)).toBe(900);    // 0,9‰
     expect(det(bei1Mio('AR').beurkundung)).toBe(1000);   // kombiniert N+G
-    expect(det(bei1Mio('UR').beurkundung)).toBe(2625);   // marginal
+  });
+
+  it('Beurkundung UR — kein amtlicher Tarif, nicht gerechnet (RL-26, W-14, RB 9.2311 Art. 38 Abs. 3)', () => {
+    const p = bei1Mio('UR').beurkundung;
+    expect(p.ergebnis.deterministisch).toBe(false);
+    expect(p.ergebnis).not.toHaveProperty('vonChf');
+    expect(p.ergebnis).not.toHaveProperty('bisChf');
+    expect(p.quelle.hinweis).toContain('RB 9.2311');
+    expect(p.quelle.hinweis).toContain('erfragen');
+    expect(ngPostenText(p)).toBe('nach Vereinbarung/Aufwand');
+    expect(bei1Mio('UR').gesamtGebuehren).toBeNull();
   });
 
   it('Grundbuch — deterministische Tarife', () => {
