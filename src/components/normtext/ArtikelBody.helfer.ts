@@ -1,4 +1,5 @@
 import type { NormSnapshot } from '../../lib/normtext/typen';
+import { istLeerMarke } from '../../lib/listenMarke';
 import type { BildDaten, BildKachel } from './BildElemente';
 
 // Bild-/Kachel-Felder eines Blocks (bild/bildKacheln) sind neu im Snapshot-Daten-
@@ -78,6 +79,9 @@ export type MarkenArt = 'strich' | 'ziff' | 'lit' | 'label';
 // Verhalten von PR #658 — der Fallback ist bewusst erhalten, kein Zweitpfad
 // auf Verdacht (§Gegengewicht).
 
+// `istLeerMarke` lebt in src/lib/listenMarke.ts (Lese-Hülle UND Prerender-HTML teilen sie, §5).
+export { istLeerMarke };
+
 /** Art einer Item-Marke — EINE Stelle (§5) für Präfix und Anzeige.
  *  `trenner` = amtlicher <dt>-Trenner des Snapshots, falls mitgeführt. */
 export function markenArt(marke: string, trenner?: string): MarkenArt {
@@ -112,7 +116,7 @@ export function markenZitat(marke: string, trenner?: string): string {
  *  Satzzeichen, wird keines verdoppelt. */
 export function markenAnzeige(marke: string, trenner?: string): string {
   // Marke-lose Haupttext-Zeile (`marke: ''`, W2·27-BUND-FERTIG 3.10.2026): nichts anzeigen — KEIN erfundenes «.».
-  if (marke === '') return '';
+  if (istLeerMarke(marke)) return '';
   const art = markenArt(marke, trenner);
   if (art === 'strich') return '–';
   if (trenner !== undefined) return `${marke.trimEnd()}${trenner}`;
@@ -138,7 +142,7 @@ export function stufenFuer(items: Array<{ marke: string; tiefe?: number }>): num
   if (hatTiefe) return items.map((it) => it.tiefe ?? 0);
   // `leer` = marke-lose Zeile (W2·27-BUND-FERTIG 3.10.2026): trägt keine Ebene aus ihrer Marke — sie steht auf Stufe 0
   // und verändert weder `sahLit` noch die Strich-Kette noch die `erste`-Erkennung (sonst kippte «'' 1. 2.» auf Stufe 1).
-  const typ = (m: string) => m === '' ? 'leer' : /^[–—-]$/.test(m.trim()) ? 'strich' : /^\d/.test(m.trim()) ? 'ziff' : 'lit';
+  const typ = (m: string) => istLeerMarke(m) ? 'leer' : /^[–—-]$/.test(m.trim()) ? 'strich' : /^\d/.test(m.trim()) ? 'ziff' : 'lit';
   const arten = items.map((it) => typ(it.marke));
   // W2·17 E-D2-B01: kantonale Listen «1. a. b. c. 2. 3.» stellen die lit. UNTER
   // die Ziff. Erkennbar daran, dass die erste Nicht-Strich-Marke eine Ziffer ist
@@ -204,12 +208,12 @@ export function itemZitatSegmente(
   const seg: string[] = [];
   let lvl = kStufen[kette.length - 1];
   // Marke-lose Zeile (`marke: ''`) trägt selbst kein Zitat (kein Zitierknopf).
-  if (kette[kette.length - 1].marke === '') return seg;
+  if (istLeerMarke(kette[kette.length - 1].marke)) return seg;
   for (let k = kette.length - 1; k >= 0 && lvl >= 0; k--) {
     // Marke-loser VORFAHRE (nächstflachere Ebene, Wurzel-Ebene eingeschlossen): die Kette bricht ab. Übersprungen
     // erbte das Kind das Geschwister davor als Eltern («lit. b Ziff. 1») oder verlöre das Eltern-Glied («Ziff. 1»)
     // — kein Zitat ist besser als ein falsches (§1/§8; Gegenprüfung PR #1299, A1).
-    if (kStufen[k] === lvl && kette[k].marke === '') return [];
+    if (kStufen[k] === lvl && istLeerMarke(kette[k].marke)) return [];
     if (kStufen[k] === lvl && !/^[–—-]$/.test(kette[k].marke.trim())) {
       // QS-UI: Label-Marken ohne «lit.»-Präfix (markenZitat) — «lit. BE» ist in der
       // VZV kein Zitat, die Kategorie heisst schlicht «BE».
