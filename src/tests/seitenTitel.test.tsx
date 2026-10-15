@@ -39,10 +39,12 @@ describe('A-1 — SeitenTitel: EINE Grössen-Kaskade, kontextabhängig gemessen'
     expect(html, 'der Viewport-Zweig steht im Pane noch da').not.toContain('sm:text-h1');
   });
 
-  it('Stimme: es gibt nur die Serif-Stimme; die Übergangs-Prop `serif` ändert nichts', () => {
+  it('Stimme: es gibt nur die Serif-Stimme (die Stimmen-Prop ist seit LESER-NAV gestrichen)', () => {
+    // DEKLARIERTE ANPASSUNG (LESER-NAV, 15.10.2026, §6.3): `stimme="serif"` entfällt am Aufruf,
+    // weil Prop und Typ gestrichen sind (N10-14); Assertion unverändert.
     const html = renderToString(
       <PaneProvider value={KEIN_PANE}>
-        <SeitenTitel stimme="serif" className="min-h-titel-2z">OR</SeitenTitel>
+        <SeitenTitel className="min-h-titel-2z">OR</SeitenTitel>
       </PaneProvider>,
     );
     expect(html).toContain('class="text-h2 sm:text-h1 font-serif font-normal text-ink-900 min-h-titel-2z"');
