@@ -202,7 +202,12 @@ describe('AKTIVE Fundstelle — eigener Highlight, hebt sich vom normalen Treffe
 
   it('der Leser setzt die aktive Stelle aus dem Sprungziel (malRang) und räumt sie bei Begriffswechsel', () => {
     const q = lies('pages/gesetz-leser/inhalt-suchtreffer.tsx').replace(/\/\/.*$/gm, '').replace(/\/\*[\s\S]*?\*\//g, '');
-    expect(q).toMatch(/setzeAktiveFundstelle\([^)]*ranges\[eintrag\.malRang\]/);
+    // §6.3-DEKLARATION (LESER-NAV, FB O-36 b): das Ziel wird jetzt VOR dem Aufruf
+    // bestimmt (`ziel`), weil es aus dem Artikel ODER aus einem Sektionskopf kommt;
+    // geprüft bleibt, dass beide Wege über `malRang` laufen und `ziel` gesetzt wird.
+    expect(q).toMatch(/ranges\[eintrag\.malRang\]/);
+    expect(q).toMatch(/kopfRanges\?\.\[eintrag\.malRang/);
+    expect(q).toMatch(/setzeAktiveFundstelle\(markenAus \? null : ziel/);
     expect(q, 'kein Aufräumen der aktiven Stelle').toMatch(/setzeAktiveFundstelle\(null,/);
   });
 });

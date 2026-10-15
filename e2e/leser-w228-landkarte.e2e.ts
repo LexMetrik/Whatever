@@ -106,13 +106,26 @@ async function sucheUndLies(page: Page, wort = BEGRIFF): Promise<void> {
  *  (die Abschnitts-Bänder tragen ihn an der Gruppe darüber). */
 const MARKEN = '[data-treffer-landkarte] svg rect > title'
 
-/** Zahlen aus der Zähler-Zeile — die EINE Quelle, gegen die gemessen wird. */
-async function zaehler(page: Page): Promise<{ bestimmungen: number; fundstellen: number }> {
+/** Zahlen aus der Zähler-Zeile — die EINE Quelle, gegen die gemessen wird.
+ *
+ *  LESER-NAV, FB O-36 b (Teständerung deklariert, §6.3): die Zeile heisst jetzt
+ *  «M Artikel · K Überschriften · N Fundstellen», und ein Segment mit 0 entfällt.
+ *  Gelesen wird darum nach WORT, nicht nach Position: die zweite Zahl ist nicht
+ *  mehr die Fundstellen-Zahl (sie läse «28» statt «143»). `bestimmungen` ist die
+ *  Zahl vor dem Zähl-Substantiv des Erlasses (= alles ausser «Überschrift(en)» und
+ *  «Fundstelle(n)»), 0 wenn das Segment fehlt. */
+async function zaehler(page: Page): Promise<{ bestimmungen: number; ueberschriften: number; fundstellen: number }> {
   const text = await page.locator('[data-v3-treffer-weg]').innerText()
   // Tausendertrenner raus (schmales bzw. schmales geschütztes Leerzeichen und
   // der Schweizer Apostroph) — sonst zerfällt «1 146» in zwei Zahlen.
-  const zahlen = text.replace(/[\u2009\u202f\u2019\u0027]/g, '').match(/\d+/g) ?? []
-  return { bestimmungen: Number(zahlen[0]), fundstellen: Number(zahlen[1]) }
+  const roh = text.replace(/[\u2009\u202f\u2019\u0027]/g, '')
+  const paare = [...roh.matchAll(/(\d+)\s*([A-Za-zÄÖÜäöüéè]+)/g)].map((m) => ({ n: Number(m[1]), wort: m[2] }))
+  const von = (re: RegExp) => paare.find((p) => re.test(p.wort))?.n
+  return {
+    bestimmungen: paare.find((p) => !/^(Überschrift|Fundstelle)/.test(p.wort))?.n ?? 0,
+    ueberschriften: von(/^Überschrift/) ?? 0,
+    fundstellen: von(/^Fundstelle/) ?? Number.NaN,
+  }
 }
 
 /** Anzahl markierter Stellen in der Custom-Highlight-Registry des Dokuments. */
@@ -142,18 +155,29 @@ test('(b) Suche mit Treffern: der Streifen steht, und seine Marken sind die Tref
   await expect(streifen).toHaveCount(1)
   await expect(streifen).toBeVisible()
 
-  const { bestimmungen, fundstellen } = await zaehler(page)
+  const { bestimmungen, ueberschriften, fundstellen } = await zaehler(page)
   expect(bestimmungen, 'keine Treffer — Vorbedingung fehlt (§6.7)').toBeGreaterThan(3)
+  expect(ueberschriften, 'OR «Kündigung» trägt Kopf-Treffer — Vorbedingung fehlt (§6.7)').toBeGreaterThan(0)
 
-  // DIE TRAGENDE ZUSICHERUNG: eine Marke je getroffener Bestimmung.
+  // DIE TRAGENDE ZUSICHERUNG: eine Marke je Trefferzeile. LESER-NAV, FB O-36 b
+  // (Teständerung deklariert, §6.3): vorher «Marken = Bestimmungen». Ein Kopf-Treffer
+  // steht in der Liste unter dem ersten Artikel seines Teilbaums, der selbst nicht
+  // treffen muss — dann trägt dessen Zeile eine Marke, ohne «Artikel mit eigener
+  // Fundstelle» zu sein. Jeder Treffer-Artikel hat eine Marke (untere Grenze), und
+  // jede weitere Marke gehört zu einer Überschrift (obere Grenze).
   const marken = await page.locator(MARKEN).count()
-  expect(marken, `Marken ${marken} ≠ Bestimmungen ${bestimmungen} der Zähler-Zeile`).toBe(bestimmungen)
+  expect(marken, `Marken ${marken} < Bestimmungen ${bestimmungen} der Zähler-Zeile`).toBeGreaterThanOrEqual(bestimmungen)
+  expect(marken, `Marken ${marken} > Bestimmungen ${bestimmungen} + Überschriften ${ueberschriften}`)
+    .toBeLessThanOrEqual(bestimmungen + ueberschriften)
 
-  // Der zugängliche Name nennt die Fundstellen-Zahl — der Streifen ist
-  // `role="img"`, seine Auskunft muss im Namen stehen (B9: die Bedienung per
-  // Tastatur läuft über die Trefferliste, nicht über hundert Tabstopps).
-  const name = await streifen.getAttribute('aria-label')
-  expect(name, 'der Streifen nennt seine Fundstellen-Zahl nicht').toContain(String(fundstellen))
+  // Der zugängliche Name nennt DASSELBE Zählmodell wie die Zähler-Zeile — nicht die
+  // Markenzahl (OR «Kündigung» sagte «74 Artikel · 143 Fundstellen» neben «69 Artikel
+  // · 28 Überschriften · 143 Fundstellen»). Der Streifen ist `role="img"`, seine
+  // Auskunft muss im Namen stehen (B9: die Bedienung per Tastatur läuft über die
+  // Trefferliste, nicht über hundert Tabstopps).
+  const name = (await streifen.getAttribute('aria-label')) ?? ''
+  expect(name, 'der Streifen nennt seine Zahlen nicht wie die Zähler-Zeile').toMatch(
+    new RegExp(`${bestimmungen} \\S+ · ${ueberschriften} Überschriften · ${fundstellen} Fundstellen`))
   // Das SVG selbst ist für Screenreader stumm — sonst läse es tausend Rechtecke vor.
   await expect(streifen.locator('svg')).toHaveAttribute('aria-hidden', 'true')
 
@@ -390,6 +414,47 @@ test('(g) @390 ist die Zähler-Zeile lesbar — nichts überlappt, nichts läuft
   expect(zone, `Such-Zone @390 ${zone} px statt 68 px (SUCH_H_AKTIV)`).toBe(68)
 })
 
+// ── (g2) LESER-NAV, FB O-36 b (Nachzug 15.10.2026) · DIE FUNDSTELLEN-ZAHL STEHT
+//    IMMER GANZ IM KASTEN ────────────────────────────────────────────────────
+// Das dritte Segment «K Überschriften» machte die Zeile @390 von 164 auf 274 px
+// in einem 216-px-Kasten (OR «Kündigung»); @280 schnitt der Knopf schon vorher
+// am rechten Ende, also dort, wo die Fundstellen-Zahl stand. Der Fall misst auf
+// allen drei Breiten, was der Befund sagt: nichts läuft aus dem Kasten, und die
+// Gruppe «N Fundstellen» liegt vollständig darin. Der zugängliche Name nennt die
+// Überschriften auch dort, wo das Segment im Bild fehlt (`sr-only`).
+// ROT ZU BEKOMMEN (§6.7), am Bau gesehen (15.10.2026): in `v3/SuchZone.tsx` die vordere
+// Gruppe (`min-w-0 shrink … overflow-hidden`) auf `shrink-0` stellen ⇒ @280 «Fundstellen-
+// Gruppe endet rechts des Kastens (159 > 126)», @320 «Zähler-Inhalt 180 px in 146 px Kasten»,
+// @390 bleibt grün (dort trägt das Weglassen der Überschriften).
+for (const breite of [280, 320, 390]) {
+  test(`(g2) @${breite}: die Fundstellen-Zahl steht ganz in der Zähler-Zeile`, async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce', colorScheme: 'light' })
+    await page.setViewportSize({ width: breite, height: 844 })
+    await page.goto('/gesetze/bund/OR')
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible({ timeout: 30000 })
+    await expect(page.locator('[data-v3-suchsprung] input').first()).toBeVisible({ timeout: 20000 })
+    await page.evaluate(() => document.fonts?.ready)
+    await sucheUndLies(page)
+
+    const z = await zaehler(page)
+    expect(z.ueberschriften, 'OR «Kündigung» trägt Kopf-Treffer — Vorbedingung fehlt (§6.7)').toBeGreaterThan(0)
+    const m = await page.evaluate(() => {
+      const weg = document.querySelector('[data-v3-treffer-weg]') as HTMLElement
+      const fst = weg.querySelector('[data-v3-treffer-fundstellen]') as HTMLElement
+      const k = weg.getBoundingClientRect(); const f = fst.getBoundingClientRect()
+      return {
+        links: Math.round(k.left), rechts: Math.round(k.right), fLinks: Math.round(f.left), fRechts: Math.round(f.right),
+        sichtbar: weg.clientWidth, inhalt: weg.scrollWidth, text: weg.textContent ?? '',
+      }
+    })
+    expect(m.fLinks, `Fundstellen-Gruppe beginnt links des Kastens (${m.fLinks} < ${m.links})`).toBeGreaterThanOrEqual(m.links)
+    expect(m.fRechts, `Fundstellen-Gruppe endet rechts des Kastens (${m.fRechts} > ${m.rechts})`).toBeLessThanOrEqual(m.rechts)
+    expect(m.inhalt, `Zähler-Inhalt ${m.inhalt} px in ${m.sichtbar} px Kasten`).toBeLessThanOrEqual(m.sichtbar)
+    expect(m.text, 'der zugängliche Name nennt die Überschriften nicht').toMatch(/\d+\s*Überschriften/)
+    expect(z.fundstellen, 'Fundstellen-Zahl nicht lesbar').toBeGreaterThan(0)
+  })
+}
+
 // ═══ W2·17-UI-BEFUNDE · LANDKARTE: KLICK, LESEPOSITION, BLATT ═══════════════
 //
 // Drei Befunde der Gesamtprüfung, je am gebauten Stand im Browser belegt
@@ -419,12 +484,25 @@ test('(g) @390 ist die Zähler-Zeile lesbar — nichts überlappt, nichts läuft
 //  (j) die Bedingung, die den Streifen bei offenem Blatt wegnimmt, streichen ⇒
 //      der Treffer-Test am Schliessen-Knopf liefert den Streifen.
 
-/** Artikel (Element-id), in dem die AKTIVE Fundstelle liegt — dorthin ist der Sprung gegangen. */
+/** Artikel (Element-id), in dem die AKTIVE Fundstelle liegt — dorthin ist der Sprung gegangen.
+ *
+ *  LESER-NAV, FB O-36 b (Teständerung deklariert, §6.3): liegt die aktive Fundstelle im
+ *  Sektionskopf (`data-sek`, ein Kopf-Treffer), gehört sie zur Zeile des ERSTEN Artikels
+ *  seines Teilbaums — dort steht der Kopf im DOM, und dessen Marke trägt ihn. Vorher
+ *  lieferte die Funktion dafür `null` (der Kopf steht in keinem `art-…`-Element) und
+ *  (h) wurde rot, sobald die Probe eine Marke mit Kopf-Treffer traf (Art. 526). */
 async function aktiverArtikel(page: Page): Promise<string | null> {
   return page.evaluate(() => {
     const reg = (globalThis as { CSS?: { highlights?: Map<string, Iterable<Range>> } }).CSS?.highlights
     const r = [...(reg?.get('lc-such-aktiv') ?? [])][0]
-    return r ? (r.startContainer.parentElement?.closest('[id^="art-"]')?.id ?? null) : null
+    if (!r) return null
+    const ort = r.startContainer.parentElement
+    const kopf = ort?.closest('[data-sek]')
+    if (kopf) {
+      const arts = Array.from(document.querySelectorAll('[id^="art-"]'))
+      return arts.find((a) => kopf.compareDocumentPosition(a) & Node.DOCUMENT_POSITION_FOLLOWING)?.id ?? null
+    }
+    return ort?.closest('[id^="art-"]')?.id ?? null
   })
 }
 
