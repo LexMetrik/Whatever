@@ -17,13 +17,13 @@ const zk = { artikelLabel: 'Anhang 1', kuerzel: 'CHEMRRV' };
 
 describe('ArtikelBody — Anker der Anhang-Zwischentitel', () => {
   it('Lesespalte (zitierKontext): jeder Zwischentitel trägt id="anh-<artikel>-<i>"', () => {
-    const o = renderToString(<ArtikelBody bloecke={bloecke} artikel="a1" zitierKontext={zk} />);
+    const o = renderToString(<ArtikelBody bloecke={bloecke} artikel="a1" passus={{ absatz: null }} zitierKontext={zk} />);
     expect(o).toContain('id="anh-a1-0"');
     expect(o).toContain('id="anh-a1-2"');
   });
 
   it('Popover (ohne zitierKontext): keine Id, sonst doppelt im DOM', () => {
-    const o = renderToString(<ArtikelBody bloecke={bloecke} artikel="a1" />);
+    const o = renderToString(<ArtikelBody bloecke={bloecke} artikel="a1" passus={{ absatz: null }} />);
     expect(o).not.toContain('id="anh-');
   });
 });
