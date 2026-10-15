@@ -71,9 +71,10 @@ describe('Notariat/Grundbuch — Ehrlichkeit & Robustheit', () => {
   it('aufwand-/bandbreitenbasierte Tarife liefern Spanne oder "nach Vereinbarung"', () => {
     const zg = berechneNotariatGrundbuch({ kanton: 'ZG', kaufpreisCHF: 1_000_000 });
     expect(zg.beurkundung.ergebnis.deterministisch).toBe(false); // Rahmen 300–4000
+    // RL-29 (Fachänderung): VD ist nach TNo Art. 14 al. 1 eine deterministische Staffel (nicht mehr formel_extern).
     const vd = berechneNotariatGrundbuch({ kanton: 'VD', kaufpreisCHF: 1_000_000 });
-    expect(vd.beurkundung.ergebnis.deterministisch).toBe(false);  // formel_extern
-    expect(ngPostenText(vd.beurkundung)).toMatch(/Vereinbarung|Aufwand/);
+    expect(vd.beurkundung.ergebnis.deterministisch).toBe(true);
+    expect(det(vd.beurkundung)).toBe(2875);
   });
   it('alle 26 Kantone: jeder Posten hat eine amtliche Quelle (oder ist als "keine" markiert)', () => {
     for (const k of KANTONE) {
@@ -98,5 +99,79 @@ describe('Notariat/Grundbuch — Ehrlichkeit & Robustheit', () => {
   it('Streitwert/Kaufpreis 0 ok; negativ wirft', () => {
     expect(() => berechneNotariatGrundbuch({ kanton: 'ZH', kaufpreisCHF: 0 })).not.toThrow();
     expect(() => berechneNotariatGrundbuch({ kanton: 'ZH', kaufpreisCHF: -1 })).toThrow();
+  });
+});
+
+// ─── RL-29 Teil 1: Notariats-Staffeln Grundstückkauf nach Norm (RV-20) ─────
+// Prüfpunkte aus den amtlichen Staffeln, abgerufen 15.10.2026:
+// TI LTN Art. 5 cpv. 1 · FR RSF 261.16 Art. 4 al. 1 ch. 1bis · VS RS 178.104 Art. 13 al. 1 ·
+// NE RSN 166.31 Art. 14 ch. 54 · GE REmNot Art. 10 al. 1 · VD TNo Art. 14 al. 1 ·
+// JU RSJU 189.61 Art. 9 al. 1 · BE GebVN Anhang 1 · SO GT § 25 Abs. 1 lit. a.
+describe('Notariat — Staffeln Grundstückkauf nach Norm (RL-29)', () => {
+  const b = (kanton: KantonCode, kaufpreisCHF: number) => berechneNotariatGrundbuch({ kanton, kaufpreisCHF }).beurkundung;
+  const rahmen = (kanton: KantonCode, kaufpreisCHF: number) => {
+    const e = b(kanton, kaufpreisCHF).ergebnis;
+    if (e.deterministisch) throw new Error('Spanne erwartet');
+    return [e.vonChf, e.bisChf];
+  };
+
+  it('TI Art. 5 cpv. 1: Bänder über 1 Mio und Deckel ab 50 Mio', () => {
+    expect(det(b('TI', 1_000_000))).toBe(3875);   // Knick, unverändert
+    expect(det(b('TI', 1_500_000))).toBe(5125);   // 3875 + 2,5‰ × 500k
+    expect(det(b('TI', 2_000_000))).toBe(6375);   // Staffelgrenze
+    expect(det(b('TI', 3_000_000))).toBe(8375);   // 6375 + 2‰ × 1 Mio
+    expect(det(b('TI', 50_000_000))).toBe(37_375);
+    expect(det(b('TI', 60_000_000))).toBe(37_375); // > 50 Mio nicht mehr berücksichtigt
+    expect(det(b('TI', 100_000))).toBe(500);       // Minimum
+  });
+  it('FR Art. 4 al. 1 ch. 1bis: Staffel mit Höchstbetrag 10’000', () => {
+    expect(det(b('FR', 1_000_000))).toBe(2455);
+    expect(det(b('FR', 3_000))).toBe(150);
+    expect(det(b('FR', 5_000))).toBe(150);        // Staffelgrenze a)
+    expect(det(b('FR', 20_000))).toBe(255);       // Staffelgrenze b)
+    expect(det(b('FR', 10_000_000))).toBe(9955);
+    expect(det(b('FR', 20_000_000))).toBe(10_000); // Deckel
+  });
+  it('VS Art. 13 al. 1: kumulative Staffel ohne Höchstbetrag', () => {
+    expect(det(b('VS', 1_000_000))).toBe(3875);
+    expect(det(b('VS', 5_000))).toBe(200);
+    expect(det(b('VS', 200_000))).toBe(1175);     // Staffelgrenze
+    expect(det(b('VS', 20_000_000))).toBe(31_875);
+  });
+  it('NE Art. 14 ch. 54: Pauschalen je Tranche (obere Grenze inklusive)', () => {
+    expect(det(b('NE', 1_000_000))).toBe(2950);
+    expect(det(b('NE', 1_000_001))).toBe(3100);
+    expect(det(b('NE', 8_000_000))).toBe(9600);
+    expect(det(b('NE', 8_000_001))).toBe(10_000);
+    expect(det(b('NE', 10_000_000))).toBe(10_000);
+  });
+  it('GE REmNot Art. 10 al. 1: marginale Staffel, Minimum 200', () => {
+    expect(det(b('GE', 1_000_000))).toBe(5200);
+    expect(det(b('GE', 100_000))).toBe(700);
+    expect(det(b('GE', 20_000))).toBe(200);       // 140 → Minimum
+    expect(det(b('GE', 200_000))).toBe(1400);     // Staffelgrenze
+    expect(det(b('GE', 20_000_000))).toBe(28_950);
+  });
+  it('VD TNo Art. 14 al. 1: Staffel, Minimum 300', () => {
+    expect(det(b('VD', 1_000_000))).toBe(2875);
+    expect(det(b('VD', 30_000))).toBe(300);       // 210 → Minimum
+    expect(det(b('VD', 100_000))).toBe(700);      // Staffelgrenze
+    expect(det(b('VD', 20_000_000))).toBe(17_625);
+  });
+  it('JU Art. 9 al. 1: Staffel, Minimum 200, Höchstbetrag 15’000', () => {
+    expect(det(b('JU', 1_000_000))).toBe(3525);
+    expect(det(b('JU', 20_000))).toBe(200);       // 140 → Minimum
+    expect(det(b('JU', 100_000))).toBe(700);      // Staffelgrenze
+    expect(det(b('JU', 20_000_000))).toBe(15_000); // 18’275 → Deckel
+  });
+  it('BE GebVN Anhang 1: Rahmen Minimum–Maximum je Zeile (Spanne, kein Punktwert)', () => {
+    expect(rahmen('BE', 1_000_000)).toEqual([2915, 4575]);
+    expect(rahmen('BE', 1_000_001)).toEqual([3065, 4845]);
+    expect(rahmen('BE', 100_000)).toEqual([715, 925]);
+    expect(rahmen('BE', 20_000_000)).toEqual([18_865, 30_825]);
+  });
+  it('SO GT § 25 Abs. 1 lit. a: eine Gebühr 100–10’000 für Beurkundung und Eintrag zusammen', () => {
+    expect(rahmen('SO', 1_000_000)).toEqual([100, 10_000]);
+    expect(berechneNotariatGrundbuch({ kanton: 'SO', kaufpreisCHF: 1_000_000 }).gesamtGebuehren).toEqual({ vonChf: 100, bisChf: 10_000 });
   });
 });
