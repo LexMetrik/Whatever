@@ -23,6 +23,7 @@ Fremde Skripte (Scratch anderer Agenten/Worktrees) nur lesen, nie ausführen.
 - Vor Baubeginn Kollisions-Sonden: offene PRs, Remote-Zweige, `git worktree list`; Treffer melden.
 - Tore, Golden und Bug-Checks fährst du selbst vor dem Bericht. Typprüfung nur `npx tsc -b`; lokal mindestens `src/tests/design-*` und `*-ratsche.test.tsx`.
 - `refactor(`-Commits ändern keine Testdatei (§6.3).
+- FEHLERBESTAND-Zeilen bucht du «erledigt <Kürzel> (PR folgt)», nie mit Zweig-SHAs (nach dem Squash unerreichbar).
 - Selektor-Wechsel (Rolle, Tag, Name): `e2e/**`, `src/tests/**` auf den alten Selektor greppen.
 - Tests mit Randdaten; neue Eingabefelder in alle Konsumenten (Rechner, Vorlagen) verdrahten und testen.
 - Nie die eigene Arbeit quittieren (kein `gegenpruefung:ok`, kein Gegenpruefung-Trailer).
