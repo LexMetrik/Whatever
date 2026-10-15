@@ -14,12 +14,20 @@ import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls';
 // Nachher (5 Läufe je Zelle): Entscheid @375 0.0001 · @1366 0.0002 · @1440 0.0002
 // · @1920 0.0001 (sd ≤ 0.0001); Material @375 0.0004 · @1366 0.0003.
 //
-// BEWUSST NICHT GEDECKT: Material @≥1440×900. Dort bleibt ein Rest-CLS
-// (0.019 @1440×900, 0.032–0.078 @1920) — eine ANDERE Quelle: das
-// Verweis-Kontext-Panel («Leitentscheide», `KontextPanel`) wächst nach dem
-// asynchronen Laden von ≈ 200 auf ≈ 1170 px und zieht den Footer in den Fold
-// (gemessen: `section` 201→1173 px, 32 ms nach dem Kopf). Das ist nicht die
-// Ladeanzeige, sondern die Panel-Reserve (W2·27-Fläche, Posten in der Rückgabe).
+// NACHZUG LESER-NAV Paket E (15.10.2026) · Material @≥1440 jetzt GEDECKT. Der
+// Rest-CLS dort (0.019 @1440×900, 0.032 @1920×1000, 0.1333 @2560×1440; je 5 Läufe,
+// sd 0.0000, Preview von origin/main) hatte eine ANDERE Quelle als die Ladeanzeige:
+// das Verweis-Kontext-Panel («Bundesgerichtsentscheide», `KontextPanel`) wächst nach
+// dem asynchronen Laden von ≈ 200 auf ≈ 1170 px und schiebt den Rückweg-Knopf
+// («← Alle Materialien», stand im Fold) und bei hohen Fenstern den Footer aus dem
+// Bild. Fix: der Artikel trägt dieselbe Mindesthöhe wie die Ladeanzeige
+// (`min-h-inhalt-region`, der Footer bleibt stehen) und der Rückweg-Knopf ist
+// `invisible` (Platz bleibt, Shifts unsichtbarer Elemente zählen nicht), solange das
+// Panel `data-kontext-laedt` trägt. Nachher: 0.0001–0.0006 in allen Zellen.
+// Die kurze Zelle (VERN-6008-30, Panel ohne Entscheide) deckt die Gegenrichtung ab:
+// eine feste Reserve am Panel liesse sie nach oben springen.
+// ROT ZU BEKOMMEN: `min-h-inhalt-region group/material` am Artikel und
+// `group-has-[[data-kontext-laedt]]/material:invisible` am Rückweg-Knopf streichen.
 //
 // Beobachter wie `materialien-cls.e2e.ts`: geteilter aus `helpers/cls.ts`,
 // `buffered: true` (zieht die Shifts der ganzen Ladephase nach), eine Sekunde
@@ -59,6 +67,9 @@ const ZELLEN: { name: string; pfad: string; breite: number; hoehe: number }[] = 
   { name: 'Entscheid', pfad: '/rechtsprechung/bger_1B_278_2022', breite: 375, hoehe: 812 },
   { name: 'Entscheid', pfad: '/rechtsprechung/bger_1B_278_2022', breite: 1920, hoehe: 1000 },
   { name: 'Material', pfad: '/materialien/ESTV-MWST-INFO-02', breite: 375, hoehe: 812 },
+  { name: 'Material', pfad: '/materialien/ESTV-MWST-INFO-02', breite: 1440, hoehe: 900 },
+  { name: 'Material', pfad: '/materialien/ESTV-MWST-INFO-02', breite: 1920, hoehe: 1000 },
+  { name: 'Material (kurz)', pfad: '/materialien/VERN-6008-30', breite: 1920, hoehe: 1000 },
 ];
 
 for (const z of ZELLEN) {
