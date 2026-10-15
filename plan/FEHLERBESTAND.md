@@ -444,7 +444,7 @@ zurück; Ersatz und Option «behalten» stehen in der Vorlage, Entscheid U2.
 | Kat. | Kl. | Merkzettel (Titel, gekürzt) | Umgang | Datei |
 |---|---|---|---|---|
 | Go/Auftrag unerfüllt | F | Kalender-Export: Termine als «frei» markieren (TRANSP:TRANSPARENT) | bleibt im Ordner; EINGANG-Zeile mit Marke «Go David» | 2026-09-24-kalender-export-termine-als-frei-markieren-transp-transparen |
-| Go/Auftrag unerfüllt | A | Reiterleisten-Abgleich + Merkliste bauen | erledigt LESER-NAV (PR folgt) | 2026-09-18-reiterleisten-abgleich-merkliste-bauen |
+| Go/Auftrag unerfüllt | A | Reiterleisten-Abgleich + Merkliste bauen | erledigt LESER-NAV #1374; offen: Typ-Glyphe im Reiter selbst (Breite vs. Wiedererkennung, Geschmack David), Scroll-Offset je Reiter (Routing-Eingriff > 80 Z.), Merkliste im ⌘K-Leerzustand/unter 481 px | 2026-09-18-reiterleisten-abgleich-merkliste-bauen |
 | Go/Auftrag unerfüllt | F | HN-D1 — Normverweise mit einem Ziel; Ort (Posten): src/components/NormText.tsx:118–123, NormChip.tsx:55, DESIGN-REGLEMENT.md:1593–1594 | bleibt im Ordner; EINGANG-Zeile mit Marke «Go David» | 2026-09-25-hn-d1-normverweise-mit-einem-ziel |
 | Go/Auftrag unerfüllt | F | Deaktiviert-/Hover-Varianten angleichen; Ort (Posten): pages/gesetz-leser/inhalt-ansichten.tsx:191, TabPanel.tsx:134 | bleibt im Ordner; EINGANG-Zeile mit Marke «Go David» | 2026-10-01-deaktiviert-hover-varianten-angleichen |
 | Go/Auftrag unerfüllt | A | Rest-Rückbau tote Rechtsprechungs-Zeilen: revisionFuer, data-leitfaelle, Revisions-Shard ohne Verbraucher, nicht scheiternde e2e-Zeilen; Ort (Posten): LeserLesespalte.tsx:77, index.css:4422, leserV3Modell.ts:101 … | bleibt im Ordner; EINGANG-Zeile mit Marke «Go David» | 2026-10-02-rest-rueckbau-tote-rechtsprechungs-zeilen-revisionfuer-data |
