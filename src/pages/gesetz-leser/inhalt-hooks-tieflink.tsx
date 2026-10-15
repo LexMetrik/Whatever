@@ -298,9 +298,9 @@ export function useTieflinkSprung(opts: {
     // ab, statt zurückzureissen. Damit gibt es genau EINEN Eigentümer des
     // Scrolls je Zeitpunkt (§5) statt zweier Schleifen im Rennen.
     //
-    // GEMESSEN wird die Bildhöhe am FENSTER, auch im Pane: `getBoundingClient-
-    // Rect().top` ist immer fenster-relativ, und das Pane liegt im Fenster —
-    // eine Grösse, die in beiden Lagen dasselbe misst (wie oben bei `letzteLage`).
+    // GEMESSEN wird gegen die Fläche des Scrollers: im Pane gegen den Pane-Rand
+    // (`getBoundingClientRect` ist fenster-relativ, der Pane-Rand ebenso), sonst
+    // gegen das Fenster (O-41: bis 15.10.2026 galt auch im Pane das Fenster).
     //
     // DER SCHALTER IST NICHT `aufgedeckt`, SONDERN `eingeschwungen`. Deckt der
     // Zeitdeckel (`AUFDECK_MS`) auf, WÄHREND die Lage noch wandert, steht das
@@ -336,7 +336,14 @@ export function useTieflinkSprung(opts: {
       if (!el) { beende(); return; }
       const vorLage = el.getBoundingClientRect().top;
       // Ziel ausserhalb des Bildes ⇒ der Scroll gehört jemand anderem: abgeben.
-      if (eingeschwungen && (vorLage < 0 || vorLage > window.innerHeight)) { beende(); return; }
+      // O-41: «Bild» ist im Pane die Fläche des Pane-Scrollers, nicht das Fenster —
+      // gemessen 15.10.2026 (1440×900, Pane-Rand bei 165 px): ein fremder Scroll,
+      // der das Ziel auf y 125 schob (über dem Pane-Rand, im Fenster), wurde auf 257
+      // zurückgezogen, weil «im Fenster» galt.
+      const rand = paneRoot(imPane, wurzel)?.getBoundingClientRect();
+      const oben = (rand?.top ?? 0) - 1;
+      const unten = (rand?.bottom ?? window.innerHeight) + 1;
+      if (eingeschwungen && (vorLage < oben || vorLage > unten)) { beende(); return; }
       // Verdeckt: jeden Frame nachziehen. Aufgedeckt: nur bei Weglaufen.
       if (!aufgedeckt || Math.abs(vorLage - letzteLage) > 1) springe(el);
       const lage = el.getBoundingClientRect().top;
