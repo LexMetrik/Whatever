@@ -71,7 +71,7 @@ afterEach(async () => {
 const ev = (name: string) => new (dom.document.defaultView as unknown as { Event: typeof Event }).Event(name, { bubbles: true });
 const app = () => dom.document.getElementById('app') as unknown as HTMLElement;
 const knoepfe = () => Array.from(dom.document.querySelectorAll('button[aria-pressed]')) as unknown as HTMLButtonElement[];
-const ansage = () => (dom.document.getElementById('lm-kopier-ansage')?.textContent ?? '').replace(/ /g, '');
+const ansage = () => (dom.document.getElementById('lm-kopier-ansage')?.textContent ?? '').replace(/\u00a0/g, '');
 async function klick(el: unknown) { await act(async () => { (el as HTMLElement).dispatchEvent(ev('click')); }); }
 
 async function mountKnoepfe(n: number) {
