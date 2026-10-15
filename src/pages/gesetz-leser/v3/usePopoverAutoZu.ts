@@ -1,6 +1,6 @@
 import { useEffect, useRef, type RefObject } from 'react';
 import { useDialogFokus } from '../../../components/layout/useDialogFokus';
-import { offeneModaleDialoge } from '../../../components/layout/modalerDialog';
+import { imMenue, offeneModaleDialoge } from '../../../components/layout/modalerDialog';
 import { tastendruckGehoertPane } from '../panePrioritaet';
 
 // ─── EIN Auto-Zu für alle aufziehbaren Flächen des Lesers V3 (H3) ────────────
@@ -153,6 +153,21 @@ export function usePopoverAutoZu({ offen, schliesse, wrapRef, panelRef, modus, a
       if (offeneModaleDialoge().length > 0) return;
       // … und nur das Blatt DES Panes, das den Tastendruck beansprucht.
       if (paneRolle != null && !tastendruckGehoertPane(paneRolle === 'sekundaer')) return;
+      // O-28 (15.10.2026): steht der Fokus in einem offenen MENÜ («Ansicht ▾» neben dem
+      // Blatt, `data-menue-flaeche`), gehört dieses Esc dem Menü — gemessen @1440 und
+      // @1024 (Blatt offen, dann «Ansicht» auf, Esc): EIN Esc schloss beide. Und hat eine
+      // andere Fläche das Esc schon angenommen (`useDialogFokus` markiert es), bleibt das
+      // Blatt ebenfalls stehen — gleichgültig, welcher der beiden Zuhörer zuerst läuft.
+      if (e.defaultPrevented || imMenue(document.activeElement)) return;
+      // Nachzug Gegenprüfung #1384: dasselbe für eine DIALOG-Fläche ohne Falle und ohne Menü-
+      // Markierung (`role="dialog"` ohne `aria-modal`, z. B. «Alle geöffneten Reiter»): hat sie den
+      // Fokus, ist sie die oberste Fläche. Lief das Blatt zuerst, schloss es sich und markierte das
+      // Esc als behandelt — der Dialog stieg aus und blieb offen. Esc schliesst die Fläche mit dem
+      // Fokus, nie die dahinter.
+      // Umschliesst der Dialog das Blatt selbst (Sheet-Rahmen), gehört das Esc dem Blatt.
+      const dialog = document.activeElement?.closest?.('[role="dialog"]');
+      if (dialog != null && !dialog.contains(wurzel)) return;
+      e.preventDefault();
       schliesseRef.current();
     };
     window.addEventListener('keydown', taste);

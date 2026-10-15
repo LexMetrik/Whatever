@@ -178,10 +178,16 @@ export function BlattFassung({ artikel, erlassKey, zitat, wort }: {
  *  «Änderungen» (Herleitung, Bedingungen und Umfangs-Schalter: `./PanelTafeln`,
  *  `erlassStandFuerArtikel`). Das Datum gehört dem ERLASS, nie dem Artikel. */
 export function ErlassStandZeile({ iso, token }: { iso: string; token: string }) {
+  // O-09 (15.10.2026): der Vorbehalt stand nur als `title` (Maus-Tooltip) — auf dem
+  // Handy und für Tastatur/Screenreader unsichtbar, obwohl er die Zeile erst ehrlich
+  // macht (§8: das Datum gehört dem Erlass, nicht dem Artikel). Jetzt als sichtbarer
+  // Satz in der leisen Tinte; der Wortlaut bleibt unverändert.
   return (
-    <p data-v3-blatt-fassung-erlass={token} className="px-3 pt-2 text-body-s text-ink-700"
-      title="Amtliches Inkrafttreten des Erlasses (Fedlex) — keine Aussage über spätere Änderungen dieses Artikels">
-      Erlass in Kraft seit {datumAnzeige(iso)}.
+    <p data-v3-blatt-fassung-erlass={token} className="px-3 pt-2 text-body-s text-ink-700">
+      Erlass in Kraft seit {datumAnzeige(iso)}.{' '}
+      <span data-v3-blatt-fassung-erlass-hinweis className="block text-xs text-ink-600">
+        Amtliches Inkrafttreten des Erlasses (Fedlex) — keine Aussage über spätere Änderungen dieses Artikels.
+      </span>
     </p>
   );
 }

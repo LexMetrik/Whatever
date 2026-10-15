@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useDialogFokus } from '../../../components/layout/useDialogFokus';
 import { imMenue, offeneModaleDialoge } from '../../../components/layout/modalerDialog';
 import { tastendruckGehoertPane } from '../panePrioritaet';
@@ -140,11 +140,22 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
   // nicht angesprungen haben (Klick, Zurück), verwirft alle. Ein Sprung ohne Frame (die Navigation blieb
   // aus) verfällt nach `FRIST_MS`, ein Lesart-Wechsel verwirft ihn sofort — nichts hängt an einem
   // Artikel, den niemand zeigt. Gesamtansicht: der Scroll-Spy führt, nichts wird gemerkt.
-  const angesprungenRef = useRef<{ token: string; bis: number }[]>([]);
+  const angesprungenRef = useRef<{ token: string; bis: number; pfeil?: true }[]>([]);
+  // O-28 (15.10.2026): ←/→ blättern über `onBlaettern` (`einzel.blaettere`) — eine Funktion, die ihr
+  // Ziel aus dem GEZEIGTEN Artikel ihres Renders rechnet. Zwei Pfeile vor dem nächsten Render riefen
+  // beide dieselbe Closure: gemessen (OR, Einzelansicht, Art. 12, zwei → in einem Tick) kam Art. 13
+  // statt 14, drei ← in einem Tick gingen um 1 statt 3 zurück. j/k laufen über `sprungRef` und tragen
+  // das Ziel selbst (oben); ←/→ bleiben bei `onBlaettern` (`springeZuArtikel` beendete dabei die
+  // Suche). Darum reihen sie sich auf: ein Schritt ist unterwegs (steht in `angesprungenRef`), jeder
+  // weitere Druck wartet in `wartendeRef`, bis der Artikel gezeigt wird, und läuft dann mit der
+  // FRISCHEN Closure. Tastenwiederholung (`e.repeat`) wartet nicht — gehalten durchblättern bleibt,
+  // wie es war, im Takt des Renders (#1265).
+  const wartendeRef = useRef<Array<-1 | 1>>([]);
   useEffect(() => {
     aktivRef.current = aktivToken;
     const i = aktivToken === null ? -1 : angesprungenRef.current.findIndex((s) => s.token === aktivToken);
     angesprungenRef.current = i < 0 ? [] : angesprungenRef.current.slice(i + 1);
+    if (i < 0) wartendeRef.current = []; // der Leser ist woanders gelandet (Klick, Zurück): nichts mehr nachholen
   }, [aktivToken]);
   useEffect(() => { sprungRef.current = onSprung; }, [onSprung]);
   // Wie `sprungRef`: über eine Ref gelesen, damit der Listener nicht bei jedem
@@ -154,9 +165,34 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
   // W2·5m · wie `panelRef`: über eine Ref, damit der eine Listener stehen bleibt.
   const blaetternRef = useRef(onBlaettern);
   useEffect(() => { blaetternRef.current = onBlaettern; }, [onBlaettern]);
+  /** EIN Blätter-Schritt: das Ziel wird gemerkt (damit der nächste Druck weiss, dass einer unterwegs ist). */
+  const blaetterSchritt = useCallback((richtung: -1 | 1) => {
+    const blaettere = blaetternRef.current;
+    if (!blaettere) return;
+    const liste = tokenRef.current;
+    const i = aktivRef.current === null ? -1 : liste.indexOf(aktivRef.current);
+    const ziel = i < 0 ? -1 : i + richtung;
+    // Nur MERKEN, wenn nichts unterwegs ist: läuft schon ein j/k-Sprung, bliebe ein zweiter Eintrag ohne
+    // Frame stehen (die Closure von `blaettere` zielt dann auf denselben Artikel) und sperrte die Folge-Drücke.
+    if (angesprungenRef.current.length === 0 && ziel >= 0 && ziel < liste.length) {
+      angesprungenRef.current.push({ token: liste[ziel], bis: Date.now() + FRIST_MS, pfeil: true });
+    }
+    // Nachzug Gegenprüfung #1384: ein Ziel ausserhalb des Bereichs (Ende/Anfang des Erlasses) beendet die
+    // Folge — ohne Eintrag kommt kein Frame mehr, ein weiter wartender Druck bliebe liegen und würde
+    // beim nächsten Frame (etwa dem des Gegen-Pfeils) ungefragt nachgeholt.
+    if (ziel < 0 || ziel >= liste.length) wartendeRef.current = [];
+    blaettere(richtung);
+  }, []);
+  // Nach dem Zeigen des angesprungenen Artikels den nächsten wartenden Druck ausführen. Steht HINTER
+  // dem Effekt oben, der `blaetternRef` nachführt: gelaufen wird mit der Closure des NEUEN Renders.
+  useEffect(() => {
+    if (angesprungenRef.current.length > 0) return;
+    const richtung = wartendeRef.current.shift();
+    if (richtung !== undefined) blaetterSchritt(richtung);
+  }, [aktivToken, blaetterSchritt]);
   // An der LESART hängt die Merkliste, nicht an der Funktion (`blaettere` ist bei jedem Render neu).
   const imEinzelmodus = onBlaettern !== undefined;
-  useEffect(() => { angesprungenRef.current = []; }, [imEinzelmodus]); // Lesart gewechselt: gemerkte Sprünge gelten nicht mehr
+  useEffect(() => { angesprungenRef.current = []; wartendeRef.current = []; }, [imEinzelmodus]); // Lesart gewechselt: gemerkte Sprünge gelten nicht mehr
   // A2: wie `sprungRef` über eine Ref — der Effekt unten hat bewusst KEINE
   // Abhängigkeiten (ein Listener je Leser, für die ganze Lebensdauer).
   const paneRolleRef = useRef(imSekundaerenPane);
@@ -228,13 +264,21 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
       // (D-E4), erst dadurch sind sie hier frei.
       const richtung = BLAETTERN.get(e.key);
       if (richtung !== undefined) {
-        const blaettere = blaetternRef.current;
-        if (!blaettere) return;
+        if (!blaetternRef.current) return;
         // B11-B01/ED10: ein seitlich scrollbarer Container (breite Tabelle) hat die Pfeile
         // selbst — kein Blättern, kein `preventDefault` (Herleitung: `./leserTastaturZiel`).
         if (inWaagrechtemScroller(e.target)) return;
         e.preventDefault();
-        blaettere(richtung);
+        // O-28: ein Schritt ist noch nicht gezeigt ⇒ dieser Druck wartet (Herleitung oben).
+        const offen = angesprungenRef.current.at(-1);
+        if (offen && offen.bis < Date.now()) { angesprungenRef.current = []; wartendeRef.current = []; }
+        // Nur hinter einem PFEIL-Schritt wird gewartet; ein j/k-Sprung davor bleibt, wie er war (der Pfeil
+        // läuft sofort — beide Wege zielten bisher auf denselben, noch nicht gezeigten Artikel).
+        if (angesprungenRef.current.at(-1)?.pfeil) {
+          if (!e.repeat) wartendeRef.current.push(richtung);
+          return;
+        }
+        blaetterSchritt(richtung);
         return;
       }
       if (e.key === 'r') {
@@ -286,7 +330,7 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, []);
+  }, [blaetterSchritt]);
 
   if (!hilfeOffen) return null;
   return (
