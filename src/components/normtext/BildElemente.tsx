@@ -46,6 +46,10 @@ export function BildFigur({ bild }: { bild: BildDaten }) {
         decoding="async"
         width={bild.breite}
         height={bild.hoehe}
+        // LESER-NAV/O-34e: `breite`/`hoehe` sind Fedlex-`data-scaled-*` in mm (≈ 600 dpi
+        // der PNG), nicht Pixel — als width-Attribut gelesen stand die Formel 58 px klein.
+        // Attribute bleiben als Seitenverhältnis-Reserve, die Breite kommt in mm.
+        style={bild.breite ? { width: `${bild.breite}mm` } : undefined}
         className="block h-auto max-w-full rounded-md border border-line bg-paper-raised"
       />
       <figcaption className="mt-1.5 text-xs text-ink-500">
