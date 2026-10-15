@@ -101,8 +101,12 @@ describe('HN-D2 B — Stufe 1: SeitenTitel = Literata 400, von sich aus', () => 
     for (const k of [...FREMDE_GEWICHTE, ...FREMDE_FAMILIEN]) expect(t, k).not.toContain(k);
   });
 
-  it('die Übergangs-Prop `stimme="serif"` ändert nichts; es gibt keine Display-Stimme mehr', () => {
+  it('es gibt keine Stimmen-Prop und keine Display-Stimme mehr (`stimme` ist ein Typfehler und ändert nichts)', () => {
+    // DEKLARIERTE ANPASSUNG (LESER-NAV, 15.10.2026, §6.3): die Prop ist gestrichen (N10-14); die
+    // Assertion `mit === ohne` bleibt, die Prop steht nur noch unter `@ts-expect-error` — `tsc -b`
+    // schlägt an, sobald jemand sie wieder einführt.
     const ohne = renderToString(<PaneProvider value={KEIN_PANE}><SeitenTitel>OR</SeitenTitel></PaneProvider>);
+    // @ts-expect-error — `stimme` existiert nicht mehr
     const mit = renderToString(<PaneProvider value={KEIN_PANE}><SeitenTitel stimme="serif">OR</SeitenTitel></PaneProvider>);
     expect(mit).toBe(ohne);
   });

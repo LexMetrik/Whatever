@@ -2859,12 +2859,10 @@
   }
   /* W2·29 S2 · Titelblatt-Band: Identität auf der Registerfläche (Farbe als
      Fläche, David 22.9.2026). Nur Tinte mit 4.5:1 darauf (ink-500 4.22 → ③b);
-     Stand/Warnung/Aktionen bleiben auf dem Papier (warn-700 hier 4.45). */
-  .lc-titelblatt-band {
-    background: var(--reg-g-flaeche);
-    border-top: 2px solid var(--reg-g);
-    padding: 0.875rem 1rem 1rem;
-  }
+     Stand/Warnung/Aktionen bleiben auf dem Papier (warn-700 hier 4.45).
+     LESER-NAV (15.10.2026): das Rezept (Fläche · 2-px-Strich · Innenabstand)
+     steht seit dem Zusammenzug EINMAL bei `.ub-kopf` («BAND-REZEPT»);
+     `.lc-titelblatt-band` ist dort der Leser-Modifier (Register fest «Gesetze»). */
   /* Selected-Zustand für Toggle-Chips (W2·17-UI-BEFUNDE-B1, LM-040 · F4
      «selected»): der gewählte Chip einer Facetten-Reihe muss OHNE Farbvergleich
      erkennbar sein — vorher trug er nur eine Rahmen-/Textfarbnuance auf
@@ -4588,7 +4586,16 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
 .lc-route[data-reg="r"] { --reg-marke-flaeche: var(--reg-r-flaeche); }
 .lc-route[data-reg="m"] { --reg-marke-flaeche: var(--reg-m-flaeche); }
 .lc-route[data-reg="w"] { --reg-marke-flaeche: var(--reg-w-flaeche); }
-.ub-kopf {
+/* BAND-REZEPT (LESER-NAV, 15.10.2026, HN-D2 «Eine Titel- und Abschnittsordnung»):
+   EIN Rezept für jedes Titelblatt-Band — Fläche und 2-px-Strich kommen aus den
+   zwei Variablen `--reg-marke-flaeche`/`--reg-marke` (Register der Route, s. o.
+   und GB-1; ohne Register neutral `--well`/`--rule`). Vorher standen zwei Kopien:
+   `.ub-kopf` (Register der Route) und `.lc-titelblatt-band` (Leser S2, fest
+   «Gesetze», dazu je eine Einzelregel für «r» und «m»). Die Leser-Klasse bleibt
+   als DOM-Haken, trägt aber kein eigenes Rezept mehr, nur die Register-Wahl
+   (Modifier unter `.wk-kopf`). */
+.ub-kopf,
+.lc-titelblatt-band {
   background: var(--reg-marke-flaeche, var(--well));
   border-top: 2px solid var(--reg-marke, var(--rule));
   padding: 0.875rem 1rem 1rem;
@@ -4608,6 +4615,13 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
    Kontrast (gemessen, V1): Overline ink-600 und H1 ink-900 auf reg-w-flaeche,
    Werte im PR-Body W2·29-WERKBANK-VORLAGEN V1. */
 .wk-kopf { --reg-marke: var(--reg-w); --reg-marke-flaeche: var(--reg-w-flaeche); }
+/* Leser-Band (`layout/LeserKopfGeruest`, `form="titelblatt"`): das Band trägt sein
+   Register selbst, unabhängig von der Route (Pane, Reiter) — fest «Gesetze» (Entscheid
+   David 22.9.2026, S2), `data-reg="r"` für den Entscheid-Leser (REST S1), «Materialien»
+   über die Route (REST S2). Dasselbe Muster wie `.wk-kopf`: nur die zwei Variablen. */
+.lc-titelblatt-band { --reg-marke: var(--reg-g); --reg-marke-flaeche: var(--reg-g-flaeche); }
+.lc-titelblatt-band[data-reg="r"] { --reg-marke-flaeche: var(--reg-r-flaeche); --reg-marke: var(--reg-r); }
+.lc-route[data-reg="m"] .lc-titelblatt-band { --reg-marke-flaeche: var(--reg-m-flaeche); --reg-marke: var(--reg-m); }
 
 /* Ausgabe-Zeile unter der H1: Archivo 13 px, Tinte auf der Fläche. */
 .ub-ausgabe {
@@ -5248,10 +5262,8 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
    `.lc-route[data-reg] header .lc-overline`: kursive Literata in `reg-r`,
    7.70 / 6.34:1 auf der Fläche); diese Regel ist der Boden ausserhalb davon.
    Nur `[data-reg]`: das Gesetzes-Band bleibt unberührt. */
-.lc-titelblatt-band[data-reg="r"] {
-  background: var(--reg-r-flaeche);
-  border-top-color: var(--reg-r);
-}
+/* (LESER-NAV 15.10.2026: Fläche und Strich «r» setzt der Modifier
+   `.lc-titelblatt-band[data-reg="r"]` beim BAND-REZEPT, unter `.wk-kopf`.) */
 /* (Ergänzung 30.9.2026, W2·19 Kleinaufräumen: hier stand `.lc-titelblatt-band[data-reg]
    .lc-overline { color: var(--ink-600) }` — die Rolle «Tinte leise» (DK-16) trägt `.lc-titelblatt-band`
    samt Overline; gemessen Farbe vorher = nachher. Der Material-Zweig (`[data-reg="m"]`, unten)
@@ -5574,10 +5586,8 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
    (K1); ink-500 der Fakten hebt Regel ③b (oben) auf ink-600. Der Band-Strich
    IST die Registermarke; die 3.5-rem-Marke am Routenkopf (GB-1) entfällt hier
    wie bei `.ub-kopf`. */
-.lc-route[data-reg="m"] .lc-titelblatt-band {
-  background: var(--reg-m-flaeche);
-  border-top-color: var(--reg-m);
-}
+/* (LESER-NAV 15.10.2026: Fläche und Strich «m» setzt der Modifier
+   `.lc-route[data-reg="m"] .lc-titelblatt-band` beim BAND-REZEPT, unter `.wk-kopf`.) */
 /* Sonderregel bleibt (W2·19 Kleinaufräumen 2, 30.9.2026, gemessen im Build @1280):
    ③ `.lc-route[data-reg] header .lc-overline` greift im Band (das Band ist ein
    `div` IM `<header>`) und liefert dort die Registermarke — g hell/dunkel
