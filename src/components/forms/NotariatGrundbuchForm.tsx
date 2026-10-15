@@ -27,7 +27,7 @@ import { chfGanz as chf } from '../../lib/vorlagen/datum';
 const DISCLAIMER =
   'Erwerbs-Nebenkosten beim Grundstückkauf: Beurkundungsgebühr (Notariat) + Grundbucheintrag, optional Grundpfand (Schuldbrief) und Handänderungssteuer. ' +
   'Kantonale Tarife nach Kaufpreis bzw. Pfandsumme; aufwand-/bandbreitenbasierte Tarife (freies Notariat) erscheinen als Spanne oder «nach Vereinbarung», nie als erfundener Punktwert. ' +
-  'Die Handänderungssteuer ist eine kantonale/kommunale STEUER (keine Gebühr); Befreiungen sind einzelfallabhängig und nicht berücksichtigt. Auslagen und MwSt. (freies Notariat) sind nicht enthalten. Nicht abgenommen. Keine Rechtsberatung.';
+  'Die Handänderungssteuer ist eine kantonale/kommunale STEUER (keine Gebühr); Befreiungen sind einzelfallabhängig und nicht berücksichtigt. Auslagen sind nicht enthalten; MwSt nach kantonaler Regelung (Tabelle im Ergebnis). Nicht abgenommen. Keine Rechtsberatung.';
 
 const NG_LINK_SPEC: PermalinkSpec<Record<string, unknown>> = {
   kanton: { p: 'kt', typ: 'str', gueltig: einerVon(...KANTONE) },
@@ -126,6 +126,7 @@ export function NotariatGrundbuchForm({ minimal = false, ohneDisclaimer = false 
         'Kanton': `${kanton} — ${KANTON_NAMEN[kanton]}`,
         'Kaufpreis': kaufpreis !== undefined ? chf(kaufpreis) : '–',
         ...(pfand ? { 'Grundpfand (Pfandsumme)': chf(pfandsumme ?? kaufpreis ?? 0) } : {}),
+        ...(ergebnis.pfandsteuer ? { 'Pfandsteuer (kantonale Steuer)': ngPostenText(ergebnis.pfandsteuer) } : {}),
         'Handänderungssteuer': steuer ? 'einbezogen' : 'ausgeblendet',
       },
       sections: [{ titel: 'Kostenschätzung', ergebnis: notariatGrundbuchBericht(ergebnis) }],
@@ -175,6 +176,7 @@ export function NotariatGrundbuchForm({ minimal = false, ohneDisclaimer = false 
             <PostenKarte titel="Beurkundung (Notariat)" posten={ergebnis.beurkundung} />
             <PostenKarte titel="Grundbuch (Eigentumsübertragung)" posten={ergebnis.grundbuch} />
             {ergebnis.grundpfand && <PostenKarte titel="Grundpfand (Schuldbrief)" posten={ergebnis.grundpfand} />}
+            {ergebnis.pfandsteuer && <PostenKarte titel="Pfandsteuer (kantonale Steuer)" posten={ergebnis.pfandsteuer} akzent />}
             {ergebnis.handaenderungssteuer && <PostenKarte titel="Handänderungssteuer (Steuer)" posten={ergebnis.handaenderungssteuer} akzent />}
           </div>
 
@@ -183,9 +185,9 @@ export function NotariatGrundbuchForm({ minimal = false, ohneDisclaimer = false 
               <p className="text-xs text-ink-500">Gebühren gesamt (Notariat + Grundbuch{ergebnis.grundpfand ? ' + Grundpfand' : ''})</p>
               <p className="num text-body-l font-semibold text-ink-900">{spanneText(ergebnis.gesamtGebuehren)}</p>
             </div>
-            {steuer && ergebnis.handaenderungssteuer && ergebnisSpanne(ergebnis.handaenderungssteuer.ergebnis) && (
+            {((steuer && ergebnis.handaenderungssteuer && ergebnisSpanne(ergebnis.handaenderungssteuer.ergebnis)) || ergebnis.pfandsteuer) && (
               <div className="mt-1 flex items-baseline justify-between gap-3 flex-wrap">
-                <p className="text-xs text-ink-500">Total inkl. Handänderungssteuer</p>
+                <p className="text-xs text-ink-500">Total inkl. Steuern</p>
                 <p className="num text-body-l font-semibold text-ink-900">{spanneText(ergebnis.gesamtMitSteuer)}</p>
               </div>
             )}

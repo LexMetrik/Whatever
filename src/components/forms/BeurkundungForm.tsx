@@ -109,7 +109,7 @@ function AllgemeineBeurkundung({ art, startKanton, startWert }: { art: Geschaeft
     [vergleich, art, geschaeftswert, bereit],
   );
 
-  // Weitere Transaktionskosten (MwSt freies Notariat · HReg-Gebühr · Emissionsabgabe).
+  // Weitere Transaktionskosten (MwSt je Kanton · HReg-Gebühr · Emissionsabgabe).
   const gebuehrSpanne = ergebnis?.posten ? ergebnisSpanne(ergebnis.posten.ergebnis) : null;
   const zusatz = useMemo(
     () => (ergebnis && ergebnis.status === 'ok') ? weitereKosten(art, kanton, geschaeftswert, gebuehrSpanne) : null,
@@ -135,6 +135,7 @@ function AllgemeineBeurkundung({ art, startKanton, startWert }: { art: Geschaeft
         'Kanton': `${kanton} — ${KANTON_NAMEN[kanton]}`,
         ...(wertNoetig ? { [def.wertLabel ?? 'Geschäftswert']: geschaeftswert ? chf(geschaeftswert) : '–' } : {}),
         ...Object.fromEntries((zusatz?.posten ?? []).map((p) => [p.label, p.von === p.bis ? chf(p.von) : `${chf(p.von)} – ${chf(p.bis)}`])),
+        ...(zusatz?.mwstHinweis ? { 'MwSt-Behandlung': zusatz.mwstHinweis } : {}),
         ...(total ? { 'Total Notariat + Zusatzkosten (Schätzung)': total.von === total.bis ? chf(total.von) : `${chf(total.von)} – ${chf(total.bis)}` } : {}),
       },
       sections: [{ titel: 'Beurkundungsgebühr', ergebnis: beurkundungBericht(ergebnis) }],
@@ -162,10 +163,10 @@ function AllgemeineBeurkundung({ art, startKanton, startWert }: { art: Geschaeft
         <ErgebnisBlock>
           <PostenAnzeige ergebnis={ergebnis} />
 
-          {zusatz && zusatz.posten.length > 0 && (
+          {zusatz && (zusatz.posten.length > 0 || zusatz.mwstHinweis) && (
             <div className="mt-3 lc-tile">
-              <p className="text-xs text-ink-500 mb-2">Weitere Transaktionskosten (Schätzung)</p>
-              <ul className="space-y-1.5">
+              <p className="text-xs text-ink-500 mb-2">Weitere Transaktionskosten (Schätzung) und MwSt-Behandlung</p>
+              {zusatz.posten.length > 0 && <ul className="space-y-1.5">
                 {zusatz.posten.map((p, i) => (
                   <li key={i} className="flex items-baseline justify-between gap-3 text-body-s">
                     <span className="text-ink-700">
@@ -175,7 +176,8 @@ function AllgemeineBeurkundung({ art, startKanton, startWert }: { art: Geschaeft
                     <span className="num text-ink-900 whitespace-nowrap">{p.von === p.bis ? chf(p.von) : `${chf(p.von)} – ${chf(p.bis)}`}</span>
                   </li>
                 ))}
-              </ul>
+              </ul>}
+              {zusatz.mwstHinweis && <p className="mt-2 text-xs text-ink-500"><NormText text={zusatz.mwstHinweis} /></p>}
               {zusatz.posten.some((p) => p.hinweis) && (
                 <ul className="mt-2 space-y-1 text-xs text-ink-500 list-disc pl-5">
                   {zusatz.posten.filter((p) => p.hinweis).map((p, i) => <li key={i}><NormText text={p.hinweis ?? ''} /></li>)}
@@ -246,7 +248,7 @@ const DISCLAIMER =
   'Beurkundungskosten (Notariatsgebühr) für öffentlich beurkundbare Rechtsgeschäfte nach kantonalem Tarif. ' +
   'In den meisten Kantonen gilt ein wertbasierter Tarif auf den Geschäftswert; einzelne Geschäfte tragen Sondersätze (Testament, Erbvertrag) oder feste Gebühren (Vollmacht, Vorsorgeauftrag). ' +
   'Aufwand-/Rahmentarife (freies Notariat) erscheinen als Spanne oder «nach Vereinbarung», nie als erfundener Punktwert; wo der kantonale Tarif noch nicht verifiziert vorliegt, wird das offen ausgewiesen. ' +
-  'Grundbuch-/Handelsregistergebühren, Auslagen und allfällige MwSt. sind nicht enthalten. Nicht abgenommen. Keine Rechtsberatung.';
+  'Grundbuch-/Handelsregistergebühren und Auslagen sind nicht enthalten; MwSt nach kantonaler Regelung (Tabelle im Ergebnis). Nicht abgenommen. Keine Rechtsberatung.';
 
 type Bereich = 'kauf' | 'beurkundung' | 'grundbuch';
 const BEREICHE: { id: Bereich; label: string; hint: string }[] = [

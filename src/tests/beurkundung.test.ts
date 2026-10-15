@@ -218,3 +218,22 @@ describe('Beurkundung Schuldbrief — NE, TI, VD nach Norm (RL-28 Teil 2)', () =
     expect(SONDERTARIFE.schuldbrief!.VD!.stand).toBe('01.03.2016');
   });
 });
+
+describe('Beurkundung — MwSt-Hinweis je Kanton nach Tabelle (RL-33 Teil 2)', () => {
+  const text = (kanton: KantonCode, wert = 500_000) =>
+    berechneBeurkundung({ geschaeftsart: 'grundstueckkauf', kanton, geschaeftswertCHF: wert }).hinweise.join(' | ');
+
+  it('ZG inbegriffen, ZH zuzüglich nach Tarif, GE zuzüglich nach Bundesrecht', () => {
+    expect(text('ZG')).toMatch(/MwSt in den Tarifansätzen inbegriffen \(BGS 641\.1 Ziff\. 109bis\)/);
+    expect(text('ZH')).toMatch(/Zuzüglich MwSt 8,1 % \(nach kantonalem Tarif LS 243/);
+    expect(text('GE')).toMatch(/Zuzüglich MwSt 8,1 % \(nach Bundesrecht, MWSTG Art\. 25\)/);
+  });
+  it('Rest des Satzes (HReg-/Grundbuchgebühren, Auslagen nicht enthalten) bleibt, ohne «freies Notariat»', () => {
+    const h = berechneBeurkundung({ geschaeftsart: 'grundstueckkauf', kanton: 'ZH', geschaeftswertCHF: 500_000 }).hinweise[0];
+    expect(h).toMatch(/HReg-\/Grundbuchgebühren und Auslagen sind nicht enthalten\./);
+    expect(h).not.toMatch(/freies Notariat/);
+  });
+  it('kein Kanton nennt mehr «freies Notariat» als MwSt-Kriterium', () => {
+    for (const k of KANTONE) expect(text(k), k).not.toMatch(/MwSt\. \(freies Notariat\)/);
+  });
+});

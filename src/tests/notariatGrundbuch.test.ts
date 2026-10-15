@@ -249,3 +249,25 @@ describe('Notariat/Grundbuch — Posten Pfandsteuer (RL-28 Teil 3)', () => {
     expect(zh.ergebnis).not.toMatch(/Pfandsteuer/);
   });
 });
+
+describe('Notariat/Grundbuch — MwSt-Hinweis je Kanton nach Tabelle (RL-33 Teil 2)', () => {
+  const hinweise = (kanton: KantonCode) => berechneNotariatGrundbuch({ kanton, kaufpreisCHF: 800_000 }).hinweise.join(' | ');
+
+  it('ZG: MwSt in den Tarifansätzen inbegriffen, kein Aufschlag', () => {
+    const h = hinweise('ZG');
+    expect(h).toMatch(/MwSt in den Tarifansätzen inbegriffen \(BGS 641\.1 Ziff\. 109bis\)/);
+    expect(h).not.toMatch(/Zuzüglich MwSt/);
+  });
+  it('ZH: zuzüglich MwSt 8,1 % nach kantonalem Tarif', () => {
+    expect(hinweise('ZH')).toMatch(/Zuzüglich MwSt 8,1 % \(nach kantonalem Tarif LS 243 NotGebV § 2/);
+  });
+  it('GE: zuzüglich MwSt 8,1 % nach Bundesrecht', () => {
+    expect(hinweise('GE')).toMatch(/Zuzüglich MwSt 8,1 % \(nach Bundesrecht, MWSTG Art\. 25\)/);
+  });
+  it('kein veralteter Hinweis «freies Notariat» mehr, in keinem Kanton', () => {
+    for (const k of KANTONE) expect(hinweise(k), k).not.toMatch(/MwSt\. \(freies Notariat\)/);
+  });
+  it('BS: offener Vermerk (Zuordnung offen) bleibt sichtbar', () => {
+    expect(hinweise('BS')).toMatch(/Zuordnung offen/);
+  });
+});
