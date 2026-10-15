@@ -14,14 +14,15 @@
 // Quelle/Verifikation: doppelt verifiziert gegen Fedlex (StG SR 641.10 Stand
 // 1.1.2024; GebV-HReg SR 221.411.1 Stand 1.1.2021; MWSTG SR 641.20 Stand 31.3.2025;
 // MWSTV SR 641.201 Stand 1.1.2025). Auslagen (Porti, Auszüge,
-// Publikation), kantonale Pfandrechtssteuern und Verkehrs-/Gewinnsteuern bleiben
-// bewusst draussen (eigene Regimes) — die UI legt das offen.
+// Publikation) und Verkehrs-/Gewinnsteuern bleiben bewusst draussen (eigene Regimes);
+// die kantonale Pfandrechtssteuer kommt aus der eigenen Quelle `pfandsteuer` — die UI legt das offen.
 
 import { MWST_NORMALSATZ_PROZENT, type KantonCode } from '../data/tarif/typen';
 import type { GeschaeftsartId } from '../data/tarif/beurkundung-typen';
 import { MWST_BEHANDLUNG, ZH_MWST_INBEGRIFFEN, type MwstBehandlung } from '../data/tarif/mwst-notariat';
 import type { Spanne } from './notariatGrundbuch';
 import { EMISSIONSABGABE_FREIBETRAG_CHF, emissionsabgabeRoh } from './emissionsabgabe';
+import { berechnePfandsteuer } from './pfandsteuer';
 
 const MWST_QUELLE = { erlass: 'MWSTG (SR 641.20), Art. 25 Abs. 1; MWSTV (SR 641.201), Art. 14 Ziff. 13', url: 'https://www.fedlex.admin.ch/eli/cc/2009/615/de', stand: '31.3.2025' };
 const UMSATZGRENZE_HINWEIS = 'Keine Steuerpflicht (und damit keine MwSt), wenn die Urkundsperson unter der Umsatzgrenze von CHF 100 000 bleibt (MWSTG Art. 10 Abs. 2 lit. a; Gemeinwesen Art. 12 Abs. 3).';
@@ -68,22 +69,6 @@ export function emissionsabgabe(bemessungChf: number): number {
 export function mwstAufschlag(gebuehrChf: number): number {
   return Math.round(gebuehrChf * MWST_NORMALSATZ_PROZENT) / 100;
 }
-
-/** Kantonale Pfandrechtssteuer/-abgabe bei Errichtung eines Grundpfands
- *  (zusätzlich zu Notariats-/Grundbuchgebühr; nur einzelne Kantone, z. B.
- *  FR/GE/VS/JU). Satz in % der Pfandsumme. Quelle: amtlich verifiziert
- *  (FAHRPLAN-LUECKEN-SCHLIESSEN L3). Leer = Kanton erhebt keine. */
-const PFANDSTEUER: Partial<Record<KantonCode, { satzProzent: number; artikel: string; url: string; stand: string; freigrenzeChf?: number; basisAbrundenChf?: number; mindestChf?: number }>> = {
-  FR: { satzProzent: 0.75, artikel: "Art. 23 al. 1 i.V.m. Art. 5 al. 1 lit. a Loi sur les droits de mutation et les droits sur les gages immobiliers (LDMG, RSF 635.1.1)", url: "https://bdlf.fr.ch/app/fr/texts_of_law/635.1.1", stand: "2024-03-01" },
-  GE: { satzProzent: 0.65, artikel: "LDE (RSG D 3 30) Art. 84 et Art. 85", url: "https://silgeneve.ch/legis/data/rsg_d3_30.htm", stand: "2026-03-21" },
-  // JU: 3,5 o/oo, gesetzlicher Mindestbetrag CHF 30 (Art. 13 al. 1: "et de 30 francs au moins").
-  JU: { satzProzent: 0.35, mindestChf: 30, artikel: "Loi reglant les droits de mutation et les droits percus pour la constitution de gages (RSJU 215.326.2), Art. 1, Art. 11 et Art. 13 al. 1 (mind. 30 fr.)", url: "https://rsju.jura.ch/fr/viewdocument.html?idn=20037&id=33943&download=1", stand: "1978-11-09" },
-  // VD: Freigrenze (kein Freibetrag) — Pfandsummen bis und mit CHF 5'000 sind nach
-  // LTim Art. 3 al. 3 steuerbefreit; darüber ganze Pfandsumme × 2 o/oo.
-  // VD: 2 o/oo; Bemessungsbasis auf die vollen tausend Franken abgerundet (Art. 3 al. 2: "arrondie aux mille francs inferieurs").
-  VD: { satzProzent: 0.2, freigrenzeChf: 5000, basisAbrundenChf: 1000, artikel: "Loi sur le droit de timbre (LTim, BLV 652.11) du 10.12.2013, Art. 1 (objet: contrats de gages immobiliers art. 793ss CC), Art. 3 al. 2 (taux 2 o/oo, base arrondie aux mille francs inferieurs) et al. 3 (exoneration <= 5'000 fr.), Art. 4 (perception par le Registre foncier)", url: "https://www.lexfind.ch/tolv/119178/fr", stand: "01.01.2014" },
-  VS: { satzProzent: 0.2, artikel: "Art. 1, 8, 11 Abs. 1 lit. c und Art. 16 lit. b Loi sur les droits de mutations (LDM), RS 643.1", url: "https://lex.vs.ch/app/fr/texts_of_law/643.1", stand: "1.1.2013" },
-};
 
 export interface Zusatzposten {
   label: string;
@@ -163,24 +148,18 @@ export function weitereKosten(
     }
   }
 
-  // 2b. Kantonale Pfandrechtssteuer bei Schuldbrief-/Grundpfand-Errichtung.
-  const pfand = PFANDSTEUER[kanton];
-  if (pfand && art === 'schuldbrief' && wertChf !== undefined) {
-    // Freigrenze: bis und mit dem Schwellenwert steuerbefreit (z. B. VD ≤ 5'000).
-    const befreit = pfand.freigrenzeChf !== undefined && wertChf <= pfand.freigrenzeChf;
-    // Basis-Abrundung (VD LTim Art. 3 al. 2: auf die vollen tausend Franken).
-    const basis = pfand.basisAbrundenChf ? Math.floor(wertChf / pfand.basisAbrundenChf) * pfand.basisAbrundenChf : wertChf;
-    let betrag = befreit ? 0 : Math.round((basis * pfand.satzProzent) / 100);
-    // Gesetzlicher Mindestbetrag (JU RSJU 215.326.2 Art. 13 al. 1: mind. 30 fr.).
-    if (!befreit && pfand.mindestChf !== undefined) betrag = Math.max(betrag, pfand.mindestChf);
-    posten.push({
-      label: `Pfandrechtssteuer (${pfand.satzProzent} %)`,
-      von: betrag, bis: betrag,
-      erlass: pfand.artikel, url: pfand.url, stand: pfand.stand,
-      hinweis: befreit
-        ? `Pfandsumme bis CHF ${pfand.freigrenzeChf!.toLocaleString('de-CH')}: steuerbefreit (Freigrenze).`
-        : 'Kantonale Abgabe auf die Pfandsumme bei Errichtung des Grundpfands.',
-    });
+  // 2b. Kantonale Pfandrechtssteuer bei Schuldbrief-/Grundpfand-Errichtung (eigene Quelle:
+  //     data/tarif/pfandsteuer.ts, Rechenfunktion lib/pfandsteuer.ts; RL-28 Teil 3).
+  if (art === 'schuldbrief' && wertChf !== undefined) {
+    const pfand = berechnePfandsteuer(kanton, wertChf);
+    if (pfand) {
+      posten.push({
+        label: pfand.label,
+        von: pfand.betragChf, bis: pfand.betragChf,
+        erlass: pfand.erlass, url: pfand.url, stand: pfand.stand,
+        hinweis: pfand.hinweis,
+      });
+    }
   }
 
   // 3. Emissionsabgabe (1 % auf den CHF 1 Mio übersteigenden Teil = Freibetrag), nur AG/GmbH-Kapital.

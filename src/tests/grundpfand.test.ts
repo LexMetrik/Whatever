@@ -315,7 +315,7 @@ describe('RL-28 Teil 2 Grundpfand Romandie/TI — Beurkundung + Eintrag (RV-19)'
   it('NE: Stufen aus Ziff. 44 — Tippfehler «1.000.101» im Quelltext gelesen als 1.100.001 (Stufe 2.700 bis 1.200.000)', () => {
     // 1.100.001–1.200.000 = 2.700; 1.200.001–1.300.000 = 2.900; 1.300.001–1.400.000 = 3.000
     const n = (w: number) => {
-      const e = auswertenTarif(SONDERTARIFE.schuldbrief!.NE.regel, w);
+      const e = auswertenTarif(SONDERTARIFE.schuldbrief!.NE!.regel, w);
       if (!e.deterministisch) throw new Error('nicht beziffert');
       return e.betragChf;
     };
@@ -327,11 +327,11 @@ describe('RL-28 Teil 2 Grundpfand Romandie/TI — Beurkundung + Eintrag (RV-19)'
     expect(n(1_300_001)).toBe(3000);
     expect(n(3_000_000)).toBe(4600);
     expect(n(3_000_001)).toBe(4700);
-    expect(SONDERTARIFE.schuldbrief!.NE.regel.typ).toBe('staffel_inklusiv');
+    expect(SONDERTARIFE.schuldbrief!.NE!.regel.typ).toBe('staffel_inklusiv');
   });
 
   it('TI: Sockel der Notariatsstaffel exakt (…,50 statt gerundet), Lesart A im Hinweis mit Lesart B offengelegt', () => {
-    const t = SONDERTARIFE.schuldbrief!.TI;
+    const t = SONDERTARIFE.schuldbrief!.TI!;
     if (t.regel.typ !== 'staffel_sockel_prozent') throw new Error('unerwarteter Regeltyp');
     const sockel = t.regel.baender.map((b) => b.sockelChf);
     expect(sockel).toEqual([0, 500, 875, 1375, 1812.5, 2187.5, 3437.5, 6437.5, 8937.5, 18937.5]);
@@ -340,25 +340,25 @@ describe('RL-28 Teil 2 Grundpfand Romandie/TI — Beurkundung + Eintrag (RV-19)'
   });
 
   it('TI: der Eintragsteil hat kein Minimum von 30 (LTORF Art. 20 ist eine Fixgebühr für andere Vorgänge)', () => {
-    const g = GRUNDBUCH_EINTRAG.grundpfand!.TI;
+    const g = GRUNDBUCH_EINTRAG.grundpfand!.TI!;
     expect(g.regel).toEqual({ typ: 'promille', promille: 7 });
     expect(g.hinweis).toMatch(/Art\. 20/);
   });
 
   it('VS: Eintragsteil rundet die Pfandsumme auf volle 1’000 auf (OcRF Art. 32 al. 3); Hinweis ohne «2,5 ‰ max. 3’000»', () => {
-    const g = GRUNDBUCH_EINTRAG.grundpfand!.VS;
+    const g = GRUNDBUCH_EINTRAG.grundpfand!.VS!;
     expect(g.regel).toEqual({ typ: 'promille', promille: 1, minChf: 100, maxChf: 2500, basisRundung: { schrittChf: 1000, richtung: 'auf' } });
     expect(g.hinweis ?? '').not.toMatch(/3['’]000/);
   });
 
   it('JU: ‰-Satz in Franken (1 ‰), nur Minimum/Maximum in Punkten (40/10’000 × 1.05)', () => {
-    expect(GRUNDBUCH_EINTRAG.grundpfand!.JU.regel).toEqual({ typ: 'promille', promille: 1, minChf: 42, maxChf: 10500 });
-    expect(GRUNDBUCH_EINTRAG.grundpfand!.JU.hinweis).toMatch(/Lesart/);
+    expect(GRUNDBUCH_EINTRAG.grundpfand!.JU!.regel).toEqual({ typ: 'promille', promille: 1, minChf: 42, maxChf: 10500 });
+    expect(GRUNDBUCH_EINTRAG.grundpfand!.JU!.hinweis).toMatch(/Lesart/);
   });
 
   it('GE: Artikel-Feld «Art. 4» (nicht «Art. 4 al. 6»); VD: URL der Fassung 1.3.2016 (lexfind 210344)', () => {
-    expect(GRUNDBUCH_EINTRAG.grundpfand!.GE.artikel).not.toMatch(/al\. 6/);
-    expect(SONDERTARIFE.schuldbrief!.VD.quelleUrl).toBe('https://www.lexfind.ch/tolv/210344/fr');
+    expect(GRUNDBUCH_EINTRAG.grundpfand!.GE!.artikel).not.toMatch(/al\. 6/);
+    expect(SONDERTARIFE.schuldbrief!.VD!.quelleUrl).toBe('https://www.lexfind.ch/tolv/210344/fr');
   });
 
   it('Hinweise der Posten FR, GE, VS, VD, JU verweisen auf den separaten Posten Pfandsteuer', () => {

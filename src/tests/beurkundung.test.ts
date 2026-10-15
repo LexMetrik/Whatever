@@ -214,7 +214,7 @@ describe('Beurkundung Schuldbrief — NE, TI, VD nach Norm (RL-28 Teil 2)', () =
     expect(b('TI', 400_000)).toBe(1175);
   });
   it('VD: Quelle zeigt auf die Fassung 1.3.2016 (lexfind 210344), nicht auf die Fassung 2005 (128150)', () => {
-    expect(SONDERTARIFE.schuldbrief!.VD.quelleUrl).toBe('https://www.lexfind.ch/tolv/210344/fr');
-    expect(SONDERTARIFE.schuldbrief!.VD.stand).toBe('01.03.2016');
+    expect(SONDERTARIFE.schuldbrief!.VD!.quelleUrl).toBe('https://www.lexfind.ch/tolv/210344/fr');
+    expect(SONDERTARIFE.schuldbrief!.VD!.stand).toBe('01.03.2016');
   });
 });
