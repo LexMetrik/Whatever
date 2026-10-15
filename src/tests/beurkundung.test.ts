@@ -140,16 +140,14 @@ describe('Beurkundung — amtliche Stützstellen (3-fach verifiziert: find→Dop
   });
 });
 
-describe('Beurkundung — AG-Gründung-Parität: allg. System vs. Spezial-Engine (Drift-Schutz, Engine-Synergien 16.6.2026)', () => {
-  // Zwei LIVE geschaltete Encodings derselben Rechtsfrage (Notariatsgebühr der
-  // AG-Gründung):
-  //  · Spezial-Engine notariatsGebuehrGruendung  → genutzt in VorlageAgGruendung.tsx
-  //  · allg. Beurkundungsrechner, Geschäftsart 'ag_gruendung' → beurkundung.ts
-  // Driften sie, kostet dieselbe Gründung im AG-Wizard etwas anderes als im
-  // Beurkundungsrechner (§1/§5 Single Source). Die Spezial-Engine deckt 6 Kantone
-  // (ZH/BE/LU/SG/BS/AG); nur diese werden verglichen. Beide Schichten tragen
-  // 'recherche' (kein 'geprüft'). Der bisherige Parity-Test (oben) deckt nur
-  // 'grundstueckkauf' ab — dieser Block schliesst das Gründungs-Drift-Loch.
+describe('Beurkundung — AG-Gründung: Adapter liefert Engine-Wert (RL-36, ersetzt den Zwei-Encodings-Paritätstest)', () => {
+  // Bis RL-36 hielten notariatsGebuehrGruendung (Spezial-Kopie) und die allgemeine
+  // Engine zwei LIVE geschaltete Encodings derselben Gründungstarife; ein Paritätstest
+  // (6 Kantone, dichter Sweep) hielt sie zusammen. Der Spezial-Rechner ist jetzt ein
+  // dünner Adapter auf berechneBeurkundung('ag_gruendung'): die Parität ist
+  // konstruktionsbedingt, der Test prüft stattdessen, dass der Adapter den
+  // Engine-Wert nicht verfälscht — und zwar für ALLE 26 Kantone (zuvor 6) und
+  // ohne BE-Ausnahme über 20 Mio. Deklarierter Rückbau (W-05, Sammelfreigabe a).
 
   type Kanon =
     | { kind: 'betrag'; chf: number }
@@ -162,7 +160,7 @@ describe('Beurkundung — AG-Gründung-Parität: allg. System vs. Spezial-Engine
     const e = a.ergebnis;
     if (e.typ === 'betrag') return { kind: 'betrag', chf: Math.round(e.chf) };
     if (e.typ === 'rahmen') return { kind: 'rahmen', von: e.vonChf, bis: e.bisChf };
-    return { kind: 'offen' }; // 'aufwand' | 'offen' → beide nicht beziffert
+    return { kind: 'offen' }; // 'nicht_beziffert'
   };
   const kanonAllg = (k: KantonCode, kap: number): Kanon => {
     const r = berechneBeurkundung({ geschaeftsart: 'ag_gruendung', kanton: k, geschaeftswertCHF: kap });
@@ -179,24 +177,19 @@ describe('Beurkundung — AG-Gründung-Parität: allg. System vs. Spezial-Engine
   // Hinweis), BE liest jetzt die kapitalspezifische Anhang-4-Stufe (GebVN Art. 21)
   // statt einer flachen Gesamtspanne. Beide Encodings sind damit angeglichen.
   // Tripwire gegen jede künftige einseitige Tarif-Änderung in EINEM der Systeme.
-  it('ZH/LU/BS/AG/SG: deckungsgleich über dichten Kapital-Sweep', () => {
-    for (const k of ['ZH', 'LU', 'BS', 'AG', 'SG'] as KantonCode[]) {
+  it('alle 26 Kantone: Adapter == Engine über dichten Kapital-Sweep', () => {
+    for (const k of KANTONE as readonly KantonCode[]) {
       for (let w = 0; w <= 3_000_000; w += 25_000) {
-        expect(kanonAllg(k, w), `${k} @ ${w}`).toEqual(kanonSpezial(k, w));
+        expect(kanonSpezial(k, w), `${k} @ ${w}`).toEqual(kanonAllg(k, w));
       }
       for (const w of [5_000_000, 10_000_000, 20_000_000, 50_000_000]) {
-        expect(kanonAllg(k, w), `${k} @ ${w}`).toEqual(kanonSpezial(k, w));
+        expect(kanonSpezial(k, w), `${k} @ ${w}`).toEqual(kanonAllg(k, w));
       }
     }
   });
 
-  it('BE: Anhang-4-Stufe deckungsgleich (bis CHF 20 Mio.; Anhang endet dort)', () => {
-    // GebVN BE Art. 21 + Anhang 4: kapitalspezifische Lookup-Stufe [Min..Max]. Beide
-    // Systeme lesen nun dieselbe Stufe. Oberhalb CHF 20 Mio. endet Anhang 4 →
-    // Spezial-Engine 'offen' (nicht verglichen), allg. nutzt die 20-Mio.-Stufe.
-    for (const w of [0, 100_000, 150_000, 250_000, 500_000, 1_000_000, 2_000_000, 5_000_000, 10_000_000, 20_000_000]) {
-      expect(kanonAllg('BE', w), `BE @ ${w}`).toEqual(kanonSpezial('BE', w));
-    }
+  it('BE: Anhang-4-Stufe und Höchststufe über 20 Mio. (16\'450–27\'350)', () => {
     expect(kanonSpezial('BE', 1_000_000)).toEqual({ kind: 'rahmen', von: 2200, bis: 3600 });
+    expect(kanonSpezial('BE', 50_000_000)).toEqual({ kind: 'rahmen', von: 16450, bis: 27350 });
   });
 });

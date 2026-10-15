@@ -149,9 +149,9 @@ export const SCHLICHTUNG: Record<KantonCode, KantonalerTarif> = {
   },
   AI: {
     kanton: 'AI', erlassName: 'Verordnung über die Gebühren der Gerichte (GGV)', erlassNr: 'GS 173.810',
-    artikel: 'Art. 7', stand: '1.1.2024', verifiziert: 'recherche',
+    artikel: 'Art. 7', stand: '1.1.2024', verifiziert: 'doppelt',
     quelleUrl: 'https://ai.clex.ch/app/de/texts_of_law/173.810',
-    hinweis: 'Verfahrensabhängig (Art. 7 GGV): Erteilung Klagebewilligung 200–1000 · Urteilsvorschlag/Entscheid 300–1000 · Einigung/Rückzug/Säumnis 100–600 (lit. b–d; lit. a aufgehoben). Re-Verifikation 21.6.: amtlich bestätigt; der pauschale 50–500-Rahmen war falsch.',
+    hinweis: 'Verfahrensabhängig (Art. 7 GGV): Erteilung Klagebewilligung 200–1000 · Urteilsvorschlag/Entscheid 300–1000 · Einigung/Rückzug/Säumnis 100–600 (lit. b–d; lit. a aufgehoben) → Gesamtrahmen 100–1000. Re-Verifikation 21.6. und erneut 15.10.2026 (RL-36) am Volltext der LexWork-API (Version in Kraft seit 1.1.2024, nicht aufgehoben): amtlich bestätigt; der pauschale 50–500-Rahmen war falsch.',
     regel: { typ: 'rahmen', vonChf: 100, bisChf: 1000 },
   },
   SG: {
