@@ -57,8 +57,8 @@ describe('O-02 · Etikett vor dem Datum der Erlass-Zeile', () => {
     // Nachführung läge Jahre später). Bricht das, ist «Erlassen» neu zu bewerten.
     expect(INTERNATIONAL_EXTERN.length).toBeGreaterThan(0);
     for (const e of INTERNATIONAL_EXTERN) {
-      const celexJahr = /CELEX:3(\d{4})/.exec(e.quelleUrl)?.[1];
-      expect(e.stand.slice(0, 4), e.key).toBe(celexJahr);
+      const celexJahr = /CELEX:3(\d{4})/.exec(e.quelleUrl ?? '')?.[1];
+      expect((e.stand ?? '').slice(0, 4), e.key).toBe(celexJahr);
       expect(standEtikett(e)).toBe('Erlassen');
     }
   });
