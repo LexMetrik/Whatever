@@ -4,7 +4,12 @@
 import { describe, expect, it } from 'vitest';
 import { berechneNotariatGrundbuch, ngPostenText, type NgPosten } from '../lib/notariatGrundbuch';
 import { berechneBeurkundung } from '../lib/beurkundung';
-import type { KantonCode } from '../data/tarif/typen';
+import { auswertenTarif, type TarifRegel, type TarifErgebnis } from '../lib/tarif/staffel';
+import { KANTONE, type KantonCode, type KantonalerTarif } from '../data/tarif/typen';
+import { GRUNDPFAND } from '../data/tarif/grundpfand';
+import { NOTARIAT, GRUNDBUCH, HANDAENDERUNGSSTEUER } from '../data/tarif/notariat-grundbuch';
+import { SONDERTARIFE } from '../data/tarif/beurkundung';
+import { GRUNDBUCH_EINTRAG } from '../data/tarif/grundbuch';
 
 const pfand = (kanton: KantonCode, summe: number): NgPosten => {
   const p = berechneNotariatGrundbuch({ kanton, kaufpreisCHF: summe, mitGrundpfand: true, pfandsummeCHF: summe }).grundpfand;
@@ -86,7 +91,7 @@ describe('RL-28 Grundpfand-Posten Deutschschweiz — Beurkundung + Grundbucheint
     expect(text).toMatch(/Beurkundung: Teilbetrag/);
     expect(text).toMatch(/Grundbucheintrag: Teilbetrag/);
     expect(text).toMatch(/Summe der Teile/);
-    expect(ngPostenText(pfand('AG', 1_000_000))).toBe('CHF 3’633');
+    expect(ngPostenText(pfand('AG', 1_000_000))).toBe("CHF 3'633");
   });
 
   it('BE bleibt nicht beziffert (Beurkundung nach Zeitaufwand)', () => {
@@ -105,5 +110,138 @@ describe('RL-28 Grundpfand-Posten Deutschschweiz — Beurkundung + Grundbucheint
     expect(b('GL', 1_000_000)).toBe(500);
     expect(b('SH', 30_000)).toBe(50);
     expect(b('SZ', 10_000_000)).toBe(8100); // vorher ohne Degression 9000
+  });
+});
+
+// ─── Datenprüfung (Auflagen B1/B2 der RL-27-Gegenprüfung) ───────────────────
+// B1: `ergebnisRundung` nur auf Regeln, die für ALLE Bemessungswerte ein
+//     deterministisches Ergebnis liefern (sonst wirft die Auswertung je nach Eingabe).
+// B2: wo `ergebnisRundung` gesetzt ist, sind Mindest- und Höchstbeträge Vielfache
+//     des Schritts (sonst widerspricht die Klammer nach dem Runden der Rundung).
+// Zusätzlich: jede Rundungsangabe ist gültig (Schritt > 0, endlich).
+
+type RundungRegel = TarifRegel & { basisRundung?: { schrittChf: number; richtung: string }; ergebnisRundung?: { schrittChf: number; richtung: string } };
+
+function* alleRegeln(r: TarifRegel): Generator<TarifRegel> {
+  yield r;
+  if (r.typ === 'summe') for (const t of r.teile) yield* alleRegeln(t.regel);
+}
+
+/** true = die Regel liefert für jeden Bemessungswert ≥ 0 ein deterministisches Ergebnis. */
+export const immerDeterministisch = (r: TarifRegel): boolean => {
+  switch (r.typ) {
+    case 'fix': case 'promille': case 'sockel_prozent': case 'staffel_inklusiv': case 'staffel_exklusiv': case 'staffel_voll_prozent':
+      return true;
+    case 'staffel_sockel_prozent':
+      return r.aufschlagBisChf === undefined && !r.baender.some((b) => b.unterAbRahmen);
+    case 'summe':
+      return r.teile.every((x) => immerDeterministisch(x.regel));
+    default:
+      return false; // rahmen, staffel_rahmen, formel_extern
+  }
+};
+
+/** Alle Mindest-/Höchstbeträge, die nach dem Runden erneut klammern (Regel- und Bandebene). */
+const grenzen = (r: TarifRegel): number[] => {
+  const out: number[] = [];
+  const nimm = (...xs: Array<number | null | undefined>) => { for (const x of xs) if (typeof x === 'number') out.push(x); };
+  switch (r.typ) {
+    case 'promille': case 'sockel_prozent': nimm(r.minChf, r.maxChf); break;
+    case 'staffel_sockel_prozent': for (const b of r.baender) nimm(b.minChf, b.maxChf); break;
+    case 'staffel_voll_prozent': for (const b of r.baender) nimm(b.minChf, b.maxChf); break;
+    case 'summe': nimm(r.minChf, r.maxChf); break;
+    default: break;
+  }
+  return out;
+};
+
+const istVielfaches = (x: number, schritt: number): boolean => Math.abs(x / schritt - Math.round(x / schritt)) < 1e-9;
+
+/** Liefert die Verstösse gegen B1/B2 und die Gültigkeit der Rundungsangaben (leer = in Ordnung). */
+export const pruefeRundungsDaten = (regel: TarifRegel, name: string): string[] => {
+  const fehler: string[] = [];
+  for (const r of alleRegeln(regel) as Iterable<RundungRegel>) {
+    for (const feld of ['basisRundung', 'ergebnisRundung'] as const) {
+      const rd = r[feld];
+      if (!rd) continue;
+      if (!Number.isFinite(rd.schrittChf) || rd.schrittChf <= 0) fehler.push(`${name}: ${feld}.schrittChf ungültig (${rd.schrittChf})`);
+      if (!['auf', 'ab', 'naechste'].includes(rd.richtung)) fehler.push(`${name}: ${feld}.richtung ungültig (${rd.richtung})`);
+    }
+    if (r.ergebnisRundung) {
+      if (!immerDeterministisch(r)) fehler.push(`${name}: ergebnisRundung auf Regel «${r.typ}», die nicht für alle Werte deterministisch ist (B1)`);
+      for (const g of grenzen(r)) {
+        if (!istVielfaches(g, r.ergebnisRundung.schrittChf)) fehler.push(`${name}: Grenze ${g} ist kein Vielfaches von ${r.ergebnisRundung.schrittChf} (B2)`);
+      }
+    }
+  }
+  return fehler;
+};
+
+const alleTarife = (): Array<[string, KantonalerTarif]> => {
+  const out: Array<[string, KantonalerTarif]> = [];
+  const tabelle = (name: string, t: Partial<Record<KantonCode, KantonalerTarif>> | undefined) => {
+    for (const [k, v] of Object.entries(t ?? {})) if (v) out.push([`${name}.${k}`, v]);
+  };
+  tabelle('NOTARIAT', NOTARIAT); tabelle('GRUNDBUCH', GRUNDBUCH); tabelle('HANDAENDERUNGSSTEUER', HANDAENDERUNGSSTEUER);
+  tabelle('GRUNDPFAND', GRUNDPFAND);
+  for (const [art, t] of Object.entries(SONDERTARIFE)) tabelle(`SONDERTARIFE.${art}`, t);
+  for (const [art, t] of Object.entries(GRUNDBUCH_EINTRAG)) tabelle(`GRUNDBUCH_EINTRAG.${art}`, t);
+  return out;
+};
+
+describe('RL-28 Datenprüfung Rundungsangaben (B1/B2)', () => {
+  it('Tor kann scheitern: der Prüfer meldet synthetische Verstösse (§6.7)', () => {
+    const rahmen: TarifRegel = { typ: 'summe', teile: [{ etikett: 'a', regel: { typ: 'rahmen', vonChf: 1, bisChf: 2 } }], ergebnisRundung: { schrittChf: 10, richtung: 'ab' } };
+    expect(pruefeRundungsDaten(rahmen, 'x').some((f) => f.includes('B1'))).toBe(true);
+    const unterRahmen: TarifRegel = { typ: 'staffel_sockel_prozent', baender: [{ bisChf: Infinity, sockelChf: 500, abChf: 100000, prozent: 0.1, unterAbRahmen: true, minChf: 100 }], ergebnisRundung: { schrittChf: 10, richtung: 'auf' } };
+    expect(pruefeRundungsDaten(unterRahmen, 'x').some((f) => f.includes('B1'))).toBe(true);
+    const aufschlag: TarifRegel = { typ: 'staffel_sockel_prozent', aufschlagBisChf: 100, baender: [{ bisChf: Infinity, sockelChf: 0, abChf: 0, prozent: 1 }], ergebnisRundung: { schrittChf: 10, richtung: 'auf' } };
+    expect(pruefeRundungsDaten(aufschlag, 'x').some((f) => f.includes('B1'))).toBe(true);
+    const schief: TarifRegel = { typ: 'promille', promille: 1, minChf: 75, maxChf: 1005, ergebnisRundung: { schrittChf: 10, richtung: 'ab' } };
+    expect(pruefeRundungsDaten(schief, 'x').filter((f) => f.includes('B2')).length).toBe(2);
+    const schrittNull: TarifRegel = { typ: 'promille', promille: 1, basisRundung: { schrittChf: 0, richtung: 'auf' } };
+    expect(pruefeRundungsDaten(schrittNull, 'x').length).toBe(1);
+    const gut: TarifRegel = { typ: 'promille', promille: 1, minChf: 100, maxChf: 1000, ergebnisRundung: { schrittChf: 10, richtung: 'naechste' }, basisRundung: { schrittChf: 1000, richtung: 'auf' } };
+    expect(pruefeRundungsDaten(gut, 'x')).toEqual([]);
+  });
+
+  it('alle Tarif-Tabellen der Notariats-/Grundbuchdaten: Rundungsangaben gültig, B1 und B2 eingehalten', () => {
+    const tarife = alleTarife();
+    expect(tarife.length).toBeGreaterThan(200);
+    const fehler = tarife.flatMap(([name, t]) => pruefeRundungsDaten(t.regel, name));
+    expect(fehler).toEqual([]);
+  });
+
+  it('die in RL-28 gesetzten Rundungen sind vorhanden: BS aufwärts 1’000, AG nächste 1’000 (nur Eintragsteil)', () => {
+    const rund = (k: KantonCode) => (GRUNDBUCH_EINTRAG.grundpfand?.[k]?.regel as RundungRegel).basisRundung;
+    expect(rund('BS')).toEqual({ schrittChf: 1000, richtung: 'auf' });
+    expect(rund('AG')).toEqual({ schrittChf: 1000, richtung: 'naechste' });
+  });
+
+  it('alle 26 Kantone: Grundpfand-Posten ausgewertet über ein Raster ohne Wurf, nie negativ', () => {
+    const raster = [0, 1, 999, 1000, 1500, 12_345, 100_000, 599_999, 600_000, 1_234_500, 3_000_001, 10_000_000, 99_999_999];
+    for (const k of KANTONE) {
+      const t = GRUNDPFAND[k];
+      expect(t, k).toBeDefined();
+      expect(t.quelleUrl.startsWith('https://') || t.regel.typ === 'formel_extern', k).toBe(true);
+      expect(t.verifiziert).not.toBe('geprüft' as never);
+      for (const w of raster) {
+        const e: TarifErgebnis = auswertenTarif(t.regel, w);
+        if (e.deterministisch) expect(e.betragChf, `${k} ${w}`).toBeGreaterThanOrEqual(0);
+      }
+    }
+  });
+
+  it('Monotonie: der Grundpfand-Posten sinkt nirgends mit wachsender Pfandsumme (Deutschschweiz, Raster)', () => {
+    const ks: KantonCode[] = ['AG', 'BS', 'LU', 'OW', 'NW', 'GL', 'SH', 'TG', 'GR', 'ZH', 'SG', 'UR', 'SZ'];
+    for (const k of ks) {
+      let vorher = -1;
+      for (let w = 0; w <= 25_000_000; w += w < 3_000_000 ? 12_500 : 250_000) {
+        const e = auswertenTarif(GRUNDPFAND[k].regel, w);
+        if (!e.deterministisch) throw new Error(`${k} ${w}: nicht beziffert`);
+        expect(e.betragChf, `${k} ${w}`).toBeGreaterThanOrEqual(vorher - 1e-9);
+        vorher = e.betragChf;
+      }
+    }
   });
 });
