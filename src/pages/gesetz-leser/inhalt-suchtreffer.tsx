@@ -12,7 +12,7 @@ import { loeseArtikelEingabe, pfadLabels } from './suchTreffer';
 import { pfadZu } from './helpers';
 import { paneRoot } from './berechnungen';
 import {
-  baueLeserSuchIndex, sucheImErlass, zaehleTreffer, fundstellenFolge, artikelFundstellen,
+  baueLeserSuchIndex, sucheImErlass, zaehleTreffer, fundstellenFolge, artikelFundstellen, ersterKlickSprung,
   type SuchBereich,
 } from './leserSuche';
 
@@ -427,9 +427,9 @@ export function useSuchTreffer({
     zeigeFundstelle(((basis + delta) % len + len) % len);
   }, [folge, trefferPos, zeigeFundstelle]);
 
-  /** Klick auf einen Treffer-Eintrag: zur ERSTEN Fundstelle dieses Artikels. */
+  /** Klick auf einen Treffer-Eintrag: zur ersten GEMALTEN Fundstelle dieses Artikels (sonst zur ersten). */
   const springeZuTreffer = useCallback((token: string) => {
-    const n = folge.findIndex((f) => f.token === token);
+    const n = ersterKlickSprung(folge, token);
     if (n >= 0) zeigeFundstelle(n);
   }, [folge, zeigeFundstelle]);
 
