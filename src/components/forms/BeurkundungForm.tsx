@@ -266,7 +266,7 @@ const DISCLAIMER =
   'Beurkundungskosten (Notariatsgebühr) für öffentlich beurkundbare Rechtsgeschäfte nach kantonalem Tarif. ' +
   'In den meisten Kantonen gilt ein wertbasierter Tarif auf den Geschäftswert; einzelne Geschäfte tragen Sondersätze (Testament, Erbvertrag) oder feste Gebühren (Vollmacht, Vorsorgeauftrag). ' +
   'Aufwand-/Rahmentarife (freies Notariat) erscheinen als Spanne oder «nach Vereinbarung», nie als erfundener Punktwert; wo der kantonale Tarif noch nicht verifiziert vorliegt, wird das offen ausgewiesen. ' +
-  'Grundbuch-/Handelsregistergebühren und Auslagen sind nicht enthalten; MwSt nach kantonaler Regelung (Tabelle im Ergebnis). Nicht abgenommen. Keine Rechtsberatung.';
+  'Grundbuch-/Handelsregistergebühren und Auslagen sind nicht enthalten; MwSt nach kantonaler Regelung (Hinweis im Ergebnis). Nicht abgenommen. Keine Rechtsberatung.';
 
 type Bereich = 'kauf' | 'beurkundung' | 'grundbuch';
 const BEREICHE: { id: Bereich; label: string; hint: string }[] = [

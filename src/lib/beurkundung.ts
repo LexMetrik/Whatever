@@ -98,7 +98,7 @@ export function berechneBeurkundung(e: BeurkundungEingabe): BeurkundungErgebnis 
   const posten: NgPosten = { ergebnis, quelle: quelle(aufgeloest.tarif) };
 
   const hinweise: string[] = [];
-  hinweise.push(`Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren und Auslagen sind nicht enthalten. ${mwstSatz(e.kanton)}`);
+  hinweise.push(`Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren und Auslagen sind nicht enthalten. ${mwstSatz(e.kanton, e.geschaeftsart)}`);
   if (aufgeloest.herkunft === 'genereller_werttarif') hinweise.push('Es gilt der allgemeine wertbasierte Beurkundungstarif des Kantons (kein art-spezifischer Sondersatz im Tarif).');
   if (!ergebnis.deterministisch) hinweise.push('Aufwand-/Rahmentarif – die konkrete Festsetzung erfolgt im Einzelfall; ausgewiesen ist die Spanne bzw. der Hinweis.');
   if (aufgeloest.tarif.hinweis) hinweise.push(aufgeloest.tarif.hinweis);

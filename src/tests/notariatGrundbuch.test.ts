@@ -271,3 +271,12 @@ describe('Notariat/Grundbuch — MwSt-Hinweis je Kanton nach Tabelle (RL-33 Teil
     expect(hinweise('BS')).toMatch(/Zuordnung offen/);
   });
 });
+
+describe('Notariat/Grundbuch — Bedingung und Grundbuch-Satz (RL-33 Teil 2 Nachzug)', () => {
+  it('Kombi-Rechner: Bedingung Steuerpflicht, Grundbuch-MwSt nicht beziffert', () => {
+    const h = berechneNotariatGrundbuch({ kanton: 'ZH', kaufpreisCHF: 800_000 }).hinweise.join(' | ');
+    expect(h).toMatch(/soweit das Notariat mehrwertsteuerpflichtig ist \(MWSTG Art\. 10\)/);
+    expect(h).toMatch(/Grundbuchgebühren: allfällige MwSt nicht beziffert; Steuern ohne MwSt\./);
+    expect(h).toMatch(/Beurkundungs- und Schuldbrief-Notariatsgebühren:/);
+  });
+});

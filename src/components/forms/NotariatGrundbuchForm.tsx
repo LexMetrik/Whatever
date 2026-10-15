@@ -27,7 +27,7 @@ import { chfGanz as chf } from '../../lib/vorlagen/datum';
 const DISCLAIMER =
   'Erwerbs-Nebenkosten beim Grundstückkauf: Beurkundungsgebühr (Notariat) + Grundbucheintrag, optional Grundpfand (Schuldbrief) und Handänderungssteuer. ' +
   'Kantonale Tarife nach Kaufpreis bzw. Pfandsumme; aufwand-/bandbreitenbasierte Tarife (freies Notariat) erscheinen als Spanne oder «nach Vereinbarung», nie als erfundener Punktwert. ' +
-  'Die Handänderungssteuer ist eine kantonale/kommunale STEUER (keine Gebühr); Befreiungen sind einzelfallabhängig und nicht berücksichtigt. Auslagen sind nicht enthalten; MwSt nach kantonaler Regelung (Tabelle im Ergebnis). Nicht abgenommen. Keine Rechtsberatung.';
+  'Die Handänderungssteuer ist eine kantonale/kommunale STEUER (keine Gebühr); Befreiungen sind einzelfallabhängig und nicht berücksichtigt. Auslagen sind nicht enthalten; MwSt nach kantonaler Regelung (Hinweis im Ergebnis). Nicht abgenommen. Keine Rechtsberatung.';
 
 const NG_LINK_SPEC: PermalinkSpec<Record<string, unknown>> = {
   kanton: { p: 'kt', typ: 'str', gueltig: einerVon(...KANTONE) },
