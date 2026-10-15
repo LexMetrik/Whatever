@@ -1,7 +1,8 @@
 // ─── Notariats- & Grundbuchkosten-Engine ───────────────────────────────────
 import { describe, expect, it } from 'vitest';
 import { berechneNotariatGrundbuch, vergleichNotariatGrundbuch, ngPostenText, type NgPosten } from '../lib/notariatGrundbuch';
-import { NOTARIAT, GRUNDBUCH, GRUNDPFAND, HANDAENDERUNGSSTEUER } from '../data/tarif/notariat-grundbuch';
+import { NOTARIAT, GRUNDBUCH, HANDAENDERUNGSSTEUER } from '../data/tarif/notariat-grundbuch';
+import { GRUNDPFAND } from '../data/tarif/grundpfand';
 import { KANTONE, type KantonCode } from '../data/tarif/typen';
 
 const det = (p: NgPosten): number => {
