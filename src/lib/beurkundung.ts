@@ -40,7 +40,7 @@ export function tarifFuer(art: GeschaeftsartId, kanton: KantonCode): { tarif: Ka
 }
 
 /** Regel-Typen, die sich am Geschäftswert bemessen (Wertfeld in der UI nötig). */
-const WERT_TYPEN = ['promille', 'sockel_prozent', 'staffel_inklusiv', 'staffel_exklusiv', 'staffel_sockel_prozent', 'staffel_voll_prozent', 'staffel_rahmen'];
+const WERT_TYPEN = ['promille', 'sockel_prozent', 'staffel_inklusiv', 'staffel_exklusiv', 'staffel_sockel_prozent', 'staffel_voll_prozent', 'staffel_rahmen', 'summe'];
 
 /** true, wenn der für (Geschäftsart, Kanton) aufgelöste Tarif wertbasiert ist
  *  (die UI zeigt dann das Geschäftswert-Feld). Fehlt der Tarif noch, greift der
