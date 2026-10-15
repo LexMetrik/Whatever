@@ -21,7 +21,6 @@ import type { KantonCode, KantonalerTarif } from './typen';
 import { SONDERTARIFE } from './beurkundung';
 import { GRUNDBUCH_EINTRAG } from './grundbuch';
 
-const INF = Infinity;
 const R = 'recherche' as const;
 
 const beurkundung = (k: KantonCode): KantonalerTarif => {
@@ -57,10 +56,10 @@ export const GRUNDPFAND: Record<KantonCode, KantonalerTarif> = {
   // Teil 2/3 prüft gegen Norm: Die folgenden 14 Kantone sind wortgleich aus der früheren
   // Tabelle in notariat-grundbuch.ts übernommen (Werte, Metadaten, Hinweise unverändert).
   BE: { kanton: 'BE', erlassName: 'GebVN / GebV', erlassNr: 'BSG 169.81 / 154.21', artikel: 'Art. 18 / Anhang 4B Ziff. 3.3.1', stand: '1.3.2022', verifiziert: R, quelleUrl: 'https://www.belex.sites.be.ch/app/de/texts_of_law/169.81', regel: { typ: 'formel_extern', hinweis: 'Beurkundung nach Zeitaufwand (min. 200) + Eintrag 100 TP — KEIN Promille.' } },
-  SZ: { kanton: 'SZ', erlassName: 'Gebührentarif Notare/Grundbuchverwalter', erlassNr: 'SRSZ 213.512', artikel: '§ 5 Abs. 1 Nr. 2', stand: '1.7.2026', verifiziert: R, quelleUrl: 'https://www.sz.ch/public/upload/assets/7361/213_512.pdf', hinweis: 'CHF 45 je (auch angefangene) CHF 50’000 (≈ 0,9‰); bei Pfandsumme über 8 Mio. wird die Gebühr auf dem Mehrbetrag um 50 % reduziert, höchstens 10’350. QS-GP 2.7.2026: −50 %-Degression >8 Mio. am amtlichen PDF verifiziert und ergänzt (Tranchen-Aufrundung seit RL-28-Nachzug 15.10.2026 umgesetzt: Pfandsumme wird vor der Berechnung auf volle CHF 50’000 aufgerundet).', regel: { typ: 'staffel_sockel_prozent', basisRundung: { schrittChf: 50000, richtung: 'auf' }, baender: [
-    { bisChf: 8000000, sockelChf: 0, abChf: 0, prozent: 0.09, maxChf: 10350 },
-    { bisChf: INF, sockelChf: 7200, abChf: 8000000, prozent: 0.045, maxChf: 10350 },
-  ] } },
+  // SZ: § 5 Abs. 1 Nr. 2 ist EINE Gebühr für Notar und Grundbuchverwalter (kein Summen-
+  // Posten). Regel und Metadaten kommen aus SONDERTARIFE.schuldbrief.SZ (eine Quelle, §5);
+  // nur der Posten-Hinweis ist hier formuliert.
+  SZ: { ...beurkundung('SZ'), hinweis: 'Eine Gebühr für Beurkundung und Grundbucheintrag (§ 5 Abs. 1 Nr. 2): CHF 45 je angefangene CHF 50’000 der Pfandsumme (Aufrundung auf volle CHF 50’000 vor der Berechnung), über CHF 8 Mio. auf dem Mehrbetrag um 50 % reduziert, höchstens CHF 10’350.' },
   ZG: { kanton: 'ZG', erlassName: 'Verwaltungs-/Grundbuchgebührentarif', erlassNr: 'BGS 641.1 / 215.35', artikel: 'Ziff. 89bis / § 14 Abs. 1 Bst. e', stand: '2019/2025', verifiziert: R, quelleUrl: 'https://bgs.zg.ch/app/de/texts_of_law/215.35', hinweis: 'Aufwandbasiert: Beurkundung 210–850 + Eintrag bis 4’500.', regel: { typ: 'rahmen', vonChf: 410, bisChf: 5350 } },
   FR: { kanton: 'FR', erlassName: 'Tarif notaires / émoluments fixes RF / droits sur gages', erlassNr: 'RSF 261.16 / 214.5.16 / 635.1.1', artikel: 'Art. 4 ch. 3 / Art. 2 ch. 11 / Art. 23', stand: '2018/2024', verifiziert: R, quelleUrl: 'https://bdlf.fr.ch/app/fr/texts_of_law/261.16', hinweis: 'Notar-Staffel + Eintrag fix 100 + Grundpfandsteuer 0,75 % der Pfandsumme.', regel: { typ: 'promille', promille: 7.5, minChf: 230 } },
   SO: { kanton: 'SO', erlassName: 'Gebührentarif (GT)', erlassNr: 'BGS 615.11', artikel: '§ 25 Abs. 1 lit. m', stand: '1.3.2026', verifiziert: R, quelleUrl: 'https://bgs.so.ch/app/de/texts_of_law/615.11', hinweis: 'Gebührenrahmen (kein Promille).', regel: { typ: 'rahmen', vonChf: 20, bisChf: 10000 } },
