@@ -52,7 +52,7 @@ import { BREITE, HOEHE, MARKE_X, klickAnteil, leseRechteck, markeAnAnteil, marke
 // Sprungmechanik, die die Einstellung bereits respektiert.
 
 export function TrefferLandkarte({
-  spur, treffer, leseId, register, obenVar, gesamtFundstellen, wortEins, wortMehr, onSprung,
+  spur, treffer, leseId, register, obenVar, gesamtFundstellen, wortEins, wortMehr, artikelAnzahl, ueberschriften = 0, onSprung,
 }: {
   /** Die Bausteine des Dokuments mit ihrer Lage (`landkarteSpur`). */
   spur: readonly LandkarteFeld[];
@@ -81,6 +81,15 @@ export function TrefferLandkarte({
    *  «Abschnitten», die Zeile daneben «Artikel» bzw. «Erwägungen»). */
   wortEins: string;
   wortMehr: string;
+  /** LESER-NAV, FB O-36 b: der Name übernimmt das Zählmodell der Zähler-Zeile
+   *  («M Artikel · K Überschriften · N Fundstellen», `zaehleTreffer`) statt die
+   *  Marken zu zählen. Eine Marke steht je Trefferzeile — ein Kopf-Treffer steht
+   *  unter dem ersten Artikel seines Teilbaums, der selbst nicht treffen muss; die
+   *  Markenzahl wäre dann grösser als «M Artikel» (OR «Kündigung»: 74 Marken, 69
+   *  Artikel mit eigener Fundstelle, 28 Überschriften). Ohne Angabe: Marken = Artikel
+   *  (Entscheid-Leser, dort gibt es keine Köpfe). */
+  artikelAnzahl?: number;
+  ueberschriften?: number;
   /** Klick auf Streifen oder Marke: Sprung zum Baustein. */
   onSprung: (id: string) => void;
 }) {
@@ -108,9 +117,13 @@ export function TrefferLandkarte({
   // Zahl, und es entsteht keine dritte Wahrheit.
   const teilmenge = summeMarken < gesamtFundstellen;
   const bezug = teilmenge ? gesamtFundstellen : summeMarken;
-  const name = `Treffer-Landkarte: ${marken.length} ${marken.length === 1 ? wortEins : wortMehr}`
-    + ` · ${teilmenge ? `${summeMarken} von ` : ''}${bezug} ${bezug === 1 ? 'Fundstelle' : 'Fundstellen'}`
-    + (teilmenge ? ' · übrige ausserhalb' : '');
+  const artikel = artikelAnzahl ?? marken.length;
+  const name = 'Treffer-Landkarte: ' + [
+    // Wie in der Zähler-Zeile: ein Segment mit 0 entfällt, wo Überschriften stehen.
+    ...(artikel > 0 || ueberschriften === 0 ? [`${artikel} ${artikel === 1 ? wortEins : wortMehr}`] : []),
+    ...(ueberschriften > 0 ? [`${ueberschriften} ${ueberschriften === 1 ? 'Überschrift' : 'Überschriften'}`] : []),
+    `${teilmenge ? `${summeMarken} von ` : ''}${bezug} ${bezug === 1 ? 'Fundstelle' : 'Fundstellen'}`,
+  ].join(' · ') + (teilmenge ? ' · übrige ausserhalb' : '');
 
   return (
     <div

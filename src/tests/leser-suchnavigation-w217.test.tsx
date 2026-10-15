@@ -23,7 +23,7 @@ import { useMarkenSchalter, useSuchTreffer } from '../pages/gesetz-leser/inhalt-
 import { useTrefferSicht } from '../pages/gesetz-leser/v3/useTrefferSicht';
 import type { SuchBereich } from '../pages/gesetz-leser/leserSuche';
 import type { NormSnapshot } from '../lib/normtext/typen';
-import type { StrukturMap } from '../lib/normtext/browse';
+import { baueGliederungsbaum, type StrukturMap } from '../lib/normtext/browse';
 
 let root: Root | null = null;
 
@@ -33,6 +33,10 @@ function aufbauen(): HTMLElement {
     document,
     setTimeout: (...a: Parameters<typeof setTimeout>) => globalThis.setTimeout(...a),
     clearTimeout: (...a: Parameters<typeof clearTimeout>) => globalThis.clearTimeout(...a),
+    // O-36 b: Art. 3 liegt jetzt in einer (zugeklappten) Sektion — der Sprung öffnet
+    // sie und wartet auf Frames; der Stub liefert keinen, die Navigation selbst ist
+    // das Prüfziel.
+    requestAnimationFrame: () => 0,
   });
   vi.stubGlobal('document', document);
   vi.stubGlobal('MutationObserver', class { observe() {} disconnect() {} });
@@ -141,11 +145,14 @@ describe('(c) PE-C6-B01 / PE-C8-B02 · Bereichswechsel verwirft die Fundstellen-
   type Api = ReturnType<typeof useSuchTreffer>;
   function sonde(ziel: HTMLElement) {
     const { eintraege, struktur } = kunstErlass();
+    // O-36 b: die Köpfe kommen aus dem Baum (Art. 3 trägt «Zaunkoenig» im Kopf) —
+    // wie im Leser derselbe Baum, der auch gerendert wird.
+    const sektionen = baueGliederungsbaum(eintraege, struktur).sektionen;
     const holder: { api: Api | null } = { api: null };
     function Sonde({ bereich }: { bereich: SuchBereich }) {
       holder.api = useSuchTreffer({
         erlassKey: 'X', eintraege, struktur, sucheTrim: 'Zaunkoenig', sucheFeldLeer: false,
-        sektionen: [], aktivIds: [], internRefs: undefined, aktArtikel: null,
+        sektionen, aktivIds: [], internRefs: undefined, aktArtikel: null,
         offen: {}, setOffen: () => {}, imPane: false, wurzel: null, bereich,
       });
       return null;

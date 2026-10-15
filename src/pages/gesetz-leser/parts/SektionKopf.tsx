@@ -2,6 +2,7 @@ import { FnRef } from '../../../components/normtext/ArtikelBody';
 import type { Sektion } from '../../../lib/normtext/browse';
 import { NEUER_TAB } from '../../../lib/benennung';
 import { romanFrei, margLabel } from '../helpers';
+import { SUCH_META } from '../suchHighlight';
 
 // Gliederungs-Überschrift im Fliesstext: klappbar (Fedlex-analog), volle
 // Bezeichnung, nach Ebene abgestuft.
@@ -97,6 +98,9 @@ export function SektionKopf({ s, refCb, offen, onToggle, bereich, bereichEinzel,
   // artOffen-Gate der Artikel-Marker).
   // W2·5d G2b: an `offen` gebunden (Popover-Ziel lebt im offenen Block), nicht mehr
   // am alten fussnotenAuf-Schalter; Prominenz via data-fussnoten-CSS (R9).
+  // LESER-NAV, FB O-36 b: die Suche malt den Kopf (Aufzähler + Sachtitel). Was die
+  // Zeile sonst trägt — Klapp-Pfeil, Artikel-Bereich, Fedlex-Link — ist Bedienung,
+  // kein Wortlaut, und steht mit `data-such-meta` ausserhalb der Treffer-Menge.
   const sekFn = offen && s.fussnoten && s.fussnoten.length > 0 ? s.fussnoten : null;
   return (
     <div ref={refCb} data-sek={s.id} data-normtext-linie data-sek-linie={s.randtitel ? 'rand' : undefined}
@@ -116,7 +120,7 @@ export function SektionKopf({ s, refCb, offen, onToggle, bereich, bereichEinzel,
               «Art. N» (`./ArtikelLeser`) — gleiche Spalte `w-4`, mittig, gleiche
               Grösse `text-micro`; bis hier stand er hier links bündig in
               `text-body-s` und damit gegen den des Artikels versetzt. */}
-          <span className={`inline-flex w-4 shrink-0 justify-center text-micro transition-colors ${offen ? 'text-brass-600' : 'text-ink-500'} group-hover/sek:text-ink-900`}>{offen ? '▾' : '▸'}</span>
+          <span {...{ [SUCH_META]: '' }} className={`inline-flex w-4 shrink-0 justify-center text-micro transition-colors ${offen ? 'text-brass-600' : 'text-ink-500'} group-hover/sek:text-ink-900`}>{offen ? '▾' : '▸'}</span>
           {/* A30: bis/ter-Suffix des Randtitel-Enumerators hochgestellt (margLabel);
               No-op bei Sachtiteln ohne Enumerator-Suffix. */}
           <span className={`lc-wortumbruch ${titelFont} ${titelStil} group-hover/sek:text-ink-900`}>{margLabel(rest || s.label)}</span>
@@ -141,7 +145,7 @@ export function SektionKopf({ s, refCb, offen, onToggle, bereich, bereichEinzel,
             Sektionen wird der Bereich ohnehin unterdrückt (inhalt.tsx). Reine
             Darstellung (§3) — gleicher Text, nur umbruchfähig. */}
         {bereich && !(bereichEinzel && offen) && (
-          <span className="num min-w-0 [overflow-wrap:anywhere] text-xs font-normal text-ink-500">{bereich}</span>
+          <span {...{ [SUCH_META]: '' }} className="num min-w-0 [overflow-wrap:anywhere] text-xs font-normal text-ink-500">{bereich}</span>
         )}
         {/* EID-2 (W2·5d §12): Verifizier-Deep-Link «amtliche Fassung an genau
             dieser Stelle» der Gliederungsstufe. Hover-dezent wie die Artikel-
@@ -149,7 +153,7 @@ export function SektionKopf({ s, refCb, offen, onToggle, bereich, bereichEinzel,
             auf Touch immer sichtbar. Kein neues Chrome — ein Inline-Glied der
             bestehenden Titelzeile; target/rel wie bestehende amtliche Links. */}
         {amtlichUrl && (
-          <a href={amtlichUrl} target="_blank" rel="noopener noreferrer"
+          <a {...{ [SUCH_META]: '' }} href={amtlichUrl} target="_blank" rel="noopener noreferrer"
             className="shrink-0 text-micro text-ink-500 no-underline opacity-0 transition-opacity group-hover/sekkopf:opacity-100 focus-visible:opacity-100 hover:text-ink-900 [@media(hover:none)]:opacity-100"
             aria-label={`Amtliche Fassung von «${s.label}» auf Fedlex öffnen ${NEUER_TAB}`}
             // Ä110 (18.8.2026): EINE Schreibung für EIN Ziel (s. ArtikelLeser).
