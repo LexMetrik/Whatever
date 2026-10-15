@@ -171,12 +171,10 @@ describe('Beurkundung — AG-Gründung: Adapter liefert Engine-Wert (RL-36, erse
     return { kind: 'offen' }; // 'formel_extern'/Aufwand → nicht beziffert
   };
 
-  // Konvergenz beider Systeme — dicht verifiziert (0 Abweichungen). Fix 16.6.2026:
-  // SG floored auf ganze Tranchen (GebT Nr. 60.13 «je weitere VOLLE 100 000»; das
-  // allg. System rechnete zuvor kontinuierlich 0,08‰ und widersprach seinem eigenen
-  // Hinweis), BE liest jetzt die kapitalspezifische Anhang-4-Stufe (GebVN Art. 21)
-  // statt einer flachen Gesamtspanne. Beide Encodings sind damit angeglichen.
-  // Tripwire gegen jede künftige einseitige Tarif-Änderung in EINEM der Systeme.
+  // Historie (16.6.2026): SG floort auf ganze Tranchen (GebT Nr. 60.13 «je weitere
+  // VOLLE 100 000»), BE liest die kapitalspezifische Anhang-4-Stufe (GebVN Art. 21).
+  // Seit RL-36 gibt es nur noch EIN Encoding; der Test ist Tripwire gegen einen
+  // verfälschenden Adapter (Abbildung Engine → Anzeigeform).
   it('alle 26 Kantone: Adapter == Engine über dichten Kapital-Sweep', () => {
     for (const k of KANTONE as readonly KantonCode[]) {
       for (let w = 0; w <= 3_000_000; w += 25_000) {
