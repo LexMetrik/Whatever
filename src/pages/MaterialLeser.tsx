@@ -109,7 +109,7 @@ export function MaterialLeser() {
   const m = material;
 
   return (
-    <article className="space-y-8 @container/material">
+    <article className="space-y-8 @container/material group/material min-h-inhalt-region">
       {/* ── B-4 (Design-Konsistenz Runde 2, 31.8.2026) · DERSELBE LESER-KOPF ───
           Dieser Leser lieh sich bis hierher den Kopf der STATISCHEN Seiten
           (`layout/SeitenKopf`) — samt Ablesekante (`scale-rule`), dem Marken-
@@ -252,7 +252,7 @@ export function MaterialLeser() {
           hat (breiter Kopf, Lesespalte für den Text). Ebenso Kanon ist der im
           selben Befund genannte Entscheid-Aufbau «Titel/Meta breit, Entscheidtext
           in der Lesespalte» (Reglement R1, 60–75 Zeichen). */}
-      <div className="border-t border-rule-soft pt-6 max-w-reading">
+      <div className="border-t border-rule-soft pt-6 max-w-reading group-has-[[data-kontext-laedt]]/material:invisible">
         <Link to="/materialien" className="lc-btn lc-btn-outline lc-btn-sm">← Alle Materialien</Link>
       </div>
     </article>
