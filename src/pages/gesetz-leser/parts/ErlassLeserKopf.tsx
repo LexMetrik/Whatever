@@ -208,7 +208,7 @@ export function ErlassLeserKopf({
      Namen (Ä101), `[overflow-wrap:anywhere]` nur gegen Überlauf. Grösse aus
      `ui/SeitenTitel` (A-1, Pane-Breite im Split). */
   const titel = (
-    <SeitenTitel stimme="serif" className="[overflow-wrap:anywhere] min-h-titel-2z">
+    <SeitenTitel className="[overflow-wrap:anywhere] min-h-titel-2z">
       {/* Ä-(d): die Kennung als eigene, nicht umbrechende Marke VOR dem Titel,
           Teil desselben Namens; der Trenner ist `aria-hidden`. */}
       {kennung && (
