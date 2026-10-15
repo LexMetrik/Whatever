@@ -46,7 +46,6 @@ const KALENDER_NE_SO: BekannterFehler = {
 export const BEKANNTE_FEHLER: Readonly<Record<string, readonly BekannterFehler[]>> = {
   'notariat-grundbuch': [
     STAFFEL,
-    { fb: 'RV-25', text: 'Emissionsabgabe fehlt ohne Hinweis im Ergebnis (bis CHF 40’000).' },
     { fb: 'RV-82', text: '«Weitere Geschäftsarten» FR, VD, VS, JU, NE nicht abgebildet.' },
   ],
   prozesskosten: [
