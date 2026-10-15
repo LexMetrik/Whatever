@@ -115,7 +115,7 @@ export const GRUNDPFAND: Record<KantonCode, KantonalerTarif> = {
   ZH: kombi('ZH', {
     erlassName: 'Notariatsgebührenverordnung (NotGebV)', erlassNr: 'LS 243',
     artikel: 'Anhang Ziff. 1.2.1 und 2.3.1', stand: '1.1.2024',
-    hinweis: 'Beurkundung 1 ‰ + Eintrag 1 ‰ der Pfandsumme, je mindestens 100. Mehrwertsteuer nach § 2 zusätzlich.',
+    hinweis: 'Beurkundung 1 ‰ + Eintrag 1 ‰ der Pfandsumme, je mindestens 100.',
   }),
   SG: kombi('SG', {
     erlassName: 'Verordnung über die Gebühren für Amtshandlungen der Grundbuchämter (GB-GebV)', erlassNr: 'sGS 914.5',
