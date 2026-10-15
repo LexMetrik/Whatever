@@ -55,15 +55,24 @@ describe('Opt-out-Pfad — identisch mit Default-Pfad', () => {
   const OHNE_OPTION = KORPUS.filter((r) => !hatOption(r));
   const MIT_OPTION = KORPUS.filter(hatOption);
 
-  it('Regeln mit gesetzter Option im Korpus: die drei Eintragsregeln BS/VS (aufwärts) und AG (nächste), Basisrundung 1’000 und die SZ-Schuldbrief-Regel (Tranchen 50’000 aufwärts)', () => {
+  it('Regeln mit gesetzter Option im Korpus: Eintragsregeln BS/AG/VS (Basisrundung 1’000), VS Grundpfand (RL-28 T2), SZ-Regeln (Tranchen 50’000 aufwärts); Aliase werden mehrfach eingesammelt', () => {
     const liste = MIT_OPTION.map((r) => JSON.stringify({ typ: r.typ, promille: (r as { promille?: number }).promille, basisRundung: (r as { basisRundung?: unknown }).basisRundung }));
+    const bs = JSON.stringify({ typ: 'promille', promille: 1, basisRundung: { schrittChf: 1000, richtung: 'auf' } });
+    const vs = JSON.stringify({ typ: 'promille', promille: 2, basisRundung: { schrittChf: 1000, richtung: 'auf' } });
+    const ag = JSON.stringify({ typ: 'promille', promille: 4, basisRundung: { schrittChf: 1000, richtung: 'naechste' } });
+    const sz = JSON.stringify({ typ: 'staffel_sockel_prozent', basisRundung: { schrittChf: 50000, richtung: 'auf' } });
     expect(liste.sort()).toEqual([
-      // BS (V EG ZGB § 51 Abs. 1 lit. b) und VS (OcRF Art. 32 al. 3, RL-28 Teil 2): beide promille 1, 1’000 aufwärts
-      JSON.stringify({ typ: 'promille', promille: 1, basisRundung: { schrittChf: 1000, richtung: 'auf' } }),
-      JSON.stringify({ typ: 'promille', promille: 1, basisRundung: { schrittChf: 1000, richtung: 'auf' } }),
+      // BS: V EG ZGB § 51 Abs. 1 lit. b (RL-28 Eintragsteil Grundpfand) + RL-29 T3 GRUNDBUCH.BS; GRUNDBUCH wird als GRUNDBUCH_EIGENTUM_KAUF (Alias in grundbuch.ts) zweimal eingesammelt
+      bs, bs, bs,
+      // VS Grundpfand: OcRF Art. 32 al. 3 (RL-28 Teil 2, GRUNDBUCH_EINTRAG.grundpfand.VS), ebenfalls promille 1 auf 1’000
+      bs,
       JSON.stringify({ typ: 'promille', promille: 1.5, basisRundung: { schrittChf: 1000, richtung: 'naechste' } }),
-      // SZ Schuldbrief: SRSZ 213.512 § 5 Abs. 1 Nr. 2 «je Fr. 50’000 bzw. Bruchteile davon» (RL-28-Nachzug A4)
-      JSON.stringify({ typ: 'staffel_sockel_prozent', basisRundung: { schrittChf: 50000, richtung: 'auf' } }),
+      // RL-29 T3: VS OcRF Art. 32 al. 3 («arrondie au millier de francs supérieurs»), GRUNDBUCH.VS, 2× wegen Alias
+      vs, vs,
+      // RL-29 T3: AG GBAG § 4 Abs. 1 («auf jeweils Fr. 1’000 auf- oder abzurunden»), GRUNDBUCH.AG, 2× wegen Alias
+      ag, ag,
+      // SZ: SRSZ 213.512 § 5 Abs. 1 Nr. 2 Schuldbrief (RL-28-Nachzug A4) + RL-29 T3 Nr. 1 NOTARIAT.SZ («bzw. Bruchteile davon»), NOTARIAT 2× wegen Alias GRUNDSTUECKKAUF_BEURKUNDUNG
+      sz, sz, sz,
     ].sort());
   });
 

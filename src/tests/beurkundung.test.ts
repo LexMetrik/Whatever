@@ -253,3 +253,34 @@ describe('Beurkundung — MwSt-Hinweis ZH je Geschäftsart und Bedingung (RL-33 
     expect(zh('grundstueckkauf', 500_000)).toMatch(/Zuzüglich MwSt 8,1 % .*, soweit das Notariat mehrwertsteuerpflichtig ist \(MWSTG Art\. 10\)/);
   });
 });
+
+describe('RL-29 Teil 3: GE Kapitalherabsetzung (REmNot Art. 25 al. 4), SG-Praxishinweis, NE-Stand', () => {
+  const geKh = (w: number): number => {
+    const e = berechneBeurkundung({ geschaeftsart: 'kapitalherabsetzung', kanton: 'GE', geschaeftswertCHF: w }).posten!.ergebnis;
+    if (!e.deterministisch) throw new Error('deterministisch erwartet');
+    return e.betragChf;
+  };
+  it('GE: Sockel = Viertel der proportionalen Staffel von al. 2 (87.50 / 162.50 / … / 2887.50), Sätze unverändert', () => {
+    expect(geKh(50_000)).toBe(87.5);
+    expect(geKh(100_000)).toBe(162.5);
+    expect(geKh(200_000)).toBe(287.5);
+    expect(geKh(300_000)).toBe(387.5);
+    expect(geKh(400_000)).toBe(462.5);
+    expect(geKh(500_000)).toBe(512.5);
+    expect(geKh(1_000_000)).toBe(637.5);   // 512.50 + 0.025 % × 500’000
+    expect(geKh(30_000)).toBeCloseTo(52.5, 6); // 0.175 % × 30’000
+  });
+  it('SG: testament/erbvertrag/ehevertrag tragen den Hinweis «Amtspraxis nicht amtlich tarifiert», ohne Praxisbeträge', () => {
+    for (const art of ['testament', 'erbvertrag', 'ehevertrag'] as const) {
+      const t = SONDERTARIFE[art]!.SG!;
+      expect(t.hinweis ?? '', art).toContain('Ermessensrahmen nach GebT');
+      expect(t.hinweis ?? '', art).toContain('nicht amtlich tarifiert');
+    }
+  });
+  it('NE: Stand «13.5.2015» (Etat au 13 mai 2015, FO 2015 N° 20), nie die Jahresangabe «Etat au 2015»', () => {
+    const ne = Object.values(SONDERTARIFE).map((m) => m?.NE).filter((t): t is KantonalerTarif => !!t);
+    expect(ne.length).toBeGreaterThan(10);
+    for (const t of ne) expect(t.stand, t.artikel).not.toMatch(/^Etat au 2015/);
+    expect(SONDERTARIFE.baurecht!.NE!.stand).toBe('13.5.2015');
+  });
+});
