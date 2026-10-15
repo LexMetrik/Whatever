@@ -227,3 +227,12 @@ lit. a Vorladung 50–100 (je nach Zahl Beklagter) + lit. b Versöhnungssitzung
 120–250 (Normalfall 170–350); Abs. 2 nur Streitwert ≤ 2000 und
 Entscheidvorschläge 60–500. Der nv-Rahmen 60–500 ist damit Abs. 2 (Hinweis
 präzisiert; Zahl unverändert, Prüfpunkt offen).
+
+**VS, Nachtrag 15.10.2026 (Berichtigung):** Art. 15 Abs. 2 LTar gilt nur für
+*vermögensrechtliche* Streitigkeiten bis 2'000 Franken und für
+Entscheidvorschläge (fr. «litiges patrimoniaux»). Für nicht
+vermögensrechtliche Streitigkeiten gilt Abs. 1: lit. a Vorladung 50–100,
+lit. b Sitzung 120–250 → Gesamtrahmen 50–350 (Normalfall 170–350).
+`SCHLICHTUNG_NV.VS` steht daher auf 50–350 (zuvor 60–500). Quelle:
+lex.vs.ch 173.8, Fassung 1.1.2025, de/fr am 15.10.2026 gelesen. Die
+Zeilen oben bleiben als Stand 5.6.2026 stehen.
