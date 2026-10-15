@@ -249,3 +249,41 @@ describe('Notariat/Grundbuch — Posten Pfandsteuer (RL-28 Teil 3)', () => {
     expect(zh.ergebnis).not.toMatch(/Pfandsteuer/);
   });
 });
+
+// ─── RL-29 Teil 3: Rundung der Bemessungsbasis nach Norm (AG, BS, VS, SZ) ──
+describe('RL-29 Teil 3: Basisrundung AG/BS/VS (Grundbuch) und SZ (Notariat)', () => {
+  const gb = (kanton: KantonCode, kaufpreisCHF: number) => berechneNotariatGrundbuch({ kanton, kaufpreisCHF }).grundbuch;
+  const nt = (kanton: KantonCode, kaufpreisCHF: number) => berechneNotariatGrundbuch({ kanton, kaufpreisCHF }).beurkundung;
+
+  it('AG GBAG § 4 Abs. 1: Basis auf Fr. 1’000 auf- oder abgerundet, § 8 Abs. 1 4 ‰ min. 100', () => {
+    expect(det(gb('AG', 1_234_567))).toBe(4940);   // 1’235’000 × 4 ‰ (nicht 4938.27)
+    expect(det(gb('AG', 500_499))).toBe(2000);     // abgerundet auf 500’000
+    expect(det(gb('AG', 500_500))).toBe(2004);     // Gleichstand: Annahme aufwärts (offengelegt)
+    expect(det(gb('AG', 10_000))).toBe(100);       // Minimum
+  });
+  it('BS V EG ZGB § 51 Abs. 1 lit. b: Basis auf volle Tausend aufgerundet', () => {
+    expect(det(gb('BS', 1_234_001))).toBe(1235);   // 1’235’000 × 1 ‰ (nicht 1234.001)
+    expect(det(gb('BS', 500_000))).toBe(500);      // Vielfaches: unverändert
+    expect(det(gb('BS', 500_001))).toBe(501);
+    expect(GRUNDBUCH.BS.hinweis ?? '').not.toContain('Doppelcheck');
+  });
+  it('VS OcRF Art. 32 al. 3: Basis auf den nächsten Tausender aufgerundet, 2 ‰ min. 100 max. 5’000', () => {
+    expect(det(gb('VS', 1_234_001))).toBe(2470);   // 1’235’000 × 2 ‰ (nicht 2468)
+    expect(det(gb('VS', 1_000_000))).toBe(2000);
+    expect(det(gb('VS', 10_000_000))).toBe(5000);  // Deckel
+  });
+  it('SZ Gebührentarif § 5 Abs. 1 Nr. 1: Fr. 45 je angefangene Fr. 50’000, Degression >10 Mio. auf dem Mehrbetrag, max. 13’500', () => {
+    expect(det(nt('SZ', 30_000))).toBe(45);        // eine angefangene Tranche (nicht 27)
+    expect(det(nt('SZ', 1_000_000))).toBe(900);    // 20 Tranchen
+    expect(det(nt('SZ', 1_000_001))).toBe(945);    // 21 Tranchen
+    expect(det(nt('SZ', 1_020_000))).toBe(945);
+    expect(det(nt('SZ', 10_000_000))).toBe(9000);
+    expect(det(nt('SZ', 10_000_001))).toBeCloseTo(9022.5, 6); // 10’050’000: 9000 + 0,045 % × 50’000
+    expect(det(nt('SZ', 100_000_000))).toBe(13_500);
+    expect(NOTARIAT.SZ.stand).toBe('1.7.2026');
+  });
+  it('SZ Grundbuch Nr. 5/6/15: Fixbeträge 8 + 35 + 20 in der Fassung 1.7.2026 unverändert', () => {
+    expect(det(gb('SZ', 1_000_000))).toBe(63);
+    expect(GRUNDBUCH.SZ.stand).toBe('1.7.2026');
+  });
+});
