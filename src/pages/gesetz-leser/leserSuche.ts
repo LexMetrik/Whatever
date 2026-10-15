@@ -44,11 +44,11 @@
 import { findeVorkommen } from './suchHighlight';
 import { ohneMarkup, romanFrei } from './helpers';
 import { randtitelKnoten, artikelLeerstellenStatus } from '../../lib/normtext/darstellung';
-import { vergleicheFnNr, berechneSekPos } from './berechnungen';
+import { vergleicheFnNr, berechneSekPos, berechneSektionMeta } from './berechnungen';
 // W2·27 (Entscheid David 14.9.2026, Randtitel-Doppelmodell): die
 // Sachtitel-Fallback-Kette (`marginalie` vor `titel`) lebt nur noch hier —
 // vorher zweite Inline-Kopie derselben Regel wie im Gliederungs-Baum (§5).
-import { artikelRandtitel } from './gliederungsArtikel';
+import { artikelRandtitel, sammleArtikel } from './gliederungsArtikel';
 import { baueGliederungsbaum, type Sektion, type StrukturMap } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 
@@ -165,6 +165,9 @@ export interface LeserSuchIndex {
   /** Erlass-Schlüssel — die Cache-Identität (Spec §4.1, EIN Eintrag je Pane). */
   key: string;
   artikel: SuchArtikel[];
+  /** O-36 b: je Sektionskopf (`data-sek`) mit Träger-Artikel, was die Trefferliste
+   *  über seinen Teilbaum sagt (`KopfInfo`). */
+  koepfe?: ReadonlyMap<string, KopfInfo>;
 }
 
 // ─── H2 · Suchbereich (FAHRPLAN-LESER-V3 Kap. 4b, Pos. 5) ───────────────────
@@ -219,6 +222,27 @@ function schiebe(ziel: Segment[], feld: SuchFeld, quelle: SuchQuelle, malbar: Ma
 }
 
 /**
+ * Was die Trefferliste über einen Sektionskopf sagt, damit ein Kopf-Treffer nicht
+ * wie der Randtitel NUR seines ersten Artikels liest (LESER-NAV, FB O-36 b,
+ * Auflage der Gegenprüfung): der Artikel-Bereich seines Teilbaums.
+ *
+ *  · `bereich` — dieselbe Zeichenkette, die der `SektionKopf` selbst zeigt
+ *                («Art. 336c–336d»): `berechneSektionMeta`, keine zweite
+ *                Bereichs-Logik (§5, §10). `undefined` bei reinen Anhang-
+ *                Sektionen (dort ist ein Bereich sinnlos).
+ *  · `anzahl`  — Zahl der Artikel des Teilbaums (`sammleArtikel`).
+ *  · `luecken` — der Bereich ist erste–letzte Position; stehen im Teilbaum
+ *                weniger Artikel, als der Bereich überspannt, wäre «Art. 5–9»
+ *                allein zu viel gesagt — dann nennt die Liste die Zahl mit.
+ */
+export interface KopfInfo {
+  quelle: 'Randtitel' | 'Überschrift';
+  bereich: string | undefined;
+  anzahl: number;
+  luecken: boolean;
+}
+
+/**
  * Die Sektionsköpfe, die die Lesespalte setzt — je Kopf EINMAL, am ersten Artikel
  * seines Teilbaums (LESER-NAV, FB O-36 b).
  *
@@ -242,9 +266,13 @@ function kopfSegmente(
   sektionen: readonly Sektion[],
   eintraege: readonly NormSnapshot[],
   struktur: StrukturMap | null,
-): Map<string, Segment[]> {
+): { jeArtikel: Map<string, Segment[]>; info: Map<string, KopfInfo> } {
   const pos = berechneSekPos(sektionen as Sektion[], eintraege as NormSnapshot[]);
+  const artIndex = new Map<string, number>();
+  eintraege.forEach((e, i) => artIndex.set(e.artikel, i));
+  const meta = berechneSektionMeta(sektionen as Sektion[], artIndex);
   const jeArtikel = new Map<string, Segment[]>();
+  const info = new Map<string, KopfInfo>();
   const besuche = (s: Sektion): void => {
     const p = pos.get(s.id);
     const traeger = p !== undefined && Number.isFinite(p) ? eintraege[p] : undefined;
@@ -256,11 +284,16 @@ function kopfSegmente(
       const liste = jeArtikel.get(traeger.artikel) ?? [];
       for (const text of [pre, rest]) if (text !== '') liste.push({ feld, quelle, malbar: 'kopf', text, kopf: s.id });
       jeArtikel.set(traeger.artikel, liste);
+      const idx = sammleArtikel(s).map((a) => artIndex.get(a.artikel) ?? 0);
+      info.set(s.id, {
+        quelle, bereich: meta.get(s.id)?.bereich, anzahl: idx.length,
+        luecken: idx.length > 0 && Math.max(...idx) - Math.min(...idx) + 1 !== idx.length,
+      });
     }
     for (const k of s.kinder) besuche(k);
   };
   for (const s of sektionen) besuche(s);
-  return jeArtikel;
+  return { jeArtikel, info };
 }
 
 /**
@@ -284,7 +317,8 @@ export function baueLeserSuchIndex(
    *  wird derselbe Baum aus denselben Daten gebaut (`baueGliederungsbaum`). */
   sektionen?: readonly Sektion[],
 ): LeserSuchIndex {
-  const koepfe = kopfSegmente(sektionen ?? baueGliederungsbaum([...eintraege], struktur).sektionen, eintraege, struktur);
+  const { jeArtikel: koepfe, info: kopfInfo } = kopfSegmente(
+    sektionen ?? baueGliederungsbaum([...eintraege], struktur).sektionen, eintraege, struktur);
   const artikel: SuchArtikel[] = eintraege.map((e, pos) => {
     const st = struktur?.[e.artikel];
     const marginalie = st?.marginalie ?? [];
@@ -410,7 +444,7 @@ export function baueLeserSuchIndex(
     };
   });
 
-  return { key, artikel };
+  return { key, artikel, koepfe: kopfInfo };
 }
 
 // ─── Treffer ─────────────────────────────────────────────────────────────────
@@ -461,6 +495,10 @@ export interface LeserTreffer {
    *  Rang unter ALLEN Stellen dieses Kopfes im DOM (auch ausserhalb des Bereichs,
    *  wie `immerDavor`); `null` = eine Stelle im Artikel. Länge == `fundstellen`. */
   kopfStellen: Array<{ sek: string; rang: number } | null>;
+  /** O-36 b: die Sektionsköpfe mit Fundstelle IM gewählten Bereich, die dieser
+   *  Artikel trägt (er ist der erste seines Teilbaums) — je Kopf einmal, in
+   *  Dokument-Reihenfolge. Die Liste nennt ihren Artikel-Bereich (`badgesFuer`). */
+  koepfe: Array<KopfInfo & { sek: string }>;
   /** Textausschnitt um die erste Fundstelle (Entscheid c). `null` nie im Normalfall. */
   ausschnitt: Ausschnitt | null;
 }
@@ -616,7 +654,9 @@ export function sucheImErlass(
       letztesTrefferSegment = si;
       gesamt += stellen.length;
       for (let i = 0; i < stellen.length; i++) malbarkeiten.push(seg.malbar);
-      const schluessel = `${seg.feld}|${seg.quelle}`;
+      // Kopf-Stellen bilden ihren EIGENEN Eintrag: dieselbe Feldklasse und Quelle
+      // («Randtitel») trägt am Artikel auch dessen eigenen Randtitel (`immer`).
+      const schluessel = `${seg.feld}|${seg.quelle}|${seg.malbar === 'kopf' ? 'kopf' : ''}`;
       const vorhanden = proQuelle.get(schluessel);
       if (vorhanden) vorhanden.anzahl += stellen.length;
       else proQuelle.set(schluessel, { feld: seg.feld, quelle: seg.quelle, malbar: seg.malbar, anzahl: stellen.length });
@@ -648,6 +688,7 @@ export function sucheImErlass(
     // Stellen je Sektionskopf bisher (`kopf`-Segmente stehen nicht im Artikel, ihr
     // Rang zählt im Kopf-Element — sie bleiben aus `immer`/`aend` heraus).
     const kopfDavor = new Map<string, number>();
+    const koepfe: LeserTreffer['koepfe'] = [];
     let immer = 0;
     let aend = 0;
     for (let si = 0; si <= letztesTrefferSegment; si++) {
@@ -662,6 +703,10 @@ export function sucheImErlass(
           aendDavor.push(aend + (seg.malbar === 'aenderung' ? j : 0));
           kopfStellen.push(seg.kopf !== undefined ? { sek: seg.kopf, rang: kopfRang + j } : null);
         }
+        const kopfInfo = seg.kopf !== undefined ? index.koepfe?.get(seg.kopf) : undefined;
+        if (seg.kopf !== undefined && kopfInfo && !koepfe.some((k) => k.sek === seg.kopf)) {
+          koepfe.push({ ...kopfInfo, sek: seg.kopf });
+        }
       }
       if (seg.malbar === 'immer') immer += n;
       else if (seg.malbar === 'aenderung') aend += n;
@@ -671,7 +716,7 @@ export function sucheImErlass(
     const felder = [...proQuelle.values()].sort((x, y) => FELD_GEWICHT[y.feld] - FELD_GEWICHT[x.feld]);
     treffer.push({
       token: a.token, label: a.label, randtitel: a.randtitel, gruppe: a.gruppe, pos: a.pos,
-      fundstellen: gesamt, topFeld: felder[0].feld, felder, malbarkeiten, immerDavor, aendDavor, kopfStellen, ausschnitt,
+      fundstellen: gesamt, topFeld: felder[0].feld, felder, malbarkeiten, immerDavor, aendDavor, kopfStellen, koepfe, ausschnitt,
     });
   }
 
@@ -739,11 +784,27 @@ export function artikelFundstellen(
   return out;
 }
 
-/** Datenseitiger Kopf-Zähler «N Artikel · M Fundstellen» (§4.4 Ziff. 1). */
-export function zaehleTreffer(treffer: readonly LeserTreffer[]): { artikel: number; fundstellen: number } {
+/**
+ * Datenseitiger Kopf-Zähler «N Artikel · K Überschriften · M Fundstellen» (§4.4 Ziff. 1).
+ *
+ * LESER-NAV, FB O-36 b (Auflage der Gegenprüfung, Wahl offengelegt): ein
+ * Kopf-Treffer steht in der Liste unter dem ersten Artikel seines Teilbaums, der
+ * Artikel selbst muss den Begriff aber nicht tragen. `artikel` zählt darum nur
+ * Artikel mit einer EIGENEN Fundstelle; die Köpfe (Gliederungstitel und geteilte
+ * Randtitel-Stufen) zählen für sich in `koepfe` — «M Artikel» sagt sonst, was
+ * nicht stimmt. `fundstellen` bleibt die Summe über alles (Kopf-Stellen zählen
+ * einmal, am Kopf).
+ */
+export function zaehleTreffer(treffer: readonly LeserTreffer[]): { artikel: number; fundstellen: number; koepfe: number } {
   let fundstellen = 0;
-  for (const t of treffer) fundstellen += t.fundstellen;
-  return { artikel: treffer.length, fundstellen };
+  let artikel = 0;
+  let koepfe = 0;
+  for (const t of treffer) {
+    fundstellen += t.fundstellen;
+    koepfe += t.koepfe.length;
+    if (t.kopfStellen.some((k) => k === null)) artikel++;
+  }
+  return { artikel, fundstellen, koepfe };
 }
 
 /**
@@ -760,14 +821,29 @@ export function zaehleTreffer(treffer: readonly LeserTreffer[]): { artikel: numb
  * hätte nach dem Wegfall des Apparat-Schalters eine Stellung benannt, die es
  * nicht mehr gibt.
  */
-export function badgesFuer(t: LeserTreffer, aenderungenAus: boolean): string[] {
+export function badgesFuer(t: LeserTreffer, aenderungenAus: boolean, bestimmungsWort = 'Artikel'): string[] {
   const out: string[] = [];
+  const merke = (text: string) => { if (!out.includes(text)) out.push(text); };
   for (const f of t.felder) {
     if (f.quelle === 'Fliesstext') continue;
-    const text = f.malbar === 'aenderung' && aenderungenAus ? `${f.quelle} (ausgeblendet)` : f.quelle;
-    if (!out.includes(text)) out.push(text);
+    // LESER-NAV, FB O-36 b: ein Kopf-Treffer nennt den Artikel-Bereich seines
+    // Teilbaums («Überschrift · Art. 336c–336d») — ohne ihn läse er sich wie der
+    // Randtitel nur dieses einen Artikels, und die übrigen Artikel unter der
+    // Überschrift wären aus der Liste verschwunden (§1/§8). Reihenfolge der Köpfe
+    // = Dokument-Reihenfolge.
+    if (f.malbar === 'kopf') {
+      for (const k of t.koepfe) if (k.quelle === f.quelle) merke(`${k.quelle} · ${kopfBereichText(k, bestimmungsWort)}`);
+      continue;
+    }
+    merke(f.malbar === 'aenderung' && aenderungenAus ? `${f.quelle} (ausgeblendet)` : f.quelle);
   }
   return out;
+}
+
+/** «Art. 336c–336d» · bei Lücken «Art. 266b–273c (9 Artikel)» · Anhang «3 Einträge». */
+function kopfBereichText(k: KopfInfo, bestimmungsWort: string): string {
+  if (k.bereich === undefined) return `${k.anzahl} ${k.anzahl === 1 ? 'Eintrag' : 'Einträge'}`;
+  return k.luecken ? `${k.bereich} (${k.anzahl} ${bestimmungsWort})` : k.bereich;
 }
 
 /** Ein Schritt der ↑↓-Navigation. */

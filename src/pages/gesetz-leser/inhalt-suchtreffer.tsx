@@ -209,6 +209,7 @@ export function useSuchTreffer({
     [sucheAktiv, erlassKey, eintraege, struktur, sektionen],
   );
   const treffer = useMemo(() => sucheImErlass(index, sucheTrim, bereich), [index, sucheTrim, bereich]);
+  // O-36 b: `artikelAnzahl` = Artikel mit EIGENER Fundstelle; die Köpfe zählt `zaehleTreffer` für sich.
   const { artikel: artikelAnzahl, fundstellen } = useMemo(() => zaehleTreffer(treffer), [treffer]);
   // B5: der Ansicht-Schalter gehört IN die Folge, nicht daneben — bei
   // ausgeblendetem Apparat sind Fussnoten-Stellen nicht malbar, und ein Rang,

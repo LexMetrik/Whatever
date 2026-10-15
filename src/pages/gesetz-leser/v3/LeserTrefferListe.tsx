@@ -1,6 +1,6 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useMemo, useState } from 'react';
 import { SUCH_META } from '../suchHighlight';
-import { badgesFuer, type ArtikelFundstelle, type Ausschnitt, type LeserTreffer, type SuchBereich } from '../leserSuche';
+import { badgesFuer, zaehleTreffer, type ArtikelFundstelle, type Ausschnitt, type LeserTreffer, type SuchBereich } from '../leserSuche';
 import { TrefferLeiste } from './TrefferLeiste';
 import { zaehlform, type BestimmungsWort } from './erlassAnsicht';
 
@@ -107,6 +107,8 @@ export function LeserTrefferListe({
   bereich, setzeBereich, fundstellenFuer, onZurueck, onVor, onSprung, onSprungStelle,
 }: LeserTrefferListeProps) {
   const hatSprung = fundstellen > 0;
+  // O-36 b: «Artikel» = Artikel mit eigener Fundstelle; Köpfe zählen für sich (`zaehleTreffer`).
+  const zaehl = useMemo(() => zaehleTreffer(treffer), [treffer]);
   // ── Ä103 (18.8.2026) · «–/88» IST KEINE AUSKUNFT ──────────────────────────
   // GEMESSEN (StPO/«Entschädigung», @390/@1440): vor dem ersten ↑↓-Sprung stand
   // «–/88» — ein Bruch ohne Zähler, @390 zweizeilig im Kasten. JETZT
@@ -158,7 +160,7 @@ export function LeserTrefferListe({
           (Ä15/Ä30/Ä84/Ä94/Ä103) mit ihren Herleitungen, und die Liste darunter
           hat mit keinem davon zu tun. */}
       <TrefferLeiste
-        anzahl={treffer.length} fundstellen={fundstellen} bestimmungsWort={bestimmungsWort}
+        anzahl={zaehl.artikel} ueberschriften={zaehl.koepfe} fundstellen={fundstellen} bestimmungsWort={bestimmungsWort}
         laufend={laufend} hatSprung={hatSprung} bereich={bereich} setzeBereich={setzeBereich}
         onZurueck={onZurueck} onVor={onVor} />
 
@@ -189,7 +191,7 @@ export function LeserTrefferListe({
 
       <ul>
         {zeilen.map(({ t, kopf }) => {
-          const badges = badgesFuer(t, aenderungenAus);
+          const badges = badgesFuer(t, aenderungenAus, bestimmungsWort);
           // Aufgeklappt ist ein Artikel, wenn die laufende Fundstelle in ihm
           // liegt: wer ↑↓ drückt, soll die Stelle SEHEN, zu der er springt —
           // sonst wäre die Hervorhebung in einem zugeklappten Ast unsichtbar.

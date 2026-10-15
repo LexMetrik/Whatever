@@ -181,8 +181,14 @@ describe('S8 §4.4 — findbar/malbar: der Zähler ist datenseitig, die Badges s
   it('der Zähler summiert ALLE Felder — auch die, die nie gemalt werden', () => {
     const { eintraege, struktur } = kunstErlass();
     const treffer = sucheImErlass(baueLeserSuchIndex('X', eintraege, struktur), 'Zaunkoenig');
-    const { artikel, fundstellen } = zaehleTreffer(treffer);
-    expect(artikel).toBe(6);
+    const { artikel, koepfe, fundstellen } = zaehleTreffer(treffer);
+    // §6.3-DEKLARATION (LESER-NAV, FB O-36 b, Auflage der Gegenprüfung): Art. 3 und
+    // Art. 6 stehen in der Liste nur ihres KOPFES wegen (der Artikel selbst trägt
+    // den Begriff nicht). «6 Artikel» war damit unwahr; Artikel mit eigener
+    // Fundstelle sind 4, die zwei Köpfe zählen für sich. `fundstellen` unverändert.
+    expect(artikel).toBe(4);
+    expect(koepfe).toBe(2);
+    expect(treffer).toHaveLength(6);
     // 1×t + 1×m + 1×n + 3×g + 1×tb + 1×f = 8 — auch die Köpfe (n, 3×g) sind
     // mitgezählt; Art. 3 und Art. 6 sind jeweils der erste Artikel unter ihrem
     // Kopf, die Zahl bleibt unverändert (LESER-NAV, FB O-36 b).
@@ -211,10 +217,11 @@ describe('S8 §4.4 — findbar/malbar: der Zähler ist datenseitig, die Badges s
     const badges = (token: string) => badgesFuer(treffer.find((t) => t.token === token)!, false);
     expect(badges('1')).toEqual([]);
     expect(badges('2')).toEqual(['Randtitel']);
-    expect(badges('3')).toEqual(['Überschrift']);
+    // O-36 b: der Kopf-Treffer nennt den Artikel-Bereich seines Teilbaums.
+    expect(badges('3')).toEqual(['Überschrift · Art. 3']);
     expect(badges('4')).toEqual(['Fussnote']);
     expect(badges('5')).toEqual(['Tabelle']);
-    expect(badges('6')).toEqual(['Randtitel']);
+    expect(badges('6')).toEqual(['Randtitel · Art. 6']);
   });
 
   it('bei gedämpfter Änderungshistorie sagt der Badge es — die Ansicht wird nicht still umgeschaltet', () => {

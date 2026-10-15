@@ -97,4 +97,21 @@ test.describe('O-36 b — Köpfe zählen einmal und leuchten', () => {
       expect(gemalt, `Art. ${token}: gezählt ${gezaehlt}, gemalt ${gemalt}`).toBe(gezaehlt)
     }
   })
+
+  // Auflage der Gegenprüfung (15.10.2026): ein Kopf-Treffer steht unter dem ersten
+  // Artikel seines Teilbaums — er nennt darum den Artikel-Bereich (dieselbe Angabe
+  // wie der Kopf in der Lesespalte), und der Zähler zählt Überschriften für sich.
+  test('Kopf-Treffer nennen ihren Artikel-Bereich; der Zähler zählt Überschriften eigens', async ({ page }) => {
+    await oeffne(page)
+    await suchfeld(page).fill('Disziplin')
+    await expect(page.locator('[data-treffer-liste]')).toBeVisible({ timeout: 20_000 })
+    const badge = page.locator('[data-treffer-artikel="12"] [data-treffer-badge]').filter({ hasText: /^Überschrift · Art\. / })
+    await expect(badge, 'Kopf-Badge am ersten Artikel unter der Überschrift').toHaveCount(1, { timeout: 20_000 })
+    const bereich = ((await badge.innerText()).split('·')[1] ?? '').trim()
+    expect(bereich, 'Bereich ist eine Spanne «Art. a–b»').toMatch(/^Art\. 12–\S+$/)
+    // Dieselbe Angabe steht am Kopf in der Lesespalte (eine Quelle, keine zweite Bereichs-Logik).
+    await expect(page.locator('#lc-lesespalte [data-sek]').filter({ hasText: bereich }).first()).toBeAttached()
+    const zaehler = (await page.locator('[data-treffer-leiste] p').first().innerText()).replace(/\s+/g, ' ')
+    expect(zaehler, 'Artikel · Überschriften · Fundstellen, je eine eigene Zahl').toMatch(/\d+ Artikel · 1 Überschrift · \d+ Fundstellen/)
+  })
 })

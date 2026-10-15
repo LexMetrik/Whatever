@@ -84,7 +84,7 @@ export const SUCH_H_AKTIV = '4.25rem';
 const SCHRITT = 'relative inline-flex h-5 w-5 items-center justify-center border border-line bg-paper leading-none text-ink-900 transition-colors lc-hover-flaeche after:absolute after:left-1/2 after:top-1/2 after:h-[var(--tap-ziel)] after:w-[var(--tap-ziel)] after:-translate-x-1/2 after:-translate-y-1/2';
 
 export function SuchZone({
-  suchFeld, sucheAktiv, bestimmungen, fundstellen, bestimmungsWort, onListe,
+  suchFeld, sucheAktiv, bestimmungen, ueberschriften, fundstellen, bestimmungsWort, onListe,
   onVor, onZurueck, listeSteht, markenSchalter,
 }: {
   /** Das Such-/Sprungfeld. Oberstes Element — das ist die ganze Zusage (Ä19).
@@ -99,6 +99,10 @@ export function SuchZone({
   sucheAktiv: boolean;
   /** Getroffene Bestimmungen (Artikel bzw. Paragraphen). */
   bestimmungen: number;
+  /** Köpfe (Gliederungstitel, geteilte Randtitel) mit Treffer — O-36 b: ein Kopf-Treffer
+   *  steht unter dem ersten Artikel seines Teilbaums, der selbst nicht treffen muss; er
+   *  zählt darum nie als «Artikel», sondern für sich. */
+  ueberschriften: number;
   /** Fundstellen darin — dieselben Zahlen wie im Kopf der Trefferliste (§5). */
   fundstellen: number;
   /** Zähl-Substantiv aus dem Datenmodell (Ä23) — nie ein Bund-Vorgabewert.
@@ -221,6 +225,13 @@ export function SuchZone({
             <span className="num">{bestimmungen}</span>
             <span>{zaehlform(bestimmungen, bestimmungsWort)}</span>
             <span aria-hidden className="text-ink-300">·</span>
+            {ueberschriften > 0 && (
+              <>
+                <span className="num">{ueberschriften}</span>
+                <span>{ueberschriften === 1 ? 'Überschrift' : 'Überschriften'}</span>
+                <span aria-hidden className="text-ink-300">·</span>
+              </>
+            )}
             <span className="num">{fundstellen}</span>
             <span>{fundstellen === 1 ? 'Fundstelle' : 'Fundstellen'}</span>
             <span aria-hidden className="ml-auto shrink-0 truncate text-brass-700">

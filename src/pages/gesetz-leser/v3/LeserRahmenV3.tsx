@@ -211,7 +211,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // Rahmen sagt, OB die Zone klebt und WAS darin steht.
   const suchZone = suchZoneAufbau({
     klebt: suchZoneKlebt, sucheAktiv: m.sucheAktiv, feldImSheet: gliederungsSheetOffen, suchFeld, bestimmungsWort,
-    bestimmungen: m.treffer.length, fundstellen: m.fundstellen, onListe: trefferSicht.oeffne,
+    treffer: m.treffer, fundstellen: m.fundstellen, onListe: trefferSicht.oeffne,
     // D28 · ‹ ›: dieselben Callbacks wie ↑↓ im Feld (§5, eine Folge).
     onVor: () => m.springeZuFundstelle?.(1), onZurueck: () => m.springeZuFundstelle?.(-1),
     listeSteht: trefferSteht, // D38, Herleitung in `./SuchZone`

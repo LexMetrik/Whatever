@@ -29,8 +29,11 @@ import { SektionKopf } from '../pages/gesetz-leser/parts/SektionKopf';
 import { berechneSekPos } from '../pages/gesetz-leser/berechnungen';
 import { sammleTrefferRanges } from '../pages/gesetz-leser/suchHighlight';
 import {
-  baueLeserSuchIndex, sucheImErlass, fundstellenFolge, zaehleTreffer,
+  baueLeserSuchIndex, sucheImErlass, fundstellenFolge, zaehleTreffer, badgesFuer,
+  type LeserSuchIndex,
 } from '../pages/gesetz-leser/leserSuche';
+import { findeVorkommen } from '../pages/gesetz-leser/suchHighlight';
+import { ladeNormFixture } from './fixtures/normtext-fixture';
 
 // ── Fixture ───────────────────────────────────────────────────────────────────
 // «Zaunkoenig» steht: im Titel-Kopf (Art. 1–3 darunter), in der geteilten
@@ -176,5 +179,106 @@ describe('O-36 b · Zählvertrag «gezählt = gemalt» für Sektionsköpfe', () 
     const mit = treffer().map((t) => `${t.token}:${t.fundstellen}`);
     const ohne = sucheImErlass(baueLeserSuchIndex('X', eintraege, struktur), BEGRIFF).map((t) => `${t.token}:${t.fundstellen}`);
     expect(ohne).toEqual(mit);
+  });
+});
+
+// ═══ Auflage der Gegenprüfung (15.10.2026): kein Artikel wird unauffindbar ═════
+//
+// Mit «Kopf zählt einmal, am ersten Artikel» fielen Artikel aus der Liste, die nur
+// unter einer passenden Überschrift stehen (OR «Kündigung zur Unzeit»: 336d). Die
+// Liste nennt darum an jedem Kopf-Treffer den Artikel-Bereich seines Teilbaums —
+// dieselbe Zeichenkette wie der `SektionKopf` (`berechneSektionMeta`) — und der
+// Zähler sagt ehrlich, was er zählt. Der Zählvertrag bleibt (Kopf einmal, gemalt).
+// ROT ZU BEKOMMEN (§6.7): in `badgesFuer` den Zweig `f.malbar === 'kopf'` entfernen
+// (Kopf-Badge ohne Bereich) — die Fälle «Bereich» und «Abdeckung» fallen.
+describe('O-36 b · Kopf-Treffer nennen ihren Artikel-Bereich', () => {
+  const sek = () => baueGliederungsbaum(eintraege, struktur).sektionen;
+
+  it('Badge je Kopf: Quelle · Bereich des Teilbaums (Art. 1 trägt Titel UND Randtitel-Stufe)', () => {
+    const t = sucheImErlass(baueLeserSuchIndex('X', eintraege, struktur, sek()), BEGRIFF).find((x) => x.token === '1')!;
+    expect(badgesFuer(t, false).sort()).toEqual(['Randtitel · Art. 1–2', 'Überschrift · Art. 1–3']);
+    // Der Artikel unter dem Kopf trägt den Kopf NICHT mit — er steht nur dort, wo er gemalt wird.
+    expect(sucheImErlass(baueLeserSuchIndex('X', eintraege, struktur, sek()), BEGRIFF)
+      .find((x) => x.token === '3')!.koepfe).toEqual([]);
+  });
+
+  it('Zähler: ein Artikel, der nur seines Kopfes wegen in der Liste steht, ist kein Treffer-Artikel', () => {
+    const e2 = [art('1', 'Ohne Fundstelle.'), art('2', 'Der Zaunkoenig ist geschuetzt.')];
+    const s2: StrukturMap = {
+      '1': { gliederung: [TITEL1], marginalie: [] },
+      '2': { gliederung: [TITEL1], marginalie: [] },
+    };
+    const t = sucheImErlass(baueLeserSuchIndex('X', e2, s2), BEGRIFF);
+    expect(t.map((x) => x.token)).toEqual(['1', '2']); // beide stehen in der Liste …
+    expect(zaehleTreffer(t)).toEqual({ artikel: 1, koepfe: 1, fundstellen: 2 }); // … gezählt wird, was wahr ist
+    expect(badgesFuer(t[0], false)).toEqual(['Überschrift · Art. 1–2']);
+    expect(badgesFuer(t[1], false)).toEqual([]);
+  });
+
+  it('Lücken im Bereich werden mit der Zahl benannt, Anhang-Sektionen mit «n Einträge»', () => {
+    const index = (info: { bereich: string | undefined; anzahl: number; luecken: boolean }): LeserSuchIndex => ({
+      key: 'T',
+      artikel: [{
+        token: 'a', label: 'Art. 5', pos: 0, randtitel: null, gruppe: null,
+        segmente: [{ feld: 'g', quelle: 'Überschrift', malbar: 'kopf', text: BEGRIFF, kopf: 's1' }],
+      }],
+      koepfe: new Map([['s1', { quelle: 'Überschrift', ...info }]]),
+    });
+    const badge = (info: Parameters<typeof index>[0], wort?: string) =>
+      badgesFuer(sucheImErlass(index(info), BEGRIFF)[0], false, wort);
+    expect(badge({ bereich: 'Art. 5–9', anzahl: 5, luecken: false })).toEqual(['Überschrift · Art. 5–9']);
+    expect(badge({ bereich: 'Art. 5–9', anzahl: 3, luecken: true })).toEqual(['Überschrift · Art. 5–9 (3 Artikel)']);
+    expect(badge({ bereich: '§ 5–9', anzahl: 3, luecken: true }, 'Paragraphen')).toEqual(['Überschrift · § 5–9 (3 Paragraphen)']);
+    expect(badge({ bereich: undefined, anzahl: 3, luecken: false })).toEqual(['Überschrift · 3 Einträge']);
+    expect(badge({ bereich: undefined, anzahl: 1, luecken: false })).toEqual(['Überschrift · 1 Eintrag']);
+  });
+});
+
+describe('O-36 b · Abdeckung am echten Korpus: jeder früher über seinen Gliederungspfad gefundene Artikel bleibt auffindbar', () => {
+  // Der Massstab ist unabhängig vom Code unter Test: vor O-36 b war ein Artikel
+  // gelistet, sobald Gliederungspfad ODER eine Randtitel-Stufe den Begriff trug
+  // (neben Wortlaut etc.). Hier zählen nur diese Fälle; sie müssen nachher eine
+  // eigene Zeile haben oder im genannten Bereich einer Kopf-Zeile liegen.
+  const faelle: Array<[string, string, string[]]> = [
+    ['OR', 'Kündigung zur Unzeit', ['336_c', '336_d']],
+    ['OR', 'Kündigung', ['266_b', '272', '336_d', '418_r']],
+    ['ZGB', 'Eigentum', ['197', '222', '644']],
+  ];
+  for (const [key, begriff, muster] of faelle) {
+    it(`${key} «${begriff}»`, () => {
+      const { eintraege: e, struktur: st } = ladeNormFixture('bund', key);
+      const treffer = sucheImErlass(baueLeserSuchIndex(key, e, st), begriff);
+      const eigene = new Set(treffer.map((t) => t.token));
+      const bereiche: Array<[number, number]> = [];
+      for (const t of treffer) {
+        for (const b of badgesFuer(t, false)) {
+          const m = /^(?:Überschrift|Randtitel) · (Art\.|§) (\S+?)(?:–(\S+))?(?: \(\d+ \w+\))?$/.exec(b);
+          if (!m) continue;
+          expect(e[t.pos].artikelLabel, `Bereich beginnt am Träger: ${b}`).toBe(`${m[1]} ${m[2]}`);
+          let ende = t.pos;
+          if (m[3]) {
+            ende = e.findIndex((x, i) => i >= t.pos && x.artikelLabel === `${m[1]} ${m[3]}`);
+            expect(ende, `Bereichsende gefunden: ${b}`).toBeGreaterThanOrEqual(t.pos);
+          }
+          bereiche.push([t.pos, ende]);
+        }
+      }
+      const frueher = e.map((x, i) => ({ x, i })).filter(({ x }) => {
+        const pfad = [...(st?.[x.artikel]?.gliederung ?? []).map((g) => g.label), ...(st?.[x.artikel]?.marginalie ?? [])];
+        return pfad.some((p) => findeVorkommen(p, begriff).length > 0);
+      });
+      expect(frueher.length, 'Testfall trägt nicht: kein Artikel über den Pfad').toBeGreaterThan(0);
+      const verloren = frueher.filter(({ x, i }) => !eigene.has(x.artikel) && !bereiche.some(([a, z]) => i >= a && i <= z));
+      expect(verloren.map(({ x }) => x.artikelLabel), 'unauffindbar gewordene Artikel').toEqual([]);
+      // Die Stichproben sind wirklich im Pfad gefunden worden (nicht nur zufällig leer).
+      for (const tok of muster) expect(frueher.some(({ x }) => x.artikel === tok), `Stichprobe ${tok}`).toBe(true);
+    });
+  }
+
+  it('OR «Kündigung zur Unzeit»: 336d hat keine eigene Zeile, steht aber im genannten Bereich von 336c', () => {
+    const { eintraege: e, struktur: st } = ladeNormFixture('bund', 'OR');
+    const treffer = sucheImErlass(baueLeserSuchIndex('OR', e, st), 'Kündigung zur Unzeit');
+    expect(treffer.some((t) => t.token === '336_d')).toBe(false);
+    expect(badgesFuer(treffer.find((t) => t.token === '336_c')!, false)).toEqual(['Randtitel · Art. 336c–336d']);
   });
 });

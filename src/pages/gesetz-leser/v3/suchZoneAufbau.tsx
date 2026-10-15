@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { SuchZone } from './SuchZone';
 import type { BestimmungsWort } from './erlassAnsicht';
+import { zaehleTreffer, type LeserTreffer } from '../leserSuche';
 import { MarkenSchalter } from '../../../components/leser/MarkenSchalter';
 
 // ═══ DER AUFBAU DER KLEBENDEN SUCH-ZONE ══════════════════════════════════════
@@ -44,7 +45,8 @@ export function suchZoneAufbau(a: {
    *  stehen, damit das Chrome hinter dem Overlay nichts verschiebt. */
   feldImSheet: boolean;
   suchFeld: ReactNode;
-  bestimmungen: number;
+  /** Die Treffer-Zeilen: daraus zählt die Zone Artikel mit eigener Fundstelle und Köpfe (O-36 b). */
+  treffer: readonly LeserTreffer[];
   fundstellen: number;
   bestimmungsWort: BestimmungsWort;
   /** «Treffer anzeigen →» — holt die Liste über die Lesespalte zurück. */
@@ -63,9 +65,10 @@ export function suchZoneAufbau(a: {
   setzeMarkenAus: (aus: boolean) => void;
 }): ReactNode | undefined {
   if (!a.klebt) return undefined;
+  const { artikel, koepfe } = zaehleTreffer(a.treffer);
   return (
     <SuchZone suchFeld={a.feldImSheet ? undefined : a.suchFeld} sucheAktiv={a.sucheAktiv}
-      bestimmungen={a.bestimmungen} fundstellen={a.fundstellen}
+      bestimmungen={artikel} ueberschriften={koepfe} fundstellen={a.fundstellen}
       bestimmungsWort={a.bestimmungsWort}
       onListe={a.onListe}
       onVor={a.onVor} onZurueck={a.onZurueck} listeSteht={a.listeSteht}
