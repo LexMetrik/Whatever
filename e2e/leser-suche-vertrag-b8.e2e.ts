@@ -164,12 +164,26 @@ test.describe('B8 — der §4.4-Vertrag an den Klassen, die ihn wirklich brachen
     expect(artikel, `Kopf-Zähler: ${kopf}`).toBeGreaterThan(gezeigt)
 
     // Und der Knopf sagt ehrlich, wie viele noch kommen, und holt sie.
+    // §6.3 deklariert (O-36(b), #1383): seit Kopf-Treffer eigene Listenzeilen
+    // sind und der Kopf-Zähler nur Artikel MIT eigener Fundstelle nennt, ist
+    // «weitere» eine Zeilenzahl, nicht «Artikel − gezeigt». Geprüft wird jetzt
+    // schärfer: gezeigt + angekündigt bleibt nach dem Nachladen gleich (die
+    // Ankündigung lügt nicht, egal in welchen Schritten nachgeladen wird).
     const mehr = page.locator('[data-treffer-mehr]')
     await expect(mehr).toBeVisible()
-    await expect(mehr).toContainText(String(artikel - gezeigt))
+    const zahlIn = async () => Number((await mehr.innerText()).match(/(\d+)/)?.[1] ?? -1)
+    const angekuendigt = await zahlIn()
+    expect(angekuendigt, 'Knopf nennt eine Zahl').toBeGreaterThan(0)
     await mehr.click()
     await expect.poll(async () => page.locator('[data-treffer-artikel]').count(), { timeout: 20_000 })
       .toBeGreaterThan(gezeigt)
+    const neu = await page.locator('[data-treffer-artikel]').count()
+    if (neu < gezeigt + angekuendigt) {
+      await expect(mehr).toBeVisible()
+      expect(neu + await zahlIn(), 'gezeigt + Rest nach dem Nachladen').toBe(gezeigt + angekuendigt)
+    } else {
+      expect(neu, 'alle angekündigten Zeilen geholt').toBe(gezeigt + angekuendigt)
+    }
   })
 
   test('Ein «weiter»-Schritt landet auf einer wirklich gemalten Stelle', async ({ page }) => {
