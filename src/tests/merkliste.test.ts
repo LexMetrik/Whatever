@@ -220,7 +220,8 @@ describe('Teilen als Link', () => {
 });
 
 describe('Härtung (Bidi, Punkt-Segmente, Kanonisierung vor Prüfung)', () => {
-  const UNSICHTBARE = ['\u200B', '\u200C', '\u200D', '\u200E', '\u200F', '\u202A', '\u202B', '\u202C', '\u202D', '\u202E',
+  const UNSICHTBARE = [
+    '\u200B', '\u200C', '\u200D', '\u200E', '\u200F', '\u202A', '\u202B', '\u202C', '\u202D', '\u202E',
     '\u2066', '\u2067', '\u2068', '\u2069', '\uFEFF', '\u00AD', '\u061C', '\u2060', '\u2061', '\u2062', '\u2063', '\u2064'];
 
   it('Titel: Bidi- und Nullbreite-Zeichen fliegen raus (Trojan Source), der Rest bleibt', () => {

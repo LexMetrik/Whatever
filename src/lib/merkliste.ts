@@ -200,7 +200,8 @@ function beiStorage(ev: StorageEvent): void {
 
 /** Abo für `useSyncExternalStore`: gleicher Tab per Event, anderer Tab per `storage`. */
 export function abonniereMerkliste(cb: () => void): () => void {
-  if (typeof window === 'undefined') return () => {};
+  // Ohne Fenster-Ereignisse (SSR, Test-Stubs von `window`) kein Abo — der Snapshot liest dann frisch.
+  if (typeof window === 'undefined' || typeof window.addEventListener !== 'function') return () => {};
   abonnenten.add(cb);
   if (!amFenster) {
     amFenster = true;
