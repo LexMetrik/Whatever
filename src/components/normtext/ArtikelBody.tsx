@@ -535,11 +535,11 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
               // Slice auf Artikel-Granularität — der Anker macht die Zwischen-
               // titel-Ebene erreichbar (Deep-Link, Ctrl+F-Landung), OHNE die
               // Baum-Granularität zu erweitern (deklarierte Grenze). Nur im
-              // eigentlichen Lese-Pfad (`!zitierKontext`, keine Zitat-Vorschau)
+              // eigentlichen Lese-Pfad (`zitierKontext` gesetzt, wie ArtikelLeser ihn übergibt; keine Zitat-Vorschau)
               // — im Popover wäre die Id doppelt vergeben (§7: kein Anker, der
               // zweimal im DOM steht). Index i ist die stabile Block-Position
               // im Snapshot (deterministisch, §2).
-              id={zA[i]?.id ?? (zitierKontext ? undefined : `anh-${artikel}-${i}`)}
+              id={zA[i]?.id ?? (zitierKontext ? `anh-${artikel}-${i}` : undefined)}
               className={`${zitierKontext ? '' : 'text-body-s '}${zA[i] ? 'nt-anker ' : ''}font-semibold text-ink-800 ${flach ? 'mt-3' : 'mt-2'} ${zk ? 'pl-9 [text-indent:0]' : ''}`}
             >
               {b.text}
