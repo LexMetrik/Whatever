@@ -22,7 +22,7 @@ import { staffelZeilen, normalisiereTarifText } from './tarifText';
 // Beleg) und erzeugt keinen Zyklus (check:zyklen).
 import { SUCH_META } from '../../pages/gesetz-leser/suchHighlight';
 import { zifferAnkerAttribute } from '../../lib/normtext/zifferAnker';
-import { type BildBlock, type ZitierKontext, type AusweisBasis, FREMD_LEER, NOOP, markenAnzeige, anhangVorKette, einzugStil, itemZitatSegmente, stufenFuer, vglFnNr, zifferTeil } from './ArtikelBody.helfer';
+import { type BildBlock, type ZitierKontext, type AusweisBasis, FREMD_LEER, NOOP, markenAnzeige, istLeerMarke, anhangVorKette, einzugStil, itemZitatSegmente, stufenFuer, vglFnNr, zifferTeil } from './ArtikelBody.helfer';
 import { ZitierMarke } from './ArtikelBody.zitier';
 
 export type { ZitierKontext };
@@ -363,7 +363,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
           // Marke-lose Zeile (`marke: ''`, W2·27-BUND-FERTIG 3.10.2026): die Quelle führt keine <dt>-Marke
           // (ARGV1 art_30 «1.  in fünf …», VBB-Legende). Kein Zitierknopf, keine erfundene Marke; in der Lesesicht
           // hält eine leere Markenspalte den Text auf der Textspalte der Geschwister-Punkte.
-          const ohneMarke = it.marke === '';
+          const ohneMarke = istLeerMarke(it.marke);
           // FN-5: im Text-Pfad inline gesetzte Marker dieses Items —
           // erscheinen nicht mehr zusätzlich am Item-Ende.
           // INVARIANTE (wie im Absatz-Pfad, Gegenprüfung 26.7., B2/B5): der

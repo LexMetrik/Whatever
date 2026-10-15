@@ -596,7 +596,11 @@ const ohneKlassen = (s: string) => s.replace(/ class="[^"]*"/g, '');
  *  NACHZUG zur Gegenprüfung (L2, 15.10.2026): derselbe Anker trägt jetzt die Klasse `nt-anker`
  *  (scroll-margin-top, damit ein Sprung auf `#anh-…` nicht unter dem klebenden Kopf landet). Nur der
  *  [voll]-Hash dieses Falls ist neu gezogen; der [struktur]-Hash (Markup OHNE class-Attribute)
- *  `49da29ab…` ist unverändert — belegt, dass sich ausschliesslich das class-Attribut unterscheidet. */
+ *  `49da29ab…` ist unverändert — belegt, dass sich ausschliesslich das class-Attribut unterscheidet.
+ *  AUSNAHME Fall «Formelbild (DBG Art. 22)» (LESER-NAV/O-34e, 15.10.2026, deklarierte Darstellungsänderung,
+ *  §6.3): `BildFigur` setzt `style="width:58mm"` (Fedlex-`data-scaled-*` sind mm, nicht px — die Formel stand
+ *  58 px klein); beide Hashes dieses Falls sind neu, Text/Aufbau/Klassen unverändert, nur das style-Attribut kommt
+ *  hinzu. Tests: `leser-formel-bildgroesse-o34e.test.tsx`. */
 const KERN_ERWARTET: Record<string, [string, string]> = {
   'OR Art. 257d (Prosa, zwei Absätze)': ['42d989dc4feb377764bd10d812bc812340bb16327f276c99df56d1d4bdb1c29b', '3781a2a8bb5f7c1daa9c37d11b4f302e27f2be3ec899ec2e3682c79387caf27e'],
   'T-A Staffel-Spanne verdichtet (bereich)': ['ebf3fb58723c22e4ba46a98863f05f14762f7b85dfa033974db50326b3c930df', 'f2cd0ac7f0ff74c40b14b1b6377327c1f3f9593a0b4487f478435aa6a9fee62b'],
@@ -606,7 +610,7 @@ const KERN_ERWARTET: Record<string, [string, string]> = {
   'T-E Alt-Form ohne Spalten-Vektor (Rückfallpfad)': ['e2615deff69be8c55a63b60769cd0a95c835cd461d4e3b5098ad6eff7d4d8407', '7c1673da257ee42152116168dc9cf8fbf6b58bfde0180cf89fe914fc038700ef'],
   'T-F Leitfall GebV SchKG Art. 20 (T-F4)': ['39877124098e7d44dddc02400e1e976d3fd1d218eda9def6417383344d20320c', 'eb72abb30e66fb45f96e0ceef22f67955d5e579fcea1053ff76f0eb89c004c31'],
   'T-B5 Kurzform tabelle (Kanton)': ['26e2d365456ec053e12c864353909d6fe04fdffa2e6ee94b94b41eb7f7273f5d', 'ad119a6f2413cb360f9570634315a99d7b3d075cd2ce7b220c1d670cc88b8be5'],
-  'Formelbild (DBG Art. 22)': ['d1edd7bed07f768642ecc4d2f016c4d95ffb60318fe885a48d7ecf3206340fa8', '63c572a17754ba935d4bbb1dd3099e5881fab13ca6797d2d72ed3c91be7c8346'],
+  'Formelbild (DBG Art. 22)': ['cd0875ecb97dc329644fec1320c62d8edaf75dc39588a27d0315fb6524cc5885', '9d65b154901dfba41b462ab92719d14094e97bd4f217f477ba8dc2d863c45818'],
   'aufgehoben (ganzer Artikel)': ['ccb9a533dab7cb8e116602b12048386d2e5421a81c30b26d0bf50ac621d194f8', '0bb7a81471bf6b806a44ee8102ca716f7053db3c43116dc6da5035acf455d79e'],
   'leer, ungeklärt (Kanton, nicht aufgehoben)': ['e36083544edc02902c2a3d9dbde46e80a12674334d556e00c83976c5a274046f', '24fbe7f50467e80e7215a0ac27186ced52b8557f55b60c74dd81f63c7b5d0f5b'],
   'Kantonsartikel (Absätze + Items)': ['015be8d8982bbc2ea733112f5d4619af96747a32223a2a7ccd7d76049551a1f9', 'cca846fd3519f717dc83252091bc3b4afedabd4e77cf27da200cd0cd2a1bceb9'],
