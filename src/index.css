@@ -991,7 +991,8 @@
        die sie tragen:
          0  --z-base           ArtikelLeser.tsx (Ruhezustand des Artikel-Blocks)
          10 --z-sticky         app-weit: klebende Kopf-/Werkzeugleisten
-         15 --z-entscheid-sticky  EntscheidLeser.tsx (zweite Sticky-Ebene dort)
+         15 --z-entscheid-sticky  EntscheidLeser.tsx (zweite Sticky-Ebene dort),
+                                   leser/TrefferLandkarte.tsx (über der Fusszeile)
          16 --z-reader-scrim   v3/LeserScrim.tsx (Ansicht-Menü-Scrim)
                                 — Träger mit D41 (7.9.2026) entfallen; die
                                 Sprosse bleibt reserviert, weil 17 und 19
@@ -1011,7 +1012,8 @@
     --z-base: 0;
     /* App-weit: klebende Kopf- und Werkzeugleisten. */
     --z-sticky: 10;
-    /* Zweite klebende Ebene im Entscheid-Leser. */
+    /* Zweite klebende Ebene im Entscheid-Leser; Treffer-Landkarte beider Leser (über der Fusszeile
+       z-sticky, unter den Leser-Köpfen 17/19). */
     --z-entscheid-sticky: 15;
     /* Reserviert: abdunkelnde Fläche des Ansicht-Menüs im Leser. Der Träger ist entfallen, die
        Sprosse bleibt reserviert, weil 17 und 19 sich ausdrücklich gegen sie herleiten. */

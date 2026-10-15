@@ -760,3 +760,25 @@ export function fundstellenFolge(
   }
   return out;
 }
+
+/**
+ * Position in der Folge, zu der ein KLICK auf einen Artikel (Trefferliste,
+ * Landkarten-Marke) führt: die erste Fundstelle des Artikels, die im Text
+ * wirklich gemalt wird. Hat der Artikel keine, bleibt es bei seiner ersten
+ * Fundstelle (Artikel-Blink, nie eine erfundene Stelle, §8). `-1`: der Artikel
+ * kommt in der Folge nicht vor.
+ *
+ * LESER-NAV, FB O-36 (a): die erste datenseitige Fundstelle liegt oft im
+ * Randtitel oder Gliederungspfad (`malbar: 'nie'`). Der Klick sprang dorthin,
+ * `lc-such-aktiv` blieb leer, obwohl derselbe Artikel weiter unten gemalte
+ * Treffer trägt (OR «Kündigung», Landkarte: 54 von 88 Marken-Klicks ohne aktive
+ * Stelle, ein grosser Teil davon in Artikeln mit gemaltem Treffer im Wortlaut).
+ */
+export function ersterKlickSprung(folge: readonly FundstellenSchritt[], token: string): number {
+  const erste = folge.findIndex((f) => f.token === token);
+  if (erste < 0) return -1;
+  for (let i = erste; i < folge.length && folge[i].token === token; i++) {
+    if (folge[i].malRang !== null) return i;
+  }
+  return erste;
+}
