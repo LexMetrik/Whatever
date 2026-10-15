@@ -13,7 +13,8 @@ import { useEffect, useState } from 'react';
 //   1. `pdfViewerEnabled === false` ⇒ gar kein Frame, sondern ehrlicher Hinweis
 //      mit Download-/Neu-Tab-Link (§8: nicht «lädt», was nie laden wird).
 //   2. Zeitdeckel für den Spinner (Browser, die `pdfViewerEnabled` nicht melden):
-//      danach fällt nur der Platzhalter, das Frame bleibt gemountet.
+//      danach fällt der Platzhalter, das Frame bleibt gemountet UND derselbe
+//      Hinweis wie in Stufe 1 erscheint dazu (`pdfHinweisArt`, 'zu-langsam').
 // Erstrender und erster Client-Render sind unverändert («inline» + Spinner), erst
 // ein Timer-Tick entscheidet — Prerender-Markup bleibt byte-gleich.
 
@@ -28,6 +29,15 @@ export type PdfAnzeige = 'inline' | 'ohne-viewer';
  *  (ältere Browser), bleibt es beim bisherigen Frame plus Zeitdeckel. */
 export function pdfAnzeige(nav: { pdfViewerEnabled?: boolean } | undefined | null): PdfAnzeige {
   return nav?.pdfViewerEnabled === false ? 'ohne-viewer' : 'inline';
+}
+
+/** Welcher Hinweis ersetzt/ergänzt das Frame (§8: nie ein stiller leerer Rahmen)?
+ *  'kein-viewer': Browser meldet ausdrücklich keinen PDF-Viewer ⇒ Frame entfällt.
+ *  'zu-langsam': Zeitdeckel ohne `load` ⇒ Frame bleibt (könnte noch laden), der
+ *  Hinweis kommt dazu und verschwindet, sobald `bereit` wahr wird. */
+export function pdfHinweisArt(anzeige: PdfAnzeige, deckelAbgelaufen: boolean, bereit: boolean): 'kein-viewer' | 'zu-langsam' | null {
+  if (anzeige === 'ohne-viewer') return 'kein-viewer';
+  return deckelAbgelaufen && !bereit ? 'zu-langsam' : null;
 }
 
 export function usePdfAnzeige(bereit: boolean): { anzeige: PdfAnzeige; deckelAbgelaufen: boolean } {

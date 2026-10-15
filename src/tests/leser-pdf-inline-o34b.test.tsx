@@ -13,7 +13,7 @@ import { act, createElement } from 'react';
 import { createRoot, type Root } from 'react-dom/client';
 import { parseHTML } from 'linkedom';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { PDF_LADE_DECKEL_MS, pdfAnzeige, usePdfAnzeige } from '../pages/gesetz-leser/pdfInline';
+import { PDF_LADE_DECKEL_MS, pdfAnzeige, pdfHinweisArt, usePdfAnzeige } from '../pages/gesetz-leser/pdfInline';
 
 describe('pdfAnzeige (reine Entscheidung)', () => {
   it('ohne PDF-Viewer (ausdrücklich false) ⇒ ohne-viewer', () => {
@@ -26,6 +26,20 @@ describe('pdfAnzeige (reine Entscheidung)', () => {
     expect(pdfAnzeige({})).toBe('inline');
     expect(pdfAnzeige(null)).toBe('inline');
     expect(pdfAnzeige(undefined)).toBe('inline');
+  });
+});
+
+describe('pdfHinweisArt (nach dem Deckel kein stiller leerer Rahmen, §8)', () => {
+  it('ohne Viewer ⇒ «kein-viewer» (Frame entfällt)', () => {
+    expect(pdfHinweisArt('ohne-viewer', false, false)).toBe('kein-viewer');
+  });
+  it('Deckel abgelaufen ohne load ⇒ «zu-langsam» (Frame bleibt, Hinweis kommt dazu)', () => {
+    expect(pdfHinweisArt('inline', true, false)).toBe('zu-langsam');
+  });
+  it('Randfälle: vor dem Deckel kein Hinweis; kam load nach dem Deckel noch, verschwindet er', () => {
+    expect(pdfHinweisArt('inline', false, false)).toBeNull();
+    expect(pdfHinweisArt('inline', true, true)).toBeNull();
+    expect(pdfHinweisArt('inline', false, true)).toBeNull();
   });
 });
 

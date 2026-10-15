@@ -16,7 +16,7 @@ import { GesetzFehlSeite } from './FehlSeite';
 import type { LeserFehler, Teilausfall } from './inhalt-zustand';
 import { ebeneAngabe } from './v3/erlassAnsicht';
 import { routenEbene } from '../../lib/normtext/erlassAdresse';
-import { usePdfAnzeige } from './pdfInline';
+import { pdfHinweisArt, usePdfAnzeige } from './pdfInline';
 
 // ═══ ABSCHNITT · Nicht-Volltext-Leseansichten (§6.6-Split, W2·12-HYGIENE/B24) ═══
 // Reine Präsentationskomponenten (Props rein, §3) — aus GesetzLeserInhalt
@@ -85,6 +85,7 @@ function PdfEmbedAnsicht({ erlass, currency, teilausfall, kopf, internRefs }: {
   // O-34b: Browser ohne PDF-Viewer feuern `load` nie ⇒ Spinner endlos (./pdfInline).
   const { anzeige, deckelAbgelaufen } = usePdfAnzeige(pdfBereit);
   const ladeAnzeigen = !pdfBereit && !deckelAbgelaufen;
+  const hinweisArt = pdfHinweisArt(anzeige, deckelAbgelaufen, pdfBereit);
   return (
     <div className="space-y-5">
       {/* Breadcrumb trägt der Kopf (Inhalts-Kopf bzw. PaneKopf) — kein Inline-Dup.
@@ -132,13 +133,23 @@ function PdfEmbedAnsicht({ erlass, currency, teilausfall, kopf, internRefs }: {
         {/* ⑦ PDF-Rahmen (W2·5d G3a): der iframe-Rahmen nutzt die benannte Struktur-
             Linie (border-rule-struktur) statt der Ad-hoc border-line — konsistent mit
             dem Linien-Kanon (§2.2⑦). Das PDF IST die amtliche Fassung (§7/§8). */}
-        {anzeige === 'ohne-viewer' ? (
+        {hinweisArt === 'kein-viewer' ? (
           // O-34b / §8: dieser Browser zeigt PDF nicht eingebettet an — statt eines
           // Frames, das nie lädt, der ehrliche Hinweis mit beiden Wegen zum PDF.
           <div data-pdf-ohne-viewer className="rounded-lg border border-rule-struktur bg-paper-sunken px-4 py-6 text-body-s text-ink-700">
             <p>Dieser Browser zeigt PDF-Dateien nicht eingebettet an. Das amtliche PDF lässt sich herunterladen (oben) oder in einem neuen Tab öffnen (unten).</p>
           </div>
         ) : (
+        <>
+        {hinweisArt === 'zu-langsam' && (
+          // O-34b-Nachzug (Gegenprüfung #1370, §8): Browser ohne Auskunft über den
+          // Viewer — nach dem Zeitdeckel ohne `load` nicht nur der Spinner weg, sondern
+          // derselbe Weg zum PDF wie oben. Das Frame bleibt gemountet (kann noch laden);
+          // der Hinweis verschwindet dann mit `pdfBereit`.
+          <div data-pdf-zu-langsam role="status" className="rounded-lg border border-rule-struktur bg-paper-sunken px-4 py-3 text-body-s text-ink-700">
+            <p>Das PDF erscheint hier nicht (oder noch nicht). Das amtliche PDF lässt sich herunterladen (oben) oder in einem neuen Tab öffnen (unten).</p>
+          </div>
+        )}
         <div className="relative">
           {ladeAnzeigen && (
             // W3-7: `aria-hidden` ist gefallen — die vorige Fassung verbarg die
@@ -153,6 +164,7 @@ function PdfEmbedAnsicht({ erlass, currency, teilausfall, kopf, internRefs }: {
             className="w-full rounded-lg border border-rule-struktur bg-paper-sunken"
             style={{ height: 'min(82vh, 1100px)' }} />
         </div>
+        </>
         )}
       </div>
       {/* W2·19-GLIEDERUNG/S9 (Bau-Spec §8 T11 «EINE Fläche: Erlass-Übersicht +
