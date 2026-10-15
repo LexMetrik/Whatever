@@ -44,6 +44,7 @@ import { REITER_MIME } from './reiterleiste/ueberlauf';
 import { BLATT_ZU, type BlattZustand } from './reiterleiste/blatt';
 import { useDialogFokus } from './useDialogFokus';
 import { useKopieren } from '../useKopieren';
+import { SchwebeMeldung } from '../ui/SchwebeMeldung';
 import { istGemerkt, merkRouteAusAdresse, schalteMerkung } from '../../lib/merkliste';
 import { merkAnsage } from '../merkliste/merkAnsage';
 import { sageKopiertAn } from '../ui/kopierAnsage';
@@ -167,7 +168,12 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   const [blatt, setBlatt] = useState<BlattZustand>(BLATT_ZU);
   const { offen: blattOffen, suche } = blatt;
   const schliesseBlatt = () => setBlatt(BLATT_ZU);
-  const { kopieren } = useKopieren();
+  // O-49 (15.10.2026): «Adresse kopieren» (Reiter-Menü) und «Adresse der Mappe kopieren»
+  // schlossen das Menü und quittierten NUR dem Screenreader (`useKopieren` → sr-only-Region).
+  // Sichtbar blieb nichts — der Klick wirkte wie ein Fehlschlag. `kopiert` steht erst NACH
+  // erfolgreichem Schreiben (R4-D) und fällt nach `KOPIER_DAUER_MS`; die Pille unten ist
+  // dieselbe schwebende Meldung wie der Rücksprung-Chip (`ui/SchwebeMeldung`).
+  const { kopieren, kopiert } = useKopieren();
   const triggerRef = useRef<HTMLButtonElement>(null);
   const blattRef = useRef<HTMLDivElement>(null);
   const leisteRef = useRef<HTMLDivElement>(null);
@@ -1331,6 +1337,14 @@ export function Reiterleiste({ paneSchluessel = [] }: {
           onWieder={() => { stelleWiederHer(); schliesseBlatt(); }}
           onAlle={() => { alleSchliessen(); schliesseBlatt(); }}
           onZu={schliesseBlatt} />
+      )}
+
+      {kopiert && (
+        // Der Screenreader hört die Kopie schon aus `useKopieren` (sr-only-Region,
+        // `ui/kopierAnsage`) — die sichtbare Pille bleibt darum für ihn stumm (`aria-hidden`).
+        <SchwebeMeldung kante="unten" ausrichtung="mitte" daten="data-reiter-kopiert" inhaltKlassen="px-4 py-2 text-body-s text-ink-700">
+          <span aria-hidden>Adresse kopiert</span>
+        </SchwebeMeldung>
       )}
     </nav>
   );
