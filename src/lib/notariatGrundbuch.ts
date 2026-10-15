@@ -14,7 +14,9 @@ import type { Berechnungsergebnis, Rechenschritt } from '../types/legal';
 import { chfGanz } from './format';
 import type { KantonCode, KantonalerTarif } from '../data/tarif/typen';
 import { auswertenTarif, type TarifErgebnis } from './tarif/staffel';
-import { NOTARIAT, GRUNDBUCH, GRUNDPFAND, HANDAENDERUNGSSTEUER } from '../data/tarif/notariat-grundbuch';
+import { NOTARIAT, GRUNDBUCH, HANDAENDERUNGSSTEUER } from '../data/tarif/notariat-grundbuch';
+// RL-28: Grundpfand-Posten = Beurkundung + Grundbucheintrag (eigene Quelle, siehe grundpfand.ts).
+import { GRUNDPFAND } from '../data/tarif/grundpfand';
 
 export interface Spanne { vonChf: number; bisChf: number }
 
