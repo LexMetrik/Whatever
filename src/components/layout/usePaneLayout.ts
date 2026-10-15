@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useEffect, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { tabSchluessel } from '../../lib/tabs';
 import { kanonisierePfad } from '../../lib/normtext/erlassAdresse';
 import { lokalSpeicher } from '../../lib/sichererSpeicher';
@@ -59,8 +59,24 @@ function saeubere(arr: unknown[]): string[] {
   return sauber;
 }
 
-function ladePanes(): string[] {
-  if (typeof window === 'undefined') return [];
+/** Gespeicherte Eigen-Ordnung (leer bei fehlendem/defektem Eintrag). */
+function ladeGespeicherte(): string[] {
+  const roh = lokalSpeicher.lies(PANES_KEY);
+  if (!roh) return [];
+  const arr = JSON.parse(roh);
+  return Array.isArray(arr) ? saeubere(arr) : [];
+}
+
+interface PaneStart {
+  panes: string[];
+  /** true, wenn ein geteilter `?p=`-Link eine nicht leere gespeicherte Eigen-Ordnung
+   *  überdeckt: bis zur ersten eigenen Änderung darf der Link-Satz nicht in den
+   *  Speicher (LESER-NAV, FB O-27 BG-06 — sonst gingen die eigenen Panes verloren). */
+  eigenSchuetzen: boolean;
+}
+
+function ladePanes(): PaneStart {
+  if (typeof window === 'undefined') return { panes: [], eigenSchuetzen: false };
   try {
     // B-5: ein geteilter Layout-Link `?p=pfad||pfad` gewinnt über localStorage —
     // so reproduziert das Öffnen eines geteilten Links den Pane-Satz.
@@ -69,14 +85,14 @@ function ladePanes(): string[] {
       // URLSearchParams.get hat bereits dekodiert → NICHT erneut decodeURIComponent.
       const seed = saeubere(geteilt.split('||'));
       // Defektes/leeres ?p= darf gespeicherte Panes NICHT löschen → nur bei Treffer gewinnen.
-      if (seed.length) return seed;
+      if (seed.length) {
+        let eigen: string[] = [];
+        try { eigen = ladeGespeicherte(); } catch { /* defekter Eintrag: nichts zu schützen */ }
+        return { panes: seed, eigenSchuetzen: eigen.length > 0 };
+      }
     }
-    const roh = lokalSpeicher.lies(PANES_KEY);
-    if (!roh) return [];
-    const arr = JSON.parse(roh);
-    if (!Array.isArray(arr)) return [];
-    return saeubere(arr);
-  } catch { return []; }
+    return { panes: ladeGespeicherte(), eigenSchuetzen: false };
+  } catch { return { panes: [], eigenSchuetzen: false }; }
 }
 
 /** Baut den teilbaren Layout-Permalink (aktuelle URL + ?p=sekundär-Pfade). */
@@ -104,7 +120,10 @@ export interface PaneLayout {
 }
 
 export function usePaneLayout(): PaneLayout {
-  const [sekundaer, setSekundaer] = useState<string[]>(ladePanes);
+  const [start] = useState(ladePanes);
+  const [sekundaer, setSekundaer] = useState<string[]>(start.panes);
+  // Link-Satz, der die Eigen-Ordnung überdeckt: gilt nur für diese Ansicht (siehe PaneStart).
+  const schutz = useRef(start.eigenSchuetzen ? start.panes : null);
 
   // B-5: ?p= war nur Seed (geteilter Link) → nach dem Übernehmen aus der URL
   // entfernen, damit ein Reload den dann lokalen Zustand nutzt (localStorage),
@@ -119,6 +138,10 @@ export function usePaneLayout(): PaneLayout {
   }, []);
 
   useEffect(() => {
+    // Jede eigene Änderung erzeugt eine neue Array-Identität (No-ops geben `s` zurück),
+    // der unveränderte Link-Satz ist also an der Identität erkennbar.
+    if (schutz.current === sekundaer) return;
+    schutz.current = null;
     lokalSpeicher.schreib(PANES_KEY, JSON.stringify(sekundaer)); // gesperrt → nur für die Sitzung
   }, [sekundaer]);
 
