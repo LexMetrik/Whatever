@@ -1,4 +1,5 @@
 import { usePaneKontext } from '../../../components/layout/PaneKontext';
+import { MerkenKnopf } from '../../../components/merkliste/MerkenKnopf';
 import { useKopieren } from '../../../components/useKopieren';
 import { NEUER_TAB } from '../../../lib/benennung';
 import { zitatMitAusweis, heuteIso } from '../../../lib/format';
@@ -137,6 +138,9 @@ export function ArtikelAktionen({ artikel, basisPfad, zitat, zitatVoll, amtlich,
       <button type="button" onClick={() => kopiere('link')}
         className={`lc-btn-mini ${k}`}
         aria-label="Permalink kopieren">{kopiert === 'link' ? '✓' : 'Link'}</button>
+      {/* LESER-NAV R-2: «Merken» legt die Stelle in die lokale Merkliste (`lib/merkliste`). */}
+      {trenner}
+      <MerkenKnopf pfad={basisPfad} anker={`art-${artikel}`} titel={zitat} klasse={k} />
       {/* EID-2: Outbound zur amtlichen Fassung AN DIESER STELLE (ELI-Form,
           target/rel wie die übrigen amtlichen Links, §12.4). Ä110: EINE
           Schreibung für EIN Ziel — sichtbarer Text = aria-label = title. */}

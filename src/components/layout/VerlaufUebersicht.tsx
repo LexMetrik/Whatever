@@ -2,10 +2,14 @@ import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
 import { useZuletzt } from './useZuletzt';
+import { useMerkliste } from '../merkliste/useMerkliste';
 import { gruppiereVerlauf } from '../../lib/verlaufGruppen';
 import { MenueGruppe, MenueTitel, MenueZeile } from '../ui/Menue';
 import { useDialogFokus } from './useDialogFokus';
 import { VerlaufLeerenKnopf } from './VerlaufLeerenKnopf';
+
+/** So viele Merkliste-Zeilen im Flyout; die ganze Liste führt die Startseite. */
+const MERK_SICHTBAR = 8;
 
 // ─── «Verlauf»-Übersicht in der Topbar (UI-NAV O1, Schritt 3) ───────────────
 //
@@ -24,6 +28,9 @@ import { VerlaufLeerenKnopf } from './VerlaufLeerenKnopf';
 // per createPortal an <body> und ist beim ersten Render zu.
 export function VerlaufUebersicht() {
   const eintraege = useZuletzt();
+  // LESER-NAV R-2: die Merkliste steht im selben Flyout wie der Verlauf («neben Zuletzt»). Unter 481 px fehlt
+  // das Flyout (`.lc-topbar-verlauf`); dort bleibt die Merkliste auf der Startseite (`MerklisteFlaeche`).
+  const merkliste = useMerkliste();
   const navigate = useNavigate();
   const [panelOffen, setPanelOffen] = useState(false);
   // Bezugs-«jetzt» für die heute/gestern-Gruppierung — beim Öffnen EINMAL
@@ -72,7 +79,7 @@ export function VerlaufUebersicht() {
 
   // Verlauf leer → Trigger ausblenden (nichts zu zeigen). Nach dem Mount kann sich
   // das ändern (useZuletzt); das Panel schliesst dann automatisch mit.
-  if (eintraege.length < 1) return null;
+  if (eintraege.length < 1 && merkliste.length < 1) return null;
 
   // Gruppierung erst beim Öffnen (der `jetzt`-Zeitpunkt wurde im onClick gesetzt;
   // §2 deterministisch: gleiche Eingabe → gleiche Ausgabe).
@@ -87,7 +94,7 @@ export function VerlaufUebersicht() {
         aria-haspopup="dialog"
         aria-expanded={panelOffen}
         aria-label="Verlauf – zuletzt geöffnet"
-        title="Verlauf (nur auf diesem Gerät)"
+        title={merkliste.length > 0 ? 'Verlauf und Merkliste (nur auf diesem Gerät)' : 'Verlauf (nur auf diesem Gerät)'}
         onClick={() => { if (!panelOffen) { positioniere(); setJetzt(Date.now()); } setPanelOffen((v) => !v); }}
       >
         {/* Uhr-mit-Rücklauf-Glyph (Verlauf/History). */}
@@ -104,7 +111,7 @@ export function VerlaufUebersicht() {
           tabIndex={-1}
           role="dialog"
           data-menue-flaeche
-          aria-label="Verlauf – zuletzt geöffnet"
+          aria-label={merkliste.length > 0 ? 'Verlauf und Merkliste' : 'Verlauf – zuletzt geöffnet'}
           style={{ top: pos.top, left: pos.left }}
           className="lc-schwebeflaeche fixed z-overlay w-[20rem] max-w-[calc(100vw-1rem)] py-1 max-h-[70vh] overflow-y-auto focus:outline-none"
         >
@@ -123,6 +130,22 @@ export function VerlaufUebersicht() {
               sie ohne diese Klammer nirgends mehr angesetzt (der Gruppentitel
               ist innerhalb seines `<div>` `:first-child`). Reihenfolge,
               Gruppierung und Verlaufs-Logik sind unberührt. */}
+          {merkliste.length > 0 && (
+            <MenueGruppe>
+              <MenueTitel>Merkliste</MenueTitel>
+              <ul>
+                {merkliste.slice(0, MERK_SICHTBAR).map((e) => (
+                  <li key={e.route}>
+                    <MenueZeile label={e.titel} titel={e.titel}
+                      onKlick={() => { navigate(e.route); setPanelOffen(false); }} />
+                  </li>
+                ))}
+              </ul>
+              {merkliste.length > MERK_SICHTBAR && (
+                <MenueZeile label={`Alle ${merkliste.length} auf der Startseite`} onKlick={() => { navigate('/'); setPanelOffen(false); }} />
+              )}
+            </MenueGruppe>
+          )}
           {gruppen.map((g) => (
             <MenueGruppe key={g.id}>
               <MenueTitel>{g.label}</MenueTitel>
@@ -149,7 +172,7 @@ export function VerlaufUebersicht() {
                 (§5/§10). Nebenbei behoben: der bisherige Hover
                 `hover:bg-paper-sunken/60` erzeugte gar keine CSS-Regel
                 (Deckkraft-Suffix auf opakem Hex-Token, DESIGN-D0). */}
-            <VerlaufLeerenKnopf onGeleert={() => setPanelOffen(false)} />
+            {eintraege.length > 0 && <VerlaufLeerenKnopf onGeleert={() => setPanelOffen(false)} />}
           </div>
         </div>,
         document.body,
