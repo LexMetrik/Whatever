@@ -71,7 +71,7 @@ export function SchrittDokumente({ ctx }: { ctx: AgSchrittCtx }) {
                   {e.typ === 'rahmen' && `${CHF.format(e.vonChf)} bis ${CHF.format(e.bisChf)}${e.mittelChf ? ` (Mittel ${CHF.format(e.mittelChf)})` : ''}`}
                   {e.typ === 'nicht_beziffert' && 'amtlich nicht beziffert (Aufwand bzw. kein amtlicher Tarif)'}
                 </span>{' '}
-                — <a href={tarif.erlassUrl} target="_blank" rel="noopener noreferrer" className="text-brass-700 underline">{tarif.erlassLabel}</a> (Stand {tarif.stand}); Tarifwert nach kantonalem Tarif; Mehrwertsteuer je nach Kanton zusätzlich oder inbegriffen (Beurkundungsrechner).
+                — <a href={tarif.erlassUrl} target="_blank" rel="noopener noreferrer" className="text-brass-700 underline">{tarif.erlassLabel}</a> (Stand {tarif.stand}); Tarifwert nach kantonalem Tarif, zuzüglich Auslagen; Mehrwertsteuer je nach Kanton zusätzlich oder inbegriffen (Beurkundungsrechner).
                 {tarif.hinweise.map((h) => ` ${h}`).join('')} — fachliche Abnahme ausstehend.
                 {' '}Bank-Sperrkonto je nach Institut (Praxisbeispiel ZKB: 0,5 ‰, mind. CHF 250).
               </li>
