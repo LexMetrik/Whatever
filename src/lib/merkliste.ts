@@ -51,10 +51,11 @@ const MERKLISTE_EVENT = 'lm:merkliste';
 
 /** Unsichtbare Steuerzeichen, die Text umlenken oder ein Zeichen verstecken:
  *  Nullbreite (U+200B–U+200F), Bidi-Einbettung/-Override (U+202A–U+202E),
- *  Bidi-Isolate (U+2066–U+2069) und das BOM (U+FEFF). Ein Titel «Art. 1 OR» mit
+ *  Bidi-Isolate (U+2066–U+2069), Arabic Letter Mark (U+061C), Wortverbinder und
+ *  unsichtbare Operatoren (U+2060–U+2064), weiches Trennzeichen (U+00AD) und das BOM (U+FEFF). Ein Titel «Art. 1 OR» mit
  *  U+202E läse sich im Link-Vorschau-Text anders, als er ist (Trojan Source). */
-const UNSICHTBAR_ALLE = /[\u200B-\u200F\u202A-\u202E\u2066-\u2069\uFEFF]/g;
-const UNSICHTBAR = /[\u200B-\u200F\u202A-\u202E\u2066-\u2069\uFEFF]/;
+const UNSICHTBAR_ALLE = /[\u00AD\u061C\u200B-\u200F\u202A-\u202E\u2060-\u2064\u2066-\u2069\uFEFF]/g;
+const UNSICHTBAR = /[\u00AD\u061C\u200B-\u200F\u202A-\u202E\u2060-\u2064\u2066-\u2069\uFEFF]/;
 
 /** Nur Inhalts-Routen — dieselbe Menge, die der ZuletztTracker verfolgt. */
 const INHALT_ROUTE = /^\/(rechner|vorlagen|gesetze|rechtsprechung|materialien)\/[^\s<>"'`\\]+$/;

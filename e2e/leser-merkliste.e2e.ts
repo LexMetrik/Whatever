@@ -56,7 +56,7 @@ test.describe('Merkliste — Merken, Teilen, Übernehmen', () => {
     await expect(knopf).toContainText('Merken')
     await expect(a.page.locator('#lm-kopier-ansage')).toContainText('gemerkt')
 
-    // ── 2 · Startseite zeigt die Stelle (SPA-Navigation und frisches Laden) ──
+    // ── 2 · Startseite zeigt die Stelle (frisches Laden) ──
     await a.page.goto('/')
     const flaeche = merkflaeche(a.page)
     await expect(flaeche).toBeVisible({ timeout: 30_000 })
