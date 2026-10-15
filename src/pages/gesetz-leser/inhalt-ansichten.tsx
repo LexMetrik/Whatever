@@ -16,6 +16,7 @@ import { GesetzFehlSeite } from './FehlSeite';
 import type { LeserFehler, Teilausfall } from './inhalt-zustand';
 import { ebeneAngabe } from './v3/erlassAnsicht';
 import { routenEbene } from '../../lib/normtext/erlassAdresse';
+import { standEtikett } from '../../lib/normtext/international-extern';
 import { pdfHinweisArt, usePdfAnzeige } from './pdfInline';
 
 // ═══ ABSCHNITT · Nicht-Volltext-Leseansichten (§6.6-Split, W2·12-HYGIENE/B24) ═══
@@ -218,7 +219,9 @@ function LiveVerweisAnsicht({ erlass, currency, teilausfall }: {
             className="inline-flex items-center gap-1.5 rounded-md border border-brass-400 px-3 py-2 text-body-s font-medium text-brass-700 no-underline hover:border-brass-500 hover:bg-brass-100/40 transition-colors" />
         )}
         {erlass.stand && (
-          <p className="text-micro text-ink-500">Stand der zuletzt erfassten Referenz: <Datum iso={erlass.stand} /></p>
+          <p className="text-micro text-ink-500">
+            {standEtikett(erlass) === 'Erlassen' ? 'Erlassen am' : 'Stand der zuletzt erfassten Referenz:'} <Datum iso={erlass.stand} />
+          </p>
         )}
       </section>
       {/* W2·19-GLIEDERUNG/S9: dieselbe Übersicht wie im pdf-embed-Pfad (s. o.),

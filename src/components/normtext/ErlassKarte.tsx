@@ -3,6 +3,7 @@ import { istLesbar, type BrowseErlass } from '../../lib/normtext/browse-typen';
 import { useErlassOeffnen, istErlassOffen } from '../../lib/useErlassOeffnen';
 import { werkzeugeFuerNorm } from '../../lib/normtext/werkzeuge';
 import { erlassPfad } from '../../lib/normtext/erlassAdresse';
+import { standEtikett } from '../../lib/normtext/international-extern';
 import { StandChip } from '../ui/StandChip';
 import { ListenTabelle, type ListenZeileDaten } from '../ui/ListenTabelle';
 
@@ -82,7 +83,7 @@ function vollMeta(e: BrowseErlass, lesbar: boolean): ReactNode {
         title="Kein Volltext-Snapshot — die amtliche PDF-Fassung wird in der Leseansicht eingebettet.">amtliches PDF</span>}
       {e.status === 'nur-live-link' && <span className="lc-badge lc-badge-soft"
         title="Kein Volltext in LexMetrik — der Eintrag führt direkt zur amtlichen Fassung.">nur Live-Link</span>}
-      <StandChip stand={e.stand} />
+      <StandChip stand={e.stand} etikett={standEtikett(e)} />
       {werkzeuge > 0 && (
         <span className="text-ink-600">{werkzeuge} {werkzeuge === 1 ? 'passendes Werkzeug' : 'passende Werkzeuge'}</span>
       )}
