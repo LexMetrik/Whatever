@@ -2,6 +2,7 @@ import { STARTSEITE_ZAEHLER as z } from '../data/startseiteZaehler.generated';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 import { SuchBlock } from '../components/start/SuchBlock';
 import { ZuletztVerwendet } from '../components/start/ZuletztVerwendet';
+import { MerklisteFlaeche } from '../components/merkliste/MerklisteFlaeche';
 import { StartKachelFeld, type KachelDef } from '../components/start/StartKachelFeld';
 import { Schnellwerkzeug } from '../components/start/Schnellwerkzeug';
 import { HaeufigGebraucht } from '../components/start/HaeufigGebraucht';
@@ -197,6 +198,8 @@ export function Startseite() {
           <ZuletztVerwendet />
         </aside>
       </div>
+      {/* LESER-NAV R-2: eigene Fläche, nur mit Einträgen oder geteiltem Link (`MerklisteFlaeche`). */}
+      <MerklisteFlaeche />
       <VertrauensFuss />
     </div>
   );

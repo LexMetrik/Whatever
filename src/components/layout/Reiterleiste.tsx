@@ -44,6 +44,8 @@ import { REITER_MIME } from './reiterleiste/ueberlauf';
 import { BLATT_ZU, type BlattZustand } from './reiterleiste/blatt';
 import { useDialogFokus } from './useDialogFokus';
 import { useKopieren } from '../useKopieren';
+import { istGemerkt, merkRouteAusAdresse, schalteMerkung } from '../../lib/merkliste';
+import { sageKopiertAn } from '../ui/kopierAnsage';
 import { usePaneSteuerung } from './usePaneLayout';
 // ── §15 · DAS KONTEXTMENÜ GEHÖRT NICHT IN DEN START-CHUNK ──────────────────
 // GEMESSEN 6.9.2026 (`npm run check:perf-budget`, gebautes dist/): mit einem
@@ -844,6 +846,23 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     if (typeof navigator !== 'undefined' && navigator.clipboard) {
       e.push({ id: 'adresse', label: 'Adresse kopieren',
         onKlick: () => kopieren(new URL(t.path, window.location.origin).href) });
+    }
+    // ── LESER-NAV R-2 · «MERKEN» (Merkliste, David 19.9.2026) ───────────────
+    // Gemerkt wird die Stelle des Reiters (Artikel samt Anker, Entscheid,
+    // Rechner, Vorlage) in der lokalen Merkliste (`lib/merkliste`). Der Eintrag
+    // erscheint nur bei merkbaren Inhalts-Adressen (§8: kein toter Eintrag) und
+    // nennt den Zustand im Wort, nicht in einer Marke. Schreibt der Browser nicht,
+    // sagt die Ansage es — kein Erfolg ohne Wirkung.
+    const merkAdresse = merkRouteAusAdresse(t.path);
+    if (merkAdresse) {
+      const titel = reiterKurzformText(t, manifeste);
+      const gemerkt = istGemerkt(merkAdresse);
+      e.push({ id: 'merken', label: gemerkt ? 'Aus Merkliste entfernen' : 'Merken', onKlick: () => {
+        // Date.now() ist in der Darstellungsschicht erlaubt (nicht in src/lib, §2).
+        const danach = schalteMerkung({ route: merkAdresse, titel, zeit: Date.now() });
+        sageKopiertAn(danach === gemerkt ? 'Merkliste nicht gespeichert: der Browser lässt keinen Speicher zu'
+          : danach ? `${titel} gemerkt` : `${titel} aus der Merkliste entfernt`);
+      } });
     }
     // ── W2·18 WELLE 3 PUNKT 5 · UMORDNEN OHNE MAUS ──────────────────────────
     // GEMESSEN am Vorstand (13.9.2026): die Reihenfolge liess sich NUR per
