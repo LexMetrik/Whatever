@@ -165,3 +165,58 @@ describe('Pfandrechtssteuer (Schuldbrief) — kantonale Sätze und Freigrenze', 
     expect(pfand('FR', 3_000)?.von).toBe(23);    // 3000 × 0,75 % = 22,5 → 23
   });
 });
+
+// ─── RL-28 Teil 3: Pfandsteuer GE (110 % Zuschlag) und VS (Fixband) ─────────
+// Prüfwerte von Hand aus den am 15.10.2026 geöffneten Erlassen:
+//  GE: LDE RSG D 3 30 Art. 84/85 (0,65 %) + LCACant RSG D 3 07 Art. 4 lit. b (110 Centimes je Franken = Faktor 2,1) = 1,365 %.
+//  VS: LDM RS 643.1 Art. 16 al. 1 (20 Fr. für 1’001–20’000; 0,2 % ab 20’001), al. 2 (Aufrundung auf 100), Art. 18 (≤ 1’000 befreit).
+describe('Pfandsteuer als eigene Quelle (RL-28 Teil 3) — Rechenfunktion', () => {
+  type Fn = (k: KantonCode, w: number) => { betragChf: number; satzProzentEffektiv: number; label: string } | undefined;
+  const fn = async (): Promise<Fn> => (await import('../lib/pfandsteuer')).berechnePfandsteuer as Fn;
+  const b = async (k: KantonCode, w: number) => (await fn())(k, w)?.betragChf;
+
+  it('GE: 0,65 % × 2,1 = 1,365 % der Pfandsumme', async () => {
+    expect(await b('GE', 1_000_000)).toBe(13_650);
+    expect(await b('GE', 100_000)).toBe(1_365);
+    expect((await fn())('GE', 1_000_000)?.satzProzentEffektiv).toBe(1.365);
+    expect((await fn())('GE', 1_000_000)?.label).toBe('Pfandrechtssteuer (1.365 %)');
+  });
+
+  it('VS: Befreiung ≤ 1’000, Fixband 20 für 1’001–20’000, ab 20’001 0,2 % der auf 100 aufgerundeten Summe', async () => {
+    expect(await b('VS', 1_000)).toBe(0);
+    expect(await b('VS', 1_001)).toBe(20);
+    expect(await b('VS', 15_000)).toBe(20);
+    expect(await b('VS', 20_000)).toBe(20);
+    // 20’001 → Basis 20’100 → 0,2 % = 40.20; die Anzeige rundet wie bisher auf ganze Franken (FR 3000 → 23) → 40
+    expect(await b('VS', 20_001)).toBe(40);
+    expect(await b('VS', 1_000_000)).toBe(2_000);
+    expect(await b('VS', 1_000_001)).toBe(2_000); // Basis 1’000’100 × 0,2 % = 2000.20 → ganze Franken 2000
+  });
+
+  it('übrige Kantone unverändert: FR 0,75 %, JU 3,5 ‰ (min 30), VD 2 ‰ (Freigrenze 5’000, Basis auf 1’000 ab)', async () => {
+    expect(await b('FR', 1_000_000)).toBe(7_500);
+    expect(await b('JU', 1_000_000)).toBe(3_500);
+    expect(await b('JU', 5_000)).toBe(30);
+    expect(await b('VD', 1_000_000)).toBe(2_000);
+    expect(await b('VD', 5_001)).toBe(10);
+    expect(await b('VD', 5_000)).toBe(0);
+  });
+
+  it('Kantone ohne Pfandsteuer (z. B. ZH, NE, TI) liefern undefined', async () => {
+    for (const k of ['ZH', 'NE', 'TI', 'BE'] as KantonCode[]) expect((await fn())(k, 1_000_000), k).toBeUndefined();
+  });
+
+  it('weitereKosten (Beurkundungsrechner) rechnet über dieselbe Quelle: GE 1 Mio 13’650, VS 15’000 → 20', () => {
+    const p = (k: KantonCode, w: number) => weitereKosten('schuldbrief', k, w, null).posten.find((x) => x.label.startsWith('Pfandrechtssteuer'));
+    expect(p('GE', 1_000_000)?.von).toBe(13_650);
+    expect(p('GE', 1_000_000)?.label).toBe('Pfandrechtssteuer (1.365 %)');
+    expect(p('VS', 15_000)?.von).toBe(20);
+    expect(p('VS', 1_000)?.von).toBe(0);
+  });
+
+  it('GE-Hinweis nennt die Halbierung für die Hauptwohnung bis 1 Mio (LDE Art. 8A al. 2) nur als Hinweis', async () => {
+    const r = (await import('../lib/pfandsteuer')).berechnePfandsteuer('GE', 900_000);
+    expect(r?.hinweis).toMatch(/Art\. 8A/);
+    expect(r?.betragChf).toBe(Math.round(900_000 * 0.01365));
+  });
+});

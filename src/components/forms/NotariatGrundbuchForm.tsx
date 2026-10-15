@@ -183,9 +183,9 @@ export function NotariatGrundbuchForm({ minimal = false, ohneDisclaimer = false 
               <p className="text-xs text-ink-500">Gebühren gesamt (Notariat + Grundbuch{ergebnis.grundpfand ? ' + Grundpfand' : ''})</p>
               <p className="num text-body-l font-semibold text-ink-900">{spanneText(ergebnis.gesamtGebuehren)}</p>
             </div>
-            {steuer && ergebnis.handaenderungssteuer && ergebnisSpanne(ergebnis.handaenderungssteuer.ergebnis) && (
+            {((steuer && ergebnis.handaenderungssteuer && ergebnisSpanne(ergebnis.handaenderungssteuer.ergebnis)) || ergebnis.pfandsteuer) && (
               <div className="mt-1 flex items-baseline justify-between gap-3 flex-wrap">
-                <p className="text-xs text-ink-500">Total inkl. Handänderungssteuer</p>
+                <p className="text-xs text-ink-500">Total inkl. Steuern</p>
                 <p className="num text-body-l font-semibold text-ink-900">{spanneText(ergebnis.gesamtMitSteuer)}</p>
               </div>
             )}

@@ -85,6 +85,30 @@ describe('Grundbuch — amtliche Stützstellen (3-fach verifiziert: find→Doppe
   });
 });
 
+// ─── RL-28 Teil 2: Eintragsteil Grundpfand VS / JU / TI nach Norm ───────────
+describe('Grundbuch Grundpfand — VS Aufrundung, JU Lesart, TI ohne Minimum (RL-28 Teil 2)', () => {
+  const g = (k: KantonCode, w: number): number => {
+    const e = berechneGrundbuchgebuehr({ eintragsart: 'grundpfand', kanton: k, wertCHF: w }).posten!.ergebnis;
+    if (!e.deterministisch) throw new Error(`${k}: nicht beziffert`);
+    return e.betragChf;
+  };
+  it('VS: OcRF Art. 32 al. 3 — Basis auf volle 1’000 aufgerundet (1’000’001 → 1’001’000 → 1001)', () => {
+    expect(g('VS', 1_000_000)).toBe(1000);
+    expect(g('VS', 1_000_001)).toBe(1001);
+    expect(g('VS', 100_001)).toBe(101);
+    expect(g('VS', 10_000_000)).toBe(2500);
+  });
+  it('JU: RSJU 176.331 Art. 7 — 1 ‰ in Franken, Minimum 40 und Maximum 10’000 Punkte (à 1.05)', () => {
+    expect(g('JU', 1_000_000)).toBe(1000);
+    expect(g('JU', 10_000)).toBe(42);
+    expect(g('JU', 20_000_000)).toBe(10_500);
+  });
+  it('TI: LTORF Art. 25 — 7 ‰ ohne Minimum', () => {
+    expect(g('TI', 1_000)).toBe(7);
+    expect(g('TI', 1_000_000)).toBe(7000);
+  });
+});
+
 describe('RL-29 Teil 3: TG Vormerkung (GGG § 14 Abs. 2 Ziff. 16 gerechnet, Ziff. 17–19 offengelegt)', () => {
   it('Hinweis nennt Vorkaufsrecht mit ½ ‰ und die nicht gerechneten Ziffern 17, 18, 19 (§8)', () => {
     const t = tarifFuerGb('vormerkung', 'TG')!.tarif;

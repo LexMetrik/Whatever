@@ -1,6 +1,6 @@
 // ─── Notariats- & Grundbuchkosten-Engine ───────────────────────────────────
 import { describe, expect, it } from 'vitest';
-import { berechneNotariatGrundbuch, vergleichNotariatGrundbuch, ngPostenText, type NgPosten } from '../lib/notariatGrundbuch';
+import { berechneNotariatGrundbuch, vergleichNotariatGrundbuch, ngPostenText, notariatGrundbuchBericht, type NgPosten } from '../lib/notariatGrundbuch';
 import { NOTARIAT, GRUNDBUCH, HANDAENDERUNGSSTEUER } from '../data/tarif/notariat-grundbuch';
 import { GRUNDPFAND } from '../data/tarif/grundpfand';
 import { KANTONE, type KantonCode } from '../data/tarif/typen';
@@ -195,6 +195,58 @@ describe('Notariat — Staffeln Grundstückkauf nach Norm (RL-29)', () => {
   it('SO GT § 25 Abs. 1 lit. a: eine Gebühr 100–10’000 für Beurkundung und Eintrag zusammen', () => {
     expect(rahmen('SO', 1_000_000)).toEqual([100, 10_000]);
     expect(berechneNotariatGrundbuch({ kanton: 'SO', kaufpreisCHF: 1_000_000 }).gesamtGebuehren).toEqual({ vonChf: 100, bisChf: 10_000 });
+  });
+});
+
+// ─── RL-28 Teil 3: Pfandsteuer als eigener Posten (STEUER, keine Gebühr) ─────
+describe('Notariat/Grundbuch — Posten Pfandsteuer (RL-28 Teil 3)', () => {
+  const mit = (kanton: KantonCode, pfand: number, haest = false) =>
+    berechneNotariatGrundbuch({ kanton, kaufpreisCHF: pfand, mitGrundpfand: true, pfandsummeCHF: pfand, mitHandaenderungssteuer: haest });
+
+  it('GE 1 Mio: eigener Posten 13’650 (1,365 %), nicht in den Gesamtgebühren, wohl in gesamtMitSteuer', () => {
+    const r = mit('GE', 1_000_000);
+    expect(r.pfandsteuer).toBeDefined();
+    expect(det(r.pfandsteuer!)).toBe(13_650);
+    const summeGebuehren = det(r.beurkundung) + det(r.grundbuch) + det(r.grundpfand!);
+    expect(r.gesamtGebuehren).toEqual({ vonChf: summeGebuehren, bisChf: summeGebuehren });
+    expect(r.gesamtMitSteuer).toEqual({ vonChf: summeGebuehren + 13_650, bisChf: summeGebuehren + 13_650 });
+  });
+
+  it('VS 15’000: Fixband 20; mit Handänderungssteuer addieren sich beide Steuern', () => {
+    const r = mit('VS', 15_000, true);
+    expect(det(r.pfandsteuer!)).toBe(20);
+    const ohne = mit('VS', 15_000, false);
+    const h = det(r.handaenderungssteuer!);
+    expect((r.gesamtMitSteuer as { vonChf: number }).vonChf).toBeCloseTo((ohne.gesamtMitSteuer as { vonChf: number }).vonChf + h, 6);
+  });
+
+  it('Schritt-Text «STEUER: Satz × Pfandsumme», Hinweis «STEUER, keine Gebühr», Quelle mit Link und Stand', () => {
+    const r = mit('GE', 1_000_000);
+    const e = r.pfandsteuer!.ergebnis;
+    if (!e.deterministisch) throw new Error('unerwartet');
+    expect(e.schritte.join(' | ')).toMatch(/STEUER: 1\.365 %/);
+    expect(r.pfandsteuer!.quelle.quelleUrl).toMatch(/^https:\/\//);
+    expect(r.pfandsteuer!.quelle.stand).toMatch(/\d/);
+    expect(r.pfandsteuer!.quelle.verifiziert).toBe('recherche');
+    expect(r.hinweise.join(' ')).toMatch(/Pfandsteuer[^.]*STEUER[^.]*keine Gebühr/);
+  });
+
+  it('kein Posten ohne Grundpfand oder in Kantonen ohne Pfandsteuer (ZH, NE, TI): Ergebnis unverändert', () => {
+    expect(berechneNotariatGrundbuch({ kanton: 'GE', kaufpreisCHF: 1_000_000 }).pfandsteuer).toBeUndefined();
+    for (const k of ['ZH', 'NE', 'TI'] as KantonCode[]) {
+      const r = mit(k, 1_000_000);
+      expect(r.pfandsteuer, k).toBeUndefined();
+      expect(r.gesamtMitSteuer, k).toEqual(r.gesamtGebuehren);
+    }
+  });
+
+  it('Rechenbericht nimmt den Posten in Rechenweg, Ergebnistext und Quellen auf', () => {
+    const b = notariatGrundbuchBericht(mit('GE', 1_000_000));
+    expect(b.rechenweg.some((s) => /Pfandsteuer/.test(s.beschreibung))).toBe(true);
+    expect(b.ergebnis).toMatch(/Pfandsteuer/);
+    expect((b.normverweise ?? []).some((n) => /LDE|D 3 30/.test(n.artikel))).toBe(true);
+    const zh = notariatGrundbuchBericht(mit('ZH', 800_000));
+    expect(zh.ergebnis).not.toMatch(/Pfandsteuer/);
   });
 });
 

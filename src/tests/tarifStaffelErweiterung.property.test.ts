@@ -45,7 +45,7 @@ describe('Opt-out-Pfad — identisch mit Default-Pfad', () => {
   });
 
   // Regeln, die eine Option tragen (hier: die Basisrundung der Pfandsumme im Eintragsteil
-  // BS/AG, V EG ZGB BS § 51 Abs. 1 lit. b, GBAG AG § 4 Abs. 1; RL-28), sind vom Opt-out-
+  // BS/AG/VS, V EG ZGB BS § 51 Abs. 1 lit. b, GBAG AG § 4 Abs. 1, OcRF VS Art. 32 al. 3; RL-28), sind vom Opt-out-
   // Vergleich ausgenommen: Das Überschreiben mit `undefined` würde die Datenoption löschen
   // und eine andere Regel vergleichen. Sie werden gezählt und als Liste fixiert.
   const hatOption = (r: TarifRegel): boolean => {
@@ -55,7 +55,7 @@ describe('Opt-out-Pfad — identisch mit Default-Pfad', () => {
   const OHNE_OPTION = KORPUS.filter((r) => !hatOption(r));
   const MIT_OPTION = KORPUS.filter(hatOption);
 
-  it('Regeln mit gesetzter Option im Korpus: Eintragsregeln BS/AG/VS (Basisrundung 1’000), SZ-Regeln (Tranchen 50’000 aufwärts); Aliase werden mehrfach eingesammelt', () => {
+  it('Regeln mit gesetzter Option im Korpus: Eintragsregeln BS/AG/VS (Basisrundung 1’000), VS Grundpfand (RL-28 T2), SZ-Regeln (Tranchen 50’000 aufwärts); Aliase werden mehrfach eingesammelt', () => {
     const liste = MIT_OPTION.map((r) => JSON.stringify({ typ: r.typ, promille: (r as { promille?: number }).promille, basisRundung: (r as { basisRundung?: unknown }).basisRundung }));
     const bs = JSON.stringify({ typ: 'promille', promille: 1, basisRundung: { schrittChf: 1000, richtung: 'auf' } });
     const vs = JSON.stringify({ typ: 'promille', promille: 2, basisRundung: { schrittChf: 1000, richtung: 'auf' } });
@@ -64,6 +64,8 @@ describe('Opt-out-Pfad — identisch mit Default-Pfad', () => {
     expect(liste.sort()).toEqual([
       // BS: V EG ZGB § 51 Abs. 1 lit. b (RL-28 Eintragsteil Grundpfand) + RL-29 T3 GRUNDBUCH.BS; GRUNDBUCH wird als GRUNDBUCH_EIGENTUM_KAUF (Alias in grundbuch.ts) zweimal eingesammelt
       bs, bs, bs,
+      // VS Grundpfand: OcRF Art. 32 al. 3 (RL-28 Teil 2, GRUNDBUCH_EINTRAG.grundpfand.VS), ebenfalls promille 1 auf 1’000
+      bs,
       JSON.stringify({ typ: 'promille', promille: 1.5, basisRundung: { schrittChf: 1000, richtung: 'naechste' } }),
       // RL-29 T3: VS OcRF Art. 32 al. 3 («arrondie au millier de francs supérieurs»), GRUNDBUCH.VS, 2× wegen Alias
       vs, vs,
