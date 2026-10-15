@@ -52,7 +52,7 @@ const NAVIGATION = [
 // W2·31 B1a), damit die Kanten des Fusses mit der Inhaltsspalte fluchten.
 export function Footer({ breiteKlasse }: { breiteKlasse: string }) {
   return (
-    <footer className="border-t-2 border-rule bg-paper mt-16">
+    <footer className="relative z-sticky border-t-2 border-rule bg-paper mt-16">
       <div className={`${breiteKlasse} mx-auto px-5 sm:px-6 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.2fr] gap-x-12 gap-y-8`}>
         {/* Marke */}
         <div className="space-y-3">

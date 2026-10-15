@@ -11,8 +11,9 @@ import {
 import { loeseArtikelEingabe, pfadLabels } from './suchTreffer';
 import { pfadZu } from './helpers';
 import { paneRoot } from './berechnungen';
+import { ankerLandepunkt } from './scrollAnker';
 import {
-  baueLeserSuchIndex, sucheImErlass, zaehleTreffer, fundstellenFolge, artikelFundstellen,
+  baueLeserSuchIndex, sucheImErlass, zaehleTreffer, fundstellenFolge, artikelFundstellen, ersterKlickSprung,
   type SuchBereich,
 } from './leserSuche';
 
@@ -377,6 +378,19 @@ export function useSuchTreffer({
         ? (start.nodeType === 1 ? start as Element : start.parentElement) as HTMLElement | null
         : art);
       el?.scrollIntoView({ block: 'center', behavior: 'auto' });
+      // LESER-NAV, FB O-36 (c): `center` stellt die FUNDSTELLE in die Mitte. Ist
+      // der Artikel kurz, liegt seine Oberkante dann UNTER dem Landepunkt, und
+      // die Bezugslinie des Scroll-Spys (`inhalt-hooks.tsx`) fällt in den
+      // Vorgänger: Reiter-Label, Gliederung und Bezüge-Panel meldeten nach dem
+      // Sprung den Artikel DARÜBER (OR «Kündigung», 11 von 13 Sprüngen mit
+      // gemalter Stelle, gemessen 15.10.2026). Dann rückt der Artikel an den
+      // Landepunkt (`.nt-anker`-scroll-margin, derselbe Wert, an dem der Spy
+      // misst); die Fundstelle bleibt sichtbar, sie liegt höchstens eine
+      // halbe Fensterhöhe unter der Artikel-Oberkante. Ein langer Artikel, dessen
+      // Oberkante schon über dem Landepunkt liegt, wird nicht angerührt.
+      const sc = paneRoot(imPane, wurzel);
+      const landung = (sc ? sc.getBoundingClientRect().top : 0) + ankerLandepunkt(art);
+      if (art.getBoundingClientRect().top > landung + 1) art.scrollIntoView({ block: 'start', behavior: 'auto' });
       blinkAus();
       art.classList.add('lc-ziel-blink');
       blink.current = { el: art, id: window.setTimeout(() => blinkAus(), 2400) };
@@ -410,7 +424,7 @@ export function useSuchTreffer({
       const el = finde();
       if (el) zeige(el);
     }));
-  }, [blinkAus, folge, male, sucheTrim, bereich, sektionen, setOffen, einzelSprung, markenAus, highlightInstanz]);
+  }, [blinkAus, folge, male, sucheTrim, bereich, sektionen, setOffen, einzelSprung, markenAus, highlightInstanz, imPane, wurzel]);
 
   // Die aktive Stelle gehört zu EINEM Begriff/Bereich: wechselt er (oder die
   // Hervorhebung wird weggeschaltet, oder der Leser verschwindet), räumt der
@@ -427,9 +441,9 @@ export function useSuchTreffer({
     zeigeFundstelle(((basis + delta) % len + len) % len);
   }, [folge, trefferPos, zeigeFundstelle]);
 
-  /** Klick auf einen Treffer-Eintrag: zur ERSTEN Fundstelle dieses Artikels. */
+  /** Klick auf einen Treffer-Eintrag: zur ersten GEMALTEN Fundstelle dieses Artikels (sonst zur ersten). */
   const springeZuTreffer = useCallback((token: string) => {
-    const n = folge.findIndex((f) => f.token === token);
+    const n = ersterKlickSprung(folge, token);
     if (n >= 0) zeigeFundstelle(n);
   }, [folge, zeigeFundstelle]);
 

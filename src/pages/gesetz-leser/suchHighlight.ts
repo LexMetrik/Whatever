@@ -502,6 +502,24 @@ const STANDARD_INSTANZ: HighlightInstanz = Symbol('standard');
 /** Ranges je Instanz. Die Registry sieht immer nur ihre Vereinigung. */
 const proInstanz = new Map<HighlightInstanz, readonly Range[]>();
 
+/**
+ * Obergrenze der Ranges, die als Konstruktor-Argumente gespreizt werden.
+ * `new Highlight(...alle)` legt jede Range als Funktionsargument auf den Stack;
+ * ab einigen 100 000 wirft die Engine «Maximum call stack size exceeded»
+ * (FB O-36 g: ganzer OR, Suchwort «e»). Der Rest geht über `add` (Highlight
+ * ist setlike), die Menge bleibt dieselbe.
+ */
+const SPREIZ_GRENZE = 10_000;
+
+function baueHighlight(Ctor: HighlightCtor, ranges: readonly Range[]): object {
+  const h = new Ctor(...ranges.slice(0, SPREIZ_GRENZE));
+  if (ranges.length > SPREIZ_GRENZE) {
+    const add = (h as { add(r: Range): unknown }).add.bind(h);
+    for (let i = SPREIZ_GRENZE; i < ranges.length; i++) add(ranges[i]);
+  }
+  return h;
+}
+
 /** Schreibt die Vereinigung aller gebuchten Mengen in die eine Registry-Position. */
 function schreibeRegistry(): void {
   const api = highlightApi();
@@ -510,7 +528,7 @@ function schreibeRegistry(): void {
   const alle: Range[] = [];
   for (const rs of proInstanz.values()) for (const r of rs) alle.push(...(malTeile.get(r) ?? [r]));
   if (alle.length === 0) { reg.delete(SUCH_HIGHLIGHT); return; }
-  reg.set(SUCH_HIGHLIGHT, new Ctor(...alle));
+  reg.set(SUCH_HIGHLIGHT, baueHighlight(Ctor, alle));
 }
 
 /** Die aktive Fundstelle je Instanz (höchstens EINE Range je Leser). */
@@ -524,7 +542,7 @@ function schreibeAktiv(): void {
   const teile: Range[] = [];
   for (const r of aktivProInstanz.values()) teile.push(...(malTeile.get(r) ?? [r]));
   if (teile.length === 0) { reg.delete(SUCH_HIGHLIGHT_AKTIV); return; }
-  const h = new Ctor(...teile) as { priority?: number };
+  const h = baueHighlight(Ctor, teile) as { priority?: number };
   // Vorrang vor `lc-such-treffer`: dieselbe Stelle liegt in BEIDEN Positionen,
   // und ohne Priorität entschiede die Registrierungsreihenfolge, welche Fläche
   // gewinnt.
