@@ -327,7 +327,7 @@ nirgends im Repo. (5) Texte nicht umformuliert (ausser Eszett durch ss ersetzt u
 | RV-93 | N | Vorlagen Klage vereinfacht / Schlichtungsgesuch BS: «Weiter» sperrt nicht bei Pflichtfeldern, Fehler erst im letzten Schritt; BS-Hinweise ohne Norm-Links. | Vorlagen-Wizard | ja (laut Posten) | – | 2026-09-23-klage-vereinfacht-weiter-sperrt-nie-wegen-pflichtfeldern, 2026-09-23-schlichtungsgesuch-bs-pflichtfeld-fehler-nur-im-letzten-schr |
 | N10-01 | N | Nachtrag 10.10.: ZpoFristenForm.tsx:386 Zustellfiktion-Throw ungefangen (praktisch unerreichbar); property-invarianten-2026-08-15.md «nie Samstag» gilt nur noch für gesetzliche Fristen (Dokument nachtragen); Fristengesetz SR 173.110.3 Wortlaut nicht amtlich nachgeprüft (RL-24-Nebenfund 24.9.) | ZpoFristenForm.tsx:386 | ja (laut Posten) | – | 2026-09-25-property-invarianten-nie-samstag-nur-gesetzliche-fristen-zpo |
 
-## 6 · Oberfläche (56 Zeilen)
+## 6 · Oberfläche (59 Zeilen)
 
 | Nr | Kl. | Klartext | Beispiel | offen? | David? | Postendatei(en) |
 |---|---|---|---|---|---|---|
@@ -387,6 +387,9 @@ nirgends im Repo. (5) Texte nicht umformuliert (ausser Eszett durch ss ersetzt u
 | O-54 | N | Kantonskarte: Karte und Umschalter verschwinden nach der Wahl (Befund 41), keine Legende (49).; Ort (Posten): src/components/SchweizKarte.tsx:151-159 | src/pages/Gesetze.tsx; SchweizKarte.tsx | ja (Befund 12 vermutlich erledigt) | – | 2026-09-24-kantonskarten-paket-befunde-41-12-und-49-karte-und-umschalte |
 | O-55 | N | Reiter-Titel «Art. scopeu1 EMRK» zeigt interne Kennung statt «Geltungsbereich». | Reiterleiste | vermutlich erledigt (#1283 «Reiter-Beschriftung aus amtlichem Label statt Anker-Token») | – | 2026-09-26-reiter-titel-art-scopeu1-emrk-zeigt-interne-kennung-statt-ge |
 | O-56 | N | Bilder: Fedlex rendert relativ zur Textbreite (data-original-text-width, %), wir in mm (#1370); Extraktor scripts/normtext/fedlex/bilder.ts führt text-width nicht mit; bilder.ts:19-20 liest bei fehlendem data-scaled-width ein px-`width` — würde jetzt als mm gelesen (im Bestand 0 Fälle); BildKacheln setzt breite/hoehe weiter als px | src/components/normtext/BildElemente.tsx; scripts/normtext/fedlex/bilder.ts:19-20 | ja (Gegenprüfung #1370, 15.10.2026) | – | – |
+| O-57 | N | PDF-Ansicht: Hinweis «zu langsam» nach 12 s schiebt das iframe nach unten (späte Layoutverschiebung); Fokus/Einfügen in `role=status` mit Inhalt wird nicht überall vorgelesen (#1370) | src/pages/gesetz-leser/inhalt-ansichten.tsx:143-152 | ja (Gegenprüfung #1370, 15.10.2026) | – | – |
+| O-58 | N | Treffer-Landkarte: Klick in ein Feld ohne Treffer (springeZuArtikel) lässt die vorherige aktive Stelle an einem anderen Artikel stehen; SynopseKarte Kontrast brass-200/ink-900 (Posten O-36) | src/components/leser/LandkarteZone.tsx; SynopseKarte.tsx:86 | ja (Bau #1371, 15.10.2026) | – | – |
+| O-59 | N | Band-Kopf: auf Gesetz- (g) und Entscheid-Leser (r) bleibt die 3,5-rem-Routenmarke (::before) neben dem Band-Strich; Band-Regel steht nur im index.css-Kommentar, nicht im DESIGN-REGLEMENT; Wächter design-band-rezept fängt Pseudoklassen/logische Props nicht (#1373) | src/index.css «BAND-REZEPT»; src/tests/design-band-rezept.test.ts:25-26 | ja (Gegenprüfung #1373, 15.10.2026) | – | – |
 
 ## 7 · Sicherheit und Betrieb (29 Zeilen)
 
