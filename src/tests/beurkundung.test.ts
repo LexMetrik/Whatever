@@ -219,6 +219,41 @@ describe('Beurkundung Schuldbrief — NE, TI, VD nach Norm (RL-28 Teil 2)', () =
   });
 });
 
+describe('Beurkundung — MwSt-Hinweis je Kanton nach Tabelle (RL-33 Teil 2)', () => {
+  const text = (kanton: KantonCode, wert = 500_000) =>
+    berechneBeurkundung({ geschaeftsart: 'grundstueckkauf', kanton, geschaeftswertCHF: wert }).hinweise.join(' | ');
+
+  it('ZG inbegriffen, ZH zuzüglich nach Tarif, GE zuzüglich nach Bundesrecht', () => {
+    expect(text('ZG')).toMatch(/MwSt in den Tarifansätzen inbegriffen \(BGS 641\.1 Ziff\. 109bis\)/);
+    expect(text('ZH')).toMatch(/Zuzüglich MwSt 8,1 % \(nach kantonalem Tarif LS 243/);
+    expect(text('GE')).toMatch(/Zuzüglich MwSt 8,1 % \(nach Bundesrecht, MWSTG Art\. 25\)/);
+  });
+  it('Rest des Satzes (HReg-/Grundbuchgebühren, Auslagen nicht enthalten) bleibt, ohne «freies Notariat»', () => {
+    const h = berechneBeurkundung({ geschaeftsart: 'grundstueckkauf', kanton: 'ZH', geschaeftswertCHF: 500_000 }).hinweise[0];
+    expect(h).toMatch(/HReg-\/Grundbuchgebühren und Auslagen sind nicht enthalten\./);
+    expect(h).not.toMatch(/freies Notariat/);
+  });
+  it('kein Kanton nennt mehr «freies Notariat» als MwSt-Kriterium', () => {
+    for (const k of KANTONE) expect(text(k), k).not.toMatch(/MwSt\. \(freies Notariat\)/);
+  });
+});
+
+describe('Beurkundung — MwSt-Hinweis ZH je Geschäftsart und Bedingung (RL-33 Teil 2 Nachzug)', () => {
+  const zh = (art: 'vollmacht' | 'buergschaft' | 'grundstueckkauf', wert = 100_000) =>
+    berechneBeurkundung({ geschaeftsart: art, kanton: 'ZH', geschaeftswertCHF: wert }).hinweise[0];
+
+  it('ZH Vollmacht: inbegriffen, kein Aufschlag (Dienstanweisung Ziff. 4.5.1)', () => {
+    expect(zh('vollmacht')).toMatch(/MwSt in der Gebühr inbegriffen \(Dienstanweisung FD ZH 22\.11\.2023 § 2 Ziff\. 4\.5\.1\): kein Aufschlag/);
+    expect(zh('vollmacht')).not.toMatch(/Zuzüglich/);
+  });
+  it('ZH Bürgschaft: Grenze CHF 199, darüber zuzüglich', () => {
+    expect(zh('buergschaft')).toMatch(/MwSt in der Gebühr bis CHF 199 inbegriffen .*Ziff\. 4\.4\.1\), darüber zuzüglich 8,1 %/);
+  });
+  it('ZH Grundstückkauf: zuzüglich, mit Bedingung Steuerpflicht (MWSTG Art. 10)', () => {
+    expect(zh('grundstueckkauf', 500_000)).toMatch(/Zuzüglich MwSt 8,1 % .*, soweit das Notariat mehrwertsteuerpflichtig ist \(MWSTG Art\. 10\)/);
+  });
+});
+
 describe('RL-29 Teil 3: GE Kapitalherabsetzung (REmNot Art. 25 al. 4), SG-Praxishinweis, NE-Stand', () => {
   const geKh = (w: number): number => {
     const e = berechneBeurkundung({ geschaeftsart: 'kapitalherabsetzung', kanton: 'GE', geschaeftswertCHF: w }).posten!.ergebnis;
