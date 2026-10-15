@@ -230,6 +230,14 @@ export const GRUNDBUCH: Record<KantonCode, KantonalerTarif> = {
 
 // ─── 3. Grundpfand / Schuldbrief (Beurkundung + Eintrag, über Pfandsumme) ───
 // Vereinfacht als Gesamt-Promille (Beurkundung + Eintrag) der Pfandsumme.
+// RL-28 Teil 1 (15.10.2026): ABGELÖST für AG, BS, LU, OW, NW, GL, SH, TG, GR, ZH, SG
+// und UR. Die Rechnung liest den Posten aus `grundpfand.ts` (Summe aus
+// SONDERTARIFE.schuldbrief + GRUNDBUCH_EINTRAG.grundpfand). Diese Tabelle gilt nur
+// noch für die Kantone ausserhalb von Teil 1 (Spread in grundpfand.ts: FR, GE, VS, VD,
+// NE, TI, JU = RL-28 Teil 2; BE, SZ, AI, AR, BL, SO, ZG unverändert) und als Anker
+// des Quellen-Pflichttests notariatGrundbuch.test.ts. Die Einträge der abgelösten
+// Kantone sind überholt und werden mit Teil 2 entfernt. Ein direktes Zusammenführen
+// scheitert am Zirkularimport (beurkundung.ts und grundbuch.ts lesen aus dieser Datei).
 export const GRUNDPFAND: Record<KantonCode, KantonalerTarif> = {
   ZH: { kanton: 'ZH', erlassName: 'NotGebV', erlassNr: 'LS 243', artikel: 'Anhang Ziff. 1.2.1 + 2.3.1', stand: '1.1.2024', verifiziert: R, quelleUrl: 'https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-243-2009_03_09-2009_07_01-123.html', hinweis: 'Beurkundung 1‰ + Eintrag 1‰.', regel: { typ: 'promille', promille: 2, minChf: 200 } },
   BE: { kanton: 'BE', erlassName: 'GebVN / GebV', erlassNr: 'BSG 169.81 / 154.21', artikel: 'Art. 18 / Anhang 4B Ziff. 3.3.1', stand: '1.3.2022', verifiziert: R, quelleUrl: 'https://www.belex.sites.be.ch/app/de/texts_of_law/169.81', regel: { typ: 'formel_extern', hinweis: 'Beurkundung nach Zeitaufwand (min. 200) + Eintrag 100 TP — KEIN Promille.' } },

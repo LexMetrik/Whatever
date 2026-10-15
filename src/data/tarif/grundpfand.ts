@@ -18,6 +18,7 @@
 // Stand der Erlasse: am 15.10.2026 an der amtlichen Quelle geöffnet.
 
 import type { KantonCode, KantonalerTarif } from './typen';
+import type { Rundung, TarifRegel } from '../../lib/tarif/staffel';
 import { SONDERTARIFE } from './beurkundung';
 import { GRUNDBUCH_EINTRAG } from './grundbuch';
 import { GRUNDPFAND as GRUNDPFAND_BISHER } from './notariat-grundbuch';
@@ -37,18 +38,28 @@ const eintrag = (k: KantonCode): KantonalerTarif => {
 
 type Kopf = Pick<KantonalerTarif, 'erlassName' | 'erlassNr' | 'artikel' | 'stand' | 'hinweis'>;
 
+/** Rundung der Pfandsumme für den Eintragsteil (Norm des Eintragserlasses). Sie steht
+ *  hier und nicht in GRUNDBUCH_EINTRAG: Der Korpus-Test tarifStaffelErweiterung.property
+ *  setzt voraus, dass keine Tarifregel in den Datenmodulen eine Rundungsoption trägt;
+ *  der Umzug nach grundbuch.ts braucht darum eine Anpassung dieses Tests (offen, RL-28). */
+const mitBasisRundung = (regel: TarifRegel, rundung: Rundung, k: KantonCode): TarifRegel => {
+  if (regel.typ !== 'promille') throw new Error(`Grundpfand ${k}: basisRundung nur auf einer Promille-Regel vorgesehen`);
+  return { ...regel, basisRundung: rundung };
+};
+
 /** Posten = Beurkundung + Grundbucheintrag. Die Quelle-URL ist die des
  *  Notariatserlasses; die des Eintragserlasses steht am Ende des Hinweises. */
-const kombi = (kanton: KantonCode, kopf: Kopf): KantonalerTarif => {
+const kombi = (kanton: KantonCode, kopf: Kopf, eintragRundung?: Rundung): KantonalerTarif => {
   const n = beurkundung(kanton);
   const g = eintrag(kanton);
+  const gRegel = eintragRundung ? mitBasisRundung(g.regel, eintragRundung, kanton) : g.regel;
   const zweite = g.quelleUrl !== n.quelleUrl ? ` Quelle Eintrag: ${g.quelleUrl}` : '';
   return {
     kanton, ...kopf, verifiziert: R, quelleUrl: n.quelleUrl,
     hinweis: `${kopf.hinweis}${zweite}`,
     regel: { typ: 'summe', teile: [
       { etikett: 'Beurkundung', regel: n.regel },
-      { etikett: 'Grundbucheintrag', regel: g.regel },
+      { etikett: 'Grundbucheintrag', regel: gRegel },
     ] },
   };
 };
@@ -60,12 +71,12 @@ export const GRUNDPFAND: Record<KantonCode, KantonalerTarif> = {
     erlassName: 'Notariatstarif / Gesetz über die Grundbuchabgaben', erlassNr: 'SAR 295.250 / 725.100',
     artikel: '§ 3 Abs. 1 / § 23 Abs. 1 lit. a, § 4 Abs. 1', stand: '1.1.2025 / 1.1.2020',
     hinweis: 'Beurkundung zwei Drittel der Ansätze von § 2 (höchstens 7’500; Annahme: Minimum 300 wird nicht gedrittelt) + Eintragungsabgabe 1,5 ‰ (mindestens 100; Pfandsumme auf 1’000 gerundet, bei genau x’500 Annahme: aufwärts). Eine Fixgebühr von 40 je Gläubiger ist amtlich nicht belegt und nicht enthalten.',
-  }),
+  }, { schrittChf: 1000, richtung: 'naechste' } /* GBAG § 4 Abs. 1: «auf jeweils Fr. 1'000 auf- oder abzurunden» */),
   BS: kombi('BS', {
     erlassName: 'Notariatstarif / Verordnung zum EG ZGB', erlassNr: 'SG 292.400 / 211.110',
     artikel: '§ 11 Abs. 1 Ziff. 28 lit. a (wie Ziff. 17) / § 51 Abs. 1 lit. b, Abs. 6 lit. a', stand: '1.7.2016 / 1.5.2025',
     hinweis: 'Beurkundung 0,25 % bis 2 Mio. (mindestens 500), darüber degressiv, höchstens 50’000 + Eintrag 1 ‰ (mindestens 200, höchstens 50’000; Pfandsumme auf volle Tausend aufgerundet). Nicht enthalten: Ausstellung eines Papier-Schuldbriefs 100 (§ 51 Abs. 7 lit. d), Zuschläge für Mitverpfändung.',
-  }),
+  }, { schrittChf: 1000, richtung: 'auf' } /* V EG ZGB § 51 Abs. 1 lit. b: «auf volle Tausend aufgerundet» */),
   LU: kombi('LU', {
     erlassName: 'Beurkundungsgebührenverordnung / Grundbuchgebührentarif', erlassNr: 'SRL 258 / 228',
     artikel: '§ 29 Abs. 1 / § 8 Abs. 1 Ziff. 1', stand: '1.1.2022 / 1.1.2026',

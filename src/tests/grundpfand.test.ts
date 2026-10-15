@@ -212,10 +212,17 @@ describe('RL-28 Datenprüfung Rundungsangaben (B1/B2)', () => {
     expect(fehler).toEqual([]);
   });
 
-  it('die in RL-28 gesetzten Rundungen sind vorhanden: BS aufwärts 1’000, AG nächste 1’000 (nur Eintragsteil)', () => {
-    const rund = (k: KantonCode) => (GRUNDBUCH_EINTRAG.grundpfand?.[k]?.regel as RundungRegel).basisRundung;
-    expect(rund('BS')).toEqual({ schrittChf: 1000, richtung: 'auf' });
-    expect(rund('AG')).toEqual({ schrittChf: 1000, richtung: 'naechste' });
+  it('die in RL-28 gesetzten Rundungen der Pfandsumme liegen im Eintragsteil: BS aufwärts 1’000, AG nächste 1’000', () => {
+    const teil = (k: KantonCode, etikett: string) => {
+      const r = GRUNDPFAND[k].regel;
+      if (r.typ !== 'summe') throw new Error(`${k}: keine Summe`);
+      return (r.teile.find((x) => x.etikett === etikett)?.regel as RundungRegel).basisRundung;
+    };
+    expect(teil('BS', 'Grundbucheintrag')).toEqual({ schrittChf: 1000, richtung: 'auf' });
+    expect(teil('AG', 'Grundbucheintrag')).toEqual({ schrittChf: 1000, richtung: 'naechste' });
+    // der Notariatsteil wird nicht gerundet (die Rundungsnormen stehen in den Grundbucherlassen)
+    expect(teil('BS', 'Beurkundung')).toBeUndefined();
+    expect(teil('AG', 'Beurkundung')).toBeUndefined();
   });
 
   it('alle 26 Kantone: Grundpfand-Posten ausgewertet über ein Raster ohne Wurf, nie negativ', () => {
