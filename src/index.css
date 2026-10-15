@@ -4608,8 +4608,12 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
    .ub-kopf .lc-overline { color: var(--ink-600) }` — die Rolle «Tinte leise» (DK-16, unten)
    trägt dasselbe; gemessen Farbe vorher = nachher, siehe PR-Body.) */
 /* Der Band-Strich IST die Registermarke dieser Route — die 3.5-rem-Marke am
-   Routenkopf (GB-1, unten) stünde sonst als zweite Linie darüber. */
-.lc-route[data-reg]:has(.ub-kopf)::before { content: none; }
+   Routenkopf (GB-1, unten) stünde sonst als zweite Linie darüber.
+   O-59 (15.10.2026): die Regel nannte nur `.ub-kopf`; Gesetz- (g) und Entscheid-
+   Leser (r) tragen das Band als `.lc-titelblatt-band` — dort stand die Marke
+   (OR @1440: ::before 56 × 2 px, content «») neben dem Band-Strich. BEIDE Band-
+   Klassen gehören hierher (DESIGN-REGLEMENT F0.13). */
+.lc-route[data-reg]:has(.ub-kopf, .lc-titelblatt-band)::before { content: none; }
 /* W2·29-WERKBANK-VORLAGEN V1 · `layout/WerkzeugKopf`: dasselbe Band, das
    Register fest auf «Werkzeuge» — auch im Pane und auf Routen ohne `data-reg`.
    Kontrast (gemessen, V1): Overline ink-600 und H1 ink-900 auf reg-w-flaeche,
