@@ -150,10 +150,13 @@ function PdfEmbedAnsicht({ erlass, currency, teilausfall, kopf, internRefs }: {
               und leer; erst ihr Inhalt wird eingefügt — so sagen Screenreader den
               Hinweis an (ein mit Inhalt frisch eingefügtes `role="status"` wird nicht
               überall vorgelesen). Der Frame bleibt gemountet (kann noch laden); der
-              Hinweis verschwindet dann mit `pdfBereit`. */}
+              Hinweis verschwindet dann mit `pdfBereit`. Die Überlagerung nimmt KEINE Klicks
+              (`pointer-events-none` an der Region, nichts darin schaltet sie wieder ein): sie hat
+              keinen Schliessknopf und deckte sonst die PDF-Werkzeugleiste darunter. Der Hinweis
+              enthält keine Links, bleibt also lesbar (Nachzug Gegenprüfung #1384). */}
           <div data-pdf-zu-langsam-region role="status" className="pointer-events-none absolute inset-x-3 top-3 z-sticky">
             {hinweisArt === 'zu-langsam' && (
-              <div data-pdf-zu-langsam className="pointer-events-auto rounded-lg border border-rule-struktur bg-paper-sunken px-4 py-3 text-body-s text-ink-700">
+              <div data-pdf-zu-langsam className="rounded-lg border border-rule-struktur bg-paper-sunken px-4 py-3 text-body-s text-ink-700">
                 <p>Das PDF erscheint hier nicht (oder noch nicht). Das amtliche PDF lässt sich herunterladen (oben) oder in einem neuen Tab öffnen (unten).</p>
               </div>
             )}

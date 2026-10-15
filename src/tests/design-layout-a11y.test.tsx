@@ -43,6 +43,13 @@ describe('O-57 · PDF-Hinweis «zu langsam» ohne Layoutverschiebung', () => {
     // Die alte Fassung: `role="status"` direkt an der Bedingung, als Block vor dem Frame.
     expect(QUELLE).not.toMatch(/hinweisArt === 'zu-langsam' && \(\s*<div[^>]*role="status"/);
   });
+
+  // Nachzug Gegenprüfung #1384: ohne Schliessknopf darf die Überlagerung keine Klicks nehmen (sie deckte
+  // die PDF-Werkzeugleiste). ROT: `pointer-events-auto` wieder an den Hinweis setzen.
+  it('die Überlagerung nimmt keine Klicks: Region `pointer-events-none`, nichts darin schaltet sie ein', () => {
+    expect(QUELLE.slice(region - 120, region + 200)).toMatch(/\bpointer-events-none\b/);
+    expect(QUELLE).not.toMatch(/data-pdf-zu-langsam\s+className="[^"]*pointer-events-auto/);
+  });
 });
 
 describe('O-43 · details > summary: ein Auto-Rand für Zähler UND Zeichen', () => {
