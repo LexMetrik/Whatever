@@ -212,3 +212,18 @@ Der SG-Wizard (Schlichtungsgesuch BS) zeigt heute «Gebühr ab CHF 100 bis
 max. 30 % der Gerichtsgebühr (GGR BS, SG 154.810 – §-Nummer zu verifizieren)»
 — die §-Nummer ist hiermit belegt: **§ 3 GGR** (Schlichtungsbehörden).
 Nachführung im Wizard erst nach Abnahme dieses Dossiers.
+
+## Nachtrag 15.10.2026 (RL-36, RV-27) — alte Werte oben bleiben als Historie
+
+**AI (GGV GS 173.810, Art. 7):** am Volltext der LexWork-API
+(https://ai.clex.ch/app/de/texts_of_law/173.810, Version in Kraft seit
+1.1.2024, nicht aufgehoben, abgerufen 15.10.2026) gelesen: lit. a aufgehoben;
+lit. b Klagebewilligung 200–1000, lit. c Urteilsvorschlag/Entscheid
+300–1000, lit. d Einigung/Rückzug/Säumnis 100–600 → Gesamtrahmen 100–1000.
+Tarifdaten: `schlichtung.ts` auf 'doppelt'; die dritte Kopie
+`SCHLICHTUNG_NV.AI` (50–500) ist jetzt aus `SCHLICHTUNG.AI` abgeleitet.
+**VS (LTar Art. 15, Fassung 1.1.2025, lex.vs.ch 15.10.2026 gelesen):** Abs. 1
+lit. a Vorladung 50–100 (je nach Zahl Beklagter) + lit. b Versöhnungssitzung
+120–250 (Normalfall 170–350); Abs. 2 nur Streitwert ≤ 2000 und
+Entscheidvorschläge 60–500. Der nv-Rahmen 60–500 ist damit Abs. 2 (Hinweis
+präzisiert; Zahl unverändert, Prüfpunkt offen).
