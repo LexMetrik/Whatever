@@ -68,3 +68,35 @@ test.describe('O-27 — Link-Layout nur für diese Sitzung', () => {
     expect(fehler).toEqual([])
   })
 })
+
+// ─── O-28(c) · Fokus nach Klick auf «Artikel N» steht am Ziel, nicht auf <body> ──────────────
+//  GEMESSEN 15.10.2026 (Dev-Server, Chromium 1440×900, visibilityState visible): OR Einzelansicht
+//  Art. 336b, Klick auf den internen Verweis «Artikel 336» ⇒ der Router tauscht den Artikel, der Verweis
+//  verschwindet, `document.activeElement` = BODY (nach 100, 700 und 1500 ms). Im zweiten Fenster
+//  (Gesamtansicht) blieb der Fokus auf dem Verweis, ohne zum Ziel zu wandern.
+//  ROT ZU BEKOMMEN: in `inhalt-sprung.tsx` den Aufruf `fokussiereArtikel(…)` in `springeZuRef` streichen.
+test.describe('O-28(c) — Fokus am Sprungziel', () => {
+  test('Einzelansicht: der Fokus folgt dem Verweis auf den neuen Artikel', async ({ page }) => {
+    test.slow()
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/gesetze/bund/OR?ansicht=artikel#art-336_b')
+    expect(await page.evaluate(() => document.visibilityState)).toBe('visible')
+    await expect(page.locator('#art-336_b')).toBeVisible({ timeout: 30000 })
+    await page.locator('article a[href="/gesetze/bund/OR#art-336"]').first().click()
+    await expect(page.locator('#art-336')).toBeFocused({ timeout: 5000 })
+    expect(fehler).toEqual([])
+  })
+
+  test('zweites Fenster: der Fokus wandert vom Verweis zum Ziel-Artikel DES Panes', async ({ page }) => {
+    test.slow()
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/gesetze/bund/MWSTG?p=' + encodeURIComponent('/gesetze/bund/OR#art-336_b'))
+    const pane = page.locator('[data-pane="sekundaer"]')
+    await expect(pane.locator('#art-336_b')).toBeVisible({ timeout: 30000 })
+    await pane.locator('article a[href="/gesetze/bund/OR#art-336"]').first().click()
+    await expect(pane.locator('#art-336')).toBeFocused({ timeout: 5000 })
+    expect(fehler).toEqual([])
+  })
+})
