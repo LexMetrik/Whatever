@@ -1,3 +1,4 @@
+import { kanonisierePfad } from './normtext/erlassAdresse';
 import { lokalSpeicher } from './sichererSpeicher';
 // ─── «Zuletzt verwendet»-Tracker (Startseite V3, Modul #5 · UI-NAV O1) ──────
 //
@@ -91,9 +92,13 @@ function melde(): void {
 /** Merkt einen Besuch: dedupe je route (alter Eintrag raus), neuester nach vorn,
  *  auf MAX gekappt. `typ` optional → aus der Route abgeleitet; `zeit` optionale
  *  Metadaten (Default 0) — s. Kopfkommentar. */
-export function merkeBesuch({ route, titel, typ, zeit }: { route: string; titel: string; typ?: ZuletztTyp; zeit?: number }): void {
-  if (!route || !titel) return; // ohne auflösbaren Titel kein Chip (§8: kein Rohpfad)
-  const ohne = holeZuletzt().filter((e) => e.route !== route);
+export function merkeBesuch({ route: roh, titel, typ, zeit }: { route: string; titel: string; typ?: ZuletztTyp; zeit?: number }): void {
+  if (!roh || !titel) return; // ohne auflösbaren Titel kein Chip (§8: kein Rohpfad)
+  // LESER-NAV (FB O-27 BG-09): umgezogene Erlass-Adressen kanonisch merken — der Tracker läuft vor
+  // dem Umzugs-Sprung und sah Alt- und Neu-Adresse als zwei Besuche (EMRK doppelt). Dieselbe
+  // Funktion wie bei Panes und Reitern (§5); Alt-Einträge im Bestand räumt der Vergleich mit weg.
+  const route = kanonisierePfad(roh);
+  const ohne = holeZuletzt().filter((e) => kanonisierePfad(e.route) !== route);
   const neu: ZuletztEintrag = { route, titel, typ: typ ?? typVonRoute(route), zeit: zeit ?? 0 };
   // Kein Speicher / Quota → false: «Zuletzt» ist reiner Komfort, kein Event.
   if (lokalSpeicher.schreib(KEY, JSON.stringify([neu, ...ohne].slice(0, MAX)))) melde();
