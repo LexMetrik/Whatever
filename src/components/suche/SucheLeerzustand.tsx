@@ -1,7 +1,11 @@
+import { useId } from 'react';
 import type { ZuletztEintrag } from '../../lib/zuletztVerwendet';
+import type { MerkEintrag } from '../../lib/merkliste';
 import { reiterKurzform } from '../../lib/tabs';
 import { suchOptionId } from './suchOptionId';
 import { RegisterMarke } from './RegisterMarke';
+import { MERK_ALLE_HREF, MERK_IM_PANEL } from './SucheLeerzustandKontext';
+import { MEHR_TREFFER_ID } from './trefferAuswahl';
 import { artVonRoute } from './suchArt';
 import { Leerzustand } from '../ui/Leerzustand';
 import { VerlaufLeerenKnopf } from '../layout/VerlaufLeerenKnopf';
@@ -46,13 +50,27 @@ import { VerlaufLeerenKnopf } from '../layout/VerlaufLeerenKnopf';
 // Der Registerstrich ist auf 3 px vereinheitlicht und wohnt jetzt in
 // `RegisterMarke.tsx`, weil die TREFFER-Zeilen ihn seit D23 ebenfalls tragen.
 
+// ── LESER-NAV (David 15.10.2026, «Ja, in ⌘K zeigen») · DIE MERKLISTE ────────
+// Steht ÜBER «Zuletzt geöffnet» (Reihenfolge wie im Topbar-Flyout), höchstens
+// `MERK_IM_PANEL` Zeilen, danach die Option «Alle N auf der Startseite». Leere
+// Merkliste: kein Abschnitt, das Panel ist byte-gleich wie vorher. Ist der
+// Verlauf leer, die Merkliste aber nicht (z. B. nach «Verlauf leeren»), entfällt
+// die Zeile «Noch nichts geöffnet.» — die Liste hat dann etwas zu zeigen. Beide
+// Abschnitte sind `role=group` MIT Namen in derselben Listbox (Muster
+// SuchResultate); die Zeilen sind role=option, per Pfeiltasten + Enter erreichbar
+// (`leerOptionen`) — kein zusätzlicher Tab-Stopp (Befund 38).
+
 const ZEILE_CLS = 'lc-hover-flaeche flex items-center gap-3 px-4 py-2 text-body-s text-ink-900 transition-colors cursor-pointer';
 
-export function SucheLeerzustand({ verlauf, listboxId, aktivId, onNavigate, onVerlaufGeleert, panelKlasse }: {
+export function SucheLeerzustand({ verlauf, merkliste = [], listboxId, aktivId, onNavigate, onVerlaufGeleert, panelKlasse }: {
   /** Verlauf-Einträge (bereits auf 5 gekappt) — EIN geteilter useZuletzt()-Aufruf
    *  beim Aufrufer, damit Anzeige und Tastatur-Navigation (leerOptionen) exakt
    *  dieselbe Liste sehen. */
   verlauf: ZuletztEintrag[];
+  /** Die gemerkten Stellen (ganze Liste, neueste zuerst; gezeigt werden `MERK_IM_PANEL`) —
+   *  EIN `useMerkliste()`-Aufruf beim Aufrufer, wie `verlauf`, damit Anzeige und
+   *  Tastatur-Navigation (`leerOptionen`) dieselbe Liste sehen. */
+  merkliste?: readonly MerkEintrag[];
   /** ARIA-Listbox-ID des steuernden Felds (wie SuchResultate) — macht jede Zeile
    *  zu einer role=option statt eines eigenen Tab-Stopps (Befund 38). */
   listboxId: string;
@@ -68,10 +86,48 @@ export function SucheLeerzustand({ verlauf, listboxId, aktivId, onNavigate, onVe
    *  bei `SuchResultate.panelKlasse` (axe `scrollable-region-focusable`). */
   panelKlasse?: string;
 }) {
+  const merkId = useId();
+  const verlaufId = useId();
+  const gemerkt = merkliste.slice(0, MERK_IM_PANEL);
+  const zeigeVerlauf = verlauf.length > 0 || merkliste.length === 0;
+  const merkMehrOid = suchOptionId(listboxId, 'merkliste', MEHR_TREFFER_ID);
+  const listenName = merkliste.length === 0 ? 'Suche — zuletzt geöffnet'
+    : zeigeVerlauf ? 'Suche — Merkliste und zuletzt geöffnet' : 'Suche — Merkliste';
   return (
     <>
-    <div className={`lc-suchpanel${panelKlasse ? ` ${panelKlasse}` : ''}`} role="listbox" id={listboxId} aria-label="Suche — zuletzt geöffnet">
-      <p className="lc-overline px-4 pt-3 pb-1.5">Zuletzt geöffnet</p>
+    <div className={`lc-suchpanel${panelKlasse ? ` ${panelKlasse}` : ''}`} role="listbox" id={listboxId} aria-label={listenName}>
+      {merkliste.length > 0 && (
+        <div role="group" aria-labelledby={merkId}>
+          <p id={merkId} className="lc-overline px-4 pt-3 pb-1.5">Merkliste</p>
+          <ul role="none" className="pb-1">
+            {gemerkt.map((e) => {
+              const oid = suchOptionId(listboxId, 'merkliste', e.route);
+              const art = artVonRoute(e.route);
+              return (
+                <li key={oid} role="option" id={oid} aria-selected={oid === aktivId}
+                  onClick={() => onNavigate(e.route)}
+                  className={`${ZEILE_CLS}${oid === aktivId ? ' hs-aktiv' : ''}`}>
+                  <RegisterMarke route={e.route} />
+                  <span className="min-w-0 flex-1 truncate" title={e.titel}>{e.titel}</span>
+                  {art && <span className="shrink-0 text-xs text-ink-500">{art}</span>}
+                </li>
+              );
+            })}
+            {merkliste.length > MERK_IM_PANEL && (
+              // Die Startseite führt die ganze Liste (`MerklisteFlaeche`); Wortlaut wie im Flyout.
+              <li role="option" id={merkMehrOid} aria-selected={merkMehrOid === aktivId}
+                onClick={() => onNavigate(MERK_ALLE_HREF)}
+                className={`${ZEILE_CLS}${merkMehrOid === aktivId ? ' hs-aktiv' : ''}`}>
+                <RegisterMarke route={MERK_ALLE_HREF} />
+                <span className="min-w-0 flex-1 text-body-s font-medium text-ink-700 underline">{`Alle ${merkliste.length} auf der Startseite`}</span>
+              </li>
+            )}
+          </ul>
+        </div>
+      )}
+      {zeigeVerlauf && (
+      <div role="group" aria-labelledby={verlaufId}>
+      <p id={verlaufId} className="lc-overline px-4 pt-3 pb-1.5">Zuletzt geöffnet</p>
       {verlauf.length === 0
         // §8: ehrlich statt leer — der Verlauf ist noch keiner. KEINE Ersatz-Liste
         // (das wären die «Einstiege», die genau hier gefallen sind).
@@ -105,8 +161,10 @@ export function SucheLeerzustand({ verlauf, listboxId, aktivId, onNavigate, onVe
               })}
             </ul>
         )}
+      </div>
+      )}
     </div>
-    {verlauf.length > 0 && (
+    {(verlauf.length > 0 || merkliste.length > 0) && (
       // §8: der Verlauf liegt nur lokal — als Fussnote UNTER der Liste, und mit ihr
       // «Verlauf leeren» (W2·31 P3): der Topbar-Knopf des Verlaufs fehlt unter 481 px
       // und bei grosser Schrift bis ~570 px, die Liste hier bleibt sichtbar. Die Zeile
@@ -114,7 +172,7 @@ export function SucheLeerzustand({ verlauf, listboxId, aktivId, onNavigate, onVe
       // erlaubtes Kind) und ausserhalb ihrer Scroll-Kappung: sie bleibt im Bild.
       <div className="flex items-center justify-between gap-2 px-4 pb-2.5">
         <p className="text-micro leading-snug text-ink-500">Nur auf diesem Gerät</p>
-        <VerlaufLeerenKnopf onGeleert={onVerlaufGeleert} />
+        {verlauf.length > 0 && <VerlaufLeerenKnopf onGeleert={onVerlaufGeleert} />}
       </div>
     )}
     </>
