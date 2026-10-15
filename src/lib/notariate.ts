@@ -15,6 +15,10 @@ import type { Kanton } from '../types/legal';
 // bewusst NICHT `verifiziert` (Integr.-Check N-1, 7.6.2026): keine
 // Verwechslung mit dem §7-`verified`-Norm-Anker — hier geht es nur um
 // «URL/Stelle beim Abruf bestätigt», nicht um fachliche Abnahme.
+//
+// `system` ist reines Stammdatum der Anlaufstelle und KEIN MwSt-Kriterium: Amts-
+// und freie Notare rechnen MwSt (MWSTV Art. 14 Ziff. 13); die Behandlung je Kanton
+// steht in src/data/tarif/mwst-notariat.ts (RL-33).
 
 export type NotariatsSystem = 'amtsnotariat' | 'frei' | 'gemischt' | 'hregamt';
 
