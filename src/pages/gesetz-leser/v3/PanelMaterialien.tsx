@@ -8,6 +8,7 @@ import { VERNEHMLASSUNG_STATUS_LABEL, vernehmlassungInArbeit, type Vernehmlassun
 import type { BotschaftBezug } from '../../../lib/materialien/botschaften';
 import type { Geladen, MaterialStand } from './panelKontextLaden';
 import { BsOgdNachweis } from '../../../components/materialien/BsOgdNachweis';
+import { behoerdeVon } from '../../../lib/materialien/register';
 
 // ─── Reiter «Materialien» (H3) ───────────────────────────────────────────────
 //
@@ -53,7 +54,12 @@ import { BsOgdNachweis } from '../../../components/materialien/BsOgdNachweis';
 
 // GEMESSEN 23.9.2026: die Gesetzgebungs-Sammlung kennt ausser dem Bund nur die
 // Grossratsgeschäfte Basel-Stadt (`register.json`, behoerde «BS-GR»).
-const KANTON_ABDECKUNG = 'Kantonale Gesetzgebungsmaterialien sind bisher nur für Basel-Stadt (Grossratsgeschäfte) erfasst.';
+// Merkmal «Grossrat BS»: das Behörden-Kürzel des Registers (`KantonalesGeschaeft`
+// trägt nur `behoerdeKuerzel`) — dieselbe Behörde, an der `/materialien` den
+// Nachweis festmacht (`behoerde === 'BS-GR'`).
+const BS_GR_KUERZEL = behoerdeVon('BS-GR').kuerzel;
+
+const KANTON_ABDECKUNG ='Kantonale Gesetzgebungsmaterialien sind bisher nur für Basel-Stadt (Grossratsgeschäfte) erfasst.';
 
 /** Fundstelle erstes/letztes Botschaftsdatum (gemessen 23.9.2026: kleinstes
  *  `stand` einer Botschaft in `register.json` = 1999-03-31). */
@@ -177,8 +183,9 @@ export function PanelMaterialien({ stand, ebene, locale = 'de', aenderungNachBot
         Maschinell über die amtlichen Geschäftsdaten zugeordnet, fachlich nicht geprüft; bei Mantelvorlagen kann die Zuordnung unvollständig sein.
         {ebene !== 'kanton' && <> Erfasst: {ABDECKUNG_BUND}.</>}
         {erzeugt && <> <span className="num">Datenstand {datumAnzeige(erzeugt)}</span>.</>}
-        {/* O-10: CC-BY-Namensnennung, wo Grossratsgeschäfte (data.bs.ch) stehen. */}
-        {k.length > 0 && <> <BsOgdNachweis /></>}
+        {/* O-10: CC-BY-Namensnennung, wo Grossratsgeschäfte (data.bs.ch) stehen —
+            nur für BS-GR (A4), nicht für jedes künftige kantonale Geschäft. */}
+        {k.some((g) => g.behoerdeKuerzel === BS_GR_KUERZEL) && <> <BsOgdNachweis /></>}
       </p>
       {b.length > 0 && (
         <Abschnitt id="botschaften" titel="Botschaften des Bundesrates" zahl={b.length}>

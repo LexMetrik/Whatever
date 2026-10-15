@@ -2,6 +2,7 @@ import { type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import type { CurrencyEintrag, ErlassKopf, KantonLueckeEintrag } from '../../../lib/normtext/browse';
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
+import { standEtikett } from '../../../lib/normtext/international-extern';
 import {
   GELTUNG_UNGEPRUEFT_SATZ, STAND_UNBEKANNT,
   nichtKonsolidiertSatz, standausweisSatz,
@@ -182,7 +183,7 @@ export function ErlassLeserKopf({
   const geltungUngeprueft = lebt && erlass.ebene === 'kanton' && !currency?.geprueftAm;
   const hinweisZukunft = zukunft !== undefined ? zukunft : zukunftsHinweis(erlass, currency);
   const stand = [
-    erlass.stand ? <>Stand <Datum iso={erlass.stand} /></> : <>{STAND_UNBEKANNT}</>,
+    erlass.stand ? <>{standEtikett(erlass)} <Datum iso={erlass.stand} /></> : <>{STAND_UNBEKANNT}</>,
     erlass.inkraftSeit ? <>in Kraft seit <Datum iso={erlass.inkraftSeit} /></> : null,
     currency?.geprueftAm && lebt ? standausweisSatz(currency.geprueftAm) : null,
     geltungUngeprueft ? GELTUNG_UNGEPRUEFT_SATZ : null,
