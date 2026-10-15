@@ -22,16 +22,21 @@ import { GRUNDPFAND } from '../data/tarif/grundpfand';
 // RL-28 Teil 3: Pfandsteuer als eigene Quelle und eigener Posten (STEUER, keine Gebühr).
 import { berechnePfandsteuer } from './pfandsteuer';
 // RL-33 Teil 2: MwSt-Behandlung je Kanton (nur Hinweistext, keine Beträge).
-import { MWST_BEHANDLUNG } from '../data/tarif/mwst-notariat';
+import { MWST_BEHANDLUNG, ZH_MWST_INBEGRIFFEN } from '../data/tarif/mwst-notariat';
 
 /** Hinweis-Satz zur MwSt auf die Notariatsgebühr nach Tabelle MWST_BEHANDLUNG (nur Text). */
-export function mwstSatz(kanton: KantonCode): string {
+export function mwstSatz(kanton: KantonCode, art?: string): string {
   const m = MWST_BEHANDLUNG[kanton];
   const vermerk = m.vermerk ? ` ${m.vermerk}` : '';
   if (m.art === 'offen') return m.vermerk ?? 'MwSt nicht beziffert.';
   if (m.art === 'inbegriffen') return `MwSt in den Tarifansätzen inbegriffen (${m.erlassNr} ${m.artikel}).${vermerk}`;
+  const zh = kanton === 'ZH' && art ? ZH_MWST_INBEGRIFFEN[art] : undefined;
+  const dienstanweisung = zh ? `Dienstanweisung FD ZH 22.11.2023 § 2 Ziff. ${zh.ziffer}` : '';
+  if (zh && zh.bisGebuehrChf === undefined) return `MwSt in der Gebühr inbegriffen (${dienstanweisung}): kein Aufschlag.${vermerk}`;
   const grundlage = m.grundlage === 'tarif' ? `nach kantonalem Tarif ${m.erlassNr} ${m.artikel}` : 'nach Bundesrecht, MWSTG Art. 25';
-  return `Zuzüglich MwSt 8,1 % (${grundlage}).${vermerk}`;
+  const bedingung = 'soweit das Notariat mehrwertsteuerpflichtig ist (MWSTG Art. 10)';
+  if (zh) return `MwSt in der Gebühr bis CHF ${zh.bisGebuehrChf} inbegriffen (${dienstanweisung}), darüber zuzüglich 8,1 % (${grundlage}), ${bedingung}.${vermerk}`;
+  return `Zuzüglich MwSt 8,1 % (${grundlage}), ${bedingung}.${vermerk}`;
 }
 
 export interface Spanne { vonChf: number; bisChf: number }
@@ -139,7 +144,7 @@ export function berechneNotariatGrundbuch(e: NotariatGrundbuchEingabe): Notariat
   const hinweise = [
     'Erwerbs-Nebenkosten beim Grundstückkauf: Beurkundung (Notariat) + Grundbucheintrag; optional Grundpfand (Schuldbrief) und Handänderungssteuer.',
     'Beträge sind die kantonalen Gebühren nach Kaufpreis bzw. Pfandsumme; Auslagen (Porti, Auszüge) sind nicht enthalten.',
-    `Beurkundungsgebühr: ${mwstSatz(e.kanton)} Grundbuchgebühren und Steuern ohne MwSt.`,
+    `Beurkundungs- und Schuldbrief-Notariatsgebühren: ${mwstSatz(e.kanton)} Grundbuchgebühren: allfällige MwSt nicht beziffert; Steuern ohne MwSt.`,
   ];
   if (handaenderungssteuer) hinweise.push('Die Handänderungssteuer ist eine kantonale/kommunale STEUER (keine Gebühr); Befreiungen (z. B. unter Ehegatten/Nachkommen) sind einzelfallabhängig und hier nicht berücksichtigt.');
 

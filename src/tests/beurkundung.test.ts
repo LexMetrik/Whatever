@@ -237,3 +237,19 @@ describe('Beurkundung — MwSt-Hinweis je Kanton nach Tabelle (RL-33 Teil 2)', (
     for (const k of KANTONE) expect(text(k), k).not.toMatch(/MwSt\. \(freies Notariat\)/);
   });
 });
+
+describe('Beurkundung — MwSt-Hinweis ZH je Geschäftsart und Bedingung (RL-33 Teil 2 Nachzug)', () => {
+  const zh = (art: 'vollmacht' | 'buergschaft' | 'grundstueckkauf', wert = 100_000) =>
+    berechneBeurkundung({ geschaeftsart: art, kanton: 'ZH', geschaeftswertCHF: wert }).hinweise[0];
+
+  it('ZH Vollmacht: inbegriffen, kein Aufschlag (Dienstanweisung Ziff. 4.5.1)', () => {
+    expect(zh('vollmacht')).toMatch(/MwSt in der Gebühr inbegriffen \(Dienstanweisung FD ZH 22\.11\.2023 § 2 Ziff\. 4\.5\.1\): kein Aufschlag/);
+    expect(zh('vollmacht')).not.toMatch(/Zuzüglich/);
+  });
+  it('ZH Bürgschaft: Grenze CHF 199, darüber zuzüglich', () => {
+    expect(zh('buergschaft')).toMatch(/MwSt in der Gebühr bis CHF 199 inbegriffen .*Ziff\. 4\.4\.1\), darüber zuzüglich 8,1 %/);
+  });
+  it('ZH Grundstückkauf: zuzüglich, mit Bedingung Steuerpflicht (MWSTG Art. 10)', () => {
+    expect(zh('grundstueckkauf', 500_000)).toMatch(/Zuzüglich MwSt 8,1 % .*, soweit das Notariat mehrwertsteuerpflichtig ist \(MWSTG Art\. 10\)/);
+  });
+});
