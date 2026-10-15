@@ -8,6 +8,10 @@
 //        Fenster), der Nachzug stellte es auf 257 zurück.
 //        ROT ZU BEKOMMEN: in `inhalt-hooks-tieflink.tsx` `oben`/`unten` wieder auf
 //        `0`/`window.innerHeight` stellen.
+//  O-25  (Nachzug #1387) Der Reiter folgt der Zuständigkeits-Weiche auch zurück nach Zivil und lässt
+//        `/rechner/kuendigung#lohnfortzahlung` bei der H1 («Kündigung & Fristen …»).
+//        ROT ZU BEKOMMEN: in `lib/tabs.eintragAus` jeden Hash erben lassen bzw. in
+//        `lib/verlaufLabel.karteMitHash` die Seiten-Einschränkung `HASH_FOLGT_H1` streichen.
 import { test, expect } from '@playwright/test'
 import { fehlerSammeln } from './helpers/fehlerSammeln'
 
@@ -97,6 +101,37 @@ test.describe('O-28(c) — Fokus am Sprungziel', () => {
     await expect(pane.locator('#art-336_b')).toBeVisible({ timeout: 30000 })
     await pane.locator('article a[href="/gesetze/bund/OR#art-336"]').first().click()
     await expect(pane.locator('#art-336')).toBeFocused({ timeout: 5000 })
+    expect(fehler).toEqual([])
+  })
+})
+
+// ─── O-25 (Nachzug #1387) · Reiter folgt der Weiche in beide Richtungen ─────────────────────
+test.describe('O-25 — Reiter-Titel und Weiche', () => {
+  test('#straf → Weiche «Zivil»: H1, Adresse und Reiter zeigen Zivilprozess', async ({ page }) => {
+    test.slow()
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/rechner/zustaendigkeit#straf')
+    const reiter = page.locator('[data-reiter-schluessel="/rechner/zustaendigkeit"]').first()
+    await expect(page.locator('h1')).toContainText('Strafverfahren', { timeout: 30000 })
+    await expect(reiter).toContainText('Strafverfahren')
+    await page.getByRole('group', { name: 'Rechtsweg' }).getByRole('button', { name: /^Zivil/ }).click()
+    await expect(page.locator('h1')).toContainText('Zivilprozess')
+    await expect.poll(() => page.evaluate(() => location.hash)).toBe('')
+    await expect(reiter).toContainText('Zivilprozess')
+    await expect(reiter).not.toContainText('Strafverfahren')
+    expect(fehler).toEqual([])
+  })
+
+  test('/rechner/kuendigung#lohnfortzahlung: der Reiter heisst wie die H1, nicht «Lohnfortzahlung»', async ({ page }) => {
+    test.slow()
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/rechner/kuendigung#lohnfortzahlung')
+    const reiter = page.locator('[data-reiter-schluessel="/rechner/kuendigung"]').first()
+    await expect(page.locator('h1')).toContainText('Kündigung', { timeout: 30000 })
+    await expect(reiter).toBeVisible()
+    await expect(reiter).not.toContainText('Lohnfortzahlung')
     expect(fehler).toEqual([])
   })
 })

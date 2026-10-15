@@ -55,6 +55,8 @@ export function materialPfad(path: string): { key: string } | null {
   return m ? { key: dek(m[1]) } : null;
 }
 
+const HASH_FOLGT_H1: ReadonlySet<string> = new Set(['/rechner/zustaendigkeit']);
+
 /** ── O-25 · SPLIT-KARTE MIT HASH ────────────────────────────────────────────
  *  Eine Rechner-Seite trägt mehrere Katalog-Karten, die sich nur durch den
  *  Hash unterscheiden (`/rechner/zustaendigkeit#schkg|#straf`, Weiche im
@@ -65,7 +67,13 @@ export function materialPfad(path: string): { key: string } | null {
 function karteMitHash(path: string): CatalogItem | null {
   const i = path.indexOf('#');
   if (i === -1) return null;
-  const href = `${pfadTeil(path)}${path.slice(i)}`;
+  const pfad = pfadTeil(path);
+  // Nur Seiten, deren H1 dem Hash folgt. `/rechner/kuendigung` trägt zwei
+  // Hash-Karten (#lohnfortzahlung, #kuendigung), zeigt aber EINE H1 («Kündigung
+  // & Fristen …», Titelwahl offen: seo.ts, TODO David) — dort bliebe der Reiter
+  // sonst nach einem inneren Reiter-Wechsel auf dem alten Hash stehen.
+  if (!HASH_FOLGT_H1.has(pfad)) return null;
+  const href = `${pfad}${path.slice(i)}`;
   return ALLE_KARTEN.find((k) => k.href === href && istVerfuegbar(k)) ?? null;
 }
 

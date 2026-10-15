@@ -110,4 +110,23 @@ describe('BG-07-Rest · Gedächtnis über Neuaufbau (Erlasswechsel, Reload) hinw
     await u.tue(() => u.probe.zurueck!());
     expect(u.probe.einzel!.modus).toBe('artikel');
   });
+
+  // Fall (c) füttert syntaktisch kaputtes JSON: `JSON.parse` wirft, `istSchluesselListe` wird nie erreicht
+  // (Gegenprüfung #1387). Dieser Fall liefert GÜLTIGES JSON mit falschen Typen — erst die Typprüfung hält
+  // `besucht.includes` / `davor.includes` vor einem Wurf. ROT ZU BEKOMMEN: `istSchluesselListe` in
+  // `useEinzelModus.ts` auf `() => true` setzen ⇒ der Hook wirft beim ersten Render (`5.includes`).
+  it.each([
+    ['Zahl und Objekt statt Listen', '{"besucht":5,"wechsel":{"modus":"erlass","davor":{"a":1}}}'],
+    ['Listen mit Nicht-Zeichenketten', '{"besucht":[1,2],"wechsel":{"modus":"erlass","davor":[3,null]}}'],
+    ['Zeichenkette statt Liste', '{"besucht":"default","wechsel":{"modus":"erlass","davor":"default"}}'],
+  ])('(e) gültiges JSON falschen Typs (%s) gilt wie «leer»: Zurück bleibt ein Blätterschritt', async (_name, roh) => {
+    const u = await umgebung('/gesetze/bund/OR?ansicht=artikel#art-5');
+    abbau = u.abbau;
+    u.sitzung.set('lm.leser.lesart-wechsel', roh);
+    await u.tue(() => u.probe.neuAufbauen!());
+    await u.tue(() => u.probe.einzel!.blaettere(1));
+    await u.tue(() => u.probe.zurueck!());
+    expect(u.probe.einzel!.modus).toBe('artikel');
+    expect(u.probe.einzel!.token).toBe('5');
+  });
 });

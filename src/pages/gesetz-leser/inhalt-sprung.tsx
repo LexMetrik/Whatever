@@ -394,13 +394,16 @@ export function kuerzelKandidaten(kuerzel: string): string[] {
  * `tabindex=-1` macht ihn fokussierbar OHNE ihn in die Tab-Folge zu nehmen, `preventScroll` lässt den
  * Sprung allein das Scrollen führen (Landepunkt unter der klebenden Zeile, `springeZuArtikel`).
  * Das Ziel kann noch fehlen (Einzelmodus: der Router rendert den Artikel erst nach der Navigation) —
- * darum bis zu `VERSUCHE` Frames warten, einmal fokussieren, dann aufgeben (nie Dauerwächter).
+ * darum bis zu `FOKUS_FRIST_MS` warten, einmal fokussieren, dann aufgeben (nie Dauerwächter).
+ * ZEIT, NICHT FRAMES (Nachzug Gegenprüfung #1387): 40 Frames reichten bei 8-facher CPU-Drosselung im
+ * zweiten Fenster nicht (Fokus blieb auf `<body>`) — ein Frame dauert dort ein Vielfaches. Die Frist
+ * misst darum die verstrichene Zeit (`performance.now`); wie viele Frames darin laufen, ist egal.
  * Hat der Nutzer den Fokus inzwischen selbst in ein Eingabefeld gesetzt, bleibt er dort.
  */
-const FOKUS_VERSUCHE = 40;
-function fokussiereArtikel(finde: () => HTMLElement | null): void {
+export const FOKUS_FRIST_MS = 3000;
+export function fokussiereArtikel(finde: () => HTMLElement | null): void {
   if (typeof window === 'undefined') return;
-  let n = 0;
+  const start = performance.now();
   const versuch = () => {
     const el = finde();
     if (el) {
@@ -410,7 +413,7 @@ function fokussiereArtikel(finde: () => HTMLElement | null): void {
       el.focus({ preventScroll: true });
       return;
     }
-    if (++n < FOKUS_VERSUCHE) window.requestAnimationFrame(versuch);
+    if (performance.now() - start < FOKUS_FRIST_MS) window.requestAnimationFrame(versuch);
   };
   window.requestAnimationFrame(versuch);
 }
