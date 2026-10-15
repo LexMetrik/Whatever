@@ -709,7 +709,9 @@
     /* Schweiz-Karte, Füllung Stufe 2: mittlerer Erfassungsgrad. */
     --karte-auswahl: hsl(215 38% 74%);
     /* Schweiz-Karte, Füllung Stufe 3: vollständig erfasst. Dunkel bewusst auf 36 % Helligkeit
-       gedeckelt - höher fällt die Kante unter die 3:1-Schwelle. */
+       gedeckelt - höher fällt die Kante unter die 3:1-Schwelle. Stand 15.10.2026 (O-44): dunkel
+       hsl(215 42% 40%), Kante dagegen 3.36:1 (Dunkel-Kante #BFBAB0; die 36 %-Grenze galt für die
+       Kante von 29.8.2026). */
     --karte-voll: hsl(215 42% 60%);
     /* Schweiz-Karte: Kanton ohne erfasste Erlasse, neutral und chromafrei. Der Unterschied wird
        zusätzlich durch eine Schraffur getragen, weil die Helligkeit allein ihn nicht trägt
@@ -1272,10 +1274,18 @@
        innerhalb eines engen, dunklen Bandes. Gemessen dunkel (Playwright, 29.8.):
        Kante gegen Füllung 3.06 / 4.34 / 6.61 / 11.96:1, Stufen untereinander
        1.42–1.52:1. «vollständig» steht auf 36 %, nicht höher — ab 37 % fällt die
-       Kante auf 2.92:1 und reisst die F2-Schwelle. */
-    --karte-duenn: hsl(215 28% 20%);
-    --karte-auswahl: hsl(215 34% 27%);
-    --karte-voll: hsl(215 40% 34%);
+       Kante auf 2.92:1 und reisst die F2-Schwelle.
+
+       NACHTRAG LESER-NAV O-44 (15.10.2026, gemessen WCAG-Formel, Dunkel): die Stufen untereinander
+       lagen bei 1.29 (voll/Auswahl) und 1.27:1 (Auswahl/dünn) — kaum unterscheidbar, hell
+       1.60/1.49. Die Kante ist seit der Dunkel-Rampe #BFBAB0 (gegen «vollständig» 4.18:1, Luft bis
+       3:1): jetzt voll hsl(215 42% 40%) · Auswahl hsl(215 36% 30%) · dünn hsl(215 30% 19%).
+       Gemessen: voll/Auswahl 1.43 · Auswahl/dünn 1.47 · dünn/leer 1.36 (vorher 1.42); Kante gegen
+       voll 3.36 · Auswahl 4.81 · dünn 7.10 · leer 9.68:1 (Pflichtpaare check:farbwelt ≥ 3:1). Die
+       frühere Angabe «36 %» und die Kantenwerte oben sind Stand 29.8.2026. */
+    --karte-duenn: hsl(215 30% 19%);
+    --karte-auswahl: hsl(215 36% 30%);
+    --karte-voll: hsl(215 42% 40%);
     /* W2·24-R1: sm/md bleiben auch dunkel leer (Karten tragen Linien, keine
        Tiefe); nur die schwebende Ebene behält ihren Schatten, dunkel tiefer. */
     --shadow-sm: none;
