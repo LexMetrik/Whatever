@@ -38,21 +38,12 @@ import { usePaneKlasse } from '../layout/PaneKontext';
 // (F0.4 «Literata liest», F0.11): Stufe 1 = Literata, Gewicht 400, von
 // DIESEM Baustein selbst gesetzt — die Überschreibung im Band fällt weg
 // (§17-Rückbau: die Regel trägt jetzt der Baustein, nicht ein Selektor daneben).
-// Die Display-Stimme hat keinen Aufrufer mehr und ist gestrichen; die Prop
-// `stimme` bleibt nur als Übergang (PR 2 zieht die Aufrufer um, dann entfällt sie).
-
-/**
- * Schriftstimme des Titels (DESIGN-REGLEMENT F0.11, Stufe 1): die Serif-Stimme
- * des Gelesenen. Es gibt keine zweite Stimme mehr — die Prop bleibt nur, weil
- * `ErlassLeserKopf` (gesetz-leser, Fläche im Umbau) sie noch schreibt; die
- * übrigen Aufrufer sind seit HN-D2 PR 2 (30.9.2026) umgestellt.
- */
-export type TitelStimme = 'serif';
+// Die Display-Stimme hat keinen Aufrufer mehr und ist gestrichen. Es gibt keine
+// Stimmen-Prop: die Stufe-1-Schrift ist Literata 400, immer (HN-D2 PR 2 zog die
+// Aufrufer um, LESER-NAV 15.10.2026 den letzten, `ErlassLeserKopf`; Typ und Prop
+// sind damit gestrichen).
 
 export function SeitenTitel({ className, id, children }: {
-  /** @deprecated — letzter Verwender ErlassLeserKopf (gesetz-leser, Nachzug).
-   *  Wird nicht gelesen, die Stimme ist immer `serif`. */
-  stimme?: TitelStimme;
   /** Zusätzliche Klassen des Aufrufers (Umbruch-Regeln, Höhen-Reservierung). */
   className?: string;
   id?: string;

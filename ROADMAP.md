@@ -107,7 +107,7 @@ E1·B
 - Abnahme David: Gründungs-Checklisten AG/GmbH nach TJPG — bibliothek/recherche/ag-gruendung.md, gmbh-gruendung.md
 - 7.10.: Widerspruch W-17: FB RV-26 «wartet auf David» vs. FAHRPLAN-RECHTSLOGIK §4 «entschieden 24.9.»; W-09/11/17/22 dort ohne Zeichen
 E3
-- Go David 24.9.: Rest «eine Titel- und Abschnittsordnung» (HN-D2 gebaut #1190/#1197): Band-Rezept, Titelschrift — FB Teil B, N10-14
+- Go David 24.9.: Rest «eine Titel- und Abschnittsordnung» (HN-D2 gebaut #1190/#1197, Band-Rezept #1373): Titelschrift — FB Teil B
 - Go David 8.8.: Kalender-Export: Termine als «frei» — FB Teil B
 - David 1.10./3.10.: Deaktiviert-/Hover-Varianten angleichen; Regelsätze von Belegen entflechten — FB Teil B
 - David 2.10.: Rest-Rückbau tote Rechtsprechungs-Zeilen: revisionFuer nur noch Kommentar, data-leitfaelle u. a. prüfen — FB Teil B
