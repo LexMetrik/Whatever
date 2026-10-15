@@ -45,7 +45,7 @@ describe('Opt-out-Pfad — identisch mit Default-Pfad', () => {
   });
 
   // Regeln, die eine Option tragen (hier: die Basisrundung der Pfandsumme im Eintragsteil
-  // BS/AG, V EG ZGB BS § 51 Abs. 1 lit. b, GBAG AG § 4 Abs. 1; RL-28), sind vom Opt-out-
+  // BS/AG/VS, V EG ZGB BS § 51 Abs. 1 lit. b, GBAG AG § 4 Abs. 1, OcRF VS Art. 32 al. 3; RL-28), sind vom Opt-out-
   // Vergleich ausgenommen: Das Überschreiben mit `undefined` würde die Datenoption löschen
   // und eine andere Regel vergleichen. Sie werden gezählt und als Liste fixiert.
   const hatOption = (r: TarifRegel): boolean => {
@@ -55,9 +55,11 @@ describe('Opt-out-Pfad — identisch mit Default-Pfad', () => {
   const OHNE_OPTION = KORPUS.filter((r) => !hatOption(r));
   const MIT_OPTION = KORPUS.filter(hatOption);
 
-  it('Regeln mit gesetzter Option im Korpus: die zwei Eintragsregeln BS/AG (Basisrundung 1’000) und die SZ-Schuldbrief-Regel (Tranchen 50’000 aufwärts)', () => {
+  it('Regeln mit gesetzter Option im Korpus: die drei Eintragsregeln BS/VS (aufwärts) und AG (nächste), Basisrundung 1’000 und die SZ-Schuldbrief-Regel (Tranchen 50’000 aufwärts)', () => {
     const liste = MIT_OPTION.map((r) => JSON.stringify({ typ: r.typ, promille: (r as { promille?: number }).promille, basisRundung: (r as { basisRundung?: unknown }).basisRundung }));
     expect(liste.sort()).toEqual([
+      // BS (V EG ZGB § 51 Abs. 1 lit. b) und VS (OcRF Art. 32 al. 3, RL-28 Teil 2): beide promille 1, 1’000 aufwärts
+      JSON.stringify({ typ: 'promille', promille: 1, basisRundung: { schrittChf: 1000, richtung: 'auf' } }),
       JSON.stringify({ typ: 'promille', promille: 1, basisRundung: { schrittChf: 1000, richtung: 'auf' } }),
       JSON.stringify({ typ: 'promille', promille: 1.5, basisRundung: { schrittChf: 1000, richtung: 'naechste' } }),
       // SZ Schuldbrief: SRSZ 213.512 § 5 Abs. 1 Nr. 2 «je Fr. 50’000 bzw. Bruchteile davon» (RL-28-Nachzug A4)
