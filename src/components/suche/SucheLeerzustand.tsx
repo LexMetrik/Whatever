@@ -53,7 +53,8 @@ import { VerlaufLeerenKnopf } from '../layout/VerlaufLeerenKnopf';
 // ── LESER-NAV (David 15.10.2026, «Ja, in ⌘K zeigen») · DIE MERKLISTE ────────
 // Steht ÜBER «Zuletzt geöffnet» (Reihenfolge wie im Topbar-Flyout), höchstens
 // `MERK_IM_PANEL` Zeilen, danach die Option «Alle N auf der Startseite». Leere
-// Merkliste: kein Abschnitt, das Panel ist byte-gleich wie vorher. Ist der
+// Merkliste: kein Merkliste-Abschnitt; «Zuletzt geöffnet» ist neu stets eine
+// benannte Gruppe (sichtbar unverändert, Screenreader sagt die Gruppe an). Ist der
 // Verlauf leer, die Merkliste aber nicht (z. B. nach «Verlauf leeren»), entfällt
 // die Zeile «Noch nichts geöffnet.» — die Liste hat dann etwas zu zeigen. Beide
 // Abschnitte sind `role=group` MIT Namen in derselben Listbox (Muster
