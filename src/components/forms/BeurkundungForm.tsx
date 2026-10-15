@@ -144,6 +144,7 @@ function AllgemeineBeurkundung({ art, startKanton, startWert, startAusgabe }: { 
         'Geschäftsart': def.label,
         'Kanton': `${kanton} — ${KANTON_NAMEN[kanton]}`,
         ...(wertNoetig ? { [def.wertLabel ?? 'Geschäftswert']: geschaeftswert ? chf(geschaeftswert) : '–' } : {}),
+        ...(ausgabebetrag !== undefined ? { 'Ausgabebetrag inkl. Agio (Emissionsabgabe)': chf(ausgabebetrag) } : {}),
         ...Object.fromEntries((zusatz?.posten ?? []).map((p) => [p.label, p.von === p.bis ? chf(p.von) : `${chf(p.von)} – ${chf(p.bis)}`])),
         ...(zusatz?.mwstHinweis ? { 'MwSt-Behandlung': zusatz.mwstHinweis } : {}),
         ...(total ? { 'Total Notariat + Zusatzkosten (Schätzung)': total.von === total.bis ? chf(total.von) : `${chf(total.von)} – ${chf(total.bis)}` } : {}),
@@ -151,7 +152,7 @@ function AllgemeineBeurkundung({ art, startKanton, startWert, startAusgabe }: { 
       sections: [{ titel: 'Beurkundungsgebühr', ergebnis: beurkundungBericht(ergebnis) }],
       disclaimer: DISCLAIMER,
     };
-  }, [ergebnis, aktenzeichen, kanton, geschaeftswert, def, wertNoetig, zusatz, total]);
+  }, [ergebnis, aktenzeichen, kanton, geschaeftswert, ausgabebetrag, def, wertNoetig, zusatz, total]);
 
   return (
     <div className="space-y-4">
@@ -179,7 +180,7 @@ function AllgemeineBeurkundung({ art, startKanton, startWert, startAusgabe }: { 
         <ErgebnisBlock>
           <PostenAnzeige ergebnis={ergebnis} />
 
-          {zusatz && (zusatz.posten.length > 0 || zusatz.mwstHinweis) && (
+          {zusatz && (zusatz.posten.length > 0 || zusatz.mwstHinweis || zusatz.emissionsHinweis) && (
             <div className="mt-3 lc-tile">
               <p className="text-xs text-ink-500 mb-2">Weitere Transaktionskosten (Schätzung) und MwSt-Behandlung</p>
               {zusatz.posten.length > 0 && <ul className="space-y-1.5">
@@ -194,6 +195,7 @@ function AllgemeineBeurkundung({ art, startKanton, startWert, startAusgabe }: { 
                 ))}
               </ul>}
               {zusatz.mwstHinweis && <p className="mt-2 text-xs text-ink-500"><NormText text={zusatz.mwstHinweis} /></p>}
+              {zusatz.emissionsHinweis && <p className="mt-2 text-xs text-ink-500"><NormText text={zusatz.emissionsHinweis} /></p>}
               {zusatz.posten.some((p) => p.hinweis) && (
                 <ul className="mt-2 space-y-1 text-xs text-ink-500 list-disc pl-5">
                   {zusatz.posten.filter((p) => p.hinweis).map((p, i) => <li key={i}><NormText text={p.hinweis ?? ''} /></li>)}

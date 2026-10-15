@@ -109,7 +109,7 @@ export function weitereKosten(
   wertChf: number | undefined,
   gebuehr: Spanne | null,
   ausgabebetragChf?: number,
-): { posten: Zusatzposten[]; mwst: MwstBehandlung; mwstHinweis?: string } {
+): { posten: Zusatzposten[]; mwst: MwstBehandlung; mwstHinweis?: string; emissionsHinweis?: string } {
   const posten: Zusatzposten[] = [];
   const mwst = MWST_BEHANDLUNG[kanton];
   let mwstHinweis: string | undefined;
@@ -179,7 +179,10 @@ export function weitereKosten(
   }
 
   // 3. Emissionsabgabe (1 % auf den CHF 1 Mio übersteigenden Teil = Freibetrag), nur AG/GmbH-Kapital.
-  const bemessungChf = ausgabebetragChf ?? wertChf;
+  // Art. 8 Abs. 1 lit. a StG: zufliessender Betrag, mindestens aber der Nennwert → liegen beide vor, gilt der höhere.
+  const bemessungChf = ausgabebetragChf !== undefined && wertChf !== undefined
+    ? Math.max(ausgabebetragChf, wertChf)
+    : (ausgabebetragChf ?? wertChf);
   if (EMISSIONSABGABE_ARTEN.has(art) && bemessungChf !== undefined) {
     const genossenschaft = art === 'genossenschaft_gruendung';
     const abgabe = emissionsabgabe(bemessungChf);
@@ -193,7 +196,7 @@ export function weitereKosten(
       ? ' Bei Kapitalerhöhungen gilt der Freibetrag von CHF 1 Mio. gesamthaft über alle bisherigen Leistungen (Gründung + frühere Erhöhungen) und ist meist bereits aufgebraucht — dann ist der ganze Erhöhungsbetrag zu 1 % steuerbar. Hier wird er auf den isolierten Erhöhungsbetrag angewendet; der ausgewiesene Betrag kann daher zu tief sein.'
       : '';
     const lit = genossenschaft ? 'b' : 'h';
-    const bemessungNote = ' Bemessung: Ausgabebetrag inkl. Agio, mindestens Nennwert (Art. 8 Abs. 1 lit. a StG).';
+    const bemessungNote = ' Bemessung: Ausgabebetrag inkl. Agio, mindestens Nennwert (Art. 8 Abs. 1 lit. a StG). Sacheinlagen zum Verkehrswert (Art. 8 Abs. 3 StG).';
     const genoNote = genossenschaft
       ? ' Genossenschaft: Die Abgabe entsteht mit der Begründung oder Erhöhung der Anteile (Art. 7 Abs. 1 lit. c StG); von den Einzahlungen eines Geschäftsjahres wird sie nur erhoben, soweit sie die Rückzahlungen im selben Geschäftsjahr übersteigen (Art. 9 Abs. 2 StG). Der Freibetrag gilt gesamthaft über alle Leistungen der Genossenschafter.'
       : '';
@@ -209,5 +212,9 @@ export function weitereKosten(
     });
   }
 
-  return { posten, mwst, mwstHinweis };
+  // Abgabe nicht ausgewiesen, weil keine Bemessung vorliegt (z. B. Fixtarif-Kanton, Feld leer): ehrlich offenlegen (§8).
+  const emissionsHinweis = EMISSIONSABGABE_ARTEN.has(art) && bemessungChf === undefined
+    ? 'Emissionsabgabe: ohne Ausgabebetrag nicht ausgewiesen (1 % auf den CHF 1 Mio. übersteigenden Teil, StG Art. 8).'
+    : undefined;
+  return { posten, mwst, mwstHinweis, ...(emissionsHinweis ? { emissionsHinweis } : {}) };
 }

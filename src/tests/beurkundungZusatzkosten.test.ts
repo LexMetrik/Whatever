@@ -274,4 +274,10 @@ describe('weitereKosten — Emissionsabgabe (RL-34)', () => {
     expect(p?.von).toBe(10_000);
     expect(p?.hinweis).toContain('gesamthaft');
   });
+
+  it('Bemessung mindestens Nennwert (Art. 8 Abs. 1 lit. a StG): Ausgabe unter Nennwert zählt nicht', () => {
+    const g = { vonChf: 500, bisChf: 500 };
+    expect(emissionPosten(weitereKosten('ag_gruendung', 'ZH', 1_500_000, g, 1_200_000))?.von).toBe(5_000);
+    expect(emissionPosten(weitereKosten('ag_gruendung', 'ZH', 2_000_000, g, 0))?.von).toBe(10_000);
+  });
 });
