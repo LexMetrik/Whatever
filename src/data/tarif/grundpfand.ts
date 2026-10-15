@@ -57,7 +57,7 @@ export const GRUNDPFAND: Record<KantonCode, KantonalerTarif> = {
   // Teil 2/3 prüft gegen Norm: Die folgenden 14 Kantone sind wortgleich aus der früheren
   // Tabelle in notariat-grundbuch.ts übernommen (Werte, Metadaten, Hinweise unverändert).
   BE: { kanton: 'BE', erlassName: 'GebVN / GebV', erlassNr: 'BSG 169.81 / 154.21', artikel: 'Art. 18 / Anhang 4B Ziff. 3.3.1', stand: '1.3.2022', verifiziert: R, quelleUrl: 'https://www.belex.sites.be.ch/app/de/texts_of_law/169.81', regel: { typ: 'formel_extern', hinweis: 'Beurkundung nach Zeitaufwand (min. 200) + Eintrag 100 TP — KEIN Promille.' } },
-  SZ: { kanton: 'SZ', erlassName: 'Gebührentarif Notare/Grundbuchverwalter', erlassNr: 'SRSZ 213.512', artikel: '§ 5 Abs. 1 Nr. 2', stand: '1.2.2021', verifiziert: R, quelleUrl: 'https://www.sz.ch/public/upload/assets/7361/213_512.pdf', hinweis: 'CHF 45 je (auch angefangene) CHF 50’000 (≈ 0,9‰); bei Pfandsumme über 8 Mio. wird die Gebühr auf dem Mehrbetrag um 50 % reduziert, höchstens 10’350. QS-GP 2.7.2026: −50 %-Degression >8 Mio. am amtlichen PDF verifiziert und ergänzt (Tranchen-Aufrundung noch flach angenähert).', regel: { typ: 'staffel_sockel_prozent', baender: [
+  SZ: { kanton: 'SZ', erlassName: 'Gebührentarif Notare/Grundbuchverwalter', erlassNr: 'SRSZ 213.512', artikel: '§ 5 Abs. 1 Nr. 2', stand: '1.7.2026', verifiziert: R, quelleUrl: 'https://www.sz.ch/public/upload/assets/7361/213_512.pdf', hinweis: 'CHF 45 je (auch angefangene) CHF 50’000 (≈ 0,9‰); bei Pfandsumme über 8 Mio. wird die Gebühr auf dem Mehrbetrag um 50 % reduziert, höchstens 10’350. QS-GP 2.7.2026: −50 %-Degression >8 Mio. am amtlichen PDF verifiziert und ergänzt (Tranchen-Aufrundung seit RL-28-Nachzug 15.10.2026 umgesetzt: Pfandsumme wird vor der Berechnung auf volle CHF 50’000 aufgerundet).', regel: { typ: 'staffel_sockel_prozent', basisRundung: { schrittChf: 50000, richtung: 'auf' }, baender: [
     { bisChf: 8000000, sockelChf: 0, abChf: 0, prozent: 0.09, maxChf: 10350 },
     { bisChf: INF, sockelChf: 7200, abChf: 8000000, prozent: 0.045, maxChf: 10350 },
   ] } },
@@ -79,7 +79,7 @@ export const GRUNDPFAND: Record<KantonCode, KantonalerTarif> = {
   AG: kombi('AG', {
     erlassName: 'Notariatstarif / Gesetz über die Grundbuchabgaben', erlassNr: 'SAR 295.250 / 725.100',
     artikel: '§ 3 Abs. 1 / § 23 Abs. 1 lit. a, § 4 Abs. 1', stand: '1.1.2025 / 1.1.2020',
-    hinweis: 'Beurkundung zwei Drittel der Ansätze von § 2 (höchstens 7’500; Annahme: Minimum 300 wird nicht gedrittelt) + Eintragungsabgabe 1,5 ‰ (mindestens 100; Pfandsumme auf 1’000 gerundet, bei genau x’500 Annahme: aufwärts). Eine Fixgebühr von 40 je Gläubiger ist amtlich nicht belegt und nicht enthalten.',
+    hinweis: 'Beurkundung zwei Drittel der Ansätze von § 2 (höchstens 7’500; Mindestbetrag als zwei Drittel von CHF 300 = CHF 200 gelesen, da § 3 Abs. 1 nur für das Maximum einen eigenen Betrag nennt; Praxis kann CHF 300 anwenden) + Eintragungsabgabe 1,5 ‰ (mindestens 100; Pfandsumme auf 1’000 gerundet, bei genau x’500 Annahme: aufwärts). Eine Fixgebühr von 40 je Gläubiger ist amtlich nicht belegt und nicht enthalten.',
   }),
   BS: kombi('BS', {
     erlassName: 'Notariatstarif / Verordnung zum EG ZGB', erlassNr: 'SG 292.400 / 211.110',
@@ -94,7 +94,7 @@ export const GRUNDPFAND: Record<KantonCode, KantonalerTarif> = {
   OW: kombi('OW', {
     erlassName: 'Beurkundungsgebühren / Grundbuchgebührentarif', erlassNr: 'GDB 210.32 / 213.61',
     artikel: 'Art. 10 Ziff. 23 / Art. 12 Abs. 1', stand: '1.1.2013 / 1.1.2022',
-    hinweis: 'Beurkundung 1,5 ‰ bis 300’000, +1 ‰ bis 600’000, +0,5 ‰ darüber (mindestens 400) + Eintrag 2 ‰ bis 500’000, +1,5 ‰ bis 1 Mio., +1 ‰ darüber (mindestens 80, höchstens 10’000).',
+    hinweis: 'Beurkundung 1,5 ‰ bis 300’000, +1 ‰ bis 600’000, +0,5 ‰ darüber (mindestens 400) + Eintrag 2 ‰ bis 500’000, +1,5 ‰ bis 1 Mio., +1 ‰ darüber (mindestens 80, höchstens 10’000). Nicht abgebildet: Art. 4 GDB 210.32 (Erhöhung der Beurkundungsgebühr bei Mehraufwand um höchstens die Hälfte) und Art. 5 lit. a (Herabsetzung um einen Drittel bei Beurkundung eines in Reinschrift vorgelegten Dokuments; der Mindestansatz bleibt vorbehalten); im Einzelfall kann die Gebühr deshalb höher oder tiefer ausfallen.',
   }),
   NW: kombi('NW', {
     erlassName: 'Beurkundungsgebührenverordnung / Gebührenverordnung', erlassNr: 'NG 268.12 / 265.51',

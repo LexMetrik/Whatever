@@ -27,7 +27,8 @@ describe('RL-28 Grundpfand-Posten Deutschschweiz — Beurkundung + Grundbucheint
     // AG: NotT SAR 295.250 § 3 Abs. 1 (⅔ von § 2, max 7'500) + GBAG SAR 725.100 § 23 Abs. 1 lit. a (1,5‰, min 100), § 4 (Summe auf 1'000 gerundet)
     ['AG', 1_000_000, 3633.33, 'N 2133.33 + G 1500'],
     ['AG', 3_000_000, 9300, 'N 4800 + G 4500'],
-    ['AG', 100_000, 450, 'Randfall Minimum N (Annahme 300) + G 150'],
+    ['AG', 100_000, 416.67, 'N 266.67 (⅔ × 4 ‰, über Minimum 200) + G 150 (Nachzug A1: vorher Minimum 300 → 450)'],
+    ['AG', 50_000, 300, 'Randfall Minimum N 200 (⅔ von 300; Lesart) + G 100 (Minimum Eintrag; 75 → 100)'],
     ['AG', 20_000_000, 37500, 'Randfall Deckel N 7500 + G 30000'],
     ['AG', 1_234_400, 4296.87, 'Randfall Rundung GB: 1’234’400 → 1’234’000'],
     ['AG', 1_234_500, 4298.5, 'Gleichstand x’500 → Annahme aufrunden auf 1’235’000'],
@@ -71,6 +72,8 @@ describe('RL-28 Grundpfand-Posten Deutschschweiz — Beurkundung + Grundbucheint
     ['UR', 1_000_000, 2000, 'nur Eintragsteil'],
     // SZ: eine Gebühr (§ 5 Abs. 1 Nr. 2), Degression über 8 Mio — unverändert
     ['SZ', 10_000_000, 8100, '7200 + 50 % auf 2 Mio'],
+    ['SZ', 30_000, 45, 'angefangene Tranche zählt voll (§ 5 Abs. 1 Nr. 2: je Fr. 50’000 bzw. Bruchteile davon)'],
+    ['SZ', 1_010_000, 945, '21 Tranchen × 45 (1’010’000 → 1’050’000)'],
   ];
   for (const [k, summe, soll, was] of faelle) {
     it(`${k} Pfandsumme ${summe.toLocaleString('de-CH')} = ${soll} (${was})`, () => {

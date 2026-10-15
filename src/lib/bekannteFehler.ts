@@ -46,7 +46,7 @@ const KALENDER_NE_SO: BekannterFehler = {
 export const BEKANNTE_FEHLER: Readonly<Record<string, readonly BekannterFehler[]>> = {
   'notariat-grundbuch': [
     STAFFEL,
-    { fb: 'RV-19', text: 'Grundpfand: Pauschalsätze in der Romandie und im Tessin noch falsch (FR, GE, VS, VD, NE, TI, JU); Deutschschweiz seit 15.10.2026 berichtigt.' },
+    { fb: 'RV-19', text: 'Grundpfand: Pauschalsätze noch ungeprüft in BE, AI, AR, BL, SO, ZG sowie in der Romandie und im Tessin (FR, GE, VS, VD, NE, TI, JU); berichtigt seit 15.10.2026: AG, BS, LU, OW, NW, GL, SH, TG, GR, ZH, SG.' },
     { fb: 'RV-20', text: 'Grundbuch TG: Vormerkung falsch gerechnet; Rundungen AG, BS, VS, SZ und Sockel GE noch offen (Staffeln TI, VD, FR, VS, NE, GE, JU, BE, SO sind seit 15.10.2026 berichtigt).' },
     { fb: 'RV-24', text: 'Mehrwertsteuer auf Notariatsgebühren fehlt oder ist falsch (7 Kantone).' },
     { fb: 'RV-25', text: 'Emissionsabgabe fehlt ohne Hinweis im Ergebnis (bis CHF 40’000).' },

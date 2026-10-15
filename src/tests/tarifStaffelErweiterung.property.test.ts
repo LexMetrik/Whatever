@@ -55,11 +55,13 @@ describe('Opt-out-Pfad — identisch mit Default-Pfad', () => {
   const OHNE_OPTION = KORPUS.filter((r) => !hatOption(r));
   const MIT_OPTION = KORPUS.filter(hatOption);
 
-  it('Regeln mit gesetzter Option im Korpus: genau die zwei Eintragsregeln BS/AG mit Basisrundung 1’000', () => {
+  it('Regeln mit gesetzter Option im Korpus: die zwei Eintragsregeln BS/AG (Basisrundung 1’000) und die SZ-Schuldbrief-Regel (Tranchen 50’000 aufwärts)', () => {
     const liste = MIT_OPTION.map((r) => JSON.stringify({ typ: r.typ, promille: (r as { promille?: number }).promille, basisRundung: (r as { basisRundung?: unknown }).basisRundung }));
     expect(liste.sort()).toEqual([
       JSON.stringify({ typ: 'promille', promille: 1, basisRundung: { schrittChf: 1000, richtung: 'auf' } }),
       JSON.stringify({ typ: 'promille', promille: 1.5, basisRundung: { schrittChf: 1000, richtung: 'naechste' } }),
+      // SZ Schuldbrief: SRSZ 213.512 § 5 Abs. 1 Nr. 2 «je Fr. 50’000 bzw. Bruchteile davon» (RL-28-Nachzug A4)
+      JSON.stringify({ typ: 'staffel_sockel_prozent', basisRundung: { schrittChf: 50000, richtung: 'auf' } }),
     ].sort());
   });
 
