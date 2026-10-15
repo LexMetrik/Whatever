@@ -263,7 +263,13 @@ test.describe('Ä27/Ä28/Ä30/Ä31 — jede Auskunft genau einmal, jeder Ring ge
         })),
       }
     })
-    expect(zaehler.teile.length, 'die Segmente tragen kein whitespace-nowrap').toBe(2)
+    // LESER-NAV, FB O-36 b (Teständerung deklariert, §6.3): der Zähler hat ein drittes
+    // Segment «K Überschriften», sobald Kopf-Treffer da sind (BS-154.125 «Gericht»:
+    // 14 Paragraphen · 2 Überschriften · 55 Fundstellen). Die Zusage «jedes Segment
+    // einzeilig» gilt unverändert für jedes; nur die Zahl der Segmente (vorher
+    // genau 2) ist «2 oder 3», nicht mehr «2».
+    expect(zaehler.teile.length, 'die Segmente tragen kein whitespace-nowrap').toBeGreaterThanOrEqual(2)
+    expect(zaehler.teile.length, 'mehr als drei Segmente im Zähler').toBeLessThanOrEqual(3)
     expect(zaehler.text, 'der Zähler nennt nicht «Paragraphen» — Fall untauglich').toContain('Paragraphen')
     for (const t of zaehler.teile) {
       expect(t.zeilen, `«${t.t}» ist über ${t.zeilen} Zeilen gebrochen (Zeilenhöhe ${zaehler.lh} px)`).toBe(1)

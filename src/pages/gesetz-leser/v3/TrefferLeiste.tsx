@@ -97,11 +97,15 @@ export function TrefferLeiste({
             passen darunter), also auch kein CLS (§15.2). */}
         <div className="min-w-0 flex-1">
           <p className="min-h-5 leading-snug">
-            <span className="whitespace-nowrap">
-              <span className="num">{anzahl}</span> {zaehlform(anzahl, bestimmungsWort)}
-              {' '}<span aria-hidden className="text-ink-300">·</span>
-            </span>
-            {' '}
+            {(anzahl > 0 || ueberschriften === 0) && (
+              <>
+                <span className="whitespace-nowrap">
+                  <span className="num">{anzahl}</span> {zaehlform(anzahl, bestimmungsWort)}
+                  {' '}<span aria-hidden className="text-ink-300">·</span>
+                </span>
+                {' '}
+              </>
+            )}
             {ueberschriften > 0 && (
               <>
                 <span className="whitespace-nowrap">
