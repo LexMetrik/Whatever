@@ -594,3 +594,5 @@ JU «Sockel 300 bis 100'000 Kapital» (Kapitalschwelle, kein Gebührenrahmen).
 
 ---
 **Abnahme-Status:** Erstrecherche, 4-fach verifiziert; Davids Abnahme ausstehend.
+
+**Nachtrag 15.10.2026 (RL-28 Nachzug):** schuldbrief AG — Minimum 200 (⅔ × 300, Lesart von SAR 295.250 § 3 Abs. 1; vorher 300); schuldbrief SZ — § 5 Abs. 1 Nr. 2 «bzw. Bruchteile davon», Pfandsumme auf 50'000 aufgerundet, Stand 1.7.2026; schuldbrief OW — Art. 4 (Erhöhung bis zur Hälfte) und Art. 5 lit. a (Herabsetzung um einen Drittel) offengelegt, nicht gerechnet. Belege: notariat-grundbuch-kantone.md, Nachtrag 15.10.2026 (Nachzug).

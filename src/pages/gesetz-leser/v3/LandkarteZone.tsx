@@ -3,6 +3,7 @@ import { TrefferLandkarte } from '../../../components/leser/TrefferLandkarte';
 import { landkarteSpur } from '../../../components/leser/landkarteModell';
 import { gesetzLandkarteEinheiten } from './landkarteGesetz';
 import { zaehlform, type BestimmungsWort } from './erlassAnsicht';
+import { zaehleTreffer } from '../leserSuche';
 import type { LeserV3Modell } from './leserV3Modell';
 
 // ═══ W2·28 · L-1 · DER AUFBAU DER TREFFER-LANDKARTE ═════════════════════════
@@ -109,6 +110,8 @@ export function LandkarteZone({ m, bestimmungsWort, randluft, listeSteht, onVorS
     () => m.treffer.map((t) => ({ id: t.token, anzahl: t.fundstellen })),
     [m.treffer],
   );
+  // O-36 b: derselbe Zähler wie die Zähler-Zeile daneben (`suchZoneAufbau`), nicht die Zahl der Marken.
+  const zaehl = useMemo(() => zaehleTreffer(m.treffer), [m.treffer]);
   if (!m.sucheAktiv || m.markenAus || !randluft) return null;
   if (listeSteht || m.fundstellen <= 0) return null;
   return (
@@ -121,6 +124,8 @@ export function LandkarteZone({ m, bestimmungsWort, randluft, listeSteht, onVorS
       gesamtFundstellen={m.fundstellen}
       wortEins={zaehlform(1, bestimmungsWort)}
       wortMehr={zaehlform(2, bestimmungsWort)}
+      artikelAnzahl={zaehl.artikel}
+      ueberschriften={zaehl.koepfe}
       onSprung={(token) => {
         // Danach läuft die BESTEHENDE Sprungmechanik: zur ersten Fundstelle, wo
         // es eine gibt, sonst zum Artikel. Keine zweite Sprungart (§5). Der Klick ins

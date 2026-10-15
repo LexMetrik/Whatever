@@ -8420,6 +8420,7 @@
     "deterministisch": true,
     "betragChf": 400,
     "schritte": [
+     "Bemessungsbasis auf CHF 1'000 aufgerundet: 400'000.",
      "1 ‰ von CHF 400'000 = CHF 400"
     ]
    },
@@ -8698,17 +8699,21 @@
     "deterministisch": true,
     "betragChf": 1600,
     "schritte": [
-     "2 ‰ von CHF 800'000 = CHF 1'600"
+     "Beurkundung: 1 ‰ von CHF 800'000 = CHF 800",
+     "Beurkundung: Teilbetrag CHF 800",
+     "Grundbucheintrag: 1 ‰ von CHF 800'000 = CHF 800",
+     "Grundbucheintrag: Teilbetrag CHF 800",
+     "Summe der Teile: CHF 1'600"
     ]
    },
    "quelle": {
-    "erlassName": "NotGebV",
+    "erlassName": "Notariatsgebührenverordnung (NotGebV)",
     "erlassNr": "LS 243",
-    "artikel": "Anhang Ziff. 1.2.1 + 2.3.1",
+    "artikel": "Anhang Ziff. 1.2.1 und 2.3.1",
     "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-243-2009_03_09-2009_07_01-123.html",
     "stand": "1.1.2024",
     "verifiziert": "recherche",
-    "hinweis": "Beurkundung 1‰ + Eintrag 1‰."
+    "hinweis": "Beurkundung 1 ‰ + Eintrag 1 ‰ der Pfandsumme, je mindestens 100."
    }
   },
   "gesamtGebuehren": {
@@ -8838,17 +8843,21 @@
     "deterministisch": true,
     "betragChf": 3200,
     "schritte": [
-     "2 ‰ von CHF 1'600'000 = CHF 3'200"
+     "Beurkundung: 1 ‰ von CHF 1'600'000 = CHF 1'600",
+     "Beurkundung: Teilbetrag CHF 1'600",
+     "Grundbucheintrag: 1 ‰ von CHF 1'600'000 = CHF 1'600",
+     "Grundbucheintrag: Teilbetrag CHF 1'600",
+     "Summe der Teile: CHF 3'200"
     ]
    },
    "quelle": {
-    "erlassName": "NotGebV",
+    "erlassName": "Notariatsgebührenverordnung (NotGebV)",
     "erlassNr": "LS 243",
-    "artikel": "Anhang Ziff. 1.2.1 + 2.3.1",
+    "artikel": "Anhang Ziff. 1.2.1 und 2.3.1",
     "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-243-2009_03_09-2009_07_01-123.html",
     "stand": "1.1.2024",
     "verifiziert": "recherche",
-    "hinweis": "Beurkundung 1‰ + Eintrag 1‰."
+    "hinweis": "Beurkundung 1 ‰ + Eintrag 1 ‰ der Pfandsumme, je mindestens 100."
    }
   },
   "handaenderungssteuer": {
