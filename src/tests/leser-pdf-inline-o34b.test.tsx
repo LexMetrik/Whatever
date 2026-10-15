@@ -30,12 +30,17 @@ describe('pdfAnzeige (reine Entscheidung)', () => {
 });
 
 let root: Root | null = null;
-let letzte: { anzeige: string; deckelAbgelaufen: boolean } | null = null;
-
 function Sonde({ bereit }: { bereit: boolean }) {
-  letzte = usePdfAnzeige(bereit);
-  return null;
+  const { anzeige, deckelAbgelaufen } = usePdfAnzeige(bereit);
+  return createElement('span', { 'data-anzeige': anzeige, 'data-deckel': String(deckelAbgelaufen) });
 }
+
+/** Aktueller Hook-Stand, aus dem gerenderten DOM gelesen. */
+let wurzel: HTMLElement | null = null;
+const lies = () => {
+  const el = wurzel!.querySelector('span')!;
+  return { anzeige: el.getAttribute('data-anzeige'), deckelAbgelaufen: el.getAttribute('data-deckel') === 'true' };
+};
 
 function aufbauen(pdfViewerEnabled: boolean | undefined): HTMLElement {
   const { document } = parseHTML('<!doctype html><html><body><div id="app"></div></body></html>');
@@ -51,12 +56,13 @@ function aufbauen(pdfViewerEnabled: boolean | undefined): HTMLElement {
 }
 
 async function rendern(ziel: HTMLElement, bereit: boolean) {
+  wurzel = ziel;
   if (!root) root = createRoot(ziel);
   await act(async () => { root!.render(createElement(Sonde, { bereit })); });
 }
 
 describe('usePdfAnzeige (Hook)', () => {
-  beforeEach(() => { vi.useFakeTimers(); letzte = null; });
+  beforeEach(() => { vi.useFakeTimers(); });
   afterEach(async () => {
     if (root) { const r = root; root = null; await act(async () => r.unmount()); }
     vi.useRealTimers();
@@ -66,31 +72,31 @@ describe('usePdfAnzeige (Hook)', () => {
   it('erster Render ist «inline» (Prerender-Gleichheit), dann ohne Viewer «ohne-viewer»', async () => {
     const ziel = aufbauen(false);
     await rendern(ziel, false);
-    expect(letzte?.anzeige).toBe('inline');
+    expect(lies().anzeige).toBe('inline');
     await act(async () => { vi.advanceTimersByTime(1); });
-    expect(letzte?.anzeige).toBe('ohne-viewer');
+    expect(lies().anzeige).toBe('ohne-viewer');
   });
 
   it('mit Viewer bleibt es «inline»', async () => {
     const ziel = aufbauen(true);
     await rendern(ziel, false);
     await act(async () => { vi.advanceTimersByTime(1); });
-    expect(letzte?.anzeige).toBe('inline');
+    expect(lies().anzeige).toBe('inline');
   });
 
   it('Zeitdeckel: ohne load fällt der Spinner nach PDF_LADE_DECKEL_MS, nicht früher', async () => {
     const ziel = aufbauen(undefined);
     await rendern(ziel, false);
     await act(async () => { vi.advanceTimersByTime(PDF_LADE_DECKEL_MS - 1); });
-    expect(letzte?.deckelAbgelaufen).toBe(false);
+    expect(lies().deckelAbgelaufen).toBe(false);
     await act(async () => { vi.advanceTimersByTime(1); });
-    expect(letzte?.deckelAbgelaufen).toBe(true);
+    expect(lies().deckelAbgelaufen).toBe(true);
   });
 
   it('bereites PDF startet keinen Deckel', async () => {
     const ziel = aufbauen(true);
     await rendern(ziel, true);
     await act(async () => { vi.advanceTimersByTime(PDF_LADE_DECKEL_MS * 2); });
-    expect(letzte?.deckelAbgelaufen).toBe(false);
+    expect(lies().deckelAbgelaufen).toBe(false);
   });
 });
