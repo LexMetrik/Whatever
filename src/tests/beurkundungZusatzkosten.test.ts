@@ -1,6 +1,9 @@
 // ─── Weitere Transaktionskosten (MwSt · HReg · Emissionsabgabe) ─────────────
 import { describe, expect, it } from 'vitest';
-import { emissionsabgabe, mwstAufschlag, weitereKosten, FREIES_NOTARIAT } from '../lib/beurkundungZusatzkosten';
+import { emissionsabgabe, mwstAufschlag, weitereKosten } from '../lib/beurkundungZusatzkosten';
+import { MWST_BEHANDLUNG } from '../data/tarif/mwst-notariat';
+import { KANTONE } from '../lib/kantone';
+import type { KantonCode } from '../data/tarif/typen';
 
 // Bug-Audit 19.6.2026 (H6): Art. 6 Abs. 1 lit. h StG normiert einen FREIBETRAG
 // (kein Freigrenze): die Beteiligungsrechte sind befreit, «soweit die Leistungen
@@ -19,47 +22,131 @@ describe('Emissionsabgabe (StG Art. 6/8) — Freibetrag CHF 1 Mio', () => {
 });
 
 describe('MwSt-Aufschlag', () => {
-  it('8,1 % der Gebühr', () => {
+  it('8,1 % der Gebühr, auf Rappen (B2-13: keine Rundungsnorm gefunden, kaufmännisch)', () => {
     expect(mwstAufschlag(1_000)).toBe(81);
     expect(mwstAufschlag(10_000)).toBe(810);
+    expect(mwstAufschlag(2_500)).toBe(202.5); // vorher 203 (ganze Franken)
+    expect(mwstAufschlag(500)).toBe(40.5);
+    expect(mwstAufschlag(41)).toBe(3.32);
   });
 });
 
-describe('weitereKosten — Zusammensetzung je Geschäftsart/Kanton', () => {
-  it('AG-Gründung im Amtsnotariat (ZH): HReg + Emissionsabgabe, KEINE MwSt', () => {
-    const r = weitereKosten('ag_gruendung', 'ZH', 2_000_000, { vonChf: 1000, bisChf: 1000 });
-    expect(r.freiesNotariat).toBe(false);
-    const labels = r.posten.map((p) => p.label);
-    expect(labels.some((l) => l.startsWith('MwSt'))).toBe(false);
+// RL-33 / RV-24: MWSTG SR 641.20 Art. 25 Abs. 1 (8,1 %) + MWSTV SR 641.201 Art. 14 Ziff. 13
+// («Tätigkeiten von Amtsnotaren» unternehmerisch/steuerbar) → Amts- UND freie Notare rechnen
+// MWST; das Kriterium «freies Notariat» ist falsch. Massgeblich ist die Klausel im Kantonstarif
+// bzw. mangels Klausel das Bundesrecht (W-16 a). Teständerungen: W-05 (a), je Stelle mit Norm.
+const mwstPosten = (r: ReturnType<typeof weitereKosten>) => r.posten.find((p) => p.label.startsWith('MwSt'));
+
+describe('weitereKosten — MWST nach Kantonstarif/Bundesrecht', () => {
+  it('ZH AG-Gründung (Gebühr 500): MwSt 40.50 zusätzlich (NotGebV § 2; vorher kein Posten)', () => {
+    const r = weitereKosten('ag_gruendung', 'ZH', 500_000, { vonChf: 500, bisChf: 500 });
+    expect(r.mwst.art).toBe('zusaetzlich');
+    expect(r.mwst.grundlage).toBe('tarif');
+    expect(mwstPosten(r)?.label).toBe('MwSt 8.1 %');
+    expect(mwstPosten(r)?.von).toBe(40.5);
+    expect(mwstPosten(r)?.bis).toBe(40.5);
     expect(r.posten.find((p) => p.label.includes('Handelsregister'))?.von).toBe(420);
+    expect(r.posten.find((p) => p.label.includes('Emissionsabgabe'))?.von).toBe(0);
+  });
+
+  it('ZH AG-Gründung 2 Mio.: MwSt 81 zusätzlich neben HReg und Emissionsabgabe', () => {
+    const r = weitereKosten('ag_gruendung', 'ZH', 2_000_000, { vonChf: 1000, bisChf: 1000 });
+    expect(mwstPosten(r)?.von).toBe(81);
     expect(r.posten.find((p) => p.label.includes('Emissionsabgabe'))?.von).toBe(10_000);
   });
 
-  it('AG-Gründung im freien Notariat (GE): MwSt + HReg + Emissionsabgabe', () => {
+  it('ZH Testament: Spanne 200–4000 → 16.20–324.00; Test-Eingabe 200–5000 → 16.20–405.00', () => {
+    const a = weitereKosten('testament', 'ZH', undefined, { vonChf: 200, bisChf: 4000 });
+    expect([mwstPosten(a)?.von, mwstPosten(a)?.bis]).toEqual([16.2, 324]);
+    const b = weitereKosten('testament', 'ZH', undefined, { vonChf: 200, bisChf: 5000 });
+    expect([mwstPosten(b)?.von, mwstPosten(b)?.bis]).toEqual([16.2, 405]);
+  });
+
+  it('ZH Vollmacht (Beglaubigung Ziff. 4.5.1): MwSt inbegriffen laut DA FD 22.11.2023 § 2 → kein Posten, Hinweis', () => {
+    const r = weitereKosten('vollmacht', 'ZH', undefined, { vonChf: 20, bisChf: 250 });
+    expect(mwstPosten(r)).toBeUndefined();
+    expect(r.mwstHinweis).toMatch(/inbegriffen/);
+    expect(r.mwstHinweis).toMatch(/Dienstanweisung/);
+  });
+
+  it('ZH Bürgschaft (Ziff. 4.4.1): bis Gebühr Fr. 199 inbegriffen, darüber zusätzlich → Spanne 0–40.50, offengelegt', () => {
+    const r = weitereKosten('buergschaft', 'ZH', undefined, { vonChf: 100, bisChf: 500 });
+    expect([mwstPosten(r)?.von, mwstPosten(r)?.bis]).toEqual([0, 40.5]);
+    expect(mwstPosten(r)?.hinweis).toMatch(/199/);
+  });
+
+  it('ZG: MwSt in den Tarifansätzen inbegriffen (Ziff. 109bis BGS 641.1) → kein Posten, Grund im Hinweis', () => {
+    const r = weitereKosten('ag_gruendung', 'ZG', 500_000, { vonChf: 1000, bisChf: 1000 });
+    expect(r.mwst.art).toBe('inbegriffen');
+    expect(mwstPosten(r)).toBeUndefined();
+    expect(r.mwstHinweis).toMatch(/109bis/);
+  });
+
+  it('GE AG-Gründung (Gebühr 2000): 162.00, Grundlage Bundesrecht (Tarif schweigt, W-16 a)', () => {
     const r = weitereKosten('ag_gruendung', 'GE', 500_000, { vonChf: 2000, bisChf: 2000 });
-    expect(r.freiesNotariat).toBe(true);
-    expect(r.posten.find((p) => p.label.startsWith('MwSt'))?.von).toBe(162); // 8,1 % von 2000
+    expect(r.mwst.grundlage).toBe('bundesrecht');
+    expect(mwstPosten(r)?.von).toBe(162);
+    expect(mwstPosten(r)?.hinweis).toMatch(/Umsatz/);
     expect(r.posten.find((p) => p.label.includes('Handelsregister'))?.von).toBe(420);
-    expect(r.posten.find((p) => p.label.includes('Emissionsabgabe'))?.von).toBe(0); // 500k < Freigrenze
+    expect(r.posten.find((p) => p.label.includes('Emissionsabgabe'))?.von).toBe(0);
   });
 
-  it('Testament (keine Gesellschaft): keine HReg/Emissionsabgabe; MwSt nur im freien Notariat', () => {
-    const ow = weitereKosten('testament', 'OW', undefined, { vonChf: 500, bisChf: 1000 }); // OW freies
-    expect(ow.posten.map((p) => p.label)).toEqual(['MwSt 8.1 % (freies Notariat)']);
-    expect(ow.posten[0].von).toBe(41); // 8,1 % von 500 (gerundet)
-    const zh = weitereKosten('testament', 'ZH', undefined, { vonChf: 200, bisChf: 5000 }); // ZH Amts
-    expect(zh.posten).toHaveLength(0);
+  it('OW Testament 500–1000 → 40.50–81.00 (Art. 6 Abs. 2: Anspruch auf MwSt; Rappen statt 41)', () => {
+    const ow = weitereKosten('testament', 'OW', undefined, { vonChf: 500, bisChf: 1000 });
+    expect(ow.posten.map((p) => p.label)).toEqual(['MwSt 8.1 %']);
+    expect([ow.posten[0].von, ow.posten[0].bis]).toEqual([40.5, 81]);
   });
 
-  // A4-1 (25.6.2026): LU ist freies, MwSt-pflichtiges Notariat (notariate.ts «frei»,
-  // bibliothek/kosten/notariatstarife-gruendung-kantone.md «LU — freies Notariat»);
-  // vorher fälschlich ausgeschlossen → MwSt fiel für ganz LU weg. Test korrigiert.
-  it('FREIES_NOTARIAT: 15 Kantone, ZH/SG nicht – LU/GE enthalten', () => {
-    expect(FREIES_NOTARIAT.size).toBe(15);
-    expect(FREIES_NOTARIAT.has('ZH')).toBe(false);
-    expect(FREIES_NOTARIAT.has('SG')).toBe(false);
-    expect(FREIES_NOTARIAT.has('LU')).toBe(true);
-    expect(FREIES_NOTARIAT.has('GE')).toBe(true);
+  it('Gebühr 2500 → 202.50 (B2-13)', () => {
+    const r = weitereKosten('schenkung', 'SZ', undefined, { vonChf: 2500, bisChf: 2500 });
+    expect(mwstPosten(r)?.von).toBe(202.5);
+  });
+
+  it('BS/VD/JU: Tarif schweigt, Betrag wie bisher (Bundesrecht), Zuordnung als offen vermerkt', () => {
+    for (const k of ['BS', 'VD', 'JU'] as const) {
+      const r = weitereKosten('testament', k, undefined, { vonChf: 500, bisChf: 1000 });
+      expect(r.mwst.grundlage).toBe('bundesrecht');
+      expect(mwstPosten(r)?.von).toBe(40.5);
+      expect(r.mwst.vermerk).toMatch(/offen/);
+    }
+  });
+
+  it('UR (offen) und fehlende Gebühr: kein Scheinbetrag', () => {
+    expect(mwstPosten(weitereKosten('testament', 'UR', undefined, { vonChf: 500, bisChf: 1000 }))).toBeUndefined();
+    expect(weitereKosten('testament', 'UR', undefined, null).mwst.art).toBe('offen');
+    expect(mwstPosten(weitereKosten('testament', 'ZH', undefined, null))).toBeUndefined();
+  });
+
+  it('Fusion: HReg 420 (übernehmende) + 80 Löschung je übertragende Gesellschaft (GebV-HReg Anh. Ziff. 2.1, B2-12)', () => {
+    const r = weitereKosten('fusion', 'ZH', undefined, null);
+    const h = r.posten.filter((p) => p.label.includes('Handelsregister'));
+    expect(h.map((p) => p.von)).toEqual([420, 80]);
+    expect(h[1].label).toMatch(/Löschung/);
+    expect(h[1].hinweis).toMatch(/je übertragende/);
+  });
+});
+
+describe('MWST_BEHANDLUNG — Tabelle', () => {
+  it('26 Kantone, jede Zeile mit Erlass, Artikel, Stand und Quelle-URL', () => {
+    expect(Object.keys(MWST_BEHANDLUNG).sort()).toEqual([...KANTONE].sort());
+    for (const k of KANTONE) {
+      const z = MWST_BEHANDLUNG[k];
+      expect(z.erlassName.length, k).toBeGreaterThan(3);
+      expect(z.erlassNr.length, k).toBeGreaterThan(1);
+      expect(z.artikel.length, k).toBeGreaterThan(1);
+      expect(z.stand.length, k).toBeGreaterThan(3);
+      expect(z.quelleUrl, k).toMatch(/^https:\/\//);
+    }
+  });
+
+  it('Zuordnung: Tarifklausel / Bundesrecht (W-16 a) / inbegriffen / offen', () => {
+    const wo = (f: (z: (typeof MWST_BEHANDLUNG)[KantonCode]) => boolean) => KANTONE.filter((k) => f(MWST_BEHANDLUNG[k])).sort();
+    expect(wo((z) => z.art === 'zusaetzlich' && z.grundlage === 'tarif'))
+      .toEqual(['ZH', 'BE', 'LU', 'SZ', 'OW', 'NW', 'GL', 'BL', 'AR', 'SG', 'GR', 'AG', 'TG', 'VS', 'NE'].sort());
+    expect(wo((z) => z.art === 'zusaetzlich' && z.grundlage === 'bundesrecht'))
+      .toEqual(['FR', 'GE', 'TI', 'SO', 'SH', 'AI', 'BS', 'VD', 'JU'].sort());
+    expect(wo((z) => z.art === 'inbegriffen')).toEqual(['ZG']);
+    expect(wo((z) => z.art === 'offen')).toEqual(['UR']);
   });
 });
 
