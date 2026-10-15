@@ -116,6 +116,7 @@ E3
 E3·W
 - Go David 5.10.: CI: Dauer-Wackler an der Wurzel (git 3fd5db8f9:bibliothek/betrieb/e2e-fang-historie-2026-10-05/), leser-kopf-cls-s3 hängt an Fedlex, Läufer-Kontingent
 - 10.10. Kahlschlag-Nachlauf: erlass-klassifikation.json docs/→daten/; alte Skill-Namen; gitFlaechen.ts:427, DESIGN-REGLEMENT Z.235/365 Test-gekoppelt; tor-schutz Amend-Fehlalarme; .selbstopt-ereignisse.jsonl ohne Leser; diff-klassieren.ts ohne Test
+- 15.10. LESER-NAV: vitest-Config schliesst **/.claude/** aus ⇒ in Worktrees keine Tests ohne Hilfs-Config; landung-kette.sh hält bei Queue-Eintrag ohne PR-Lauf fälschlich an
 - wartet auf David 10.10.: scripts/archiv/ (9 Skripte) löschen oder umbenennen
 - Go David 7.10.: Leser-Logik (162 .ts unter src/pages|components, ~22k Zeilen) nach src/lib/leser, danach Lint-Grenze — §3
 - wartet auf David 7.10.: §5 vs. Ist: ingest.ts liest public/*.json in die DB (JSON faktisch Quelle); Umstellung bauen oder §5 präzisieren
