@@ -46,7 +46,7 @@ const PAYLOAD_MAX = 20000;
 /** Query-Parameter des Teilen-Links auf der Startseite. */
 export const MERKLISTE_PARAM = 'merkliste';
 /** Reaktives Event im GLEICHEN Tab (Muster ZULETZT_EVENT); anderer Tab: `storage`. */
-export const MERKLISTE_EVENT = 'lm:merkliste';
+const MERKLISTE_EVENT = 'lm:merkliste';
 
 /** Nur Inhalts-Routen — dieselbe Menge, die der ZuletztTracker verfolgt. */
 const INHALT_ROUTE = /^\/(rechner|vorlagen|gesetze|rechtsprechung|materialien)\/[^\s<>"'`\\]+$/;

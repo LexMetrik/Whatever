@@ -1,7 +1,8 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   MERKLISTE_PARAM, dekodiereMerkliste, entferneMerkung, leereMerkliste, merklisteLink, uebernimmMerkliste,
+  type MerkEintrag,
 } from '../../lib/merkliste';
 import { RegisterStrich } from '../start/ZuletztVerwendet';
 import { StartFlaeche } from '../start/StartFlaeche';
@@ -27,7 +28,12 @@ import { useMerkliste } from './useMerkliste';
 const SICHTBAR = 6;
 
 export function MerklisteFlaeche() {
-  const liste = useMerkliste();
+  return <MerklisteAnsicht liste={useMerkliste()} />;
+}
+
+/** Die Darstellung zu einer gegebenen Liste (getrennt vom Speicher-Hook, damit der Server-Snapshot
+ *  «leer» die Struktur nicht verdeckt — `merkliste-flaeche.test.tsx` rendert sie mit Einträgen). */
+export function MerklisteAnsicht({ liste }: { liste: readonly MerkEintrag[] }) {
   const { search } = useLocation();
   const navigate = useNavigate();
   const payload = new URLSearchParams(search).get(MERKLISTE_PARAM);
@@ -35,25 +41,24 @@ export function MerklisteFlaeche() {
   const [alle, setAlle] = useState(false);
   const [leerenFrage, setLeerenFrage] = useState(false);
   const [status, setStatus] = useState('');
-  const [fokusRoute, setFokusRoute] = useState<string | null>(null);
+  const fokusRoute = useRef<string | null>(null);
   const { marke, kopieren } = useKopieren();
 
   // Fokus nach dem Entfernen auf die Nachbarzeile — sonst fiele er auf <body> (WCAG 2.4.3).
   useEffect(() => {
-    if (!fokusRoute) return;
-    const el = Array.from(document.querySelectorAll<HTMLElement>('[data-merk-route]'))
-      .find((li) => li.dataset.merkRoute === fokusRoute)?.querySelector<HTMLElement>('a');
-    el?.focus();
-    setFokusRoute(null);
-  }, [fokusRoute, liste]);
+    const ziel = fokusRoute.current;
+    if (!ziel) return;
+    fokusRoute.current = null;
+    Array.from(document.querySelectorAll<HTMLElement>('[data-merk-route]'))
+      .find((li) => li.dataset.merkRoute === ziel)?.querySelector<HTMLElement>('a')?.focus();
+  }, [liste]);
 
   if (liste.length === 0 && !payload) return null;
 
   const entferne = (route: string, idx: number) => {
-    const nachbar = liste[idx + 1] ?? liste[idx - 1];
-    if (!entferneMerkung(route)) { setStatus('Nicht entfernt: der Browser lässt keinen Speicher zu.'); return; }
+    fokusRoute.current = (liste[idx + 1] ?? liste[idx - 1])?.route ?? null;
+    if (!entferneMerkung(route)) { fokusRoute.current = null; setStatus('Nicht entfernt: der Browser lässt keinen Speicher zu.'); return; }
     setStatus('');
-    if (nachbar) setFokusRoute(nachbar.route);
   };
   const verwirf = () => navigate('/', { replace: true });
   const uebernimm = () => {
@@ -109,7 +114,7 @@ export function MerklisteFlaeche() {
           </ul>
           {liste.length > SICHTBAR && (
             <button type="button" aria-expanded={alle} onClick={() => setAlle((v) => !v)}
-              className="justify-self-start font-sans text-body-s text-ink-700 underline underline-offset-2 hover:text-ink-900">
+              className="lc-btn lc-btn-ghost lc-btn-sm justify-self-start">
               {alle ? 'Weniger anzeigen' : `Alle ${liste.length} anzeigen`}
             </button>
           )}

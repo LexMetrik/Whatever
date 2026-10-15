@@ -93,7 +93,7 @@ export function VerlaufUebersicht() {
         className="lc-btn lc-btn-ghost lc-btn-sm shrink-0 min-h-11 min-w-11"
         aria-haspopup="dialog"
         aria-expanded={panelOffen}
-        aria-label={merkliste.length > 0 ? 'Verlauf und Merkliste' : 'Verlauf – zuletzt geöffnet'}
+        aria-label="Verlauf – zuletzt geöffnet"
         title={merkliste.length > 0 ? 'Verlauf und Merkliste (nur auf diesem Gerät)' : 'Verlauf (nur auf diesem Gerät)'}
         onClick={() => { if (!panelOffen) { positioniere(); setJetzt(Date.now()); } setPanelOffen((v) => !v); }}
       >
