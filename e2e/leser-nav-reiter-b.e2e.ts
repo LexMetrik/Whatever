@@ -39,3 +39,32 @@ test.describe('O-41 — Tieflink-Nachzug im Pane', () => {
     expect(fehler).toEqual([])
   })
 })
+
+// ─── O-27 · Link-Layout wird nicht gespeichert: die Leiste sagt es ───────────────────────────
+//  GEMESSEN 15.10.2026 (Dev-Server, Chromium 1440×900): im Tab mit geteiltem `?p=`-Link und
+//  gespeicherter Eigen-Ordnung blieb das Schliessen/Umbauen ohne jede Rückmeldung; der Reload
+//  brachte die Eigen-Ordnung zurück, das Umgebaute war weg.
+//  ROT ZU BEKOMMEN: in `usePaneLayout.ts` `zeigeLayoutHinweis()` im `schutz.current`-Zweig streichen.
+test.describe('O-27 — Link-Layout nur für diese Sitzung', () => {
+  test('Umbau im Link-Tab zeigt den Hinweis, die Eigen-Ordnung kommt beim Neuladen zurück', async ({ page }) => {
+    test.slow()
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.addInitScript(() => {
+      if (!localStorage.getItem('lexmetrik-panes')) localStorage.setItem('lexmetrik-panes', JSON.stringify(['/gesetze/bund/ZGB']))
+    })
+    await page.goto('/gesetze/bund/MWSTG?p=' + encodeURIComponent('/gesetze/bund/BV'))
+    const pane = page.locator('[data-pane="sekundaer"]')
+    await expect(pane).toBeVisible({ timeout: 30000 })
+    await expect(page.locator('[data-layout-nur-sitzung]'), 'Hinweis schon beim Öffnen').toHaveCount(0)
+    await page.getByRole('button', { name: /^«.+» schliessen$/ }).first().click()
+    const hinweis = page.locator('[data-layout-nur-sitzung]')
+    await expect(hinweis).toBeVisible()
+    await expect(hinweis).toContainText('nicht gespeichert')
+    // Neu laden: die gespeicherte Eigen-Ordnung ist unversehrt zurück.
+    await page.goto('/gesetze/bund/MWSTG')
+    await expect(page.locator('[data-pane="sekundaer"]')).toBeVisible({ timeout: 30000 })
+    expect(await page.evaluate(() => localStorage.getItem('lexmetrik-panes'))).toBe(JSON.stringify(['/gesetze/bund/ZGB']))
+    expect(fehler).toEqual([])
+  })
+})

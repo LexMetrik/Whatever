@@ -48,7 +48,7 @@ import { SchwebeMeldung } from '../ui/SchwebeMeldung';
 import { istGemerkt, merkRouteAusAdresse, schalteMerkung } from '../../lib/merkliste';
 import { merkAnsage } from '../merkliste/merkAnsage';
 import { sageKopiertAn } from '../ui/kopierAnsage';
-import { usePaneSteuerung } from './usePaneLayout';
+import { useLayoutHinweis, usePaneSteuerung } from './usePaneLayout';
 // ── §15 · DAS KONTEXTMENÜ GEHÖRT NICHT IN DEN START-CHUNK ──────────────────
 // GEMESSEN 6.9.2026 (`npm run check:perf-budget`, gebautes dist/): mit einem
 // statischen Import stieg der Entry-Chunk von 59.7 KB auf 61.3 KB gzip und
@@ -154,6 +154,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   const { pathname, search } = useLocation();
   const navigate = useNavigate();
   const { oeffneDaneben, kannOeffnen, istOffen, schliessePane } = usePaneSteuerung();
+  const layoutHinweis = useLayoutHinweis(); // O-27: Link-Layout wird nicht gespeichert (Herleitung: `usePaneLayout`)
   const [manifesteGeladen, setManifeste] = useState<VerlaufManifeste>({});
   // DFG-F01: dieselben Manifeste samt den Einträgen für die Stelle im Reiter
   // («§ 4», «Art. 12 SchlT ZGB»); bis sie da sind, trägt der Reiter die Rückfallform.
@@ -1337,6 +1338,12 @@ export function Reiterleiste({ paneSchluessel = [] }: {
           onWieder={() => { stelleWiederHer(); schliesseBlatt(); }}
           onAlle={() => { alleSchliessen(); schliesseBlatt(); }}
           onZu={schliesseBlatt} />
+      )}
+
+      {layoutHinweis && (
+        <SchwebeMeldung kante="unten" ausrichtung="mitte" rolle="status" daten="data-layout-nur-sitzung" inhaltKlassen="max-w-xl px-4 py-2 text-body-s text-ink-700">
+          Dieses Layout stammt aus einem geteilten Link und wird nicht gespeichert. Beim Neuladen kehrt Ihre eigene Anordnung zurück.
+        </SchwebeMeldung>
       )}
 
       {kopiert && (
