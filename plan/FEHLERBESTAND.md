@@ -45,10 +45,10 @@ Daten von Sichter X1 stehen in ASCII-Umschrift (ae/oe/ue), wie geliefert.
 | 2 Kantonstext | 16 | 8 | 0 | 24 |
 | 3 Urteilsdaten | 28 | 0 | 0 | 28 |
 | 4 Verweise | 8 | 2 | 0 | 10 |
-| 5 Rechner und Vorlagen | 85 | 8 | 0 | 93 |
+| 5 Rechner und Vorlagen | 86 | 9 | 0 | 95 |
 | 6 Oberfläche | 5 | 50 | 0 | 55 |
 | 7 Sicherheit und Betrieb | 1 | 0 | 28 | 29 |
-| **gesamt** | **226** | **69** | **28** | **323** |
+| **gesamt** | **227** | **70** | **28** | **325** |
 
 **Nachtrag 10.10.2026 (Kahlschlag-Abgleich):** 14 Zeilen `N10-01`…`N10-14` für Merkzettel, die hier fehlten (A §5: 1, A §7: 2, B: 3, C: 8); RV-80/81/82/91 tragen ihren seit 5.10. angelegten Posten nach; 104 Zeilen tragen den Zusatz «Ort (Posten): …» (Fundstellen aus dem Posten, Zeilenstand des Postens, nicht nachgemessen). Die Zählung oben ist die vom 5.10. und nicht nachgeführt.
 
@@ -228,7 +228,7 @@ nirgends im Repo. (5) Texte nicht umformuliert (ausser Eszett durch ss ersetzt u
 | V-09 | N | «§ N» in Fremdgesetz-Chapeau unverlinkt | ArtikelBody | ja | – | 2026-09-24-n-in-fremdgesetz-chapeau-items-verlinken |
 | V-10 | N | 802 von 7790 SG-Zitaten unaufgelöst (Zitat-Brücke ohne Link) | SG 154.100 | ja | – | 2026-09-24-sg-langform-erstzitate-heben-recall-der-zitat-bruecke |
 
-## 5 · Rechner und Vorlagen (93 Zeilen)
+## 5 · Rechner und Vorlagen (95 Zeilen)
 
 | Nr | Kl. | Klartext | Beispiel | offen? | David? | Postendatei(en) |
 |---|---|---|---|---|---|---|
@@ -325,6 +325,8 @@ nirgends im Repo. (5) Texte nicht umformuliert (ausser Eszett durch ss ersetzt u
 | RV-91 | N | S3f: scheidungsbegehren.ts Zentrierung (optisch); lohnfortzahlung.ts Formulierung; lehrvertrag.ts toter Satz — AUDIT-BUGS 120–125, alle «niedrig, offen» | Vorlagen | ja (laut BEFUNDLISTE, kein Posten) | – | kein Posten; Projektordner pruefung-rechtslogik-2026-09-23/BEFUNDLISTE · Nachtrag 10.10.: seit 5.10. Posten 2026-10-05-vorlagen-audit-bugs-120-125-niedrig-s3f |
 | RV-92 | N | Klage ordentlich: Direkt-Download im Vorschau-Panel ist nicht an offene Mängel gebunden (untere Export-Knöpfe schon). | VorlageKlageOrdentlich / VorlagenSeite (direktExportBlocker:false) | ja (laut Posten) | – | 2026-09-23-klage-ordentlich-direkt-download-der-vorschau-nicht-an-maeng |
 | RV-93 | N | Vorlagen Klage vereinfacht / Schlichtungsgesuch BS: «Weiter» sperrt nicht bei Pflichtfeldern, Fehler erst im letzten Schritt; BS-Hinweise ohne Norm-Links. | Vorlagen-Wizard | ja (laut Posten) | – | 2026-09-23-klage-vereinfacht-weiter-sperrt-nie-wegen-pflichtfeldern, 2026-09-23-schlichtungsgesuch-bs-pflichtfeld-fehler-nur-im-letzten-schr |
+| RV-94 | R | GR Schlichtungsrahmen: Tarifregel 100–500 (VGZ Art. 2 Abs. 1), Entscheidvorschlag 300–3'000 (Abs. 2) nur im Hinweis; Zuständigkeits-Anzeige zeigt darum 100–500 statt Hülle 100–3'000 wie AI/VS (GP RL-36 T2, E2) | GR Schlichtung | ja | – | kein Posten; GP-Bericht RL-36 T2 15.10.2026 |
+| RV-95 | N | VS Gerichtstarif als «SR 173.8» statt «RS 173.8» (kantonale Sammlung) an gerichtskosten.ts:356, parteientschaedigung.ts:398, modifikatoren.ts:85, normtext-inventar-kanton.test.ts:273 und 4 Golden-Fällen; FR mischt SGF/RSF (GP RL-36 T2, E4) | pk:entscheid:allg:12k:VS | ja | – | kein Posten; GP-Bericht RL-36 T2 15.10.2026 |
 | N10-01 | N | Nachtrag 10.10.: ZpoFristenForm.tsx:386 Zustellfiktion-Throw ungefangen (praktisch unerreichbar); property-invarianten-2026-08-15.md «nie Samstag» gilt nur noch für gesetzliche Fristen (Dokument nachtragen); Fristengesetz SR 173.110.3 Wortlaut nicht amtlich nachgeprüft (RL-24-Nebenfund 24.9.) | ZpoFristenForm.tsx:386 | ja (laut Posten) | – | 2026-09-25-property-invarianten-nie-samstag-nur-gesetzliche-fristen-zpo |
 
 ## 6 · Oberfläche (59 Zeilen)
