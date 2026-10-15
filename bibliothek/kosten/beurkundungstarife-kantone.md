@@ -88,6 +88,8 @@
 | schuldanerkennung | Nach Zeitaufwand, Stundenansatz CHF 300. | Notariatstarif UR Ziff. 4 (Stundenansatz); Ziff. 5.1 ab | 17.3.2015 |
 | vollmacht | fix 40 | Notariatstarif UR Ziff. 9.1 (Beglaubigung Unterschrift) | 17.3.2015 |
 
+**Nachtrag 15.10.2026 (RL-26):** nicht mehr gerechnet — W-14 (23.9.2026) / B5-04: RB 9.2311 (NotV) Art. 38 Abs. 3 verweist auf einen «beigefügten Tarif», den die amtliche Fassung (Version 812, in Kraft seit 1.1.2001, abgerufen 15.10.2026 unter https://rechtsbuch.ur.ch/app/de/texts_of_law/9.2311) nicht enthält; der Verbands-Konventionaltarif ist kein amtlicher Erlass. Die Werte oben bleiben als Beleg stehen, die Daten rechnen sie nicht mehr (`formel_extern`); GRUNDPFAND.UR = nur Eintragsgebühr.
+
 ## SZ — Schwyz
 
 | Art | Regel | Artikel | Stand |

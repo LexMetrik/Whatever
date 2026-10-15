@@ -107,6 +107,8 @@ Notariat (selbständig, Tarif teils mit Bandbreite) · gemischt.
 - **P** Schuldbrief: Beurkundung (Tarif B) 2.5/2/1.5‰ (min. 350/625/2'000) Ziff. 6.2 + Eintrag 2‰ (min. 70/max. 10'000) Art. 5.
 - **H** Handänderungssteuer: **KEINE** (kein HStG in der RB); stattdessen die 2‰-Grundbuchgebühr.
 
+**Nachtrag 15.10.2026 (RL-26):** nicht mehr gerechnet — W-14 (23.9.2026) / B5-04: RB 9.2311 (NotV) Art. 38 Abs. 3 verweist auf einen «beigefügten Tarif», den die amtliche Fassung (Version 812, in Kraft seit 1.1.2001, abgerufen 15.10.2026 unter https://rechtsbuch.ur.ch/app/de/texts_of_law/9.2311) nicht enthält; der Verbands-Konventionaltarif ist kein amtlicher Erlass. Die Werte oben bleiben als Beleg stehen, die Daten rechnen sie nicht mehr (`formel_extern`); GRUNDPFAND.UR = nur Eintragsgebühr.
+
 ### SZ — Schwyz (Bezirksnotariat/Amtsnotariat)
 - **N** Beurkundung: **CHF 45 je CHF 50'000** Handänderungswert (≈ 0.9‰), Max 13'500 (>10 Mio Mehrbetrag −50 %) → 1 Mio = CHF 900. Gebührentarif Notare/Grundbuchverwalter **SRSZ 213.512, § 5 Abs. 1 Nr. 1**, Stand 1.2.2021. https://www.sz.ch/public/upload/assets/7361/213_512.pdf
 - **G** Grundbuch: KEIN Promille — Eintragung pauschal **CHF 8** (Nr. 5) + Blatt-Anlage 35 (Nr. 6) + Publikation 20 (Nr. 15); Wertbasis liegt in Posten N. SRSZ 213.512 § 5 I.
