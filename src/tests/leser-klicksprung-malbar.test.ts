@@ -10,7 +10,7 @@ import {
   type FundstellenSchritt,
 } from '../pages/gesetz-leser/leserSuche';
 
-const s = (token: string, rang: number, malRang: number | null): FundstellenSchritt => ({ token, rang, malRang });
+const s = (token: string, rang: number, malRang: number | null): FundstellenSchritt => ({ token, rang, malRang, kopf: null });
 
 describe('ersterKlickSprung — Randfälle', () => {
   it('erste Fundstelle nicht malbar, zweite malbar ⇒ die zweite', () => {
@@ -36,11 +36,17 @@ describe('ersterKlickSprung — Randfälle', () => {
 });
 
 describe('ersterKlickSprung — am echten Korpus (BGFA «Anwältinnen»)', () => {
-  it('jeder Artikel mit gemalter Fundstelle landet auf einer gemalten; vorher war es nicht so', () => {
+  // §6.3-DEKLARATION (LESER-NAV, FB O-36 b): bis O-36 b lag die erste Fundstelle
+  // vieler BGFA-Artikel im Gliederungspfad (`nie` malbar); die Prüfung forderte
+  // darum «mindestens ein Artikel, dessen erste Fundstelle ungemalt war». Seit der
+  // Gliederungskopf gemalt wird (`kopf`), gibt es diesen Fall im BGFA nicht mehr
+  // (Sonde 15.10.2026: «Anwältinnen», «Anwalt» je 0). Der Randfall bleibt durch
+  // die handgebauten Folgen oben gedeckt; hier bleibt der Korpus-Lauf als
+  // Vertrag «jeder Klick landet auf einer gemalten Stelle».
+  it('jeder Artikel mit gemalter Fundstelle landet auf einer gemalten', () => {
     const { eintraege, struktur } = ladeNormFixture('bund', 'BGFA');
     const folge = fundstellenFolge(sucheImErlass(baueLeserSuchIndex('BGFA', eintraege, struktur), 'Anwältinnen'), false);
     const tokens = [...new Set(folge.map((f) => f.token))];
-    let altOhneMal = 0;
     for (const token of tokens) {
       const eigene = folge.filter((f) => f.token === token);
       const hatMalbar = eigene.some((f) => f.malRang !== null);
@@ -49,11 +55,10 @@ describe('ersterKlickSprung — am echten Korpus (BGFA «Anwältinnen»)', () =>
       expect(folge[neu].token).toBe(token);
       if (hatMalbar) {
         expect(folge[neu].malRang, `${token}: Klick landet auf gemalter Stelle`).not.toBeNull();
-        if (folge[alt].malRang === null) altOhneMal++;
       } else {
         expect(neu, `${token}: ohne gemalte Stelle bleibt es bei der ersten`).toBe(alt);
       }
     }
-    expect(altOhneMal, 'Testfall trägt nicht: kein Artikel, dessen erste Fundstelle ungemalt war').toBeGreaterThan(0);
+    expect(tokens.length, 'Testfall trägt nicht: zu wenige Treffer-Artikel').toBeGreaterThan(10);
   });
 });

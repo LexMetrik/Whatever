@@ -146,7 +146,12 @@ describe('S4 §4.2 — erlass-lokale Sortierung: Dokument-Reihenfolge', () => {
   // Korpus — dort, wo Feldklassen und Fundstellenzahlen wild durcheinander
   // liegen und die alte Rangfolge die Liste sichtbar durchmischt hätte.
   it('am echten Erlass (BGFA): die ganze Liste läuft mit dem Gesetz mit', () => {
-    const treffer = sucheImErlass(index('BGFA'), 'Anwalt');
+    // §6.3-DEKLARATION (LESER-NAV, FB O-36 b): der Begriff war «Anwalt». Seit ein
+    // Sektionskopf nur noch am ERSTEN Artikel seines Teilbaums zählt, trägt dort
+    // jeder «Anwalt»-Artikel auch Fliesstext — das Feld `t` schlägt `g` und alle
+    // Treffer haben topFeld `t`. «Disziplin» trifft in `t`, `m` und `g` (je ein
+    // Artikel nur über Randtitel bzw. Kopf), der Fall bleibt damit ein Fall.
+    const treffer = sucheImErlass(index('BGFA'), 'Disziplin');
     expect(treffer.length).toBeGreaterThan(5);
     const posFolge = treffer.map((t) => t.pos);
     expect(posFolge).toEqual([...posFolge].sort((a, b) => a - b));
@@ -178,17 +183,21 @@ describe('S8 §4.4 — findbar/malbar: der Zähler ist datenseitig, die Badges s
     const treffer = sucheImErlass(baueLeserSuchIndex('X', eintraege, struktur), 'Zaunkoenig');
     const { artikel, fundstellen } = zaehleTreffer(treffer);
     expect(artikel).toBe(6);
-    // 1×t + 1×m + 1×n + 3×g + 1×tb + 1×f = 8 — die vier nie gemalten (n, 3×g)
-    // sind mitgezählt, sonst wäre der Zähler von der Ansicht abhängig.
+    // 1×t + 1×m + 1×n + 3×g + 1×tb + 1×f = 8 — auch die Köpfe (n, 3×g) sind
+    // mitgezählt; Art. 3 und Art. 6 sind jeweils der erste Artikel unter ihrem
+    // Kopf, die Zahl bleibt unverändert (LESER-NAV, FB O-36 b).
     expect(fundstellen).toBe(8);
   });
 
-  it('nie malbare Felder sind als solche markiert (Gliederung, nachrangiger Randtitel, Bild-Alt)', () => {
+  // §6.3-DEKLARATION (LESER-NAV, FB O-36 b, Entscheid David 15.10.2026 «Ja,
+  // markieren»): Gliederungstitel und geteilte Randtitel-Stufen waren `nie`
+  // malbar. Sie stehen im DOM aber als Sektionskopf — gemalt wird dort, also `kopf`.
+  it('Sektionsköpfe (Gliederung, geteilter Randtitel) sind als `kopf` markiert, das Blatt als `immer`', () => {
     const { eintraege, struktur } = kunstErlass();
     const treffer = sucheImErlass(baueLeserSuchIndex('X', eintraege, struktur), 'Zaunkoenig');
     const feldVon = (token: string) => treffer.find((t) => t.token === token)!.felder[0];
-    expect(feldVon('3').malbar).toBe('nie');
-    expect(feldVon('6').malbar).toBe('nie');
+    expect(feldVon('3').malbar).toBe('kopf');
+    expect(feldVon('6').malbar).toBe('kopf');
     expect(feldVon('1').malbar).toBe('immer');
     // §6.3-DEKLARATION (D35-F3): der Wert hiess `'fussnoten'` und meinte «hängt
     // am Apparat-Schalter»; den gibt es nicht mehr. Er heisst `'aenderung'` und
@@ -257,8 +266,11 @@ describe('S8 §4.4 — findbar/malbar: der Zähler ist datenseitig, die Badges s
     const folge = fundstellenFolge(treffer, false);
     // Vertrag 1: je Artikel sind die malRänge lückenlos 0..k-1 — genau so
     // indexiert der Sprung in die Range-Liste.
+    // Stellen im Sektionskopf zählen im KOPF (`kopf` gesetzt, O-36 b) und stehen
+    // nicht in der Range-Liste des Artikels — sie sind hier ausgenommen, ihr Rang
+    // ist je Kopf lückenlos (eigener Test in leser-kopf-treffer-o36b).
     for (const t of treffer) {
-      const raenge = folge.filter((f) => f.token === t.token && f.malRang !== null).map((f) => f.malRang);
+      const raenge = folge.filter((f) => f.token === t.token && f.kopf === null && f.malRang !== null).map((f) => f.malRang);
       expect(raenge, `malRang-Folge von ${t.token}`).toEqual([...Array(raenge.length).keys()]);
     }
     // Vertrag 2: jede Fundstelle hat entweder einen malRang oder ist als nicht
@@ -267,12 +279,13 @@ describe('S8 §4.4 — findbar/malbar: der Zähler ist datenseitig, die Badges s
   });
 
   it('B5 — ein Artikel mit NICHT malbarer Fundstelle bekommt einen versetzten malRang', () => {
-    // «Anwältinnen» steht im BGFA auch im Gliederungspfad (`g`, malbar «nie»).
-    // Dort trennen sich datenseitiger Rang und malbarer Rang — vor dem Fix gab
-    // es die Unterscheidung gar nicht.
+    // «Anwältinnen» steht im BGFA auch in einem Sektionskopf (`g`, `kopf`). Die
+    // Stelle steht im Kopf, nicht im Artikel: datenseitiger Rang und Artikel-Rang
+    // trennen sich — vor dem Fix gab es die Unterscheidung gar nicht. (Bis
+    // O-36 b stand hier der Gliederungspfad als `nie`; er ist jetzt der Kopf.)
     const treffer = sucheImErlass(index('BGFA'), 'Anwältinnen');
     const folge = fundstellenFolge(treffer, false);
-    const versetzt = folge.filter((f) => f.malRang !== null && f.malRang !== f.rang);
+    const versetzt = folge.filter((f) => f.kopf === null && f.malRang !== null && f.malRang !== f.rang);
     expect(versetzt.length, 'kein Artikel mit versetztem malRang — Testfall trägt nicht').toBeGreaterThan(0);
   });
 

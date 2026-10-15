@@ -42,14 +42,14 @@
 // gezählt.
 
 import { findeVorkommen } from './suchHighlight';
-import { ohneMarkup } from './helpers';
+import { ohneMarkup, romanFrei } from './helpers';
 import { randtitelKnoten, artikelLeerstellenStatus } from '../../lib/normtext/darstellung';
-import { vergleicheFnNr } from './berechnungen';
+import { vergleicheFnNr, berechneSekPos } from './berechnungen';
 // W2·27 (Entscheid David 14.9.2026, Randtitel-Doppelmodell): die
 // Sachtitel-Fallback-Kette (`marginalie` vor `titel`) lebt nur noch hier —
 // vorher zweite Inline-Kopie derselben Regel wie im Gliederungs-Baum (§5).
 import { artikelRandtitel } from './gliederungsArtikel';
-import type { StrukturMap } from '../../lib/normtext/browse';
+import { baueGliederungsbaum, type Sektion, type StrukturMap } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 
 // ─── Felder in Index-Semantik (Spec §4.1) ───────────────────────────────────
@@ -96,11 +96,15 @@ type SuchQuelle =
  * Fundstelle überhaupt gemalt werden (Spec §4.4)?
  *
  *  · `immer`     — der Baustein steht im `<article id="art-…">` und ist sichtbar.
- *  · `nie`       — er ist amtlicher Inhalt, erscheint aber nicht im Artikel
- *                  (Gliederungspfad: er steht als Sektionskopf ÜBER den
- *                  Artikeln; Bild-Alt: es ist ein Attribut, kein Textknoten;
- *                  nachrangige Randtitel: sie sind seit 6b eigene
- *                  Gliederungsknoten und werden am Artikel nicht wiederholt).
+ *  · `nie`       — er ist amtlicher Inhalt, erscheint aber nirgends als Text
+ *                  (Bild-Alt: es ist ein Attribut, kein Textknoten; Fussnoten
+ *                  an Absatz/Item im zugeklappten Artikel).
+ *  · `kopf`      — der Baustein ist eine Gliederungs-/Randtitel-ÜBERSCHRIFT und
+ *                  steht als Sektionskopf (`data-sek`) EINMAL über seinen
+ *                  Artikeln, nicht im `<article>`. Er gehört dem ERSTEN Artikel
+ *                  seines Teilbaums (dort steht der Kopf im DOM) und zählt nur
+ *                  dort — nicht mehr je Artikel des Teilbaums (LESER-NAV, FB
+ *                  O-36 b: OR «Vertrag» zählte 1104 Stellen, die nie leuchteten).
  *  · `aenderung` — ein Baustein des FUSSNOTEN-APPARATS: sichtbar genau in der
  *                  Stellung «Fussnoten» (`html[data-vermerke="fussnoten"]`);
  *                  in «aus» (der Vorgabe) blendet index.css Marker UND Apparat
@@ -132,13 +136,15 @@ type SuchQuelle =
  * unabhängig von Ansicht-Schaltern; die DOM-Hervorhebung malt nur, was malbar
  * ist. «Gemalte ≤ gezählte» ist damit KONSTRUKTIV wahr, nicht behauptet.
  */
-type Malbarkeit = 'immer' | 'nie' | 'aenderung';
+type Malbarkeit = 'immer' | 'nie' | 'aenderung' | 'kopf';
 
 interface Segment {
   feld: SuchFeld;
   quelle: SuchQuelle;
   malbar: Malbarkeit;
   text: string;
+  /** Nur bei `malbar: 'kopf'`: Id des Sektionskopfs (`data-sek`) in der Lesespalte. */
+  kopf?: string;
 }
 
 /** Ein durchsuchbarer Artikel-Record. */
@@ -213,6 +219,51 @@ function schiebe(ziel: Segment[], feld: SuchFeld, quelle: SuchQuelle, malbar: Ma
 }
 
 /**
+ * Die Sektionsköpfe, die die Lesespalte setzt — je Kopf EINMAL, am ersten Artikel
+ * seines Teilbaums (LESER-NAV, FB O-36 b).
+ *
+ * WARUM NICHT JE ARTIKEL. Bis hierher trug jeder Artikel den ganzen
+ * Gliederungspfad und die geteilten Randtitel-Stufen als `malbar: 'nie'`-Bausteine
+ * mit. Der Kopf steht im DOM aber nur EINMAL, über dem ersten seiner Artikel
+ * (`renderSektion`, v3/LeserLesespalte.tsx): ein Titel «Der Vertrag» mit 60
+ * Artikeln zählte 60 Fundstellen, von denen keine leuchtete (OR «Vertrag»: 1104 von
+ * 1607 gezählten Stellen ohne Markierung). «Gezählt = gemalt» heisst darum: die
+ * Fundstelle zählt dort, wo sie im DOM steht. `berechneSekPos` ist dieselbe
+ * Funktion, mit der die Lesespalte den Kopf an seine Dokumentposition setzt (§5).
+ *
+ * DER TEXT SPIEGELT DEN KOPF, nicht das Label: `SektionKopf` setzt den Aufzähler
+ * («Erster Titel») und den Sachtitel in zwei Blöcke (`romanFrei`); ein Treffer
+ * über die Grenze («Titel: Die») steht im DOM nirgends und zählt darum auch nicht.
+ * Die Feldklasse folgt der Generator-Semantik: amtliche Stufe `g`; Randtitel-Stufe
+ * `m`, wenn sie die oberste der Marginalie-Kette des Trägerartikels ist, sonst `n`.
+ * Reihenfolge je Artikel: äussere Köpfe vor inneren — wie im DOM.
+ */
+function kopfSegmente(
+  sektionen: readonly Sektion[],
+  eintraege: readonly NormSnapshot[],
+  struktur: StrukturMap | null,
+): Map<string, Segment[]> {
+  const pos = berechneSekPos(sektionen as Sektion[], eintraege as NormSnapshot[]);
+  const jeArtikel = new Map<string, Segment[]>();
+  const besuche = (s: Sektion): void => {
+    const p = pos.get(s.id);
+    const traeger = p !== undefined && Number.isFinite(p) ? eintraege[p] : undefined;
+    if (traeger) {
+      const marg = struktur?.[traeger.artikel]?.marginalie ?? [];
+      const feld: SuchFeld = !s.randtitel ? 'g' : marg.findIndex((x) => x.trim() === s.label) === 0 ? 'm' : 'n';
+      const quelle: SuchQuelle = s.randtitel ? 'Randtitel' : 'Überschrift';
+      const { pre, rest } = romanFrei(s.label);
+      const liste = jeArtikel.get(traeger.artikel) ?? [];
+      for (const text of [pre, rest]) if (text !== '') liste.push({ feld, quelle, malbar: 'kopf', text, kopf: s.id });
+      jeArtikel.set(traeger.artikel, liste);
+    }
+    for (const k of s.kinder) besuche(k);
+  };
+  for (const s of sektionen) besuche(s);
+  return jeArtikel;
+}
+
+/**
  * Baut die Feld-Records eines Erlasses. Rein und deterministisch (§2); die
  * Reihenfolge der Segmente je Artikel folgt der DOKUMENT-Reihenfolge des
  * gerenderten Artikels (Randtitel → Label → Grundlage → Wortlaut → Tabellen →
@@ -229,7 +280,11 @@ export function baueLeserSuchIndex(
   key: string,
   eintraege: readonly NormSnapshot[],
   struktur: StrukturMap | null,
+  /** Der Gliederungsbaum, den die Lesespalte rendert (`m.sektionen`). Ohne ihn
+   *  wird derselbe Baum aus denselben Daten gebaut (`baueGliederungsbaum`). */
+  sektionen?: readonly Sektion[],
 ): LeserSuchIndex {
+  const koepfe = kopfSegmente(sektionen ?? baueGliederungsbaum([...eintraege], struktur).sektionen, eintraege, struktur);
   const artikel: SuchArtikel[] = eintraege.map((e, pos) => {
     const st = struktur?.[e.artikel];
     const marginalie = st?.marginalie ?? [];
@@ -263,9 +318,13 @@ export function baueLeserSuchIndex(
     //     Blatt/Ahnen-Schnitt der Darstellung — dieser Schnitt entscheidet nur,
     //     ob die Stufe am Artikel überhaupt gemalt wird (§5: EINE Semantik je
     //     Frage, nicht eine Semantik für beide Fragen).
+    // LESER-NAV, FB O-36 b: hier steht nur noch das BLATT (der Randtitel des
+    // Artikels selbst, `immer`). Die geteilten Stufen davor sind Sektionsköpfe und
+    // kommen einmal je Kopf aus `kopfSegmente`; leere Stufen («…») stehen nirgends.
+    segmente.push(...(koepfe.get(e.artikel) ?? []));
     marginalie.forEach((stufe, i) => {
-      schiebe(segmente, i === 0 ? 'm' : 'n', 'Randtitel',
-        blatt !== null && stufe === blatt ? 'immer' : 'nie', stufe);
+      if (blatt === null || i !== marginalie.length - 1) return;
+      schiebe(segmente, i === 0 ? 'm' : 'n', 'Randtitel', 'immer', stufe);
     });
     // Kantons-Snapshots ohne Sidecar-Marginalie: `titel` ist der amtliche
     // Randtitel und wird am Artikel gerendert (ArtikelLeser-Fallback). `sachtitel`
@@ -277,8 +336,8 @@ export function baueLeserSuchIndex(
     //     schon in der alten Filterregel durchsuchbar («Art. 41»); sie zählt
     //     zum Feld `g`, weil sie eine Überschrift ist und kein Wortlaut.
     schiebe(segmente, 'g', 'Bestimmung', 'immer', e.artikelLabel);
-    // 3 · Gliederungspfad: amtlich, aber am Artikel nie wiederholt.
-    for (const g of gliederung) schiebe(segmente, 'g', 'Überschrift', 'nie', g.label);
+    // 3 · Gliederungspfad: steht als Sektionskopf über den Artikeln und kommt
+    //     einmal je Kopf aus `kopfSegmente` (oben, vor dem Randtitel).
     // 4 · Delegationsnorm-Grundlage (G23) — dezente Zeile unter dem Randtitel.
     schiebe(segmente, 'tb', 'Grundlage', 'immer', e.grundlage);
     // 5 · Wortlaut + Aufzählungspunkte, dann Tabellen und Bild-Alt desselben
@@ -398,6 +457,10 @@ export interface LeserTreffer {
   /** Dasselbe für `aenderung`-Stellen (Fussnoten-Apparat): sie zählen nur mit,
    *  solange der Apparat sichtbar ist — das entscheidet erst `fundstellenFolge`. */
   aendDavor: number[];
+  /** LESER-NAV, FB O-36 b: je Fundstelle der Sektionskopf, in dem sie steht, samt
+   *  Rang unter ALLEN Stellen dieses Kopfes im DOM (auch ausserhalb des Bereichs,
+   *  wie `immerDavor`); `null` = eine Stelle im Artikel. Länge == `fundstellen`. */
+  kopfStellen: Array<{ sek: string; rang: number } | null>;
   /** Textausschnitt um die erste Fundstelle (Entscheid c). `null` nie im Normalfall. */
   ausschnitt: Ausschnitt | null;
 }
@@ -581,6 +644,10 @@ export function sucheImErlass(
     // zweiter Vergleichslauf).
     const immerDavor: number[] = [];
     const aendDavor: number[] = [];
+    const kopfStellen: LeserTreffer['kopfStellen'] = [];
+    // Stellen je Sektionskopf bisher (`kopf`-Segmente stehen nicht im Artikel, ihr
+    // Rang zählt im Kopf-Element — sie bleiben aus `immer`/`aend` heraus).
+    const kopfDavor = new Map<string, number>();
     let immer = 0;
     let aend = 0;
     for (let si = 0; si <= letztesTrefferSegment; si++) {
@@ -588,20 +655,23 @@ export function sucheImErlass(
       const inBereich = imBereich(seg.feld, bereich);
       const n = inBereich ? anzahlJeSegment[si] : seg.malbar === 'nie' ? 0 : findeVorkommen(seg.text, b).length;
       if (n === 0) continue;
+      const kopfRang = seg.kopf !== undefined ? kopfDavor.get(seg.kopf) ?? 0 : 0;
       if (inBereich) {
         for (let j = 0; j < n; j++) {
           immerDavor.push(immer + (seg.malbar === 'immer' ? j : 0));
           aendDavor.push(aend + (seg.malbar === 'aenderung' ? j : 0));
+          kopfStellen.push(seg.kopf !== undefined ? { sek: seg.kopf, rang: kopfRang + j } : null);
         }
       }
       if (seg.malbar === 'immer') immer += n;
       else if (seg.malbar === 'aenderung') aend += n;
+      else if (seg.kopf !== undefined) kopfDavor.set(seg.kopf, kopfRang + n);
     }
 
     const felder = [...proQuelle.values()].sort((x, y) => FELD_GEWICHT[y.feld] - FELD_GEWICHT[x.feld]);
     treffer.push({
       token: a.token, label: a.label, randtitel: a.randtitel, gruppe: a.gruppe, pos: a.pos,
-      fundstellen: gesamt, topFeld: felder[0].feld, felder, malbarkeiten, immerDavor, aendDavor, ausschnitt,
+      fundstellen: gesamt, topFeld: felder[0].feld, felder, malbarkeiten, immerDavor, aendDavor, kopfStellen, ausschnitt,
     });
   }
 
@@ -710,6 +780,10 @@ export interface FundstellenSchritt {
    *  Fundstelle im DOM gar nicht erscheint. Seit PE-C8-B01 zählt er über ALLE
    *  gemalten Stellen des Artikels, auch bei Suchbereich ≠ «Alles». */
   malRang: number | null;
+  /** LESER-NAV, FB O-36 b: Id des Sektionskopfs (`data-sek`), in dem die Fundstelle
+   *  steht — dann ist `malRang` der Rang unter den gemalten Stellen DIESES KOPFES,
+   *  nicht des Artikels. `null` = Stelle im Artikel (oder nicht malbar). */
+  kopf: string | null;
 }
 
 /**
@@ -749,12 +823,15 @@ export function fundstellenFolge(
     for (let i = 0; i < t.fundstellen; i++) {
       const mb = t.malbarkeiten[i];
       const malbar = mb === 'immer' || (mb === 'aenderung' && !aenderungenAus);
+      const kopf = t.kopfStellen[i];
       // PE-C8-B01: der malbare Rang zählt ALLE gemalten Stellen vor dieser —
       // `sucheImErlass` führt sie über den ganzen Artikel, nicht nur im Bereich.
+      // Eine Stelle im Sektionskopf zählt im Kopf (O-36 b), nicht im Artikel.
       out.push({
         token: t.token,
         rang: i,
-        malRang: malbar ? t.immerDavor[i] + (aenderungenAus ? 0 : t.aendDavor[i]) : null,
+        malRang: kopf ? kopf.rang : malbar ? t.immerDavor[i] + (aenderungenAus ? 0 : t.aendDavor[i]) : null,
+        kopf: kopf ? kopf.sek : null,
       });
     }
   }
