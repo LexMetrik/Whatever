@@ -22,11 +22,11 @@ import { LeserTastatur } from '../pages/gesetz-leser/parts/LeserTastatur';
 let root: Root | null = null;
 const TOKENS = ['1', '2', '3', '4', '5'];
 
-type Taste = (key: string) => void;
+type Taste = (key: string, extra?: Record<string, unknown>) => void;
 interface Leser { taste: Taste; zeichne: (aktivToken: string | null, einzel?: boolean) => Promise<void> }
 
 /** Baut den Leser auf: ein `window` mit echten Listenern, damit der eine Listener der Tastatur erreichbar ist. */
-async function aufbauen(opts: { aktivToken: string | null; einzel: boolean; spruenge: string[] }): Promise<Leser> {
+async function aufbauen(opts: { aktivToken: string | null; einzel: boolean; spruenge: string[]; blaettern?: (richtung: -1 | 1) => void }): Promise<Leser> {
   const { document } = parseHTML('<!doctype html><html><body><div id="app"></div></body></html>');
   const listener: Array<(e: unknown) => void> = [];
   vi.stubGlobal('window', {
@@ -41,13 +41,13 @@ async function aufbauen(opts: { aktivToken: string | null; einzel: boolean; spru
   const zeichne = (aktivToken: string | null, einzel = opts.einzel) => act(async () => {
     root!.render(createElement(LeserTastatur, {
       tokens: TOKENS, aktivToken, onSprung: (t: string) => { opts.spruenge.push(t); },
-      onBlaettern: einzel ? () => {} : undefined,
+      onBlaettern: einzel ? (opts.blaettern ?? (() => {})) : undefined,
     }));
   });
   await zeichne(opts.aktivToken);
   return {
     zeichne,
-    taste: (key) => { for (const fn of listener) fn({ key, target: null, metaKey: false, ctrlKey: false, altKey: false, preventDefault() {} }); },
+    taste: (key, extra = {}) => { for (const fn of listener) fn({ key, target: null, metaKey: false, ctrlKey: false, altKey: false, preventDefault() {}, ...extra }); },
   };
 }
 
@@ -127,5 +127,118 @@ describe('schnelle j/k-Folgen verlieren im Einzelmodus keinen Schritt', () => {
       taste('j');                     // vom gezeigten '1' aus: wieder 2, nicht 3
       expect(spruenge).toEqual(['2', '2']);
     } finally { vi.useRealTimers(); }
+  });
+});
+
+describe('O-28 · schnelle ←/→ verlieren im Einzelmodus keinen Schritt (blättern über `onBlaettern`)', () => {
+  /** `onBlaettern` rechnet im Betrieb aus dem Render seines Aufrufs (`einzel.blaettere`) — die Sonde
+   *  zählt deshalb, WIE OFT und WANN es gerufen wird: ein zweiter Aufruf vor dem Frame wäre der Fehler. */
+  const aufrufe = () => { const r: Array<-1 | 1> = []; return { r, blaettern: (d: -1 | 1) => { r.push(d); } }; };
+
+  it('(a) zwei → vor dem Frame: der erste läuft, der zweite wartet und läuft mit dem Frame von Art. 2', async () => {
+    const { r, blaettern } = aufrufe();
+    const { taste, zeichne } = await aufbauen({ aktivToken: '1', einzel: true, spruenge: [], blaettern });
+    taste('ArrowRight'); taste('ArrowRight');
+    expect(r, 'zwei Aufrufe aus derselben Closure: der zweite rechnete vom alten Artikel').toEqual([1]);
+    await zeichne('2');
+    expect(r, 'mit dem Frame läuft der wartende Druck').toEqual([1, 1]);
+  });
+
+  it('(b) drei ← in einem Tick: je Frame ein Schritt, in der Reihenfolge der Tasten', async () => {
+    const { r, blaettern } = aufrufe();
+    const { taste, zeichne } = await aufbauen({ aktivToken: '5', einzel: true, spruenge: [], blaettern });
+    taste('ArrowLeft'); taste('ArrowLeft'); taste('ArrowLeft');
+    expect(r).toEqual([-1]);
+    await zeichne('4');
+    expect(r).toEqual([-1, -1]);
+    await zeichne('3');
+    expect(r).toEqual([-1, -1, -1]);
+    await zeichne('2');
+    expect(r, 'nichts bleibt übrig').toEqual([-1, -1, -1]);
+  });
+
+  it('(c) gemischt → ←: die Richtung jedes Drucks bleibt erhalten', async () => {
+    const { r, blaettern } = aufrufe();
+    const { taste, zeichne } = await aufbauen({ aktivToken: '3', einzel: true, spruenge: [], blaettern });
+    taste('ArrowRight'); taste('ArrowLeft');
+    await zeichne('4');
+    expect(r).toEqual([1, -1]);
+  });
+
+  it('(d) Tastenwiederholung (gehalten) wartet nicht: sie wird bei laufendem Schritt verworfen', async () => {
+    const { r, blaettern } = aufrufe();
+    const { taste, zeichne } = await aufbauen({ aktivToken: '1', einzel: true, spruenge: [], blaettern });
+    taste('ArrowRight');
+    taste('ArrowRight', { repeat: true }); taste('ArrowRight', { repeat: true });
+    await zeichne('2');
+    expect(r, 'gehalten blättert im Takt des Renders, ohne Rückstau').toEqual([1]);
+    taste('ArrowRight', { repeat: true });
+    expect(r, 'ohne laufenden Schritt zählt auch die Wiederholung').toEqual([1, 1]);
+  });
+
+  it('(e) landet der Leser woanders (Klick, Zurück), wird nichts mehr nachgeholt', async () => {
+    const { r, blaettern } = aufrufe();
+    const { taste, zeichne } = await aufbauen({ aktivToken: '1', einzel: true, spruenge: [], blaettern });
+    taste('ArrowRight'); taste('ArrowRight');
+    await zeichne('5');
+    expect(r).toEqual([1]);
+  });
+
+  it('(f) Lesart-Wechsel verwirft den wartenden Druck; die Gesamtansicht hat keinen', async () => {
+    const { r, blaettern } = aufrufe();
+    const { taste, zeichne } = await aufbauen({ aktivToken: '1', einzel: true, spruenge: [], blaettern });
+    taste('ArrowRight'); taste('ArrowRight');
+    await zeichne('1', false);
+    await zeichne('2', false);
+    expect(r).toEqual([1]);
+    taste('ArrowRight');
+    expect(r, 'Gesamtansicht: ←/→ gehören dem Panel, onBlaettern entfällt').toEqual([1]);
+  });
+
+  it('(g) ein Schritt ohne Frame verfällt nach der Frist: der nächste Druck rechnet wieder vom gezeigten Artikel', async () => {
+    vi.useFakeTimers();
+    try {
+      const { r, blaettern } = aufrufe();
+      const { taste } = await aufbauen({ aktivToken: '1', einzel: true, spruenge: [], blaettern });
+      taste('ArrowRight');           // Navigation blieb aus
+      taste('ArrowRight');           // wartet …
+      vi.advanceTimersByTime(5000);
+      taste('ArrowRight');           // … Frist um: frischer Schritt, der wartende ist verworfen
+      expect(r).toEqual([1, 1]);
+    } finally { vi.useRealTimers(); }
+  });
+
+  it('(h) am Rand merkt sich der Druck nichts: kein Ziel, nichts wartet', async () => {
+    const { r, blaettern } = aufrufe();
+    const { taste } = await aufbauen({ aktivToken: '5', einzel: true, spruenge: [], blaettern });
+    taste('ArrowRight'); taste('ArrowRight');
+    expect(r, 'am letzten Artikel gibt es keinen Schritt zu verlieren').toEqual([1, 1]);
+  });
+  // Nachzug Gegenprüfung #1384 (MITTEL 2): der zweite Druck läuft beim Frame des LETZTEN Artikels mit
+  // Ziel = Länge — kein Eintrag, kein Frame; ein dritter Druck blieb in `wartendeRef` liegen und kam
+  // beim nächsten Frame (dem des Gegen-Pfeils) als ungefragter Sprung zurück. Rot gegen f89f82745:
+  // Aufrufe [1, 1, -1, 1] statt [1, 1, -1] (Ende) bzw. [-1, -1, 1, -1] statt [-1, -1, 1] (Anfang).
+  it('(i) Rand am Ende: drei → ab Art. 4, danach ←: kein Phantom-Schritt zurück auf Art. 5', async () => {
+    const { r, blaettern } = aufrufe();
+    const { taste, zeichne } = await aufbauen({ aktivToken: '4', einzel: true, spruenge: [], blaettern });
+    taste('ArrowRight'); taste('ArrowRight'); taste('ArrowRight');
+    expect(r).toEqual([1]);
+    await zeichne('5');
+    expect(r, 'beim Frame von Art. 5 läuft der zweite Druck (Rand), der dritte verfällt').toEqual([1, 1]);
+    taste('ArrowLeft');
+    await zeichne('4');
+    expect(r, 'das ← läuft einmal; kein liegengebliebenes → springt hinterher').toEqual([1, 1, -1]);
+  });
+
+  it('(j) Rand am Anfang, spiegelbildlich: drei ← ab Art. 2, danach →: kein Phantom-Schritt', async () => {
+    const { r, blaettern } = aufrufe();
+    const { taste, zeichne } = await aufbauen({ aktivToken: '2', einzel: true, spruenge: [], blaettern });
+    taste('ArrowLeft'); taste('ArrowLeft'); taste('ArrowLeft');
+    expect(r).toEqual([-1]);
+    await zeichne('1');
+    expect(r).toEqual([-1, -1]);
+    taste('ArrowRight');
+    await zeichne('2');
+    expect(r).toEqual([-1, -1, 1]);
   });
 });

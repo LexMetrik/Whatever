@@ -20,16 +20,22 @@ import { APP_WURZEL, liesRoh, ohneKommentare } from './appDateien';
 
 const CSS = ohneKommentare(liesRoh(join(APP_WURZEL, 'index.css')));
 
-/** Das Band selbst ist Subjekt des Selektors (nicht ein Nachfahre davon). */
-const BAND_SUBJEKT = /(?:^|[\s>+~])(?:\.ub-kopf|\.lc-titelblatt-band)(?:\[[^\]]*\])*$/;
-const REZEPT_PROPS = /^(?:background(?:-color|-image)?|border-top(?:-color|-width|-style)?|padding(?:-top|-bottom|-left|-right)?)$/;
+/** Das Band selbst ist Subjekt des Selektors (nicht ein Nachfahre davon).
+ *  O-59 (Gegenprüfung #1373): auch mit Pseudo-KLASSEN am Band (`:hover`, `:has(…)`,
+ *  `:not(…)`) — vorher fiel `.ub-kopf:hover { padding … }` durchs Netz. Pseudo-
+ *  ELEMENTE (`::before`) sind nicht das Band selbst und bleiben ausgenommen. */
+const BAND_SUBJEKT = /(?:^|[\s>+~])(?:\.ub-kopf|\.lc-titelblatt-band)(?:\[[^\]]*\])*(?::(?!:)[a-z-]+(?:\([^()]*\))?)*$/;
+/** Fläche, Strich, Innenabstand — auch in den LOGISCHEN Schreibweisen (`padding-block`,
+ *  `border-block-start`, …) und als Kürzel (`border`, `border-color`): sie setzen
+ *  dasselbe Mass auf anderem Namen. */
+const REZEPT_PROPS = /^(?:background(?:-color|-image)?|border(?:-top|-block|-block-start)?(?:-color|-width|-style)?|padding(?:-top|-bottom|-left|-right|-block|-inline)?(?:-start|-end)?)$/;
 
 interface Regel { selektoren: string[]; deklarationen: Array<[string, string]> }
 
 function regeln(css: string): Regel[] {
   const aus: Regel[] = [];
   for (const m of css.matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
-    const selektoren = m[1].replace(/@layer[^{;]*$/, '').split(',').map((s) => s.trim()).filter(Boolean);
+    const selektoren = m[1].replace(/@layer[^{;]*$/, '').split(/,(?![^()]*\))/).map((s) => s.trim()).filter(Boolean);
     const deklarationen = m[2].split(';').map((d) => d.trim()).filter(Boolean).map((d) => {
       const i = d.indexOf(':');
       return [d.slice(0, i).trim(), d.slice(i + 1).trim()] as [string, string];
@@ -99,6 +105,26 @@ describe('LESER-NAV — ein Band-Rezept', () => {
       '.lc-titelblatt-band[data-reg="r"] { background, border-top-color }',
       '.lc-route[data-reg="m"] .lc-titelblatt-band { background, border-top-color }',
     ]);
+  });
+
+  it('O-59: Pseudoklassen und logische Eigenschaften am Band fallen auf (Wächter-Lücke #1373)', () => {
+    expect(bandRezeptVerstoesse('.ub-kopf:hover { padding: 0; }')).toEqual(['.ub-kopf:hover { padding }']);
+    expect(bandRezeptVerstoesse('.lc-titelblatt-band:has(.x) { padding-block: 0; }')).toEqual(['.lc-titelblatt-band:has(.x) { padding-block }']);
+    expect(bandRezeptVerstoesse('.lc-titelblatt-band[data-reg="r"] { border-block-start-color: red; padding-inline-start: 0; }'))
+      .toEqual(['.lc-titelblatt-band[data-reg="r"] { border-block-start-color, padding-inline-start }']);
+    expect(bandRezeptVerstoesse('.ub-kopf:is(.a, .b) { padding: 0; }')).toEqual(['.ub-kopf:is(.a, .b) { padding }']);
+    expect(bandRezeptVerstoesse('.ub-kopf { border: 0; border-color: red; }')).toEqual(['.ub-kopf { border, border-color }']);
+    // Pseudo-ELEMENTE und Nachfahren sind nicht das Band.
+    expect(bandRezeptVerstoesse('.ub-kopf::before { padding: 0; }\n.ub-kopf:hover h1 { padding: 0; }')).toEqual([]);
+  });
+
+  it('O-59: die Routenmarke (::before) weicht dem Band-Strich — für BEIDE Band-Klassen', () => {
+    const regel = regeln(CSS).find((r) => r.selektoren.some((s) => /^\.lc-route\[data-reg\]:has\(/.test(s) && s.endsWith('::before')));
+    expect(regel, 'Regel «Marke weicht dem Band»').toBeDefined();
+    const sel = regel!.selektoren.join(',');
+    expect(sel, 'Entscheid-/Material-Band `.ub-kopf`').toContain('.ub-kopf');
+    expect(sel, 'Leser-Band `.lc-titelblatt-band` (g und r)').toContain('.lc-titelblatt-band');
+    expect(Object.fromEntries(regel!.deklarationen)['content']).toBe('none');
   });
 
   it('NEGATIV-KONTROLLE: Nachfahren des Bandes (Overline, H1) gelten nicht als Band', () => {
