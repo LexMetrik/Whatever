@@ -56,7 +56,9 @@ interface RahmenBand {
    *  das Ergebnis als `richtpunktChf` aus (Rappen). Der Rahmen bleibt Spanne,
    *  der Richtpunkt ist KEIN Punktwert (§8). Untere Bandgrenze: `vonGrenzeChf`,
    *  sonst `grenzeChf` des Vorbands; ohne beides, oder bei `grenzeChf: Infinity`,
-   *  ist die Regel fehlerhaft deklariert (RangeError). */
+   *  ist die Regel fehlerhaft deklariert (RangeError). `interpoliert` braucht also
+   *  ein ENDLICHES Band; im offenen obersten Band (`grenzeChf: Infinity`) wirft
+   *  die Auswertung erst zur Laufzeit, die Datenprüfung dazu folgt mit RL-30. */
   interpoliert?: true;
   vonGrenzeChf?: number;
 }
@@ -71,7 +73,8 @@ export interface Rundung {
 /** Regel-weite Rundungs-Optionen (RL-27, Opt-in; fehlen sie, gilt das Verhalten
  *  vor RL-27 unverändert). `basisRundung` wirkt auf den Bemessungswert VOR der
  *  Bandwahl, `ergebnisRundung` NACH Mindest-/Höchstbetrag auf das Ergebnis
- *  (bei Spannen auf beide Grenzen und den Richtpunkt). */
+ *  und klammert danach erneut (Ergebnis bleibt im Fenster [min, max]). Nur für
+ *  deterministische Ergebnisse; bei Spannen wirft die Auswertung ein RangeError. */
 export interface RundungsOptionen {
   basisRundung?: Rundung;
   ergebnisRundung?: Rundung;
@@ -302,8 +305,16 @@ const wendeFaktorAn = (
   return { von: neuVon, bis: neuBis, satz };
 };
 
+/** Wirksames Mindest-/Höchstbetrags-Fenster eines deterministischen Ergebnisses
+ *  (inkl. Band-Grenzen). Wird von `werteAus` befüllt, damit die Ergebnisrundung
+ *  nach dem Runden dieselbe Klammer erneut anwenden kann (RL-27, A2). */
+type Fenster = { minChf?: number; maxChf?: number };
+const merke = (f: Fenster | undefined, minChf: number | undefined, maxChf: number | undefined): void => {
+  if (f) { f.minChf = minChf; f.maxChf = maxChf; }
+};
+
 /** Fasst Teilergebnisse einer `summe` zusammen (siehe Typ-Doku). */
-const ausSumme = (regel: Extract<TarifRegel, { typ: 'summe' }>, basisChf: number): TarifErgebnis => {
+const ausSumme = (regel: Extract<TarifRegel, { typ: 'summe' }>, basisChf: number, fenster?: Fenster): TarifErgebnis => {
   if (regel.teile.length === 0) throw new RangeError('Summe braucht mindestens einen Teil.');
   const erg = regel.teile.map((t) => ({ etikett: t.etikett, e: auswertenTarif(t.regel, basisChf) }));
 
@@ -317,6 +328,7 @@ const ausSumme = (regel: Extract<TarifRegel, { typ: 'summe' }>, basisChf: number
       summe = round2(summe + x.e.betragChf);
     }
     schritte.push(`Summe der Teile: ${chfBedingt(summe)}`);
+    merke(fenster, regel.minChf, regel.maxChf);
     return { deterministisch: true, betragChf: klammere(summe, regel.minChf, regel.maxChf, schritte), schritte };
   }
 
@@ -339,9 +351,14 @@ const ausSumme = (regel: Extract<TarifRegel, { typ: 'summe' }>, basisChf: number
   const unbeziffert = erg.filter((x) => !x.e.deterministisch && x.e.vonChf === undefined && x.e.bisChf === undefined);
   if (von === undefined && bis === undefined) {
     const gruende = unbeziffert.map((x) => (x.e.deterministisch ? '' : `${x.etikett}: ${x.e.hinweis}`)).join(' | ');
+    // Ohne unbezifferten Teil haben die Teile nur verschiedene Seiten beziffert
+    // (z. B. einer nur «bis», einer nur «von»): keine leere Klammer ausgeben.
+    const grund = gruende !== ''
+      ? `weil mindestens ein Teil nicht beziffert ist (${gruende})`
+      : 'weil die Teile keine gemeinsame bezifferte Grenze haben';
     return {
       deterministisch: false,
-      hinweis: mitSatz(`Summe aus ${etiketten} nicht beziffert, weil mindestens ein Teil nicht beziffert ist (${gruende})`, 'Eine Gesamtsumme wird nicht ausgewiesen.'),
+      hinweis: mitSatz(`Summe aus ${etiketten} nicht beziffert, ${grund}`, 'Eine Gesamtsumme wird nicht ausgewiesen.'),
     };
   }
 
@@ -386,7 +403,7 @@ export function skaliereErgebnis(e: TarifErgebnis, faktorMin: number, faktorMax:
 }
 
 /** Kern-Auswertung ohne regel-weite Rundung (siehe `auswertenTarif`). */
-function werteAus(regel: TarifRegel, basisChf: number): TarifErgebnis {
+function werteAus(regel: TarifRegel, basisChf: number, fenster?: Fenster): TarifErgebnis {
   switch (regel.typ) {
     case 'fix':
       return { deterministisch: true, betragChf: round2(regel.chf), schritte: [`Fixgebühr ${chf(regel.chf)}`] };
@@ -400,6 +417,7 @@ function werteAus(regel: TarifRegel, basisChf: number): TarifErgebnis {
       if (sockel > 0) schritte.push(`Sockel ${chf(sockel)}`);
       schritte.push(`${regel.prozent} % auf ${chf(ueberschuss)}${ab > 0 ? ` (Überschuss über ${chf(ab)})` : ''} = ${chf(ueberschuss * regel.prozent / 100)}`);
       const roh = round2(sockel + (ueberschuss * regel.prozent) / 100);
+      merke(fenster, regel.minChf, regel.maxChf);
       return { deterministisch: true, betragChf: klammere(roh, regel.minChf, regel.maxChf, schritte), schritte };
     }
 
@@ -407,6 +425,7 @@ function werteAus(regel: TarifRegel, basisChf: number): TarifErgebnis {
       pruefeBasis(basisChf);
       const schritte = [`${regel.promille} ‰ von ${chf(basisChf)} = ${chf((basisChf * regel.promille) / 1000)}`];
       const roh = round2((basisChf * regel.promille) / 1000);
+      merke(fenster, regel.minChf, regel.maxChf);
       return { deterministisch: true, betragChf: klammere(roh, regel.minChf, regel.maxChf, schritte), schritte };
     }
 
@@ -439,6 +458,7 @@ function werteAus(regel: TarifRegel, basisChf: number): TarifErgebnis {
       if (b.sockelChf > 0) schritte.push(`Sockel ${chf(b.sockelChf)}`);
       schritte.push(`${b.prozent} % auf ${chf(ueberschuss)}${b.abChf > 0 ? ` (Überschuss über ${chf(b.abChf)})` : ''} = ${chf((ueberschuss * b.prozent) / 100)}`);
       const roh = round2(b.sockelChf + (ueberschuss * b.prozent) / 100);
+      merke(fenster, b.minChf, b.maxChf);
       const det = klammere(roh, b.minChf, b.maxChf, schritte);
 
       // (b) Regel-weiter Ermessens-Aufschlag: über dem deterministischen Betrag
@@ -464,6 +484,7 @@ function werteAus(regel: TarifRegel, basisChf: number): TarifErgebnis {
       if (!b) throw new RangeError(`Voll-Prozent-Staffel deckt ${chf(basisChf)} nicht (letztes Band braucht bisChf: Infinity).`);
       const schritte = [`Fix ${chf(b.fixChf)} + ${b.prozent} % von ${chf(basisChf)} = ${chf(b.fixChf + (basisChf * b.prozent) / 100)}`];
       const roh = round2(b.fixChf + (basisChf * b.prozent) / 100);
+      merke(fenster, b.minChf, b.maxChf);
       return { deterministisch: true, betragChf: klammere(roh, b.minChf, b.maxChf, schritte), schritte };
     }
 
@@ -511,8 +532,11 @@ function werteAus(regel: TarifRegel, basisChf: number): TarifErgebnis {
       if (b.interpoliert) {
         const idx = regel.baender.indexOf(b);
         const unten = b.vonGrenzeChf ?? (idx > 0 ? regel.baender[idx - 1].grenzeChf : undefined);
-        if (unten === undefined || !Number.isFinite(b.grenzeChf) || !(b.grenzeChf > unten)) {
-          throw new RangeError(`Rahmen-Band bis ${b.grenzeChf} kann nicht interpoliert werden (untere Grenze ${unten}, obere Grenze muss endlich und grösser sein).`);
+        if (!Number.isFinite(b.grenzeChf)) {
+          throw new RangeError('Rahmen-Band mit `interpoliert` braucht ein endliches Band (grenzeChf endlich); das offene oberste Band (Infinity) kann nicht interpoliert werden.');
+        }
+        if (unten === undefined || !(b.grenzeChf > unten)) {
+          throw new RangeError(`Rahmen-Band bis ${b.grenzeChf} mit \`interpoliert\` braucht eine untere Grenze unterhalb von grenzeChf (vonGrenzeChf oder grenzeChf des Vorbands; erhalten: ${unten}).`);
         }
         if (von != null && bis != null) {
           const t = Math.min(1, Math.max(0, (basisChf - unten) / (b.grenzeChf - unten)));
@@ -542,7 +566,7 @@ function werteAus(regel: TarifRegel, basisChf: number): TarifErgebnis {
     }
 
     case 'summe':
-      return ausSumme(regel, basisChf);
+      return ausSumme(regel, basisChf, fenster);
 
     case 'formel_extern':
       return { deterministisch: false, hinweis: regel.hinweis };
@@ -568,7 +592,8 @@ export function auswertenTarif(regel: TarifRegel, basisChf: number): TarifErgebn
     basis = runde(basisChf, br, false);
     basisSatz = `Bemessungsbasis auf ${chfBedingt(br.schrittChf)} ${rundungWort(br)}: ${chfOhnePraefix(basis)}.`;
   }
-  const e = werteAus(regel, basis);
+  const fenster: Fenster = {};
+  const e = werteAus(regel, basis, fenster);
   let aus: TarifErgebnis = e;
   if (basisSatz) {
     aus = e.deterministisch
@@ -578,14 +603,21 @@ export function auswertenTarif(regel: TarifRegel, basisChf: number): TarifErgebn
   if (!er) return aus;
 
   pruefeRundung(er, 'ergebnisRundung');
-  const wort = `auf ${chfBedingt(er.schrittChf)} ${rundungWort(er)}`;
-  if (aus.deterministisch) {
-    const betrag = runde(aus.betragChf, er, true);
-    return { ...aus, betragChf: betrag, schritte: [...aus.schritte, `Ergebnis ${wort}: ${chfOhnePraefix(betrag)}.`] };
+  // A3 (Nachzug): Spannen werden nicht gerundet. Rundung der Grenzen liesse
+  // Zahl und Hinweistext auseinanderlaufen und könnte den Rahmen über das
+  // gesetzliche Minimum/Maximum hinaus verschieben; weniger Fähigkeit statt
+  // einer Regel, die dem Nutzer ein falsches Bild zeigt (§1, §8).
+  if (!aus.deterministisch) {
+    throw new RangeError('ergebnisRundung nur für deterministische Ergebnisse: Spannen (Gebührenrahmen, Richtpunkt) werden nicht gerundet.');
   }
-  const rund = { ...aus, hinweis: mitSatz(aus.hinweis, `Grenzen ${wort}.`) };
-  if (aus.vonChf !== undefined) rund.vonChf = runde(aus.vonChf, er, true);
-  if (aus.bisChf !== undefined) rund.bisChf = runde(aus.bisChf, er, true);
-  if (aus.richtpunktChf !== undefined) rund.richtpunktChf = runde(aus.richtpunktChf, er, true);
-  return rund;
+  const wort = `auf ${chfBedingt(er.schrittChf)} ${rundungWort(er)}`;
+  // A2 (Nachzug): Nach dem Runden erneut klammern. Sonst kann «ab» unter den
+  // Mindest- und «auf» über den Höchstbetrag führen (min 75, «ab 10» → 70;
+  // max 1005, «auf 10» → 1010). Mindest-/Höchstbetrag sind Normgrenzen und gehen
+  // der Rundung vor; ist eine Grenze kein Vielfaches des Schritts, gilt die
+  // Grenze selbst (normkonforme Lesart «Höchstbetrag gilt»).
+  const schritte = [...aus.schritte];
+  schritte.push(`Ergebnis ${wort}: ${chfOhnePraefix(runde(aus.betragChf, er, true))}.`);
+  const betrag = klammere(runde(aus.betragChf, er, true), fenster.minChf, fenster.maxChf, schritte);
+  return { ...aus, betragChf: betrag, schritte };
 }

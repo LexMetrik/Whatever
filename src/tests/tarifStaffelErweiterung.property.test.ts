@@ -1,11 +1,12 @@
 // ─── Property-Tests RL-27: Staffel-Primitiv, Opt-in-Erweiterungen ────────────
 //
 // Ergänzt tarifStaffelErweiterung.test.ts (Beispielfälle) um zufallsgetriebene
-// Eigenschaften mit festem Seed (§2). Zentral ist die NEUTRALITÄT: für jede
-// real geladene Tarifregel liefert die Auswertung mit explizit gesetzten,
-// aber leeren Optionen (`undefined`) exakt dasselbe wie die unveränderte Regel
-// (inkl. schritte/hinweis) — kein Bestandsfall bekommt durch RL-27 ein neues
-// Verhalten. Die übrigen Eigenschaften nutzen synthetische Regeln mit
+// Eigenschaften mit festem Seed (§2). Der Opt-out-Test prüft nur, dass für jede
+// real geladene Tarifregel explizit gesetzte, aber leere Optionen (`undefined`)
+// dasselbe liefern wie fehlende Felder (inkl. schritte/hinweis). Das ist KEIN
+// Neutralitätsbeweis gegen den Stand vor RL-27 (er vergleicht die neue
+// Implementierung mit sich selbst); diesen Beweis tragen die byte-gleichen
+// Golden-Outputs (npm run golden:vergleich) und die unveränderten Bestandstests. Die übrigen Eigenschaften nutzen synthetische Regeln mit
 // RAPPEN-GANZZAHLIGEN Eingaben und einem unabhängigen Ganzzahl-Orakel
 // (keine Wiederverwendung der Implementierung im Erwartungswert).
 import { describe, expect, it } from 'vitest';
@@ -38,12 +39,12 @@ for (const m of [beurkundung, gerichtskosten, notariat, parteientschaedigung, nv
 const rappen = (max: number) => fc.integer({ min: 0, max });
 const chfVon = (r: number) => r / 100;
 
-describe('Neutralität — Bestand unverändert', () => {
+describe('Opt-out-Pfad — identisch mit Default-Pfad', () => {
   it('Korpus ist nicht leer (Sicherung gegen leeres Einsammeln)', () => {
     expect(KORPUS.length).toBeGreaterThan(200);
   });
 
-  it('jede reale Regel: Auswertung mit leeren Optionen == Auswertung der Originalregel (strikt, inkl. schritte)', () => {
+  it('jede reale Regel: explizit leere Optionen (undefined) == Regel ohne diese Felder (strikt, inkl. schritte)', () => {
     fc.assert(
       fc.property(fc.nat({ max: KORPUS.length - 1 }), rappen(10_000_000_000), (i, r) => {
         const regel = KORPUS[i];
@@ -132,6 +133,16 @@ describe('ergebnisRundung — Eigenschaften', () => {
         expect(rund.betragChf).toBeLessThan(roh.betragChf + s);
       }
       if (300_000 % s === 0) expect(rund.betragChf).toBeLessThanOrEqual(300_000);
+    }));
+  });
+  it('Nachzug A2: gerundetes Ergebnis liegt immer in [min, max] (auch wenn die Grenzen keine Vielfachen des Schritts sind)', () => {
+    const mmArb = fc.tuple(fc.integer({ min: 0, max: 200_000 }), fc.integer({ min: 0, max: 200_000 })).map(([a, b]) => [Math.min(a, b) / 100, Math.max(a, b) / 100] as const);
+    fc.assert(fc.property(rappen(10_000_000), mmArb, schritt, richtung, (r, [mn, mx], s, d) => {
+      const reg = { typ: 'promille', promille: 3, minChf: mn, maxChf: mx, ergebnisRundung: { schrittChf: s, richtung: d } } as TarifRegel;
+      const e = auswertenTarif(reg, chfVon(r));
+      if (!e.deterministisch) throw new Error('erwartet deterministisch');
+      expect(e.betragChf).toBeGreaterThanOrEqual(mn - 1e-9);
+      expect(e.betragChf).toBeLessThanOrEqual(mx + 1e-9);
     }));
   });
   it('Monotonie bleibt erhalten', () => {

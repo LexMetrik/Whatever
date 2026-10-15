@@ -86,16 +86,39 @@ describe('ergebnisRundung — nach Mindest-/Höchstbetrag', () => {
     expect(betrag(s, 0)).toBe(1610);
     expect(betrag({ typ: 'sockel_prozent', prozent: 7, ergebnisRundung: { schrittChf: 10, richtung: 'ab' } }, 23_000)).toBe(1610);
   });
-  it('Rundung folgt auf den Höchstbetrag, nicht davor', () => {
-    const r: TarifRegel = { typ: 'sockel_prozent', prozent: 50, maxChf: 1005, ergebnisRundung: { schrittChf: 10, richtung: 'auf' } };
-    // roh 5000 → Deckel 1005 → aufrunden 1010. Rundung VOR dem Deckel ergäbe 1005.
-    expect(betrag(r, 10_000)).toBe(1010);
+  it('Rundung folgt auf den Höchstbetrag; Deckel gilt danach erneut (A2)', () => {
+    const r: TarifRegel = { typ: 'sockel_prozent', prozent: 50, maxChf: 1000, ergebnisRundung: { schrittChf: 10, richtung: 'auf' } };
+    expect(betrag(r, 10_000)).toBe(1000);
+    const r2: TarifRegel = { typ: 'sockel_prozent', prozent: 1, maxChf: 5000, ergebnisRundung: { schrittChf: 10, richtung: 'auf' } };
+    expect(betrag(r2, 1234)).toBe(20); // 12.34 → aufgerundet 20, Deckel nicht berührt
   });
-  it('Spanne: beide Grenzen gerundet, Satz im Hinweis', () => {
-    const r: TarifRegel = { typ: 'rahmen', vonChf: 105, bisChf: 1234, ergebnisRundung: { schrittChf: 10, richtung: 'ab' } };
-    const e = spanne(r, 0);
-    expect([e.vonChf, e.bisChf]).toEqual([100, 1230]);
-    expect(e.hinweis).toMatch(/Grenzen auf CHF 10 abgerundet\.$/);
+  it('Nachzug A2: Mindestbetrag gilt auch nach «ab»-Rundung (min 75, Schritt 10 → 75, nicht 70)', () => {
+    const r: TarifRegel = { typ: 'sockel_prozent', prozent: 1, minChf: 75, ergebnisRundung: { schrittChf: 10, richtung: 'ab' } };
+    // roh 10 → Mindestbetrag 75 → «ab 10» ergäbe 70 → erneut geklammert 75.
+    expect(betrag(r, 1000)).toBe(75);
+  });
+  it('Nachzug A2: Höchstbetrag gilt auch nach «auf»-Rundung (max 1005, Schritt 10 → 1005, nicht 1010)', () => {
+    const r: TarifRegel = { typ: 'sockel_prozent', prozent: 50, maxChf: 1005, ergebnisRundung: { schrittChf: 10, richtung: 'auf' } };
+    expect(betrag(r, 10_000)).toBe(1005);
+  });
+  it('Nachzug A2: Klammer nach Rundung auch für Band-Grenzen und Summe; Schritt-Zeile nennt sie', () => {
+    const voll: TarifRegel = { typ: 'staffel_voll_prozent', baender: [{ bisChf: Infinity, fixChf: 0, prozent: 1, minChf: 75 }], ergebnisRundung: { schrittChf: 10, richtung: 'ab' } };
+    expect(betrag(voll, 1000)).toBe(75);
+    const s: TarifRegel = { typ: 'summe', teile: [{ etikett: 'A', regel: { typ: 'fix', chf: 1004 } }, { etikett: 'B', regel: { typ: 'fix', chf: 0.5 } }], maxChf: 1005, ergebnisRundung: { schrittChf: 10, richtung: 'auf' } };
+    const e = auswertenTarif(s, 0);
+    expect(e.deterministisch && e.betragChf).toBe(1005);
+    expect(e.deterministisch && e.schritte.some((z) => z.startsWith('Höchstgebühr'))).toBe(true);
+  });
+  it('Nachzug A3: ergebnisRundung nur für deterministische Ergebnisse (Spanne wirft mit klarer Meldung)', () => {
+    const rahmen: TarifRegel = { typ: 'rahmen', vonChf: 1234, bisChf: 1236, ergebnisRundung: { schrittChf: 1000, richtung: 'naechste' } };
+    expect(() => auswertenTarif(rahmen, 0)).toThrow(/ergebnisRundung nur für deterministische Ergebnisse/);
+    const sr: TarifRegel = { typ: 'staffel_rahmen', baender: [{ grenzeChf: Infinity, minChf: 1001, maxChf: 1009 }], ergebnisRundung: { schrittChf: 10, richtung: 'ab' } };
+    expect(() => auswertenTarif(sr, 5)).toThrow(RangeError);
+    const sm: TarifRegel = { typ: 'summe', teile: [{ etikett: 'R', regel: { typ: 'rahmen', vonChf: 1, bisChf: 2 } }], ergebnisRundung: { schrittChf: 10, richtung: 'ab' } };
+    expect(() => auswertenTarif(sm, 0)).toThrow(RangeError);
+    // Ohne ergebnisRundung bleibt die Spanne ungerundet und der Text stimmt mit den Feldern überein.
+    const ohne = spanne({ typ: 'rahmen', vonChf: 1234, bisChf: 1236 }, 0);
+    expect([ohne.vonChf, ohne.bisChf]).toEqual([1234, 1236]);
   });
   it('Schritt-Zeile mit Ergebnis', () => {
     const e = auswertenTarif(ne, 12_345);
@@ -270,10 +293,35 @@ describe('interpolierter Richtpunkt (TG)', () => {
     const unendlich: TarifRegel = { typ: 'staffel_rahmen', baender: [{ grenzeChf: Infinity, minChf: 1, maxChf: 2, interpoliert: true, vonGrenzeChf: 10 }] };
     expect(() => auswertenTarif(unendlich, 500)).toThrow(RangeError);
   });
+  it('Nachzug H1: offenes oberstes Band mit interpoliert nennt die Regel im Fehlertext', () => {
+    const offen: TarifRegel = { typ: 'staffel_rahmen', baender: [{ grenzeChf: 1000, minChf: 1, maxChf: 2 }, { grenzeChf: Infinity, minChf: 2, maxChf: 3, interpoliert: true }] };
+    expect(() => auswertenTarif(offen, 5000)).toThrow(/interpoliert.*endliche[sn]? Band/);
+    // Unterhalb des offenen Bands bleibt die Regel auswertbar.
+    expect(spanne(offen, 500).bisChf).toBe(2);
+  });
   it('Summe: Richtpunkt nur, wenn jeder Rahmen-Teil einen hat', () => {
     const s: TarifRegel = { typ: 'summe', teile: [{ etikett: 'Fix', regel: { typ: 'fix', chf: 100 } }, { etikett: 'TG', regel: tg }] };
     expect(spanne(s, 50_000).richtpunktChf).toBe(6528.57);
     const ohne: TarifRegel = { typ: 'summe', teile: [{ etikett: 'Fix', regel: { typ: 'fix', chf: 100 } }, { etikett: 'R', regel: { typ: 'rahmen', vonChf: 1, bisChf: 2 } }] };
     expect('richtpunktChf' in spanne(ohne, 5)).toBe(false);
+  });
+});
+
+describe('Nachzug H2: Summe ohne gemeinsame bezifferte Seite', () => {
+  it('Teil nur «bis», Teil nur «von»: Satz ohne leere Klammer', () => {
+    const r: TarifRegel = {
+      typ: 'summe',
+      teile: [
+        { etikett: 'A', regel: { typ: 'staffel_rahmen', baender: [{ grenzeChf: Infinity, maxChf: 100 }] } },
+        { etikett: 'B', regel: { typ: 'staffel_rahmen', baender: [{ grenzeChf: Infinity, minChf: 50 }] } },
+      ],
+    };
+    const e = auswertenTarif(r, 10);
+    if (e.deterministisch) throw new Error('erwartet Hinweis');
+    expect(e.vonChf).toBeUndefined();
+    expect(e.bisChf).toBeUndefined();
+    expect(e.hinweis).not.toContain('()');
+    expect(e.hinweis).toMatch(/Summe aus A, B nicht beziffert/);
+    expect(e.hinweis).toMatch(/\.$/);
   });
 });
