@@ -63,6 +63,28 @@ async function umgebung() {
     await act(async () => { root.render(React.createElement(Blatt, { modus, rolle, onZu, dialogUmPanel })); });
     return { onZu, root, act };
   };
+  /** O-28 (15.10.2026): Blatt (Modus «fest», ohne Falle) UND «Ansicht ▾»-Menü (Modus
+   *  «popover», mit Falle) zugleich offen — `erstes` bestimmt, wer seinen Esc-Zuhörer
+   *  zuerst am `window` anmeldet (also zuerst läuft). Der Fokus steht im Menü. */
+  function Menue({ onZu }: { onZu: () => void }) {
+    const wrapRef = React.useRef<HTMLDivElement | null>(null);
+    const panelRef = React.useRef<HTMLDivElement | null>(null);
+    usePopoverAutoZu({ offen: true, schliesse: onZu, wrapRef, panelRef, modus: 'popover', aussenAusnahme: '[data-oeffner]' });
+    return React.createElement('div', { ref: wrapRef },
+      React.createElement('div', { ref: panelRef, tabIndex: -1, 'data-menue-flaeche': '' },
+        React.createElement('button', { id: 'menue-knopf' }, 'Ganzer Erlass')));
+  }
+  const mounteBlattUndMenue = async (erstes: 'blatt' | 'menue') => {
+    const blattZu = vi.fn();
+    const menueZu = vi.fn();
+    const root = createRoot(document.getElementById('wurzel') as unknown as Element);
+    const blatt = React.createElement(Blatt, { key: 'b', modus: 'fest', rolle: 'primaer', onZu: blattZu, dialogUmPanel: false });
+    const menue = React.createElement(Menue, { key: 'm', onZu: menueZu });
+    // Reihenfolge der Effekte = Reihenfolge der Kinder: das erste meldet seinen Zuhörer zuerst an.
+    await act(async () => { root.render(React.createElement(React.Fragment, null, ...(erstes === 'blatt' ? [blatt, menue] : [menue, blatt]))); });
+    (document.getElementById('menue-knopf') as unknown as HTMLElement).focus();
+    return { blattZu, menueZu };
+  };
   const druecke = () => {
     const e = new window.Event('keydown');
     Object.assign(e, { key: 'Escape' });
@@ -84,7 +106,7 @@ async function umgebung() {
     document.body.appendChild(d);
     return d;
   };
-  return { mounte, druecke, klick, modal, document };
+  return { mounte, mounteBlattUndMenue, druecke, klick, modal, document };
 }
 
 afterEach(() => {
@@ -161,5 +183,24 @@ describe('Esc · Modus «blatt» (modal, Fokus-Falle über useDialogFokus)', () 
     popover.remove();
     u.druecke();
     expect(b.onZu, 'Gegenfall: nach dem Popover schliesst das nächste Esc das Blatt').toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('Esc · Blatt neben einem offenen Menü (O-28)', () => {
+  for (const erstes of ['blatt', 'menue'] as const) {
+    it(`ein Esc schliesst nur das Menü, das Blatt bleibt — gleich, wer zuerst zuhört (${erstes} zuerst)`, async () => {
+      const u = await umgebung();
+      const z = await u.mounteBlattUndMenue(erstes);
+      u.druecke();
+      expect(z.menueZu, 'das Menü nimmt das Esc an').toHaveBeenCalledTimes(1);
+      expect(z.blattZu, 'EIN Esc schloss Menü UND Blatt (O-28)').not.toHaveBeenCalled();
+    });
+  }
+
+  it('Gegenfall: ohne Menü schliesst Esc das Blatt (die Sperre ist kein Dauerschloss)', async () => {
+    const u = await umgebung();
+    const b = await u.mounte('fest', 'primaer');
+    u.druecke();
+    expect(b.onZu).toHaveBeenCalledTimes(1);
   });
 });

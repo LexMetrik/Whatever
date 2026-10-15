@@ -1,6 +1,6 @@
 import { useEffect, useRef, type RefObject } from 'react';
 import { useDialogFokus } from '../../../components/layout/useDialogFokus';
-import { offeneModaleDialoge } from '../../../components/layout/modalerDialog';
+import { imMenue, offeneModaleDialoge } from '../../../components/layout/modalerDialog';
 import { tastendruckGehoertPane } from '../panePrioritaet';
 
 // ─── EIN Auto-Zu für alle aufziehbaren Flächen des Lesers V3 (H3) ────────────
@@ -153,6 +153,13 @@ export function usePopoverAutoZu({ offen, schliesse, wrapRef, panelRef, modus, a
       if (offeneModaleDialoge().length > 0) return;
       // … und nur das Blatt DES Panes, das den Tastendruck beansprucht.
       if (paneRolle != null && !tastendruckGehoertPane(paneRolle === 'sekundaer')) return;
+      // O-28 (15.10.2026): steht der Fokus in einem offenen MENÜ («Ansicht ▾» neben dem
+      // Blatt, `data-menue-flaeche`), gehört dieses Esc dem Menü — gemessen @1440 und
+      // @1024 (Blatt offen, dann «Ansicht» auf, Esc): EIN Esc schloss beide. Und hat eine
+      // andere Fläche das Esc schon angenommen (`useDialogFokus` markiert es), bleibt das
+      // Blatt ebenfalls stehen — gleichgültig, welcher der beiden Zuhörer zuerst läuft.
+      if (e.defaultPrevented || imMenue(document.activeElement)) return;
+      e.preventDefault();
       schliesseRef.current();
     };
     window.addEventListener('keydown', taste);

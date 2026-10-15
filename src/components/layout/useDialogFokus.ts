@@ -53,6 +53,11 @@ export function fokusziele(
     if (el.closest('[inert]') != null) return false;
     const zu = el.closest('details:not([open])');
     if (zu != null && !(el.tagName === 'SUMMARY' && el.parentElement === zu)) return false;
+    // O-28 (15.10.2026): auch das <summary> einer zugeklappten Innenbox ist unerreichbar,
+    // solange eine AUSSENbox zu ist (`closest` fand nur die innerste). Gemessen an der
+    // Auswahl: zugeklappt in zugeklappt führte «innen» als Kandidat — Tab sprang auf ein
+    // Ziel, das `focus()` ablehnt.
+    if (zu != null && zu.parentElement?.closest('details:not([open])') != null) return false;
     return sichtbar(el);
   });
 }
@@ -107,6 +112,11 @@ export function useDialogFokus(
         // Ein oberer modaler Dialog (Norm-Popover über dem Sheet/Blatt) nimmt
         // dieses Esc selbst an — die Fläche dahinter bleibt stehen.
         if (modalDarueber(wurzel)) return;
+        // O-28: EIN Esc schliesst EINE Fläche. Wer es annimmt, markiert es als behandelt
+        // (`preventDefault`) — eine Fläche, die ohne Falle daneben offen steht (Erlass-Blatt),
+        // liest `defaultPrevented` und bleibt stehen (`usePopoverAutoZu`).
+        if (e.defaultPrevented) return;
+        e.preventDefault();
         onCloseRef.current();
         return;
       }
