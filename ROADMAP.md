@@ -78,6 +78,12 @@ Kürzel = Zweig-Präfix und Trailer `Roadmap:`.
    (7) → prozesskosten (4) → Vorlagen (RV-06, RV-30, RV-31, RV-47, RV-74, RV-77); je Werkzeug
    Warnhinweis entfernen (Zeile in `src/lib/bekannteFehler.ts`, #1364). RL-43 berührt `historie-parse.ts`/`revisionen-extrakt.ts` ⇒ seriell zu Spur A.
    *Ort:* FB Bereich 5; `fahrplaene/FAHRPLAN-RECHTSLOGIK.md` §4 (W-01…W-22).
+   *Stand 15.10.:* notariat-grundbuch Welle 2b gelandet: RL-26 Uri (#1379), RL-27 Staffel-Primitiv
+   (#1380), RL-29 T1 Staffeln Romandie/TI/BE/SO (#1382), RL-28 T1 Grundpfand Deutschschweiz (#1385),
+   RL-33 T1 MWST (#1388), RL-36 Tarifkopien + Zuständigkeitskosten (#1392); RV-17/20/24/27 erledigt,
+   RV-19/25/82 eingeengt. Offen: RL-29 T3 Rundungen (BS/AG/VS/SZ, GE-Sockel), RL-28 T2/T3
+   (Romandie/TI, Pfandsteuer GE/VS), RL-33 T2 (Hinweistexte/Formulare), RL-34 Emissionsabgabe,
+   RV-82 Rest — Startauftrag im Übergabe-Chip.
 
 *Gestrichen 11.10.:* `WARNHINWEIS` gebaut (#1364 Warnhinweis an 17 Rechnern, Auswahlregel im Kopf von `src/lib/bekannteFehler.ts`; #1365 Urteile U-03/04/10/13/16/24/25, U-06 schon #1149; U-15 offen in FB).
 
@@ -91,6 +97,7 @@ E0
 - 7.10.: Turso nach #1343/#1350: 1. Lauf Vollneubau ~260k Zeilen, dann Delta-Log «erfolgreich» vs. «expired» (M-2) prüfen — FAHRPLAN-DATENHALTUNG §17
 - David-Handgriff: AUTOMERGE_TOKEN bis 20.10. erneuern (FB S-14); normen-monatslauf.yml stösst keine CI an (Lauf 1.11.)
 E1·A
+- 15.10. Korpus-Nachzug UR RB 9.2311 und GL art_7.1 als Kantons-Snapshots (BEKANNTE_LUECKEN in check-vollstaendigkeit.ts) — Korpus-Werkstatt
 - David 7.10.: Messlauf Phase 1 strukturgleich + schneller (1 PR, 6–10 h, kein Tor; Zählung wie segmente-logik.ts; Tempo mit Fedlex-Arm, gleiche Drossel, n ≥ 5)
 - 15.10. LESER-NAV-Rest (#1369–#1374): Link-Tab-Layout und Zurück nach Reload (O-27), O-31(4), NHG-Gliederung = Daten (O-34f), Bilder relativ zur Textbreite (O-56) — FB Bereich 6
 - FB Bereich 6: Leser-Suche: O-19/O-20/O-23 erst nach Entscheid über #1352; OR-Tempo O-21/O-22; Go David 15.10.: O-36(b) markieren, Merkliste in ⌘K; O-15 Timing-Verdacht (51/51 grün)
@@ -102,11 +109,14 @@ E1·A
 - 14.9.: Folge-Lieferungen A3 Bundesrats-VO (836 fehlend, 2 Lieferungen), A4 Departements-/Amts-VO (635) — FAHRPLAN-FEDLEX-PORTFOLIO §21
 - Sammel: übriger Bundestext — FB Bereich 1
 E1·B
+- 15.10. RECHTSLOGIK-Rest aus GP: GE Kapitalherabsetzung — Code deckelt Promille-Anteil bei 1000, REmNot Art. 25 Abs. 4 deckelt nur die feste Gebühr bei Sanierung (Lesart, beurkundung.ts:351); TG Schlichtungshinweis fehlt in der Zuständigkeits-Anzeige (schlichtungHinweisAusTarif); AI/AR/SG Haupttext 50–100k nur Grundrahmen; JU Punktwert 2026 (Arrêté 176.210.12) amtlich unbelegt; MWST_BEHANDLUNG (mwst-notariat.ts) nicht im Drift-Inventar; SZ Tarif-Stand «Fassung unklar (PDF-Kopf 1.2.2027)» — FB RV-94/95
+- wartet auf David 15.10.: W-16 MWST BS/VD/JU «zuzüglich 8,1 % nach Bundesrecht» (Empfehlung ja); AG Grundpfand-Minimum Notariatsteil 200 (⅔, umgesetzt) oder 300
 - Sammel: übrige Rechner/Vorlagen und Urteilsdaten — FB Bereiche 3, 5
 - 5.10.: Gegenprüfungs-Pin «fedlex OR 20260101» überholt (Cache 20261001) ⇒ Gegenprüfungen der OR-Engines neu fällig
 - Abnahme David: Gründungs-Checklisten AG/GmbH nach TJPG — bibliothek/recherche/ag-gruendung.md, gmbh-gruendung.md
 - 7.10.: Widerspruch W-17: FB RV-26 «wartet auf David» vs. FAHRPLAN-RECHTSLOGIK §4 «entschieden 24.9.»; W-09/11/17/22 dort ohne Zeichen
 E3
+- 15.10. Uri-Texte nach RL-26: VorlageVorsorgeauftrag.tsx:92, BeurkundungForm.tsx:80, NotariatGrundbuchForm.tsx:61, beurkundung.ts:103 sagen «Rahmen/aufwandabhängig» statt «kein amtlicher Tarif»; Karte «Grundpfand (Schuldbrief)» umfasst bei UR nur den Eintrag; Gründungsmaske zeigt Schritt-Texte/Engine-Hinweise nicht
 - Go David 24.9.: Rest «eine Titel- und Abschnittsordnung» (HN-D2 gebaut #1190/#1197, Band-Rezept #1373): Titelschrift — FB Teil B
 - Go David 8.8.: Kalender-Export: Termine als «frei» — FB Teil B
 - David 1.10./3.10.: Deaktiviert-/Hover-Varianten angleichen; Regelsätze von Belegen entflechten — FB Teil B
@@ -114,6 +124,7 @@ E3
 - David 6.10.: Omnilex-Sichtung: 7 Posten U2–U8 (Datums-Tor zu «Gilt seit», Ausgang-Label wartet auf David) — bibliothek/recherche/omnilex-app-sichtung-2026-10-06.md §6
 - 10.10. E0-REGISTER-Rest: wartet auf David quelleUrl auslagern (≈115 KB, Karten-Link ändern); norm-index.json 6 MB UI-ungenutzt; 4 Prüf-Nachzüge — FB S-26
 E3·W
+- 15.10. RECHTSLOGIK-Prozess: scripts/fedlex-cache.sh schreibt /tmp/<erlass>.html; Export-Ratsche ist Golden-Schwester (Dossiers nennen sie); Bau-Agenten liefern leere Abschluss-Commits (3×, Auftragsvorlage); 3 verwaiste Worktrees (blissful-jackson-183301, e0-brandschutz, interesting-jones-e007af)
 - Go David 5.10.: CI: Dauer-Wackler an der Wurzel (git 3fd5db8f9:bibliothek/betrieb/e2e-fang-historie-2026-10-05/), leser-kopf-cls-s3 hängt an Fedlex, Läufer-Kontingent
 - 10.10. Kahlschlag-Nachlauf: erlass-klassifikation.json docs/→daten/; alte Skill-Namen; gitFlaechen.ts:427, DESIGN-REGLEMENT Z.235/365 Test-gekoppelt; tor-schutz Amend-Fehlalarme; .selbstopt-ereignisse.jsonl ohne Leser; diff-klassieren.ts ohne Test
 - 15.10. LESER-NAV: vitest-Config schliesst **/.claude/** aus ⇒ in Worktrees keine Tests ohne Hilfs-Config; landung-kette.sh hält bei Queue-Eintrag ohne PR-Lauf fälschlich an
