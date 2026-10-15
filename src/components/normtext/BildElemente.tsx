@@ -6,8 +6,12 @@
 // TabSpalte in ArtikelBody). Die Dateien liegen unter public/normtext/bilder/…;
 // die URL ist stets `/normtext/${datei}`.
 
-// Eine amtliche Einzel-Abbildung ODER Formel. breite/hoehe = Pixelmasse der
-// Quelle (für CLS-freie Platzreservierung); formel unterscheidet die Beschriftung.
+// Eine amtliche Einzel-Abbildung ODER Formel. breite/hoehe = physische Satzmasse in mm
+// (Fedlex `data-scaled-width/-height`), NICHT Pixel; sie dienen der CLS-freien
+// Platzreservierung (Seitenverhältnis) und als mm-Breite (BildFigur). Fedlex selbst
+// skaliert relativ zur Textspalte (`data-original-text-width`): die Prozent-Darstellung
+// bräuchte den Extraktor (Risiko-Pfad) — hier mm mit `max-w-full` als Näherung.
+// formel unterscheidet die Beschriftung.
 export interface BildDaten {
   datei: string;
   alt: string;
@@ -46,8 +50,10 @@ export function BildFigur({ bild }: { bild: BildDaten }) {
         decoding="async"
         width={bild.breite}
         height={bild.hoehe}
-        // LESER-NAV/O-34e: `breite`/`hoehe` sind Fedlex-`data-scaled-*` in mm (≈ 600 dpi
-        // der PNG), nicht Pixel — als width-Attribut gelesen stand die Formel 58 px klein.
+        // LESER-NAV/O-34e: `breite`/`hoehe` sind die physischen Satzmasse in mm (Fedlex
+        // `data-scaled-*`), nicht Pixel — als width-Attribut gelesen stand die Formel 58 px
+        // klein. Fedlex rendert relativ zur Textbreite (`data-original-text-width`, %); das
+        // braucht den Extraktor (Risiko-Pfad), darum hier mm mit max-w-full als Näherung.
         // Attribute bleiben als Seitenverhältnis-Reserve, die Breite kommt in mm.
         style={bild.breite ? { width: `${bild.breite}mm` } : undefined}
         className="block h-auto max-w-full rounded-md border border-line bg-paper-raised"

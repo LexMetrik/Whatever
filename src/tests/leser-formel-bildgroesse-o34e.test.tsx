@@ -4,10 +4,13 @@
  * Befund (15.10.2026, Dev-Server, Playwright-Chromium 1440, `/gesetze/bund/DBG#art-22`):
  * die Formel-PNG (1136×141 px natürlich) wurde mit den HTML-Attributen
  * width=58/height=7 gesetzt und stand 58×9 CSS-px klein (unlesbar). `breite`/`hoehe`
- * stammen aus Fedlex `data-scaled-width/-height` und sind PHYSISCHE Masse in mm, nicht
- * Pixel: 1136 px / 58 mm = 19.6 px/mm; über alle 438 Snapshot-Bilder mit Massen liegt
- * das Verhältnis bei ≈ 23.6 px/mm = 600 dpi (z. B. MEPV image1 1322 px / 56 mm = 23.6;
- * ERV image2 3562 / 150 = 23.7). BildFigur setzt die Breite darum in mm; die Attribute
+ * stammen aus Fedlex `data-scaled-width/-height` und sind PHYSISCHE Satzmasse in mm,
+ * nicht Pixel: 1136 px / 58 mm = 19.6 px/mm (≈ 498 dpi). Fedlex trägt am <img> zusätzlich
+ * `data-original-page-width` (148 = A5 bzw. 210 = A4) und `data-original-text-width`
+ * (124/108/187) und rendert die Breite als Prozent der Textspalte (scaled-width /
+ * original-text-width × 100 %; Fedlex-Frontend chunk-46JVRAFU.js, scaledElementWidthHeight).
+ * Diese Prozent-Darstellung braucht den Extraktor (Risiko-Pfad, `text-width` wird nicht
+ * mitgeführt, s. FB); BildFigur setzt die Breite darum in mm als Näherung, die Attribute
  * bleiben als Seitenverhältnis-Reserve (CLS = 0), `max-w-full` fängt breite Bilder ab.
  */
 import { describe, it, expect } from 'vitest';
