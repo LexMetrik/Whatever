@@ -383,6 +383,11 @@ const start = typeof window === 'undefined'
 let aktuell: LeserOptionen = start.opt;
 let aktuellSchrift: LeserSchrift = start.schrift;
 let aktuellAnsicht: LeserModus = start.ansicht;
+// Die Wahl, die im Speicher steht (Präferenz für künftige Aufrufe). Sie weicht von
+// `aktuellAnsicht` (die LIVE geltende Lesart dieses Tabs) ab, sobald ein anderer Tab
+// die Lesart ändert — LESER-NAV, FB O-27 BG-05. `speichere()` schreibt sie, nie die
+// Live-Lesart: sonst überschriebe Tab B bei der nächsten Option die Wahl von Tab A.
+let gemerkteAnsicht: LeserModus = start.ansicht;
 let aktuellKlassen: readonly BezugStatus[] = start.bezugKlassen;
 let aktuellKantone: readonly string[] = start.bezugKantone;
 let aktuellVon: string = start.bezugVon;
@@ -394,7 +399,7 @@ function speichere(): void {
     // stehen bewusst NICHT im Objekt — Begründung im Datei-Kopf.
     lokalSpeicher.schreib(KEY, JSON.stringify({
       ...aktuell, [BEZUG_STAND_KEY]: BEZUG_STAND, schrift: aktuellSchrift,
-      ansicht: aktuellAnsicht,
+      ansicht: gemerkteAnsicht,
       bezugKlassen: aktuellKlassen, bezugKantone: aktuellKantone,
       bezugVon: aktuellVon, bezugBis: aktuellBis,
     }));
@@ -431,6 +436,7 @@ export function wendeLeserOptionenAn(): void {
   // Prerender liefert die Gesamtansicht, ein CSS-Verstecken liesse den ganzen
   // Erlass im DOM stehen (§15) und die Hülle behauptete «ein Artikel».
   aktuellAnsicht = g.ansicht;
+  gemerkteAnsicht = g.ansicht;
   // B4: JS-konsumiert (kein data-*-Attribut) — die Weiche «welcher Shard» und
   // die Gruppierung der Kanten sind React-Zustand, nicht CSS.
   aktuellKlassen = g.bezugKlassen;
@@ -543,7 +549,13 @@ export function setzeBezugKantone(kantone: readonly string[]): void {
 if (typeof window !== 'undefined') {
   window.addEventListener('storage', (e) => {
     if (e.key !== KEY) return;
+    // BG-05 (LESER-NAV): die Lesart eines ANDEREN Tabs gilt nur als Präferenz für künftige
+    // Aufrufe (`gemerkteAnsicht`). Live übernommen, kippte ein laufender Leser in den
+    // Einzelmodus und sprang auf den Einstiegsanker (Lesestelle weg). Alle übrigen
+    // Optionen synchronisieren weiter live.
+    const lebend = aktuellAnsicht;
     wendeLeserOptionenAn();
+    aktuellAnsicht = lebend;
     hoerer.forEach((f) => f());
   });
 }
@@ -657,8 +669,11 @@ export function useBezugKantone(): readonly string[] {
  * Verhalten, das eine Radiogruppe zusagt.
  */
 export function setzeLeserAnsicht(m: LeserModus): void {
-  if (m === aktuellAnsicht) return;
+  // No-op nur, wenn Live-Lesart UND gemerkte Wahl schon so stehen (nach dem Wechsel eines
+  // anderen Tabs weichen beide ab: die bewusste Wahl hier muss dann trotzdem gespeichert werden).
+  if (m === aktuellAnsicht && m === gemerkteAnsicht) return;
   aktuellAnsicht = m;
+  gemerkteAnsicht = m;
   speichere();
   hoerer.forEach((f) => f());
 }
