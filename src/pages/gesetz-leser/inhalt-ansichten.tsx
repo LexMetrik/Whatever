@@ -141,16 +141,26 @@ function PdfEmbedAnsicht({ erlass, currency, teilausfall, kopf, internRefs }: {
           </div>
         ) : (
         <>
-        {hinweisArt === 'zu-langsam' && (
-          // O-34b-Nachzug (Gegenprüfung #1370, §8): Browser ohne Auskunft über den
-          // Viewer — nach dem Zeitdeckel ohne `load` nicht nur der Spinner weg, sondern
-          // derselbe Weg zum PDF wie oben. Das Frame bleibt gemountet (kann noch laden);
-          // der Hinweis verschwindet dann mit `pdfBereit`.
-          <div data-pdf-zu-langsam role="status" className="rounded-lg border border-rule-struktur bg-paper-sunken px-4 py-3 text-body-s text-ink-700">
-            <p>Das PDF erscheint hier nicht (oder noch nicht). Das amtliche PDF lässt sich herunterladen (oben) oder in einem neuen Tab öffnen (unten).</p>
-          </div>
-        )}
         <div className="relative">
+          {/* O-57 (Gegenprüfung #1370, 15.10.2026): der Hinweis «zu langsam» stand als
+              Block VOR dem Frame — nach dem Zeitdeckel (12 s) schob er den Frame samt
+              Seite um die Hinweishöhe nach unten (späte Layoutverschiebung). Jetzt
+              liegt er als Überlagerung am Kopf des Frames: kein Fluss, keine
+              Verschiebung. Die Live-Region (`role="status"`) ist von Anfang an im DOM
+              und leer; erst ihr Inhalt wird eingefügt — so sagen Screenreader den
+              Hinweis an (ein mit Inhalt frisch eingefügtes `role="status"` wird nicht
+              überall vorgelesen). Der Frame bleibt gemountet (kann noch laden); der
+              Hinweis verschwindet dann mit `pdfBereit`. Die Überlagerung nimmt KEINE Klicks
+              (`pointer-events-none` an der Region, nichts darin schaltet sie wieder ein): sie hat
+              keinen Schliessknopf und deckte sonst die PDF-Werkzeugleiste darunter. Der Hinweis
+              enthält keine Links, bleibt also lesbar (Nachzug Gegenprüfung #1384). */}
+          <div data-pdf-zu-langsam-region role="status" className="pointer-events-none absolute inset-x-3 top-3 z-sticky">
+            {hinweisArt === 'zu-langsam' && (
+              <div data-pdf-zu-langsam className="rounded-lg border border-rule-struktur bg-paper-sunken px-4 py-3 text-body-s text-ink-700">
+                <p>Das PDF erscheint hier nicht (oder noch nicht). Das amtliche PDF lässt sich herunterladen (oben) oder in einem neuen Tab öffnen (unten).</p>
+              </div>
+            )}
+          </div>
           {ladeAnzeigen && (
             // W3-7: `aria-hidden` ist gefallen — die vorige Fassung verbarg die
             // Ladeauskunft vollständig vor Screenreadern (kein `role="status"`

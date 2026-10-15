@@ -66,6 +66,25 @@ describe('fokusziele — geschlossene <details>', () => {
     expect(namen(fokusziele(wurzel, null, ALLES_SICHTBAR))).toEqual(['aussen', 'innen', 'y']);
   });
 
+  it('O-28: zugeklappte Innenbox in zugeklappter Aussenbox — auch ihr <summary> ist unerreichbar', () => {
+    const { wurzel } = dialog(`
+      <details><summary id="aussen">aussen</summary>
+        <details><summary id="innen">innen</summary><a id="x" href="/x">x</a></details>
+      </details>
+      <button id="danach">danach</button>`);
+    expect(namen(fokusziele(wurzel, null, ALLES_SICHTBAR))).toEqual(['aussen', 'danach']);
+  });
+
+  it('O-28: drei Ebenen, die oberste offen, die mittlere zu — nur das <summary> der mittleren', () => {
+    const { wurzel } = dialog(`
+      <details open><summary id="oben">oben</summary>
+        <details><summary id="mitte">mitte</summary>
+          <details open><summary id="unten">unten</summary><a id="x" href="/x">x</a></details>
+        </details>
+      </details>`);
+    expect(namen(fokusziele(wurzel, null, ALLES_SICHTBAR))).toEqual(['oben', 'mitte']);
+  });
+
   it('das gerade fokussierte Element bleibt Kandidat (auch wenn die Layout-Prüfung es ausschliesst)', () => {
     const { wurzel, q } = dialog('<button id="a">a</button><button id="b">b</button>');
     const aktiv = q('#b');
