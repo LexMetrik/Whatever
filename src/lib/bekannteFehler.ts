@@ -50,7 +50,6 @@ export const BEKANNTE_FEHLER: Readonly<Record<string, readonly BekannterFehler[]
     { fb: 'RV-20', text: 'Notariats- und Grundbuch-Staffeln falsch (TI bis 5-fach; VD, FR, VS, NE, GE, JU, BE).' },
     { fb: 'RV-24', text: 'Mehrwertsteuer auf Notariatsgebühren fehlt oder ist falsch (7 Kantone).' },
     { fb: 'RV-25', text: 'Emissionsabgabe fehlt ohne Hinweis im Ergebnis (bis CHF 40’000).' },
-    { fb: 'RV-27', text: 'Kopierte Tarifdaten weichen voneinander ab (u. a. Schlichtung VS).' },
     { fb: 'RV-82', text: '«Weitere Geschäftsarten» FR, VD, VS, JU, NE nicht abgebildet; GE Kapitalherabsetzung: Sockel 88 statt 87.50.' },
   ],
   prozesskosten: [
@@ -71,7 +70,6 @@ export const BEKANNTE_FEHLER: Readonly<Record<string, readonly BekannterFehler[]
     { fb: 'RV-26', text: 'Streitwert wiederkehrender Leistungen nach Art. 51 Abs. 4 BGG falsch berechnet.' },
   ],
   zustaendigkeit: [
-    { fb: 'RV-27', text: 'Kopierte Tarifdaten der Kostenangaben weichen von der Tarifquelle ab (u. a. Schlichtung AI).' },
     { fb: 'RV-33', text: 'Bestimmung der Schlichtungsbehörde doppelt vorhanden, die beiden Fassungen weichen voneinander ab.' },
     { fb: 'RV-79', text: 'Zwischenentscheide: Rechtsmittel als «zulässig» ausgewiesen, obwohl Art. 92/93 BGG es einschränken.' },
   ],
