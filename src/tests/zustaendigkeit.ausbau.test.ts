@@ -171,7 +171,7 @@ describe('Zuständigkeit — Praxis-Umbau: Kostenfreiheit (Art. 113 Abs. 2) + Fa
     expect(ZUSTAENDIGKEIT_KOSTEN.SZ.schlichtung.text).toContain("100–1'000");
     expect(ZUSTAENDIGKEIT_KOSTEN.AG.schlichtung.erlass).toContain('662.110'); // GebührD, NICHT aufgehobenes VKD
     expect(ZUSTAENDIGKEIT_KOSTEN.SG.schlichtung.hinweis).toContain('1.7.2026'); // QS-GP 2.7.2026: SG-GKV-Sunset abgelaufen → Nachfolgefassung v3863 in Vollzug
-    expect(ZUSTAENDIGKEIT_KOSTEN.JU.schlichtung.text).toContain('Punkte');
+    expect(ZUSTAENDIGKEIT_KOSTEN.JU.schlichtung.text).toContain('Punktwert'); // Tarif in Punkten, CHF mit Punktwert 1.05 eingerechnet (RL-36)
   });
   it('Nicht vermögensrechtlich: alle 26 Kantone haben Rahmen ODER Auffang-Klausel samt Erlass-§ (Dossier 6.6.2026)', async () => {
     const { ZUSTAENDIGKEIT_KOSTEN } = await import('../data/zustaendigkeitKosten');

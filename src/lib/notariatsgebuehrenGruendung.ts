@@ -1,24 +1,34 @@
 // Dossier: bibliothek/kosten/notariatstarife-gruendung-kantone.md
 // ─── Notariatsgebühren der Gründungs-Beurkundung je Kanton (P11) ─────────────
 //
-// Quelle: bibliothek/kosten/notariatstarife-gruendung-kantone.md (7.6.2026;
-// amtliche Erlasssammlungs-APIs, abrogated/future_versions geprüft —
-// Daueranweisung David). Status ERSTRECHERCHE — fachliche Abnahme ausstehend;
-// die UI legt das offen (§8). Tarifwerte NETTO (MWST 8,1 % und Auslagen
-// kommen hinzu); Bemessungsgrundlage = Kapital in CHF (Agio zählt nur in BE
-// ausdrücklich zur Basis — dort als Hinweis; übrige Kantone konservativ ohne
-// Agio, Verifikation offen). Fremdwährungs-Kapital: Bemessung am
-// CHF-Gegenwert ist nicht verifiziert → ehrlich «offen».
+// RL-36 (RV-27, B2-10, S3c-c): DÜNNER ADAPTER auf die allgemeine Beurkundungs-
+// Engine. Die Gründungstarife (Geschäftsart 'ag_gruendung') stehen genau einmal
+// in `SONDERTARIFE.ag_gruendung` (src/data/tarif/beurkundung.ts, §5); diese
+// Datei hält KEINE eigene Tarifkopie mehr, sondern bildet das Engine-Ergebnis
+// auf die Anzeigeform der Gründungs-Maske ab. Status der Daten: 'recherche'
+// (fachliche Abnahme ausstehend) — die UI legt das offen (§8).
 //
-// §4/§5: reine Datenschicht + deterministische Rechnung, KEINE UI; die
-// Gründungs-Masken (AG, später GmbH — die Tarife gelten je Erlass auch der
-// GmbH) konsumieren das Ergebnis.
+// Tarifwerte sind Beurkundungsgebühren OHNE Auslagen; ob und wie MWST (8,1 %)
+// hinzukommt, hängt vom Kanton ab (freies Notariat: ja; ZG: im Tarif
+// inbegriffen; Amtsnotariate: i. d. R. keine) und wird NICHT hier, sondern in
+// der MWST-Logik der Kosten-Engines behandelt (RL-33). Bemessungsgrundlage =
+// Kapital in CHF (Agio zählt nur in BE ausdrücklich zur Basis — dort als
+// Hinweis; übrige Kantone konservativ ohne Agio, Verifikation offen).
+// Fremdwährungs-Kapital: Bemessung am CHF-Gegenwert ist nicht verifiziert →
+// die aufrufende Maske zeigt ehrlich «offen» (kein Aufruf).
+//
+// §4/§5: reine Datenschicht-Abbildung + deterministische Rechnung, KEINE UI;
+// die Gründungs-Masken (AG, später GmbH) konsumieren das Ergebnis.
+
+import { KANTONE } from './kantone';
+import type { KantonCode } from '../data/tarif/typen';
+import { berechneBeurkundung, tarifFuer } from './beurkundung';
 
 type NotariatsGebuehr =
   | { typ: 'betrag'; chf: number }
   | { typ: 'rahmen'; vonChf: number; bisChf: number; mittelChf?: number }
-  | { typ: 'aufwand' }
-  | { typ: 'offen' };
+  /** Amtlich nicht bezifferbar (Aufwandtarif, kein amtlicher Tarif) — nie ein Schein-Wert. */
+  | { typ: 'nicht_beziffert' };
 
 export type NotariatsTarifAuskunft = {
   kanton: string;
@@ -31,148 +41,52 @@ export type NotariatsTarifAuskunft = {
   hinweise: string[];
 };
 
-const clamp = (x: number, lo: number, hi: number) => Math.min(Math.max(x, lo), hi);
+const istKanton = (k: string): k is KantonCode => (KANTONE as readonly string[]).includes(k);
 
-/** BE Anhang 4 zu Art. 21 GebVN (Stand 1.7.2006): Kapital-Obergrenze der
- *  Stufe → [Minimum, Mittel, Maximum]. */
-const BE_ANHANG_4: [number, number, number, number][] = [
-  [200_000, 1_000, 1_300, 1_600],
-  [300_000, 1_150, 1_500, 1_850],
-  [400_000, 1_300, 1_700, 2_100],
-  [500_000, 1_450, 1_900, 2_350],
-  [600_000, 1_600, 2_100, 2_600],
-  [700_000, 1_750, 2_300, 2_850],
-  [800_000, 1_900, 2_500, 3_100],
-  [900_000, 2_050, 2_700, 3_350],
-  [1_000_000, 2_200, 2_900, 3_600],
-  [2_000_000, 2_950, 3_900, 4_850],
-  [3_000_000, 3_700, 4_900, 6_100],
-  [4_000_000, 4_450, 5_900, 7_350],
-  [5_000_000, 5_200, 6_900, 8_600],
-  [10_000_000, 8_950, 11_900, 14_850],
-  [15_000_000, 12_700, 16_900, 21_100],
-  [20_000_000, 16_450, 21_900, 27_350],
-];
-
-/** Gebühr der Gründungs-Beurkundung für das CHF-Kapital; null = Kanton ohne
- *  Dossier-Eintrag (ehrliche Lücke — UI zeigt den generischen Hinweis). */
+/** Gebühr der Gründungs-Beurkundung für das CHF-Kapital.
+ *  null = kein gültiger Kantonscode. Wirft RangeError bei negativem, nicht
+ *  endlichem oder NaN-Kapital (S3c-c: kein stilles Clampen auf den Mindestbetrag). */
 export function notariatsGebuehrGruendung(kanton: string, kapitalChf: number): NotariatsTarifAuskunft | null {
-  const k = kapitalChf;
-  switch (kanton) {
-    case 'ZH':
-      return {
-        kanton,
-        // Ziff. 4.4.3.1 NotGebV: 1‰ vom Kapital, Rahmen 500–4'000 für die
-        // «übrigen Gesellschaften» (Normalfall ohne ordentliche Revisions-
-        // pflicht); Publikums-/grössere Gesellschaften (Art. 727 Abs. 1 OR)
-        // bis 12'000/8'000. Nachverifikation 7.6.2026 am amtlichen PDF
-        // (Nachtrag 123, Stand 1.1.2024): die früher verdrahteten Rahmen
-        // 5'000/10'000/15'000 stammten aus den alten Nachträgen 066/095
-        // und waren ÜBERHOLT.
-        ergebnis: { typ: 'betrag', chf: clamp(k * 0.001, 500, 4_000) },
-        erlassLabel: 'NotGebV ZH (LS 243), Ziff. 4.4.3.1',
-        erlassUrl: 'https://www.zhlex.zh.ch/Erlass.html?Open&Ordnr=243',
-        stand: '1.1.2024 (Nachtrag 123, amtliches PDF verifiziert)',
-        hinweise: [
-          '1‰ vom Kapital im Rahmen CHF 500–4’000 (übrige Gesellschaften); bei ordentlicher Revisionspflicht nach Art. 727 Abs. 1 OR gelten Rahmen bis CHF 8’000 bzw. 12’000.',
-        ],
-      };
-    case 'BE': {
-      const stufe = BE_ANHANG_4.find(([bis]) => k <= bis);
-      if (!stufe) return {
-        kanton,
-        ergebnis: { typ: 'offen' },
-        erlassLabel: 'GebVN BE (BSG 169.81), Art. 21 + Anhang 4',
-        erlassUrl: 'https://www.belex.sites.be.ch/app/de/texts_of_law/169.81',
-        stand: '1.3.2022',
-        hinweise: ['Anhang 4 endet bei Kapital CHF 20 Mio. — darüber nicht abgebildet.'],
-      };
-      return {
-        kanton,
-        ergebnis: { typ: 'rahmen', vonChf: stufe[1], bisChf: stufe[3], mittelChf: stufe[2] },
-        erlassLabel: 'GebVN BE (BSG 169.81), Art. 21 + Anhang 4',
-        erlassUrl: 'https://www.belex.sites.be.ch/app/de/texts_of_law/169.81',
-        stand: '1.3.2022',
-        hinweise: [
-          'Bemessung nach Kapital UND allfälligem Agio (Art. 21 Abs. 1 GebVN). Bei ausschliesslicher Barliberierung darf das Minimum um bis zu 50 % unterschritten werden (Abs. 5); Online-Gründung über das Portal nach Zeitaufwand, mindestens CHF 150 (Abs. 6).',
-        ],
-      };
-    }
-    case 'LU': {
-      const kk = Math.min(k, 10_000_000);
-      let g = Math.min(kk, 500_000) * 0.003;
-      g += clamp(kk - 500_000, 0, 500_000) * 0.0025;
-      g += clamp(kk - 1_000_000, 0, 1_000_000) * 0.002;
-      g += clamp(kk - 2_000_000, 0, 3_000_000) * 0.0015;
-      g += clamp(kk - 5_000_000, 0, 5_000_000) * 0.0005;
-      return {
-        kanton,
-        ergebnis: { typ: 'betrag', chf: clamp(g, 1_000, 11_750) },
-        erlassLabel: 'BeurkGebV LU (SRL 258), § 37',
-        erlassUrl: 'https://srl.lu.ch/app/de/texts_of_law/258',
-        stand: '1.1.2022',
-        hinweise: ['Progressive Promille-Staffel (3‰ bis CHF 500’000, degressiv darüber), mindestens CHF 1’000, höchstens CHF 11’750; gilt nach § 42 auch der GmbH-Gründung.'],
-      };
-    }
-    case 'SG': {
-      // Deklarierte fachliche Änderung 7.6.2026: Nr. 60.13 zählt «je weitere
-      // VOLLE Fr. 100'000» — nur abgeschlossene Tranchen (floor). Beleg:
-      // derselbe GebT schreibt, wo angebrochene Einheiten voll zählen sollen,
-      // ausdrücklich «ganze oder angebrochene» (Nr. 52.03); eine allgemeine
-      // Anbruchsregel existiert weder im GebT noch in sGS 821.1. Die frühere
-      // ceil-Lesart überzeichnete jede nicht-glatte Summe (250'000: 545
-      // statt 465). Amtliches Rechenbeispiel fehlt — Abnahme David.
-      const weitereVolle = Math.max(0, Math.floor((k - 100_000) / 100_000));
-      return {
-        kanton,
-        ergebnis: { typ: 'betrag', chf: Math.min(385 + weitereVolle * 80, 15_000) },
-        erlassLabel: 'GebT SG (sGS 821.5), Nr. 60.13',
-        erlassUrl: 'https://www.gesetzessammlung.sg.ch/app/de/texts_of_law/821.5',
-        stand: '1.1.2026',
-        hinweise: [
-          'CHF 385 für die ersten CHF 100’000, je weitere VOLLE CHF 100’000 zusätzlich CHF 80, höchstens CHF 15’000 (Taxe der Amtsnotariate; angebrochene Tranchen zählen nach dem Erlasswortlaut nicht — systematisch belegt, amtliches Rechenbeispiel offen).',
-        ],
-      };
-    }
-    case 'BS': {
-      if (k < 100_000) {
-        return {
-          kanton,
-          ergebnis: { typ: 'rahmen', vonChf: 750, bisChf: 2_000 },
-          erlassLabel: 'Notariatstarif BS (SG 292.400), Ziff. 33 lit. a',
-          erlassUrl: 'https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/292.400',
-          stand: '1.7.2016',
-          hinweise: ['Kapital unter CHF 100’000: Rahmen nach Interesse und Aufwand (§ 5).'],
-        };
-      }
-      let g = 2_000;
-      g += clamp(k - 100_000, 0, 100_000) * 0.0024;
-      g += clamp(k - 200_000, 0, 800_000) * 0.0022;
-      g += clamp(k - 1_000_000, 0, 2_000_000) * 0.002;
-      g += clamp(k - 3_000_000, 0, 2_000_000) * 0.0015;
-      g += clamp(k - 5_000_000, 0, 5_000_000) * 0.001;
-      g += Math.max(0, k - 10_000_000) * 0.00075;
-      return {
-        kanton,
-        ergebnis: { typ: 'betrag', chf: Math.min(g, 50_000) },
-        erlassLabel: 'Notariatstarif BS (SG 292.400), Ziff. 33 lit. a',
-        erlassUrl: 'https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/292.400',
-        stand: '1.7.2016',
-        hinweise: ['Sockel CHF 2’000 bei Kapital CHF 100’000; vom Mehrbetrag degressive Prozent-Staffel (0,24 %–0,075 %), höchstens CHF 50’000; vollständige Gründung einschliesslich Statutenentwurf.'],
-      };
-    }
-    case 'AG':
-      return {
-        kanton,
-        ergebnis: { typ: 'aufwand' },
-        erlassLabel: 'Dekret Notariatstarif AG (SAR 295.250), § 1',
-        erlassUrl: 'https://gesetzessammlungen.ag.ch/app/de/texts_of_law/295.250',
-        stand: '1.1.2025',
-        hinweise: [
-          'Gesellschaftsgründungen sind nicht tarifiert — Gebühr nach Aufwand, Stundenansatz höchstens CHF 300 (§ 1); der Promilletarif (§ 2) gilt nur Grundstücken/Baurechten. Amtlich nicht bezifferbar.',
-        ],
-      };
-    default:
-      return null;
+  if (!Number.isFinite(kapitalChf) || kapitalChf < 0) {
+    throw new RangeError(`Kapital muss eine endliche Zahl ≥ 0 sein (erhalten: ${kapitalChf}).`);
   }
+  if (!istKanton(kanton)) return null;
+
+  const r = berechneBeurkundung({ geschaeftsart: 'ag_gruendung', kanton, geschaeftswertCHF: kapitalChf });
+  const aufgeloest = tarifFuer('ag_gruendung', kanton);
+  // Für alle 26 Kantone ist ein Sondertarif hinterlegt (UR/AG: formel_extern);
+  // fehlt er künftig, bleibt die Auskunft ehrlich «nicht beziffert».
+  if (!r.posten || !aufgeloest) {
+    return {
+      kanton, ergebnis: { typ: 'nicht_beziffert' }, erlassLabel: 'kantonaler Notariatstarif', erlassUrl: '',
+      stand: 'offen', hinweise: r.hinweise,
+    };
+  }
+
+  const t = aufgeloest.tarif;
+  const e = r.posten.ergebnis;
+  let ergebnis: NotariatsGebuehr;
+  if (e.deterministisch) {
+    ergebnis = { typ: 'betrag', chf: e.betragChf };
+  } else if (e.vonChf != null && e.bisChf != null) {
+    ergebnis = { typ: 'rahmen', vonChf: e.vonChf, bisChf: e.bisChf };
+    // BE Anhang 4 weist «Mittel» aus: in jeder Zeile das arithmetische Mittel von
+    // Minimum und Maximum (gegen das amtliche PDF gelesen, 15.10.2026).
+    if (kanton === 'BE') ergebnis.mittelChf = (e.vonChf + e.bisChf) / 2;
+  } else {
+    ergebnis = { typ: 'nicht_beziffert' };
+  }
+
+  const hinweise: string[] = [];
+  if (t.hinweis) hinweise.push(t.hinweis);
+  if (!e.deterministisch && e.hinweis) hinweise.push(e.hinweis);
+
+  return {
+    kanton,
+    ergebnis,
+    erlassLabel: `${t.erlassName} (${t.erlassNr}), ${t.artikel}`,
+    erlassUrl: t.quelleUrl,
+    stand: t.stand,
+    hinweise,
+  };
 }

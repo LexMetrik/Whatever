@@ -27,7 +27,10 @@ describe('Notariatsgebühren Gründung — Goldwerte je Kanton', () => {
     expect(t.ergebnis).toEqual({ typ: 'rahmen', vonChf: 1_000, bisChf: 1_600, mittelChf: 1_300 });
     const t2 = notariatsGebuehrGruendung('BE', 950_000)!;   // Stufe bis 1 Mio.
     expect(t2.ergebnis).toEqual({ typ: 'rahmen', vonChf: 2_200, bisChf: 3_600, mittelChf: 2_900 });
-    expect(notariatsGebuehrGruendung('BE', 25_000_000)!.ergebnis.typ).toBe('offen'); // > Anhang-Ende
+    // > Anhang-Ende: GebVN Anhang 4, letzte Zeile (20 Mio.) trägt die Marke «Maximum»
+    // → Höchststufe gilt weiter (RL-36, §3 Nr. 16): Rahmen 16'450–27'350, Mittel 21'900.
+    expect(notariatsGebuehrGruendung('BE', 25_000_000)!.ergebnis)
+      .toEqual({ typ: 'rahmen', vonChf: 16_450, bisChf: 27_350, mittelChf: 21_900 });
   });
 
   it('LU (§ 37 BeurkGebV): progressive Staffel, min 1000 / max 11750', () => {
@@ -56,9 +59,32 @@ describe('Notariatsgebühren Gründung — Goldwerte je Kanton', () => {
     expect(notariatsGebuehrGruendung('BS', 50_000)!.ergebnis).toEqual({ typ: 'rahmen', vonChf: 750, bisChf: 2_000 });
   });
 
-  it('AG: nach Aufwand (nicht tarifiert); übrige Kantone: ehrliche Lücke (null)', () => {
-    expect(notariatsGebuehrGruendung('AG', 100_000)!.ergebnis.typ).toBe('aufwand');
-    expect(notariatsGebuehrGruendung('GE', 100_000)).toBeNull();
-    expect(notariatsGebuehrGruendung('TI', 100_000)).toBeNull();
+  it('AG/UR: nicht beziffert (Aufwand bzw. kein amtlicher Tarif), nie ein Schein-Wert', () => {
+    expect(notariatsGebuehrGruendung('AG', 100_000)!.ergebnis.typ).toBe('nicht_beziffert');
+    expect(notariatsGebuehrGruendung('UR', 100_000)!.ergebnis.typ).toBe('nicht_beziffert');
+  });
+
+  it('VD/GE/TI: Engine-Werte aus SONDERTARIFE.ag_gruendung statt null (RL-36, B2-10)', () => {
+    expect(notariatsGebuehrGruendung('VD', 100_000)!.ergebnis).toEqual({ typ: 'rahmen', vonChf: 500, bisChf: 2_300 });
+    expect(notariatsGebuehrGruendung('GE', 100_000)!.ergebnis).toEqual({ typ: 'rahmen', vonChf: 1_150, bisChf: 2_650 });
+    expect(betrag('TI', 100_000)).toBe(500);        // Art. 3 lit. l: 0,5 % auf 100'000
+  });
+
+  it('BE-Mittel = arithmetisches Mittel von Min/Max (Anhang 4, alle Zeilen am amtlichen PDF gelesen)', () => {
+    for (const [kap, mittel] of [[200_000, 1_300], [1_000_000, 2_900], [5_000_000, 6_900], [20_000_000, 21_900]] as const) {
+      const e = notariatsGebuehrGruendung('BE', kap)!.ergebnis;
+      expect(e.typ === 'rahmen' && e.mittelChf).toBe(mittel);
+    }
+  });
+
+  it('Eingangs-Guard (S3c-c): negativ/NaN/unendlich → klarer Fehler, kein Clamp', () => {
+    expect(() => notariatsGebuehrGruendung('ZH', -100_000)).toThrow(RangeError);
+    expect(() => notariatsGebuehrGruendung('ZH', -100_000)).toThrow(/Kapital/);
+    expect(() => notariatsGebuehrGruendung('BE', Number.NaN)).toThrow(RangeError);
+    expect(() => notariatsGebuehrGruendung('SG', Number.POSITIVE_INFINITY)).toThrow(RangeError);
+  });
+
+  it('Unbekannter Kantonscode → null (kein Kanton, keine Auskunft)', () => {
+    expect(notariatsGebuehrGruendung('XX', 100_000)).toBeNull();
   });
 });

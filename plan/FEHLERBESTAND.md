@@ -45,10 +45,10 @@ Daten von Sichter X1 stehen in ASCII-Umschrift (ae/oe/ue), wie geliefert.
 | 2 Kantonstext | 16 | 8 | 0 | 24 |
 | 3 Urteilsdaten | 28 | 0 | 0 | 28 |
 | 4 Verweise | 8 | 2 | 0 | 10 |
-| 5 Rechner und Vorlagen | 85 | 8 | 0 | 93 |
+| 5 Rechner und Vorlagen | 86 | 9 | 0 | 95 |
 | 6 Oberfläche | 5 | 50 | 0 | 55 |
 | 7 Sicherheit und Betrieb | 1 | 0 | 28 | 29 |
-| **gesamt** | **226** | **69** | **28** | **323** |
+| **gesamt** | **227** | **70** | **28** | **325** |
 
 **Nachtrag 10.10.2026 (Kahlschlag-Abgleich):** 14 Zeilen `N10-01`…`N10-14` für Merkzettel, die hier fehlten (A §5: 1, A §7: 2, B: 3, C: 8); RV-80/81/82/91 tragen ihren seit 5.10. angelegten Posten nach; 104 Zeilen tragen den Zusatz «Ort (Posten): …» (Fundstellen aus dem Posten, Zeilenstand des Postens, nicht nachgemessen). Die Zählung oben ist die vom 5.10. und nicht nachgeführt.
 
@@ -228,7 +228,7 @@ nirgends im Repo. (5) Texte nicht umformuliert (ausser Eszett durch ss ersetzt u
 | V-09 | N | «§ N» in Fremdgesetz-Chapeau unverlinkt | ArtikelBody | ja | – | 2026-09-24-n-in-fremdgesetz-chapeau-items-verlinken |
 | V-10 | N | 802 von 7790 SG-Zitaten unaufgelöst (Zitat-Brücke ohne Link) | SG 154.100 | ja | – | 2026-09-24-sg-langform-erstzitate-heben-recall-der-zitat-bruecke |
 
-## 5 · Rechner und Vorlagen (93 Zeilen)
+## 5 · Rechner und Vorlagen (95 Zeilen)
 
 | Nr | Kl. | Klartext | Beispiel | offen? | David? | Postendatei(en) |
 |---|---|---|---|---|---|---|
@@ -258,7 +258,7 @@ nirgends im Repo. (5) Texte nicht umformuliert (ausser Eszett durch ss ersetzt u
 | RV-24 | R | MWST auf Notariatsgebühren: erledigt RECHTSLOGIK Teil 1 (PR folgt; Tabelle `MWST_BEHANDLUNG`, Rappen, ZH AG-Gründung 500 +40.50); offen: Form-/Hinweistexte «MwSt. (freies Notariat) nicht enthalten» (notariatGrundbuch.ts:112, NotariatGrundbuchForm.tsx:30, beurkundung.ts:101, BeurkundungForm.tsx) = PR 2; BS, VD, JU Zuordnung (Tarif schweigt, Betrag nach Bundesrecht); Rest Auflage A: `mwstHinweis` aus `weitereKosten()` wird in BeurkundungForm.tsx nicht angezeigt; beurkundung.ts:101 Text falsch für ZG/ZH — PR 2 | ZH AG-Gründung 500 +40.50 | ja | wartet-auf: David (BS/VD/JU) | 2026-09-23-rl-33-mwst-notariate |
 | RV-25 | R | Emissionsabgabe fehlt still im Beurkundungsrechner (bis 40000); Ort (Posten): BeurkundungForm.tsx:100-102, beurkundungZusatzkosten.ts:58-60 | AG 5 Mio 40000 | ja | – | 2026-09-23-rl-34-emissionsabgabe |
 | RV-26 | R | Art. 51 Abs. 4 BGG Streitwert wiederkehrende Leistungen falsch/unverdrahtet (W-17 offen); Ort (Posten): streitwert.ts:96, bgerRechtsweg.ts:85, BgerRechtswegForm.tsx:90 | Unterhalt 1000/Mt = 240000 | ja | ja (wartet auf David; FAHRPLAN-RECHTSLOGIK §4 führt W-17 als entschieden 24.9. — Widerspruch klären) | 2026-09-23-rl-35-art-51-abs-4-bgg-kapitalisierung |
-| RV-27 | R | Kopierte Tarifdaten (§5) weichen voneinander ab, VS-Beurkundung/AI-Schlichtung; Ort (Posten): zustaendigkeitKosten.ts:48-222, notariatsgebuehrenGruendung.ts:36-53 … | BE 25 Mio 16450-27350 | ja | – | 2026-09-23-rl-36-5-kopien-tarifdaten |
+| RV-27 | R | Kopierte Tarifdaten (§5) weichen voneinander ab, VS-Schlichtung/AI-Schlichtung; Ort (Posten): zustaendigkeitKosten.ts:48-222, notariatsgebuehrenGruendung.ts:36-53 … | BE 25 Mio 16450-27350 | erledigt RECHTSLOGIK (PR folgt): Teil 1 Gründungs-Adapter (BE 25 Mio, VD/GE/TI, Guard), AI-Schlichtung in Tarifdaten und SCHLICHTUNG_NV (dritte Kopie), VS-Hinweis; VS-nv-Rahmen 50–350 (Art. 15 Abs. 1) berichtigt; Teil 2 zustaendigkeitKosten.ts aus den Tarifquellen abgeleitet (AI, VS, TG, TI berichtigt) | – | 2026-09-23-rl-36-5-kopien-tarifdaten |
 | RV-28 | R | ZPO-Kosten Bund: Verfahrensart fix «ordentlich», Streitwertfehler; Ort (Posten): prozesskosten.ts:205-206, streitwert.ts:62, gebvKosten.ts:68-76 | Miete 50000 vereinfacht | ja | – | 2026-09-23-rl-37-zpo-kosten-bund-verfahrensart |
 | RV-29 | R | Verzugszins/Teuerung/Erbteilung Rest: Zinsforderung Mahnung, LIK-Reihe, Erbteilung; Ort (Posten): verzugszins.ts:31, VerzugszinsForm.tsx:169, likReihe.ts:13-14, lik-reihe-generieren.py:49 … | V6 Mahnung kein Zins | ja | – | 2026-09-23-rl-38-erbteilung-verzugszins-teuerung-rest |
 | RV-30 | R | Familienrecht-Vorlagen: volljährige Kinder im Sorge-Antrag, PartG-Frist 2 statt 1 Jahr; Ort (Posten): vorlagen/scheidungsklage.ts:208, scheidungsbegehren.ts:204, eheschutzgesuch.ts:244-251 | Kind geb. 2007 | ja | – | 2026-09-23-rl-40-familienrecht |
@@ -325,6 +325,8 @@ nirgends im Repo. (5) Texte nicht umformuliert (ausser Eszett durch ss ersetzt u
 | RV-91 | N | S3f: scheidungsbegehren.ts Zentrierung (optisch); lohnfortzahlung.ts Formulierung; lehrvertrag.ts toter Satz — AUDIT-BUGS 120–125, alle «niedrig, offen» | Vorlagen | ja (laut BEFUNDLISTE, kein Posten) | – | kein Posten; Projektordner pruefung-rechtslogik-2026-09-23/BEFUNDLISTE · Nachtrag 10.10.: seit 5.10. Posten 2026-10-05-vorlagen-audit-bugs-120-125-niedrig-s3f |
 | RV-92 | N | Klage ordentlich: Direkt-Download im Vorschau-Panel ist nicht an offene Mängel gebunden (untere Export-Knöpfe schon). | VorlageKlageOrdentlich / VorlagenSeite (direktExportBlocker:false) | ja (laut Posten) | – | 2026-09-23-klage-ordentlich-direkt-download-der-vorschau-nicht-an-maeng |
 | RV-93 | N | Vorlagen Klage vereinfacht / Schlichtungsgesuch BS: «Weiter» sperrt nicht bei Pflichtfeldern, Fehler erst im letzten Schritt; BS-Hinweise ohne Norm-Links. | Vorlagen-Wizard | ja (laut Posten) | – | 2026-09-23-klage-vereinfacht-weiter-sperrt-nie-wegen-pflichtfeldern, 2026-09-23-schlichtungsgesuch-bs-pflichtfeld-fehler-nur-im-letzten-schr |
+| RV-94 | R | GR Schlichtungsrahmen: Tarifregel 100–500 (VGZ Art. 2 Abs. 1), Entscheidvorschlag 300–3'000 (Abs. 2) nur im Hinweis; Zuständigkeits-Anzeige zeigt darum 100–500 statt Hülle 100–3'000 wie AI/VS (GP RL-36 T2, E2) | GR Schlichtung | ja | – | kein Posten; GP-Bericht RL-36 T2 15.10.2026 |
+| RV-95 | N | VS Gerichtstarif als «SR 173.8» statt «RS 173.8» (kantonale Sammlung) an gerichtskosten.ts:356, parteientschaedigung.ts:398, modifikatoren.ts:85, normtext-inventar-kanton.test.ts:273 und 4 Golden-Fällen; FR mischt SGF/RSF (GP RL-36 T2, E4) | pk:entscheid:allg:12k:VS | ja | – | kein Posten; GP-Bericht RL-36 T2 15.10.2026 |
 | N10-01 | N | Nachtrag 10.10.: ZpoFristenForm.tsx:386 Zustellfiktion-Throw ungefangen (praktisch unerreichbar); property-invarianten-2026-08-15.md «nie Samstag» gilt nur noch für gesetzliche Fristen (Dokument nachtragen); Fristengesetz SR 173.110.3 Wortlaut nicht amtlich nachgeprüft (RL-24-Nebenfund 24.9.) | ZpoFristenForm.tsx:386 | ja (laut Posten) | – | 2026-09-25-property-invarianten-nie-samstag-nur-gesetzliche-fristen-zpo |
 
 ## 6 · Oberfläche (59 Zeilen)
