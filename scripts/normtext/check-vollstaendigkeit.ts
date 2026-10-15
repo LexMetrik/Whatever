@@ -172,6 +172,7 @@ const BEKANNTE_LUECKEN: BekannteLuecke[] = [
   { snapshotId: 'kanton/SG/914.5/art_60.01.01', grund: 'token-nicht-im-Erlass', notiz: 'SG GebT 914.5: Tarif-Nr. 60.01.01 im Anhang, nicht über LexWork strukturiert.' },
   { snapshotId: 'kanton/GL/III%20B%2F3%2F2/art_1.1', grund: 'token-nicht-im-Erlass', notiz: 'GL Gebührengesetz: Anhang-Ziff. 1.1 nicht über LexWork strukturiert.' },
   { snapshotId: 'kanton/GL/III%20B%2F3%2F2/art_8.1', grund: 'token-nicht-im-Erlass', notiz: 'GL Gebührengesetz: Anhang-Ziff. 8.1 nicht über LexWork strukturiert.' },
+  { snapshotId: 'kanton/GL/III%20B%2F3%2F2/art_7.1', grund: 'token-nicht-im-Erlass', notiz: 'GL Gebührengesetz: Anhang-Ziff. 7.1 nicht über LexWork strukturiert (Stand 15.10.2026).' },
   { snapshotId: 'kanton/NW/265.51/art_2.6.1.1', grund: 'token-nicht-im-Erlass', notiz: 'NW 265.51: Tarif-Nr. 2.6.1.1 im Anhang, nicht strukturiert.' },
 
   // ── SH/221.101: verkettetes Zitat auf den ergänzenden Erlass 211.433 ────────

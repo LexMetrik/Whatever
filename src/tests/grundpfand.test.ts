@@ -251,4 +251,14 @@ describe('RL-28 Datenprüfung Rundungsangaben (B1/B2)', () => {
       }
     }
   });
+
+  it('eine Quelle (§5): grundpfand.ts hat genau 26 Schlüssel; jeder Teil-1-Kanton trägt eine summe-Regel (ausser UR, SZ)', () => {
+    expect(Object.keys(GRUNDPFAND).sort()).toEqual([...KANTONE].sort());
+    expect(Object.keys(GRUNDPFAND).length).toBe(26);
+    for (const k of ['AG', 'BS', 'LU', 'OW', 'NW', 'GL', 'SH', 'TG', 'GR', 'ZH', 'SG'] as KantonCode[]) {
+      expect(GRUNDPFAND[k].regel.typ, k).toBe('summe');
+    }
+    expect(GRUNDPFAND.UR.regel.typ).not.toBe('summe');
+    expect(GRUNDPFAND.SZ.regel.typ).not.toBe('summe');
+  });
 });

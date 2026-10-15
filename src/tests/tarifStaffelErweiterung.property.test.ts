@@ -44,10 +44,29 @@ describe('Opt-out-Pfad — identisch mit Default-Pfad', () => {
     expect(KORPUS.length).toBeGreaterThan(200);
   });
 
-  it('jede reale Regel: explizit leere Optionen (undefined) == Regel ohne diese Felder (strikt, inkl. schritte)', () => {
+  // Regeln, die eine Option tragen (hier: die Basisrundung der Pfandsumme im Eintragsteil
+  // BS/AG, V EG ZGB BS § 51 Abs. 1 lit. b, GBAG AG § 4 Abs. 1; RL-28), sind vom Opt-out-
+  // Vergleich ausgenommen: Das Überschreiben mit `undefined` würde die Datenoption löschen
+  // und eine andere Regel vergleichen. Sie werden gezählt und als Liste fixiert.
+  const hatOption = (r: TarifRegel): boolean => {
+    const o = r as { basisRundung?: unknown; ergebnisRundung?: unknown; streitwertFaktor?: unknown };
+    return o.basisRundung !== undefined || o.ergebnisRundung !== undefined || o.streitwertFaktor !== undefined;
+  };
+  const OHNE_OPTION = KORPUS.filter((r) => !hatOption(r));
+  const MIT_OPTION = KORPUS.filter(hatOption);
+
+  it('Regeln mit gesetzter Option im Korpus: genau die zwei Eintragsregeln BS/AG mit Basisrundung 1’000', () => {
+    const liste = MIT_OPTION.map((r) => JSON.stringify({ typ: r.typ, promille: (r as { promille?: number }).promille, basisRundung: (r as { basisRundung?: unknown }).basisRundung }));
+    expect(liste.sort()).toEqual([
+      JSON.stringify({ typ: 'promille', promille: 1, basisRundung: { schrittChf: 1000, richtung: 'auf' } }),
+      JSON.stringify({ typ: 'promille', promille: 1.5, basisRundung: { schrittChf: 1000, richtung: 'naechste' } }),
+    ].sort());
+  });
+
+  it('jede reale Regel ohne gesetzte Option: explizit leere Optionen (undefined) == Regel ohne diese Felder (strikt, inkl. schritte)', () => {
     fc.assert(
-      fc.property(fc.nat({ max: KORPUS.length - 1 }), rappen(10_000_000_000), (i, r) => {
-        const regel = KORPUS[i];
+      fc.property(fc.nat({ max: OHNE_OPTION.length - 1 }), rappen(10_000_000_000), (i, r) => {
+        const regel = OHNE_OPTION[i];
         const x = chfVon(r);
         const mitLeer = { ...regel, basisRundung: undefined, ergebnisRundung: undefined, streitwertFaktor: undefined } as TarifRegel;
         const a = auswertenTarif(regel, x);
