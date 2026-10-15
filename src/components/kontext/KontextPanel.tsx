@@ -309,9 +309,13 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
     && !revLaden && !revFehler && alleRevisionen.length === 0
     && !vernehmlassungenLaden && !vernehmlassungenFehler && vernehmlassungen.length === 0
     && (entscheide?.length ?? 0) === 0;
+  // O-53 (15.10.2026): das Panel wächst nach dem Laden der Entscheide (≈ 200 → bis
+  // 1170 px). Der Leser blendet sein Fussstück (Rückweg-Knopf) solange aus
+  // (`visibility`, Platz bleibt): ein Shift unsichtbarer Elemente zählt nicht.
+  const kontextLaedt = entscheideLaden || softLawLaden || botschaftenLaden || revLaden || vernehmlassungenLaden;
 
   return (
-    <section aria-labelledby="kontext-titel"
+    <section aria-labelledby="kontext-titel" data-kontext-laedt={kontextLaedt ? '' : undefined}
       className="mt-12 border-t border-line pt-6 space-y-5 max-w-reading">
       {/* C-2/C-6/C-7-NACHZUG (R2-A, 31.8.2026): der Panel-Kopf zeichnete das
           Gruppenkopf-Rezept (Overline + Haarlinie) selbst nach. Jetzt der
