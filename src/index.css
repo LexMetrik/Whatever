@@ -3213,6 +3213,15 @@
     min-height: var(--tap-ziel-komfort);
     min-width: var(--tap-ziel-komfort);
   }
+  /* O-49 (15.10.2026): die Kopf-Griffe «Erlass-Blatt · Gliederung · Ansicht» standen
+     auf der Stufe `kompakt` (Tablet, @768) mit 24 px Höhe (gemessen: 70×24, 24×24,
+     70×24) — WCAG-2.5.8-konform, aber für den Finger knapp, obwohl die Kopfzeile dort
+     48 px hoch ist. Auf Geräten mit grobem Zeiger (`pointer: coarse`) trägt der Griff
+     das Komfortmass; Maus-Geräte behalten die dichte Zeile. Nur die Höhe (die Breite
+     gibt der Inhalt, Nachbarn bleiben unberührt). */
+  @media (pointer: coarse) {
+    .lc-leiste-griff-fest { min-height: var(--tap-ziel-komfort); }
+  }
   /* ─── Schliess-✕ (A3-1, R3-β 31.8.2026) ──────────────────────────────────
      Anatomie des EINEN Schliess-Knopfes (`components/ui/SchliessKnopf.tsx`,
      dort die Messreihe der sieben Fundstellen und die Kanon-Wahl). Hier steht
@@ -4361,6 +4370,14 @@
     transition: transform var(--dur-base) var(--ease);
   }
   details[open] > summary::after { transform: rotate(90deg); }
+  /* O-43 (15.10.2026): trägt die Summary ein Kind mit eigenem `ml-auto` (Zähler,
+     Stand), teilte sich der freie Platz zwischen ihm UND dem `margin-left: auto`
+     des Zeichens zur Hälfte — die Zahl rutschte zur Mitte (Probe `details` 600 px,
+     Titel + `ml-auto`-Zahl: Zahl 237 px vom rechten Rand, statt am Rand). Das Kind
+     nimmt den Platz, das Zeichen folgt ihm dahinter (`margin-left: 0`; der `gap`
+     der Summary trägt den Abstand). Keine neue Zahl: dieselbe Regel, nur ohne zweite
+     Auto-Marge. */
+  details > summary:has(> [class~='ml-auto'], > [class~='ms-auto'])::after { margin-left: 0; }
   @media (prefers-reduced-motion: reduce) {
     details > summary::after { transition: none; }
   }
