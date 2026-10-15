@@ -45,6 +45,7 @@ import { BLATT_ZU, type BlattZustand } from './reiterleiste/blatt';
 import { useDialogFokus } from './useDialogFokus';
 import { useKopieren } from '../useKopieren';
 import { istGemerkt, merkRouteAusAdresse, schalteMerkung } from '../../lib/merkliste';
+import { merkAnsage } from '../merkliste/merkAnsage';
 import { sageKopiertAn } from '../ui/kopierAnsage';
 import { usePaneSteuerung } from './usePaneLayout';
 // ── §15 · DAS KONTEXTMENÜ GEHÖRT NICHT IN DEN START-CHUNK ──────────────────
@@ -859,9 +860,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       const gemerkt = istGemerkt(merkAdresse);
       e.push({ id: 'merken', label: gemerkt ? 'Aus Merkliste entfernen' : 'Merken', onKlick: () => {
         // Date.now() ist in der Darstellungsschicht erlaubt (nicht in src/lib, §2).
-        const danach = schalteMerkung({ route: merkAdresse, titel, zeit: Date.now() });
-        sageKopiertAn(danach === gemerkt ? 'Merkliste nicht gespeichert: der Browser lässt keinen Speicher zu'
-          : danach ? `${titel} gemerkt` : `${titel} aus der Merkliste entfernt`);
+        sageKopiertAn(merkAnsage(titel, schalteMerkung({ route: merkAdresse, titel, zeit: Date.now() })));
       } });
     }
     // ── W2·18 WELLE 3 PUNKT 5 · UMORDNEN OHNE MAUS ──────────────────────────

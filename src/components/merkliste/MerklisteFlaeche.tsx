@@ -8,6 +8,7 @@ import { RegisterStrich } from '../start/ZuletztVerwendet';
 import { StartFlaeche } from '../start/StartFlaeche';
 import { SchliessKnopf } from '../ui/SchliessKnopf';
 import { useKopieren } from '../useKopieren';
+import { uebernahmeAnsage } from './merkAnsage';
 import { useMerkliste } from './useMerkliste';
 
 // ─── «Merkliste» — Fläche der Startseite (LESER-NAV · R-2) ───────────────────
@@ -26,6 +27,7 @@ import { useMerkliste } from './useMerkliste';
 
 /** So viele Zeilen vor «Alle anzeigen» (Darstellung, nicht Speicher). */
 const SICHTBAR = 6;
+const STATUS_LEER = 'Merkliste ist jetzt leer.';
 
 export function MerklisteFlaeche() {
   return <MerklisteAnsicht liste={useMerkliste()} />;
@@ -40,8 +42,12 @@ export function MerklisteAnsicht({ liste }: { liste: readonly MerkEintrag[] }) {
   const geteilt = useMemo(() => (payload ? dekodiereMerkliste(payload) : null), [payload]);
   const [alle, setAlle] = useState(false);
   const [leerenFrage, setLeerenFrage] = useState(false);
-  const [status, setStatus] = useState('');
+  const [statusRoh, setStatus] = useState('');
+  // «Jetzt leer» gilt nur, solange die Liste leer ist (füllt sie sich wieder, verschwindet die Meldung von selbst).
+  const status = statusRoh === STATUS_LEER && liste.length > 0 ? '' : statusRoh;
   const fokusRoute = useRef<string | null>(null);
+  const fokusStatus = useRef(false);
+  const statusRef = useRef<HTMLParagraphElement>(null);
   const { marke, kopieren } = useKopieren();
 
   // Fokus nach dem Entfernen auf die Nachbarzeile — sonst fiele er auf <body> (WCAG 2.4.3).
@@ -53,20 +59,32 @@ export function MerklisteAnsicht({ liste }: { liste: readonly MerkEintrag[] }) {
       .find((li) => li.dataset.merkRoute === ziel)?.querySelector<HTMLElement>('a')?.focus();
   }, [liste]);
 
-  if (liste.length === 0 && !payload) return null;
+  // Wurde die LETZTE Zeile entfernt oder die Liste geleert, gibt es keine Nachbarzeile mehr und die
+  // Fläche verschwindet gleich mit (WCAG 2.4.3): der Fokus geht dann auf die bleibende Statusmeldung
+  // («Merkliste ist jetzt leer.», tabIndex=-1), nicht auf <body>.
+  useEffect(() => {
+    if (!fokusStatus.current) return;
+    fokusStatus.current = false;
+    statusRef.current?.focus();
+  }, [liste, status]);
+
+  // Die leere Fläche bleibt nur, solange die Meldung nach dem Leeren steht (sonst: keine Fläche).
+  if (liste.length === 0 && !payload && !status) return null;
 
   const entferne = (route: string, idx: number) => {
-    fokusRoute.current = (liste[idx + 1] ?? liste[idx - 1])?.route ?? null;
+    const nachbar = (liste[idx + 1] ?? liste[idx - 1])?.route ?? null;
+    fokusRoute.current = nachbar;
     if (!entferneMerkung(route)) { fokusRoute.current = null; setStatus('Nicht entfernt: der Browser lässt keinen Speicher zu.'); return; }
+    if (nachbar === null) { fokusStatus.current = true; setStatus(STATUS_LEER); return; }
     setStatus('');
   };
   const verwirf = () => navigate('/', { replace: true });
   const uebernimm = () => {
     if (!geteilt) return;
     // Date.now() ist in der Darstellungsschicht erlaubt (nicht in src/lib, §2).
-    const n = uebernimmMerkliste(geteilt, Date.now());
-    if (n < 0) { setStatus('Nicht übernommen: der Browser lässt keinen Speicher zu.'); return; }
-    setStatus(n === 0 ? 'Alle Stellen waren schon gemerkt.' : `${n} ${n === 1 ? 'Stelle' : 'Stellen'} übernommen.`);
+    const ergebnis = uebernimmMerkliste(geteilt, Date.now());
+    if (ergebnis === null) { setStatus('Nicht übernommen: der Browser lässt keinen Speicher zu.'); return; }
+    setStatus(uebernahmeAnsage(ergebnis));
     navigate('/', { replace: true });
   };
   const sichtbar = alle ? liste : liste.slice(0, SICHTBAR);
@@ -128,7 +146,10 @@ export function MerklisteAnsicht({ liste }: { liste: readonly MerkEintrag[] }) {
             {leerenFrage ? (
               <>
                 <button type="button" className="lc-btn-outline lc-btn-sm"
-                  onClick={() => { if (leereMerkliste()) setLeerenFrage(false); else setStatus('Nicht geleert: der Browser lässt keinen Speicher zu.'); }}>
+                  onClick={() => {
+                    if (!leereMerkliste()) { setStatus('Nicht geleert: der Browser lässt keinen Speicher zu.'); return; }
+                    setLeerenFrage(false); fokusStatus.current = true; setStatus(STATUS_LEER);
+                  }}>
                   Wirklich leeren
                 </button>
                 <button type="button" className="lc-btn-outline lc-btn-sm" onClick={() => setLeerenFrage(false)}>Abbrechen</button>
@@ -139,7 +160,8 @@ export function MerklisteAnsicht({ liste }: { liste: readonly MerkEintrag[] }) {
           </div>
         </>
       )}
-      <p role="status" className={status ? 'font-sans text-body-s text-ink-900' : 'sr-only'}>{status}</p>
+      <p role="status" ref={statusRef} tabIndex={-1}
+        className={status ? 'font-sans text-body-s text-ink-900' : 'sr-only'}>{status}</p>
     </StartFlaeche>
   );
 }
