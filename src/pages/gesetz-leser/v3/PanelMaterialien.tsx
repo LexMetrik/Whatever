@@ -7,6 +7,7 @@ import { fedlexLokalisiert, type Locale } from '../../../components/locale';
 import { VERNEHMLASSUNG_STATUS_LABEL, vernehmlassungInArbeit, type VernehmlassungBezug } from '../../../lib/materialien/vernehmlassungen';
 import type { BotschaftBezug } from '../../../lib/materialien/botschaften';
 import type { Geladen, MaterialStand } from './panelKontextLaden';
+import { BsOgdNachweis } from '../../../components/materialien/BsOgdNachweis';
 
 // ─── Reiter «Materialien» (H3) ───────────────────────────────────────────────
 //
@@ -176,6 +177,8 @@ export function PanelMaterialien({ stand, ebene, locale = 'de', aenderungNachBot
         Maschinell über die amtlichen Geschäftsdaten zugeordnet, fachlich nicht geprüft; bei Mantelvorlagen kann die Zuordnung unvollständig sein.
         {ebene !== 'kanton' && <> Erfasst: {ABDECKUNG_BUND}.</>}
         {erzeugt && <> <span className="num">Datenstand {datumAnzeige(erzeugt)}</span>.</>}
+        {/* O-10: CC-BY-Namensnennung, wo Grossratsgeschäfte (data.bs.ch) stehen. */}
+        {k.length > 0 && <> <BsOgdNachweis /></>}
       </p>
       {b.length > 0 && (
         <Abschnitt id="botschaften" titel="Botschaften des Bundesrates" zahl={b.length}>
