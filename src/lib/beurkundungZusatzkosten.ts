@@ -9,7 +9,8 @@
 //      Tabelle `MWST_BEHANDLUNG` (src/data/tarif/mwst-notariat.ts).
 //   2. Handelsregistergebühr des Bundes (GebV-HReg) — feste Pauschale je Vorgang.
 //   3. Emissionsabgabe (StG) — 1 % auf den den Freibetrag 1 Mio. übersteigenden
-//      Teil des AG/GmbH-Kapitals (Freibetrag, nicht Freigrenze; Art. 6 Abs. 1 lit. h StG).
+//      Teil des AG/GmbH-/Genossenschaftskapitals inkl. Agio (Freibetrag, nicht
+//      Freigrenze; Art. 6 Abs. 1 lit. h bzw. lit. b StG; Bemessung Art. 8 Abs. 1 lit. a StG).
 //
 // Quelle/Verifikation: doppelt verifiziert gegen Fedlex (StG SR 641.10 Stand
 // 1.1.2024; GebV-HReg SR 221.411.1 Stand 1.1.2021; MWSTG SR 641.20 Stand 31.3.2025;
@@ -50,10 +51,21 @@ const HREG_QUELLE = { erlass: 'GebV-HReg (SR 221.411.1), Anhang zu Art. 3', url:
 /** Geschäftsarten, bei denen die Emissionsabgabe (Schaffung/Erhöhung von
  *  Beteiligungsrechten an AG/GmbH) anfällt. */
 const EMISSIONSABGABE_ARTEN: ReadonlySet<GeschaeftsartId> = new Set<GeschaeftsartId>(
-  ['ag_gruendung', 'gmbh_gruendung', 'kapitalerhoehung'],
+  ['ag_gruendung', 'gmbh_gruendung', 'kapitalerhoehung', 'genossenschaft_gruendung'],
 );
 
-const EMISSIONSABGABE_QUELLE = { erlass: 'StG (SR 641.10), Art. 8 Abs. 1 i.V.m. Art. 6 Abs. 1 lit. h', url: 'https://www.fedlex.admin.ch/eli/cc/1974/11_11_11/de', stand: '1.1.2024' };
+/** Fällt bei dieser Geschäftsart die Emissionsabgabe an? Einzige Quelle für das
+ *  Formular (§3/§5): bestimmt, ob das Feld «Ausgabebetrag inkl. Agio» erscheint —
+ *  unabhängig davon, ob der Kantonstarif wertbasiert, fix oder offen ist. */
+export function brauchtEmissionsabgabe(art: GeschaeftsartId): boolean {
+  return EMISSIONSABGABE_ARTEN.has(art);
+}
+
+const EMISSIONSABGABE_URL = 'https://www.fedlex.admin.ch/eli/cc/1974/11_11_11/de';
+const EMISSIONSABGABE_STAND = '1.1.2024';
+/** Freibetrag-Litera je Rechtsform: AG/GmbH lit. h, Genossenschaft lit. b (beide Art. 6 Abs. 1 StG). */
+const emissionsabgabeErlass = (art: GeschaeftsartId) =>
+  `StG (SR 641.10), Art. 8 Abs. 1 lit. a i.V.m. Art. 6 Abs. 1 lit. ${art === 'genossenschaft_gruendung' ? 'b' : 'h'}`;
 
 /** Emissionsabgabe für die Zusatzkosten-Anzeige: auf ganze Franken gerundet,
  *  0 bei fehlender/zu kleiner Bemessung. Satz + Freibetrag (Freibetrag, nicht
@@ -87,12 +99,16 @@ const norm = (s: Spanne): SpanneN => ({ von: s.vonChf, bis: s.bisChf });
 
 /** Berechnet die weiteren Transaktionskosten neben der Beurkundungsgebühr.
  *  `gebuehr` = bezifferbare Beurkundungsgebühr-Spanne (null wenn nicht beziffert
- *  → dann auch keine MwSt-Bezifferung). `wertChf` = Geschäftswert (Kapital). */
+ *  → dann auch keine MwSt-Bezifferung, HReg und Emissionsabgabe bleiben).
+ *  `wertChf` = Geschäftswert (Kapital) für Tarif-Posten.
+ *  `ausgabebetragChf` = Nennwert + Agio (Art. 8 Abs. 1 lit. a StG: Bemessung ist der
+ *  der Gesellschaft zufliessende Betrag, mindestens der Nennwert); fehlt er, gilt `wertChf`. */
 export function weitereKosten(
   art: GeschaeftsartId,
   kanton: KantonCode,
   wertChf: number | undefined,
   gebuehr: Spanne | null,
+  ausgabebetragChf?: number,
 ): { posten: Zusatzposten[]; mwst: MwstBehandlung; mwstHinweis?: string } {
   const posten: Zusatzposten[] = [];
   const mwst = MWST_BEHANDLUNG[kanton];
@@ -163,8 +179,10 @@ export function weitereKosten(
   }
 
   // 3. Emissionsabgabe (1 % auf den CHF 1 Mio übersteigenden Teil = Freibetrag), nur AG/GmbH-Kapital.
-  if (EMISSIONSABGABE_ARTEN.has(art) && wertChf !== undefined) {
-    const abgabe = emissionsabgabe(wertChf);
+  const bemessungChf = ausgabebetragChf ?? wertChf;
+  if (EMISSIONSABGABE_ARTEN.has(art) && bemessungChf !== undefined) {
+    const genossenschaft = art === 'genossenschaft_gruendung';
+    const abgabe = emissionsabgabe(bemessungChf);
     // §8-Ehrlichkeit (QS-GP 2.7.2026): Der 1-Mio-Freibetrag gilt nach Art. 6 Abs. 1
     // lit. h StG GESAMTHAFT über alle Leistungen der Gesellschafter (Gründung + alle
     // früheren Erhöhungen), nicht je isoliertem Vorgang. Bei einer Kapitalerhöhung ist
@@ -174,15 +192,20 @@ export function weitereKosten(
     const kumulNote = art === 'kapitalerhoehung'
       ? ' Bei Kapitalerhöhungen gilt der Freibetrag von CHF 1 Mio. gesamthaft über alle bisherigen Leistungen (Gründung + frühere Erhöhungen) und ist meist bereits aufgebraucht — dann ist der ganze Erhöhungsbetrag zu 1 % steuerbar. Hier wird er auf den isolierten Erhöhungsbetrag angewendet; der ausgewiesene Betrag kann daher zu tief sein.'
       : '';
+    const lit = genossenschaft ? 'b' : 'h';
+    const bemessungNote = ' Bemessung: Ausgabebetrag inkl. Agio, mindestens Nennwert (Art. 8 Abs. 1 lit. a StG).';
+    const genoNote = genossenschaft
+      ? ' Genossenschaft: Die Abgabe entsteht mit der Begründung oder Erhöhung der Anteile (Art. 7 Abs. 1 lit. c StG); von den Einzahlungen eines Geschäftsjahres wird sie nur erhoben, soweit sie die Rückzahlungen im selben Geschäftsjahr übersteigen (Art. 9 Abs. 2 StG). Der Freibetrag gilt gesamthaft über alle Leistungen der Genossenschafter.'
+      : '';
     posten.push({
       label: 'Emissionsabgabe (StG)',
       von: abgabe, bis: abgabe,
-      erlass: EMISSIONSABGABE_QUELLE.erlass, url: EMISSIONSABGABE_QUELLE.url, stand: EMISSIONSABGABE_QUELLE.stand,
+      erlass: emissionsabgabeErlass(art), url: EMISSIONSABGABE_URL, stand: EMISSIONSABGABE_STAND,
       // A4-3a: Art. 6 Abs. 1 lit. h StG ist ein FREIBETRAG (nur der übersteigende Teil
       // ist steuerbar), keine Freigrenze (ganzer Betrag) — Text an die Rechnung angeglichen.
       hinweis: (abgabe === 0
-        ? 'Kapital (inkl. Agio) bis CHF 1 Mio: abgabefrei (Freibetrag Art. 6 Abs. 1 lit. h StG).'
-        : 'Bemessung Nennwert + Agio; steuerbar ist nur der CHF 1 Mio übersteigende Teil (Freibetrag Art. 6 Abs. 1 lit. h StG). Befreiungen (Sanierung, Umstrukturierung Art. 6 StG) nicht berücksichtigt.') + kumulNote,
+        ? `Kapital (inkl. Agio) bis CHF 1 Mio: abgabefrei (Freibetrag Art. 6 Abs. 1 lit. ${lit} StG).`
+        : `Steuerbar ist nur der CHF 1 Mio übersteigende Teil (Freibetrag Art. 6 Abs. 1 lit. ${lit} StG). Befreiungen (Sanierung, Umstrukturierung Art. 6 StG) nicht berücksichtigt.`) + bemessungNote + genoNote + kumulNote,
     });
   }
 
