@@ -6,6 +6,7 @@ import { SucheLeerzustand } from '../suche/SucheLeerzustand';
 import { leerOptionen } from '../suche/SucheLeerzustandKontext';
 import { aktivePosition, flacheTreffer, naechsterKey, vorigerKey, gewaehlterHref } from '../suche/trefferAuswahl';
 import { useZuletzt } from './useZuletzt';
+import { useMerkliste } from '../merkliste/useMerkliste';
 import { usePaneSteuerung } from './usePaneLayout';
 import { SchliessKnopf } from '../ui/SchliessKnopf';
 import { kuerzelHinterModal, suchKuerzelEmpfaengerAbmelden, suchKuerzelEmpfaengerAnmelden } from '../suche/fruehesSuchKuerzel';
@@ -116,7 +117,11 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
   // Leerzustands hat einen eigenen Namensraum (Gruppen «verlauf»/«einstieg»,
   // suchOptionId) und kollidiert nie mit den Treffer-oids aus `flach`.
   const verlauf = useZuletzt().slice(0, 5);
-  const flachLeer = useMemo(() => leerOptionen(verlauf, listboxId), [verlauf, listboxId]);
+  // LESER-NAV (David 15.10.2026): die Merkliste steht im selben Leerzustand — gleiche Regel,
+  // EIN Hook-Aufruf für Anzeige UND Pfeiltasten. Kein neuer Eager-Import: `Topbar` zieht
+  // `merkliste/useMerkliste` (über `VerlaufUebersicht`) schon heute in dieselbe Kette.
+  const merkliste = useMerkliste();
+  const flachLeer = useMemo(() => leerOptionen(verlauf, listboxId, merkliste), [verlauf, listboxId, merkliste]);
   // Aktive Pfeil-Auswahl: EIN Key-State über beide Listen hinweg (Panel/Leer sind
   // nie gleichzeitig sichtbar, s. zeigtPanel/zeigtLeer oben) — welche Liste
   // gerade gilt, entscheidet `feldLeer`.
@@ -528,7 +533,7 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
             // UI-NAV O1: Leerzustand (⌘K/Fokus ohne Eingabe) — Verlauf + Einstiege.
             // Listbox-Modus (Befund 38): Maus-Klick navigiert UND schliesst/leert
             // das Feld in einem Zug (wie Enter/Tastatur-Auswahl).
-            ? <SucheLeerzustand verlauf={verlauf} listboxId={listboxId} aktivId={aktivId} panelKlasse={LEER_KAPPUNG}
+            ? <SucheLeerzustand verlauf={verlauf} merkliste={merkliste} listboxId={listboxId} aktivId={aktivId} panelKlasse={LEER_KAPPUNG}
                 onNavigate={(href) => { navigate(href); auswahl(); }}
                 onVerlaufGeleert={() => feld.current?.focus()} />
             : <SuchResultate gruppen={gruppen} allesGeladen={allesGeladen} q={q} onAuswahl={auswahl} listboxId={listboxId} aktivId={aktivId} panelKlasse={SCROLL_KAPPUNG}

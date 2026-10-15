@@ -24,7 +24,28 @@ describe('Notariat/Grundbuch — amtliche Stützstellen bei Kaufpreis CHF 1 Mio'
     expect(det(bei1Mio('SG').beurkundung)).toBe(2000);
     expect(det(bei1Mio('SZ').beurkundung)).toBe(900);    // 0,9‰
     expect(det(bei1Mio('AR').beurkundung)).toBe(1000);   // kombiniert N+G
-    expect(det(bei1Mio('UR').beurkundung)).toBe(2625);   // marginal
+  });
+
+  it('Beurkundung UR — kein amtlicher Tarif, nicht gerechnet (RL-26, W-14, RB 9.2311 Art. 38 Abs. 3)', () => {
+    const p = bei1Mio('UR').beurkundung;
+    expect(p.ergebnis.deterministisch).toBe(false);
+    expect(p.ergebnis).not.toHaveProperty('vonChf');
+    expect(p.ergebnis).not.toHaveProperty('bisChf');
+    expect(p.quelle.hinweis).toContain('RB 9.2311');
+    expect(p.quelle.hinweis).toContain('erfragen');
+    expect(ngPostenText(p)).toBe('nach Vereinbarung/Aufwand');
+    expect(bei1Mio('UR').gesamtGebuehren).toBeNull();
+  });
+
+  it('Grundpfand UR — nur Eintragsgebühr nach amtlichem Grundbuchgebührentarif (RL-26, Auflage A1)', () => {
+    // Grundbuchgebührentarif UR (4.12.2024, in Kraft 1.1.2025) Art. 5 Abs. 1 und 2: 2‰, min 70, max 10'000
+    const ur = (pfandsummeCHF: number) =>
+      berechneNotariatGrundbuch({ kanton: 'UR', kaufpreisCHF: 1_000_000, mitGrundpfand: true, pfandsummeCHF }).grundpfand!;
+    expect(det(ur(20_000))).toBe(70);          // Minimum greift (2‰ = 40)
+    expect(det(ur(1_000_000))).toBe(2000);     // 2‰
+    expect(det(ur(6_000_000))).toBe(10000);    // Deckel greift (2‰ = 12'000)
+    expect(ur(1_000_000).quelle.hinweis).toContain('Nur Eintragsgebühr');
+    expect(ur(1_000_000).quelle.quelleUrl).not.toContain('urilaw');
   });
 
   it('Grundbuch — deterministische Tarife', () => {

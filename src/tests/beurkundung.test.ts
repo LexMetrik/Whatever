@@ -4,7 +4,9 @@ import { berechneBeurkundung, vergleichBeurkundung, tarifFuer, istWertbasiert } 
 import { berechneNotariatGrundbuch } from '../lib/notariatGrundbuch';
 import { notariatsGebuehrGruendung } from '../lib/notariatsgebuehrenGruendung';
 import { GESCHAEFTSART_IDS, geschaeftsart } from '../data/tarif/beurkundung-typen';
-import { KANTONE, type KantonCode } from '../data/tarif/typen';
+import { KANTONE, type KantonCode, type KantonalerTarif } from '../data/tarif/typen';
+import { SONDERTARIFE } from '../data/tarif/beurkundung';
+import { NOTARIAT } from '../data/tarif/notariat-grundbuch';
 
 describe('Beurkundung — Grundstückkauf parity (keine Regression zum Spezialrechner)', () => {
   it('Beurkundungs-Posten = Notariat-Posten des Grundstückkauf-Rechners (alle 26 Kt)', () => {
@@ -81,8 +83,6 @@ describe('Beurkundung — amtliche Stützstellen (3-fach verifiziert: find→Dop
     expect(det('buergschaft', 'ZH', 100_000)).toBe(100);   // 0,5‰ → min 100
     expect(det('stiftung', 'ZH', 1_000_000)).toBe(1000);   // 1‰
     expect(det('ag_gruendung', 'ZH', 1_000_000)).toBe(1000); // 1‰
-    expect(det('testament', 'UR')).toBe(750);              // Fix
-    expect(det('vollmacht', 'UR')).toBe(40);               // Beglaubigung
     expect(det('dienstbarkeit', 'SZ', 500_000)).toBe(450); // 0,9‰
     // GE Bürgschaft: Korrektur 1‰ (nicht 1%), min 100 / max 500.
     expect(det('buergschaft', 'GE', 200_000)).toBe(200);
@@ -99,11 +99,22 @@ describe('Beurkundung — amtliche Stützstellen (3-fach verifiziert: find→Dop
     expect(det('schenkung', 'GL', 1_000_000)).toBe(1700);   // A1-1 Staffel
   });
 
-  it('Gesamtwert-/Schwellensatz-Tarife (UR Tarif A: Satz × ganzem Wert, Stufen-Minima)', () => {
-    expect(det('schenkung', 'UR', 100_000)).toBe(500);     // 3‰ × 100k = 300 → min 500
-    expect(det('schenkung', 'UR', 500_000)).toBe(1250);    // 2,5‰ × ganzem Wert
-    expect(det('schenkung', 'UR', 1_000_000)).toBe(2500);
-    expect(det('schenkung', 'UR', 3_000_000)).toBe(6000);  // 2‰ × ganzem Wert
+  it('UR: alle Einträge ohne amtlichen Tarif, nicht gerechnet (RL-26, W-14, RB 9.2311 Art. 38 Abs. 3)', () => {
+    const ur = Object.values(SONDERTARIFE).map((m) => m?.UR).filter((t): t is KantonalerTarif => !!t);
+    expect(ur.length).toBe(21);
+    for (const t of ur) {
+      expect(t.regel.typ).toBe('formel_extern');
+      expect(t.erlassNr).toBe('RB 9.2311');
+      expect(t.quelleUrl).not.toContain('urilaw');
+    }
+    expect(berechneBeurkundung({ geschaeftsart: 'testament', kanton: 'UR' }).posten?.ergebnis.deterministisch).toBe(false);
+    expect(berechneBeurkundung({ geschaeftsart: 'vollmacht', kanton: 'UR' }).posten?.ergebnis.deterministisch).toBe(false);
+  });
+
+  it('UR: genau 22 Einträge formel_extern + RB 9.2311 (21 Sondertarife + NOTARIAT.UR)', () => {
+    const alle = [NOTARIAT.UR, ...Object.values(SONDERTARIFE).map((m) => m?.UR)].filter((t): t is KantonalerTarif => !!t);
+    const treffer = alle.filter((t) => t.regel.typ === 'formel_extern' && t.erlassNr === 'RB 9.2311');
+    expect(treffer.length).toBe(22);
   });
 
   it('aktuelle Fassung (ZH NotGebV 1.1.2024, nicht aufgehobene v95) als Rahmen', () => {

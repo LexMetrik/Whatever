@@ -1,6 +1,7 @@
 import type { ZuletztEintrag } from '../../lib/zuletztVerwendet';
+import type { MerkEintrag } from '../../lib/merkliste';
 import { suchOptionId } from './suchOptionId';
-import type { FlacherTreffer } from './trefferAuswahl';
+import { MEHR_TREFFER_ID, type FlacherTreffer } from './trefferAuswahl';
 
 // ─── Nicht-Komponenten-Teil von SucheLeerzustand.tsx ────────────────────────
 //
@@ -24,6 +25,22 @@ import type { FlacherTreffer } from './trefferAuswahl';
 // Feld sofort). `leerOptionen` liefert die dazu passende flache Options-Liste —
 // dieselben generischen Helfer (aktivePosition/naechsterKey/…, trefferAuswahl.ts)
 // wie die Trefferliste, nur mit eigenem Gruppen-Namensraum («verlauf»).
-export function leerOptionen(verlauf: ZuletztEintrag[], listboxId: string): FlacherTreffer[] {
-  return verlauf.map((e) => ({ oid: suchOptionId(listboxId, 'verlauf', e.route), href: e.route }));
+//
+// ── LESER-NAV (David 15.10.2026: Merkliste «Ja, in ⌘K zeigen») ───────────────
+// Die gemerkten Stellen stehen im selben Leerzustand, ÜBER dem Verlauf (wie im
+// Topbar-Flyout, `VerlaufUebersicht`: Merkliste zuerst). Im Panel höchstens
+// `MERK_IM_PANEL` Zeilen (so viele wie der Verlauf, die Fläche ist eng — das
+// Flyout zeigt 8); darüber folgt eine Option «Alle N auf der Startseite», dort
+// führt `MerklisteFlaeche` die ganze Liste. Gruppen-Namensräume «merkliste» und
+// «verlauf»: dieselbe Route in beiden Listen ergibt zwei verschiedene Options-IDs.
+export const MERK_IM_PANEL = 5;
+/** Ziel der Option «Alle N …»: die Startseite trägt die Merkliste-Fläche (keine eigene Route). */
+export const MERK_ALLE_HREF = '/';
+
+export function leerOptionen(verlauf: ZuletztEintrag[], listboxId: string, merkliste: readonly MerkEintrag[] = []): FlacherTreffer[] {
+  return [
+    ...merkliste.slice(0, MERK_IM_PANEL).map((e) => ({ oid: suchOptionId(listboxId, 'merkliste', e.route), href: e.route })),
+    ...(merkliste.length > MERK_IM_PANEL ? [{ oid: suchOptionId(listboxId, 'merkliste', MEHR_TREFFER_ID), href: MERK_ALLE_HREF }] : []),
+    ...verlauf.map((e) => ({ oid: suchOptionId(listboxId, 'verlauf', e.route), href: e.route })),
+  ];
 }
