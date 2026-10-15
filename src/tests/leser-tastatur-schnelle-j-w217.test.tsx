@@ -214,4 +214,31 @@ describe('O-28 · schnelle ←/→ verlieren im Einzelmodus keinen Schritt (blä
     taste('ArrowRight'); taste('ArrowRight');
     expect(r, 'am letzten Artikel gibt es keinen Schritt zu verlieren').toEqual([1, 1]);
   });
+  // Nachzug Gegenprüfung #1384 (MITTEL 2): der zweite Druck läuft beim Frame des LETZTEN Artikels mit
+  // Ziel = Länge — kein Eintrag, kein Frame; ein dritter Druck blieb in `wartendeRef` liegen und kam
+  // beim nächsten Frame (dem des Gegen-Pfeils) als ungefragter Sprung zurück. Rot gegen f89f82745:
+  // Aufrufe [1, 1, -1, 1] statt [1, 1, -1] (Ende) bzw. [-1, -1, 1, -1] statt [-1, -1, 1] (Anfang).
+  it('(i) Rand am Ende: drei → ab Art. 4, danach ←: kein Phantom-Schritt zurück auf Art. 5', async () => {
+    const { r, blaettern } = aufrufe();
+    const { taste, zeichne } = await aufbauen({ aktivToken: '4', einzel: true, spruenge: [], blaettern });
+    taste('ArrowRight'); taste('ArrowRight'); taste('ArrowRight');
+    expect(r).toEqual([1]);
+    await zeichne('5');
+    expect(r, 'beim Frame von Art. 5 läuft der zweite Druck (Rand), der dritte verfällt').toEqual([1, 1]);
+    taste('ArrowLeft');
+    await zeichne('4');
+    expect(r, 'das ← läuft einmal; kein liegengebliebenes → springt hinterher').toEqual([1, 1, -1]);
+  });
+
+  it('(j) Rand am Anfang, spiegelbildlich: drei ← ab Art. 2, danach →: kein Phantom-Schritt', async () => {
+    const { r, blaettern } = aufrufe();
+    const { taste, zeichne } = await aufbauen({ aktivToken: '2', einzel: true, spruenge: [], blaettern });
+    taste('ArrowLeft'); taste('ArrowLeft'); taste('ArrowLeft');
+    expect(r).toEqual([-1]);
+    await zeichne('1');
+    expect(r).toEqual([-1, -1]);
+    taste('ArrowRight');
+    await zeichne('2');
+    expect(r).toEqual([-1, -1, 1]);
+  });
 });

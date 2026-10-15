@@ -177,6 +177,10 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
     if (angesprungenRef.current.length === 0 && ziel >= 0 && ziel < liste.length) {
       angesprungenRef.current.push({ token: liste[ziel], bis: Date.now() + FRIST_MS, pfeil: true });
     }
+    // Nachzug Gegenprüfung #1384: ein Ziel ausserhalb des Bereichs (Ende/Anfang des Erlasses) beendet die
+    // Folge — ohne Eintrag kommt kein Frame mehr, ein weiter wartender Druck bliebe liegen und würde
+    // beim nächsten Frame (etwa dem des Gegen-Pfeils) ungefragt nachgeholt.
+    if (ziel < 0 || ziel >= liste.length) wartendeRef.current = [];
     blaettere(richtung);
   }, []);
   // Nach dem Zeigen des angesprungenen Artikels den nächsten wartenden Druck ausführen. Steht HINTER

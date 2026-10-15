@@ -159,6 +159,14 @@ export function usePopoverAutoZu({ offen, schliesse, wrapRef, panelRef, modus, a
       // andere Fläche das Esc schon angenommen (`useDialogFokus` markiert es), bleibt das
       // Blatt ebenfalls stehen — gleichgültig, welcher der beiden Zuhörer zuerst läuft.
       if (e.defaultPrevented || imMenue(document.activeElement)) return;
+      // Nachzug Gegenprüfung #1384: dasselbe für eine DIALOG-Fläche ohne Falle und ohne Menü-
+      // Markierung (`role="dialog"` ohne `aria-modal`, z. B. «Alle geöffneten Reiter»): hat sie den
+      // Fokus, ist sie die oberste Fläche. Lief das Blatt zuerst, schloss es sich und markierte das
+      // Esc als behandelt — der Dialog stieg aus und blieb offen. Esc schliesst die Fläche mit dem
+      // Fokus, nie die dahinter.
+      // Umschliesst der Dialog das Blatt selbst (Sheet-Rahmen), gehört das Esc dem Blatt.
+      const dialog = document.activeElement?.closest?.('[role="dialog"]');
+      if (dialog != null && !dialog.contains(wurzel)) return;
       e.preventDefault();
       schliesseRef.current();
     };
