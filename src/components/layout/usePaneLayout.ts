@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { tabSchluessel } from '../../lib/tabs';
 import { kanonisierePfad } from '../../lib/normtext/erlassAdresse';
 import { lokalSpeicher } from '../../lib/sichererSpeicher';
@@ -120,6 +120,38 @@ export interface PaneLayout {
   ersetze: (i: number, pfad: string) => void;
 }
 
+// ── O-27 (LESER-NAV, 15.10.2026) · EIN LINK-LAYOUT, DAS NICHT BLEIBT, SAGT ES ──
+// Überdeckt ein geteilter `?p=`-Link die gespeicherte Eigen-Ordnung (`eigenSchuetzen`), schreibt nichts
+// in den Speicher. Wer in diesem Tab das Link-Layout selbst umbaut, sah bis hierher nichts davon:
+// der Reload brachte die Eigen-Ordnung zurück, das neu aufgebaute Layout war weg (§8). Die kleinste
+// ehrliche Lösung ist die Auskunft in dem Moment, in dem es zählt — nicht ein Speichern: das hätte
+// genau den Datenverlust von BG-06 wieder geöffnet (Link-Layout überschriebe die eigenen Panes).
+// Der Hinweis steht kurz da (`HINWEIS_MS`) und kommt bei jeder weiteren Änderung wieder; die Leiste
+// (`Reiterleiste`) zeigt ihn, Shell und Hook-Aufrufer bleiben unberührt.
+const HINWEIS_MS = 8000;
+let hinweisSichtbar = false;
+let hinweisTimer: ReturnType<typeof setTimeout> | undefined;
+const hinweisHoerer = new Set<() => void>();
+function setzeHinweis(an: boolean): void {
+  if (hinweisSichtbar === an) return;
+  hinweisSichtbar = an;
+  hinweisHoerer.forEach((h) => h());
+}
+function zeigeLayoutHinweis(): void {
+  clearTimeout(hinweisTimer);
+  setzeHinweis(true);
+  hinweisTimer = setTimeout(() => setzeHinweis(false), HINWEIS_MS);
+}
+/** Gilt gerade der Hinweis «dieses Layout wird nicht gespeichert»? */
+export function layoutHinweisSichtbar(): boolean { return hinweisSichtbar; }
+export function useLayoutHinweis(): boolean {
+  return useSyncExternalStore(
+    (cb) => { hinweisHoerer.add(cb); return () => { hinweisHoerer.delete(cb); }; },
+    layoutHinweisSichtbar,
+    () => false,
+  );
+}
+
 export function usePaneLayout(): PaneLayout {
   const [start] = useState(ladePanes);
   const [sekundaer, setSekundaer] = useState<string[]>(start.panes);
@@ -142,9 +174,13 @@ export function usePaneLayout(): PaneLayout {
   }, []);
 
   useEffect(() => {
-    if (schutz.current) return;
+    if (schutz.current) {
+      // Ein Vergleich mit dem Start statt eines «erster Lauf»-Merkers: der Effekt läuft im StrictMode doppelt.
+      if (JSON.stringify(sekundaer) !== JSON.stringify(start.panes)) zeigeLayoutHinweis();
+      return;
+    }
     lokalSpeicher.schreib(PANES_KEY, JSON.stringify(sekundaer)); // gesperrt → nur für die Sitzung
-  }, [sekundaer]);
+  }, [sekundaer, start.panes]);
 
   const oeffneDaneben = useCallback((roh: string) => {
     // Kanonisiert wie beim Einlesen (Mangel 3): auch ein zur Laufzeit

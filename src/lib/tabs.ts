@@ -768,11 +768,16 @@ function eintragAus(path: string, label?: string, alt?: TabEintrag): TabEintrag 
   // Ein Update OHNE Artikel-Anker (z.B. vom TabTracker mit pathname+?r) darf den
   // vom Reader gepflegten Anker NICHT löschen — sonst verlöre die zweite Instanz
   // ihr Live-Label «Kürzel – Art. X» (Auftrag David).
-  const neuPath = (!path.includes('#') && alt?.path.includes('#'))
-    ? `${path}#${alt.path.split('#')[1]}`
-    : path;
+  // Geerbt wird NUR ein Artikel-Anker (`#art-…`): ein Weichen-Hash der Seite
+  // (`#schkg`/`#straf` an /rechner/zustaendigkeit, O-25) ist die Wahl des
+  // Formulars, keine Lesestellung. Wer von dort zur hash-losen Adresse (Zivil)
+  // wechselt, behielte sonst Hash und Reiter-Titel der vorigen Weiche, während
+  // die Seite (H1) schon die neue zeigt (§8).
+  const erbe = (h: string | undefined): string | undefined => (h?.startsWith('#art-') ? h : undefined);
+  const altAnker = erbe(alt?.path.includes('#') ? `#${alt.path.split('#')[1]}` : undefined);
+  const neuPath = (!path.includes('#') && altAnker) ? `${path}${altAnker}` : path;
   const neuLabel = label ?? alt?.label;
-  const neuWahl = hashVon(path) ?? alt?.wahl;
+  const neuWahl = hashVon(path) ?? erbe(alt?.wahl);
   return {
     path: neuPath,
     ...(neuLabel ? { label: neuLabel } : {}),

@@ -228,11 +228,20 @@ export function SuchZone({
                 Fundstellen-Zahl ist die Kernauskunft und bleibt IMMER stehen:
                 (1) «K Überschriften» steht erst, wo die Zeile 31 rem (496 px) breit
                     ist — mit dem langen «Treffer anzeigen →» gemessen reicht das;
-                    darunter bleibt das Segment `sr-only`: es fehlt im Bild, nicht im
-                    zugänglichen Namen des Knopfs, und der Listenkopf nennt es immer.
-                    Die Schwelle hängt an der ZEILE (`@container/zaehl`), nicht am
-                    Fenster: dieselbe Zeile steht auch in schmalen Panes auf breitem
-                    Schirm.
+                    darunter fehlt es im Bild, nicht im zugänglichen Namen des Knopfs,
+                    und der Listenkopf nennt es immer. Die Schwelle hängt an der ZEILE
+                    (`@container/zaehl`), nicht am Fenster: dieselbe Zeile steht auch in
+                    schmalen Panes auf breitem Schirm.
+                    NACHZUG (WCAG 2.5.3 «Beschriftung im Namen», Auflage der Prüfung
+                    von #1383): das Segment steht ZWEIMAL im DOM, immer nur eines
+                    davon im Namen. Breit: sichtbar an seiner Stelle, der Name liest
+                    «69 Artikel 28 Überschriften 143 Fundstellen» wie das Bild. Schmal:
+                    `display:none` an dieser Stelle und ein `sr-only`-Segment HINTER
+                    den Fundstellen — die sichtbare Beschriftung «69 Artikel · 143
+                    Fundstellen» steht so am Stück im Namen («69 Artikel 143
+                    Fundstellen 28 Überschriften»), statt dass «28 Überschriften»
+                    mitten hineinläuft. Ein einziges Segment mit CSS-`order` ginge
+                    nur schmal auf: breit läse der Name dann gegen die Bildfolge.
                 (2) Reicht es trotzdem nicht (@280/@320, auch 4-stellige Zahlen), gibt
                     die vordere Gruppe nach und wird beschnitten; die Gruppe der
                     Fundstellen (`shrink-0`) nie. Vorher schnitt der Knopf am rechten
@@ -251,8 +260,7 @@ export function SuchZone({
                 </>
               )}
               {ueberschriften > 0 && (
-                <span data-v3-treffer-ueberschriften
-                  className="sr-only flex items-center gap-1 @[31rem]/zaehl:not-sr-only">
+                <span data-v3-treffer-ueberschriften className="hidden items-center gap-1 @[31rem]/zaehl:flex">
                   <span className="num">{ueberschriften}</span>
                   <span>{ueberschriften === 1 ? 'Überschrift' : 'Überschriften'}</span>
                   <span aria-hidden className="text-ink-300">·</span>
@@ -263,6 +271,12 @@ export function SuchZone({
               <span className="num">{fundstellen}</span>
               <span>{fundstellen === 1 ? 'Fundstelle' : 'Fundstellen'}</span>
             </span>
+            {ueberschriften > 0 && (
+              <span data-v3-treffer-ueberschriften-sr className="sr-only flex items-center gap-1 @[31rem]/zaehl:hidden">
+                <span className="num">{ueberschriften}</span>
+                <span>{ueberschriften === 1 ? 'Überschrift' : 'Überschriften'}</span>
+              </span>
+            )}
             <span aria-hidden className="ml-auto shrink-0 truncate text-brass-700">
               <span className="hidden sm:inline">Treffer anzeigen</span>
               <span className="sm:hidden"><span className="hidden @[16rem]/zaehl:inline">Liste</span></span> →

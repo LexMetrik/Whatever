@@ -460,11 +460,22 @@ export function useSuchTreffer({
     zeigeFundstelle(((basis + delta) % len + len) % len);
   }, [folge, trefferPos, zeigeFundstelle]);
 
-  /** Klick auf einen Treffer-Eintrag: zur ersten GEMALTEN Fundstelle dieses Artikels (sonst zur ersten). */
+  /**
+   * Klick auf einen Treffer-Eintrag: zur ersten GEMALTEN Fundstelle dieses Artikels (sonst zur ersten).
+   *
+   * LESER-NAV, FB O-58: ein `token` OHNE Fundstelle (Klick der Landkarte in ein Feld ohne Marke; der
+   * Aufrufer springt danach selbst zum Artikel) bewegt keine Fundstelle — gibt aber die laufende frei.
+   * Sonst blieb sie, gemalt und in Zähler («Fundstelle 8 von 143») und Listenzeile, an einem Artikel
+   * stehen, den der Leser gerade verlassen hat: Ziel und aktive Stelle widersprachen sich (OR
+   * «Kündigung», 8 von 8 Klicks, aktive Stelle blieb an Art. 102). Frei heisst wie nach einem neuen
+   * Begriff: «keine gewählt», ↓ beginnt bei der ersten, ↑ bei der letzten Fundstelle.
+   */
   const springeZuTreffer = useCallback((token: string) => {
     const n = ersterKlickSprung(folge, token);
-    if (n >= 0) zeigeFundstelle(n);
-  }, [folge, zeigeFundstelle]);
+    if (n >= 0) { zeigeFundstelle(n); return; }
+    setNav({ begriff: sucheTrim, bereich, pos: -1, token: null });
+    setzeAktiveFundstelle(null, highlightInstanz);
+  }, [folge, zeigeFundstelle, sucheTrim, bereich, highlightInstanz]);
 
   /**
    * H2 · Klick auf EINE Fundstellen-Zeile der V3-Liste: zu genau dieser Stelle.

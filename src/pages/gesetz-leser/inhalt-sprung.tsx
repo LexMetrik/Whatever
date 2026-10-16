@@ -12,7 +12,7 @@ import { erlassPfad } from '../../lib/normtext/erlassAdresse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { grundartMeta, pfadZu } from './helpers';
 import { istHashVerbraucht } from './scrollAnker';
-import { paneRoot } from './berechnungen';
+import { findeZiel, paneRoot } from './berechnungen';
 import { loeseSpyNachlauf } from './inhalt-hooks';
 import { merkeSprungAstManuell } from './sprungAst';
 import { useTiefLinkZweig } from './v3/tiefLinkZweig';
@@ -385,8 +385,41 @@ export function kuerzelKandidaten(kuerzel: string): string[] {
     .filter((s) => s.length >= 2 && !/\s/.test(s) && /^[A-ZÄÖÜ]/.test(s));
 }
 
+// ─── O-28(c) · NACH DEM KLICK AUF «Art. N» STEHT DER FOKUS AM ZIEL, NICHT AUF <body> ───
+/**
+ * Gemessen 15.10.2026 (Dev-Server, Chromium 1440×900, OR im zweiten Pane und im Hauptfenster): nach
+ * dem Klick auf einen internen Verweis («Art. 4») blieb `document.activeElement` auf `<body>` — der
+ * Sprung scrollt, aber die Tastatur beginnt danach wieder am Seitenanfang (WCAG 2.4.3). Der Verweis,
+ * der den Fokus trug, ist nach dem Sprung nicht mehr der Ort des Lesens; der Ort ist der Ziel-Artikel.
+ * `tabindex=-1` macht ihn fokussierbar OHNE ihn in die Tab-Folge zu nehmen, `preventScroll` lässt den
+ * Sprung allein das Scrollen führen (Landepunkt unter der klebenden Zeile, `springeZuArtikel`).
+ * Das Ziel kann noch fehlen (Einzelmodus: der Router rendert den Artikel erst nach der Navigation) —
+ * darum bis zu `FOKUS_FRIST_MS` warten, einmal fokussieren, dann aufgeben (nie Dauerwächter).
+ * ZEIT, NICHT FRAMES (Nachzug Gegenprüfung #1387): 40 Frames reichten bei 8-facher CPU-Drosselung im
+ * zweiten Fenster nicht (Fokus blieb auf `<body>`) — ein Frame dauert dort ein Vielfaches. Die Frist
+ * misst darum die verstrichene Zeit (`performance.now`); wie viele Frames darin laufen, ist egal.
+ * Hat der Nutzer den Fokus inzwischen selbst in ein Eingabefeld gesetzt, bleibt er dort.
+ */
+export const FOKUS_FRIST_MS = 3000;
+export function fokussiereArtikel(finde: () => HTMLElement | null): void {
+  if (typeof window === 'undefined') return;
+  const start = performance.now();
+  const versuch = () => {
+    const el = finde();
+    if (el) {
+      const a = document.activeElement;
+      if (a && a !== document.body && !a.matches('a, button')) return; // der Nutzer arbeitet anderswo
+      if (!el.hasAttribute('tabindex')) el.tabIndex = -1;
+      el.focus({ preventScroll: true });
+      return;
+    }
+    if (performance.now() - start < FOKUS_FRIST_MS) window.requestAnimationFrame(versuch);
+  };
+  window.requestAnimationFrame(versuch);
+}
+
 // ─── Token-Auflösung für bare Artikelverweise im Wortlaut ────────────────────
-export function useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate, erlassKuerzel, manifestErlasse, kanton }: {
+export function useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate, erlassKuerzel, manifestErlasse, kanton, imPane = false, wurzel = null }: {
   eintraege: NormSnapshot[] | null;
   basisPfad: string;
   springeZuArtikel: (token: string) => void;
@@ -404,6 +437,10 @@ export function useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekun
    *  Lesesicht an EINER Stelle gebaut werden. Fehlt eines, ruht V-3. */
   manifestErlasse?: readonly BrowseErlass[];
   kanton?: string | null;
+  /** O-28(c): in welchem Pane steht der Leser? Gebraucht, um den Ziel-Artikel DIESES Panes zu finden
+   *  (zwei Panes tragen gleiche `art-`-IDs, `findeZiel` scopt auf die Pane-Wurzel). Ungesetzt ⇒ Dokument. */
+  imPane?: boolean;
+  wurzel?: PaneWurzel;
 }) {
   // Token-Auflösung für bare Artikelverweise (normalisiert «6a» → Token «6_a»).
   return useMemo<InternRefs | undefined>(() => {
@@ -421,8 +458,9 @@ export function useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekun
     // Rück-Sprung). Im SEKUNDÄREN Pane bleibt der direkte Sprung (eigene Pane-
     // History, scrollt den Pane-Container; kein globaler Router-Eingriff, B-2.5).
     const springeZuRef = (t: string) => {
-      if (istSekundaer) { springeZuArtikel(t); return; }
-      navigate(`${basisPfad}${window.location.search}#art-${t}`);
+      if (istSekundaer) springeZuArtikel(t);
+      else navigate(`${basisPfad}${window.location.search}#art-${t}`);
+      fokussiereArtikel(() => findeZiel(paneRoot(imPane, wurzel), t, null));
     };
     // F41/F40: §-Designation einmal je Erlass bestimmen und mitgeben — NormText
     // fragt das Register nicht selbst (Schichtentrennung §3: die Komponente
@@ -437,5 +475,5 @@ export function useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekun
       // W2·17 Nachzug: Gattung des gelesenen Erlasses — blosses «des Abkommens» ist dort ein Selbstverweis.
       eigeneGattung: eigeneGattungAusTitel(manifestErlasse?.find((e) => e.key === schluesselAusPfad(basisPfad))?.titel),
     };
-  }, [eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate, erlassKuerzel, manifestErlasse, kanton]);
+  }, [eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate, erlassKuerzel, manifestErlasse, kanton, imPane, wurzel]);
 }

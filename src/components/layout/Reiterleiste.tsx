@@ -48,7 +48,11 @@ import { SchwebeMeldung } from '../ui/SchwebeMeldung';
 import { istGemerkt, merkRouteAusAdresse, schalteMerkung } from '../../lib/merkliste';
 import { merkAnsage } from '../merkliste/merkAnsage';
 import { sageKopiertAn } from '../ui/kopierAnsage';
-import { usePaneSteuerung } from './usePaneLayout';
+import { useLayoutHinweis, usePaneSteuerung } from './usePaneLayout';
+
+/** O-27: Wortlaut des Hinweises «Link-Layout wird nicht gespeichert» (Pille und Ansage). */
+const LAYOUT_HINWEIS_TEXT = 'Dieses Layout stammt aus einem geteilten Link und wird nicht gespeichert. Beim Neuladen kehrt Ihre eigene Anordnung zurück.';
+
 // ── §15 · DAS KONTEXTMENÜ GEHÖRT NICHT IN DEN START-CHUNK ──────────────────
 // GEMESSEN 6.9.2026 (`npm run check:perf-budget`, gebautes dist/): mit einem
 // statischen Import stieg der Entry-Chunk von 59.7 KB auf 61.3 KB gzip und
@@ -154,6 +158,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   const { pathname, search } = useLocation();
   const navigate = useNavigate();
   const { oeffneDaneben, kannOeffnen, istOffen, schliessePane } = usePaneSteuerung();
+  const layoutHinweis = useLayoutHinweis(); // O-27: Link-Layout wird nicht gespeichert (Herleitung: `usePaneLayout`)
   const [manifesteGeladen, setManifeste] = useState<VerlaufManifeste>({});
   // DFG-F01: dieselben Manifeste samt den Einträgen für die Stelle im Reiter
   // («§ 4», «Art. 12 SchlT ZGB»); bis sie da sind, trägt der Reiter die Rückfallform.
@@ -174,6 +179,13 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   // erfolgreichem Schreiben (R4-D) und fällt nach `KOPIER_DAUER_MS`; die Pille unten ist
   // dieselbe schwebende Meldung wie der Rücksprung-Chip (`ui/SchwebeMeldung`).
   const { kopieren, kopiert } = useKopieren();
+  // Nachzug Gegenprüfung #1387: der Hinweis «Layout nicht gespeichert» stand als `role="status"`, das
+  // erst MIT dem Text ins DOM kam — Screenreader überhören eine so eingefügte Region (gleiches Muster
+  // wie O-57, #1384). Die Ansage läuft darum über die EINE vorab angelegte sr-only-Region
+  // (`ui/kopierAnsage`); die sichtbare Pille bleibt für Screenreader stumm (`aria-hidden`), wie «Adresse
+  // kopiert». Beide Pillen stehen an derselben Stelle (unten Mitte): während «Adresse kopiert» steht,
+  // wartet der Hinweis (er steht noch bis zu `HINWEIS_MS` und erscheint danach, falls er noch gilt).
+  useEffect(() => { if (layoutHinweis) sageKopiertAn(LAYOUT_HINWEIS_TEXT); }, [layoutHinweis]);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const blattRef = useRef<HTMLDivElement>(null);
   const leisteRef = useRef<HTMLDivElement>(null);
@@ -1337,6 +1349,12 @@ export function Reiterleiste({ paneSchluessel = [] }: {
           onWieder={() => { stelleWiederHer(); schliesseBlatt(); }}
           onAlle={() => { alleSchliessen(); schliesseBlatt(); }}
           onZu={schliesseBlatt} />
+      )}
+
+      {layoutHinweis && !kopiert && (
+        <SchwebeMeldung kante="unten" ausrichtung="mitte" daten="data-layout-nur-sitzung" inhaltKlassen="max-w-xl px-4 py-2 text-body-s text-ink-700">
+          <span aria-hidden>{LAYOUT_HINWEIS_TEXT}</span>
+        </SchwebeMeldung>
       )}
 
       {kopiert && (

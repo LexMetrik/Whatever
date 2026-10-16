@@ -13,6 +13,9 @@
  *        ROT: die Regel streichen — Zähler rutscht zur Mitte (Probe 237 px vom Rand).
  *  O-49  Kopf-Griffe tragen auf grobem Zeiger das Komfortmass; «Adresse kopieren» quittiert sichtbar.
  *        ROT: den `@media (pointer: coarse)`-Block bzw. das `{kopiert && …}` in Reiterleiste.tsx streichen.
+ *  O-27  (Nachzug #1387) Hinweis «Layout nicht gespeichert» in der Reiterleiste: Ansage über die vorab
+ *        angelegte sr-only-Region, Pille `aria-hidden`, weicht «Adresse kopiert».
+ *        ROT: `rolle="status"` an die Pille zurücksetzen bzw. `&& !kopiert` streichen.
  *  O-09  «Erlass in Kraft seit» trägt den Vorbehalt als sichtbaren Text, nicht nur als `title`.
  *        ROT: den Satz wieder in ein `title`-Attribut verlegen.
  */
@@ -75,6 +78,23 @@ describe('O-49 · Touch-Mass der Kopf-Griffe und sichtbare Kopier-Quittung', () 
     expect(q).toMatch(/\{kopiert && \(\s*<SchwebeMeldung[^>]*daten="data-reiter-kopiert"/);
     expect(q).toContain('Adresse kopiert');
   });
+});
+
+describe('O-27 (Nachzug #1387) · Hinweis «Layout nicht gespeichert»: Ansage ohne frisch eingefügte Region, keine Überlappung', () => {
+  const q = ohneKommentare(liesRoh(join(APP_WURZEL, 'components/layout/Reiterleiste.tsx')));
+  const block = q.slice(q.indexOf('{layoutHinweis &&'), q.indexOf('{kopiert && ('));
+
+  it('die Pille trägt kein `role="status"` (erst mit Text eingehängt = überhört); die Ansage läuft über die vorab angelegte Region', () => {
+    expect(block).toContain('data-layout-nur-sitzung');
+    expect(block).not.toMatch(/rolle="status"/);
+    expect(q).toMatch(/useEffect\(\(\) => \{ if \(layoutHinweis\) sageKopiertAn\(LAYOUT_HINWEIS_TEXT\); \}, \[layoutHinweis\]\)/);
+  });
+
+  it('die Pille ist für Screenreader stumm (kein Doppel-Vorlesen) und weicht «Adresse kopiert» (gleiche Stelle)', () => {
+    expect(block).toMatch(/<span aria-hidden>\{LAYOUT_HINWEIS_TEXT\}<\/span>/);
+    expect(q).toMatch(/\{layoutHinweis && !kopiert && \(/);
+  });
+  // ROT: `rolle="status"` an die Pille zurücksetzen bzw. `&& !kopiert` streichen.
 });
 
 describe('O-09 · «Erlass in Kraft seit»: Vorbehalt sichtbar, nicht nur als Tooltip', () => {
