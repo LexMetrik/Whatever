@@ -102,8 +102,8 @@ E0
 E1·A
 - 15.10. Korpus-Nachzug UR RB 9.2311 und GL art_7.1 als Kantons-Snapshots (BEKANNTE_LUECKEN in check-vollstaendigkeit.ts) — Korpus-Werkstatt
 - David 7.10.: Messlauf Phase 1 strukturgleich + schneller (1 PR, 6–10 h, kein Tor; Zählung wie segmente-logik.ts; Tempo mit Fedlex-Arm, gleiche Drossel, n ≥ 5)
-- 15.10. LESER-NAV-Rest (#1369–#1374): Link-Tab-Layout und Zurück nach Reload (O-27), O-31(4), NHG-Gliederung = Daten (O-34f), Bilder relativ zur Textbreite (O-56) — FB Bereich 6
-- FB Bereich 6: Leser-Suche: O-19/O-20/O-23 erst nach Entscheid über #1352; OR-Tempo O-21/O-22; Go David 15.10.: O-36(b) markieren, Merkliste in ⌘K; O-15 Timing-Verdacht (51/51 grün)
+- 16.10. LESER-NAV gelandet (#1378–#1405, 9 PRs); offen: Suche O-19/O-20/O-23 nach #1352, OR-Tempo O-21/O-22, O-34f, O-56, Nebenfunde O-61…O-76 — FB Bereich 6
+- wartet auf David 16.10.: LESER-NAV-Fragen O-04/O-05 Wortlaut, O-10, O-11, O-13, O-17, O-21, O-27, O-29, O-32, O-33c, O-36, O-42, O-47, O-50c, O-51, O-52 — FB Spalte «David?»
 - HN-05: Bundestext-Rest: Zwischentitel (NT-03), AHVG-Anhang (B-21, erst reproduzieren), B-02, B-17 — FB B-16
 - Go David 24.9.: Fehllinks SchKG 39, ChemRRV Anh. 1/2, BGG 123/124 (V-02, HN-09), 12 Fussnoten-Selbstlinks (V-07), dann Normverweis im eigenen Leser (HN-D1) — FB V-06
 - 12.9.: BMV-Pin cc/2009/423 (aufgehoben 1.3.2026) noch im Bestand, «Art. 9 BMV» löst darauf auf (daneben bmv_2025) — FB V-08; src/lib/fedlex/tabelle.ts

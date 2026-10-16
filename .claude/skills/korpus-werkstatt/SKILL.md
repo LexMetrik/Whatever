@@ -112,7 +112,7 @@ statt 404; ohne Content-Type-/`%PDF`-/`<!DOCTYPE`-Prüfung landet die Shell im
 Cache). **Aber:** ein Quell- oder Formatwechsel wird per Messung (POC, Differenz)
 belegt, nie angenommen — Fehler sitzen oft in der eigenen Transformation.
 Wechsel inkrementell, nie Big-Bang.
-Beispiel und Detail: Memory `extraktion-amtliche-quellen-beste-option`,
+Beispiel und Detail: Vault-Gedächtnis `werkzeuge-zuerst-pruefen` (Allgemein),
 `fahrplaene/FAHRPLAN-NORMTEXT-DARSTELLUNG.md §Quell-Architektur-Entscheid` (Fedlex-HTML
 vs. Akoma-Ntoso-XML).
 
