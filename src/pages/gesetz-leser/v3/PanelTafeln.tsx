@@ -272,7 +272,11 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   // erfasst.» (die artikelscharfe Leerzeile unten) suggerierte aber genau das:
   // eine Prüfung DIESES Paragrafen, die nie stattfand. Dieselbe Bedingung wie
   // in `PanelAenderungen` (`stand.wert === null && ebene === 'kanton'`).
-  const aenderungenAmKantonNichtErfasst = ebene === 'kanton' && revisionen.fertig && revisionen.wert === null;
+  // LESER-NAV O-50 (16.10.2026): seither für BEIDE Ebenen (`wert === null`). Am Bund
+  // sagt die Tafel bei `null` «keiner erfasst, oder die Quelle war nicht erreichbar»;
+  // die Leerzeile des Artikels darüber sagte dazu das Stärkere («nichts erfasst»), die
+  // Tafel stand zugeklappt. Der Artikel-Teil erbt den Zustand des Erlass-Teils.
+  const aenderungenOhneAuskunft = revisionen.fertig && revisionen.wert === null;
   // Ist der ganze Erlass leer, sagt das die Tafel selbst — ein zweites «Zu Art. N
   // nichts erfasst.» darüber wäre dieselbe Auskunft zweimal (Artikel ⊂ Erlass).
   // W3-3 (Audit 25.9.2026): EINE Zählweise für den Reiter — die gruppierte
@@ -296,14 +300,14 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
             </p>
           )}
           <BlattArtikelGruppe titel={zu} zahl={0} daten="aenderungen" token={token}
-            geladen={ohneFassung && !aenderungenAmKantonNichtErfasst}>{null}</BlattArtikelGruppe>
+            geladen={ohneFassung && !aenderungenOhneAuskunft}>{null}</BlattArtikelGruppe>
           {erlassStand && token && <ErlassStandZeile iso={erlassStand} token={token} />}
           {/* W3-4: `zahl={0}` statt `null` erzwingt bei `ErlassTeil` den
               UNGEKLAPPTEN Pfad («Null im ganzen Erlass: keine Klappzeile») —
               der ehrliche Leerzustand aus `PanelAenderungen` steht dann sofort
               sichtbar, wie bei Materialien/Erläuterungen/Werkzeuge am Kanton. */}
           <ErlassTeil was="Änderungen"
-            zahl={aenderungenAmKantonNichtErfasst ? 0 : (revisionen.wert?.revisionen.length ?? null)} daten="aenderungen">
+            zahl={aenderungenOhneAuskunft ? 0 : (revisionen.wert?.revisionen.length ?? null)} daten="aenderungen">
             <PanelAenderungen stand={revisionen} quelleUrl={quelleUrl} stichtag={stichtag} ebene={ebene}
               aufhebung={aufhebung} botschaftNachKey={botschaftNachKey} artikel={artikel} locale={locale} />
           </ErlassTeil>

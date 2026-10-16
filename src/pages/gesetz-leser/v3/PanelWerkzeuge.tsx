@@ -66,13 +66,45 @@ export function WerkzeugKopf({ titel, href, modus, status }: {
   );
 }
 
+/** AN-12 · wie im Katalog: hinter einer eigenen Aufklappzeile, ohne Link. */
+function GeplantListe({ geplant }: { geplant: WerkzeugZeile[] }) {
+  return (
+    <details data-v3-werkzeuge-geplant className="border-t border-line py-2">
+      <summary className="cursor-pointer text-micro text-ink-600 hover:text-ink-900">
+        In Vorbereitung (<span className="num">{geplant.length}</span>)
+      </summary>
+      <ul className="mt-1">
+        {geplant.map((z) => (
+          <li key={z.id} data-v3-werkzeug-geplant={z.id} className="border-t border-line py-1.5 pl-2.5">
+            <span className="flex flex-wrap items-baseline gap-x-2">
+              <span className="text-body-s text-ink-700">{z.titel}</span>
+              <span className="lc-badge-geplant">In Vorbereitung</span>
+            </span>
+            <Zuordnung z={z} />
+          </li>
+        ))}
+      </ul>
+    </details>
+  );
+}
+
+const KEIN_WERKZEUG = 'Zu diesem Erlass führen wir bisher keinen Rechner und keine Vorlage.';
+
 export function PanelWerkzeuge({ erlassKey }: { erlassKey: string }) {
   const { verfuegbar, geplant, erlassWeit } = werkzeugAnsicht(erlassKey);
-  if (verfuegbar.length === 0 && geplant.length === 0) {
+  if (verfuegbar.length === 0) {
+    // LESER-NAV O-50 (W3-8): ohne verfügbares Werkzeug KEIN Kopf «Rechner und Vorlagen 0» und
+    // kein Zuordnungssatz über leerer Liste (ARG, AHVG, DBG, DSG, STG, VVG, AIG: nur
+    // «In Vorbereitung» vorhanden, gemessen 16.10.2026) — der Reiter sagt «keinen» und
+    // zeigt darunter, was vorbereitet ist.
+    if (geplant.length === 0) {
+      return <p data-v3-panel-reiter-inhalt="werkzeuge" className="px-3 py-3 text-body-s text-ink-600">{KEIN_WERKZEUG}</p>;
+    }
     return (
-      <p data-v3-panel-reiter-inhalt="werkzeuge" className="px-3 py-3 text-body-s text-ink-600">
-        Zu diesem Erlass führen wir bisher keinen Rechner und keine Vorlage.
-      </p>
+      <div data-v3-panel-reiter-inhalt="werkzeuge" className="px-3 py-1">
+        <p className="pb-2 pt-2 text-body-s text-ink-600">{KEIN_WERKZEUG}</p>
+        <GeplantListe geplant={geplant} />
+      </div>
     );
   }
   return (
@@ -86,35 +118,15 @@ export function PanelWerkzeuge({ erlassKey }: { erlassKey: string }) {
             ? 'Dem Erlass als Ganzem zugeordnet, nicht einzelnen Artikeln.'
             : 'Eindeutige Zuordnungen zu Artikeln dieses Erlasses; Zweifelsfälle sind bewusst ausgelassen.'}
         </p>
-        {verfuegbar.length > 0 && (
-          <ul className="mt-0.5">
-            {verfuegbar.map((z) => (
-              <li key={z.id} data-v3-werkzeug={z.id} className="border-l-2 border-t border-line border-l-reg-w py-2 pl-2.5">
-                <WerkzeugKopf titel={z.titel} href={z.href ?? '#'} modus={z.modus} status={z.status} />
-                <Zuordnung z={z} />
-              </li>
-            ))}
-          </ul>
-        )}
-        {geplant.length > 0 && (
-          // AN-12 · wie im Katalog: hinter einer eigenen Aufklappzeile, ohne Link.
-          <details data-v3-werkzeuge-geplant className="border-t border-line py-2">
-            <summary className="cursor-pointer text-micro text-ink-600 hover:text-ink-900">
-              In Vorbereitung (<span className="num">{geplant.length}</span>)
-            </summary>
-            <ul className="mt-1">
-              {geplant.map((z) => (
-                <li key={z.id} data-v3-werkzeug-geplant={z.id} className="border-t border-line py-1.5 pl-2.5">
-                  <span className="flex flex-wrap items-baseline gap-x-2">
-                    <span className="text-body-s text-ink-700">{z.titel}</span>
-                    <span className="lc-badge-geplant">In Vorbereitung</span>
-                  </span>
-                  <Zuordnung z={z} />
-                </li>
-              ))}
-            </ul>
-          </details>
-        )}
+        <ul className="mt-0.5">
+          {verfuegbar.map((z) => (
+            <li key={z.id} data-v3-werkzeug={z.id} className="border-l-2 border-t border-line border-l-reg-w py-2 pl-2.5">
+              <WerkzeugKopf titel={z.titel} href={z.href ?? '#'} modus={z.modus} status={z.status} />
+              <Zuordnung z={z} />
+            </li>
+          ))}
+        </ul>
+        {geplant.length > 0 && <GeplantListe geplant={geplant} />}
       </section>
     </div>
   );

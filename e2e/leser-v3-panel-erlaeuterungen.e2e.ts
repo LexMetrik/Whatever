@@ -106,7 +106,12 @@ test.describe('S6 — Reiter «Erläuterungen» und «Werkzeuge» im Erlass-Blat
     // Art. 12/13 ArG). Der Reiter sagt das ehrlich: kein Link, der Überzeit-
     // Zuschlag nur «In Vorbereitung». Die grobe Liste MIT Werkzeug: (a3).
     await reiter(page, 'werkzeuge')
-    await expect(page.locator('[data-v3-werkzeuge="erlass"]')).toContainText('nicht einzelnen Artikeln')
+    // §6.3-DEKLARATION (LESER-NAV O-50, 16.10.2026): ohne verfügbares Werkzeug steht KEIN
+    // Kopf «Rechner und Vorlagen 0» samt Zuordnungssatz mehr über der leeren Liste
+    // (`[data-v3-werkzeuge="erlass"]` entfällt), sondern der Satz «keinen Rechner und keine
+    // Vorlage» und darunter das Vorbereitete.
+    await expect(page.locator('[data-v3-panel-reiter-inhalt="werkzeuge"]')).toContainText('keinen Rechner und keine Vorlage')
+    await expect(page.locator('[data-v3-werkzeuge]')).toHaveCount(0)
     await expect(page.locator('[data-v3-werkzeug]')).toHaveCount(0)
     await expect(page.locator('[data-v3-werkzeug-geplant="ueberstunden-zuschlag"]')).toHaveCount(1)
     await expect(page.locator('[data-v3-werkzeug-geplant] a')).toHaveCount(0)
