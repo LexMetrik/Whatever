@@ -292,7 +292,12 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   // Klappzeile). Beim Laden sagt eine Zeile über der Klappzeile, dass etwas kommt; beim
   // Ausfall OHNE kuratierten Rest steht die Tafel offen (wie «Null im ganzen Erlass»).
   const erlLaedt = !erlaeuterungen.fertig;
-  const erlAusfall = erlaeuterungen.fertig && erlaeuterungen.wert === null && !erlaeuterungen.rest;
+  // A3 (Gegenprüfung #1405): bei Ausfall des Kanten-Shards ist `rest` IMMER gesetzt (auch
+  // leer: BGOE, MWSTV, STG kuratiert 0) — `&& !rest` hielt die Tafel dann zu, der Fehlersatz
+  // stand hinter der Klappzeile. Offen ist sie bei JEDEM Ausfall; hat `rest` Einträge, zeigt
+  // `PanelErlaeuterungen` sie unter der Fehlerzeile (Normalfall «Shard ok, Liste leer»: `wert`
+  // ist gesetzt, kein Ausfall).
+  const erlAusfall = erlaeuterungen.fertig && erlaeuterungen.wert === null;
   const wzZahl = erlassKey ? werkzeugAnsicht(erlassKey).verfuegbar.length : null;
 
   return {

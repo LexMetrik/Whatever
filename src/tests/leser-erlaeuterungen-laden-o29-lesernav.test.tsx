@@ -6,7 +6,8 @@
  * Reiter nur «▸ Alle Erläuterungen des Erlasses», kein Wort vom Laden.
  *
  * ROT ZU BEKOMMEN (§6.7, gefahren 16.10.2026): in `PanelTafeln` die Zeile `erlLaedt && …`
- * streichen ⇒ Fall 1 rot; `erlAusfall ? 0 : erlZahl` auf `erlZahl` zurücksetzen ⇒ Fall 2 rot.
+ * streichen ⇒ Fall 1 rot; `erlAusfall ? 0 : erlZahl` auf `erlZahl` zurücksetzen ⇒ Fall 2 und 4 rot;
+ * `&& !erlaeuterungen.rest` an `erlAusfall` wieder anhängen ⇒ Fall 4 rot.
  */
 import { act, createElement } from 'react';
 import { createRoot, type Root } from 'react-dom/client';
@@ -35,9 +36,9 @@ afterEach(async () => {
   _leereMaterialManifestCache();
 });
 
-type Antwort = 'haengt' | 'ok' | 'manifest500';
+type Antwort = 'haengt' | 'ok' | 'manifest500' | 'shard500' | 'shardLeer';
 
-async function erlaeuterungenText(antwort: Antwort): Promise<{ text: string; klappzeilen: number }> {
+async function erlaeuterungenText(antwort: Antwort, erlass = 'ARG'): Promise<{ text: string; klappzeilen: number }> {
   const { document, window } = parseHTML('<!doctype html><html><body><div id="app"></div></body></html>');
   vi.stubGlobal('window', Object.assign(window, {
     setTimeout: globalThis.setTimeout, clearTimeout: globalThis.clearTimeout,
@@ -50,16 +51,19 @@ async function erlaeuterungenText(antwort: Antwort): Promise<{ text: string; kla
     if (antwort === 'haengt') return new Promise<Response>(() => {});
     const pfad = String(url).replace(/^https?:\/\/[^/]+/, '');
     const json = (status: number, body: unknown) => ({ ok: status < 400, status, headers: { get: () => 'application/json' }, json: async () => body }) as unknown as Response;
-    if (pfad.includes('/materialien/register.json')) return antwort === 'ok' ? json(200, MANIFEST) : json(500, null);
-    if (pfad.includes('/materialien/kanten/ARG.json')) return json(200, KANTEN);
+    if (pfad.includes('/materialien/register.json')) return antwort === 'manifest500' ? json(500, null) : json(200, MANIFEST);
+    if (pfad.includes(`/materialien/kanten/${erlass}.json`)) {
+      if (antwort === 'shard500') return json(500, null);
+      return json(200, antwort === 'shardLeer' ? { ...KANTEN, erlass, kanten: [] } : KANTEN);
+    }
     return json(404, null);
   }));
   const ziel = document.getElementById('app') as unknown as HTMLElement;
   function Sonde() {
     const t = usePanelTafeln({
-      erlassKey: 'ARG', laden: true, quelleUrl: 'https://www.fedlex.admin.ch/', ebene: 'bund', stichtag: null,
+      erlassKey: erlass, laden: true, quelleUrl: 'https://www.fedlex.admin.ch/', ebene: 'bund', stichtag: null,
       aktArtikel: '6', artikelLabel: 'Art. 6', blatt: { eintrag: { artikel: '6' } as unknown as NormSnapshot },
-      normZitat: 'Art. 6 ARG', wort: 'Artikel', historie: { wert: null, fertig: true },
+      normZitat: `Art. 6 ${erlass}`, wort: 'Artikel', historie: { wert: null, fertig: true },
     });
     return createElement('div', null, t.tafeln.erlaeuterungen);
   }
@@ -85,6 +89,21 @@ describe('O-29 · Reiter «Erläuterungen»: Laden und Ausfall sind sichtbar', (
     expect(text).toContain('Behördliche Erläuterungen konnten nicht geladen werden');
     expect(text).not.toContain('werden geladen');
     expect(klappzeilen).toBe(0);
+  });
+
+  // A3 (Gegenprüfung #1405): bei Ausfall des Kanten-Shards ist `rest` IMMER gesetzt (auch
+  // leer: STG kuratiert 0 Einträge) — `!rest` hielt die Tafel zugeklappt, der Fehlersatz
+  // stand hinter der Klappzeile (§8). Offen muss sie stehen, `rest` leer oder nicht.
+  it('4 · Kanten-Shard fällt aus (Erlass ohne kuratierte Einträge): Fehlersatz offen, keine Klappzeile', async () => {
+    const { text, klappzeilen } = await erlaeuterungenText('shard500', 'STG');
+    expect(text).toContain('Behördliche Erläuterungen konnten nicht geladen werden');
+    expect(klappzeilen).toBe(0);
+  });
+
+  it('5 · Normalfall: Shard ok, Liste leer ist kein Ausfall (Leersatz statt Fehlersatz)', async () => {
+    const { text } = await erlaeuterungenText('shardLeer', 'STG');
+    expect(text).toContain('keine behördliche Erläuterung erfasst');
+    expect(text).not.toContain('konnten nicht geladen werden');
   });
 
   it('3 · geladen: keine Ladezeile mehr, Tafel zugeklappt mit Zahl, Artikel-Teil da', async () => {
