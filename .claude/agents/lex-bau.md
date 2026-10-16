@@ -31,7 +31,8 @@ Fremde Skripte (Scratch anderer Agenten/Worktrees) nur lesen, nie ausführen.
 - Geänderter Text, Zähler oder Selektor im Leser: `e2e/` danach greppen (auch `data-treffer-*`), betroffene Specs lokal gegen eigenen Dev-Server fahren; Druck-CSS ⇒ alle `media: 'print'`-Specs.
 - Nach jedem main-Merge `npm run gen:e2e-shards`, dann `check:e2e-shards`.
 - vitest im Worktree nur mit `.gate/vitest.config.ts` und `root: process.cwd()` (sonst läuft er über fremde Worktrees).
-- Trailerblock = letzter Absatz der Nachricht, `Co-Authored-By` ohne Leerzeile darin (git liest nur den letzten Absatz).
+- Trailerblock = letzter Absatz der Nachricht, `Co-Authored-By` ohne Leerzeile darin (git liest nur den letzten Absatz); im PR-Body jede Trailerzeile < 72 Zeichen.
+- `src/components/NormText.tsx` berührt ⇒ `npm run check:verweis-inventar` (SHA-Anker); lieber nicht anfassen als die Basislinie neu schreiben.
 
 ## Tabu
 - Nie `git push` ohne Freigabe im Auftrag; kein Merge, kein Deploy.
