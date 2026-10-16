@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
-  MERKLISTE_PARAM, dekodiereMerkliste, entferneMerkung, leereMerkliste, merklisteLink, uebernimmMerkliste,
+  MERKLISTE_ANKER, MERKLISTE_PARAM, dekodiereMerkliste, entferneMerkung, leereMerkliste, merklisteLink, uebernimmMerkliste,
   type MerkEintrag,
 } from '../../lib/merkliste';
 import { RegisterStrich } from '../start/ZuletztVerwendet';
@@ -36,7 +36,7 @@ export function MerklisteFlaeche() {
 /** Die Darstellung zu einer gegebenen Liste (getrennt vom Speicher-Hook, damit der Server-Snapshot
  *  «leer» die Struktur nicht verdeckt — `merkliste-flaeche.test.tsx` rendert sie mit Einträgen). */
 export function MerklisteAnsicht({ liste }: { liste: readonly MerkEintrag[] }) {
-  const { search } = useLocation();
+  const { search, hash } = useLocation();
   const navigate = useNavigate();
   const payload = new URLSearchParams(search).get(MERKLISTE_PARAM);
   const geteilt = useMemo(() => (payload ? dekodiereMerkliste(payload) : null), [payload]);
@@ -68,6 +68,18 @@ export function MerklisteAnsicht({ liste }: { liste: readonly MerkEintrag[] }) {
     statusRef.current?.focus();
   }, [liste, status]);
 
+  // «Alle N auf der Startseite» (⌘K) führt per `/#merkliste` hierher (FB O-71): gescrollt wird von `ScrollZuHash`
+  // (App.tsx), der Fokus geht EINMAL je Besuch auf die Fläche (WCAG 2.4.3) — nicht bei jeder Listenänderung, sonst
+  // risse er dem Entfernen-Knopf den Fokus weg. Erscheint die Liste erst nach dem Laden, holt der Effekt es nach.
+  const ankerRef = useRef<HTMLDivElement>(null);
+  const ankerFokus = useRef(false);
+  useEffect(() => {
+    if (hash !== `#${MERKLISTE_ANKER}`) { ankerFokus.current = false; return; }
+    if (ankerFokus.current || !ankerRef.current) return;
+    ankerFokus.current = true;
+    ankerRef.current.focus({ preventScroll: true });
+  }, [hash, liste.length]);
+
   // Die leere Fläche bleibt nur, solange die Meldung nach dem Leeren steht (sonst: keine Fläche).
   if (liste.length === 0 && !payload && !status) return null;
 
@@ -91,6 +103,7 @@ export function MerklisteAnsicht({ liste }: { liste: readonly MerkEintrag[] }) {
   const ursprung = typeof window !== 'undefined' ? window.location.origin : 'https://lexmetrik.ch';
 
   return (
+    <div id={MERKLISTE_ANKER} ref={ankerRef} tabIndex={-1} className="lc-sprungziel rounded-xl">
     <StartFlaeche titel="Merkliste">
       {payload && (
         <div className="grid gap-y-2 border-b border-rule pb-3" data-merkliste-import>
@@ -163,5 +176,6 @@ export function MerklisteAnsicht({ liste }: { liste: readonly MerkEintrag[] }) {
       <p role="status" ref={statusRef} tabIndex={-1}
         className={status ? 'font-sans text-body-s text-ink-900' : 'sr-only'}>{status}</p>
     </StartFlaeche>
+    </div>
   );
 }

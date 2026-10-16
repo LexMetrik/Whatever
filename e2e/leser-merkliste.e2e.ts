@@ -202,7 +202,17 @@ test.describe('Merkliste — Schnellsuche (⌘K)', () => {
     const gruppe = page.getByRole('group', { name: 'Merkliste' })
     await expect(gruppe.getByRole('option')).toHaveCount(6) // 5 Stellen + «Alle 7»
     await gruppe.getByRole('option', { name: 'Alle 7 auf der Startseite' }).click()
-    await expect(page).toHaveURL(/\/$/)
-    await expect(page.getByRole('region', { name: 'Merkliste' })).toBeVisible({ timeout: 30_000 })
+    // LESER-NAV · FB O-71 (Teständerung deklariert, §6.3): vorher «/» und nur «Fläche sichtbar» — die Startseite ohne
+    // Sprung zur Fläche (sie lag bei 800 px Fensterhöhe unter der Falte). Jetzt `/#merkliste`: die Fläche steht im Bild,
+    // und der Fokus liegt auf ihr.
+    await expect(page).toHaveURL(/\/#merkliste$/)
+    const flaeche = page.getByRole('region', { name: 'Merkliste' })
+    await expect(flaeche).toBeVisible({ timeout: 30_000 })
+    await expect(page.locator('#merkliste'), 'der Fokus liegt auf der Merkliste-Fläche').toBeFocused()
+    await expect.poll(async () => {
+      const k = await flaeche.boundingBox()
+      return k !== null && k.y >= 0 && k.y < 800
+    }, { message: 'die Merkliste-Fläche steht nicht im Bild (Sprung ohne Wirkung)', timeout: 15_000 }).toBe(true)
+    expect(await page.evaluate(() => window.scrollY), 'die Seite ist nicht zur Fläche gescrollt').toBeGreaterThan(0)
   })
 })
