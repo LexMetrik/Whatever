@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { ThemenEinstieg } from '../components/ThemenEinstieg';
 import { Card } from '../components/ui/Card';
 import { Tabs } from '../components/ui/Tabs';
@@ -19,18 +19,37 @@ const TABS: { id: Tab; label: string; sub: string }[] = [
   { id: 'kombiniert', label: 'Kombiniert', sub: 'A + B + C' },
 ];
 
-// Abschnitt-Anker der Startseiten-Split-Karten → Tab-Vorauswahl.
+// Abschnitt-Anker der Startseiten-Split-Karten → Tab-Vorauswahl. `#kombiniert` hat keine Karte; er
+// ist der Anker des dritten inneren Reiters, damit jeder Reiter eine Adresse hat (O-69a).
 const HASH_TAB: Record<string, Tab> = {
   '#lohnfortzahlung': 'a',
   '#kuendigung': 'b_c',
+  '#kombiniert': 'kombiniert',
+};
+const TAB_HASH: Record<Tab, string> = {
+  a: '#lohnfortzahlung',
+  b_c: '#kuendigung',
+  kombiniert: '#kombiniert',
 };
 
 // Arbeitsrechts-Rechner unter /rechner/kuendigung. Berechnungslogik UNVERÄNDERT;
 // nur der Seitenrahmen (Kopf + Tabs + Disclaimer) ist neu.
 export function RechnerKuendigung() {
   const calc = getCalculator('kuendigung')!;
-  const { hash } = useLocation();
+  const { hash, pathname, search } = useLocation();
+  const navigate = useNavigate();
   const [tab, setTab] = useState<Tab>(HASH_TAB[hash] ?? 'a');
+  // O-69a (16.10.2026): der innere Reiterwechsel schrieb den Hash nie nach — GEMESSEN (Dev-Server,
+  // headless Chromium 1280×900, visibilityState visible): `/rechner/kuendigung#kuendigung`, «Kombiniert»
+  // gewählt ⇒ Adresse und gespeicherter Reiter blieben `#kuendigung`, ein Reload öffnete «B+C»; von der
+  // blanken Seite aus blieb die Adresse ganz ohne Hash, das Neuladen öffnete «Lohnfortzahlung». Jetzt
+  // folgt die Adresse dem Reiter — wie die Weiche der Zuständigkeit (`RechnerZustaendigkeit.wegWechsel`):
+  // `replace` (kein History-Eintrag je Reiter-Klick), `search` bleibt. Der Titel-Reiter bleibt gleich
+  // (`splitKarte`: diese Seite folgt dem Hash nicht, Titelwahl offen).
+  const tabWechsel = (t: Tab) => {
+    setTab(t);
+    if (TAB_HASH[t] !== hash) navigate({ pathname, search, hash: TAB_HASH[t] }, { replace: true });
+  };
 
   // Hash-Navigation (z. B. «Verwandte Rechner»-Link von der anderen Split-Karte) —
   // Sync während des Renderns statt im Effect (React-Pattern «adjusting state»).
@@ -74,7 +93,7 @@ export function RechnerKuendigung() {
             </>
           ),
         }))}
-        value={tab} onChange={setTab} groesse="zweizeilig" ariaLabel="Berechnungs-Variante" />
+        value={tab} onChange={tabWechsel} groesse="zweizeilig" ariaLabel="Berechnungs-Variante" />
 
       <Card>
         {tab === 'a' && <LohnfortzahlungForm />}

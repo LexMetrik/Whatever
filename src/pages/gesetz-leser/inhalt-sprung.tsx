@@ -4,7 +4,7 @@ import {
   type Dispatch, type MutableRefObject, type RefObject, type SetStateAction,
 } from 'react';
 import { flushSync } from 'react-dom';
-import { useNavigationType, type NavigateFunction } from 'react-router-dom';
+import { useLocation, useNavigationType, type NavigateFunction } from 'react-router-dom';
 import type { InternRefs } from '../../components/NormText';
 import type { Sektion } from '../../lib/normtext/browse';
 import type { BrowseErlass } from '../../lib/normtext/browse-typen';
@@ -39,6 +39,12 @@ import { zerlegeZifferAnker } from '../../lib/normtext/zifferAnker';
 // jede History-API in diesem Modul und liest den ROHEN Quelltext — ein Zitat im
 // Kommentar färbte den Wächter rot, und ein Wächter, der an Kommentaren
 // scheitert, wird bald abgeschaltet (§6.7).
+
+/** O-67: `InternRefs` plus der Pane-Sprung. Nur im SEKUNDÄREN Pane gesetzt — der Sprung, der Pane-Scroll UND
+ *  Pane-Location führt. Die Artikelnummer im Kopf (`<a href>`) nimmt ihn statt des nativen Fragment-Sprungs, der die
+ *  Adresse des Hauptfensters ändern würde. Bewusst NICHT in `InternRefs` (NormText.tsx): NormText kennt ihn nicht
+ *  und bleibt damit byte-gleich (SHA-Anker des Verweis-Inventars). Ungesetzt (Primär, Einzelansicht) ⇒ nativer Anker. */
+export type PaneInternRefs = InternRefs & { paneSprung?: (token: string) => void };
 
 type SekRefs = MutableRefObject<Map<string, HTMLElement>>;
 type PaneWurzel = RefObject<HTMLElement | null> | null;
@@ -442,8 +448,12 @@ export function useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekun
   imPane?: boolean;
   wurzel?: PaneWurzel;
 }) {
+  // O-67: `search` der Pane-Location — das Pane schreibt ihn mit dem Sprung zurück (s. `springeZuRef`). Im Primär-
+  // Fenster bleibt er draussen (leer), sonst bräche jede Query-Änderung (?ansicht, ?r) die `memo`-Schranke aller Artikel.
+  const location = useLocation();
+  const paneSearch = istSekundaer ? location.search : '';
   // Token-Auflösung für bare Artikelverweise (normalisiert «6a» → Token «6_a»).
-  return useMemo<InternRefs | undefined>(() => {
+  return useMemo<PaneInternRefs | undefined>(() => {
     if (!eintraege) return undefined;
     const tokenMap = new Map<string, string>();
     for (const e of eintraege) tokenMap.set(e.artikel.toLowerCase().replace(/[^a-z0-9]/g, ''), e.artikel);
@@ -457,16 +467,22 @@ export function useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekun
     // desynchronisieren (Zurück löste dann keinen Location-Wechsel aus → kein
     // Rück-Sprung). Im SEKUNDÄREN Pane bleibt der direkte Sprung (eigene Pane-
     // History, scrollt den Pane-Container; kein globaler Router-Eingriff, B-2.5).
+    // O-67 (16.10.2026): im Pane trägt jetzt auch die Pane-LOCATION den Sprung (`replace` in der Pane-
+    // History — kein Stapel-Zuwachs, die Pane-Navigation kennt kein «Zurück»). Sie ist die Quelle von
+    // «Layout teilen» und «zum Hauptfenster» (`Shell.liveSek`); ohne den Eintrag stand dort der Artikel
+    // von vor dem Klick. `search` bleibt (?r, ?ansicht): ein Hash-only-`to` würde ihn verlieren.
     const springeZuRef = (t: string) => {
-      if (istSekundaer) springeZuArtikel(t);
-      else navigate(`${basisPfad}${window.location.search}#art-${t}`);
+      if (istSekundaer) {
+        springeZuArtikel(t);
+        navigate({ pathname: basisPfad, search: paneSearch, hash: `#art-${t}` }, { replace: true });
+      } else navigate(`${basisPfad}${window.location.search}#art-${t}`);
       fokussiereArtikel(() => findeZiel(paneRoot(imPane, wurzel), t, null));
     };
     // F41/F40: §-Designation einmal je Erlass bestimmen und mitgeben — NormText
     // fragt das Register nicht selbst (Schichtentrennung §3: die Komponente
     // bekommt die Weiche als Wert, nicht die Nachschlage-Fähigkeit).
     return {
-      tokenMap, basisPfad, springeZu: springeZuRef,
+      tokenMap, basisPfad, springeZu: springeZuRef, paneSprung: istSekundaer ? springeZuRef : undefined,
       paragrafDesigniert: istParagrafDesigniert(basisPfad),
       eigenesKuerzel: erlassKuerzel,
       // V-3: kantons-gescopetes Kürzel-Register; der gelesene Erlass steckt
@@ -475,5 +491,5 @@ export function useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekun
       // W2·17 Nachzug: Gattung des gelesenen Erlasses — blosses «des Abkommens» ist dort ein Selbstverweis.
       eigeneGattung: eigeneGattungAusTitel(manifestErlasse?.find((e) => e.key === schluesselAusPfad(basisPfad))?.titel),
     };
-  }, [eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate, erlassKuerzel, manifestErlasse, kanton, imPane, wurzel]);
+  }, [eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate, erlassKuerzel, manifestErlasse, kanton, imPane, wurzel, paneSearch]);
 }
