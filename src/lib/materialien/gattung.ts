@@ -38,11 +38,15 @@ export function gattungVon(doktyp: DoktypId): Gattung {
 /** Doktypen, die ihrer Art nach Verwaltungsverordnungen im engeren Sinn sind
  *  (generell-abstrakte Dienstanweisung an die nachgeordneten Behörden): sie
  *  binden die Verwaltung intern, die Gerichte nicht. Dazu zählen auch die
- *  MWST-Infos, MWST-Branchen-Infos, Merkblätter und Richtlinien: BVGer
+ *  MWST-Infos, MWST-Branchen-Infos und Richtlinien: BVGer
  *  A-6108/2014 vom 22.7.2015 E. 2 («Verwaltungsverordnungen, darunter fallen
  *  auch Branchen- und Spezialbroschüren der ESTV», entscheidsuche.ch,
  *  CH_BVGE_001_A-6108-2014_2015-07-22); BGE 142 V 442 E. 5.2 (Gerichte nicht
- *  gebunden, Berücksichtigung soweit überzeugend). Neutral bleiben Berichte
+ *  gebunden, Berücksichtigung soweit überzeugend). Merkblätter sind AUSGENOMMEN
+ *  (Entscheid Gegenprüfung #1405, M1): das Register führt 8 EDÖB, 2 SECO und 1 ESTV;
+ *  der EDÖB übt sein Amt weisungsunabhängig aus (Art. 43 Abs. 4 DSG), seine Merkblätter
+ *  sind Information an Private, die SECO-Merkblätter ebenso — «binden die Verwaltung
+ *  intern» wäre dort irreführend. Neutral bleiben Berichte
  *  (Tätigkeitsbericht, gr-bericht …), Information (Mitteilung — das Register
  *  führt neben zwei EHRA-Praxismitteilungen auch eine ESTV-Mitteilung mit
  *  Checkliste, nicht durchweg Weisungen), Leitfaden, Anleitung und Checkliste:
@@ -50,7 +54,7 @@ export function gattungVon(doktyp: DoktypId): Gattung {
  *  (LESER-NAV O-05). */
 const VERWALTUNGSVERORDNUNG: ReadonlySet<DoktypId> = new Set<DoktypId>([
   'kreisschreiben', 'ks-anhang', 'weisung', 'rundschreiben', 'wegleitung',
-  'mwst-info', 'mwst-branchen-info', 'merkblatt', 'richtlinie',
+  'mwst-info', 'mwst-branchen-info', 'richtlinie',
 ]);
 
 export function istVerwaltungsverordnung(doktyp: DoktypId): boolean {

@@ -31,21 +31,22 @@ describe('S5c · GattungsHinweis — §8-Satz je Gattung', () => {
     });
   }
 
-  for (const d of ['kreisschreiben', 'wegleitung', 'weisung', 'rundschreiben', 'ks-anhang', 'mwst-info', 'mwst-branchen-info', 'merkblatt', 'richtlinie'] as DoktypId[]) {
+  for (const d of ['kreisschreiben', 'wegleitung', 'weisung', 'rundschreiben', 'ks-anhang', 'mwst-info', 'mwst-branchen-info', 'richtlinie'] as DoktypId[]) {
     it(`${d}: Verwaltungsverordnung — VV-Satz`, () => {
       expect(gattungVon(d)).toBe('erlaeuterungen');
       const t = text(d);
-      expect(t).toContain('Behördenpublikation, kein Gesetzesrang. Verwaltungsverordnungen (Kreisschreiben, Wegleitungen, Merkblätter u. a.) binden die Verwaltung intern und sind faktisch praxisleitend, aber für Gerichte und Private nicht direkt verbindlich.');
+      expect(t).toContain('Behördenpublikation, kein Gesetzesrang. Verwaltungsverordnungen (Kreisschreiben, Wegleitungen, MWST-Infos u. a.) binden die Verwaltung intern und sind faktisch praxisleitend, aber für Gerichte und Private nicht direkt verbindlich.');
       expect(t).toContain('Massgeblich ist stets');
       expect(t).not.toContain('Gesetzgebungsmaterial');
     });
   }
 
   // LESER-NAV O-05: kein Verwaltungsverordnungs-Satz, wo der Doktyp keine ist
-  // (Bericht, Mitteilung, Leitfaden, Anleitung, Checkliste). Merkblatt, MWST-Info,
+  // (Bericht, Mitteilung, Merkblatt, Leitfaden, Anleitung, Checkliste). Merkblatt: EDÖB
+  // weisungsunabhängig (Art. 43 Abs. 4 DSG), Information an Private. MWST-Info,
   // MWST-Branchen-Info, Richtlinie sind Verwaltungsverordnungen (BVGer A-6108/2014 E. 2).
-  // Rot-Probe: `istVerwaltungsverordnung` immer `true` ⇒ alle fünf Fälle rot; `merkblatt`/`mwst-info` aus der Menge ⇒ ihre Fälle rot.
-  for (const d of ['taetigkeitsbericht', 'mitteilung', 'leitfaden', 'anleitung', 'checkliste'] as DoktypId[]) {
+  // Rot-Probe: `istVerwaltungsverordnung` immer `true` ⇒ alle sechs Fälle rot; `merkblatt` in die Menge ⇒ sein Fall rot; `mwst-info` heraus ⇒ sein VV-Fall rot.
+  for (const d of ['taetigkeitsbericht', 'mitteilung', 'merkblatt', 'leitfaden', 'anleitung', 'checkliste'] as DoktypId[]) {
     it(`${d}: neutrale Aussage, kein «Verwaltungsverordnungen», kein «binden die Verwaltung»`, () => {
       expect(gattungVon(d)).toBe('erlaeuterungen');
       const t = text(d);

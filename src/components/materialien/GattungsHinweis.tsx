@@ -31,13 +31,13 @@ export function GattungsHinweis({ doktyp }: { doktyp: DoktypId }) {
     );
   }
   // LESER-NAV O-05: der Verwaltungsverordnungs-Satz nur, wo der Doktyp eine ist
-  // (inkl. MWST-Info, Merkblatt, Richtlinie); Berichte, Mitteilung, Leitfaden …
+  // (inkl. MWST-Info, Richtlinie); Berichte, Mitteilung, Merkblatt, Leitfaden …
   // bekommen die neutrale Aussage.
   return (
     <p data-gattung="erlaeuterungen">
       <strong>{GATTUNG_RANG.erlaeuterungen}.</strong>{' '}
       {istVerwaltungsverordnung(doktyp)
-        ? <>Verwaltungsverordnungen (Kreisschreiben, Wegleitungen, Merkblätter u.&nbsp;a.) binden die Verwaltung intern und
+        ? <>Verwaltungsverordnungen (Kreisschreiben, Wegleitungen, MWST-Infos u.&nbsp;a.) binden die Verwaltung intern und
       sind faktisch praxisleitend, aber für Gerichte und Private nicht direkt verbindlich.</>
         : <>Für Gerichte und Private nicht verbindlich.</>}
       {' '}{MASSGEBLICH_SATZ} Maschinell erfasst, fachlich noch nicht
