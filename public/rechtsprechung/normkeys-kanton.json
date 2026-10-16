@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-10-12",
   "eintraege": {
     "bs_appellationsgericht_AK.2022.32": [
       "BS-291.100"
@@ -898,6 +898,9 @@
       "BS-122.300"
     ],
     "bs_appellationsgericht_AUS.2026.85": [
+      "BS-122.300"
+    ],
+    "bs_appellationsgericht_AUS.2026.86": [
       "BS-122.300"
     ],
     "bs_appellationsgericht_AUS.2026.9": [
@@ -2764,6 +2767,11 @@
     "bs_appellationsgericht_BES.2025.91": [
       "BS-154.100",
       "BS-154.810"
+    ],
+    "bs_appellationsgericht_BES.2025.92": [
+      "BS-154.100",
+      "BS-154.810",
+      "BS-291.400"
     ],
     "bs_appellationsgericht_BES.2025.98": [
       "BS-154.100",
@@ -5253,6 +5261,13 @@
       "BS-212.400",
       "BS-291.400"
     ],
+    "bs_appellationsgericht_KE.2024.20": [
+      "BS-154.100",
+      "BS-154.810",
+      "BS-212.400",
+      "BS-270.100",
+      "BS-291.400"
+    ],
     "bs_appellationsgericht_KE.2024.21": [
       "BS-154.100",
       "BS-212.400",
@@ -5422,6 +5437,11 @@
       "BS-154.810",
       "BS-212.400",
       "BS-291.400"
+    ],
+    "bs_appellationsgericht_KE.2025.47": [
+      "BS-154.100",
+      "BS-154.810",
+      "BS-212.400"
     ],
     "bs_appellationsgericht_KE.2025.48": [
       "BS-154.100",
@@ -7116,6 +7136,11 @@
       "BS-154.100",
       "BS-257.100",
       "BS-258.210",
+      "BS-291.400"
+    ],
+    "bs_appellationsgericht_SB.2025.74": [
+      "BS-154.100",
+      "BS-154.810",
       "BS-291.400"
     ],
     "bs_appellationsgericht_SB.2025.87": [
@@ -12368,6 +12393,10 @@
       "BS-154.100",
       "BS-154.200"
     ],
+    "bs_sozialversicherungsgericht_AL.2025.10": [
+      "BS-154.100",
+      "BS-154.200"
+    ],
     "bs_sozialversicherungsgericht_AL.2025.12": [
       "BS-154.100",
       "BS-154.200"
@@ -12405,6 +12434,10 @@
     ],
     "bs_sozialversicherungsgericht_AL.2025.24": [
       "BS-154.100"
+    ],
+    "bs_sozialversicherungsgericht_AL.2025.29": [
+      "BS-154.100",
+      "BS-154.200"
     ],
     "bs_sozialversicherungsgericht_AL.2025.3": [
       "BS-154.100"

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-10-12",
   "erlass": "USG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -55,6 +55,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_518",
+        "zitierung": "BGE 152 II 518",
+        "regesteKurz": "Art. 56 lit. g DBG; Art. 23 Abs. 1 lit. f StHG; Art. 32a Abs. 3 USG; Steuerbefreiung; öffentlicher Zweck; Abfallverbrennungsanlage; erforderliche Rückstellungen. Zusammenfassung der Rechtsprechung zur Definition des öffentlichen Zwecks (E.…",
+        "datum": "2026-03-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_148_II_155",
@@ -593,6 +603,18 @@
         "gewicht": 0
       }
     ],
+    "32": [
+      {
+        "key": "bge_152_II_518",
+        "zitierung": "BGE 152 II 518",
+        "regesteKurz": "Art. 56 lit. g DBG; Art. 23 Abs. 1 lit. f StHG; Art. 32a Abs. 3 USG; Steuerbefreiung; öffentlicher Zweck; Abfallverbrennungsanlage; erforderliche Rückstellungen. Zusammenfassung der Rechtsprechung zur Definition des öffentlichen Zwecks (E.…",
+        "datum": "2026-03-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "34": [
       {
         "key": "bge_152_II_311__voll",
@@ -862,6 +884,16 @@
       }
     ],
     "32a": [
+      {
+        "key": "bge_152_II_518",
+        "zitierung": "BGE 152 II 518",
+        "regesteKurz": "Art. 56 lit. g DBG; Art. 23 Abs. 1 lit. f StHG; Art. 32a Abs. 3 USG; Steuerbefreiung; öffentlicher Zweck; Abfallverbrennungsanlage; erforderliche Rückstellungen. Zusammenfassung der Rechtsprechung zur Definition des öffentlichen Zwecks (E.…",
+        "datum": "2026-03-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_149_I_305",
         "zitierung": "BGE 149 I 305",

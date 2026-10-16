@@ -1,14 +1,14 @@
 {
- "erzeugt": "2026-10-03",
+ "erzeugt": "2026-10-12",
  "quelle": "https://rechtsprechung.gerichte.bs.ch (amtliches Portal, Findinfo/Omnis)",
  "portal": {
-  "gesamtN": 11049,
+  "gesamtN": 11059,
   "jahre": {
    "2022": 973,
    "2023": 905,
    "2024": 893,
-   "2025": 838,
-   "2026": 309
+   "2025": 840,
+   "2026": 317
   }
  },
  "eintraege": [
@@ -30865,6 +30865,15 @@
    "aktualisiert": "2026-05-21"
   },
   {
+   "key": 79001,
+   "gn": "AL.2025.10",
+   "gnSekundaer": "SVG.2025.191",
+   "datum": "2025-08-28",
+   "titel": "Einstellung in der Anspruchsberechtigung bei unterlassener Bewerbung",
+   "erstpublikation": "2026-10-09",
+   "aktualisiert": "2026-10-09"
+  },
+  {
    "key": 79002,
    "gn": "ZB.2025.37",
    "gnSekundaer": "AG.2025.645",
@@ -33088,6 +33097,15 @@
    "aktualisiert": "2026-03-13"
   },
   {
+   "key": 79374,
+   "gn": "KE.2024.20",
+   "gnSekundaer": "AG.2026.119",
+   "datum": "2025-10-31",
+   "titel": "Aufhebung des Besuchsrechts, der Weisungen und der Beistandschaft sowie Zuteilung der alleinigen elterlichen Sorge (BGer 5A_322/2026 vom 31. Juli 2026)",
+   "erstpublikation": "2026-10-08",
+   "aktualisiert": "2026-10-08"
+  },
+  {
    "key": 79375,
    "gn": "BEZ.2025.76",
    "gnSekundaer": "AG.2026.120",
@@ -33554,6 +33572,15 @@
    "titel": "Rechtsöffnung",
    "erstpublikation": "2026-08-20",
    "aktualisiert": "2026-08-20"
+  },
+  {
+   "key": 79444,
+   "gn": "KE.2025.47",
+   "gnSekundaer": "AG.2026.170",
+   "datum": "2026-03-12",
+   "titel": "Umwandlung einer superprovisorischen Massnahme in eine vorsorgliche Massnahme – Anordnung einer Kontosperre und Auftragserteilung zur Vertretung",
+   "erstpublikation": "2026-10-08",
+   "aktualisiert": "2026-10-08"
   },
   {
    "key": 79445,
@@ -34375,6 +34402,15 @@
    "aktualisiert": "2026-07-15"
   },
   {
+   "key": 79597,
+   "gn": "BES.2025.92",
+   "gnSekundaer": "AG.2026.279",
+   "datum": "2026-04-30",
+   "titel": "Verfahrenseinstellung",
+   "erstpublikation": "2026-10-06",
+   "aktualisiert": "2026-10-06"
+  },
+  {
    "key": 79598,
    "gn": "VD.2025.146",
    "gnSekundaer": "AG.2026.280",
@@ -34913,6 +34949,15 @@
    "titel": "Freiwillige Leistungen des Arbeitgebers (Art. 11a AVIG)",
    "erstpublikation": "2026-06-17",
    "aktualisiert": "2026-06-20"
+  },
+  {
+   "key": 79714,
+   "gn": "SB.2025.74",
+   "gnSekundaer": "AG.2026.352",
+   "datum": "2026-03-18",
+   "titel": "Raub, Drohung, Strafzumessung",
+   "erstpublikation": "2026-10-08",
+   "aktualisiert": "2026-10-08"
   },
   {
    "key": 79717,
@@ -35630,9 +35675,9 @@
    "gn": "AUS.2026.74",
    "gnSekundaer": "AG.2026.552",
    "datum": "2026-09-03",
-   "titel": "Verlängerung Ausschaffungshaft",
+   "titel": "Verlängerung der Ausschaffungshaft",
    "erstpublikation": "2026-09-05",
-   "aktualisiert": "2026-09-05"
+   "aktualisiert": "2026-10-07"
   },
   {
    "key": 80029,
@@ -35680,6 +35725,15 @@
    "aktualisiert": "2026-09-18"
   },
   {
+   "key": 80063,
+   "gn": "IV.2025.99",
+   "gnSekundaer": "SVG.2026.159",
+   "datum": "2026-05-26",
+   "titel": "IVG",
+   "erstpublikation": "2026-10-09",
+   "aktualisiert": "2026-10-09"
+  },
+  {
    "key": 80070,
    "gn": "IV.2025.110",
    "gnSekundaer": "SVG.2026.161",
@@ -35698,13 +35752,40 @@
    "aktualisiert": "2026-09-23"
   },
   {
+   "key": 80081,
+   "gn": "IV.2025.108",
+   "gnSekundaer": "SVG.2026.164",
+   "datum": "2026-06-09",
+   "titel": "IVG",
+   "erstpublikation": "2026-10-10",
+   "aktualisiert": "2026-10-10"
+  },
+  {
+   "key": 80085,
+   "gn": "AL.2025.29",
+   "gnSekundaer": "SVG.2026.165",
+   "datum": "2026-06-04",
+   "titel": "AVIG",
+   "erstpublikation": "2026-10-09",
+   "aktualisiert": "2026-10-09"
+  },
+  {
+   "key": 80093,
+   "gn": "IV.2025.112",
+   "gnSekundaer": "SVG.2026.168",
+   "datum": "2026-04-30",
+   "titel": "IVG",
+   "erstpublikation": "2026-10-10",
+   "aktualisiert": "2026-10-10"
+  },
+  {
    "key": 80112,
    "gn": "AUS.2026.85",
    "gnSekundaer": "AG.2026.613",
    "datum": "2026-09-30",
-   "titel": "Ausschaffungshaft",
+   "titel": "Anordnung der Ausschaffungshaft",
    "erstpublikation": "2026-10-02",
-   "aktualisiert": "2026-10-02"
+   "aktualisiert": "2026-10-07"
   },
   {
    "key": 80115,
@@ -35723,6 +35804,15 @@
    "titel": "(nicht rechtskräftig)",
    "erstpublikation": "2026-10-03",
    "aktualisiert": "2026-10-03"
+  },
+  {
+   "key": 80119,
+   "gn": "AUS.2026.86",
+   "gnSekundaer": "AG.2026.619",
+   "datum": "2026-10-06",
+   "titel": "Ausschaffungshaft nach Art. 76a AIG (Haft im Rahmen des Dublin-Verfahrens)",
+   "erstpublikation": "2026-10-06",
+   "aktualisiert": "2026-10-07"
   }
  ]
 }
