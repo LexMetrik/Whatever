@@ -18,6 +18,9 @@
 // Formfehler die Fläche leer und `null` wird gecacht (bisheriges Verhalten,
 // hier bewusst nicht geändert): der Formfehler wird dort wie «keine Daten»
 // behandelt, nicht als Ausfall gezeigt.
+// ERGÄNZT 16.10.2026 (LESER-NAV, Änderungen-Reiter; der Absatz oben bleibt als Beleg
+// vom 7.10. stehen): `revisionen.ts` gehört seither NICHT mehr dazu. Sein Formfehler ist
+// ein Ladefehler (`null`, nicht gecacht), «keine Datei» ein eigenes Ergebnis (`nichtErfasst`).
 //
 // Prüfer bleiben schlank (Wurzelform + Pflichtfelder, die die Konsumenten
 // wirklich dereferenzieren) — das Muster von `src/data/jsonSchutz.ts`, keine
@@ -69,6 +72,20 @@ export interface LadeOptionen {
    *  asynchron den Rumpf lesen (`res.clone()`). */
   alsFehlend?: (res: Response) => boolean | Promise<boolean>;
 }
+
+/** `alsFehlend` für Sidecars, die es nicht für jeden Erlass gibt: `vite dev`/`vite preview`
+ *  liefern statt eines 404 die index.html (200 text/html) — das ist «Datei fehlt».
+ *  Jede ANDERE HTML-Antwort auf eine Datendatei (Captive-Portal, Proxy-Fehlerseite;
+ *  in Prod gibt es für Fehlendes einen echten 404) ist keine Auskunft über die
+ *  Datei, sondern ein Ladefehler: sie WIRFT statt «Datei fehlt» (O-35 b). Der
+ *  SPA-Rückfall ist an der Wurzel der App erkennbar (`id="root"`, index.html).
+ *  Aus `normtext/browse.ts` hierher gehoben (LESER-NAV, Änderungen-Reiter: dieselbe
+ *  Trennung für `revisionen.ts`/`historie-laden.ts`, §5 — eine Fassung statt einer Kopie je Lader). */
+export const IST_SPA_RUECKFALL = async (res: Response): Promise<boolean> => {
+  if (!/\btext\/html\b/i.test(res.headers?.get?.('content-type') ?? '')) return false;
+  if ((await res.clone().text()).includes('id="root"')) return true;
+  throw new Error('Antwort ist keine Datendatei');
+};
 
 /** `null` NUR bei echter 404 (oder `alsFehlend`); jeder andere Fehlschlag WIRFT
  *  — Status, Netz, Parse und Formfehler. Der Aufrufer entscheidet, ob er den

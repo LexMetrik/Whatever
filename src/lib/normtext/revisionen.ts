@@ -11,7 +11,7 @@
 // Übergangslösung bis E1 (dann Projektion aus erlass_fassungen) — siehe Generator.
 
 import { kodiereSchluessel } from './dateiUrl';
-import { ladeJson, pruefeFelder } from '../ladeJson';
+import { IST_SPA_RUECKFALL, ladeJson, pruefeFelder } from '../ladeJson';
 
 const PRUEFER = pruefeFelder('normtext/revisionen/<Erlass>.json', { revisionen: 'array' });
 /** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
@@ -83,46 +83,85 @@ interface RevisionSidecar {
 }
 
 // Sidecar-Cache je Erlass-Key: laufende Promise (ein Fetch je Key/Session).
-// `undefined` = Ladefehler (Fetch-Fehler ≠ leer, §8) — im UI unterscheidbar von «keine».
-const cache = new Map<string, Promise<RevisionSidecar | null>>();
+// DREI Ergebnisse, nicht zwei (§8):
+//   · `RevisionSidecar`  die Datei ist da und gültig.
+//   · `FEHLT`            es GIBT keine Datei für diesen Erlass (404, oder der SPA-Rückfall
+//                        von `vite dev`/`preview`: 200 text/html mit App-Wurzel) — eine
+//                        Auskunft über den Erlass, kein Fehler (PA-13-B03: für die 10
+//                        Sonderansicht-Erlasse und alle Kantone gibt es keine; die Fläche
+//                        meldete «konnte nicht geladen werden»). Bleibt gecacht.
+//   · `null`             der Abruf ist GESCHEITERT (Netz, HTTP-Fehler, kaputte Nutzlast,
+//                        Formfehler). Wird NICHT gecacht (PE-F4-B01, Muster M-8
+//                        `lib/materialien/browse` und `ladeRevisionShard`): vorher klebte
+//                        ein einmaliger Netzausfall bis zum Neuladen der Seite, der Reiter
+//                        «Änderungen» hatte keinen Weg zurück.
+// Lade-Mechanik und die Trennung 404/SPA-Rückfall/Ladefehler: `ladeJson` (`IST_SPA_RUECKFALL`).
+const FEHLT = Symbol('revisionen-sidecar-fehlt');
+type SidecarErgebnis = RevisionSidecar | typeof FEHLT | null;
+const cache = new Map<string, Promise<SidecarErgebnis>>();
 
-function ladeSidecar(key: string): Promise<RevisionSidecar | null> {
+function ladeSidecar(key: string): Promise<SidecarErgebnis> {
   let p = cache.get(key);
   if (!p) {
-    p = (async () => {
+    const versuch: Promise<SidecarErgebnis> = (async () => {
       try {
-        return await ladeJson<RevisionSidecar>(`/normtext/revisionen/${kodiereSchluessel(key)}.json`, PRUEFER);
+        return (await ladeJson<RevisionSidecar>(`/normtext/revisionen/${kodiereSchluessel(key)}.json`, PRUEFER,
+          { alsFehlend: IST_SPA_RUECKFALL })) ?? FEHLT;
       } catch {
         return null;
       }
     })();
-    cache.set(key, p);
+    p = versuch;
+    cache.set(key, versuch);
+    // Fehlschlag NICHT festhalten: der nächste Aufruf versucht es erneut. Dieser Handler
+    // hängt vor jedem Verbraucher-`then` (er wird hier, vor der Rückgabe, registriert);
+    // Erfolg und «fehlt» bleiben für die Sitzung stehen.
+    void versuch.then((r) => { if (r === null && cache.get(key) === versuch) cache.delete(key); });
   }
   return p;
+}
+
+/** Nur für Tests: den Sidecar-Cache leeren (Test-Isolation, Muster `_leereMaterialManifestCache`). */
+export function _leereRevisionenCache(): void {
+  cache.clear();
 }
 
 /** Zusammengeführte Timeline (Datum absteigend), Reichweiten-Hinweis. */
 export interface RevisionAnsicht {
   revisionen: RevisionBezug[];
   reichweite: string | null;
+  /** Abrufdatum (ISO) des Sidecars — Datenstand des Verlaufs (O-03) und datengetragener
+   *  Bezugstag, wo der Erlass keinen `currency.geprueftAm` hat (PA-7-B02: PATV/VGVP).
+   *  `null`, wo der Sidecar keines trägt (§8: kein Ersatzdatum); fehlt bei `nichtErfasst`. */
+  abgerufen?: string | null;
+  /** PA-13-B03: für diesen Erlass gibt es KEINE Revisions-Datei (alle angefragten Keys:
+   *  404/SPA-Rückfall) — «nicht erfasst», ausdrücklich KEIN Ladefehler. `revisionen` ist
+   *  dann leer. Fehlt bei jeder echten Datei, auch mit leerer Liste («keine Änderung»). */
+  nichtErfasst?: true;
 }
 
 /**
  * Revisions-Timeline zu EINER oder mehreren Normen (lazy). Mehrere normKeys werden über
  * `revisionSchluessel` (ocUri bzw. art + Inkrafttretensdatum) dedupliziert und nach Datum absteigend gemischt.
- * `null` = ALLE Sidecars konnten nicht geladen werden (Fetch-Fehler, §8) → ehrlicher
- * Fehlerzustand; leeres `revisionen` = keine erfasste Änderung (Verordnung o. Ä.).
+ * `null` = kein Sidecar lieferte Daten UND mindestens ein Abruf ist gescheitert
+ * (Fetch-Fehler, §8) → ehrlicher Fehlerzustand; `nichtErfasst` = für ALLE Keys gibt es
+ * keine Datei (PA-13-B03, kein Fehler); leeres `revisionen` = keine erfasste Änderung
+ * (Verordnung o. Ä.).
  */
 export async function revisionenFuerNorm(normKeys: readonly string[]): Promise<RevisionAnsicht | null> {
   const sidecars = await Promise.all(normKeys.map(ladeSidecar));
-  if (sidecars.every((s) => s === null)) return null;
+  if (sidecars.every((s) => s === null || s === FEHLT)) {
+    return sidecars.includes(null) ? null : { revisionen: [], reichweite: null, nichtErfasst: true };
+  }
 
   const seen = new Set<string>();
   const out: RevisionBezug[] = [];
   let reichweite: string | null = null;
+  let abgerufen: string | null = null;
   for (const s of sidecars) {
-    if (!s) continue;
+    if (!s || s === FEHLT) continue;
     reichweite ??= s.reichweite;
+    abgerufen ??= s.abgerufen ?? null;
     for (const r of s.revisionen) {
       const id = revisionSchluessel(r);
       if (seen.has(id)) continue;
@@ -135,7 +174,7 @@ export async function revisionenFuerNorm(normKeys: readonly string[]): Promise<R
     : a.dateEntryInForce > b.dateEntryInForce ? -1
     : a.art < b.art ? -1 : a.art > b.art ? 1
     : (a.ocUri ?? '') < (b.ocUri ?? '') ? -1 : (a.ocUri ?? '') > (b.ocUri ?? '') ? 1 : 0);
-  return { revisionen: out, reichweite };
+  return { revisionen: out, reichweite, abgerufen };
 }
 
 /**

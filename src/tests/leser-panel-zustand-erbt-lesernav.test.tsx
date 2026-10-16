@@ -6,14 +6,15 @@
  *     (gemessen 16.10.2026 mit `werkzeugAnsicht` über das ganze Register: VVG, AIG,
  *     AHVG, DSG, StG, ArG, DBG) zeigten «Rechner und Vorlagen 0» samt dem Satz
  *     «Dem Erlass als Ganzem zugeordnet …» über einer leeren Liste.
- * (2) Reiter «Änderungen» am Bund: ohne Änderungs-Sidecar (`wert === null`) sagt die
- *     Tafel «keiner erfasst, oder die Quelle war nicht erreichbar»; die Leerzeile des
- *     Artikels sagte «nichts erfasst» — stärker — und die Tafel stand zugeklappt.
+ * (2) Reiter «Änderungen» am Bund: ohne Änderungs-Sidecar sagte die Tafel «keiner
+ *     erfasst, oder die Quelle war nicht erreichbar»; die Leerzeile des Artikels sagte
+ *     «nichts erfasst» — stärker — und die Tafel stand zugeklappt. Seit #1404 ist 404
+ *     `nichtErfasst` (kein Ladefehler mehr): die Tafel steht offen und sagt dasselbe wie
+ *     der Artikel; der Fall hier sichert das gegen Rückfall.
  *
  * ROT ZU BEKOMMEN (§6.7, gefahren 16.10.2026): in `PanelWerkzeuge` die Frühweiche
  * `verfuegbar.length === 0` auf `verfuegbar.length === 0 && geplant.length === 0`
- * zurücksetzen ⇒ Fall (1) rot; in `PanelTafeln` `aenderungenOhneAuskunft` auf
- * `ebene === 'kanton' && …` zurücksetzen ⇒ Fall (2) rot.
+ * zurücksetzen ⇒ Fall (1) rot.
  */
 import { act, createElement } from 'react';
 import { createRoot, type Root } from 'react-dom/client';
@@ -98,11 +99,11 @@ async function aenderungenText(erlass: string, art: string, ebene: 'bund' | 'kan
   return (ziel.textContent ?? '').replace(/\s+/g, ' ');
 }
 
-describe('O-50 · Änderungen am Bund ohne Sidecar: keine eigene Leerzeile, die Tafel steht offen', () => {
-  it('OR Art. 41, alle Abrufe 404 ⇒ «Kein Änderungsverlauf verfügbar», kein «Zu Art. 41 nichts erfasst», keine Klappzeile', async () => {
+describe('O-50 · Änderungen am Bund ohne Sidecar: Tafel offen, Artikel und Erlass sagen dasselbe (seit #1404)', () => {
+  it('OR Art. 41, alle Abrufe 404 ⇒ Tafel offen «kein Änderungsverlauf erfasst», kein «nicht erreichbar» (stärker als die Artikelzeile), keine Klappzeile', async () => {
     const t = await aenderungenText('OR', '41', 'bund', 404);
-    expect(t).toContain('Kein Änderungsverlauf verfügbar');
-    expect(t).not.toContain('nichts erfasst');
+    expect(t).toContain('Für diesen Erlass ist kein Änderungsverlauf erfasst.');
+    expect(t).not.toContain('nicht erreichbar');
     expect(t).not.toContain('Alle Änderungen des Erlasses');
   });
 
