@@ -2,7 +2,8 @@
 // QS-DATA E2-Vorarbeiten (W2·6-DATA): baut die HOT-FTS5-Tabellen build-time
 // (FAHRPLAN-DATENHALTUNG §3 DDL + §11.5 hot/cold-Grenze).
 //
-// HOT (edge-replika-fähig, < 1 GB, das IST der E2-POC-Zuschnitt):
+// HOT (nach Turso repliziert; Budget = Speichergrenze Turso Free 5 GB, gemessen über dbstat in
+// hot-groesse.ts — vorher «< 1 GB» ohne Quelle; das IST der E2-POC-Zuschnitt):
 //   - fts_artikel                    (contentless, 6 Felder, ALLE Erlasse Bund+Kanton)
 //   - fts_entscheide_schaufenster    (standalone, ALLE Einträge der rechtsprechung.db)
 //
