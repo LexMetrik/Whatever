@@ -17,6 +17,7 @@ import {
   type Zaehler,
 } from './ingest';
 import { baueFtsArtikel, baueFtsEntscheideSchaufenster } from './fts';
+import { messeReplizierteBaeume, pruefeAbdeckung, bewerteHotBudget } from './hot-groesse';
 import type { DatabaseSync } from 'node:sqlite';
 
 // Normtext: Blob-Tabellen (Paritäts-Beweis) + ab E1 die ECHTEN Ziel-Tabellen (Spalten-Weg).
@@ -55,22 +56,30 @@ function mib(bytes: number): string {
 mkdirSync('daten', { recursive: true });
 if (existsSync(ALT_ARTEFAKT)) rmSync(ALT_ARTEFAKT); // E0-Monolith ersatzlos entfernt
 
-let hotBytes = 0; // Summe der FTS-tragenden HOT-Repliken (Budget < 1 GB, §11.5).
+// HOT-Budget (§11.5): gemessen wird nur, was turso-sync nach Turso schreibt (hot-groesse.ts),
+// gegen die Speichergrenze des Turso-Gratisplans (5 GB) — nicht die Dateigroesse der Artefakte.
+let hotBytes = 0;
+const gefundenJeArtefakt: Array<readonly string[]> = [];
 for (const { pfad, doktyp, ingest, fts } of ARTEFAKTE) {
   if (existsSync(pfad)) rmSync(pfad);
   const db = oeffneDb(pfad);
   frischesSchema(db, doktyp);
   const z = ingest(db);
   const zFts = fts ? fts(db) : {};
+  const repliziert = messeReplizierteBaeume(db); // vor close(): dbstat liest die offene DB
   db.close();
   const bytes = statSync(pfad).size;
-  if (fts) hotBytes += bytes;
+  hotBytes += repliziert.bytes;
+  gefundenJeArtefakt.push(repliziert.gefunden);
   const teile = Object.entries({ ...z, ...zFts }).map(([k, v]) => `${k} ${v}`).join(' · ');
   console.log(`datenhaltung:build — ${pfad} (${teile}) [${mib(bytes)}]`);
+  console.log(`datenhaltung:build — ${pfad}: repliziert ${mib(repliziert.bytes)} (Datei ${mib(bytes)})`);
 }
-// Grössen-Messung (§11.5): HOT-Replika (fts_artikel + fts_entscheide_schaufenster) gegen das < 1-GB-Budget.
-console.log(
-  `datenhaltung:build — HOT-Replika (FTS-tragend) = ${mib(hotBytes)} / Budget 1024 MiB → ${
-    hotBytes < 1024 * 1024 * 1024 ? 'OK' : 'ÜBERSCHRITTEN'
-  }.`,
-);
+// Jede replizierte Tabelle muss in genau einem Artefakt liegen, sonst ist die Summe unvollstaendig.
+const abdeckung = pruefeAbdeckung(gefundenJeArtefakt);
+if (abdeckung.length > 0) {
+  console.error(`datenhaltung:build ROT — HOT-Messung unvollstaendig: ${abdeckung.join('; ')}`);
+  process.exit(1);
+}
+const budget = bewerteHotBudget(hotBytes);
+console.log(`datenhaltung:build — ${budget.zeile}`);
