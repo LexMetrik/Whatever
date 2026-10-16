@@ -137,11 +137,13 @@ export function VerzugszinsTimeline({ e }: { e: VerzugszinsErgebnis }) {
             eine Zeile (@320 bei Schriftskala 1.4: +12 px Seiten-Querscroll,
             die beiden Daten sind unteilbar), bricht die Zeile um, statt die
             Seite zu weiten; nichts wird gekürzt. Wo sie vorher ohne Stauchung
-            in eine Zeile passten, ändert sich nichts. */}
-        <div className="flex flex-wrap justify-between mt-1.5 num text-body-s text-ink-500">
+            in eine Zeile passten, ändert sich nichts. Der Stichtag bleibt
+            auch allein in der zweiten Zeile rechts (`ml-auto`): die Achse
+            heisst links Beginn, rechts Ende. */}
+        <div className="flex flex-wrap justify-between gap-x-2 mt-1.5 num text-body-s text-ink-500">
           <span>{e.ersterZinstag}</span>
           <span>{gesamtTage} Tage</span>
-          <span>{e.stichtag}</span>
+          <span className="ml-auto text-right">{e.stichtag}</span>
         </div>
         {/* Legende (Konsistenz-Check 5.6.2026): Farbe ↔ Zinssatz, deckungs-
             gleich mit den gerenderten Segmenten – wichtig bei Mini-Segmenten,

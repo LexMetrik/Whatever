@@ -85,12 +85,14 @@ export function MaterialLeser() {
 
   // Frist für die Lade-Unsichtbarkeit des Rückweg-Knopfs (s. KONTEXT_FRIST_MS): ab dem
   // Zeitpunkt, an dem das Material steht und das Panel zu laden beginnt. Der Zustand merkt
-  // sich den Schlüssel, für den die Frist ablief (Wechsel des Materials ⇒ Frist beginnt neu).
+  // sich den Schlüssel, für den die Frist ablief (Wechsel des Materials ⇒ Frist beginnt neu);
+  // das Aufräumen setzt ihn zurück, sonst stünde bei der Rückkehr zu einem Material im selben
+  // Mount die alte, abgelaufene Frist sofort wieder (Gegenprüfung #1411).
   const [kontextFristFuer, setKontextFristFuer] = useState<string | null>(null);
   useEffect(() => {
     if (laden) return;
     const t = setTimeout(() => setKontextFristFuer(key), KONTEXT_FRIST_MS);
-    return () => clearTimeout(t);
+    return () => { clearTimeout(t); setKontextFristFuer(null); };
   }, [laden, key]);
   const kontextFristAbgelaufen = kontextFristFuer === key;
 
