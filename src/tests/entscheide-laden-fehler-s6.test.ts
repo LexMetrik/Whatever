@@ -12,11 +12,13 @@ import { ladeBezugsShard } from '../lib/rechtsprechung/bezuege';
 
 const SHARD = { erzeugt: 'x', erlass: 'T', erlassEbene: 'bund', dokumente: {}, proArtikel: {}, gesamtProArtikel: {} };
 
-function antwort(status: number, body: unknown = SHARD, typ = 'application/json'): Response {
-  return {
+function antwort(status: number, body: unknown = SHARD, typ = 'application/json', html = ''): Response {
+  const r = {
     status, ok: status >= 200 && status < 300, json: async () => body,
     headers: new Headers({ 'content-type': typ }),
+    text: async () => html,
   } as Response;
+  return Object.assign(r, { clone: () => r });
 }
 
 afterEach(() => { vi.unstubAllGlobals(); });
@@ -27,9 +29,26 @@ describe('ladeBezugsShard — Fehler und «kein Shard» sind zwei Lagen', () => 
     await expect(ladeBezugsShard('S6-404')).resolves.toBeNull();
   });
 
-  it('SPA-Rückfall (200 mit HTML statt JSON) ⇒ null wie 404, kein Fehler', async () => {
-    vi.stubGlobal('fetch', vi.fn(async () => antwort(200, null, 'text/html')));
+  it('SPA-Rückfall (200 mit der App-index.html statt JSON) ⇒ null wie 404, kein Fehler', async () => {
+    vi.stubGlobal('fetch', vi.fn(async () => antwort(200, null, 'text/html', '<div id="root"></div>')));
     await expect(ladeBezugsShard('S6-SPA')).resolves.toBeNull();
+  });
+
+  // LESER-NAV O-61 (16.10.2026): jede Nicht-JSON-Antwort galt als «Shard fehlt» — auch die
+  // Anmeldeseite eines Captive-Portals oder die Fehlerseite eines Proxys (200 text/html ohne
+  // App-Wurzel). Das ist keine Auskunft über die Datei, sondern ein Ladefehler (Fehlerklasse
+  // O-35 b): der Leser schrieb «kein Entscheid erfasst» (§8). In Prod gibt es für Fehlendes
+  // den echten 404.
+  it('fremde HTML-Seite (Captive-Portal, Proxy) ⇒ Wurf, nicht null', async () => {
+    vi.stubGlobal('fetch', vi.fn(async () => antwort(200, null, 'text/html; charset=utf-8', '<html><body>Bitte anmelden</body></html>')));
+    await expect(ladeBezugsShard('S6-PORTAL')).rejects.toThrow(/keine Datendatei/);
+  });
+
+  it('fremde HTML-Seite wird nicht gecacht — der nächste Versuch lädt neu', async () => {
+    vi.stubGlobal('fetch', vi.fn(async () => antwort(200, null, 'text/html', '<html>Portal</html>')));
+    await expect(ladeBezugsShard('S6-PORTAL2')).rejects.toBeInstanceOf(Error);
+    vi.stubGlobal('fetch', vi.fn(async () => antwort(200)));
+    await expect(ladeBezugsShard('S6-PORTAL2')).resolves.toMatchObject({ erlass: 'T' });
   });
 
   it('kaputtes JSON bei JSON-Typ ⇒ Wurf', async () => {

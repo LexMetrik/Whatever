@@ -273,10 +273,14 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   // Shard»: weder «Zu Art. N nichts erfasst.» noch «Erlass in Kraft seit …» (an Staats-
   // verträgen) dürfen dann stehen (§8) — statt dessen der Fehlertext mit Neuversuch.
   const historieFehler = historie.fehler === true;
-  const ohneFassung = !blatt?.historie?.ereignisse.length && artikelRevisionen.fertig && historie.fertig && !historieFehler && !artRev;
+  // O-60 (LESER-NAV): scheitert NUR der Artikel-Revisions-Shard (Netz, 5xx, fremdes HTML; 404 bleibt
+  // `null` = «Erlass ohne Beleg»), wäre «Zu Art. N nichts erfasst.» eine Falschaussage (§8). Nur dort,
+  // wo er der einzige Beleg wäre: mit Historie-Ereignis fehlt dem Blatt nichts.
+  const artRevFehler = artikelRevisionen.fehler === true && !blatt?.historie?.ereignisse.length;
+  const ohneFassung = !blatt?.historie?.ereignisse.length && artikelRevisionen.fertig && !artRevFehler && historie.fertig && !historieFehler && !artRev;
   const artRevOhneHistorie = artRevFassungFallback(blatt?.historie, artRev);
   const erlassStand = erlassStandFuerArtikel({
-    ebene, erlassSr, inkraftSeit, inkraftGestaffelt, blatt, artRev, revisionenFertig: artikelRevisionen.fertig,
+    ebene, erlassSr, inkraftSeit, inkraftGestaffelt, blatt, artRev, revisionenFertig: artikelRevisionen.fertig && !artRevFehler,
     historieFertig: historie.fertig && !historieFehler, historieShard: historie.wert,
   });
   // W3-4 (Audit 25.9.2026): für KEINEN Kanton liegen Änderungsdaten vor (0 von
@@ -298,8 +302,8 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   // nichts erfasst.» wäre eine Falschaussage über den Artikel (§8): die Zeile schweigt, die
   // Erlass-Tafel steht offen mit ihrem Fehlertext, und «Erneut laden» wiederholt alle Quellen
   // des Reiters (sonst käme ein alter Fehlschlag als falsche Leerzeile zurück, sobald eine
-  // andere sich erholt hat). Lücke: scheitert NUR der Artikel-Shard, trennt `ladeRevisionShard`
-  // das noch nicht von «Erlass ohne Beleg» (Nebenfund, s. PR).
+  // andere sich erholt hat). Scheitert NUR der Artikel-Shard, meldet `artRevFehler` den
+  // Ladefehler (LESER-NAV O-60, 16.10.2026).
   const aenderungenLadefehler = ebene !== 'kanton' && revisionen.fertig && revisionen.wert === null;
   const aenderungenErneut = () => { revisionen.erneut?.(); artikelRevisionen.erneut?.(); historie.erneut?.(); };
   // Ist der ganze Erlass leer, sagt das die Tafel selbst — ein zweites «Zu Art. N
@@ -317,6 +321,10 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   // Klappzeile). Beim Laden sagt eine Zeile über der Klappzeile, dass etwas kommt; beim
   // Ausfall OHNE kuratierten Rest steht die Tafel offen (wie «Null im ganzen Erlass»).
   const erlLaedt = !erlaeuterungen.fertig;
+  // O-72 (LESER-NAV): wie O-29 bei «Änderungen» und «Materialien» — ohne Zahl steht die Tafel zu, ihr
+  // «… werden geladen …» hinter der Klappzeile. Am Kanton steht «Änderungen» sofort offen: dort keine Zeile.
+  const aenderungenLaedt = ebene !== 'kanton' && !revisionen.fertig;
+  const materialienLaedt = !materialien.fertig;
   // A3 (Gegenprüfung #1405): bei Ausfall des Kanten-Shards ist `rest` IMMER gesetzt (auch
   // leer: BGOE, MWSTV, STG kuratiert 0) — `&& !rest` hielt die Tafel dann zu, der Fehlersatz
   // stand hinter der Klappzeile. Offen ist sie bei JEDEM Ausfall; hat `rest` Einträge, zeigt
@@ -338,9 +346,10 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
           )}
           <BlattArtikelGruppe titel={zu} zahl={0} daten="aenderungen" token={token}
             geladen={ohneFassung && !aenderungenAmKantonNichtErfasst && !aenderungenLadefehler}
-            ladefehler={historieFehler && !aenderungenLadefehler
+            ladefehler={(historieFehler || artRevFehler) && !aenderungenLadefehler
               ? { gegenstand: `Änderungen ${zu.replace(/^Zu /, 'zu ')}`, onErneut: aenderungenErneut } : undefined}>{null}</BlattArtikelGruppe>
           {erlassStand && token && <ErlassStandZeile iso={erlassStand} token={token} />}
+          {aenderungenLaedt && <p data-v3-aenderungen-laedt className="px-3 pt-2 text-body-s text-ink-600">Änderungen werden geladen …</p>}
           {/* W3-4: `zahl={0}` statt `null` erzwingt bei `ErlassTeil` den
               UNGEKLAPPTEN Pfad («Null im ganzen Erlass: keine Klappzeile») —
               der ehrliche Leerzustand aus `PanelAenderungen` steht dann sofort
@@ -371,6 +380,7 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
               ? { gegenstand: `Botschaften ${zu.replace(/^Zu /, 'zu ')}`, onErneut: historie.erneut } : undefined}>
             {artBot.map((b) => <BotschaftZeile key={b.key} b={b} aenderung={aenderungNachBotschaft.get(b.key)} locale={locale} />)}
           </BlattArtikelGruppe>
+          {materialienLaedt && <p data-v3-materialien-laedt className="px-3 pt-2 text-body-s text-ink-600">Materialien werden geladen …</p>}
           <ErlassTeil was="Materialien" zahl={matZahl} daten="materialien">
             <PanelMaterialien stand={materialien} ebene={ebene} locale={locale} aenderungNachBotschaft={aenderungNachBotschaft} />
           </ErlassTeil>
