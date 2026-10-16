@@ -13,6 +13,12 @@ import { describe, it, expect, vi, afterEach } from 'vitest';
 afterEach(() => vi.unstubAllGlobals());
 
 const jsonOk = (body: unknown) => ({ ok: true, status: 200, json: async () => body }) as unknown as Response;
+const htmlAntwort = (rumpf: string) => ({
+  ok: true, status: 200,
+  headers: { get: (k: string) => (k.toLowerCase() === 'content-type' ? 'text/html; charset=utf-8' : null) },
+  clone() { return this; }, text: async () => rumpf,
+  json: async () => { throw new SyntaxError('Unexpected token <'); },
+}) as unknown as Response;
 const status = (code: number) => ({ ok: false, status: code, json: async () => ({}) }) as unknown as Response;
 const REGISTER = { erlasse: [{ key: 'OR', ebene: 'bund', kuerzel: 'OR', titel: 'Obligationenrecht', datei: 'bund/OR.json' }] };
 
@@ -103,10 +109,23 @@ describe('ladeBezuegeZaehler — Sidecar-Ladefehler ist kein «keine Zähler» (
   });
 
   it('ladeStrukturDokumentStreng: HTML-Antwort mit 200 (vite preview/dev: SPA-Fallback für eine FEHLENDE Datei) = «Datei fehlt», KEIN Ausfall', async () => {
-    const html = { ok: true, status: 200, headers: { get: (k: string) => (k.toLowerCase() === 'content-type' ? 'text/html; charset=utf-8' : null) }, json: async () => { throw new SyntaxError('Unexpected token <'); } } as unknown as Response;
+    // O-35 (b), DEKLARIERTE ANPASSUNG: die Attrappe liefert jetzt den Rumpf der App-Shell
+    // (`id="root"`), weil der SPA-Rückfall daran erkannt wird; Zusicherung unverändert.
+    const html = htmlAntwort('<!doctype html><html><body><div id="root"></div></body></html>');
     vi.stubGlobal('fetch', vi.fn(async () => html));
     const b = await browse();
     await expect(b.ladeStrukturDokumentStreng('bund', 'PRHG')).resolves.toEqual({ artikel: null, kopf: null });
+  });
+
+  it('ladeStrukturDokumentStreng (O-35 b): HTML-200 OHNE App-Wurzel (Captive-Portal, Proxy-Seite) = Ladefehler «Antwort ist keine Datendatei», NICHT «Datei fehlt»; nicht gecacht', async () => {
+    let ruf = 0;
+    const doc = { artikel: { '1': { gliederung: [] } }, kopf: { titel: 'OR' } };
+    vi.stubGlobal('fetch', vi.fn(async () => (++ruf === 1
+      ? htmlAntwort('<html><body><form action="/login">WLAN-Anmeldung</form></body></html>')
+      : jsonOk(doc))));
+    const b = await browse();
+    await expect(b.ladeStrukturDokumentStreng('bund', 'OR')).rejects.toThrow('Antwort ist keine Datendatei');
+    await expect(b.ladeStrukturDokumentStreng('bund', 'OR')).resolves.toEqual({ artikel: doc.artikel, kopf: doc.kopf });
   });
 
   it('ladeStrukturDokumentStreng: JSON mit 200 und JSON-Content-Type wird gelesen; kaputtes JSON bleibt ein Ausfall', async () => {

@@ -124,6 +124,11 @@ export function useBezuege(erlassKey: string | undefined): {
   histogramm: Histogramm;
   /** B5: der aktive Von-Bis-Bereich, für Steuerung und Kanten-Auswahl. */
   bereich: Zeitbereich;
+  /** O-03: Erzeugungsdatum des geladenen Bezugs-Shards (`BezugsShard.erzeugt`,
+   *  ISO) — der Datenstand des Reiters «Entscheide». `null`, solange nichts
+   *  geladen ist oder der Erlass keinen Shard hat: dann steht kein Datum da,
+   *  statt eines erfundenen (§8). */
+  datenstand: string | null;
 } {
   const klassen = useBezugKlassen();
   const kantone = useBezugKantone();
@@ -290,7 +295,9 @@ export function useBezuege(erlassKey: string | undefined): {
     return () => window.removeEventListener('online', neuLaden);
   }, [fehler, neuLaden]);
 
-  return { aktiv, geladen, fehler, neuLaden, bezuegeFuer, alleFuer, kantoneVerfuegbar, klassenImErlass, histogramm, bereich };
+  const datenstand = shard && erlassKey && shard.key === erlassKey ? shard.shard?.erzeugt ?? null : null;
+
+  return { aktiv, geladen, fehler, neuLaden, bezuegeFuer, alleFuer, kantoneVerfuegbar, klassenImErlass, histogramm, bereich, datenstand };
 }
 
 /** Geteilte Leer-Instanzen: halten die Referenz stabil, solange nichts geladen

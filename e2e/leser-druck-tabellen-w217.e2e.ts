@@ -125,8 +125,14 @@ test.describe('W2·17 · Druck (page.pdf, A4) verliert keinen Rechtsinhalt', () 
       }
       const artikel = document.querySelector('#art-3') as HTMLElement
       const marken = [...artikel.querySelectorAll('button[title$="kopieren"]')]
-      const fremde = [...document.querySelectorAll('button')].filter((b) => !b.matches('button[title$="kopieren"]') && sichtbar(b))
+      // O-01 (LESER-NAV #1381, deklariert §6.3): Fussnoten-Marker sind Rechtsinhalt
+      // und drucken seither mit — sie zählen nicht als Bedienelement, ihr Druck wird
+      // unten positiv geprüft.
+      const fnMarker = [...document.querySelectorAll('button[data-fn-ref]')]
+      const fremde = [...document.querySelectorAll('button')].filter((b) => !b.matches('button[title$="kopieren"], button[data-fn-ref]') && sichtbar(b))
       return {
+        fnMarker: fnMarker.length,
+        fnMarkerSichtbar: fnMarker.filter(sichtbar).length,
         marken: marken.length,
         markenSichtbar: marken.filter(sichtbar).map((b) => (b.textContent ?? '').trim()),
         fremdeSichtbar: fremde.map((b) => b.getAttribute('aria-label') ?? b.textContent ?? '?'),
@@ -138,6 +144,7 @@ test.describe('W2·17 · Druck (page.pdf, A4) verliert keinen Rechtsinhalt', () 
     expect(m.markenSichtbar).toEqual(expect.arrayContaining(['1', '2', 'a.', 'd.']))
     expect(m.text, 'Absatz-Nummer 1 steht vor dem Text').toMatch(/1\s*Die Strafbehörden/)
     expect(m.fremdeSichtbar, 'Bedienelemente bleiben im Druck ausgeblendet').toEqual([])
+    expect(m.fnMarkerSichtbar, 'Fussnoten-Marker drucken mit (O-01)').toBe(m.fnMarker)
   })
 })
 

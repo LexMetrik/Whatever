@@ -14,6 +14,7 @@ import { FehlSeite } from '../components/ui/FehlSeite';
 import { Ladeanzeige } from '../components/ui/Ladeanzeige';
 import { useMeldeInhaltsKopf } from '../components/layout/InhaltsKopfKontext';
 import type { BrowseMaterial } from '../lib/materialien/typen';
+import { BsOgdNachweis } from '../components/materialien/BsOgdNachweis';
 import { sicherDekodiert } from '../lib/sicherDekodieren';
 
 // ─── Reader EINES Materials (/materialien/:key) ─────────────────────────────
@@ -170,6 +171,8 @@ export function MaterialLeser() {
             zusätzlich als sichtbarer Text»). Ihn im Zug einer Design-Angleichung
             zu entfernen, wäre ein Abbau von Ehrlichkeit, nicht von Dopplung. */}
         <p className="text-xs text-ink-500 break-all max-w-reading">{m.quelleUrl}</p>
+        {/* O-10: CC-BY-Namensnennung der data.bs.ch-Datensätze (`BsOgdNachweis`). */}
+        {m.behoerde === 'BS-GR' && <p className="text-xs text-ink-500 max-w-reading"><BsOgdNachweis /></p>}
       </LeserKopfGeruest>
 
       {/* ── W2·31-BILDSCHIRMBREITE B8 (25.9.2026) · LESESPALTE + RANDSPALTE ──

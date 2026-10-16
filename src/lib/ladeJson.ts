@@ -64,8 +64,10 @@ export function pruefeFelder(
 
 export interface LadeOptionen {
   /** Antwort, die wie «Datei fehlt» (null) behandelt wird, z. B. der SPA-Rückfall
-   *  (200 text/html) von `vite dev`/`vite preview` statt eines echten 404. */
-  alsFehlend?: (res: Response) => boolean;
+   *  (200 text/html) von `vite dev`/`vite preview` statt eines echten 404.
+   *  Darf werfen (Antwort ist weder Datei noch SPA-Rückfall: Ladefehler) und
+   *  asynchron den Rumpf lesen (`res.clone()`). */
+  alsFehlend?: (res: Response) => boolean | Promise<boolean>;
 }
 
 /** `null` NUR bei echter 404 (oder `alsFehlend`); jeder andere Fehlschlag WIRFT
@@ -75,7 +77,7 @@ export async function ladeJson<T>(url: string, pruefer: JsonPruefer, opt: LadeOp
   const res = await fetch(url);
   if (res.status === 404) return null;
   if (!res.ok) throw new Error(`HTTP ${res.status} für ${url}`);
-  if (opt.alsFehlend?.(res)) return null;
+  if (await opt.alsFehlend?.(res)) return null;
   return pruefeJson<T>(await res.json(), pruefer);
 }
 

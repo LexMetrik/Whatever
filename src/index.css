@@ -2148,6 +2148,17 @@
        ohnehin neutral. Alle ANDEREN Bedienelemente bleiben verborgen. */
     button.lc-zitiermarke { display: inline-block !important; }
 
+    /* O-01 (FEHLERBESTAND, 15.10.2026) · DIE FUSSNOTEN-MARKE IST RECHTSINHALT,
+       KEIN BEDIENELEMENT — derselbe Fall wie die Zitiermarke oben. Der Marker
+       (`ArtikelBody.tsx`, Kennung `data-fn-ref`) ist ein `<button>` und fiel
+       unter die Pauschalregel. GEMESSEN 15.10.2026 (vite dev, Playwright
+       headless, `emulateMedia('print')`, STPO @1440): 285 Marker im DOM, im
+       Druck 0 sichtbar, während die Fussnoten-Texte (`[data-fn-apparat]`: 135)
+       und die Kopf-Marker (`[data-fn-marker]`: 41) druckten — Texte ohne die
+       Zahl, die auf sie verweist. Nur die Zahl kommt zurück; die Klick-Optik
+       ist im Druck neutral, das Popover liegt nie im Druck-DOM. */
+    button[data-fn-ref] { display: inline-block !important; }
+
     /* W2·17-UI-BEFUNDE DFG-G03 (2.10.2026): Tabellen im Druck. Die Zellen tragen am
        Bildschirm teils `whitespace-nowrap` (Zahlen, Beträge), die Prosa bricht um.
        Gedruckt wird nie auf die sichtbare Breite zugeschnitten (Scroll-Kasten →

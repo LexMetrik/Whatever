@@ -4,6 +4,7 @@ import { ladeMaterialManifest, filtere, vorhandeneDoktypen } from '../../lib/mat
 import { BEHOERDEN } from '../../lib/materialien/register';
 import { GATTUNG_LABEL, gattungVon, type Gattung } from '../../lib/materialien/gattung';
 import type { BrowseMaterial, BehoerdeId, DoktypId } from '../../lib/materialien/typen';
+import { BsOgdNachweis } from '../materialien/BsOgdNachweis';
 import { Leerzustand } from '../ui/Leerzustand';
 import { StandChip } from '../ui/StandChip';
 import { Tabs } from '../ui/Tabs';
@@ -155,6 +156,11 @@ export function MaterialienBlatt() {
                 </Link>
               ))}
             </div>
+            {/* O-10 (CC BY 4.0): die Zeilen zeigen Titel, Nummer und Datum der
+                data.bs.ch-Datensätze — also dort die Namensnennung, wo BS-GR steht. */}
+            {gefiltert.slice(0, portion).some((m) => m.behoerde === 'BS-GR') && (
+              <p className="text-micro text-ink-500"><BsOgdNachweis /></p>
+            )}
             {gefiltert.length > portion && (
               <WeitereKnopf rest={gefiltert.length - portion} mehr={() => setPortion((p) => p + PORTION)} />
             )}
