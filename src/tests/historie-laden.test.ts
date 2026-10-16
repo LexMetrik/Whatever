@@ -1,14 +1,14 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import {
-  ladeHistorieShard,
+  ladeHistorieShardErgebnis,
   historieFuerArtikel,
   _leereHistorieCache,
   type HistorieShard,
 } from '../lib/normtext/historie-laden';
 
 // G-HIST-UI · Client-Loader der Per-Artikel-Historie-Shards. Reine Ladeschicht (§3):
-// EIN Fetch je Erlass (gecacht), 404 = still null, transienter Fehler NICHT
-// dauerhaft gecacht (Neuversuch), direkter Roh-Token-Lookup. Kein Parsen hier.
+// EIN Fetch je Erlass (gecacht), direkter Roh-Token-Lookup. Kein Parsen hier.
+// 404 und transienter Fehler: `historie-laden-ergebnis-w217.test.ts`.
 
 const SHARD: HistorieShard = {
   erlass: 'BGBM',
@@ -30,9 +30,8 @@ const SHARD: HistorieShard = {
   residuum: [],
 };
 
-function mockFetch(status: number, body?: unknown, opts: { wirft?: boolean } = {}) {
+function mockFetch(status: number, body?: unknown) {
   return vi.fn(async () => {
-    if (opts.wirft) throw new Error('Netz-Blip');
     return {
       status,
       ok: status >= 200 && status < 300,
@@ -44,37 +43,17 @@ function mockFetch(status: number, body?: unknown, opts: { wirft?: boolean } = {
 beforeEach(() => { _leereHistorieCache(); });
 afterEach(() => { vi.restoreAllMocks(); });
 
-describe('ladeHistorieShard', () => {
-  it('lädt den Shard und cacht (nur EIN Fetch je Key)', async () => {
+describe('ladeHistorieShardErgebnis', () => {
+  // 404, SPA-Rückfall, Netz-/5xx-Fehler samt Nicht-Cachen: `historie-laden-ergebnis-w217.test.ts`.
+  it('lädt den Shard von der Erlass-URL und cacht (nur EIN Fetch je Key, gleiche Objekt-Identität)', async () => {
     const f = mockFetch(200, SHARD);
     vi.stubGlobal('fetch', f);
-    const a = await ladeHistorieShard('BGBM');
-    const b = await ladeHistorieShard('BGBM');
-    expect(a).toEqual(SHARD);
+    const a = await ladeHistorieShardErgebnis('BGBM');
+    const b = await ladeHistorieShardErgebnis('BGBM');
+    expect(a).toEqual({ shard: SHARD, fehler: false });
     expect(b).toBe(a);
     expect(f).toHaveBeenCalledTimes(1);
     expect(f).toHaveBeenCalledWith('/normtext/historie/BGBM.json');
-  });
-
-  it('404 (kein Shard) → null, still (kein throw)', async () => {
-    vi.stubGlobal('fetch', mockFetch(404));
-    expect(await ladeHistorieShard('OHNE')).toBeNull();
-  });
-
-  it('transienter Fehler wird NICHT dauerhaft gecacht (Neuversuch möglich)', async () => {
-    const wirft = mockFetch(200, undefined, { wirft: true });
-    vi.stubGlobal('fetch', wirft);
-    expect(await ladeHistorieShard('OR')).toBeNull();
-    // Zweiter Versuch: jetzt erfolgreich → kein toter Cache-Eintrag.
-    vi.stubGlobal('fetch', mockFetch(200, SHARD));
-    expect(await ladeHistorieShard('OR')).toEqual(SHARD);
-  });
-
-  it('5xx → null (kein throw), Cache-Eintrag verworfen', async () => {
-    vi.stubGlobal('fetch', mockFetch(503));
-    expect(await ladeHistorieShard('OR')).toBeNull();
-    vi.stubGlobal('fetch', mockFetch(200, SHARD));
-    expect(await ladeHistorieShard('OR')).toEqual(SHARD);
   });
 });
 

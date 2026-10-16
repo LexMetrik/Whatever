@@ -1,14 +1,13 @@
 /**
  * W2·17-UI-BEFUNDE · PE-F10-B01 (1.10.2026): `ladeHistorieShardErgebnis` trennt «kein Shard»
- * (404 bzw. SPA-Rückfall) von «nicht erreichbar». `ladeHistorieShard` bleibt unverändert
- * (siehe `historie-laden.test.ts`, null in beiden Fällen) — der Ergebnis-Lader ist der
- * zweite Zugang für Flächen, die den Unterschied brauchen.
+ * (404 bzw. SPA-Rückfall) von «nicht erreichbar». Der Alt-Zugang `ladeHistorieShard`
+ * (null in beiden Fällen) ist zurückgebaut (O-76 b): kein Produktcode rief ihn.
  *
  * ROT ZU BEKOMMEN (§6.7): im 404-Zweig `fehler: true` setzen bzw. im Fehlerzweig das
  * `shardPromises.delete` streichen.
  */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { ladeHistorieShardErgebnis, ladeHistorieShard, _leereHistorieCache, type HistorieShard } from '../lib/normtext/historie-laden';
+import { ladeHistorieShardErgebnis, _leereHistorieCache, type HistorieShard } from '../lib/normtext/historie-laden';
 
 const SHARD = { erlass: 'UVG', abdeckung: { fussnoten: 1, ereignis: 1, referenz: 0, unparsed: 0 }, artikel: {}, residuum: [] } as unknown as HistorieShard;
 
@@ -61,11 +60,5 @@ describe('ladeHistorieShardErgebnis', () => {
     expect(await ladeHistorieShardErgebnis('UVG')).toEqual({ shard: null, fehler: true });
     vi.stubGlobal('fetch', vi.fn(async () => antwort(200, { body: SHARD })));
     expect(await ladeHistorieShardErgebnis('UVG')).toEqual({ shard: SHARD, fehler: false });
-  });
-  it('ladeHistorieShard (Alt-Zugang) liefert weiter null in beiden Fällen', async () => {
-    vi.stubGlobal('fetch', vi.fn(async () => antwort(404)));
-    expect(await ladeHistorieShard('A')).toBeNull();
-    vi.stubGlobal('fetch', vi.fn(async () => { throw new TypeError('x'); }));
-    expect(await ladeHistorieShard('B')).toBeNull();
   });
 });
