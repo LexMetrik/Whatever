@@ -38,7 +38,7 @@ afterEach(() => { vi.restoreAllMocks(); vi.unstubAllGlobals(); });
 describe('U12 · Gattungs-Zuordnung (eine Quelle mit dem Leser)', () => {
   it('genau die Doktypen der Leser-Reiter «Materialien» sind Gesetzgebung', () => {
     const gesetzgebung = DOKTYPEN.filter((d) => gattungVon(d.id) === 'materialien').map((d) => d.id).sort();
-    expect(gesetzgebung).toEqual(['botschaft', 'gr-bericht', 'gr-initiative', 'ratschlag', 'vernehmlassung']);
+    expect(gesetzgebung).toEqual(['botschaft', 'gr-ausgabenbericht', 'gr-bericht', 'gr-initiative', 'ratschlag', 'vernehmlassung']);
   });
 });
 

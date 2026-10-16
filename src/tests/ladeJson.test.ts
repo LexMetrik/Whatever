@@ -16,7 +16,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { ladeJson, ladeJsonStreng, pruefeFelder } from '../lib/ladeJson';
 import { ladeKantenShardErgebnis, _leereKantenShardCache } from '../lib/materialien/kanten-shard';
 import { ladeErlassDateiStreng } from '../lib/normtext/browse';
-import { ladeHistorieShard } from '../lib/normtext/historie-laden';
+import { ladeHistorieShardErgebnis } from '../lib/normtext/historie-laden';
 import { ladeLeitfallShard, _leereShardCache } from '../lib/rechtsprechung/norm-index';
 import { ladeAnkerSidecar } from '../lib/entstehung/anker';
 import { ladeBezugsShard } from '../lib/rechtsprechung/bezuege';
@@ -97,10 +97,10 @@ describe('Formfehler an echten Lade-Stellen — bestehender Fehlerpfad, kein sti
     expect(f).toHaveBeenCalledTimes(1);
   });
 
-  it('Historie-Shard ohne artikel: null und nicht gecacht (vorher: Objekt durchgereicht, TypeError im Leser)', async () => {
+  it('Historie-Shard ohne artikel: Ladefehler (shard null, fehler true) und nicht gecacht (vorher: Objekt durchgereicht, TypeError im Leser)', async () => {
     const f = stubFetch({ '/normtext/historie/HFORM.json': { status: 200, body: { erlass: 'HFORM' } } });
-    expect(await ladeHistorieShard('HFORM')).toBeNull();
-    expect(await ladeHistorieShard('HFORM')).toBeNull();
+    expect(await ladeHistorieShardErgebnis('HFORM')).toEqual({ shard: null, fehler: true });
+    expect(await ladeHistorieShardErgebnis('HFORM')).toEqual({ shard: null, fehler: true });
     expect(f).toHaveBeenCalledTimes(2);
   });
 

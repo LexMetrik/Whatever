@@ -47,6 +47,26 @@ test.describe('LESER-NAV · Reiter «Änderungen»: Lade-Zustände und Datenstan
     await expect(page.locator('[data-v3-blatt-erlassteil="aenderungen"] > button')).toBeVisible();
   });
 
+  // O-72 (16.10.2026): beim Laden stand nur «▸ Alle Änderungen/Materialien des Erlasses», kein
+  // Wort vom Laden (ohne Zahl ist die Erlass-Tafel zugeklappt, ihr «… werden geladen …» dahinter).
+  // Abruf um 2,5 s verzögert; ROT ZU BEKOMMEN: die Zeilen `aenderungenLaedt &&`/`materialienLaedt &&`
+  // in `PanelTafeln.tsx` streichen.
+  test('(c) Änderungen laden: eine Ladezeile über der Klappzeile, danach mit Zahl', async ({ page }) => {
+    await page.route('**/normtext/revisionen/BGBM.json', async (route) => { await new Promise((r) => setTimeout(r, 2_500)); await route.continue(); });
+    await oeffne(page, '/gesetze/bund/BGBM', '2');
+    await expect(page.locator('[data-v3-aenderungen-laedt]')).toHaveText('Änderungen werden geladen …');
+    await expect(page.locator('[data-v3-aenderungen-laedt]')).toHaveCount(0, { timeout: 20_000 });
+    await expect(page.locator('[data-v3-blatt-erlassteil="aenderungen"] > button')).toBeVisible();
+  });
+
+  test('(d) Materialien laden: eine Ladezeile über der Klappzeile, danach weg', async ({ page }) => {
+    await page.route('**/materialien/register.json', async (route) => { await new Promise((r) => setTimeout(r, 2_500)); await route.continue(); });
+    await oeffne(page, '/gesetze/bund/BGBM', '2');
+    await blattReiter(page, 'materialien');
+    await expect(page.locator('[data-v3-materialien-laedt]')).toHaveText('Materialien werden geladen …');
+    await expect(page.locator('[data-v3-materialien-laedt]')).toHaveCount(0, { timeout: 20_000 });
+  });
+
   test('(b) Datenstand: das Abrufdatum des Sidecars steht im Reiter', async ({ page }) => {
     const roh = JSON.parse(readFileSync('public/normtext/revisionen/BGBM.json', 'utf8')) as { abgerufen: string };
     await oeffne(page, '/gesetze/bund/BGBM', '2');
