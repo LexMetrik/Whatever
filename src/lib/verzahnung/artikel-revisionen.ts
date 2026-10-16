@@ -17,7 +17,7 @@
 import type { Datumspraezision } from './typen';
 import { kanonArtikelToken, type ArtikelRevision } from './revisionen-extrakt';
 import { kodiereSchluessel } from '../normtext/dateiUrl';
-import { ladeJson, pruefeFelder } from '../ladeJson';
+import { IST_SPA_RUECKFALL, ladeJson, pruefeFelder } from '../ladeJson';
 
 const PRUEFER = pruefeFelder('verzahnung/artikel-revisionen/<Erlass>.json', { proArtikel: 'objekt' });
 /** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
@@ -115,18 +115,25 @@ export function revisionFuerToken(
 
 const shardPromises = new Map<string, Promise<RevisionShard | null>>();
 
+/**
+ * LESER-NAV O-60 (16.10.2026): 404 (oder SPA-Rückfall der App-index.html, `vite dev`/`preview`)
+ * ⇒ `null` = Erlass ohne Revisions-Beleg; jeder andere Fehlschlag (Netz, 5xx, fremdes HTML,
+ * Formfehler) WIRFT und wird nicht gecacht. Bis hierher gaben beide `null` zurück, und das Blatt
+ * schrieb nach einem Ausfall «Zu Art. N nichts erfasst.» (§8) — dieselbe Trennung wie
+ * `ladeBezugsShard`. Stille Abnehmer (Revisions-Badge) fangen den Wurf und bleiben bei «unbekannt».
+ */
 export async function ladeRevisionShard(erlassKey: string): Promise<RevisionShard | null> {
   let p = shardPromises.get(erlassKey);
   if (!p) {
     p = (async () => {
       try {
-        // 404 = kein Shard = Erlass ohne Revisions-Beleg (kein Fehler)
-        return await ladeJson<RevisionShard>(`/verzahnung/artikel-revisionen/${kodiereSchluessel(erlassKey)}.json`, PRUEFER);
-      } catch {
-        // Transienter Netz-/Parse-Fehler: NICHT dauerhaft als null cachen (§8) —
+        return await ladeJson<RevisionShard>(`/verzahnung/artikel-revisionen/${kodiereSchluessel(erlassKey)}.json`, PRUEFER,
+          { alsFehlend: IST_SPA_RUECKFALL });
+      } catch (e) {
+        // Transienter Netz-/Parse-Fehler: NICHT dauerhaft cachen (§8) —
         // ein späterer Aufrufer darf es erneut versuchen.
         shardPromises.delete(erlassKey);
-        return null;
+        throw e instanceof Error ? e : new Error(String(e));
       }
     })();
     shardPromises.set(erlassKey, p);
@@ -143,7 +150,8 @@ export async function ladeRevisionShards(
 ): Promise<Map<string, RevisionShard | null>> {
   const eindeutig = [...new Set(erlassKeys)];
   const paare = await Promise.all(
-    eindeutig.map(async (k) => [k, await ladeRevisionShard(k)] as const),
+    // Ein gescheiterter Erlass bleibt `null` («unbekannt», still) — er reisst die anderen nicht mit.
+    eindeutig.map(async (k) => [k, await ladeRevisionShard(k).catch(() => null)] as const),
   );
   return new Map(paare);
 }

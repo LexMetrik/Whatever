@@ -76,6 +76,10 @@ export async function blattReiter(page: Page, reiter: string): Promise<void> {
  */
 export async function erlassTeilAuf(page: Page, reiter: string): Promise<void> {
   const griff = page.locator(`[data-v3-blatt-erlassteil="${reiter}"] > button`).first();
+  // LESER-NAV O-72/O-29: solange die Quelle lädt, steht über der Klappzeile eine Ladezeile
+  // (Änderungen, Materialien, Erläuterungen). Erst danach ist «Klappzeile da / Tafel offen» eine
+  // Auskunft — sonst klappte der Helfer eine Zeile auf, die mit der Zahl 0 gleich verschwindet.
+  await expect(page.locator(`[data-v3-${reiter}-laedt]`)).toHaveCount(0, { timeout: 20_000 });
   // Die Zahl kommt mit der Tafel-Quelle; bis dahin kann die Klappzeile fehlen.
   await expect.poll(async () => (await griff.count()) > 0
     || (await page.locator(`[data-v3-panel-reiter-inhalt="${reiter}"]`).count()) > 0, { timeout: 20_000 }).toBe(true);
