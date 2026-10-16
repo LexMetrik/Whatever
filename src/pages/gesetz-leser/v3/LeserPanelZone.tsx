@@ -292,7 +292,7 @@ export function LeserPanelZone({
         // S6-W1b (E-3/D-3/B-8): der Fehlschlag ist eine eigene Lage, nicht «geladen, leer».
         fehler={bezuege.fehler} onNeuLaden={bezuege.neuLaden}
         klassen={klassen} kantone={kantone} kantoneVerfuegbar={bezuege.kantoneVerfuegbar}
-        histogramm={bezuege.histogramm} bereich={bezuege.bereich}
+        histogramm={bezuege.histogramm} bereich={bezuege.bereich} datenstand={bezuege.datenstand}
         onKlassen={setzeBezugKlassen} onKantone={setzeBezugKantone}
         onBereich={(von, bis) => setzeBezugZeit(von, bis)}
         ebene={ebene} />

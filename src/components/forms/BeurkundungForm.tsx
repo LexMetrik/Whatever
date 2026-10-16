@@ -17,7 +17,7 @@ import {
   type BeurkundungErgebnis,
 } from '../../lib/beurkundung';
 import { ngPostenText, ergebnisSpanne } from '../../lib/notariatGrundbuch';
-import { weitereKosten } from '../../lib/beurkundungZusatzkosten';
+import { weitereKosten, brauchtEmissionsabgabe } from '../../lib/beurkundungZusatzkosten';
 import {
   GESCHAEFTSARTEN_NACH_GRUPPE, geschaeftsart, GESCHAEFTSART_IDS, type GeschaeftsartId,
 } from '../../data/tarif/beurkundung-typen';
@@ -37,6 +37,8 @@ const BK_LINK_SPEC: PermalinkSpec<Record<string, unknown>> = {
   art: { p: 'ga', typ: 'str', gueltig: einerVon(...GESCHAEFTSART_IDS) },
   wert: { p: 'gw', typ: 'num', gueltig: (n) => Number.isFinite(n) && n >= 0 },
   kanton: { p: 'kt', typ: 'str', gueltig: einerVon(...KANTONE) },
+  // RL-34: Ausgabebetrag inkl. Agio (Bemessung Emissionsabgabe); alte Links ohne Feld bleiben gültig.
+  ausgabe: { p: 'eb', typ: 'num', gueltig: (n) => Number.isFinite(n) && n >= 0 },
 };
 
 function GeschaeftsartWahl({ value, onChange }: { value: GeschaeftsartId; onChange: (v: GeschaeftsartId) => void }) {
@@ -87,10 +89,11 @@ function PostenAnzeige({ ergebnis }: { ergebnis: BeurkundungErgebnis }) {
   );
 }
 
-function AllgemeineBeurkundung({ art, startKanton, startWert }: { art: GeschaeftsartId; startKanton: KantonCode; startWert?: number }) {
+function AllgemeineBeurkundung({ art, startKanton, startWert, startAusgabe }: { art: GeschaeftsartId; startKanton: KantonCode; startWert?: number; startAusgabe?: number }) {
   const def = geschaeftsart(art);
   const [kanton, setKanton] = useState<KantonCode>(startKanton);
   const [wert, setWert] = useState<string>(startWert != null ? String(startWert) : '');
+  const [ausgabe, setAusgabe] = useState<string>(startAusgabe != null ? String(startAusgabe) : '');
   const [vergleich, setVergleich] = useState(false);
   const [aktenzeichen, setAktenzeichen] = useState('');
 
@@ -98,6 +101,11 @@ function AllgemeineBeurkundung({ art, startKanton, startWert }: { art: Geschaeft
   // Tarif (dieselbe Art kann je Kanton wertbasiert oder fix sein).
   const wertNoetig = istWertbasiert(art, kanton);
   const geschaeftswert = zahl(wert);
+  // RL-34: Emissionsabgabe hängt nicht am Kantonstarif (Bund, StG) → eigenes Feld, auch bei Fixtarif/offenem Tarif.
+  const emissionNoetig = brauchtEmissionsabgabe(art);
+  const ausgabebetrag = emissionNoetig ? zahl(ausgabe) : undefined;
+  // Ein bei Fixtarif ausgeblendeter Altwert fliesst nie in die Zusatzkosten (kein stiller Rest).
+  const wertFuerZusatz = wertNoetig ? geschaeftswert : undefined;
   const bereit = !wertNoetig || geschaeftswert !== undefined;
 
   const ergebnis = useMemo(
@@ -109,11 +117,13 @@ function AllgemeineBeurkundung({ art, startKanton, startWert }: { art: Geschaeft
     [vergleich, art, geschaeftswert, bereit],
   );
 
-  // Weitere Transaktionskosten (MwSt freies Notariat · HReg-Gebühr · Emissionsabgabe).
+  // Weitere Transaktionskosten (MwSt je Kanton · HReg-Gebühr · Emissionsabgabe).
   const gebuehrSpanne = ergebnis?.posten ? ergebnisSpanne(ergebnis.posten.ergebnis) : null;
   const zusatz = useMemo(
-    () => (ergebnis && ergebnis.status === 'ok') ? weitereKosten(art, kanton, geschaeftswert, gebuehrSpanne) : null,
-    [ergebnis, art, kanton, geschaeftswert, gebuehrSpanne],
+    // Auch bei status 'offen' (kein kantonaler Tarif beziffert): HReg + Emissionsabgabe sind Bundesrecht;
+    // ohne Gebühr entfallen MwSt-Betrag und Total.
+    () => ergebnis ? weitereKosten(art, kanton, wertFuerZusatz, gebuehrSpanne, ausgabebetrag) : null,
+    [ergebnis, art, kanton, wertFuerZusatz, gebuehrSpanne, ausgabebetrag],
   );
   const total = useMemo(
     () => (gebuehrSpanne && zusatz && zusatz.posten.length > 0)
@@ -134,13 +144,15 @@ function AllgemeineBeurkundung({ art, startKanton, startWert }: { art: Geschaeft
         'Geschäftsart': def.label,
         'Kanton': `${kanton} — ${KANTON_NAMEN[kanton]}`,
         ...(wertNoetig ? { [def.wertLabel ?? 'Geschäftswert']: geschaeftswert ? chf(geschaeftswert) : '–' } : {}),
+        ...(ausgabebetrag !== undefined ? { 'Ausgabebetrag inkl. Agio (Emissionsabgabe)': chf(ausgabebetrag) } : {}),
         ...Object.fromEntries((zusatz?.posten ?? []).map((p) => [p.label, p.von === p.bis ? chf(p.von) : `${chf(p.von)} – ${chf(p.bis)}`])),
+        ...(zusatz?.mwstHinweis ? { 'MwSt-Behandlung': zusatz.mwstHinweis } : {}),
         ...(total ? { 'Total Notariat + Zusatzkosten (Schätzung)': total.von === total.bis ? chf(total.von) : `${chf(total.von)} – ${chf(total.bis)}` } : {}),
       },
       sections: [{ titel: 'Beurkundungsgebühr', ergebnis: beurkundungBericht(ergebnis) }],
       disclaimer: DISCLAIMER,
     };
-  }, [ergebnis, aktenzeichen, kanton, geschaeftswert, def, wertNoetig, zusatz, total]);
+  }, [ergebnis, aktenzeichen, kanton, geschaeftswert, ausgabebetrag, def, wertNoetig, zusatz, total]);
 
   return (
     <div className="space-y-4">
@@ -156,16 +168,22 @@ function AllgemeineBeurkundung({ art, startKanton, startWert }: { art: Geschaeft
             <BetragsFeld value={wert} onChange={setWert} className={inputCls} placeholder="z. B. 1'000'000" />
           </Field>
         )}
+        {emissionNoetig && (
+          <Field label="Ausgabebetrag inkl. Agio (für Emissionsabgabe, CHF)"
+            hint={`Nennwert + Agio, Art. 8 Abs. 1 lit. a StG; leer = ${wertNoetig ? 'Nennwert/Kapital oben' : 'keine Emissionsabgabe ausgewiesen (Betrag über CHF 1 Mio: 1 % auf den Überschuss)'}.`}>
+            <BetragsFeld value={ausgabe} onChange={setAusgabe} className={inputCls} placeholder="z. B. 1'500'000" />
+          </Field>
+        )}
       </div>
 
       {ergebnis && (
         <ErgebnisBlock>
           <PostenAnzeige ergebnis={ergebnis} />
 
-          {zusatz && zusatz.posten.length > 0 && (
+          {zusatz && (zusatz.posten.length > 0 || zusatz.mwstHinweis || zusatz.emissionsHinweis) && (
             <div className="mt-3 lc-tile">
-              <p className="text-xs text-ink-500 mb-2">Weitere Transaktionskosten (Schätzung)</p>
-              <ul className="space-y-1.5">
+              <p className="text-xs text-ink-500 mb-2">Weitere Transaktionskosten (Schätzung) und MwSt-Behandlung</p>
+              {zusatz.posten.length > 0 && <ul className="space-y-1.5">
                 {zusatz.posten.map((p, i) => (
                   <li key={i} className="flex items-baseline justify-between gap-3 text-body-s">
                     <span className="text-ink-700">
@@ -175,7 +193,9 @@ function AllgemeineBeurkundung({ art, startKanton, startWert }: { art: Geschaeft
                     <span className="num text-ink-900 whitespace-nowrap">{p.von === p.bis ? chf(p.von) : `${chf(p.von)} – ${chf(p.bis)}`}</span>
                   </li>
                 ))}
-              </ul>
+              </ul>}
+              {zusatz.mwstHinweis && <p className="mt-2 text-xs text-ink-500"><NormText text={zusatz.mwstHinweis} /></p>}
+              {zusatz.emissionsHinweis && <p className="mt-2 text-xs text-ink-500"><NormText text={zusatz.emissionsHinweis} /></p>}
               {zusatz.posten.some((p) => p.hinweis) && (
                 <ul className="mt-2 space-y-1 text-xs text-ink-500 list-disc pl-5">
                   {zusatz.posten.filter((p) => p.hinweis).map((p, i) => <li key={i}><NormText text={p.hinweis ?? ''} /></li>)}
@@ -234,7 +254,7 @@ function AllgemeineBeurkundung({ art, startKanton, startWert }: { art: Geschaeft
               Teilen in der geteilten Exportzeile; «Teilen» stand vorher neben dem Vergleichs-Schalter. Ohne PDF (Tarif offen) bleibt Teilen erreichbar. */}
           <div className="mt-5 border-t border-line pt-4 space-y-3">
             <ErgebnisExport aktenzeichen={aktenzeichen} onAktenzeichen={setAktenzeichen} pdf={pdfConfig}
-              query={() => permalinkKodieren(BK_LINK_SPEC, { art, kanton, wert: wertNoetig ? geschaeftswert : undefined })} />
+              query={() => permalinkKodieren(BK_LINK_SPEC, { art, kanton, wert: wertNoetig ? geschaeftswert : undefined, ausgabe: ausgabebetrag })} />
           </div>
         </ErgebnisBlock>
       )}
@@ -246,7 +266,7 @@ const DISCLAIMER =
   'Beurkundungskosten (Notariatsgebühr) für öffentlich beurkundbare Rechtsgeschäfte nach kantonalem Tarif. ' +
   'In den meisten Kantonen gilt ein wertbasierter Tarif auf den Geschäftswert; einzelne Geschäfte tragen Sondersätze (Testament, Erbvertrag) oder feste Gebühren (Vollmacht, Vorsorgeauftrag). ' +
   'Aufwand-/Rahmentarife (freies Notariat) erscheinen als Spanne oder «nach Vereinbarung», nie als erfundener Punktwert; wo der kantonale Tarif noch nicht verifiziert vorliegt, wird das offen ausgewiesen. ' +
-  'Grundbuch-/Handelsregistergebühren, Auslagen und allfällige MwSt. sind nicht enthalten. Nicht abgenommen. Keine Rechtsberatung.';
+  'Grundbuch-/Handelsregistergebühren und Auslagen sind nicht enthalten; MwSt nach kantonaler Regelung (Hinweis im Ergebnis). Nicht abgenommen. Keine Rechtsberatung.';
 
 type Bereich = 'kauf' | 'beurkundung' | 'grundbuch';
 const BEREICHE: { id: Bereich; label: string; hint: string }[] = [
@@ -287,7 +307,7 @@ export function BeurkundungForm() {
         {bereich === 'beurkundung' && (
           <div className="space-y-4">
             <GeschaeftsartWahl value={art} onChange={setArt} />
-            <AllgemeineBeurkundung art={art} startKanton={(ausLink.kanton as KantonCode) ?? getStandardKanton()} startWert={ausLink.wert as number | undefined} />
+            <AllgemeineBeurkundung art={art} startKanton={(ausLink.kanton as KantonCode) ?? getStandardKanton()} startWert={ausLink.wert as number | undefined} startAusgabe={ausLink.ausgabe as number | undefined} />
           </div>
         )}
         {bereich === 'grundbuch' && <GrundbuchEintragForm />}

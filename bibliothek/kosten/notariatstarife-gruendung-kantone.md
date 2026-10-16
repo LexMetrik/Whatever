@@ -330,3 +330,20 @@ Engine-/UI-Änderung in diesem Auftrag.
   Bemessungsbasis; einzig BE Art. 21 Abs. 1 GebVN ausdrücklich MIT Agio
   (Engine bildet das bereits ab). Status von «offen» auf «belegt
   (Erstrecherche)» gehoben.
+
+## Nachtrag 15.10.2026 (RL-36, RV-27, B2-10) — alte Werte oben bleiben als Historie
+
+**BE über CHF 20 Mio.:** GebVN BSG 169.81 (Version in Kraft seit 1.3.2022,
+belex-API, abgerufen 15.10.2026), Art. 21 Abs. 1 verweist für die Gründung auf
+Anhang 4; dessen letzte Zeile «20 000 000 | 16450 | 21900 | 27350» trägt die
+Marke «Maximum» (PDF mit Anhängen gelesen; in allen gelesenen Zeilen ist
+Mittel = arithmetisches Mittel von Minimum und Maximum). Über 20 Mio. gilt
+die Höchststufe: Rahmen 16'450–27'350 (Mittel 21'900); die frühere Lesart
+«offen» entfällt. Die Marke ist die Quelle der Lesart «Höchststufe gilt
+weiter» (Auslegung, kein ausdrücklicher Wortlaut «darüber»).
+**Kopie abgebaut:** `src/lib/notariatsgebuehrenGruendung.ts` hält keine
+eigene Tarifkopie mehr, sondern ist Adapter auf
+`SONDERTARIFE.ag_gruendung` (src/data/tarif/beurkundung.ts). VD/GE/TI/weitere
+Kantone liefern damit Engine-Werte statt «ehrliche Lücke (null)»; AG/UR
+bleiben «nicht beziffert». Eingabe-Guard: negatives/nicht endliches Kapital
+wirft einen Fehler (kein Clamp auf den Mindestbetrag).

@@ -1,6 +1,6 @@
 // ─── Notariats- & Grundbuchkosten-Engine ───────────────────────────────────
 import { describe, expect, it } from 'vitest';
-import { berechneNotariatGrundbuch, vergleichNotariatGrundbuch, ngPostenText, type NgPosten } from '../lib/notariatGrundbuch';
+import { berechneNotariatGrundbuch, vergleichNotariatGrundbuch, ngPostenText, notariatGrundbuchBericht, type NgPosten } from '../lib/notariatGrundbuch';
 import { NOTARIAT, GRUNDBUCH, HANDAENDERUNGSSTEUER } from '../data/tarif/notariat-grundbuch';
 import { GRUNDPFAND } from '../data/tarif/grundpfand';
 import { KANTONE, type KantonCode } from '../data/tarif/typen';
@@ -195,5 +195,126 @@ describe('Notariat — Staffeln Grundstückkauf nach Norm (RL-29)', () => {
   it('SO GT § 25 Abs. 1 lit. a: eine Gebühr 100–10’000 für Beurkundung und Eintrag zusammen', () => {
     expect(rahmen('SO', 1_000_000)).toEqual([100, 10_000]);
     expect(berechneNotariatGrundbuch({ kanton: 'SO', kaufpreisCHF: 1_000_000 }).gesamtGebuehren).toEqual({ vonChf: 100, bisChf: 10_000 });
+  });
+});
+
+// ─── RL-28 Teil 3: Pfandsteuer als eigener Posten (STEUER, keine Gebühr) ─────
+describe('Notariat/Grundbuch — Posten Pfandsteuer (RL-28 Teil 3)', () => {
+  const mit = (kanton: KantonCode, pfand: number, haest = false) =>
+    berechneNotariatGrundbuch({ kanton, kaufpreisCHF: pfand, mitGrundpfand: true, pfandsummeCHF: pfand, mitHandaenderungssteuer: haest });
+
+  it('GE 1 Mio: eigener Posten 13’650 (1,365 %), nicht in den Gesamtgebühren, wohl in gesamtMitSteuer', () => {
+    const r = mit('GE', 1_000_000);
+    expect(r.pfandsteuer).toBeDefined();
+    expect(det(r.pfandsteuer!)).toBe(13_650);
+    const summeGebuehren = det(r.beurkundung) + det(r.grundbuch) + det(r.grundpfand!);
+    expect(r.gesamtGebuehren).toEqual({ vonChf: summeGebuehren, bisChf: summeGebuehren });
+    expect(r.gesamtMitSteuer).toEqual({ vonChf: summeGebuehren + 13_650, bisChf: summeGebuehren + 13_650 });
+  });
+
+  it('VS 15’000: Fixband 20; mit Handänderungssteuer addieren sich beide Steuern', () => {
+    const r = mit('VS', 15_000, true);
+    expect(det(r.pfandsteuer!)).toBe(20);
+    const ohne = mit('VS', 15_000, false);
+    const h = det(r.handaenderungssteuer!);
+    expect((r.gesamtMitSteuer as { vonChf: number }).vonChf).toBeCloseTo((ohne.gesamtMitSteuer as { vonChf: number }).vonChf + h, 6);
+  });
+
+  it('Schritt-Text «STEUER: Satz × Pfandsumme», Hinweis «STEUER, keine Gebühr», Quelle mit Link und Stand', () => {
+    const r = mit('GE', 1_000_000);
+    const e = r.pfandsteuer!.ergebnis;
+    if (!e.deterministisch) throw new Error('unerwartet');
+    expect(e.schritte.join(' | ')).toMatch(/STEUER: 1\.365 %/);
+    expect(r.pfandsteuer!.quelle.quelleUrl).toMatch(/^https:\/\//);
+    expect(r.pfandsteuer!.quelle.stand).toMatch(/\d/);
+    expect(r.pfandsteuer!.quelle.verifiziert).toBe('recherche');
+    expect(r.hinweise.join(' ')).toMatch(/Pfandsteuer[^.]*STEUER[^.]*keine Gebühr/);
+  });
+
+  it('kein Posten ohne Grundpfand oder in Kantonen ohne Pfandsteuer (ZH, NE, TI): Ergebnis unverändert', () => {
+    expect(berechneNotariatGrundbuch({ kanton: 'GE', kaufpreisCHF: 1_000_000 }).pfandsteuer).toBeUndefined();
+    for (const k of ['ZH', 'NE', 'TI'] as KantonCode[]) {
+      const r = mit(k, 1_000_000);
+      expect(r.pfandsteuer, k).toBeUndefined();
+      expect(r.gesamtMitSteuer, k).toEqual(r.gesamtGebuehren);
+    }
+  });
+
+  it('Rechenbericht nimmt den Posten in Rechenweg, Ergebnistext und Quellen auf', () => {
+    const b = notariatGrundbuchBericht(mit('GE', 1_000_000));
+    expect(b.rechenweg.some((s) => /Pfandsteuer/.test(s.beschreibung))).toBe(true);
+    expect(b.ergebnis).toMatch(/Pfandsteuer/);
+    expect((b.normverweise ?? []).some((n) => /LDE|D 3 30/.test(n.artikel))).toBe(true);
+    const zh = notariatGrundbuchBericht(mit('ZH', 800_000));
+    expect(zh.ergebnis).not.toMatch(/Pfandsteuer/);
+  });
+});
+
+describe('Notariat/Grundbuch — MwSt-Hinweis je Kanton nach Tabelle (RL-33 Teil 2)', () => {
+  const hinweise = (kanton: KantonCode) => berechneNotariatGrundbuch({ kanton, kaufpreisCHF: 800_000 }).hinweise.join(' | ');
+
+  it('ZG: MwSt in den Tarifansätzen inbegriffen, kein Aufschlag', () => {
+    const h = hinweise('ZG');
+    expect(h).toMatch(/MwSt in den Tarifansätzen inbegriffen \(BGS 641\.1 Ziff\. 109bis\)/);
+    expect(h).not.toMatch(/Zuzüglich MwSt/);
+  });
+  it('ZH: zuzüglich MwSt 8,1 % nach kantonalem Tarif', () => {
+    expect(hinweise('ZH')).toMatch(/Zuzüglich MwSt 8,1 % \(nach kantonalem Tarif LS 243 NotGebV § 2/);
+  });
+  it('GE: zuzüglich MwSt 8,1 % nach Bundesrecht', () => {
+    expect(hinweise('GE')).toMatch(/Zuzüglich MwSt 8,1 % \(nach Bundesrecht, MWSTG Art\. 25\)/);
+  });
+  it('kein veralteter Hinweis «freies Notariat» mehr, in keinem Kanton', () => {
+    for (const k of KANTONE) expect(hinweise(k), k).not.toMatch(/MwSt\. \(freies Notariat\)/);
+  });
+  it('BS: offener Vermerk (Zuordnung offen) bleibt sichtbar', () => {
+    expect(hinweise('BS')).toMatch(/Zuordnung offen/);
+  });
+});
+
+describe('Notariat/Grundbuch — Bedingung und Grundbuch-Satz (RL-33 Teil 2 Nachzug)', () => {
+  it('Kombi-Rechner: Bedingung Steuerpflicht, Grundbuch-MwSt nicht beziffert', () => {
+    const h = berechneNotariatGrundbuch({ kanton: 'ZH', kaufpreisCHF: 800_000 }).hinweise.join(' | ');
+    expect(h).toMatch(/soweit das Notariat mehrwertsteuerpflichtig ist \(MWSTG Art\. 10\)/);
+    expect(h).toMatch(/Grundbuchgebühren: allfällige MwSt nicht beziffert; Steuern ohne MwSt\./);
+    expect(h).toMatch(/Beurkundungs- und Schuldbrief-Notariatsgebühren:/);
+  });
+});
+
+// ─── RL-29 Teil 3: Rundung der Bemessungsbasis nach Norm (AG, BS, VS, SZ) ──
+describe('RL-29 Teil 3: Basisrundung AG/BS/VS (Grundbuch) und SZ (Notariat)', () => {
+  const gb = (kanton: KantonCode, kaufpreisCHF: number) => berechneNotariatGrundbuch({ kanton, kaufpreisCHF }).grundbuch;
+  const nt = (kanton: KantonCode, kaufpreisCHF: number) => berechneNotariatGrundbuch({ kanton, kaufpreisCHF }).beurkundung;
+
+  it('AG GBAG § 4 Abs. 1: Basis auf Fr. 1’000 auf- oder abgerundet, § 8 Abs. 1 4 ‰ min. 100', () => {
+    expect(det(gb('AG', 1_234_567))).toBe(4940);   // 1’235’000 × 4 ‰ (nicht 4938.27)
+    expect(det(gb('AG', 500_499))).toBe(2000);     // abgerundet auf 500’000
+    expect(det(gb('AG', 500_500))).toBe(2004);     // Gleichstand: Annahme aufwärts (offengelegt)
+    expect(det(gb('AG', 10_000))).toBe(100);       // Minimum
+  });
+  it('BS V EG ZGB § 51 Abs. 1 lit. b: Basis auf volle Tausend aufgerundet', () => {
+    expect(det(gb('BS', 1_234_001))).toBe(1235);   // 1’235’000 × 1 ‰ (nicht 1234.001)
+    expect(det(gb('BS', 500_000))).toBe(500);      // Vielfaches: unverändert
+    expect(det(gb('BS', 500_001))).toBe(501);
+    expect(GRUNDBUCH.BS.hinweis ?? '').not.toContain('Doppelcheck');
+  });
+  it('VS OcRF Art. 32 al. 3: Basis auf den nächsten Tausender aufgerundet, 2 ‰ min. 100 max. 5’000', () => {
+    expect(det(gb('VS', 1_234_001))).toBe(2470);   // 1’235’000 × 2 ‰ (nicht 2468)
+    expect(det(gb('VS', 1_000_000))).toBe(2000);
+    expect(det(gb('VS', 10_000_000))).toBe(5000);  // Deckel
+  });
+  it('SZ Gebührentarif § 5 Abs. 1 Nr. 1: Fr. 45 je angefangene Fr. 50’000, Degression >10 Mio. auf dem Mehrbetrag, max. 13’500', () => {
+    expect(det(nt('SZ', 30_000))).toBe(45);        // eine angefangene Tranche (nicht 27)
+    expect(det(nt('SZ', 1_000_000))).toBe(900);    // 20 Tranchen
+    expect(det(nt('SZ', 1_000_001))).toBe(945);    // 21 Tranchen
+    expect(det(nt('SZ', 1_020_000))).toBe(945);
+    expect(det(nt('SZ', 10_000_000))).toBe(9000);
+    expect(det(nt('SZ', 10_000_001))).toBeCloseTo(9022.5, 6); // 10’050’000: 9000 + 0,045 % × 50’000
+    expect(det(nt('SZ', 100_000_000))).toBe(13_500);
+    expect(NOTARIAT.SZ.stand).toBe('1.7.2026');
+  });
+  it('SZ Grundbuch Nr. 5/6/15: Fixbeträge 8 + 35 + 20 in der Fassung 1.7.2026 unverändert', () => {
+    expect(det(gb('SZ', 1_000_000))).toBe(63);
+    expect(GRUNDBUCH.SZ.stand).toBe('1.7.2026');
   });
 });

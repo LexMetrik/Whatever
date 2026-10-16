@@ -1,4 +1,5 @@
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
+import { standEtikett } from '../../../lib/normtext/international-extern';
 import type { CurrencyEintrag, ErlassKopf } from '../../../lib/normtext/browse';
 import type { ErlassTyp } from '../../../lib/normtext/register';
 import { erfassungsgrad, type Erfassungsgrad } from '../../../lib/normtext/erfassungsgrad';
@@ -178,7 +179,7 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
   }
   // B8 (9.8.2026): zwei VD-Erlasse tragen `stand: ""` — dann keine Zeile.
   if (erlass.stand) {
-    zeilen.push({ id: 'stand', label: 'Stand', wert: formatiereDatum(erlass.stand), ziffern: true });
+    zeilen.push({ id: 'stand', label: standEtikett(erlass), wert: formatiereDatum(erlass.stand), ziffern: true });
   }
   if (erlass.aufgehoben) {
     zeilen.push({

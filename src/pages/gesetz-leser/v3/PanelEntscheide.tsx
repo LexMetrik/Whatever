@@ -283,8 +283,10 @@ const ABDECKUNG_SATZ = 'Erfasst: BGE neuerer Bände, übrige Urteile vereinzelt.
 
 export function PanelEntscheide({
   kanten, alleKanten, aktArtikel, revisionShard, normZitat, artikelLabel, geladen, fehler = false, onNeuLaden,
-  bestimmungsWort, klassen, kantone, kantoneVerfuegbar, histogramm, bereich, onKlassen, onKantone, onBereich, ebene,
+  bestimmungsWort, klassen, kantone, kantoneVerfuegbar, histogramm, bereich, onKlassen, onKantone, onBereich, ebene, datenstand = null,
 }: {
+  /** O-03: Erzeugungsdatum des Bezugs-Shards (ISO, `useBezuege`); `null` ⇒ kein Datenstand (§8). */
+  datenstand?: string | null;
   /** Ebene des gelesenen Erlasses — DURCHGEREICHT aus dem Modell
    *  (`leserV3Modell` → `LeserRahmenV3` → `LeserPanelZone`), nicht hier neu
    *  geladen: sie steht im Erlass-Datensatz, den die Hülle ohnehin hält (§5).
@@ -340,12 +342,12 @@ export function PanelEntscheide({
           die Liste darunter — nicht mehr dem ganzen Erlass. */}
       <PanelFilterZeile klassen={klassen} kantone={kantone} kantoneVerfuegbar={kantoneVerfuegbar}
         klassenZahlen={klassenZahlenAmArtikel(alleKanten, geladen)} zahlOrt={zahlOrt} kantoneOhneWirkung={kw.ohne} kantonHinweis={kw.satz}
-        histogramm={histogramm} bereich={bereich}
-        onKlassen={onKlassen} onKantone={onKantone} onBereich={onBereich} />
+        histogramm={histogramm} bereich={bereich} onKlassen={onKlassen} onKantone={onKantone} onBereich={onBereich} />
       {/* S6 W1g: ohne eigene Unterlinie — die 2-px-Kante des Gruppenkopfs
           darunter trennt (sonst zwei Linien 8 px übereinander, gemessen @1440). */}
       <p data-v3-panel-abdeckung-zeile className="px-3 py-1.5 text-micro leading-snug text-ink-600">
         {ABDECKUNG_SATZ}{' '}
+        {datenstand && <><span className="num">Datenstand {datumAnzeige(datenstand)}</span>.{' '}</>}
         <Link to="/abdeckung" className="lc-link text-brass-700">Abdeckung ›</Link>
       </p>
 

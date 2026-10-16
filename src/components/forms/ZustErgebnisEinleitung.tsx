@@ -423,7 +423,7 @@ export function ZustErgebnisEinleitung({ z }: { z: ZustaendigkeitFormModell }) {
                     </p>
                   ) : kosten ? (
                     <p className="text-body-s text-ink-800">
-                      <span className="font-medium text-ink-900">Schlichtungsgebühr: CHF {kosten.schlichtung.text}.</span>{' '}
+                      <span className="font-medium text-ink-900">Schlichtungsgebühr: {/^[A-Za-zÜü(]/.test(kosten.schlichtung.text) ? '' : 'CHF '}{kosten.schlichtung.text}.</span>{' '}
                       <span className="text-ink-500">(
                         {f.kanton !== '' ? (
                           <a href={ERLASS_LINKS[f.kanton].schlichtung} target="_blank" rel="noreferrer" className="underline hover:text-brass-700">{kosten.schlichtung.erlass} ↗</a>
@@ -464,7 +464,7 @@ export function ZustErgebnisEinleitung({ z }: { z: ZustaendigkeitFormModell }) {
                   </p>
                 )}
                 <p className="text-xs text-ink-500">
-                  Rahmen aus den geltenden kantonalen Erlassen (Stand 5.6.2026) — die konkrete Festsetzung liegt bei der Behörde.
+                  Rahmen aus den hinterlegten kantonalen Tarifen (Erlass je Angabe in der Klammer; Stand der Tarife im Prozesskostenrechner) — die konkrete Festsetzung liegt bei der Behörde.
                   Hinzu kommen ggf. eigene Anwaltskosten; die unterliegende Partei trägt im Gerichtsverfahren in der Regel die
                   Kosten und eine Parteientschädigung (Art. 106 ZPO).
                 </p>

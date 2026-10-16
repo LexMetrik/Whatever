@@ -378,7 +378,7 @@ export function Gesetze() {
           sonst kollabiert die Fläche auf die Notice und der Footer springt
           (gemessen 0.195 CLS bei abgebrochenem Manifest-Abruf). */}
       {fehler && (
-        <div className="lc-notice lc-notice-warn min-h-inhalt-region">
+        <div role="alert" className="lc-notice lc-notice-warn min-h-inhalt-region">
           Die Gesetzessammlung konnte nicht geladen werden. Bitte die Seite neu laden.
         </div>
       )}

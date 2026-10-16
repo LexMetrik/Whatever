@@ -16,7 +16,7 @@ import { KANTONE } from '../data/tarif/typen';
 import { auswertenTarif, type TarifErgebnis } from './tarif/staffel';
 import { geschaeftsart, type GeschaeftsartId } from '../data/tarif/beurkundung-typen';
 import { GRUNDSTUECKKAUF_BEURKUNDUNG, GENERELLER_WERTTARIF, SONDERTARIFE } from '../data/tarif/beurkundung';
-import { type NgQuelle, type NgPosten, ergebnisSpanne, ngPostenText } from './notariatGrundbuch';
+import { type NgQuelle, type NgPosten, ergebnisSpanne, ngPostenText, mwstSatz } from './notariatGrundbuch';
 
 const quelle = (t: KantonalerTarif): NgQuelle => ({
   erlassName: t.erlassName, erlassNr: t.erlassNr, artikel: t.artikel,
@@ -98,7 +98,7 @@ export function berechneBeurkundung(e: BeurkundungEingabe): BeurkundungErgebnis 
   const posten: NgPosten = { ergebnis, quelle: quelle(aufgeloest.tarif) };
 
   const hinweise: string[] = [];
-  hinweise.push('Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren, Auslagen und allfällige MwSt. (freies Notariat) sind nicht enthalten.');
+  hinweise.push(`Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren und Auslagen sind nicht enthalten. ${mwstSatz(e.kanton, e.geschaeftsart)}`);
   if (aufgeloest.herkunft === 'genereller_werttarif') hinweise.push('Es gilt der allgemeine wertbasierte Beurkundungstarif des Kantons (kein art-spezifischer Sondersatz im Tarif).');
   if (!ergebnis.deterministisch) hinweise.push('Aufwand-/Rahmentarif – die konkrete Festsetzung erfolgt im Einzelfall; ausgewiesen ist die Spanne bzw. der Hinweis.');
   if (aufgeloest.tarif.hinweis) hinweise.push(aufgeloest.tarif.hinweis);

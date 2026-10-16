@@ -46,12 +46,7 @@ const KALENDER_NE_SO: BekannterFehler = {
 export const BEKANNTE_FEHLER: Readonly<Record<string, readonly BekannterFehler[]>> = {
   'notariat-grundbuch': [
     STAFFEL,
-    { fb: 'RV-19', text: 'Grundpfand: Pauschalsätze noch ungeprüft in BE, AI, AR, BL, SO, ZG sowie in der Romandie und im Tessin (FR, GE, VS, VD, NE, TI, JU); berichtigt seit 15.10.2026: AG, BS, LU, OW, NW, GL, SH, SZ, TG, GR, ZH, SG; UR nur Eintragsteil (kein amtlicher Notariatstarif).' },
-    { fb: 'RV-20', text: 'Grundbuch TG: Vormerkung falsch gerechnet; Rundungen AG, BS, VS, SZ und Sockel GE noch offen (Staffeln TI, VD, FR, VS, NE, GE, JU, BE, SO sind seit 15.10.2026 berichtigt).' },
-    { fb: 'RV-24', text: 'Mehrwertsteuer auf Notariatsgebühren: Hinweise zur MWST (z. B. ZG inbegriffen) sind in der Oberfläche noch nicht sichtbar; Hinweistext «freies Notariat» veraltet (Teil 2); offen: UR, BS/VD/JU Zuordnung, ZG-Anwälte, SO-freie Notare (RV-09).' },
-    { fb: 'RV-25', text: 'Emissionsabgabe fehlt ohne Hinweis im Ergebnis (bis CHF 40’000).' },
-    { fb: 'RV-27', text: 'Kopierte Tarifdaten weichen voneinander ab (u. a. Beurkundung VS).' },
-    { fb: 'RV-82', text: '«Weitere Geschäftsarten» FR, VD, VS, JU, NE nicht abgebildet; GE Kapitalherabsetzung: Sockel 88 statt 87.50.' },
+    { fb: 'RV-82', text: '«Weitere Geschäftsarten» FR, VD, VS, JU, NE nicht abgebildet.' },
   ],
   prozesskosten: [
     STAFFEL,
@@ -71,7 +66,6 @@ export const BEKANNTE_FEHLER: Readonly<Record<string, readonly BekannterFehler[]
     { fb: 'RV-26', text: 'Streitwert wiederkehrender Leistungen nach Art. 51 Abs. 4 BGG falsch berechnet.' },
   ],
   zustaendigkeit: [
-    { fb: 'RV-27', text: 'Kopierte Tarifdaten der Kostenangaben weichen von der Tarifquelle ab (u. a. Schlichtung AI).' },
     { fb: 'RV-33', text: 'Bestimmung der Schlichtungsbehörde doppelt vorhanden, die beiden Fassungen weichen voneinander ab.' },
     { fb: 'RV-79', text: 'Zwischenentscheide: Rechtsmittel als «zulässig» ausgewiesen, obwohl Art. 92/93 BGG es einschränken.' },
   ],

@@ -8,6 +8,8 @@
 //   2. Grundbuchgebühr (Eigentum)         — Promille des Kaufpreises
 //   3. Grundpfand (Schuldbrief, optional) — Promille der Pfandsumme
 //   4. Handänderungssteuer (optional)     — kantonale STEUER, klar getrennt
+//   5. Pfandsteuer (optional, mit Grundpfand; FR, GE, VS, VD, JU) — kantonale STEUER,
+//      eigene Quelle `data/tarif/pfandsteuer.ts` (RL-28 Teil 3), nie in den Gebühren
 // Quelle/Verifikation je Wert: bibliothek/kosten/notariat-grundbuch-kantone.md.
 
 import type { Berechnungsergebnis, Rechenschritt } from '../types/legal';
@@ -17,6 +19,25 @@ import { auswertenTarif, type TarifErgebnis } from './tarif/staffel';
 import { NOTARIAT, GRUNDBUCH, HANDAENDERUNGSSTEUER } from '../data/tarif/notariat-grundbuch';
 // RL-28: Grundpfand-Posten = Beurkundung + Grundbucheintrag (eigene Quelle, siehe grundpfand.ts).
 import { GRUNDPFAND } from '../data/tarif/grundpfand';
+// RL-28 Teil 3: Pfandsteuer als eigene Quelle und eigener Posten (STEUER, keine Gebühr).
+import { berechnePfandsteuer } from './pfandsteuer';
+// RL-33 Teil 2: MwSt-Behandlung je Kanton (nur Hinweistext, keine Beträge).
+import { MWST_BEHANDLUNG, ZH_MWST_INBEGRIFFEN } from '../data/tarif/mwst-notariat';
+
+/** Hinweis-Satz zur MwSt auf die Notariatsgebühr nach Tabelle MWST_BEHANDLUNG (nur Text). */
+export function mwstSatz(kanton: KantonCode, art?: string): string {
+  const m = MWST_BEHANDLUNG[kanton];
+  const vermerk = m.vermerk ? ` ${m.vermerk}` : '';
+  if (m.art === 'offen') return m.vermerk ?? 'MwSt nicht beziffert.';
+  if (m.art === 'inbegriffen') return `MwSt in den Tarifansätzen inbegriffen (${m.erlassNr} ${m.artikel}).${vermerk}`;
+  const zh = kanton === 'ZH' && art ? ZH_MWST_INBEGRIFFEN[art] : undefined;
+  const dienstanweisung = zh ? `Dienstanweisung FD ZH 22.11.2023 § 2 Ziff. ${zh.ziffer}` : '';
+  if (zh && zh.bisGebuehrChf === undefined) return `MwSt in der Gebühr inbegriffen (${dienstanweisung}): kein Aufschlag.${vermerk}`;
+  const grundlage = m.grundlage === 'tarif' ? `nach kantonalem Tarif ${m.erlassNr} ${m.artikel}` : 'nach Bundesrecht, MWSTG Art. 25';
+  const bedingung = 'soweit das Notariat mehrwertsteuerpflichtig ist (MWSTG Art. 10)';
+  if (zh) return `MwSt in der Gebühr bis CHF ${zh.bisGebuehrChf} inbegriffen (${dienstanweisung}), darüber zuzüglich 8,1 % (${grundlage}), ${bedingung}.${vermerk}`;
+  return `Zuzüglich MwSt 8,1 % (${grundlage}), ${bedingung}.${vermerk}`;
+}
 
 export interface Spanne { vonChf: number; bisChf: number }
 
@@ -53,10 +74,12 @@ export interface NotariatGrundbuchErgebnis {
   beurkundung: NgPosten;
   grundbuch: NgPosten;
   grundpfand?: NgPosten;
+  /** Kantonale Pfandsteuer (STEUER, keine Gebühr) bei Grundpfand in FR, GE, VS, VD, JU; sonst fehlt der Posten. */
+  pfandsteuer?: NgPosten;
   handaenderungssteuer?: NgPosten;
-  /** Beurkundung + Grundbuch (+ Grundpfand), wenn alle bezifferbar; sonst null. */
+  /** Beurkundung + Grundbuch (+ Grundpfand), wenn alle bezifferbar; sonst null. Ohne Steuern. */
   gesamtGebuehren: Spanne | null;
-  /** Gesamtgebühren + Handänderungssteuer (wenn aktiv und bezifferbar). */
+  /** Gesamtgebühren + Pfandsteuer + Handänderungssteuer (wenn aktiv und bezifferbar). */
   gesamtMitSteuer: Spanne | null;
   hinweise: string[];
 }
@@ -92,11 +115,19 @@ export function berechneNotariatGrundbuch(e: NotariatGrundbuchEingabe): Notariat
   const grundbuch: NgPosten = { ergebnis: auswertenTarif(gbTarif.regel, e.kaufpreisCHF), quelle: quelle(gbTarif) };
 
   let grundpfand: NgPosten | undefined;
+  let pfandsteuer: NgPosten | undefined;
   if (e.mitGrundpfand) {
     const pfandsumme = e.pfandsummeCHF ?? e.kaufpreisCHF;
     pruefe(pfandsumme, 'Pfandsumme');
     const pTarif = GRUNDPFAND[e.kanton];
     grundpfand = { ergebnis: auswertenTarif(pTarif.regel, pfandsumme), quelle: quelle(pTarif) };
+    const ps = berechnePfandsteuer(e.kanton, pfandsumme);
+    if (ps) {
+      pfandsteuer = {
+        ergebnis: { deterministisch: true, betragChf: ps.betragChf, schritte: ps.schritte },
+        quelle: { erlassName: ps.erlassName, erlassNr: ps.erlassNr, artikel: ps.artikel, quelleUrl: ps.url, stand: ps.stand, verifiziert: 'recherche', hinweis: ps.hinweis },
+      };
+    }
   }
 
   let handaenderungssteuer: NgPosten | undefined;
@@ -107,15 +138,19 @@ export function berechneNotariatGrundbuch(e: NotariatGrundbuchEingabe): Notariat
 
   const gesamtGebuehren = [beurkundung, grundbuch, ...(grundpfand ? [grundpfand] : [])]
     .reduce<Spanne | null>((acc, p, i) => i === 0 ? ergebnisSpanne(p.ergebnis) : addiere(acc, ergebnisSpanne(p.ergebnis)), null);
-  const gesamtMitSteuer = handaenderungssteuer ? addiere(gesamtGebuehren, ergebnisSpanne(handaenderungssteuer.ergebnis)) : gesamtGebuehren;
+  const steuern = [pfandsteuer, handaenderungssteuer].filter((p): p is NgPosten => !!p);
+  const gesamtMitSteuer = steuern.reduce<Spanne | null>((acc, p) => addiere(acc, ergebnisSpanne(p.ergebnis)), gesamtGebuehren);
 
   const hinweise = [
     'Erwerbs-Nebenkosten beim Grundstückkauf: Beurkundung (Notariat) + Grundbucheintrag; optional Grundpfand (Schuldbrief) und Handänderungssteuer.',
-    'Beträge sind die kantonalen Gebühren nach Kaufpreis bzw. Pfandsumme; Auslagen (Porti, Auszüge) und allfällige MwSt. (freies Notariat) sind nicht enthalten.',
+    'Beträge sind die kantonalen Gebühren nach Kaufpreis bzw. Pfandsumme; Auslagen (Porti, Auszüge) sind nicht enthalten.',
+    `Beurkundungs- und Schuldbrief-Notariatsgebühren: ${mwstSatz(e.kanton)} Grundbuchgebühren: allfällige MwSt nicht beziffert; Steuern ohne MwSt.`,
   ];
   if (handaenderungssteuer) hinweise.push('Die Handänderungssteuer ist eine kantonale/kommunale STEUER (keine Gebühr); Befreiungen (z. B. unter Ehegatten/Nachkommen) sind einzelfallabhängig und hier nicht berücksichtigt.');
 
-  return { kanton: e.kanton, kaufpreisCHF: e.kaufpreisCHF, beurkundung, grundbuch, grundpfand, handaenderungssteuer, gesamtGebuehren, gesamtMitSteuer, hinweise };
+  if (pfandsteuer) hinweise.push('Die Pfandsteuer ist eine kantonale STEUER auf die Pfandsumme (keine Gebühr) und in den Gesamtgebühren nicht enthalten; Befreiungen und Sonderfälle laut Quellenhinweis sind nicht berücksichtigt.');
+
+  return { kanton: e.kanton, kaufpreisCHF: e.kaufpreisCHF, beurkundung, grundbuch, grundpfand, pfandsteuer, handaenderungssteuer, gesamtGebuehren, gesamtMitSteuer, hinweise };
 }
 
 /** Interkantonaler Vergleich derselben Konstellation über alle 26 Kantone. */
@@ -137,12 +172,13 @@ export function notariatGrundbuchBericht(e: NotariatGrundbuchErgebnis): Berechnu
   });
   const rechenweg: Rechenschritt[] = [schritt('Beurkundung (Notariat)', e.beurkundung), schritt('Grundbuch', e.grundbuch)];
   if (e.grundpfand) rechenweg.push(schritt('Grundpfand (Schuldbrief)', e.grundpfand));
+  if (e.pfandsteuer) rechenweg.push(schritt('Pfandsteuer (kantonale Steuer)', e.pfandsteuer));
   if (e.handaenderungssteuer) rechenweg.push(schritt('Handänderungssteuer (kantonale Steuer)', e.handaenderungssteuer));
   // Das rechte Glied trägt bewusst KEIN «CHF »-Präfix (die Spanne führt es nur
   // einmal), bleibt daher bei Math.round(...).toLocaleString — nicht chfGanz (H-9).
   const spanneTxt = (s: Spanne | null) => !s ? 'nicht beziffert' : s.vonChf === s.bisChf ? chfGanz(s.vonChf) : `${chfGanz(s.vonChf)} – ${Math.round(s.bisChf).toLocaleString('de-CH')}`;
   return {
-    ergebnis: `Notariat ${ngPostenText(e.beurkundung)} · Grundbuch ${ngPostenText(e.grundbuch)} · Gebühren gesamt ${spanneTxt(e.gesamtGebuehren)}${e.handaenderungssteuer ? ` · inkl. Handänderungssteuer ${spanneTxt(e.gesamtMitSteuer)}` : ''}`,
+    ergebnis: `Notariat ${ngPostenText(e.beurkundung)} · Grundbuch ${ngPostenText(e.grundbuch)} · Gebühren gesamt ${spanneTxt(e.gesamtGebuehren)}${e.pfandsteuer ? ` · Pfandsteuer ${ngPostenText(e.pfandsteuer)} (Steuer, nicht in den Gebühren)` : ''}${e.handaenderungssteuer || e.pfandsteuer ? ` · inkl. ${e.pfandsteuer && e.handaenderungssteuer ? 'Pfand- und Handänderungssteuer' : e.pfandsteuer ? 'Pfandsteuer' : 'Handänderungssteuer'} ${spanneTxt(e.gesamtMitSteuer)}` : ''}`,
     status: 'ok',
     rechenweg,
     annahmen: [],
@@ -152,7 +188,7 @@ export function notariatGrundbuchBericht(e: NotariatGrundbuchErgebnis): Berechnu
     normverweise: [
       { artikel: 'Art. 657 ZGB', bemerkung: 'öffentliche Beurkundung des Grundstückkaufs' },
       { artikel: 'Art. 216 OR' },
-      ...[e.beurkundung, e.grundbuch, e.grundpfand, e.handaenderungssteuer]
+      ...[e.beurkundung, e.grundbuch, e.grundpfand, e.pfandsteuer, e.handaenderungssteuer]
         .filter((p): p is NgPosten => !!p && !!p.quelle.quelleUrl)
         .map((p) => ({ artikel: `${p.quelle.erlassName} (${p.quelle.erlassNr}), ${p.quelle.artikel}`, bemerkung: `Stand ${p.quelle.stand}`, url: p.quelle.quelleUrl })),
     ],

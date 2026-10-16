@@ -69,10 +69,9 @@ export function SchrittDokumente({ ctx }: { ctx: AgSchrittCtx }) {
                   Notariatsgebühr ({tarif.kanton}):{' '}
                   {e.typ === 'betrag' && `${CHF.format(e.chf)}`}
                   {e.typ === 'rahmen' && `${CHF.format(e.vonChf)} bis ${CHF.format(e.bisChf)}${e.mittelChf ? ` (Mittel ${CHF.format(e.mittelChf)})` : ''}`}
-                  {e.typ === 'aufwand' && 'nach Aufwand — amtlich nicht beziffert'}
-                  {e.typ === 'offen' && 'nicht amtlich erhebbar'}
+                  {e.typ === 'nicht_beziffert' && 'amtlich nicht beziffert (Aufwand bzw. kein amtlicher Tarif)'}
                 </span>{' '}
-                — <a href={tarif.erlassUrl} target="_blank" rel="noopener noreferrer" className="text-brass-700 underline">{tarif.erlassLabel}</a> (Stand {tarif.stand}); Tarifwert ohne MWST (8,1 %) und Auslagen.
+                — <a href={tarif.erlassUrl} target="_blank" rel="noopener noreferrer" className="text-brass-700 underline">{tarif.erlassLabel}</a> (Stand {tarif.stand}); Tarifwert nach kantonalem Tarif, zuzüglich Auslagen; Mehrwertsteuer je nach Kanton zusätzlich oder inbegriffen (Beurkundungsrechner).
                 {tarif.hinweise.map((h) => ` ${h}`).join('')} — fachliche Abnahme ausstehend.
                 {' '}Bank-Sperrkonto je nach Institut (Praxisbeispiel ZKB: 0,5 ‰, mind. CHF 250).
               </li>
