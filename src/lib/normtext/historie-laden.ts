@@ -43,9 +43,11 @@ export interface HistorieLadung { shard: HistorieShard | null; fehler: boolean }
 const shardPromises = new Map<string, Promise<HistorieLadung>>();
 
 /**
- * Wie `ladeHistorieShard`, aber mit der Auskunft, OB der Abruf gescheitert ist. Gecacht
- * wird nur, was eine Auskunft ist (Shard da, oder «keine Datei»); ein Fehlschlag nicht —
- * der nächste Aufruf versucht es erneut («Erneut laden» der Fläche).
+ * Lädt den Historie-Shard eines Erlasses (lazy, gecacht) mit der Auskunft, OB der Abruf
+ * gescheitert ist. `key` = der kanonische Erlass-Key (= Struktur-/Snapshot-Dateiname,
+ * «OR», «BGBM»). Gecacht wird nur, was eine Auskunft ist (Shard da, oder «keine Datei»);
+ * ein Fehlschlag nicht — der nächste Aufruf versucht es erneut («Erneut laden» der Fläche).
+ * Kein throw.
  */
 export async function ladeHistorieShardErgebnis(key: string): Promise<HistorieLadung> {
   let p = shardPromises.get(key);
@@ -66,17 +68,6 @@ export async function ladeHistorieShardErgebnis(key: string): Promise<HistorieLa
     shardPromises.set(key, p);
   }
   return p;
-}
-
-/**
- * Lädt den Historie-Shard eines Erlasses (lazy, gecacht). `key` = der kanonische
- * Erlass-Key (= Struktur-/Snapshot-Dateiname, «OR», «BGBM»). Liefert null bei
- * 404 (kein Shard — Erlass ohne Änderungs-Fussnoten oder Kanton), Netz-/Parse-
- * Fehler. Kein throw. Wer «kein Shard» von «nicht erreichbar» trennen muss (die
- * Anzeige «nichts erfasst»), nimmt `ladeHistorieShardErgebnis`.
- */
-export async function ladeHistorieShard(key: string): Promise<HistorieShard | null> {
-  return (await ladeHistorieShardErgebnis(key)).shard;
 }
 
 /**
