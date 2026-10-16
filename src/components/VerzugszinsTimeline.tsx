@@ -132,8 +132,13 @@ export function VerzugszinsTimeline({ e }: { e: VerzugszinsErgebnis }) {
             </div>
           ))}
         </div>
-        {/* Achse: Verzugsbeginn → Stichtag, Gesamttage in der Mitte */}
-        <div className="flex justify-between mt-1.5 num text-body-s text-ink-500">
+        {/* Achse: Verzugsbeginn → Stichtag, Gesamttage in der Mitte.
+            LESER-NAV O-62 (16.10.2026): reichen die drei Angaben nicht in
+            eine Zeile (@320 bei Schriftskala 1.4: +12 px Seiten-Querscroll,
+            die beiden Daten sind unteilbar), bricht die Zeile um, statt die
+            Seite zu weiten; nichts wird gekürzt. Wo sie vorher in eine Zeile
+            passten, ändert sich nichts. */}
+        <div className="flex flex-wrap justify-between mt-1.5 num text-body-s text-ink-500">
           <span>{e.ersterZinstag}</span>
           <span>{gesamtTage} Tage</span>
           <span>{e.stichtag}</span>
