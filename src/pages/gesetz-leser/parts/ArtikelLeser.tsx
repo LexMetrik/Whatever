@@ -108,7 +108,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   bezuegeLaedt?: boolean;
   // Absolute Tiefe der ERSTEN gezeigten Randtitel-Stufe (Delta-Offset). Damit
   // wird die Stufe einheitlich je absoluter Tiefe formatiert, auch wenn nur
-  // die geänderten Stufen gezeigt werden. 0 (Default) = volle Kette (Suchsicht).
+  // die geänderten Stufen gezeigt werden. 0 (Default) = volle Kette.
   margBasis?: number;
 }) {
   // ── W2·24-D35-F1 · DIE KOPIER-MECHANIK WOHNT JETZT BEI IHREN KNÖPFEN ────
@@ -199,8 +199,8 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // Der Rahmen (`v3/rahmenSpalten.ts`) hat gerechnet, wie viel die Lese-Zelle
   // trägt; hier wird daraus Markup. ZWEI Formen, EIN Baum:
   //   'zeile' — Ist-Form: Randtitel als Zeile über dem Artikel, Beiwerk
-  //             darunter. Gilt im Pane, auf dem Handy, in der Trefferliste und
-  //             ohne Provider (V1) — dort ändert sich nichts (§6).
+  //             darunter. Gilt im Pane, auf dem Handy und ohne Provider
+  //             (V1) — dort ändert sich nichts (§6).
   //   'breit' — Randtitel + Fassungsdatum IM ARTIKELKOPF, die Bezüge als EINE
   //             aufklappbare Zeile darunter. Keine Randspalten mehr.
   //
@@ -258,8 +258,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
           26.6.2026; auch bei eingeklapptem/aufgehobenem Artikel sichtbar),
           Beiwerk unter dem Wortlaut. */}
       {/* S6 W1g (24.9.2026): in der Breitform steht der Randtitel in der
-          Artikelnummer-Zeile (s. u.); die Zeilenform (Handy, Pane, Treffer-
-          liste) behält die Zeile darüber (Fedlex-Stil, David 26.6.2026). */}
+          Artikelnummer-Zeile (s. u.); die Zeilenform (Handy, Pane) behält die Zeile darüber (Fedlex-Stil, David 26.6.2026). */}
       {!kopfForm && <div>{randTitel}</div>}
       {/* `.lr-text` ist Sonden-Anker (Textspalte, `leser-marken-geometrie`);
           `min-w-0`: ein langes Wort sprengt sonst das Raster. */}
