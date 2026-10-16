@@ -286,6 +286,13 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   // 6 tatsächliche Dokumente/Reihen; die Klappzeile «Alle Erläuterungen des
   // Erlasses» nannte bisher die rohe Zahl und widersprach dem Gruppenkopf (§5).
   const erlZahl = erlaeuterungen.wert ? ordneErlaeuterungen(erlaeuterungen.wert.liste).length : null;
+  // LESER-NAV O-29 (E8-B01, 16.10.2026): ohne Zahl stand die Tafel ZUGEKLAPPT — beim Laden
+  // (gemessen DBG/ARG, Materialien-Abruf +2.5 s: nur «▸ Alle Erläuterungen des Erlasses»,
+  // kein Wort vom Laden) wie beim Ausfall des Registers (der Fehlersatz stand hinter der
+  // Klappzeile). Beim Laden sagt eine Zeile über der Klappzeile, dass etwas kommt; beim
+  // Ausfall OHNE kuratierten Rest steht die Tafel offen (wie «Null im ganzen Erlass»).
+  const erlLaedt = !erlaeuterungen.fertig;
+  const erlAusfall = erlaeuterungen.fertig && erlaeuterungen.wert === null && !erlaeuterungen.rest;
   const wzZahl = erlassKey ? werkzeugAnsicht(erlassKey).verfuegbar.length : null;
 
   return {
@@ -339,7 +346,10 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
             ladefehler={artikelShardFehler ? { gegenstand: `Erläuterungen ${zu.replace(/^Zu /, 'zu ')}`, onErneut: artikelMaterialienErneut } : undefined}>
             {(artMat ?? []).map((m) => <ArtikelErlaeuterung key={m.key} m={m} />)}
           </BlattArtikelGruppe>
-          <ErlassTeil was="Erläuterungen" zahl={erlZahl} daten="erlaeuterungen">
+          {erlLaedt && (
+            <p data-v3-erlaeuterungen-laedt className="px-3 pt-2 text-body-s text-ink-600">Behördliche Erläuterungen werden geladen …</p>
+          )}
+          <ErlassTeil was="Erläuterungen" zahl={erlAusfall ? 0 : erlZahl} daten="erlaeuterungen">
             <PanelErlaeuterungen stand={erlaeuterungen} revisionShard={artikelRevisionen.wert} ebene={ebene} />
           </ErlassTeil>
         </>
