@@ -7,7 +7,7 @@ import type { NormSnapshot, NormSnapshotDatei } from './typen';
 import type { KantonSystematik } from './systematik';
 import { randtitelKnoten } from './darstellung';
 import { normtextDateiUrl } from './dateiUrl';
-import { ladeJson, ladeJsonStreng, pruefeFelder } from '../ladeJson';
+import { IST_SPA_RUECKFALL, ladeJson, ladeJsonStreng, pruefeFelder } from '../ladeJson';
 
 const MANIFEST_PRUEFER = pruefeFelder('normtext/register.json', { erlasse: 'array' });
 /** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
@@ -18,17 +18,6 @@ export { DATEI_PRUEFER as NORMTEXT_DATEI_PRUEFER };
 const STRUKTUR_PRUEFER = pruefeFelder('normtext/struktur/<Ebene>/<Erlass>.json', {});
 /** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
 export { STRUKTUR_PRUEFER as NORMTEXT_STRUKTUR_PRUEFER };
-/** Die Struktur-Datei fehlt, wenn `vite dev`/`vite preview` statt eines 404 die index.html (200 text/html) liefern.
- *  Jede ANDERE HTML-Antwort auf eine Datendatei (Captive-Portal, Proxy-Fehlerseite;
- *  in Prod gibt es für Fehlendes einen echten 404) ist keine Auskunft über die
- *  Datei, sondern ein Ladefehler: sie WIRFT statt «Datei fehlt» (O-35 b). Der
- *  SPA-Rückfall ist an der Wurzel der App erkennbar (`id="root"`, index.html). */
-const IST_SPA_RUECKFALL = async (res: Response): Promise<boolean> => {
-  if (!/\btext\/html\b/i.test(res.headers?.get?.('content-type') ?? '')) return false;
-  if ((await res.clone().text()).includes('id="root"')) return true;
-  throw new Error('Antwort ist keine Datendatei');
-};
-
 // ── Manifest (einmal, gecacht als laufende Promise; Fehlschläge nicht, s. u.) ─
 let manifestPromise: Promise<BrowseManifest> | null = null;
 

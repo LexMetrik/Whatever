@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState, type Dispatch, type SetStateAction } from 'react';
+import { useCallback, useEffect, useRef, useState, type Dispatch, type SetStateAction } from 'react';
 import { useDialogFokus } from '../../components/layout/useDialogFokus';
 import { usePaneKontext } from '../../components/layout/PaneKontext';
 import { useMeldeInhaltsKopf } from '../../components/layout/InhaltsKopfKontext';
@@ -6,10 +6,9 @@ import type { StrukturMap, ErlassKopf, CurrencyMap, KantonLueckenMap } from '../
 import type { KantonSystematik } from '../../lib/normtext/systematik';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
-import { beiLeerlauf } from '../../lib/leerlauf';
 import { merkeKlappAstManuell, merkeSprungAstManuell, pruefeAlleZuSperre, type AlleZuSperre } from './sprungAst';
 import { useBezuege } from './bezuegeLaden';
-import { ladeHistorieShard, historieFuerArtikel, type HistorieShard } from '../../lib/normtext/historie-laden';
+import { useHistorieShard } from './useHistorieShard';
 import {
   fruehestesInKraft, nichtKonsolidierteInkrafttreten, revisionenFuerNorm,
 } from '../../lib/normtext/revisionen';
@@ -99,17 +98,15 @@ export function useLeserZustand({ bezuegeVorladen = true }: {
   // des Erlasses (V1c) im Leerlauf für `revisionFuer` — die Revisions-Marke der
   // `BezuegeZeile`/`LeitfallZeile`. Beide sind gelöscht, `revisionFuer` hatte keinen
   // Verbraucher mehr; das Panel lädt den Shard selbst (`v3/panelKontextLaden`).
-  // G-HIST-UI: Per-Artikel-Historie-Shard des Erlasses. EIN idle-Fetch auf Reader-
-  // Ebene (wie Leitfall-/Revisions-Shard); der Artikel-Eintrag wird als Prop
-  // durchgereicht (die ArtikelHistorieZeile ist ein reiner Renderer). An den Erlass-
-  // Key gebunden — ein Pane-/Erlass-Wechsel liefert nie fremde Historie.
-  const [historieShard, setHistorieShard] = useState<{ key: string; shard: HistorieShard | null } | null>(null);
+  // G-HIST-UI: Per-Artikel-Historie-Shard des Erlasses (EIN idle-Fetch, Lade-Zustand samt
+  // Fehler und Neuversuch) — seit PE-F10-B01 in `./useHistorieShard`.
+  const { historieFuer, historieStand } = useHistorieShard(erlass?.key);
   // W2·7-BEZUG/B4: facettierte Bezüge. `useBezuege` lädt den (deutlich grösseren)
   // Bezugs-Shard NUR im erweiterten Facetten-Zustand und im Leerlauf — im
   // Grundzustand fasst der Reader ihn nie an (§15). `erweitert` steuert zugleich,
   // ob der schlanke Leitfall-Shard überhaupt noch geladen wird (Entweder/Oder, §5).
   const {
-    aktiv: bezuegeAktiv, bezuegeFuer, kantoneVerfuegbar, klassenImErlass, histogramm: bezugHistogramm,
+    bezuegeFuer, kantoneVerfuegbar, klassenImErlass, histogramm: bezugHistogramm,
     bereich: bezugBereich,
   } = useBezuege(bezuegeVorladen ? erlass?.key : undefined);
   const [fehler, setFehler] = useState<LeserFehler>(false);
@@ -165,25 +162,6 @@ export function useLeserZustand({ bezuegeVorladen = true }: {
   // `.current` im Aufrufer als verbotene Argument-Mutation. Reine Umbenennung.)
   const scrollVorSucheRef = useRef<number | null>(null);
   const sucheVorherRef = useRef('');
-  useEffect(() => {
-    const key = erlass?.key;
-    if (!key) return;
-    let lebt = true;
-    const abbrechen = beiLeerlauf(() => {
-      // W2·7-BEZUG/B4: der Artikelfuss speist sich AUSSCHLIESSLICH aus dem
-      // Bezugs-Shard (`useBezuege`) — der schlanke Leitfall-Shard wird hier
-      // nicht mehr geholt. Er ist dessen Teilmenge (Abgrenzung in bezuege.ts);
-      // beide zu laden brächte dieselben BGE-Kanten zweimal über die Leitung
-      // und liesse die Zeile zweimal einwachsen (zweiter Layout-Sprung,
-      // §15/CLS). Sind ALLE Facetten aus, lädt auch `useBezuege` nichts — dann
-      // steht unter dem Artikel nichts und es kostet null Byte (Vorgabe David
-      // 28.7.2026). Das KontextPanel lädt den norm-index-Shard weiterhin für
-      // seinen eigenen Zweck — siehe `bezuegeLaden.ts`.
-      // G-HIST-UI: Historie-Shard (Bund; Kanton 404 → null → still kein Badge, §8).
-      void ladeHistorieShard(key).then((shard) => { if (lebt) setHistorieShard({ key, shard }); });
-    });
-    return () => { lebt = false; abbrechen(); };
-  }, [erlass?.key, bezuegeAktiv]);
   // W2·19-GLIEDERUNG/S6 (Bau-Spec §5.1, Zeile 1): trägt der Erlass mindestens
   // eine in Kraft getretene, aber nicht konsolidierte Änderung? PROMOTION, kein
   // Neubau — dieselbe Quelle, die das KontextPanel ohnehin lädt
@@ -236,25 +214,7 @@ export function useLeserZustand({ bezuegeVorladen = true }: {
   // nicht mehr der ungefilterte Marker. Vorher hätte die Übersicht bei 66 statt
   // 4 Erlassen «In Kraft getretene Änderung …» behauptet (§8).
   const nichtKonsolidiert = nichtKonsolidiertSeit !== null;
-  // G-HIST-UI: Artikel-Token → Fassungshistorie des AKTUELLEN Erlasses (sonst
-  // undefined = kein Badge). Direkter Roh-Token-Lookup (Snapshot/Shard gleiche
-  // Extraktion). Stabile Referenz aus dem Shard → memo-freundlich.
-  const historieFuer = useCallback((artikel: string) => (
-    erlass && historieShard?.key === erlass.key
-      ? historieFuerArtikel(historieShard.shard, artikel)
-      : undefined
-  ), [erlass, historieShard]);
-  // P5 · B1 (1.10.2026): WANN der Shard da ist — dieselbe Quelle wie `historieFuer`
-  // (Leerlauf-Fetch oben, rIC-Timeout 1200 ms), an den Erlass-Key gebunden. Das Panel
-  // sperrt «Erlass in Kraft seit»/«nichts erfasst» darauf, nicht auf einen eigenen
-  // Lader: dessen «geladen» kam VOR `historieFuer` (Aufblitzen an Artikeln mit Ereignis).
-  // `wert: null` bei `fertig` = kein Shard ODER Netzfehler (der Lader trennt das nicht).
-  const historieStand = useMemo<{ wert: HistorieShard | null; fertig: boolean }>(() => (
-    erlass && historieShard?.key === erlass.key
-      ? { wert: historieShard.shard, fertig: true }
-      : { wert: null, fertig: false }
-  ), [erlass, historieShard]);
-
+  // Fassungshistorie je Artikel (`historieFuer`) und Bereitschaft/Fehler (`historieStand`): s. `./useHistorieShard`.
   return {
     erlass, setErlass, eintraege, setEintraege, struktur, setStruktur, kopf, setKopf,
     manifest, setManifest, currency, setCurrency,
