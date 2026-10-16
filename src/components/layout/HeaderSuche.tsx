@@ -242,8 +242,12 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
     // KEIN `feld.current?.blur()` mehr (D2): der Fokus bleibt im Feld —
     // Vorbild ist die Erlass-Suche im Leser (`SuchSprungFeld.tsx`), die auf
     // Esc ebenfalls nur leert und nie defokussiert.
+    // LESER-NAV, FB O-64 (16.10.2026): Esc schliesst nur die OBERSTE Fläche. Hat sie schon ein anderer
+    // Zuhörer angenommen (`defaultPrevented`: Blatt, Menü, Dialog), bleibt die Suche stehen — beide
+    // hängen am `window`, die Reihenfolge ihrer Anmeldung entscheidet nicht mit. Gemessen @1440 (OR,
+    // Blatt offen, dann Suche offen): ein Esc schloss beide.
     const esc = (e: KeyboardEvent) => {
-      if (e.key !== 'Escape') return;
+      if (e.key !== 'Escape' || e.defaultPrevented) return;
       e.preventDefault();
       // Nachzug Zweitprüfung #1188: steht der Fokus im Panel (Knopf «Verlauf
       // leeren» im Leerzustand), verschwindet er mit dem Panel und fiele auf
@@ -329,7 +333,9 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
   };
 
   return (
-    <div ref={huelle} className="relative" role="search">
+    // Offen trägt die Hülle die Menü-Markierung (`layout/modalerDialog`, `imMenue`): steht der Fokus im Feld
+    // oder im Panel, gehört Esc der Suche — das Blatt daneben (`usePopoverAutoZu`) nimmt es dann nicht an.
+    <div ref={huelle} className="relative" role="search" data-menue-flaeche={zeigtPanel || zeigtLeer ? '' : undefined}>
       <input
         ref={feld}
         type="search"

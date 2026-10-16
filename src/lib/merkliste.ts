@@ -46,6 +46,8 @@ const ROUTE_MAX = 300;
 const PAYLOAD_MAX = 20000;
 /** Query-Parameter des Teilen-Links auf der Startseite. */
 export const MERKLISTE_PARAM = 'merkliste';
+/** Anker-ID der Merkliste-Fläche auf der Startseite (`/#merkliste`; Sprungziel von «Alle N auf der Startseite»). */
+export const MERKLISTE_ANKER = 'merkliste';
 /** Reaktives Event im GLEICHEN Tab (Muster ZULETZT_EVENT); anderer Tab: `storage`. */
 const MERKLISTE_EVENT = 'lm:merkliste';
 

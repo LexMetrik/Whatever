@@ -126,6 +126,37 @@ test.describe('W2·17 Split — Tastatur, Esc, Fokus', () => {
     expect(fehler, fehler.join('\n')).toEqual([])
   })
 
+  // LESER-NAV · FB O-64 (16.10.2026): Esc schliesst nur die OBERSTE Fläche. GEMESSEN @1440 (OR, Blatt zuerst
+  // geöffnet, dann die Kopf-Suche mit «Vertrag», Fokus im Feld): EIN Esc schloss die Suche UND das Blatt
+  // (Blatt-Zuhörer zuerst am `window`, `HeaderSuche` prüfte `defaultPrevented` nicht). Jetzt geht das erste Esc
+  // an die Suche, das zweite ans Blatt.
+  // ROT ZU BEKOMMEN (§6.7): in `HeaderSuche.tsx` das Attribut `data-menue-flaeche` an der Hülle streichen ⇒ das
+  // Blatt geht mit dem ersten Esc zu. (`|| e.defaultPrevented` der Esc-Funktion hält `leser-v3-kuerzel.test.ts` fest.)
+  test('O-64: Esc bei offenem Blatt UND offener Kopf-Suche schliesst nur die Suche, das zweite Esc das Blatt', async ({ page }) => {
+    test.slow()
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/gesetze/bund/OR')
+    await page.locator('[data-v3-blatt-schiene]').waitFor({ timeout: 60_000 })
+    await page.locator('[data-v3-blatt-schiene]').click()
+    await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
+    const suche = page.getByRole('combobox', { name: /LexMetrik durchsuchen/ })
+    await suche.click()
+    await page.keyboard.type('Vertrag')
+    await expect(suche, 'Vorbedingung (§6.7): die Suche ist offen').toHaveAttribute('aria-expanded', 'true', { timeout: 30_000 })
+    await expect(page.locator('[data-v3-panel]'), 'Vorbedingung: das Blatt steht daneben').toHaveCount(1)
+
+    await page.keyboard.press('Escape')
+    await expect(suche).toHaveAttribute('aria-expanded', 'false')
+    await expect(suche).toHaveValue('')
+    await page.waitForTimeout(500)
+    await expect(page.locator('[data-v3-panel]'), 'das erste Esc gehört der Suche, es schloss auch das Blatt').toHaveCount(1)
+
+    await page.keyboard.press('Escape')
+    await expect(page.locator('[data-v3-panel]'), 'das zweite Esc schliesst das Blatt').toHaveCount(0, { timeout: 15_000 })
+    expect(fehler, fehler.join('\n')).toEqual([])
+  })
+
   test('F1-B03: «Hauptfenster schliessen» gibt den Fokus an den Hauptinhalt, nicht an <body>', async ({ page }) => {
     test.slow()
     await oeffneSplit(page)

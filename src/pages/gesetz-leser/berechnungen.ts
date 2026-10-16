@@ -75,6 +75,20 @@ export function berechneSekPos(sektionen: Sektion[], eintraege: NormSnapshot[] |
   return pos;
 }
 
+/**
+ * «Art. 49» bis «Art. 50–51» ⇒ «Art. 49–51» (LESER-NAV, FB O-63, Anzeige-Text, keine Zuordnung).
+ *
+ * Ein amtliches Sammel-Etikett («Art. 50–51» für zwei zusammen aufgehobene Artikel; im Bund-Bestand
+ * 298 von 25 620 Etiketten) steht als Ganzes für seine Spanne. Als Endglied angehängt gab es
+ * «Art. 49–50–51» (ZGB «Kantonales Recht», OR «Miete» «Art. 253–274–274g»): dieselbe Zahl doppelt, drei
+ * Zahlen für eine Spanne. Der Anfang nimmt darum nur den ersten, das Ende nur den letzten Teil eines
+ * Sammel-Etiketts. EINE Formel für Kopf, Treffer-Badge und Gliederung (§5).
+ */
+export function bereichText(erstLabel: string, letztLabel: string): string {
+  const ende = letztLabel.replace(/^(Art\.|§)\s*/, '').split('–').pop();
+  return `${erstLabel.split('–')[0]}–${ende}`;
+}
+
 // Rank 4 (QS-PERF, §6.4): Sektions-Bereichslabel («Art. 1–10») + Artikelzahl
 // EINMAL bottom-up vorberechnen — statt 2× O(Subtree) je Sektion je Scroll-Render
 // (bisher rief renderSektion sekBereich(s) UND sammleArtikel(s).length je Knoten,
@@ -101,9 +115,7 @@ export function berechneSektionMeta(
         if (idx < (artIndex.get(erst.artikel) ?? 0)) erst = a;
         if (idx > (artIndex.get(letzt.artikel) ?? 0)) letzt = a;
       }
-      bereich = erst === letzt
-        ? erst.artikelLabel
-        : `${erst.artikelLabel}–${letzt.artikelLabel.replace(/^(Art\.|§)\s*/, '')}`;
+      bereich = erst === letzt ? erst.artikelLabel : bereichText(erst.artikelLabel, letzt.artikelLabel);
     }
     meta.set(s.id, { bereich, einzel: arts.length === 1, anhang });
     return arts;

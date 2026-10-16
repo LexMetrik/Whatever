@@ -127,6 +127,20 @@ describe('Die Vorrangregel lebt in zwei Dateien und ist nur als Paar wahr', () =
       .toContain('if (e.defaultPrevented) return;');
   });
 
+  // LESER-NAV · FB O-64: Esc schliesst nur die oberste Fläche. Zwei Hälften, beide nötig: die Esc-Funktion der Suche
+  // gibt nach, wenn ein anderer Zuhörer das Esc schon angenommen hat (egal, wer am `window` zuerst läuft), UND die
+  // geöffnete Suche trägt die Menü-Markierung, an der das Blatt (`usePopoverAutoZu`: `imMenue`) erkennt, dass das Esc
+  // der Suche gehört. Wirkung im Browser: `e2e/leser-split-w217.e2e.ts` (O-64).
+  // ROT ZU BEKOMMEN (§6.7): `|| e.defaultPrevented` bzw. `data-menue-flaeche` in HeaderSuche.tsx streichen.
+  it('O-64: Esc der Header-Suche gibt nach, wenn ein anderer Zuhörer es angenommen hat, und markiert die offene Suche als Menü', () => {
+    const von = HEADER.indexOf('const esc = (e: KeyboardEvent)');
+    expect(von, 'die Esc-Funktion der Header-Suche fehlt').toBeGreaterThan(-1);
+    expect(HEADER.slice(von, von + 200), 'die Esc-Funktion prüft `defaultPrevented` nicht')
+      .toContain("e.key !== 'Escape' || e.defaultPrevented");
+    expect(HEADER, 'die offene Suche trägt keine Menü-Markierung — das Blatt nähme das Esc mit')
+      .toContain("data-menue-flaeche={zeigtPanel || zeigtLeer ? '' : undefined}");
+  });
+
   it('das Kürzel hängt NICHT mehr am Feld — es muss auch ohne Feld im DOM greifen', () => {
     expect(/addEventListener\('keydown'/.test(FELD),
       'SuchSprungFeld registriert wieder einen eigenen keydown-Listener').toBe(false);

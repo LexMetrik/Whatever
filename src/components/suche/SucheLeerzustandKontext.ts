@@ -1,5 +1,5 @@
 import type { ZuletztEintrag } from '../../lib/zuletztVerwendet';
-import type { MerkEintrag } from '../../lib/merkliste';
+import { MERKLISTE_ANKER, type MerkEintrag } from '../../lib/merkliste';
 import { suchOptionId } from './suchOptionId';
 import { MEHR_TREFFER_ID, type FlacherTreffer } from './trefferAuswahl';
 
@@ -34,8 +34,9 @@ import { MEHR_TREFFER_ID, type FlacherTreffer } from './trefferAuswahl';
 // führt `MerklisteFlaeche` die ganze Liste. Gruppen-Namensräume «merkliste» und
 // «verlauf»: dieselbe Route in beiden Listen ergibt zwei verschiedene Options-IDs.
 export const MERK_IM_PANEL = 5;
-/** Ziel der Option «Alle N …»: die Startseite trägt die Merkliste-Fläche (keine eigene Route). */
-export const MERK_ALLE_HREF = '/';
+/** Ziel der Option «Alle N …»: die Merkliste-Fläche der Startseite (keine eigene Route). Mit Anker, damit der Sprung
+ *  sie erreicht und nicht nur die Startseite (FB O-71): `ScrollZuHash` (App.tsx) scrollt, `MerklisteAnsicht` setzt den Fokus. */
+export const MERK_ALLE_HREF = `/#${MERKLISTE_ANKER}`;
 
 export function leerOptionen(verlauf: ZuletztEintrag[], listboxId: string, merkliste: readonly MerkEintrag[] = []): FlacherTreffer[] {
   return [
