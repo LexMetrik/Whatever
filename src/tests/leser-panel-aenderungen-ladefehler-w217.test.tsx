@@ -50,11 +50,14 @@ const SIDECAR = { erlassKey: 'OR', sr: '220', abgerufen: '2026-10-01', reichweit
 const SHARD = { erlass: 'OR', proArtikel: { '7': { iso: '2001-01-01', as: 'AS 2001 99' } } };
 
 /** `netz`: true = Netzausfall (fetch wirft); sonst Antworten je Pfad. */
-function stubFetch(modus: { netz: true } | { sidecar: unknown; shard: unknown }) {
+function stubFetch(modus: { netz: true } | { sidecar: unknown; shard: unknown } | { sidecar: unknown; shardNetz: true }) {
   const f = vi.fn(async (url: string) => {
     if ('netz' in modus) throw new TypeError('Failed to fetch');
     if (url.includes('/normtext/revisionen/')) return json(modus.sidecar);
-    if (url.includes('/verzahnung/artikel-revisionen/')) return json(modus.shard);
+    if (url.includes('/verzahnung/artikel-revisionen/')) {
+      if ('shardNetz' in modus) throw new TypeError('Failed to fetch');
+      return json(modus.shard);
+    }
     return tot(404);
   });
   vi.stubGlobal('fetch', f);
@@ -127,6 +130,30 @@ describe('Reiter «Änderungen» am Blatt — Ladefehler statt «nichts erfasst�
     expect(text()).not.toContain('konnte nicht geladen');
     expect(text()).toContain('Art. 7 OR zuletzt geändert durch AS 2001 99');
     expect(text()).not.toContain('Zu Art. 7 nichts erfasst');
+  });
+
+  // LESER-NAV O-60 (16.10.2026): scheitert NUR der Artikel-Revisions-Shard (Sidecar da,
+  // Historie «geladen ohne Shard»), gab `ladeRevisionShard` bei 404 und Netzfehler beide
+  // `null` — das Blatt schrieb «Zu Art. 7 nichts erfasst.» über einen Ausfall (§8).
+  it('O-60 · nur der Artikel-Shard fällt aus: Fehlertext + «Erneut laden», KEIN «nichts erfasst»; nach der Erholung der Beleg', async () => {
+    stubFetch({ sidecar: SIDECAR, shardNetz: true });
+    await rendere('O60');
+    expect(text()).toContain('Änderungen zu Art. 7 konnten nicht geladen werden');
+    expect(text()).not.toContain('Zu Art. 7 nichts erfasst');
+    const knopf = ziel.querySelector('[data-abruf-erneut]') as HTMLElement;
+    expect(knopf).not.toBeNull();
+    stubFetch({ sidecar: SIDECAR, shard: SHARD });
+    await act(async () => { knopf.click(); });
+    for (let i = 0; i < 4; i++) await act(async () => { await new Promise((r) => setTimeout(r, 5)); });
+    expect(text()).not.toContain('konnten nicht geladen');
+    expect(text()).toContain('Art. 7 OR zuletzt geändert durch AS 2001 99');
+  });
+
+  it('O-60 · Gegenprobe: Shard-404 bei vorhandenem Sidecar bleibt ehrlich «nichts erfasst» (kein Fehler)', async () => {
+    vi.stubGlobal('fetch', vi.fn(async (url: string) => (url.includes('/normtext/revisionen/') ? json(SIDECAR) : tot(404))));
+    await rendere('O60B');
+    expect(text()).toContain('Zu Art. 7 nichts erfasst.');
+    expect(text()).not.toContain('konnten nicht geladen');
   });
 
   it('Gegenprobe: Erlass OHNE Revisions-Datei (404 überall) = ehrliches «nichts erfasst», kein Fehler', async () => {
