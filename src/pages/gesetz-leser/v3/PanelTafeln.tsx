@@ -302,8 +302,8 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   // nichts erfasst.» wäre eine Falschaussage über den Artikel (§8): die Zeile schweigt, die
   // Erlass-Tafel steht offen mit ihrem Fehlertext, und «Erneut laden» wiederholt alle Quellen
   // des Reiters (sonst käme ein alter Fehlschlag als falsche Leerzeile zurück, sobald eine
-  // andere sich erholt hat). Lücke: scheitert NUR der Artikel-Shard, trennt `ladeRevisionShard`
-  // das noch nicht von «Erlass ohne Beleg» (Nebenfund, s. PR).
+  // andere sich erholt hat). Scheitert NUR der Artikel-Shard, meldet `artRevFehler` den
+  // Ladefehler (LESER-NAV O-60, 16.10.2026).
   const aenderungenLadefehler = ebene !== 'kanton' && revisionen.fertig && revisionen.wert === null;
   const aenderungenErneut = () => { revisionen.erneut?.(); artikelRevisionen.erneut?.(); historie.erneut?.(); };
   // Ist der ganze Erlass leer, sagt das die Tafel selbst — ein zweites «Zu Art. N

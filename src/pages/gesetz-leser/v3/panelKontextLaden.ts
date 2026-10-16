@@ -90,9 +90,9 @@ export function useRevisionen(erlassKey: string | undefined, laden: boolean): Ge
 // Derselbe Lade-/Gate-Rhythmus wie `useRevisionen` oben, andere Quelle: der
 // erlass-lokale Revisions-Shard (`ladeRevisionShard`, seit V1c bestandsfest,
 // bisher nur vom Ist-KontextPanel gemountet). `null` = Erlass ohne
-// Revisions-Beleg (kein Fehler, §8 — `ladeRevisionShard` unterscheidet das
-// bereits vom Fetch-Fehler, der dort ebenfalls `null` liefert und dafür den
-// Promise-Cache NICHT setzt, also beim nächsten Aufruf erneut versucht).
+// Revisions-Beleg (kein Fehler, §8). Ein Fetch-Fehler WIRFT seit LESER-NAV O-60
+// (16.10.2026) und setzt den Promise-Cache nicht; `useNachladen` fängt den Wurf
+// und meldet `fehler`, der nächste Aufruf versucht erneut.
 export function useArtikelRevisionShard(erlassKey: string | undefined, laden: boolean): Geladen<RevisionShard | null> {
   return useNachladen(erlassKey, laden, ladeRevisionShard);
 }

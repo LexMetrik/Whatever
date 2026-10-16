@@ -22,7 +22,7 @@ export type Gattung = 'materialien' | 'erlaeuterungen';
 
 /** Die Dokumenttypen der kantonalen Gesetzgebung — Vorlagen und Berichte an das
  *  Parlament, also das kantonale Gegenstück zur Botschaft des Bundesrates.
- *  (Wortlaut und Menge unverändert aus `./ratschlaege.ts`, S6 · M-3/B-4.) */
+ *  (Wortlaut aus `./ratschlaege.ts`, S6 · M-3/B-4; Menge um `gr-ausgabenbericht` ergänzt, O-73.) */
 export const KANTONALE_GESETZGEBUNG: ReadonlySet<DoktypId> = new Set<DoktypId>(['ratschlag', 'gr-bericht', 'gr-ausgabenbericht', 'gr-initiative']);
 // LESER-NAV O-73 (16.10.2026): `gr-ausgabenbericht` ergänzt. Die BS-Grundmenge
 // (`scripts/materialien/bs-materialien.ts`, `GESCHAEFTSARTEN`) nennt Ratschlag, Bericht und
