@@ -18,6 +18,7 @@ import {
 import { ERLASS_REGISTER } from './normtext/register';
 import { rechtsprechungFuerErlass, leitfaelleFuerArtikel, type EntscheidRef, type LeitfallRef } from './rechtsprechung/norm-index';
 import { ladeMaterialManifest } from './materialien/browse';
+import { gattungVon } from './materialien/gattung';
 import { ladeKantenShardErgebnis, type KantenShard } from './materialien/kanten-shard';
 import type { BrowseMaterial, MaterialManifest } from './materialien/typen';
 import type { Herkunft } from './verzahnung/typen';
@@ -189,6 +190,12 @@ export async function kontextSoftLawErgebnis(typ: KontextTyp, normKeys: readonly
   for (const dok of reihenfolge) {
     const reg = regByKey.get(dok);
     if (!reg) continue; // nicht (mehr) gelistet → still auslassen (§8, kein toter Link)
+    // LESER-NAV O-45/O-05: diese Liste speist «Erläuterungen» / «Amtliche Materialien»
+    // (Verwaltungspraxis). Gesetzgebung (Botschaft, Vernehmlassung, kantonale Geschäfte)
+    // hat ihre eigenen Reiter und Rang-Sätze — eine Kante darauf zählt hier nicht (§5).
+    // Heute trägt kein Kanten-Shard solche Dokumente (gemessen 16.10.2026); die Sperre
+    // verhindert die Doppelanzeige und den falschen Rangsatz, falls der Generator es ändert.
+    if (gattungVon(reg.doktyp) !== 'erlaeuterungen') continue;
     const s = proDok.get(dok)!;
     const artikelSort = [...s.artikel].sort(vergleicheArtikel);
     const repArtikel = artikelSort[0];
