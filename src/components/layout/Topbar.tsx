@@ -251,14 +251,7 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
               Schrift (`calc(18.1rem + 124px)`, Herleitung in index.css) — der Knopf fehlt nur
               noch, wo er den Streifen sprengte. Unter 481 px bleibt er weg (C2); dort und wo
               er fehlt, trägt «Verlauf leeren» der Such-Leerzustand (`SucheLeerzustand`). */}
-          {/* LESER-NAV O-65 (16.10.2026): `min-w-11` reserviert die Breite des Knopfs
-              (`VerlaufUebersicht`: `min-w-11`). Der Knopf erscheint erst nach dem Mount
-              (Verlauf aus localStorage, §15.2); ohne Reserve wuchs die rechtsbündige
-              Werkzeug-Gruppe dabei um 44 px nach links (gemessen: CLS 0.0002–0.0003 auf jeder
-              Seite, Quelle `div.ml-auto.shrink-0.flex` 1309→1265 px). Sicher, weil die
-              Containerabfrage von `.lc-topbar-verlauf` (index.css) den Block nur zeigt, wo
-              der Streifen den Knopf trägt — die Reserve belegt dort denselben Platz. */}
-          <div className="lc-topbar-verlauf min-w-11"><VerlaufUebersicht /></div>
+          <div className="lc-topbar-verlauf"><VerlaufUebersicht /></div>
           <ThemaUmschalter />
           <SprachUmschalter />
         </div>
