@@ -3,7 +3,7 @@ import { TrefferLandkarte } from '../../../components/leser/TrefferLandkarte';
 import { landkarteSpur } from '../../../components/leser/landkarteModell';
 import { gesetzLandkarteEinheiten } from './landkarteGesetz';
 import { zaehlform, type BestimmungsWort } from './erlassAnsicht';
-import { zaehleTreffer } from '../leserSuche';
+import { badgesFuer, zaehleTreffer } from '../leserSuche';
 import type { LeserV3Modell } from './leserV3Modell';
 
 // ═══ W2·28 · L-1 · DER AUFBAU DER TREFFER-LANDKARTE ═════════════════════════
@@ -112,6 +112,12 @@ export function LandkarteZone({ m, bestimmungsWort, randluft, listeSteht, onVorS
   );
   // O-36 b: derselbe Zähler wie die Zähler-Zeile daneben (`suchZoneAufbau`), nicht die Zahl der Marken.
   const zaehl = useMemo(() => zaehleTreffer(m.treffer), [m.treffer]);
+  // O-36 b (Nachzug): eine Marke, deren Zeile NUR einen Kopf-Treffer trägt (kein «Artikel mit eigener
+  // Fundstelle», dieselbe Zählfunktion wie oben), nennt im Tooltip das Badge der Listenzeile
+  // («Überschrift · Art. 266b–273c») statt «Art. 266b» — sonst läse sich, als träfe der Artikel selbst.
+  const hinweise = useMemo(() => new Map(m.treffer
+    .filter((t) => zaehleTreffer([t]).artikel === 0)
+    .map((t) => [t.token, badgesFuer(t, m.aenderungenAus, bestimmungsWort).join(' · ')])), [m.treffer, m.aenderungenAus, bestimmungsWort]);
   if (!m.sucheAktiv || m.markenAus || !randluft) return null;
   if (listeSteht || m.fundstellen <= 0) return null;
   return (
@@ -126,6 +132,7 @@ export function LandkarteZone({ m, bestimmungsWort, randluft, listeSteht, onVorS
       wortMehr={zaehlform(2, bestimmungsWort)}
       artikelAnzahl={zaehl.artikel}
       ueberschriften={zaehl.koepfe}
+      hinweise={hinweise}
       onSprung={(token) => {
         // Danach läuft die BESTEHENDE Sprungmechanik: zur ersten Fundstelle, wo
         // es eine gibt, sonst zum Artikel. Keine zweite Sprungart (§5). Der Klick ins
@@ -133,8 +140,10 @@ export function LandkarteZone({ m, bestimmungsWort, randluft, listeSteht, onVorS
         // Hervorhebung, Zähler und die Landkarte selbst mit ihm weg. Im Einzelmodus
         // führen beide Wege über den Router (PE-B12-B03, `./sprungWege`).
         onVorSprung();
-        if (m.treffer.some((t) => t.token === token)) m.springeZuTreffer?.(token);
-        else m.springeZuArtikel(token, true);
+        // O-58: auch das Feld OHNE Treffer geht durch `springeZuTreffer` — es gibt dann die laufende
+        // Fundstelle frei (Herleitung dort), statt sie an einem verlassenen Artikel stehen zu lassen.
+        m.springeZuTreffer?.(token);
+        if (!m.treffer.some((t) => t.token === token)) m.springeZuArtikel(token, true);
       }} />
   );
 }

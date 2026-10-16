@@ -52,7 +52,7 @@ import { BREITE, HOEHE, MARKE_X, klickAnteil, leseRechteck, markeAnAnteil, marke
 // Sprungmechanik, die die Einstellung bereits respektiert.
 
 export function TrefferLandkarte({
-  spur, treffer, leseId, register, obenVar, gesamtFundstellen, wortEins, wortMehr, artikelAnzahl, ueberschriften = 0, onSprung,
+  spur, treffer, leseId, register, obenVar, gesamtFundstellen, wortEins, wortMehr, artikelAnzahl, ueberschriften = 0, hinweise, onSprung,
 }: {
   /** Die Bausteine des Dokuments mit ihrer Lage (`landkarteSpur`). */
   spur: readonly LandkarteFeld[];
@@ -90,6 +90,10 @@ export function TrefferLandkarte({
    *  (Entscheid-Leser, dort gibt es keine Köpfe). */
   artikelAnzahl?: number;
   ueberschriften?: number;
+  /** LESER-NAV, FB O-36 b (Nachzug): Tooltip-Kopf je Marken-Id, wo «Art. N» allein falsch läse — die
+   *  Zeile trägt nur einen Kopf-Treffer, der Artikel selbst trifft nicht. Der Aufrufer nimmt dafür das
+   *  Badge der Listenzeile (`badgesFuer`, §5); ohne Eintrag gilt das Label des Bausteins. */
+  hinweise?: ReadonlyMap<string, string>;
   /** Klick auf Streifen oder Marke: Sprung zum Baustein. */
   onSprung: (id: string) => void;
 }) {
@@ -207,7 +211,7 @@ export function TrefferLandkarte({
             <rect key={m.id} x={MARKE_X + (BREITE - 2 * MARKE_X - b) / 2} y={m.von * HOEHE}
               width={b} height={markenHoehe(m.von, m.bis)}
               fill={`var(--reg-${register})`}>
-              <title>{`${m.label} · ${m.anzahl} ${m.anzahl === 1 ? 'Fundstelle' : 'Fundstellen'}`}</title>
+              <title>{`${hinweise?.get(m.id) || m.label} · ${m.anzahl} ${m.anzahl === 1 ? 'Fundstelle' : 'Fundstellen'}`}</title>
             </rect>
           );
         })}
