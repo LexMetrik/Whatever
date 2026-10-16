@@ -35,6 +35,20 @@ export function gattungVon(doktyp: DoktypId): Gattung {
   return GESETZGEBUNG_DOKTYPEN.has(doktyp) ? 'materialien' : 'erlaeuterungen';
 }
 
+/** Doktypen, die ihrer Art nach Verwaltungsverordnungen im engeren Sinn sind
+ *  (generell-abstrakte Dienstanweisung an die nachgeordneten Behörden): sie
+ *  binden die Verwaltung intern. Tätigkeitsbericht und Mitteilung sind es nicht
+ *  (Bericht bzw. Information, LESER-NAV O-05); Merkblatt, Leitfaden, Anleitung,
+ *  Richtlinie, MWST-Info bleiben im Zweifel draussen — der Hinweis behauptet
+ *  dort nur, was für jede Behördenpublikation gilt. */
+const VERWALTUNGSVERORDNUNG: ReadonlySet<DoktypId> = new Set<DoktypId>([
+  'kreisschreiben', 'ks-anhang', 'weisung', 'rundschreiben', 'wegleitung',
+]);
+
+export function istVerwaltungsverordnung(doktyp: DoktypId): boolean {
+  return VERWALTUNGSVERORDNUNG.has(doktyp);
+}
+
 /** Rang-Etikett je Gattung — EINE Quelle für den Hinweis der Einzelseite
  *  (`components/materialien/GattungsHinweis`), die SEO-Beschreibung und das
  *  Crawler-HTML (`lib/seo-detail`), §5. Anlass: Gegenprüfung REST S5c

@@ -1,4 +1,4 @@
-import { GATTUNG_RANG, gattungVon } from '../../lib/materialien/gattung';
+import { GATTUNG_RANG, gattungVon, istVerwaltungsverordnung } from '../../lib/materialien/gattung';
 import { MASSGEBLICH_SATZ } from '../../lib/benennung';
 import type { DoktypId } from '../../lib/materialien/typen';
 
@@ -30,11 +30,15 @@ export function GattungsHinweis({ doktyp }: { doktyp: DoktypId }) {
       </p>
     );
   }
+  // LESER-NAV O-05: der Verwaltungsverordnungs-Satz nur, wo der Doktyp eine ist;
+  // Tätigkeitsbericht, Mitteilung, Merkblatt … bekommen die neutrale Aussage.
   return (
     <p data-gattung="erlaeuterungen">
-      <strong>{GATTUNG_RANG.erlaeuterungen}.</strong> Verwaltungsverordnungen
-      (Kreisschreiben, Wegleitungen, Leitfäden u.&nbsp;a.) binden die Verwaltung intern und
-      sind faktisch praxisleitend, aber für Gerichte und Private nicht direkt verbindlich.
+      <strong>{GATTUNG_RANG.erlaeuterungen}.</strong>{' '}
+      {istVerwaltungsverordnung(doktyp)
+        ? <>Verwaltungsverordnungen (Kreisschreiben, Wegleitungen, Leitfäden u.&nbsp;a.) binden die Verwaltung intern und
+      sind faktisch praxisleitend, aber für Gerichte und Private nicht direkt verbindlich.</>
+        : <>Für Gerichte und Private nicht direkt verbindlich.</>}
       {' '}{MASSGEBLICH_SATZ} Maschinell erfasst, fachlich noch nicht
       geprüft.
     </p>

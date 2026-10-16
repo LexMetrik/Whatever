@@ -325,7 +325,7 @@ function International({ gruppe }: { gruppe?: string }) {
   const titel = gruppe ? INTL_KURZ[gruppe] ?? INTERNATIONAL_GRUPPEN.find((g) => g.id === gruppe)?.titel : undefined;
   return (
     <div className="space-y-4">
-      <BlattSuchFeld schmal wert={suche} setze={setSuche} label={titel ? `In «${titel}» filtern` : 'Staatsverträge filtern'} feldRef={feldRef} />
+      <BlattSuchFeld schmal wert={suche} setze={setSuche} label={titel ? `In «${titel}» filtern` : 'Staatsverträge und EU-Verordnungen filtern'} feldRef={feldRef} />
       <Laedt erlasse={erlasse}>
         {() => (imBereich.length === 0 && suche.trim() !== ''
           ? <SucheLeer leeren={() => { setSuche(''); zumFeld(); }} />

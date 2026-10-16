@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { KANTONE, KANTON_NAMEN } from '../../data/tarif/typen';
 import { ladeBrowseManifest, filtern } from '../../lib/normtext/browse';
 import { type BrowseErlass } from '../../lib/normtext/browse-typen';
+import { INTERNATIONAL_GRUPPEN } from '../../lib/normtext/international-rubriken';
 import { GruppenInhalt } from '../../pages/gesetze-teile/geteilt';
 import { Leerzustand } from '../ui/Leerzustand';
 import { BlattLaedt, BlattSuchFeld, TrefferZahl, WeitereKnopf } from './BlattBausteine';
@@ -20,7 +21,7 @@ import { useBlattRuhe } from './blattRuhe';
 // Erlass-Zeilen samt Link (`erlassPfad`, amtlicher Aussen-Link bei
 // `nur-live-link`) wie `GebietErlasse`. Filterlogik ist `filtern`
 // (lib/normtext/browse.ts), unverändert wiederverwendet. Herkunft je Treffer:
-// die Zeilen stehen unter einem Kopf «Bund» / «Staatsverträge» / «<Kanton>
+// die Zeilen stehen unter einem Kopf «Bund» / «Staatsverträge» / «EU-Verordnungen» / «<Kanton>
 // (<Kürzel>)» — eine kantonale Zeile trägt sonst nur die Systematik-Nummer.
 //
 // §15 · LADEN ERST AUF WUNSCH: das Register (`/normtext/register.json`,
@@ -72,13 +73,21 @@ const IM_BEREICH: Record<SuchBereich, (e: BrowseErlass) => boolean> = {
  *  1'580 Einträge), die nicht auf einmal gerendert werden sollen. */
 const PORTION = 30;
 
-/** Herkunfts-Rang: Bund, Staatsverträge, dann die Kantone in amtlicher Folge. */
+/** EU-Verordnungen unter `international`: keine Staatsverträge (nicht Schweizer
+ *  Landesrecht, nur mittelbare/extraterritoriale Wirkung) — die Menge kommt aus der
+ *  Rubrik der International-Übersicht, nie aus einer zweiten Liste (§5). LESER-NAV O-04. */
+const EU_KEYS: ReadonlySet<string> = new Set(INTERNATIONAL_GRUPPEN.find((g) => g.id === 'eu-verordnungen')?.keys ?? []);
+
+/** Herkunfts-Rang: Bund, Staatsverträge, EU-Verordnungen, dann die Kantone in amtlicher Folge. */
 const KANTON_RANG = new Map<string, number>(KANTONE.map((k, i) => [k, i]));
 function herkunft(e: BrowseErlass): { rang: number; titel: string } {
-  if (e.ebene !== 'kanton') return istIntl(e) ? { rang: 1, titel: 'Staatsverträge' } : { rang: 0, titel: 'Bund' };
+  if (e.ebene !== 'kanton') {
+    if (!istIntl(e)) return { rang: 0, titel: 'Bund' };
+    return EU_KEYS.has(e.key) ? { rang: 2, titel: 'EU-Verordnungen' } : { rang: 1, titel: 'Staatsverträge' };
+  }
   const k = e.kanton ?? '';
   const name = KANTON_NAMEN[k as keyof typeof KANTON_NAMEN] ?? k;
-  return { rang: 2 + (KANTON_RANG.get(k) ?? KANTONE.length), titel: `${name} (${k})` };
+  return { rang: 3 + (KANTON_RANG.get(k) ?? KANTONE.length), titel: `${name} (${k})` };
 }
 
 /** Das Suchfeld über einer Stufe. `className` gehört dem Wrapper (die

@@ -31,12 +31,27 @@ describe('S5c · GattungsHinweis — §8-Satz je Gattung', () => {
     });
   }
 
-  for (const d of ['kreisschreiben', 'wegleitung', 'merkblatt'] as DoktypId[]) {
-    it(`${d}: Verwaltungspraxis — der bisherige Text, unverändert`, () => {
+  for (const d of ['kreisschreiben', 'wegleitung', 'weisung', 'rundschreiben', 'ks-anhang'] as DoktypId[]) {
+    it(`${d}: Verwaltungsverordnung — der bisherige Text, unverändert`, () => {
       expect(gattungVon(d)).toBe('erlaeuterungen');
       const t = text(d);
       expect(t).toContain('Behördenpublikation, kein Gesetzesrang. Verwaltungsverordnungen (Kreisschreiben, Wegleitungen, Leitfäden u. a.) binden die Verwaltung intern und sind faktisch praxisleitend, aber für Gerichte und Private nicht direkt verbindlich.');
       expect(t).toContain('Massgeblich ist stets');
+      expect(t).not.toContain('Gesetzgebungsmaterial');
+    });
+  }
+
+  // LESER-NAV O-05: kein Verwaltungsverordnungs-Satz, wo der Doktyp keine ist
+  // (Bericht, Mitteilung) oder die Einordnung im Zweifel steht (Merkblatt …).
+  // Rot-Probe: `istVerwaltungsverordnung` immer `true` ⇒ alle fünf Fälle rot.
+  for (const d of ['taetigkeitsbericht', 'mitteilung', 'merkblatt', 'leitfaden', 'mwst-info'] as DoktypId[]) {
+    it(`${d}: neutrale Aussage, kein «Verwaltungsverordnungen», kein «binden die Verwaltung»`, () => {
+      expect(gattungVon(d)).toBe('erlaeuterungen');
+      const t = text(d);
+      expect(t).toContain('Behördenpublikation, kein Gesetzesrang. Für Gerichte und Private nicht direkt verbindlich.');
+      expect(t).toContain('Massgeblich ist stets');
+      expect(t).not.toContain('Verwaltungsverordnungen');
+      expect(t).not.toContain('binden die Verwaltung');
       expect(t).not.toContain('Gesetzgebungsmaterial');
     });
   }
