@@ -2238,8 +2238,12 @@
        e2e/druck-fundstellen-z2.e2e.ts («Split-View-Ausdruck …», öffnet einen
        zweiten Pane real und misst Pane-Überhang + Dokumenthöhe). */
     .nt-art-cv { content-visibility: visible !important; contain-intrinsic-size: none !important; }
+    /* `.min-h-inhalt-region` (calc(100svh - 8rem)) ist eine BILDSCHIRM-Reserve gegen
+       Lade-CLS (Material-/Entscheid-Leser, Gesetze-Übersicht); im Druck bliebe sie als
+       leere Fläche unter dem Inhalt stehen (LESER-NAV O-66, gemessen Material-Leser
+       VERN-6008-30 @1920×1000: Artikel 872 px bei 629 px Inhalt). */
     [class*='overflow-y-auto'], [class*='overflow-x-auto'], [class*='overflow-auto'],
-    [class*='h-dvh'], [class*='h-screen'], [class*='max-h-'] {
+    [class*='h-dvh'], [class*='h-screen'], [class*='max-h-'], .min-h-inhalt-region {
       overflow: visible !important;
       height: auto !important;
       /* `auto` statt einer Zahl — F9 verbietet rohe min-height-Werte. */

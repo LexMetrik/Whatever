@@ -28,6 +28,14 @@ import { sicherDekodiert } from '../lib/sicherDekodieren';
 
 const SPRACH_LABEL: Record<string, string> = { de: 'Deutsch', fr: 'Französisch', it: 'Italienisch' };
 
+// O-66 (LESER-NAV, 16.10.2026): so lange hält der Leser den Rückweg-Knopf unsichtbar, während
+// das Kontext-Panel lädt (O-53, gegen Lade-CLS). Ein hängender Abruf hielt den Knopf sonst
+// für immer verborgen (gemessen: Abruf von `norm-index-erlasse.json` offen ⇒ nach 20 s noch
+// `visibility: hidden`). Nach der Frist erscheint der Knopf trotzdem; eine Sichtbarkeit ohne
+// Platzänderung verschiebt nichts. Gleiche Grössenordnung wie die PDF-Ansicht («zu langsam»,
+// 12 s) — langsame, aber ankommende Abrufe (Mobilnetz) sollen die Frist nicht reissen.
+const KONTEXT_FRIST_MS = 10_000;
+
 export function MaterialLeser() {
   const { key = '' } = useParams();
   const meldeKopf = useMeldeInhaltsKopf();
@@ -74,6 +82,17 @@ export function MaterialLeser() {
 
   const laden = !data || data.key !== key;
   const material = laden ? null : data.material;
+
+  // Frist für die Lade-Unsichtbarkeit des Rückweg-Knopfs (s. KONTEXT_FRIST_MS): ab dem
+  // Zeitpunkt, an dem das Material steht und das Panel zu laden beginnt. Der Zustand merkt
+  // sich den Schlüssel, für den die Frist ablief (Wechsel des Materials ⇒ Frist beginnt neu).
+  const [kontextFristFuer, setKontextFristFuer] = useState<string | null>(null);
+  useEffect(() => {
+    if (laden) return;
+    const t = setTimeout(() => setKontextFristFuer(key), KONTEXT_FRIST_MS);
+    return () => clearTimeout(t);
+  }, [laden, key]);
+  const kontextFristAbgelaufen = kontextFristFuer === key;
 
   // W3-7 (Posten, REST S2): der eine Lade-Baustein (`ui/Ladeanzeige`, mit
   // `role="status"`) statt der eigenen Kopie.
@@ -252,7 +271,7 @@ export function MaterialLeser() {
           hat (breiter Kopf, Lesespalte für den Text). Ebenso Kanon ist der im
           selben Befund genannte Entscheid-Aufbau «Titel/Meta breit, Entscheidtext
           in der Lesespalte» (Reglement R1, 60–75 Zeichen). */}
-      <div className="border-t border-rule-soft pt-6 max-w-reading group-has-[[data-kontext-laedt]]/material:invisible">
+      <div className={`border-t border-rule-soft pt-6 max-w-reading${kontextFristAbgelaufen ? '' : ' group-has-[[data-kontext-laedt]]/material:invisible'}`}>
         <Link to="/materialien" className="lc-btn lc-btn-outline lc-btn-sm">← Alle Materialien</Link>
       </div>
     </article>
