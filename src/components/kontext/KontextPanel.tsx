@@ -273,7 +273,8 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
   useEffect(() => {
     if (!einzelErlass) return;
     let lebt = true;
-    ladeRevisionShard(normKeysKey).then((shard) => { if (lebt) setRevShard({ key: normKeysKey, shard }); });
+    // O-60: ein gescheiterter Abruf wirft; das Badge bleibt dann still bei «unbekannt» (shard null).
+    ladeRevisionShard(normKeysKey).catch(() => null).then((shard) => { if (lebt) setRevShard({ key: normKeysKey, shard }); });
     return () => { lebt = false; };
   }, [einzelErlass, normKeysKey]);
   const revShardAktuell: RevisionShard | null =

@@ -22,7 +22,7 @@
 import type { BezugsFacetten, BezugStatus } from '../verzahnung/facetten';
 import { STATUS_RANG } from '../verzahnung/facetten';
 import { kodiereSchluessel } from '../normtext/dateiUrl';
-import { ladeJson, pruefeFelder } from '../ladeJson';
+import { IST_SPA_RUECKFALL, ladeJson, pruefeFelder } from '../ladeJson';
 
 const PRUEFER = pruefeFelder('rechtsprechung/bezuege/<Erlass>.json', { dokumente: 'objekt', proArtikel: 'objekt' });
 /** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
@@ -122,8 +122,12 @@ export async function ladeBezugsShard(erlass: string): Promise<BezugsShard | nul
         // Ausnahme in vercel.json), antwortet 200 mit HTML. Das ist dieselbe
         // Auskunft wie der 404 — «keine Datei» —, kein Leitungsfehler. Gemessen
         // 23.9.2026 an `vite preview`: ZH-211.11 → 200 text/html.
+        // LESER-NAV O-61 (16.10.2026): NUR der SPA-Rückfall (App-Wurzel in der Antwort).
+        // Bis hierher galt jede Nicht-JSON-Antwort als «fehlt» — auch die Seite eines
+        // Captive-Portals oder Proxys, die der Leser dann als «kein Entscheid erfasst»
+        // schrieb (§8). Fremdes HTML wirft (`IST_SPA_RUECKFALL`, wie O-35 b).
         return await ladeJson<BezugsShard>(`/rechtsprechung/bezuege/${kodiereSchluessel(erlass)}.json`, PRUEFER, {
-          alsFehlend: (res) => !(res.headers?.get('content-type') ?? '').includes('json'),
+          alsFehlend: IST_SPA_RUECKFALL,
         });
       } catch (e) {
         shardPromises.delete(erlass);
