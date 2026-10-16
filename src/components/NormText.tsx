@@ -135,10 +135,6 @@ export interface InternRefs {
   tokenMap: Map<string, string>;
   basisPfad: string;
   springeZu: (token: string) => void;
-  /** O-67: nur im SEKUNDÄREN Pane gesetzt — der Sprung, der Pane-Scroll UND Pane-Location führt.
-   *  Die Artikelnummer im Kopf (`<a href="#art-N">`) nimmt ihn statt des nativen Fragment-Sprungs,
-   *  der die Adresse des Hauptfensters ändern würde. Ungesetzt (Primär, Einzelansicht) ⇒ nativer Anker. */
-  paneSprung?: (token: string) => void;
   /** M6-D (W2·5b): Ist gesetzt, zeigen BARE «Art. N»-Verweise NICHT auf den
    *  eigenen Erlass (Self-Sprung), sondern auf DIESES Fremdgesetz-Kürzel — via
    *  NormChip (In-Reader-Popover, wenn im Korpus, sonst Fedlex-Deep-Link). Genutzt

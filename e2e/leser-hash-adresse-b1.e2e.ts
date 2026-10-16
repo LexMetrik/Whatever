@@ -30,7 +30,11 @@ test.describe('O-67 — Normlinks im Pane navigieren im Pane', () => {
     await expect(pane.locator('[data-v3-kopf]')).toBeVisible({ timeout: 30_000 })
     await expect(page.locator('[data-pane="primaer"] [data-v3-kopf]')).toBeVisible({ timeout: 30_000 })
 
-    await pane.getByRole('link', { name: 'Art. 9', exact: true }).first().click()
+    // Kopf-Anker im Pane: absoluter Pfad des Pane-Erlasses (Strg-Klick/«Link kopieren»/Mittelklick lösen sich
+    // sonst gegen die Hauptadresse ZGB auf).
+    const kopfLink = pane.getByRole('link', { name: 'Art. 9', exact: true }).first()
+    await expect(kopfLink).toHaveAttribute('href', '/gesetze/bund/OR#art-9')
+    await kopfLink.click()
 
     // Das Pane steht an Art. 9 (Oberkante im Pane-Rand), die Haupt-Adresse ist unberührt.
     await expect.poll(() => pane.evaluate((sec) => {
@@ -59,7 +63,9 @@ test.describe('O-67 — Normlinks im Pane navigieren im Pane', () => {
     await page.setViewportSize({ width: 1440, height: 900 })
     await page.goto('/gesetze/bund/OR#art-5')
     await expect(page.locator('article#art-5')).toBeVisible({ timeout: 30_000 })
-    await page.getByRole('link', { name: 'Art. 9', exact: true }).first().click()
+    const hauptLink = page.getByRole('link', { name: 'Art. 9', exact: true }).first()
+    await expect(hauptLink).toHaveAttribute('href', '#art-9')
+    await hauptLink.click()
     await expect.poll(() => page.evaluate(() => location.hash)).toBe('#art-9')
   })
 })

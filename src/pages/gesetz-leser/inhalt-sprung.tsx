@@ -40,6 +40,12 @@ import { zerlegeZifferAnker } from '../../lib/normtext/zifferAnker';
 // Kommentar färbte den Wächter rot, und ein Wächter, der an Kommentaren
 // scheitert, wird bald abgeschaltet (§6.7).
 
+/** O-67: `InternRefs` plus der Pane-Sprung. Nur im SEKUNDÄREN Pane gesetzt — der Sprung, der Pane-Scroll UND
+ *  Pane-Location führt. Die Artikelnummer im Kopf (`<a href>`) nimmt ihn statt des nativen Fragment-Sprungs, der die
+ *  Adresse des Hauptfensters ändern würde. Bewusst NICHT in `InternRefs` (NormText.tsx): NormText kennt ihn nicht
+ *  und bleibt damit byte-gleich (SHA-Anker des Verweis-Inventars). Ungesetzt (Primär, Einzelansicht) ⇒ nativer Anker. */
+export type PaneInternRefs = InternRefs & { paneSprung?: (token: string) => void };
+
 type SekRefs = MutableRefObject<Map<string, HTMLElement>>;
 type PaneWurzel = RefObject<HTMLElement | null> | null;
 const KEIN_PRAEFIX: Record<string, string[]> = {};
@@ -447,7 +453,7 @@ export function useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekun
   const location = useLocation();
   const paneSearch = istSekundaer ? location.search : '';
   // Token-Auflösung für bare Artikelverweise (normalisiert «6a» → Token «6_a»).
-  return useMemo<InternRefs | undefined>(() => {
+  return useMemo<PaneInternRefs | undefined>(() => {
     if (!eintraege) return undefined;
     const tokenMap = new Map<string, string>();
     for (const e of eintraege) tokenMap.set(e.artikel.toLowerCase().replace(/[^a-z0-9]/g, ''), e.artikel);

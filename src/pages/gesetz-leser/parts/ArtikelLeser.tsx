@@ -1,6 +1,6 @@
 import { useState, useMemo, memo } from 'react';
 import { ArtikelBody, FnRef } from '../../../components/normtext/ArtikelBody';
-import { type InternRefs } from '../../../components/NormText';
+import { type PaneInternRefs } from '../inhalt-sprung';
 import {
   labelMitBereich, artikelLeerstellenStatus, LEERSTELLE_KURZ, LEERSTELLE_ERLAEUTERUNG,
   LEERSTELLE_GEGENSTANDSLOS_ERLAEUTERUNG, leerstellenWort,
@@ -30,7 +30,7 @@ import type { ArtikelNachbarn as NachbarnAmArtikel } from '../v3/nachbarArtikel'
 // Bestimmungstext. Ersetzt den früheren fliegenden Standort-Tracker. Reine Darstellung.
 
 export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, imTreffer, onSpringe, materialien, materialienLadefehler, onBezuegeOeffnen, bezuegeLaedt, historie, zaehler, nachbarn, nachbarnAdresse, fussForm, istAnhang = false }: {
-  e: NormSnapshot; erlass: BrowseErlass; basisPfad: string; fussnoten?: Fussnote[]; intern?: InternRefs;
+  e: NormSnapshot; erlass: BrowseErlass; basisPfad: string; fussnoten?: Fussnote[]; intern?: PaneInternRefs;
   marg?: string[];
   /** G-HIST-UI: Fassungshistorie dieses Artikels aus dem erlass-lokalen Shard
    *  (Reader lädt ihn einmal idle). undefined = kein Eintrag ⇒ kein Badge (§8). */
@@ -133,6 +133,8 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // bleibt. Primär und Einzelansicht behalten den nativen Anker (LM-202). Die
   // Weiche kommt aus `intern` und nicht aus dem Pane-Kontext: dessen Wert ist je
   // Pane-Render neu, und diese `memo`-Komponente würde damit je Artikel mitrendern.
+  // Der href im Pane ist der ABSOLUTE Pfad des Pane-Erlasses (wie die Wortlaut-Verweise in NormText): ein
+  // relatives `#art-N` löste sich bei Strg/Cmd-Klick, «Link kopieren» und Mittelklick gegen das Hauptfenster auf.
   const paneSprung = intern?.paneSprung;
   // KURZ-Zitat («Art. 957 OR») — Fundstellen-Signal für den Entscheid-Sprung
   // (LeitfallZeile `normZitat` → ?norm=). MUSS knapp bleiben, sonst matcht der
@@ -344,7 +346,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                   ? 'font-display text-h3 font-semibold text-ink-900 hover:text-ink-900 text-left'
                   : `num text-base font-semibold hover:text-ink-900 text-left ${ohneWortlaut ? 'text-ink-500 font-normal' : 'text-ink-900'}`}>{label}</button>
             ) : (
-              <a href={`#art-${e.artikel}`}
+              <a href={paneSprung && intern ? `${intern.basisPfad}#art-${e.artikel}` : `#art-${e.artikel}`}
                 onClick={paneSprung ? (ev) => {
                   if (ev.defaultPrevented || ev.button !== 0 || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
                   ev.preventDefault();
