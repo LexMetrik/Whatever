@@ -28,8 +28,12 @@
 //   1. Remote-Basistabellen tragen eine Spalte `zeilen_hash` (64 Zeichen), lokal fehlt sie.
 //   2. Remote gibt es den Index `ix_artikel_erlass`, lokal nicht.
 //   3. Remote gibt es die Tabelle `sync_meta` (Marken, wenige Zeilen).
-// Gegenlauf mit Abbild der Remote-Form: Zahlen im Commit-/Bericht-Beleg; die Abweichung
-// liegt unter 2 % der Messung und damit weit unter der Grenze.
+// Gegenlauf 16.10.2026 (Einmal-Probe, nicht im Repo): die drei Basistabellen in Remote-Form
+// (DDL_BASIS, Zeilen aus ladeZeilenBasis in rowid-Reihenfolge, plus ix_artikel_erlass) in einer
+// Wegwerf-DB gemessen: 68.18 MiB gegen 67.94 MiB lokal, also +0.24 MiB (+0.07 % der Messung
+// 355.47 MiB); `sync_meta` ist dagegen unmessbar klein. NICHT geprueft werden konnte der
+// physische Fuellgrad auf Turso selbst (kein Konto-Zugriff) und ob Turso Freelist/WAL
+// mitzaehlt — die Messung ist die Seitengroesse der B-Baeume, keine Abrechnungszahl.
 import type { DatabaseSync } from 'node:sqlite';
 import { BASIS } from './turso-skip';
 import { schattenDefinitionen } from './turso-fts-index';
