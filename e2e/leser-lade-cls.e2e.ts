@@ -108,6 +108,34 @@ for (const z of ZELLEN) {
   }
 }
 
+// ─── O-65 (a): der Verlauf-Knopf der Kopfzeile erscheint, ohne die Werkzeug-Gruppe zu verschieben ──
+//
+// `VerlaufUebersicht` rendert erst nach dem Mount (Verlauf aus localStorage, §15.2). Die Gruppe
+// rechts in der Kopfzeile (`div.ml-auto.shrink-0.flex`, `Topbar.tsx`) ist rechtsbündig: wuchs sie
+// um den Knopf (44 px), wanderte ihre linke Kante von x 1309.4 nach 1265.4 — gemessen am
+// 16.10.2026 (Dev-Server, Headless-Shell, 1440×900, frischer Kontext) CLS 0.0002–0.0003 auf JEDER
+// Seite, Quelle `div.ml-auto.shrink-0.flex`. Fix: der Block `.lc-topbar-verlauf` reserviert die
+// Knopfbreite (`min-w-11`). Probe: der Knopf ist am Ende da (kein leerer Fall), und KEIN Shift
+// nennt die Gruppe als Quelle. (Der Rest-CLS 0.0003 der Ausgabe-Zeile ist ein Schrift-Tausch,
+// Archivo Fallback → Variable, und gehört nicht hierher.)
+// ROT ZU BEKOMMEN: in `Topbar.tsx` `min-w-11` am Block `lc-topbar-verlauf` streichen.
+for (const breite of [1440, 768]) {
+  test(`Kopfzeile @${breite}: Verlauf-Knopf erscheint ohne Verschiebung der Werkzeug-Gruppe`, async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.setViewportSize({ width: breite, height: 900 });
+    await page.goto('/rechner/verzugszins');
+    await expect(page.locator('h1').first()).toBeVisible({ timeout: 15000 });
+    await clsBeobachtenInstallieren(page, true);
+    await expect(page.getByRole('button', { name: 'Verlauf – zuletzt geöffnet' })).toBeVisible({ timeout: 10000 });
+    await page.waitForTimeout(500);
+    const gruppe = await page.evaluate(() => {
+      const q = (window as unknown as { __clsQuellen: { wert: number; quellen: { el: string; von: string; nach: string }[] }[] }).__clsQuellen;
+      return q.flatMap((s) => s.quellen.filter((x) => x.el.startsWith('div.ml-auto')).map((x) => `Δ${s.wert.toFixed(4)} ${x.el} ${x.von}→${x.nach}`));
+    });
+    expect(gruppe, `Werkzeug-Gruppe der Kopfzeile verschoben @${breite}`).toEqual([]);
+  });
+}
+
 // ─── O-66 (a): die Lade-Reserve gilt nur am Bildschirm ───────────────────────────────────────
 //
 // `min-h-inhalt-region` (calc(100svh - 8rem)) ist eine Bildschirm-Reserve; im Druck blieb sie als
