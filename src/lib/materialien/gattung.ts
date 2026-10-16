@@ -37,12 +37,20 @@ export function gattungVon(doktyp: DoktypId): Gattung {
 
 /** Doktypen, die ihrer Art nach Verwaltungsverordnungen im engeren Sinn sind
  *  (generell-abstrakte Dienstanweisung an die nachgeordneten Behörden): sie
- *  binden die Verwaltung intern. Tätigkeitsbericht und Mitteilung sind es nicht
- *  (Bericht bzw. Information, LESER-NAV O-05); Merkblatt, Leitfaden, Anleitung,
- *  Richtlinie, MWST-Info bleiben im Zweifel draussen — der Hinweis behauptet
- *  dort nur, was für jede Behördenpublikation gilt. */
+ *  binden die Verwaltung intern, die Gerichte nicht. Dazu zählen auch die
+ *  MWST-Infos, MWST-Branchen-Infos, Merkblätter und Richtlinien: BVGer
+ *  A-6108/2014 vom 22.7.2015 E. 2 («Verwaltungsverordnungen, darunter fallen
+ *  auch Branchen- und Spezialbroschüren der ESTV», entscheidsuche.ch,
+ *  CH_BVGE_001_A-6108-2014_2015-07-22); BGE 142 V 442 E. 5.2 (Gerichte nicht
+ *  gebunden, Berücksichtigung soweit überzeugend). Neutral bleiben Berichte
+ *  (Tätigkeitsbericht, gr-bericht …), Information (Mitteilung — das Register
+ *  führt neben zwei EHRA-Praxismitteilungen auch eine ESTV-Mitteilung mit
+ *  Checkliste, nicht durchweg Weisungen), Leitfaden, Anleitung und Checkliste:
+ *  der Hinweis behauptet dort nur, was für jede Behördenpublikation gilt
+ *  (LESER-NAV O-05). */
 const VERWALTUNGSVERORDNUNG: ReadonlySet<DoktypId> = new Set<DoktypId>([
   'kreisschreiben', 'ks-anhang', 'weisung', 'rundschreiben', 'wegleitung',
+  'mwst-info', 'mwst-branchen-info', 'merkblatt', 'richtlinie',
 ]);
 
 export function istVerwaltungsverordnung(doktyp: DoktypId): boolean {

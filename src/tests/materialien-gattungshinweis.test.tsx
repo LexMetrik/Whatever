@@ -31,24 +31,26 @@ describe('S5c · GattungsHinweis — §8-Satz je Gattung', () => {
     });
   }
 
-  for (const d of ['kreisschreiben', 'wegleitung', 'weisung', 'rundschreiben', 'ks-anhang'] as DoktypId[]) {
-    it(`${d}: Verwaltungsverordnung — der bisherige Text, unverändert`, () => {
+  for (const d of ['kreisschreiben', 'wegleitung', 'weisung', 'rundschreiben', 'ks-anhang', 'mwst-info', 'mwst-branchen-info', 'merkblatt', 'richtlinie'] as DoktypId[]) {
+    it(`${d}: Verwaltungsverordnung — VV-Satz`, () => {
       expect(gattungVon(d)).toBe('erlaeuterungen');
       const t = text(d);
-      expect(t).toContain('Behördenpublikation, kein Gesetzesrang. Verwaltungsverordnungen (Kreisschreiben, Wegleitungen, Leitfäden u. a.) binden die Verwaltung intern und sind faktisch praxisleitend, aber für Gerichte und Private nicht direkt verbindlich.');
+      expect(t).toContain('Behördenpublikation, kein Gesetzesrang. Verwaltungsverordnungen (Kreisschreiben, Wegleitungen, Merkblätter u. a.) binden die Verwaltung intern und sind faktisch praxisleitend, aber für Gerichte und Private nicht direkt verbindlich.');
       expect(t).toContain('Massgeblich ist stets');
       expect(t).not.toContain('Gesetzgebungsmaterial');
     });
   }
 
   // LESER-NAV O-05: kein Verwaltungsverordnungs-Satz, wo der Doktyp keine ist
-  // (Bericht, Mitteilung) oder die Einordnung im Zweifel steht (Merkblatt …).
-  // Rot-Probe: `istVerwaltungsverordnung` immer `true` ⇒ alle fünf Fälle rot.
-  for (const d of ['taetigkeitsbericht', 'mitteilung', 'merkblatt', 'leitfaden', 'mwst-info'] as DoktypId[]) {
+  // (Bericht, Mitteilung, Leitfaden, Anleitung, Checkliste). Merkblatt, MWST-Info,
+  // MWST-Branchen-Info, Richtlinie sind Verwaltungsverordnungen (BVGer A-6108/2014 E. 2).
+  // Rot-Probe: `istVerwaltungsverordnung` immer `true` ⇒ alle fünf Fälle rot; `merkblatt`/`mwst-info` aus der Menge ⇒ ihre Fälle rot.
+  for (const d of ['taetigkeitsbericht', 'mitteilung', 'leitfaden', 'anleitung', 'checkliste'] as DoktypId[]) {
     it(`${d}: neutrale Aussage, kein «Verwaltungsverordnungen», kein «binden die Verwaltung»`, () => {
       expect(gattungVon(d)).toBe('erlaeuterungen');
       const t = text(d);
-      expect(t).toContain('Behördenpublikation, kein Gesetzesrang. Für Gerichte und Private nicht direkt verbindlich.');
+      expect(t).toContain('Behördenpublikation, kein Gesetzesrang. Für Gerichte und Private nicht verbindlich.');
+      expect(t).not.toContain('nicht direkt');
       expect(t).toContain('Massgeblich ist stets');
       expect(t).not.toContain('Verwaltungsverordnungen');
       expect(t).not.toContain('binden die Verwaltung');
