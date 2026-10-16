@@ -1,6 +1,6 @@
 import { useState, useMemo, memo } from 'react';
 import { ArtikelBody, FnRef } from '../../../components/normtext/ArtikelBody';
-import { type PaneInternRefs } from '../inhalt-sprung';
+import type { PaneInternRefs } from '../inhalt-sprung';
 import {
   labelMitBereich, artikelLeerstellenStatus, LEERSTELLE_KURZ, LEERSTELLE_ERLAEUTERUNG,
   LEERSTELLE_GEGENSTANDSLOS_ERLAEUTERUNG, leerstellenWort,
