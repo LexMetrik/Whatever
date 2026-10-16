@@ -68,8 +68,11 @@ Kürzel = Zweig-Präfix und Trailer `Roadmap:`.
    «Gilt seit» generisch «lieber leer als falsches Datum» statt Handregister
    (`bibliothek/normtext/generalanweisungen-gilt-seit-2026-10-05.md`), Disp-Text ausserhalb Artikel
    (289 Abschnitte/59 Erlasse), Sidecars (B-75), Positivliste (V-02, V-04).
-   *Offen, vor Lieferstart:* Datenablage bei ~2150 Erlassen (81 MB für 231, `.git` ~594 MiB),
-   Turso-Replika 751 von 1024 MiB (#1350). *Lage:* Vault `03_Projekte/LexMetrik/a1-fundament-2026-10-07/lage.md`.
+   *Datenablage entschieden 16.10.* (David, Variante A: bleibt, wo sie ist): Turso repliziert
+   355 MiB (Gesetze 104, Urteile 251), bei 2150 Erlassen ≈ 750 MiB, Spitze beim Vollneubau bis ≈ 2×;
+   Grenze Turso Free 5 GB (`scripts/datenhaltung/hot-groesse.ts`, Bestätigung aus Davids Konto
+   offen); Vercel ≈ 1,5 GB je Stand, 3 Stände ≈ 4,6 von 10 GB.
+   *Lage:* Vault `03_Projekte/LexMetrik/a1-fundament-2026-10-07/lage.md`.
 2. **Jedes Bundesgesetz** (`A2-BUNDESGESETZE`) · E1·A · Gegenprüfung ja · nach JETZT 1
    *Fertig, wenn* eine Lieferung die 256 fehlenden Bundesgesetze (251+5 dringliche) und 25 VO der
    Bundesversammlung bringt (281), Fortschrittszeile «348/348». *Ort:* FAHRPLAN-FEDLEX-PORTFOLIO §21.
@@ -128,7 +131,7 @@ E3·W
 - Go David 7.10.: Leser-Logik (162 .ts unter src/pages|components, ~22k Zeilen) nach src/lib/leser, danach Lint-Grenze — §3
 - wartet auf David 7.10./10.10.: §5 vs. Ist (ingest.ts liest public/*.json in die DB); Rechtsprechung-Einzelentscheide (300 MB) als Release-Artefakt statt git; scripts/archiv/ (9 Skripte) löschen
 E4
-- David 21.9./7.10.: Impressum/Datenschutz erst vor Live-Gang (FB S-01); Staatsverträge SR 0.* (3186, 28 gepinnt) verlinken bis dahin auf Fedlex
+- David 21.9./7.10.: Impressum/Datenschutz erst vor Live-Gang (FB S-01); Staatsverträge SR 0.* (3186, 28 gepinnt) verlinken bis dahin auf Fedlex; Vercel Hobby nur nicht-kommerziell (vercel.com/docs/limits/fair-use-guidelines) ⇒ Planwahl vor Live-Gang
 ```
 
 *Ruhend:* FB Teil B (Entscheide/Fragen Davids), nicht nachfragen.
