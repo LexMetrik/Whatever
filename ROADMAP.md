@@ -131,7 +131,7 @@ E3·W
 - Go David 7.10.: Leser-Logik (162 .ts unter src/pages|components, ~22k Zeilen) nach src/lib/leser, danach Lint-Grenze — §3
 - wartet auf David 7.10./10.10.: §5 vs. Ist (ingest.ts liest public/*.json in die DB); Rechtsprechung-Einzelentscheide (300 MB) als Release-Artefakt statt git; scripts/archiv/ (9 Skripte) löschen
 E4
-- David 21.9./7.10.: Impressum/Datenschutz erst vor Live-Gang (FB S-01); Staatsverträge SR 0.* (3186, 28 gepinnt) verlinken bis dahin auf Fedlex
+- David 21.9./7.10.: Impressum/Datenschutz erst vor Live-Gang (FB S-01); Staatsverträge SR 0.* (3186, 28 gepinnt) verlinken bis dahin auf Fedlex; Vercel Hobby nur nicht-kommerziell (vercel.com/docs/limits/fair-use-guidelines) ⇒ Planwahl vor Live-Gang
 ```
 
 *Ruhend:* FB Teil B (Entscheide/Fragen Davids), nicht nachfragen.
