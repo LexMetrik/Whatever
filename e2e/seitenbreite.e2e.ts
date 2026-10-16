@@ -558,10 +558,15 @@ test.describe(`Schriftskala ${SKALA} schmal 640–768 (W2·31 H)`, () => {
 // Titel entfernen → bund @320/@375 rot; in `Katalog.tsx` `flex-wrap` der Kopfzeile und
 // `whitespace-nowrap` am h2 zurück → /rechner @375 rot; in `Schnellwerkzeug.tsx`
 // `flex-wrap @[11rem]:flex-nowrap` → `flex` → `/` @320 rot (Beweise im PR-Bericht).
+// NACHZUG LESER-NAV O-62 (16.10.2026): /rechner/verzugszins @320 +12 px — die Datumszeile des
+// Zeitstrahls (`VerzugszinsTimeline.tsx`, `SPAN «01.01.2025» right=332`): zwei unteilbare Daten
+// (je 100 px) + «n Tage» in einer `flex`-Zeile ohne Umbruch gegen 140.8 px. Fix: `flex-wrap`.
+// ROT ZU BEKOMMEN: `flex-wrap` an dieser Zeile streichen → @320 +12 px.
 const HANDY_FAELLE = [
   { pfad: '/', breiten: [320, 375, 560] },
   { pfad: '/gesetze?ebene=bund', breiten: [320, 375, 560] },
   { pfad: '/rechner', breiten: [320, 375, 560] },
+  { pfad: '/rechner/verzugszins', breiten: [320, 375, 560] }, // LESER-NAV O-62: Datumszeile des Zeitstrahls
   { pfad: '/gesetze/bund/OR', breiten: [375, 560] }, // @320 +5 px: offen (Designentscheid, s. o.)
 ] as const;
 
