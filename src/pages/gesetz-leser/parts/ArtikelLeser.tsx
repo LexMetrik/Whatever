@@ -29,7 +29,7 @@ import type { ArtikelNachbarn as NachbarnAmArtikel } from '../v3/nachbarArtikel'
 // gegenüber dem Vorartikel GEÄNDERTEN Stufen, `marg`), rechts der Serif-
 // Bestimmungstext. Ersetzt den früheren fliegenden Standort-Tracker. Reine Darstellung.
 
-export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, imTreffer, onSpringe, materialien, materialienLadefehler, onBezuegeOeffnen, bezuegeLaedt, historie, zaehler, nachbarn, nachbarnAdresse, fussForm, istAnhang = false }: {
+export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, materialien, materialienLadefehler, onBezuegeOeffnen, bezuegeLaedt, historie, zaehler, nachbarn, nachbarnAdresse, fussForm, istAnhang = false }: {
   e: NormSnapshot; erlass: BrowseErlass; basisPfad: string; fussnoten?: Fussnote[]; intern?: PaneInternRefs;
   marg?: string[];
   /** G-HIST-UI: Fassungshistorie dieses Artikels aus dem erlass-lokalen Shard
@@ -108,12 +108,8 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   bezuegeLaedt?: boolean;
   // Absolute Tiefe der ERSTEN gezeigten Randtitel-Stufe (Delta-Offset). Damit
   // wird die Stufe einheitlich je absoluter Tiefe formatiert, auch wenn nur
-  // die geänderten Stufen gezeigt werden. 0 (Default) = volle Kette (Suchsicht).
+  // die geänderten Stufen gezeigt werden. 0 (Default) = volle Kette.
   margBasis?: number;
-  // Treffer-Modus (Auftrag David): Klick auf die Artikelnummer springt in den
-  // VOLLTEXT zu diesem Artikel und löscht die Suche, statt nur innerhalb der
-  // Trefferliste zu ankern.
-  imTreffer?: boolean; onSpringe?: (token: string) => void;
 }) {
   // ── W2·24-D35-F1 · DIE KOPIER-MECHANIK WOHNT JETZT BEI IHREN KNÖPFEN ────
   // `useKopieren` (Marke), `usePaneKontext` (Rolle) und die ganze
@@ -216,8 +212,8 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // Der Rahmen (`v3/rahmenSpalten.ts`) hat gerechnet, wie viel die Lese-Zelle
   // trägt; hier wird daraus Markup. ZWEI Formen, EIN Baum:
   //   'zeile' — Ist-Form: Randtitel als Zeile über dem Artikel, Beiwerk
-  //             darunter. Gilt im Pane, auf dem Handy, in der Trefferliste und
-  //             ohne Provider (V1) — dort ändert sich nichts (§6).
+  //             darunter. Gilt im Pane, auf dem Handy und ohne Provider
+  //             (V1) — dort ändert sich nichts (§6).
   //   'breit' — Randtitel + Fassungsdatum IM ARTIKELKOPF, die Bezüge als EINE
   //             aufklappbare Zeile darunter. Keine Randspalten mehr.
   //
@@ -226,9 +222,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // — sie nahmen der Lese-Zelle 432 px. Wohin ihr Inhalt gewandert ist und warum:
   // `../v3/satzspiegel.ts`.
   const spiegel = useSatzspiegel();
-  // In der TREFFERLISTE bleibt jeder Artikel in Zeilenform: sie steht in einer
-  // eigenen, schmalen Fläche und soll den Treffer zeigen, nicht seinen Apparat.
-  const kopfForm = spiegel === 'breit' && !imTreffer;
+  const kopfForm = spiegel === 'breit';
   // «Rechnen» in der Bezüge-Zeile (seit W2·24-R6): statische Kantentabelle, kein
   // Ladepfad — Herleitung in `randNotizWerkzeuge.ts`.
   // D34: nicht mehr an `kopfForm` gebunden. Seit die Bezüge-Zeile in BEIDEN
@@ -277,8 +271,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
           26.6.2026; auch bei eingeklapptem/aufgehobenem Artikel sichtbar),
           Beiwerk unter dem Wortlaut. */}
       {/* S6 W1g (24.9.2026): in der Breitform steht der Randtitel in der
-          Artikelnummer-Zeile (s. u.); die Zeilenform (Handy, Pane, Treffer-
-          liste) behält die Zeile darüber (Fedlex-Stil, David 26.6.2026). */}
+          Artikelnummer-Zeile (s. u.); die Zeilenform (Handy, Pane) behält die Zeile darüber (Fedlex-Stil, David 26.6.2026). */}
       {!kopfForm && <div>{randTitel}</div>}
       {/* `.lr-text` ist Sonden-Anker (Textspalte, `leser-marken-geometrie`);
           `min-w-0`: ein langes Wort sprengt sonst das Raster. */}
@@ -339,23 +332,15 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                 keine Nummer — `nowrap` schnitt ihn bei «Verzeichnis der zentralen und der
                 zus…» ab. Anhang: umbrechbar, auf Zeilenbreite begrenzt (`min-w-0`). */}
             <span className={istAnhang ? 'min-w-0 break-words' : 'whitespace-nowrap'}>
-            {imTreffer && onSpringe ? (
-              <button type="button" onClick={() => onSpringe(e.artikel)}
-                title="Im Volltext zu diesem Artikel springen"
-                className={istAnhang
-                  ? 'font-display text-h3 font-semibold text-ink-900 hover:text-ink-900 text-left'
-                  : `num text-base font-semibold hover:text-ink-900 text-left ${ohneWortlaut ? 'text-ink-500 font-normal' : 'text-ink-900'}`}>{label}</button>
-            ) : (
-              <a href={paneSprung && intern ? `${intern.basisPfad}#art-${e.artikel}` : `#art-${e.artikel}`}
-                onClick={paneSprung ? (ev) => {
-                  if (ev.defaultPrevented || ev.button !== 0 || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
-                  ev.preventDefault();
-                  paneSprung(e.artikel);
-                } : undefined}
-                className={istAnhang
-                ? 'font-display text-h3 font-semibold text-ink-900 hover:text-ink-900 no-underline'
-                : `num text-base font-semibold hover:text-ink-900 no-underline ${ohneWortlaut ? 'text-ink-500 font-normal' : 'text-ink-900'}`}>{label}</a>
-            )}{fnMarker}
+            <a href={paneSprung && intern ? `${intern.basisPfad}#art-${e.artikel}` : `#art-${e.artikel}`}
+              onClick={paneSprung ? (ev) => {
+                if (ev.defaultPrevented || ev.button !== 0 || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
+                ev.preventDefault();
+                paneSprung(e.artikel);
+              } : undefined}
+              className={istAnhang
+              ? 'font-display text-h3 font-semibold text-ink-900 hover:text-ink-900 no-underline'
+              : `num text-base font-semibold hover:text-ink-900 no-underline ${ohneWortlaut ? 'text-ink-500 font-normal' : 'text-ink-900'}`}>{label}</a>{fnMarker}
             </span>
             {/* aufgehoben gedämpft, aber ink-500 (WCAG 4.5:1 hell+dunkel) statt
                 ink-400 (3.2–3.6:1) — essentieller Link-Text, kein incidental. */}
@@ -381,12 +366,8 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
             {/* ── W2·5m · NACHBAR-ARTIKEL «‹ Art. 89 · Art. 90a ›» ───────────
                 Muster gesetze-im-internet/dejure/buzer, hier als Anker im
                 selben Dokument (der Leser zeigt den ganzen Erlass auf EINER
-                Seite — der Pfeil blättert, er lädt nicht nach).
-                NICHT in der Suchsicht (`imTreffer`): dort ist die Lesespalte
-                durch die Trefferliste ersetzt, `#art-…` zeigte ins Leere. Die
-                Artikelnummer daneben trägt in diesem Modus aus demselben Grund
-                schon einen `<button>` statt eines Ankers. */}
-            {!imTreffer && nachbarn && <ArtikelNachbarn nachbarn={nachbarn} adresse={nachbarnAdresse} />}
+                Seite — der Pfeil blättert, er lädt nicht nach). */}
+            {nachbarn && <ArtikelNachbarn nachbarn={nachbarn} adresse={nachbarnAdresse} />}
             {/* D35-F1 (David 7.9.2026): die Aktionen «Zitat · Link · Amtliche
                 Fassung ↗» stehen nicht mehr hier (dort unter `opacity-0`),
                 sondern am Artikelende in der Funktionszeile. */}
