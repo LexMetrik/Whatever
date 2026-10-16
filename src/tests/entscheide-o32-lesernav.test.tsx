@@ -14,7 +14,8 @@
  *
  * ROT ZU BEKOMMEN (§6.7, gefahren 16.10.2026): in `PanelEntscheideFundstelle` das `titel`
  * streichen ⇒ (c) rot; `ladefehler={fehler}` in `PanelEntscheide` streichen ⇒ (b) rot;
- * das Muster auf den Stand vom 15.10.2026 zurücksetzen ⇒ (d) rot.
+ * das Muster auf den Stand vom 15.10.2026 zurücksetzen ⇒ (d) rot;
+ * `BG\s+\d[A-Z]_\d` durch `BG` im Stichwort-Teil ersetzen ⇒ die zwei BG-Negativfälle rot.
  */
 import { act, createElement } from 'react';
 import { createRoot, type Root } from 'react-dom/client';
@@ -64,6 +65,7 @@ describe('O-32 (c) · «o. D.»-Jahr am Chip trägt den Tooltip', () => {
 describe('O-32 (d) · Weiterzug-Zusatz in weiteren Schreibweisen', () => {
   const ja = [
     'Haft (BG 7B_1049/2023)',
+    'Haft (BG 6B_12/2024 vom 3. Mai 2024)',
     'Forderung (Bger 4D_114/2025 vom 30. Juni 2025)',
     'Haft (6B_927/2025)',
     'Haft (7B_985/2024 vom 06.12.2024)',
@@ -80,6 +82,9 @@ describe('O-32 (d) · Weiterzug-Zusatz in weiteren Schreibweisen', () => {
     'Haft (BGE 147 III …',
     'Haft (publizierter Entscheid: BGE 147 II 99)',
     'Mietstreit (BG-Praxis uneinheitlich)',
+    // A4 (Gegenprüfung #1405): «BG» = Bundesgesetz / Bezirksgericht, kein Weiterzug
+    'Datenschutz (BG über den Datenschutz vom 19. Juni 1992)',
+    'Haft (BG Meilen vom 3. Mai 2024)',
     'Entscheid (6 Monate Frist) nach 7B_1',
   ];
   it.each(ja)('erkennt «%s»', (z) => { expect(WEITERZUG_MUSTER.test(z)).toBe(true); });

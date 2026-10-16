@@ -39,8 +39,15 @@ import type { Bezug } from '../../../lib/rechtsprechung/bezuege';
 // «(Beschwerde beim BG hängig)», «(aufgehoben durch BGer …)» und «(BGE 147 III …)»
 // (Verweis auf eine Publikation, kein Weiterzug-Vermerk) — dazu die Tippfehler
 // «Budesgerichtsurteil» / «Bundesgerichsurteil» (2 Zeilen, Quelldaten, nicht hier).
+//
+// LESER-NAV Gegenprüfung #1405 (A4): das nackte «BG» nahm zugleich jede Klammer
+// «(BG über den Datenschutz vom 19. Juni 1992)» oder «(BG Meilen vom …)» (Bundesgesetz,
+// Bezirksgericht) als Weiterzug. «BG» zählt nur noch mit unmittelbar folgendem
+// Aktenzeichen («(BG 7B_1049/2023)»); die übrigen Stichwörter (BGe, BGer, Bger,
+// Bundesgericht …) sind unverändert. Nachmessung 16.10.2026 über alle 4'014 verschiedenen
+// Kurzzeilen von public/rechtsprechung/bezuege: Zahl unverändert, siehe PR-Beschreibung.
 export const WEITERZUG_MUSTER =
-  /\((?:(?:Urteil(?:dispositiv)?|Entscheid)(?: des)? )?(?:BGe?r?|Bger|Bundesgericht(?:s?urteil|s)?)(?![a-zA-Z])(?:[^()]*\bvom\b|[^()]*\d[A-Z]_\d|(?:-Nr\.?)?…)|\(\d[A-Z]_\d/;
+  /\((?:(?:Urteil(?:dispositiv)?|Entscheid)(?: des)? )?(?:(?:BGe|BGr|BGer|Bger|Bundesgericht(?:s?urteil|s)?)(?![a-zA-Z])(?:[^()]*\bvom\b|[^()]*\d[A-Z]_\d|(?:-Nr\.?)?…)|BG\s+\d[A-Z]_\d)|\(\d[A-Z]_\d/;
 export const WEITERZUG_ERKLAERUNG =
   'Klammerzusatz „BGer …“ oder „Bundesgerichtsurteil …“: der Entscheid wurde ans Bundesgericht weitergezogen.';
 /** Exportiert für den gezielten Unit-Test (leser-v3-panel-weiterzug.test.ts) —
