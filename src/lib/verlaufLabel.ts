@@ -12,6 +12,7 @@
 // Platzhalter-Label statt eines Rohpfads.
 
 import { metaFuerPfad } from './seo';
+import { ALLE_KARTEN, istVerfuegbar, type CatalogItem } from './startseiteConfig';
 import type { BrowseManifest, BrowseErlass } from './normtext/browse-typen';
 import type { EntscheidIndex } from './rechtsprechung/entscheid-index';
 import type { MaterialManifest } from './materialien/typen';
@@ -54,16 +55,44 @@ export function materialPfad(path: string): { key: string } | null {
   return m ? { key: dek(m[1]) } : null;
 }
 
+const HASH_FOLGT_H1: ReadonlySet<string> = new Set(['/rechner/zustaendigkeit']);
+
+/** ── O-25 · SPLIT-KARTE MIT HASH ────────────────────────────────────────────
+ *  Eine Rechner-Seite trägt mehrere Katalog-Karten, die sich nur durch den
+ *  Hash unterscheiden (`/rechner/zustaendigkeit#schkg|#straf`, Weiche im
+ *  Formular). Der Reiter-Titel folgte bis 15.10.2026 allein dem hash-losen
+ *  Pfad und blieb «Zuständigkeit Zivilprozess», während die Seite (H1) SchKG
+ *  bzw. Strafverfahren zeigte (§8). Die Karte kommt aus demselben Katalog
+ *  (§5); ein Hash ohne eigene Karte (Artikel-Anker, `#art-…`) trifft nichts. */
+function karteMitHash(path: string): CatalogItem | null {
+  const i = path.indexOf('#');
+  if (i === -1) return null;
+  const pfad = pfadTeil(path);
+  // Nur Seiten, deren H1 dem Hash folgt. `/rechner/kuendigung` trägt zwei
+  // Hash-Karten (#lohnfortzahlung, #kuendigung), zeigt aber EINE H1 («Kündigung
+  // & Fristen …», Titelwahl offen: seo.ts, TODO David) — dort bliebe der Reiter
+  // sonst nach einem inneren Reiter-Wechsel auf dem alten Hash stehen.
+  if (!HASH_FOLGT_H1.has(pfad)) return null;
+  const href = `${pfad}${path.slice(i)}`;
+  return ALLE_KARTEN.find((k) => k.href === href && istVerfuegbar(k)) ?? null;
+}
+
 /** ── M7 · KATALOG-KURZFORM EINER RECHNER-/VORLAGEN-ROUTE ────────────────────
  *  Liest das Feld `kurz` der Karte, die diese Route vertritt (SSoT §5:
  *  `startseiteConfig`), oder null — dann steht der volle Titel im Reiter.
- *  Rein und synchron; kein Manifest, kein Netz. */
+ *  Rein und synchron; kein Manifest, kein Netz. Eine Split-Karte (Hash, O-25)
+ *  geht der hash-losen Karte vor: trägt sie kein `kurz`, gilt ihr Titel
+ *  (null, nie die Kurzform der Schwester-Karte). */
 export function katalogKurzform(path: string): string | null {
+  const split = karteMitHash(path);
+  if (split) return split.kurz ?? null;
   return metaFuerPfad(pfadTeil(path))?.karte?.kurz ?? null;
 }
 
 /** Synchron auflösbares Label (Katalog/statisch) — sonst null. */
 export function labelAusMeta(path: string): string | null {
+  const split = karteMitHash(path);
+  if (split) return split.title;
   const meta = metaFuerPfad(pfadTeil(path));
   if (!meta) return null;
   return meta.titel.replace(SUFFIX, '').trim() || null;
