@@ -1717,6 +1717,38 @@
         "type": "literal",
         "value": "Ordinanza concernente il sistema d’informazione centrale sulla migrazione (Ordinanza SIMIC)"
       }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "142.513"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2026/513"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2026-11-01"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2026-09-18"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Verordnung über das Zentrale Migrationsinformationssystem (ZEMIS-Verordnung)"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Ordonnance sur le système d’information central sur la migration (Ordonnance SYMIC)"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Ordinanza concernente il sistema d’informazione centrale sulla migrazione (Ordinanza SIMIC)"
+      }
     }
   ],
   "aStaende": [
@@ -1760,7 +1792,8 @@
     "2025-06-15",
     "2026-06-12",
     "2026-08-01",
-    "2026-10-01"
+    "2026-10-01",
+    "2026-11-01"
   ],
   "belegteOcs": [],
   "rectifiesInfoProOc": {},
@@ -2080,6 +2113,12 @@
         "typ": 1,
         "datum": "2026-10-01",
         "fassung": "2026-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/513",
+        "typ": 1,
+        "datum": "2026-11-01",
+        "fassung": "2026-11-01"
       }
     ],
     "ocStamm": {

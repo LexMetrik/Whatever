@@ -26,6 +26,14 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "rhythmus": "jährlich; BE ändert dynamisch per 1.11.2026"
   },
   {
+    "label": "Künftige Fassung AIG (SR 142.20)",
+    "datum": "2026-11-01",
+    "quelle": "Tabelle",
+    "fundstelle": "`scripts/fedlex-cache.sh` (AIG)",
+    "wert": "gepinnt 12.6.2026",
+    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
+  },
+  {
     "label": "Künftige Fassung BBV (SR 412.101)",
     "datum": "2026-11-01",
     "quelle": "Tabelle",
@@ -34,11 +42,43 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
   },
   {
+    "label": "Künftige Fassung LFG (SR 748.0)",
+    "datum": "2026-11-01",
+    "quelle": "Tabelle",
+    "fundstelle": "`scripts/fedlex-cache.sh` (LFG)",
+    "wert": "gepinnt 1.1.2026",
+    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
+  },
+  {
     "label": "Künftige Fassung RPV (SR 700.1)",
     "datum": "2026-11-01",
     "quelle": "Tabelle",
     "fundstelle": "`scripts/fedlex-cache.sh` (RPV)",
     "wert": "gepinnt 1.7.2026",
+    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
+  },
+  {
+    "label": "Künftige Fassung StGB (SR 311.0)",
+    "datum": "2026-11-01",
+    "quelle": "Tabelle",
+    "fundstelle": "`scripts/fedlex-cache.sh` (STGB)",
+    "wert": "gepinnt 1.10.2026",
+    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
+  },
+  {
+    "label": "Künftige Fassung VGG (SR 173.32)",
+    "datum": "2026-11-01",
+    "quelle": "Tabelle",
+    "fundstelle": "`scripts/fedlex-cache.sh` (VGG)",
+    "wert": "gepinnt 12.6.2026",
+    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
+  },
+  {
+    "label": "Künftige Fassung ZEMIS-V (SR 142.513)",
+    "datum": "2026-11-01",
+    "quelle": "Tabelle",
+    "fundstelle": "`scripts/fedlex-cache.sh` (ZEMIS_V)",
+    "wert": "gepinnt 1.10.2026",
     "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
   },
   {
@@ -142,14 +182,6 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "quelle": "Tabelle",
     "fundstelle": "`scripts/fedlex-cache.sh` (AHVG)",
     "wert": "gepinnt 1.1.2026",
-    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
-  },
-  {
-    "label": "Künftige Fassung AIG (SR 142.20)",
-    "datum": "2027-01-01",
-    "quelle": "Tabelle",
-    "fundstelle": "`scripts/fedlex-cache.sh` (AIG)",
-    "wert": "gepinnt 12.6.2026",
     "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
   },
   {
@@ -353,6 +385,14 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
   },
   {
+    "label": "Künftige Fassung StPO (SR 312.0)",
+    "datum": "2027-01-01",
+    "quelle": "Tabelle",
+    "fundstelle": "`scripts/fedlex-cache.sh` (STPO)",
+    "wert": "gepinnt 1.4.2025",
+    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
+  },
+  {
     "label": "Künftige Fassung UVV (SR 832.202)",
     "datum": "2027-01-01",
     "quelle": "Tabelle",
@@ -366,14 +406,6 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "quelle": "Tabelle",
     "fundstelle": "`scripts/fedlex-cache.sh` (VG)",
     "wert": "gepinnt 15.6.2025",
-    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
-  },
-  {
-    "label": "Künftige Fassung VGG (SR 173.32)",
-    "datum": "2027-01-01",
-    "quelle": "Tabelle",
-    "fundstelle": "`scripts/fedlex-cache.sh` (VGG)",
-    "wert": "gepinnt 12.6.2026",
     "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
   },
   {

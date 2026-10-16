@@ -5528,6 +5528,7 @@
     "2025-08-01",
     "2026-02-01",
     "2026-06-12",
+    "2026-11-01",
     "2027-01-01"
   ],
   "belegteOcs": [],
@@ -6162,6 +6163,12 @@
         "fassung": "2027-01-01"
       },
       {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/739",
+        "typ": 1,
+        "datum": "2026-11-01",
+        "fassung": "2026-11-01"
+      },
+      {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2026/15",
         "typ": 1,
         "datum": "2026-02-01",
@@ -6214,6 +6221,12 @@
         "typ": 1,
         "datum": "2027-01-01",
         "fassung": "2027-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/510",
+        "typ": 5,
+        "datum": "2026-11-01",
+        "fassung": "2026-11-01"
       }
     ],
     "ocStamm": {
@@ -6410,6 +6423,20 @@
         "titelDe": "Schweizerisches Zivilgesetzbuch (Massnahmen gegen Minderjährigenheiraten)",
         "titelFr": "Code civil suisse (Mesures de lutte contre les mariages avec un mineur)",
         "titelIt": "Codice civile svizzero (Misure contro i matrimoni con minorenni)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/739": {
+        "dateForce": "2026-01-01",
+        "dateDoc": "2025-03-21",
+        "titelDe": "Bundesgesetz vom 21. März 2025 über die Bearbeitung von Flugpassagierdaten zur Bekämpfung von terroristischen und anderen schweren Straftaten (Flugpassagierdatengesetz, FPG)",
+        "titelFr": "Loi fédérale du 21 mars 2025 sur le traitement des données relatives aux passagers aériens pour la lutte contre les infractions terroristes et les autres infractions pénales graves (Loi sur les données relatives aux passagers aériens, LDPa)",
+        "titelIt": "Legge federale del 21 marzo 2025 sul trattamento dei dati dei passeggeri aerei per la lotta ai reati terroristici e ad altri reati gravi (Legge sui dati dei passeggeri aerei, LDPA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/510": {
+        "dateForce": "2026-11-01",
+        "dateDoc": "2026-09-18",
+        "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Flugpassagierdatengesetzes",
+        "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la loi sur les données relatives aux passagers aériens",
+        "titelIt": "Ordinanza sull’entrata in vigore integrale della legge sui dati dei passeggeri aerei"
       }
     }
   }
