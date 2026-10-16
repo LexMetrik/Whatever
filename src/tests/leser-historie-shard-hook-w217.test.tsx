@@ -49,9 +49,15 @@ describe('useHistorieShard', () => {
     expect(stand).toMatchObject({ fertig: true, fehler: true, wert: null });
     expect(typeof stand?.erneut).toBe('function');
 
-    vi.stubGlobal('fetch', vi.fn(async () => ok(SHARD)));
+    // Der Neuversuch-Abruf bleibt offen, bis der Zwischenzustand geprüft ist: sonst überholt
+    // ein unter CI-Last spät endendes `act` den Abruf, und `fertig` steht schon (Flackern
+    // auf #1408/#1411, 16.10.2026). Die Zusicherung selbst ist unverändert.
+    let freigeben: () => void = () => undefined;
+    const offen = new Promise<void>((r) => { freigeben = r; });
+    vi.stubGlobal('fetch', vi.fn(async () => { await offen; return ok(SHARD); }));
     await act(async () => { stand!.erneut!(); });
     expect(stand?.fertig).toBe(false); // während des Neuversuchs steht nicht der alte Fehler
+    freigeben();
     await warte();
     expect(stand).toMatchObject({ fertig: true, wert: SHARD });
     expect(stand?.fehler).toBeUndefined();
