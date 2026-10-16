@@ -81,7 +81,7 @@ function Klappe({ id, name, stand, offen, setOffen, kinder }: {
 
 export function PanelFilterZeile({
   klassen, kantone, kantoneVerfuegbar, kantoneOhneWirkung = [], kantonHinweis = null, klassenZahlen, zahlOrt, histogramm, bereich,
-  onKlassen, onKantone, onBereich,
+  onKlassen, onKantone, onBereich, ladefehler = false,
 }: {
   klassen: readonly BezugStatus[];
   kantone: readonly string[];
@@ -100,6 +100,8 @@ export function PanelFilterZeile({
   onKlassen: (neu: BezugStatus[]) => void;
   onKantone: (neu: string[]) => void;
   onBereich: (von: string, bis: string) => void;
+  /** Der Bezugs-Abruf ist gescheitert: der Zeitstrahl sagt es (LESER-NAV O-32). */
+  ladefehler?: boolean;
 }) {
   const basis = useId();
   const hinweisId = `${basis}-kanton-hinweis`;
@@ -118,7 +120,7 @@ export function PanelFilterZeile({
         offen={auf === 'zeit'} setOffen={(o) => setAuf(o ? 'zeit' : null)}
         kinder={(
           <BezugZeitWahl bereich={bereich} histogramm={histogramm} onBereich={onBereich}
-            keineInstanz={klassen.length === 0} instanzEingegrenzt={istEingegrenzt(klassen, kantone)} />
+            keineInstanz={klassen.length === 0} instanzEingegrenzt={istEingegrenzt(klassen, kantone)} ladefehler={ladefehler} />
         )} />
       {/* Vierter Filter — heute ohne Daten und darum ohne Element (Kap. 14).
           Die Datenlogik bleibt `W2·7-VZUI-SACHGEBIET` (Risikopfad). */}

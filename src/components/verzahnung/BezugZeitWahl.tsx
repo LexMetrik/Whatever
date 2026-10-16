@@ -50,7 +50,7 @@ const STRAHL_HOEHE = 'h-9';
  *  Rechtsprechung, die die Daten nicht decken (§8). */
 const MIN_ANTEIL = 8;
 
-export function BezugZeitWahl({ bereich, histogramm, onBereich, keineInstanz = false, instanzEingegrenzt = false }: {
+export function BezugZeitWahl({ bereich, histogramm, onBereich, keineInstanz = false, instanzEingegrenzt = false, ladefehler = false }: {
   /** Aktiver Von-Bis-Bereich; beide Enden '' = offen. */
   bereich: Zeitbereich;
   /** Verteilung, AUS DER gewählt wird (ohne Zeitfilter — siehe bezuegeLaden.ts). */
@@ -62,6 +62,9 @@ export function BezugZeitWahl({ bereich, histogramm, onBereich, keineInstanz = f
   /** E5-B04: die Verteilung und ihre Zahl gelten nur den eingeschalteten
    *  Instanzen/Kantonen (`histogrammAusShard`) — der Fusssatz sagt es dann. */
   instanzEingegrenzt?: boolean;
+  /** LESER-NAV O-32: der Abruf der Verteilung ist gescheitert (Netz/5xx). Der Leertext sagt
+   *  das, statt «noch keine Verteilung geladen» — das liest sich wie «lädt noch» (§8). */
+  ladefehler?: boolean;
 }) {
   const streifenRef = useRef<HTMLDivElement>(null);
   // Laufende Zieh-Geste: [Anker, aktuell] als Balken-Indizes. null = keine Geste.
@@ -149,7 +152,9 @@ export function BezugZeitWahl({ bereich, histogramm, onBereich, keineInstanz = f
         <p className="pt-1 text-micro leading-snug text-ink-500">
           {keineInstanz
             ? 'Alle Instanzen sind abgewählt — darum zeigt der Strahl keine Verteilung. Die Datumsfelder wirken trotzdem.'
-            : 'Für diesen Erlass ist noch keine Verteilung geladen. Die Datumsfelder wirken trotzdem.'}
+            : ladefehler
+              ? 'Die Verteilung konnte nicht geladen werden. Die Datumsfelder wirken trotzdem.'
+              : 'Für diesen Erlass ist noch keine Verteilung geladen. Die Datumsfelder wirken trotzdem.'}
         </p>
       ) : (
         <>
