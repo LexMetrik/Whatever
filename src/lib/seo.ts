@@ -187,9 +187,29 @@ export function prerenderRouten(): string[] {
   return [...Object.keys(STATISCHE_SEITEN), ...katalogRouten()];
 }
 
+/** Seiten, deren H1 (und damit Titel) dem Hash folgt: `/rechner/zustaendigkeit` trägt drei Karten
+ *  (Zivil, `#schkg`, `#straf`). `/rechner/kuendigung` trägt zwei Hash-Karten (#lohnfortzahlung,
+ *  #kuendigung), zeigt aber EINE H1 («Kündigung & Fristen …», Titelwahl offen: DOPPELKARTEN_OVERRIDE,
+ *  TODO David) — dort bliebe ein Titel sonst nach einem inneren Reiter-Wechsel auf dem alten Hash stehen. */
+const HASH_FOLGT_H1: ReadonlySet<string> = new Set(['/rechner/zustaendigkeit']);
+
+/** ── O-25 / O-68 · DIE SPLIT-KARTE EINER ADRESSE ────────────────────────────
+ *  Pfad + Hash → die Katalog-Karte, die die Seite in dieser Weiche vertritt, sonst null (ein Hash ohne
+ *  eigene Karte, z. B. ein Artikel-Anker, trifft nichts). EINE Wahl für den Reiter-Titel
+ *  (`verlaufLabel`) und den Tab-Titel (`metaFuerPfad`, `RouteMeta`) — §5. */
+export function splitKarte(pfad: string, hash: string): CatalogItem | null {
+  if (!hash || !HASH_FOLGT_H1.has(pfad)) return null;
+  const href = `${pfad}${hash}`;
+  return ALLE_KARTEN.find((k) => k.href === href && istVerfuegbar(k)) ?? null;
+}
+
 /** Metadaten für einen Routen-Pfad; unbekannte Pfade → null (Aufrufer
- *  entscheidet: Prerender bricht ab, RouteMeta lässt den Head unverändert). */
-export function metaFuerPfad(pfad: string): RouteMetadaten | null {
+ *  entscheidet: Prerender bricht ab, RouteMeta lässt den Head unverändert).
+ *  `hash` (nur die Client-Navigation kennt ihn; Prerender ruft ohne): folgt die H1 der Seite dem
+ *  Hash (`splitKarte`), trägt der Titel die Karte dieser Weiche — O-68, bis 16.10.2026 blieb
+ *  `document.title` bei `#schkg` «Zuständigkeit Zivilprozess». Beschreibung und Canonical bleiben
+ *  die der Seite (Self-Canonical, kein Hash). */
+export function metaFuerPfad(pfad: string, hash = ''): RouteMetadaten | null {
   const statisch = STATISCHE_SEITEN[pfad];
   const canonical = SITE_URL + pfad;
   if (statisch) return { pfad, ...statisch, canonical };
@@ -197,7 +217,7 @@ export function metaFuerPfad(pfad: string): RouteMetadaten | null {
   if (!karte) return null;
   return {
     pfad,
-    titel: `${karte.title} — LexMetrik`,
+    titel: `${(splitKarte(pfad, hash) ?? karte).title} — LexMetrik`,
     beschreibung: karte.description,
     canonical,
     karte,

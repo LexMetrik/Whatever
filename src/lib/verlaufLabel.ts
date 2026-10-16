@@ -11,8 +11,8 @@
 // (die Verlauf-Komponente lädt sie lazy); ohne Manifest gibt es ein ehrliches
 // Platzhalter-Label statt eines Rohpfads.
 
-import { metaFuerPfad } from './seo';
-import { ALLE_KARTEN, istVerfuegbar, type CatalogItem } from './startseiteConfig';
+import { metaFuerPfad, splitKarte } from './seo';
+import type { CatalogItem } from './startseiteConfig';
 import type { BrowseManifest, BrowseErlass } from './normtext/browse-typen';
 import type { EntscheidIndex } from './rechtsprechung/entscheid-index';
 import type { MaterialManifest } from './materialien/typen';
@@ -55,26 +55,18 @@ export function materialPfad(path: string): { key: string } | null {
   return m ? { key: dek(m[1]) } : null;
 }
 
-const HASH_FOLGT_H1: ReadonlySet<string> = new Set(['/rechner/zustaendigkeit']);
-
 /** ── O-25 · SPLIT-KARTE MIT HASH ────────────────────────────────────────────
  *  Eine Rechner-Seite trägt mehrere Katalog-Karten, die sich nur durch den
  *  Hash unterscheiden (`/rechner/zustaendigkeit#schkg|#straf`, Weiche im
  *  Formular). Der Reiter-Titel folgte bis 15.10.2026 allein dem hash-losen
  *  Pfad und blieb «Zuständigkeit Zivilprozess», während die Seite (H1) SchKG
  *  bzw. Strafverfahren zeigte (§8). Die Karte kommt aus demselben Katalog
- *  (§5); ein Hash ohne eigene Karte (Artikel-Anker, `#art-…`) trifft nichts. */
+ *  (§5); ein Hash ohne eigene Karte (Artikel-Anker, `#art-…`) trifft nichts.
+ *  O-68: die Wahl selbst (`splitKarte`, samt der Seiten-Einschränkung) steht
+ *  in `./seo` — dieselbe Quelle bestimmt den Tab-Titel (`document.title`). */
 function karteMitHash(path: string): CatalogItem | null {
   const i = path.indexOf('#');
-  if (i === -1) return null;
-  const pfad = pfadTeil(path);
-  // Nur Seiten, deren H1 dem Hash folgt. `/rechner/kuendigung` trägt zwei
-  // Hash-Karten (#lohnfortzahlung, #kuendigung), zeigt aber EINE H1 («Kündigung
-  // & Fristen …», Titelwahl offen: seo.ts, TODO David) — dort bliebe der Reiter
-  // sonst nach einem inneren Reiter-Wechsel auf dem alten Hash stehen.
-  if (!HASH_FOLGT_H1.has(pfad)) return null;
-  const href = `${pfad}${path.slice(i)}`;
-  return ALLE_KARTEN.find((k) => k.href === href && istVerfuegbar(k)) ?? null;
+  return i === -1 ? null : splitKarte(pfadTeil(path), path.slice(i));
 }
 
 /** ── M7 · KATALOG-KURZFORM EINER RECHNER-/VORLAGEN-ROUTE ────────────────────
