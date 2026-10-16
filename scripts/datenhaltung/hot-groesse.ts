@@ -20,8 +20,9 @@
 //
 // WIE: SQLite-Virtualtabelle `dbstat` (in node:sqlite verfuegbar, geprueft auf Node 24.16),
 // `SUM(pgsize)` je B-Baum — echte Seitengroesse inkl. Fuellgrad und Overflow-Seiten, keine
-// Schaetzung. Freelist-Seiten gehoeren zu keinem B-Baum und zaehlen nicht (frischer Bau:
-// keine).
+// Schaetzung. Freelist-Seiten gehoeren zu keinem B-Baum und zaehlen nicht (dbstat zaehlt nur
+// B-Baeume); im frischen Bau gering (ca. 1.4 MiB je DB, gemessen 16.10.2026 mit
+// `pragma_freelist_count`: normtext 347, rechtsprechung 381 Seiten).
 //
 // MESSGRENZE, ehrlich (§8): gemessen wird am LOKALEN Artefakt, das in Turso liegende Abbild
 // weicht in drei Punkten ab (turso-skip.ts DDL_BASIS, turso-sync.ts Schritt 6):
@@ -34,6 +35,15 @@
 // 355.47 MiB); `sync_meta` ist dagegen unmessbar klein. NICHT geprueft werden konnte der
 // physische Fuellgrad auf Turso selbst (kein Konto-Zugriff) und ob Turso Freelist/WAL
 // mitzaehlt — die Messung ist die Seitengroesse der B-Baeume, keine Abrechnungszahl.
+//   4. SPITZENBELEGUNG beim Vollneubau: waehrend des Tauschs liegen in Turso die
+//      `<tabelle>_neu`-Kopien neben den Live-Tabellen (turso-sync.ts, Tausch DROP+RENAME, ca.
+//      Z. 515/537/553/633-634); nach dem DROP gehen die Seiten remote in die Freelist, die
+//      Datei schrumpft ohne VACUUM nicht. Die Spitze kann daher bis ca. doppelt so hoch liegen
+//      wie der gemessene Dauerzustand (heute ca. 711 statt 355 MiB); wirksame Reserve gegen die
+//      Grenze also ca. die halbe Grenze. Ob Turso Datei-, Freelist- oder WAL-Groesse abrechnet:
+//      ungeklaert (kein Konto-Zugriff). Ferner gilt das Kontingent kontoweit (auch Branches und
+//      Point-in-Time-Restores zaehlen laut FAQ turso.tech/pricing, Abruf 16.10.2026), und beim
+//      Free-Plan sperrt das Ueberschreiten einer einzigen Metrik die Datenbanken.
 import type { DatabaseSync } from 'node:sqlite';
 import { BASIS } from './turso-skip';
 import { schattenDefinitionen } from './turso-fts-index';
