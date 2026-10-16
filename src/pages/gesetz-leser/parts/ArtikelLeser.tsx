@@ -123,6 +123,17 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // standen; sie stehen jetzt am Artikelende (§6.6, und eine Datei weniger
   // gegen die 800er-Schwelle).
   const label = labelMitBereich(e.artikelLabel, e.artikel);
+  // ── O-67 (LESER-NAV, 16.10.2026) · «ART. N» IM PANE NAVIGIERT IM PANE ────────
+  // GEMESSEN (Dev-Server, headless Chromium 1600×900, visibilityState visible,
+  // `/gesetze/bund/ZGB?p=/gesetze/bund/OR#art-5`): ein Klick auf «Art. 9» im
+  // zweiten Fenster machte die Haupt-Adresse zu `/gesetze/bund/ZGB#art-9` — der
+  // native Fragment-Sprung des `<a href="#art-9">` gehört dem Fenster, nicht
+  // dem Pane. Im Pane läuft er deshalb über denselben Sprung wie ein Verweis im
+  // Wortlaut (`intern.paneSprung`: Pane-Scroll + Pane-Location); die Haupt-URL
+  // bleibt. Primär und Einzelansicht behalten den nativen Anker (LM-202). Die
+  // Weiche kommt aus `intern` und nicht aus dem Pane-Kontext: dessen Wert ist je
+  // Pane-Render neu, und diese `memo`-Komponente würde damit je Artikel mitrendern.
+  const paneSprung = intern?.paneSprung;
   // KURZ-Zitat («Art. 957 OR») — Fundstellen-Signal für den Entscheid-Sprung
   // (LeitfallZeile `normZitat` → ?norm=). MUSS knapp bleiben, sonst matcht der
   // EntscheidLeser die zitierende Erwägung nicht mehr.
@@ -333,7 +344,13 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                   ? 'font-display text-h3 font-semibold text-ink-900 hover:text-ink-900 text-left'
                   : `num text-base font-semibold hover:text-ink-900 text-left ${ohneWortlaut ? 'text-ink-500 font-normal' : 'text-ink-900'}`}>{label}</button>
             ) : (
-              <a href={`#art-${e.artikel}`} className={istAnhang
+              <a href={`#art-${e.artikel}`}
+                onClick={paneSprung ? (ev) => {
+                  if (ev.defaultPrevented || ev.button !== 0 || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
+                  ev.preventDefault();
+                  paneSprung(e.artikel);
+                } : undefined}
+                className={istAnhang
                 ? 'font-display text-h3 font-semibold text-ink-900 hover:text-ink-900 no-underline'
                 : `num text-base font-semibold hover:text-ink-900 no-underline ${ohneWortlaut ? 'text-ink-500 font-normal' : 'text-ink-900'}`}>{label}</a>
             )}{fnMarker}

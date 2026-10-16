@@ -152,7 +152,11 @@ export function useLayoutHinweis(): boolean {
   );
 }
 
-export function usePaneLayout(): PaneLayout {
+/**
+ * @param ersetzeAdresse O-69b: wie der Seed `?p=` aus der Adresse genommen wird. Gesetzt (Shell: `navigate(…,
+ *   {replace:true})`) läuft es über den Router; ungesetzt (Tests ohne Router) über `history.replaceState`.
+ */
+export function usePaneLayout(ersetzeAdresse?: (ziel: string) => void): PaneLayout {
   const [start] = useState(ladePanes);
   const [sekundaer, setSekundaer] = useState<string[]>(start.panes);
   // Eigen-Ordnung überdeckt (siehe PaneStart): der Speicher bleibt für die ganze
@@ -164,12 +168,23 @@ export function usePaneLayout(): PaneLayout {
   // B-5: ?p= war nur Seed (geteilter Link) → nach dem Übernehmen aus der URL
   // entfernen, damit ein Reload den dann lokalen Zustand nutzt (localStorage),
   // nicht erneut den geteilten Satz aufzwingt. Einmalig.
+  //
+  // O-69b (16.10.2026): das ging bis hierher AM ROUTER VORBEI (`history.replaceState`). GEMESSEN (Dev-
+  // Server, headless Chromium 1600×900, visibilityState visible, `/gesetze/bund/ZGB?p=%2Fgesetze%2Fbund%2FOR#art-5`):
+  // die Adressleiste zeigte `/gesetze/bund/ZGB#art-5`, `useLocation()` aber weiter `?p=…`; der Reiter
+  // (`lexmetrik-tabs`) speicherte `/gesetze/bund/ZGB?p=%2Fgesetze%2Fbund%2FOR#art-5`, und «Adresse kopieren»
+  // gab diesen ALTEN Layout-Link heraus, auch nach Umbau des Layouts. Mit `ersetzeAdresse` (Router,
+  // `replace`) sieht jede Quelle dieselbe Adresse. Der Ref hält die Funktion aus den Deps: der Effekt
+  // läuft einmal (Start), nicht bei jeder neuen Navigate-Identität.
+  const ersetzeRef = useRef(ersetzeAdresse);
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const u = new URL(window.location.href);
     if (u.searchParams.has('p')) {
       u.searchParams.delete('p');
-      window.history.replaceState(window.history.state, '', u.pathname + u.search + u.hash);
+      const ziel = u.pathname + u.search + u.hash;
+      if (ersetzeRef.current) ersetzeRef.current(ziel);
+      else window.history.replaceState(window.history.state, '', ziel);
     }
   }, []);
 
