@@ -130,8 +130,8 @@ export function stillstandsperiodeFuer(date: Date): Stillstandsperiode | null {
 //    offen) und VD LVLP Art. 73 Abs. 2 (BLV 280.05; nur SchKG): NICHT als
 //    Feiertag geführt, nur Hinweis (W-10). BL-Hinweis gebaut (RV-49,
 //    kantonalerSchliesstagHinweis unten, GOG BL § 46 Abs. 2 am 18.10.2026
-//    selbst gelesen: bl.clex.ch/api/de/texts_of_law/170, Fassung in Kraft
-//    seit 1.1.2020). VD-Hinweis NICHT gebaut: Wortlaut LVLP Art. 73 Abs. 2
+//    selbst gelesen: bl.clex.ch/api/de/texts_of_law/170, Fassung Stand
+//    1.1.2020, § 46 in Kraft seit 1.4.2002). VD-Hinweis NICHT gebaut: Wortlaut LVLP Art. 73 Abs. 2
 //    war am 18.10.2026 nicht abrufbar (prestations.vd.ch ohne lesbare
 //    Schnittstelle) — Rückfrage an David, kein Hinweis aus zweiter Hand.
 
@@ -609,7 +609,7 @@ export function hinweisBedingteFeiertage(rohesEnde: Date, kanton: Kanton, kontex
  */
 export function kantonalerSchliesstagHinweis(kanton: Kanton, kontext: FeiertagsKontext): string | null {
   if (kanton !== 'BL' || (kontext !== 'zpo' && kontext !== 'stpo')) return null;
-  return 'Kanton BL: Nach § 46 Abs. 2 GOG BL (SGS 170, in Kraft seit 1.1.2020) gelten auch Tage, an denen die '
+  return 'Kanton BL: Nach § 46 Abs. 2 GOG BL (SGS 170, Fassung Stand 1.1.2020) gelten auch Tage, an denen die '
     + 'Büros der kantonalen Verwaltung ganztägig geschlossen sind, als Feiertage im Sinne der Fristenregel. '
     + 'Ob das für Fristen nach der ' + (kontext === 'zpo' ? 'ZPO (Art. 142 Abs. 3 ZPO)' : 'StPO (Art. 90 Abs. 2 StPO)')
     + ' gilt, ist nicht geklärt; solche Schliesstage sind hier nicht als Feiertag gezählt. Fällt das Fristende auf '
