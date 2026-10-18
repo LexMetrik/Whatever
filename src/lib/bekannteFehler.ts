@@ -38,10 +38,6 @@ const VERZUGSZINS: readonly BekannterFehler[] = [
   { fb: 'RV-29', text: 'Verzugszins: Zinsforderung bei Mahnung falsch gerechnet (Fall V6: Mahnung – kein Zins).' },
   { fb: 'RV-80', text: 'Verzugszins: Zwischenrundung verschiebt das Ergebnis um bis zu ±5 Rappen.' },
 ];
-const KALENDER_NE_SO: BekannterFehler = {
-  fb: 'RV-53',
-  text: 'Kalender-Ansicht: NE-Schliesstage und der 1. Mai in SO sind nicht als arbeitsfrei markiert.',
-};
 
 export const BEKANNTE_FEHLER: Readonly<Record<string, readonly BekannterFehler[]>> = {
   'notariat-grundbuch': [
@@ -69,12 +65,6 @@ export const BEKANNTE_FEHLER: Readonly<Record<string, readonly BekannterFehler[]
     { fb: 'RV-33', text: 'Bestimmung der Schlichtungsbehörde doppelt vorhanden, die beiden Fassungen weichen voneinander ab.' },
     { fb: 'RV-79', text: 'Zwischenentscheide: Rechtsmittel als «zulässig» ausgewiesen, obwohl Art. 92/93 BGG es einschränken.' },
   ],
-  tagerechner: [
-    { fb: 'RV-49', text: 'Strafverfahren (StPO): rechnet mit den allgemeinen statt den strafprozessualen kantonalen Feiertagen.' },
-    { fb: 'RV-52', text: 'Mit SchKG-Ferien: Zustellung während der Betreibungsferien wird nie berücksichtigt, ohne Hinweis.' },
-    KALENDER_NE_SO,
-  ],
-  'zpo-fristen': [KALENDER_NE_SO],
   'schkg-fristen': [
     { fb: 'RV-63', text: 'Monats- und Jahresfristen: die Kachel «Fristbeginn» zeigt bei Ferienzustellung den letzten Ferientag statt des Fristbeginns.' },
   ],
