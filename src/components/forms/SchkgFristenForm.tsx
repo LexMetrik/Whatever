@@ -449,6 +449,7 @@ export function SchkgFristenForm({ live }: {
                   adQuemISO={e.diesAdQuemISO}
                   kanton={form.kanton}
                   stillstandAktiv={e.ruhenAnzeige}
+                  feiertagsKontext="schkg"
                   labels={{ ereignis: 'Auslösendes Ereignis', aquo: 'Fristbeginn', adquem: 'Fristende' }}
                 />
                 {/* Fristbeginn-Norm aus der Engine (§5): normverweise[1] ist

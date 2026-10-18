@@ -89,12 +89,13 @@ describe('WARNHINWEIS · Anzeige', () => {
     expect(block([])).not.toContain('data-bekannter-fehler');
   });
 
-  it('verschachtelte Rahmen vereinigen sich ohne Doppel (Tagerechner + eingebetteter ZPO-/SchKG-Rechner)', () => {
-    const zpo = block(['tagerechner', 'zpo-fristen']);
-    expect(zpo.split('(RV-53)').length - 1).toBe(1);
-    expect(zpo).toContain('(RV-52)');
-    const schkg = bekannteFehlerFuer(['tagerechner', 'schkg-fristen']).map((f) => f.fb);
-    expect(schkg).toEqual(expect.arrayContaining(['RV-49', 'RV-52', 'RV-53', 'RV-63']));
+  it('verschachtelte Rahmen vereinigen sich ohne Doppel (Streitwert + eingebetteter BGG-Fristenrechner)', () => {
+    // RV-49/52/53 (Tagerechner) sind behoben; am Tagerechner steht seither RV-103. RV-26 steht an beiden Werkzeugen.
+    const bgg = block(['streitwert', 'bgg-fristen']);
+    expect(bgg.split('(RV-26)').length - 1).toBe(1);
+    expect(bgg).toContain('(RV-28)');
+    const ids = bekannteFehlerFuer(['streitwert', 'bgg-fristen']).map((f) => f.fb);
+    expect(ids).toEqual(['RV-26', 'RV-28']);
   });
 });
 
@@ -102,11 +103,10 @@ describe('WARNHINWEIS · echte Seiten (Vorgabewerte tragen schon ein Ergebnis)',
   const seite = (C: () => ReactElement, pfad: string) => renderToString(
     <LocaleProvider><MemoryRouter initialEntries={[pfad]}><C /></MemoryRouter></LocaleProvider>);
 
-  it('Mietrecht, Tagerechner, Kündigung (B+C) zeigen ihre Fehler; Verjährung (ohne Eintrag) nicht', () => {
+  it('Mietrecht, Kündigung (B+C) zeigen ihre Fehler; Tagerechner und Verjährung (ohne Eintrag) nicht', () => {
     const miete = seite(RechnerMietrecht, '/rechner/mietrecht');
     for (const id of ['RV-06', 'RV-33', 'RV-40']) expect(miete).toContain(`(${id})`);
-    const tage = seite(RechnerTagerechner, '/rechner/tagerechner');
-    for (const id of ['RV-49', 'RV-52', 'RV-53']) expect(tage).toContain(`(${id})`);
+    expect(seite(RechnerTagerechner, '/rechner/tagerechner')).toContain('(RV-103)');
     const kuend = seite(RechnerKuendigung, '/rechner/kuendigung#kuendigung');
     for (const id of ['RV-33', 'RV-44']) expect(kuend).toContain(`(${id})`);
     const verj = seite(RechnerVerjaehrung, '/rechner/verjaehrung');

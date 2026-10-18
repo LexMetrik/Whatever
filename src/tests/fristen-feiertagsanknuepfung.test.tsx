@@ -100,9 +100,11 @@ describe('Q8-01 · Kantonsfeld des Tagerechners sagt, wessen Kanton', () => {
     expect(kantonFeldLabel('bgg')).toMatch(/Wohnsitz\/Sitz der Partei oder ihrer Vertretung/);
     expect(kantonFeldLabel('vwvg')).toMatch(/Wohnsitz\/Sitz der Partei oder ihrer Vertretung/);
     expect(kantonFeldLabel('keine')).toMatch(/Erfüllungsort/);
-    expect(kantonFeldLabel('keine')).toMatch(/StPO/);
+    // RV-37/RV-49: StPO ist ein eigenes Regime — «Keine Ferien» (OR) nennt nur noch den Erfüllungsort.
+    expect(kantonFeldLabel('keine')).not.toMatch(/StPO/);
+    expect(kantonFeldLabel('stpo')).toMatch(/Wohnsitz\/Sitz der Partei oder ihres Rechtsbeistands/);
     // Alle Beschriftungen behalten den Anker «Kanton (Feiertage)» (e2e-Selektor).
-    for (const f of ['zpo', 'bgg', 'vwvg', 'keine', 'schkg'] as const) {
+    for (const f of ['zpo', 'bgg', 'vwvg', 'keine', 'stpo', 'schkg'] as const) {
       expect(kantonFeldLabel(f).startsWith('Kanton (Feiertage)')).toBe(true);
     }
   });

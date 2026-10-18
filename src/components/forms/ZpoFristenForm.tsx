@@ -440,6 +440,7 @@ export function ZpoFristenForm({ live }: {
             adQuemISO={ergebnis.diesAdQuemISO}
             kanton={form.kanton}
             stillstandAktiv={ergebnis.stillstandAktiv}
+            feiertagsKontext="zpo"
           />
           {/* Fristbeginn-Norm aus der Engine (§5): Tagesfrist → Art. 142
               Abs. 1, Wochen-/Monats-/Jahresfrist → Abs. 2 (normverweise[0]).
