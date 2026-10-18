@@ -7,6 +7,7 @@ import {
   stillstandsperioden,
   stillstandsperiodeFuer,
   istArbeitsfreierTag,
+  kantonalerSchliesstagHinweis,
   strengeLesart,
   unsichereFeiertageSatz,
   type FeiertagsLesart,
@@ -188,34 +189,46 @@ export function berechneFrist(input: ZpoInput): ZpoErgebnis {
     : input.einheit === 'tage'
       ? fristendeTage(massgeblichStreng, input.laenge, st).ende
       : fristendeKalender(massgeblichStreng, input.einheit, input.laenge, st, input.modus === 'mindermeinung').ende;
+  const diesAdQuemStreng = normalisiereEnde(endeProvStreng, input.kanton, st, streng).tag;
   const unsicherHinweis = unsichereFeiertageSatz(
     [[ereignis, massgeblich], [endeProvisorisch, diesAdQuem]],
-    diesAdQuem, normalisiereEnde(endeProvStreng, input.kanton, st, streng).tag,
+    diesAdQuem, diesAdQuemStreng,
     input.kanton, KONTEXT_ZPO, 'frueher',
   );
 
   // Optional: Erstreckung (Ziff. 7.5) – nur gerichtliche Fristen
   let erstrecktBis: string | undefined;
+  let erstreckungUnsicherHinweis: string | null = null;
   if (input.erstreckung && input.fristnatur === 'gerichtlich') {
     const tage = input.erstreckung.einheit === 'wochen' ? input.erstreckung.laenge * 7 : input.erstreckung.laenge;
     // Beginn am Tag nach dem letzten Tag der ursprünglichen Frist; Art. 142 Abs. 1 gilt nicht.
-    let cursor = addDays(diesAdQuem, 1);
-    let gezaehlt = 0;
-    let ende = cursor;
-    for (let guard = 0; guard < 4000 && gezaehlt < tage; guard++) {
-      if (!imStillstand(cursor, stillstandGilt)) {
-        gezaehlt += 1;
-        ende = cursor;
+    const erstrecke = (letzterTag: Date, lesart: FeiertagsLesart): Date => {
+      let cursor = addDays(letzterTag, 1);
+      let gezaehlt = 0;
+      let ende = cursor;
+      for (let guard = 0; guard < 4000 && gezaehlt < tage; guard++) {
+        if (!imStillstand(cursor, stillstandGilt)) {
+          gezaehlt += 1;
+          ende = cursor;
+        }
+        if (gezaehlt < tage) cursor = addDays(cursor, 1);
       }
-      if (gezaehlt < tage) cursor = addDays(cursor, 1);
-    }
-    const norm = normalisiereEnde(ende, input.kanton, st, KONTEXT_ZPO);
-    erstrecktBis = iso(norm.tag);
+      return normalisiereEnde(ende, input.kanton, st, lesart).tag;
+    };
+    const normTag = erstrecke(diesAdQuem, KONTEXT_ZPO);
+    erstrecktBis = iso(normTag);
     rechenweg.push({
       beschreibung: 'Erstreckung (gerichtliche Frist, Art. 144 Abs. 2 ZPO)',
-      zwischenergebnis: `Erstreckung um ${input.erstreckung.laenge} ${input.erstreckung.einheit} ab dem Tag nach Fristablauf. Neues Ende: ${fmt(norm.tag)} (Art. 142 Abs. 1 findet keine Anwendung; Abs. 3 und Stillstand gelten).`,
+      zwischenergebnis: `Erstreckung um ${input.erstreckung.laenge} ${input.erstreckung.einheit} ab dem Tag nach Fristablauf. Neues Ende: ${fmt(normTag)} (Art. 142 Abs. 1 findet keine Anwendung; Abs. 3 und Stillstand gelten).`,
       normen: [N_144_2, N_142_3],
     });
+    // RV-49 (Entscheid W-11 a): zählt die Erstreckung einen unsicheren Tag (GL 2.1.) als Feiertag,
+    // nennt die Warnung das Ende ohne ihn — ausgehend vom ebenfalls strengen Ende der Grundfrist.
+    // Die Ursache-Tage werden von der Grundfrist bis zum Erstreckungsende gesucht (beide Verschiebe-Stellen).
+    const normTagStreng = erstrecke(diesAdQuemStreng, streng);
+    erstreckungUnsicherHinweis = unsichereFeiertageSatz(
+      [[addDays(diesAdQuem, 1), normTag]], normTag, normTagStreng, input.kanton, KONTEXT_ZPO, 'frueher',
+    );
   }
 
   // ─── Hinweise / Vorbehalte ────────────────────────────────────────────
@@ -267,6 +280,10 @@ export function berechneFrist(input: ZpoInput): ZpoErgebnis {
   }
 
   if (unsicherHinweis) warnungen.push(unsicherHinweis);
+  if (erstreckungUnsicherHinweis) warnungen.push(erstreckungUnsicherHinweis);
+  // RV-49 / W-10: BL-Schliesstage nur als Hinweis (GOG BL § 46 Abs. 2).
+  const blHinweis = kantonalerSchliesstagHinweis(input.kanton, KONTEXT_ZPO);
+  if (blHinweis) warnungen.push(blHinweis);
 
   // Feiertags-Verifikationsvorbehalt (Ziff. 6.7). RL-20/R1-08 (Prüfung
   // Rechtslogik 23.9.2026): vorher «kommt regelmässig eine Fristwiederher-

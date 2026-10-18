@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { parseISO, isSameDay, isWithinInterval } from 'date-fns';
 import type { Kanton } from '../types/legal';
-import { stillstandsperiodeFuer, istArbeitsfreierTag } from '../data/zpoFeiertage';
+import { stillstandsperiodeFuer, istArbeitsfreierTag, type FeiertagsKontext } from '../data/zpoFeiertage';
 
 // Grafische Fristen-Antwort: Monatsraster mit durchgehendem Fristband und
 // runden Markern für Ereignis / Fristbeginn / Fristende.
@@ -33,6 +33,10 @@ type Props = {
   // die sechs Fristen-Formulare — byte-gleiches Verhalten).
   stillstandPerioden?: { vonISO: string; bisISO: string }[];
   feiertage?: boolean;                 // Sa/So/Feiertage abschwächen (default true)
+  // RV-53: Feiertags-Kontext der Frist — bedingte kantonale Tage (NE-Schliesstage, SO 1. Mai)
+  // sind nur in bestimmten Verfahren arbeitsfrei. Default 'allgemein' = bisheriges Verhalten;
+  // die Formulare reichen den Kontext ihrer Engine durch (zpoFeiertage.ts), der Kalender wählt nichts.
+  feiertagsKontext?: FeiertagsKontext;
   // kompakt: Startseiten-Schnellrechner-Variante (Auftrag David 25.6.2026) —
   // NUR die relevanten Wochen (Ereignis→Fristende-Band + Marker) statt voller
   // Monate, schmalere Tiles (Monate nebeneinander), engere Abstände. Opt-in;
@@ -50,7 +54,7 @@ const fmtDatum = (d: Date) => `${d.getDate()}.${d.getMonth() + 1}.${d.getFullYea
 
 type BandStatus = 'frist' | 'still' | null;
 
-export function FristenKalender({ ereignisISO, aQuoISO, adQuemISO, kanton, stillstandAktiv, stillstandPerioden, feiertage = true, labels, kompakt = false }: Props) {
+export function FristenKalender({ ereignisISO, aQuoISO, adQuemISO, kanton, stillstandAktiv, stillstandPerioden, feiertage = true, feiertagsKontext = 'allgemein', labels, kompakt = false }: Props) {
   const L = labels ?? { ereignis: 'Ereignistag', aquo: 'Fristbeginn', adquem: 'Fristende' };
   const ereignis = parseISO(ereignisISO);
   const aQuo = aQuoISO ? parseISO(aQuoISO) : null;
@@ -219,7 +223,7 @@ export function FristenKalender({ ereignisISO, aQuoISO, adQuemISO, kanton, still
                     const isEreignis = isSameDay(d, ereignis);
                     const isAQuo = aQuo ? isSameDay(d, aQuo) : false;
                     const isAdQuem = isSameDay(d, adQuem);
-                    const frei = feiertage && istArbeitsfreierTag(d, kanton);
+                    const frei = feiertage && istArbeitsfreierTag(d, kanton, feiertagsKontext);
                     const band = bandStatus(d);
 
                     // Bandenden abrunden: am Wochen-/Monatsrand und an Statuswechseln

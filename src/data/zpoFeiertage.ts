@@ -128,7 +128,12 @@ export function stillstandsperiodeFuer(date: Date): Stillstandsperiode | null {
 //  - Schliesstage der Kantonsverwaltung: NE — s. Block «Bedingte kantonale
 //    Feiertage» unten (Entscheid W-10 a, Geltungsbereich RL-22-Nachzug). BL GOG § 46 Abs. 2 (SGS 170; Geltung für ZPO-Fristen
 //    offen) und VD LVLP Art. 73 Abs. 2 (BLV 280.05; nur SchKG): NICHT als
-//    Feiertag geführt, nur Hinweis (W-10; Nutzer-Hinweis folgt RL-23).
+//    Feiertag geführt, nur Hinweis (W-10). BL-Hinweis gebaut (RV-49,
+//    kantonalerSchliesstagHinweis unten, GOG BL § 46 Abs. 2 am 18.10.2026
+//    selbst gelesen: bl.clex.ch/api/de/texts_of_law/170, Fassung in Kraft
+//    seit 1.1.2020). VD-Hinweis NICHT gebaut: Wortlaut LVLP Art. 73 Abs. 2
+//    war am 18.10.2026 nicht abrufbar (prestations.vd.ch ohne lesbare
+//    Schnittstelle) — Rückfrage an David, kein Hinweis aus zweiter Hand.
 
 const ALLE_KANTONE: Kanton[] = ['ZH', 'BE', 'LU', 'UR', 'SZ', 'OW', 'NW', 'GL', 'ZG', 'FR', 'SO', 'BS', 'BL', 'SH', 'AR', 'AI', 'SG', 'GR', 'AG', 'TG', 'TI', 'VD', 'VS', 'NE', 'GE', 'JU'];
 const ausser = (...ex: Kanton[]): Kanton[] => ALLE_KANTONE.filter((k) => !ex.includes(k));
@@ -592,4 +597,22 @@ export function hinweisBedingteFeiertage(rohesEnde: Date, kanton: Kanton, kontex
   const streng = naechsterWerktag(rohesEnde, kanton, strengeLesart(kontext));
   return bedingteFeiertageSatz(rohesEnde, eng, weit, kanton, kontext, 'frueher')
     ?? unsichereFeiertageSatz([[rohesEnde, eng]], eng, streng, kanton, kontext, 'frueher');
+}
+
+/**
+ * Hinweis auf kantonale Schliesstage, die LexMetrik NICHT als Feiertag zählt (W-10).
+ * BL: § 46 Abs. 2 GOG BL (SGS 170, Fassung seit 1.1.2020): «Als Feiertage im Sinne dieser
+ * Bestimmung gelten auch Tage, an denen die Büros der kantonalen Verwaltung ganztägig
+ * geschlossen sind.» Ob das für Fristen nach Art. 142 Abs. 3 ZPO bzw. Art. 90 Abs. 2 StPO
+ * (Verweis auf das kantonale Recht) gilt, ist nicht belegt; der Tag zählt hier nicht
+ * (früheres Fristende = sichere Seite für Handlungsfristen). `null` ausserhalb BL/ZPO/StPO.
+ */
+export function kantonalerSchliesstagHinweis(kanton: Kanton, kontext: FeiertagsKontext): string | null {
+  if (kanton !== 'BL' || (kontext !== 'zpo' && kontext !== 'stpo')) return null;
+  return 'Kanton BL: Nach § 46 Abs. 2 GOG BL (SGS 170, in Kraft seit 1.1.2020) gelten auch Tage, an denen die '
+    + 'Büros der kantonalen Verwaltung ganztägig geschlossen sind, als Feiertage im Sinne der Fristenregel. '
+    + 'Ob das für Fristen nach der ' + (kontext === 'zpo' ? 'ZPO (Art. 142 Abs. 3 ZPO)' : 'StPO (Art. 90 Abs. 2 StPO)')
+    + ' gilt, ist nicht geklärt; solche Schliesstage sind hier nicht als Feiertag gezählt. Fällt das Fristende auf '
+    + 'einen solchen Tag, endet die Frist allenfalls erst am nächsten Werktag; im Zweifel bis zum berechneten '
+    + 'Fristende handeln.';
 }
