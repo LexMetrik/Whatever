@@ -56,6 +56,10 @@ gestrichen. Davids einziger Input ist der Bau-Prompt.
    ## Wartet auf David
    ```
 
+   «Korrekturen David» trägt nur Davids Wortlaut mit Datum; Arbeitsstand und
+   Zwischenergebnisse gehören unter «Nebenfunde» bzw. in den Bericht (David «ja»
+   19.10.2026, Kurator-Frage 7).
+
 ## B — Bau
 
 - Weicht die Spec vom Ist-Code ab: sofort in der Fahrplan-Datei korrigieren,
@@ -166,7 +170,7 @@ Schluss, bevor der Kontext knapp wird.
 - Jede Änderung an JETZT als Zeile im Abschlussbericht (Davids Veto); ein
   separater Doku-PR nur bei echtem Rest.
 - Bau-Flächen abräumen (Skill `landung` Session-Ende), eigener Worktree zuletzt.
-- Vault-Wegweiser `03_Projekte/LexMetrik/lexmetrik-wegweiser.md` nachführen («Was läuft gerade», `wartet_auf_david`; vorher `99_KI/LEITFADEN.md`, danach `99_KI/Werkzeuge/pruefe-vault.py`).
+- Vault-Projektseite `Projekt LexMetrik.md` (Ordner `LexMetrik` unter `~/Documents/Main/03_Projekte/`) nachführen («Was läuft gerade», `wartet_auf_david` je ≤ 200 Zeichen; vorher `99_KI/LEITFADEN.md`, danach `99_KI/Werkzeuge/pruefe-vault.py`). Hat sich die Seite für David sichtbar geändert: Bildschirmfoto des Ergebnisses, ein Prüf-Agent prüft es gegen das Vault-Gedächtnis `Allgemein/lesbarkeit-formatierung` (David «ja» 19.10.2026, Kurator-Frage 3).
 - Bericht beginnt mit der Fortschrittszeile aus ROADMAP ZIEL samt Änderung;
   Schlusssatz: was live ist, was auf David wartet und warum.
 

@@ -34,7 +34,7 @@ Datum | Entscheid | Grenze/Geltung | Quelle | Vault
 8.8. | Erst EIN Recherche-Agent; Station W weiterbauen | | sk/auftrag:223, sk/bauschritt:128 | fehlt
 13.8. | Rückbau gehört dazu; V1-Rückbau Linie | ausser datierter Vorfall | C:211, sk/lehren:196, DR:1072 | fehlt
 14.8. | Token-Disziplin; Minimalismus; Ziel statt Weg; Testapparat-Rückbau; «was keine Fehlfunktion auslöst, kann weg» | ohne Rechtslogik/-daten | ag:12, ru/schichtentrennung:21, sk/auftrag:24, sk/lehren:210, aufraeumen.md:63 | fehlt
-15.8. | Sessionfüllend schneiden; Feature einzeln landen; lebendige Spec; Steuerungs-Deckel | Deckel aufgehoben | sk/auftrag:60, sk/landung:209, sk/bauschritt:71, aufraeumen.md:32 | [[kahlschlag-freigabe-2026-10-10]] (nur Deckel)
+15.8. | Sessionfüllend schneiden; Feature einzeln landen; lebendige Spec; Steuerungs-Deckel | Deckel aufgehoben | sk/auftrag:60, sk/landung:209, sk/bauschritt:71, aufraeumen.md:32 | [[freigaben-und-grenzen]] (nur Deckel)
 16.8. | Stillstands-Anker | | sk/bauschritt:118 | fehlt
 17.8. | «Weg b»: Git-Auto-Deploys aus | | sk/landung/referenz-ci.md:70 | fehlt
 21.8. | Webseiten-Prüfregel mitgeben | | ru/webseiten-pruefung.md:12, sk/auftrag:141 | fehlt
@@ -48,7 +48,7 @@ Datum | Entscheid | Grenze/Geltung | Quelle | Vault
 16.9. | Gruss «a» (pro Besuch), «mehr Grüsse aus allen Sprachregionen» | | S:101 | fehlt
 18.9. | ROADMAP-Deckel nur Warnung | | S:95 | fehlt
 19.9. | «alles durch die warteschlange»; Merkliste | kein Admin-Bypass | sk/landung:19, referenz-ci.md:133, S:68, R:143 | [[freigaben-und-grenzen]]
-20.9. | Streich-Tor, Sperrklinke Steuerungsfläche; Posten-Modell | Tore aufgehoben 10.10. | aufraeumen.md:38, 40, sk/lehren:289 | [[kahlschlag-freigabe-2026-10-10]]
+20.9. | Streich-Tor, Sperrklinke Steuerungsfläche; Posten-Modell | Tore aufgehoben 10.10. | aufraeumen.md:38, 40, sk/lehren:289 | [[freigaben-und-grenzen]]
 21.9. | Impressum/Datenschutz erst vor Live-Gang | | R:155 | [[lexmetrik-nordstern-2026-08-07]]
 22.9. | «Farbe als Fläche: ja» | | DR:262, 740 | [[produkt-und-design-entscheide]]
 22.9. | Richter-Analytik: Ranking/Prognose gesperrt | Filter frei | R:168 | fehlt
