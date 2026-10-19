@@ -109,7 +109,9 @@ Feiertags-/Computus-Verschiebung, Regime-Wechsel (Regimes nie kollabiert).
 - **Trailer:** `Gegenpruefung: bestanden (Opus, <Linsen>) — <Befunde>`,
   Befund-Teil ≥ 15 Zeichen (nie nur «keine», sondern «keine: <Beleg>»), bzw.
   `Gegenpruefung: n/a — reine Prüflogik`. Einzeilig, im letzten Absatz, nur
-  Trailer-Zeilen dort.
+  Trailer-Zeilen dort — **im Quittungs-Commit UND im PR-Body**: der CI-Job
+  `merge-schutz` hat keinen `gh`-Zugang und liest nur die Commits (#1392 rot,
+  15.10.2026); der PR-Body zählt für Hook und Squash.
 
 Kein Aufweichen eines anderen Tors; alte Nachweise sind nicht recyclebar.
 

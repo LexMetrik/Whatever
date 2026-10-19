@@ -16,6 +16,8 @@ import { GesetzFehlSeite } from './FehlSeite';
 import type { LeserFehler, Teilausfall } from './inhalt-zustand';
 import { ebeneAngabe } from './v3/erlassAnsicht';
 import { routenEbene } from '../../lib/normtext/erlassAdresse';
+import { standEtikett } from '../../lib/normtext/international-extern';
+import { pdfHinweisArt, usePdfAnzeige } from './pdfInline';
 
 // ═══ ABSCHNITT · Nicht-Volltext-Leseansichten (§6.6-Split, W2·12-HYGIENE/B24) ═══
 // Reine Präsentationskomponenten (Props rein, §3) — aus GesetzLeserInhalt
@@ -81,6 +83,10 @@ function PdfEmbedAnsicht({ erlass, currency, teilausfall, kopf, internRefs }: {
   // verschwindet mit `onLoad`. Rahmen und Fallback-Link (LM-159-Dedup-Notiz: schon
   // gebaut) bleiben unverändert.
   const [pdfBereit, setPdfBereit] = useState(false);
+  // O-34b: Browser ohne PDF-Viewer feuern `load` nie ⇒ Spinner endlos (./pdfInline).
+  const { anzeige, deckelAbgelaufen } = usePdfAnzeige(pdfBereit);
+  const ladeAnzeigen = !pdfBereit && !deckelAbgelaufen;
+  const hinweisArt = pdfHinweisArt(anzeige, deckelAbgelaufen, pdfBereit);
   return (
     <div className="space-y-5">
       {/* Breadcrumb trägt der Kopf (Inhalts-Kopf bzw. PaneKopf) — kein Inline-Dup.
@@ -128,8 +134,35 @@ function PdfEmbedAnsicht({ erlass, currency, teilausfall, kopf, internRefs }: {
         {/* ⑦ PDF-Rahmen (W2·5d G3a): der iframe-Rahmen nutzt die benannte Struktur-
             Linie (border-rule-struktur) statt der Ad-hoc border-line — konsistent mit
             dem Linien-Kanon (§2.2⑦). Das PDF IST die amtliche Fassung (§7/§8). */}
+        {hinweisArt === 'kein-viewer' ? (
+          // O-34b / §8: dieser Browser zeigt PDF nicht eingebettet an — statt eines
+          // Frames, das nie lädt, der ehrliche Hinweis mit beiden Wegen zum PDF.
+          <div data-pdf-ohne-viewer className="rounded-lg border border-rule-struktur bg-paper-sunken px-4 py-6 text-body-s text-ink-700">
+            <p>Dieser Browser zeigt PDF-Dateien nicht eingebettet an. Das amtliche PDF lässt sich herunterladen (oben) oder in einem neuen Tab öffnen (unten).</p>
+          </div>
+        ) : (
+        <>
         <div className="relative">
-          {!pdfBereit && (
+          {/* O-57 (Gegenprüfung #1370, 15.10.2026): der Hinweis «zu langsam» stand als
+              Block VOR dem Frame — nach dem Zeitdeckel (12 s) schob er den Frame samt
+              Seite um die Hinweishöhe nach unten (späte Layoutverschiebung). Jetzt
+              liegt er als Überlagerung am Kopf des Frames: kein Fluss, keine
+              Verschiebung. Die Live-Region (`role="status"`) ist von Anfang an im DOM
+              und leer; erst ihr Inhalt wird eingefügt — so sagen Screenreader den
+              Hinweis an (ein mit Inhalt frisch eingefügtes `role="status"` wird nicht
+              überall vorgelesen). Der Frame bleibt gemountet (kann noch laden); der
+              Hinweis verschwindet dann mit `pdfBereit`. Die Überlagerung nimmt KEINE Klicks
+              (`pointer-events-none` an der Region, nichts darin schaltet sie wieder ein): sie hat
+              keinen Schliessknopf und deckte sonst die PDF-Werkzeugleiste darunter. Der Hinweis
+              enthält keine Links, bleibt also lesbar (Nachzug Gegenprüfung #1384). */}
+          <div data-pdf-zu-langsam-region role="status" className="pointer-events-none absolute inset-x-3 top-3 z-sticky">
+            {hinweisArt === 'zu-langsam' && (
+              <div data-pdf-zu-langsam className="rounded-lg border border-rule-struktur bg-paper-sunken px-4 py-3 text-body-s text-ink-700">
+                <p>Das PDF erscheint hier nicht (oder noch nicht). Das amtliche PDF lässt sich herunterladen (oben) oder in einem neuen Tab öffnen (unten).</p>
+              </div>
+            )}
+          </div>
+          {ladeAnzeigen && (
             // W3-7: `aria-hidden` ist gefallen — die vorige Fassung verbarg die
             // Ladeauskunft vollständig vor Screenreadern (kein `role="status"`
             // hätte darunter ohnehin gewirkt); `Ladeanzeige` kündigt sie jetzt an.
@@ -142,6 +175,8 @@ function PdfEmbedAnsicht({ erlass, currency, teilausfall, kopf, internRefs }: {
             className="w-full rounded-lg border border-rule-struktur bg-paper-sunken"
             style={{ height: 'min(82vh, 1100px)' }} />
         </div>
+        </>
+        )}
       </div>
       {/* W2·19-GLIEDERUNG/S9 (Bau-Spec §8 T11 «EINE Fläche: Erlass-Übersicht +
           amtlicher Link/PDF-Viewer; keine leeren Gerüste»): dieselbe Übersicht
@@ -194,7 +229,9 @@ function LiveVerweisAnsicht({ erlass, currency, teilausfall }: {
             className="inline-flex items-center gap-1.5 rounded-md border border-brass-400 px-3 py-2 text-body-s font-medium text-brass-700 no-underline hover:border-brass-500 hover:bg-brass-100/40 transition-colors" />
         )}
         {erlass.stand && (
-          <p className="text-micro text-ink-500">Stand der zuletzt erfassten Referenz: <Datum iso={erlass.stand} /></p>
+          <p className="text-micro text-ink-500">
+            {standEtikett(erlass) === 'Erlassen' ? 'Erlassen am' : 'Stand der zuletzt erfassten Referenz:'} <Datum iso={erlass.stand} />
+          </p>
         )}
       </section>
       {/* W2·19-GLIEDERUNG/S9: dieselbe Übersicht wie im pdf-embed-Pfad (s. o.),

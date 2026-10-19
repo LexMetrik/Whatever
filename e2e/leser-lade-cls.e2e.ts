@@ -14,12 +14,20 @@ import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls';
 // Nachher (5 Läufe je Zelle): Entscheid @375 0.0001 · @1366 0.0002 · @1440 0.0002
 // · @1920 0.0001 (sd ≤ 0.0001); Material @375 0.0004 · @1366 0.0003.
 //
-// BEWUSST NICHT GEDECKT: Material @≥1440×900. Dort bleibt ein Rest-CLS
-// (0.019 @1440×900, 0.032–0.078 @1920) — eine ANDERE Quelle: das
-// Verweis-Kontext-Panel («Leitentscheide», `KontextPanel`) wächst nach dem
-// asynchronen Laden von ≈ 200 auf ≈ 1170 px und zieht den Footer in den Fold
-// (gemessen: `section` 201→1173 px, 32 ms nach dem Kopf). Das ist nicht die
-// Ladeanzeige, sondern die Panel-Reserve (W2·27-Fläche, Posten in der Rückgabe).
+// NACHZUG LESER-NAV Paket E (15.10.2026) · Material @≥1440 jetzt GEDECKT. Der
+// Rest-CLS dort (0.019 @1440×900, 0.032 @1920×1000, 0.1333 @2560×1440; je 5 Läufe,
+// sd 0.0000, Preview von origin/main) hatte eine ANDERE Quelle als die Ladeanzeige:
+// das Verweis-Kontext-Panel («Bundesgerichtsentscheide», `KontextPanel`) wächst nach
+// dem asynchronen Laden von ≈ 200 auf ≈ 1170 px und schiebt den Rückweg-Knopf
+// («← Alle Materialien», stand im Fold) und bei hohen Fenstern den Footer aus dem
+// Bild. Fix: der Artikel trägt dieselbe Mindesthöhe wie die Ladeanzeige
+// (`min-h-inhalt-region`, der Footer bleibt stehen) und der Rückweg-Knopf ist
+// `invisible` (Platz bleibt, Shifts unsichtbarer Elemente zählen nicht), solange das
+// Panel `data-kontext-laedt` trägt. Nachher: 0.0001–0.0006 in allen Zellen.
+// Die kurze Zelle (VERN-6008-30, Panel ohne Entscheide) deckt die Gegenrichtung ab:
+// eine feste Reserve am Panel liesse sie nach oben springen.
+// ROT ZU BEKOMMEN: `min-h-inhalt-region group/material` am Artikel und
+// `group-has-[[data-kontext-laedt]]/material:invisible` am Rückweg-Knopf streichen.
 //
 // Beobachter wie `materialien-cls.e2e.ts`: geteilter aus `helpers/cls.ts`,
 // `buffered: true` (zieht die Shifts der ganzen Ladephase nach), eine Sekunde
@@ -50,6 +58,15 @@ import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls';
 // mit Umzug + `pt-5` Layout in 24 Zellen (4 Entscheide/Ansichten × 375/1280/1920 × Bildschirm/
 // Druck, 9281 Elementkästen) identisch zum Stand mit `flow-root`.
 
+// NACHZUG LESER-NAV Paket C (16.10.2026) · O-66 (c): Zelle Material @2560×1440 ergänzt. Sie war
+// in #1386 gemessen (CLS vorher 0.1333, nachher 0.0001), stand aber nicht im Wächter — der
+// grösste Befund des O-53-Fixes hatte keinen Stolperdraht. ROT ZU BEKOMMEN: wie oben
+// (`min-h-inhalt-region group/material` am Artikel und `group-has-[…]:invisible` am Knopf
+// streichen) ⇒ diese Zelle rot (Wert siehe PR-Bericht).
+//
+// O-66 (b): am Ende der Datei der Fall «hängender Abruf» — der Rückweg-Knopf bleibt nicht für
+// immer unsichtbar (Frist `KONTEXT_FRIST_MS` in `pages/MaterialLeser.tsx`).
+
 const LATTE = 0.01;
 // Drosselstufen je Zelle: 1 = ungedrosselt, 4 = `Emulation.setCPUThrottlingRate` 4
 // (stärkere Probe als die 2× der Prüfer-Auflage; Begründung im Kopf).
@@ -59,6 +76,10 @@ const ZELLEN: { name: string; pfad: string; breite: number; hoehe: number }[] = 
   { name: 'Entscheid', pfad: '/rechtsprechung/bger_1B_278_2022', breite: 375, hoehe: 812 },
   { name: 'Entscheid', pfad: '/rechtsprechung/bger_1B_278_2022', breite: 1920, hoehe: 1000 },
   { name: 'Material', pfad: '/materialien/ESTV-MWST-INFO-02', breite: 375, hoehe: 812 },
+  { name: 'Material', pfad: '/materialien/ESTV-MWST-INFO-02', breite: 1440, hoehe: 900 },
+  { name: 'Material', pfad: '/materialien/ESTV-MWST-INFO-02', breite: 1920, hoehe: 1000 },
+  { name: 'Material', pfad: '/materialien/ESTV-MWST-INFO-02', breite: 2560, hoehe: 1440 },
+  { name: 'Material (kurz)', pfad: '/materialien/VERN-6008-30', breite: 1920, hoehe: 1000 },
 ];
 
 for (const z of ZELLEN) {
@@ -86,3 +107,49 @@ for (const z of ZELLEN) {
     });
   }
 }
+
+// ─── O-66 (a): die Lade-Reserve gilt nur am Bildschirm ───────────────────────────────────────
+//
+// `min-h-inhalt-region` (calc(100svh - 8rem)) ist eine Bildschirm-Reserve; im Druck blieb sie als
+// leere Fläche unter dem Inhalt (gemessen 16.10.2026, Material-Leser VERN-6008-30 @1920×1000,
+// print-Emulation: Artikel 872 px bei 629 px Inhalt). Fix: `@media print` in `index.css` setzt
+// `.min-h-inhalt-region` auf `min-height: auto`. Probe: am Bildschirm trägt der Artikel die Reserve,
+// im Druck nicht (die Reserve darf hier also nicht versehentlich überall fehlen).
+// ROT ZU BEKOMMEN: `.min-h-inhalt-region` aus der Druck-Selektorliste (`index.css`, Block
+// «Nichts wird auf den sichtbaren Ausschnitt zugeschnitten») streichen ⇒ `872px` im Druck.
+test('Material-Leser: Lade-Reserve (min-h-inhalt-region) gilt am Bildschirm, nicht im Druck', async ({ page }) => {
+  await page.setViewportSize({ width: 1920, height: 1000 });
+  await page.goto('/materialien/VERN-6008-30');
+  await expect(page.locator('h1').first()).toBeVisible({ timeout: 15000 });
+  const minHoehe = () => page.evaluate(() => {
+    const a = document.querySelector('article.min-h-inhalt-region');
+    return a ? getComputedStyle(a).minHeight : null;
+  });
+  await page.emulateMedia({ media: 'screen' });
+  expect(await minHoehe(), 'Bildschirm: Reserve calc(100svh - 8rem) = 1000 - 128').toBe('872px');
+  await page.emulateMedia({ media: 'print' });
+  expect(await minHoehe(), 'Druck: keine Reserve').toBe('0px');
+});
+
+// ─── O-66 (b): ein hängender Abruf hält den Rückweg-Knopf nicht ewig unsichtbar ─────────────
+//
+// O-53 blendet «← Alle Materialien» aus (`visibility`), solange das Kontext-Panel lädt. Hing der
+// Abruf des Norm-Index (`norm-index-erlasse.json`) — Route hier nie beantwortet —, blieb die Marke
+// `data-kontext-laedt` und mit ihr der Knopf für immer verborgen (gemessen: nach 20 s noch hidden).
+// Jetzt fällt die Unsichtbarkeit nach `KONTEXT_FRIST_MS` (10 s) ab. Probe: davor hidden (der
+// Lade-Schutz bleibt), danach visible, obwohl die Marke steht. ROT ZU BEKOMMEN: in
+// `MaterialLeser.tsx` `kontextFristAbgelaufen` fest `false` ⇒ «sichtbar nach der Frist» rot.
+test('Material-Leser: hängender Abruf ⇒ Rückweg-Knopf nach der Frist sichtbar (Lade-Schutz davor bleibt)', async ({ page }) => {
+  test.setTimeout(60_000);
+  await page.route('**/rechtsprechung/norm-index-erlasse.json', () => { /* bleibt offen */ });
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/materialien/ESTV-MWST-INFO-02');
+  await expect(page.locator('h1').first()).toBeVisible({ timeout: 15000 });
+  const knopf = page.getByRole('link', { name: '← Alle Materialien' });
+  // Die Marke steht (Panel lädt) und der Knopf ist verborgen: `toBeHidden` gilt auch für visibility:hidden.
+  await expect(page.locator('[data-kontext-laedt]')).toHaveCount(1);
+  await expect(knopf).toBeHidden();
+  // Nach der Frist (10 s ab dem Stehen des Materials) sichtbar — bei weiter stehender Marke.
+  await expect(knopf).toBeVisible({ timeout: 15000 });
+  await expect(page.locator('[data-kontext-laedt]')).toHaveCount(1);
+});

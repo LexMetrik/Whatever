@@ -350,7 +350,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
     umhaengPraefix: gliederung.umhaengPraefix, knoten: gliederung.knoten, artIndex,
     refs: { jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef, tocBaumTimer },
   });
-  const internRefs = useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate, erlassKuerzel: erlass?.kuerzel, manifestErlasse: manifest?.erlasse, kanton: erlass?.kanton }); // V-2 · V-3 (Manifest/Kanton = Rohstoff der Kürzel-Karte)
+  const internRefs = useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate, erlassKuerzel: erlass?.kuerzel, manifestErlasse: manifest?.erlasse, kanton: erlass?.kanton, imPane, wurzel }); // V-2 · V-3 (Manifest/Kanton = Rohstoff der Kürzel-Karte)
 
   useLeserSprungSpy({
     ebene: routenSegment, schluessel, eintraege, sektionen, ohneGliederung, istSekundaer, imPane, wurzel,

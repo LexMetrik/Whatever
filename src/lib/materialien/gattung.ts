@@ -22,8 +22,13 @@ export type Gattung = 'materialien' | 'erlaeuterungen';
 
 /** Die Dokumenttypen der kantonalen Gesetzgebung — Vorlagen und Berichte an das
  *  Parlament, also das kantonale Gegenstück zur Botschaft des Bundesrates.
- *  (Wortlaut und Menge unverändert aus `./ratschlaege.ts`, S6 · M-3/B-4.) */
-export const KANTONALE_GESETZGEBUNG: ReadonlySet<DoktypId> = new Set<DoktypId>(['ratschlag', 'gr-bericht', 'gr-initiative']);
+ *  (Wortlaut aus `./ratschlaege.ts`, S6 · M-3/B-4; Menge um `gr-ausgabenbericht` ergänzt, O-73.) */
+export const KANTONALE_GESETZGEBUNG: ReadonlySet<DoktypId> = new Set<DoktypId>(['ratschlag', 'gr-bericht', 'gr-ausgabenbericht', 'gr-initiative']);
+// LESER-NAV O-73 (16.10.2026): `gr-ausgabenbericht` ergänzt. Die BS-Grundmenge
+// (`scripts/materialien/bs-materialien.ts`, `GESCHAEFTSARTEN`) nennt Ratschlag, Bericht und
+// Ausgabenbericht als «die Geschäftsarten, die überhaupt Materialien sind»; `verfahren.ts` führt
+// den Ausgabenbericht in derselben Verfahrensklasse (1010) wie den Ratschlag. Ohne ihn landete ein
+// künftiger Ausgabenbericht (heute 0 Einträge) als Behördenpublikation in «Erläuterungen».
 
 /** Alle Doktypen, die der Leser-Reiter «Materialien» zeigt. */
 const GESETZGEBUNG_DOKTYPEN: ReadonlySet<DoktypId> = new Set<DoktypId>([
@@ -33,6 +38,32 @@ const GESETZGEBUNG_DOKTYPEN: ReadonlySet<DoktypId> = new Set<DoktypId>([
 /** Gattung eines Dokumenttyps: Gesetzgebung → «materialien», sonst «erlaeuterungen». */
 export function gattungVon(doktyp: DoktypId): Gattung {
   return GESETZGEBUNG_DOKTYPEN.has(doktyp) ? 'materialien' : 'erlaeuterungen';
+}
+
+/** Doktypen, die ihrer Art nach Verwaltungsverordnungen im engeren Sinn sind
+ *  (generell-abstrakte Dienstanweisung an die nachgeordneten Behörden): sie
+ *  binden die Verwaltung intern, die Gerichte nicht. Dazu zählen auch die
+ *  MWST-Infos, MWST-Branchen-Infos und Richtlinien: BVGer
+ *  A-6108/2014 vom 22.7.2015 E. 2 («Verwaltungsverordnungen, darunter fallen
+ *  auch Branchen- und Spezialbroschüren der ESTV», entscheidsuche.ch,
+ *  CH_BVGE_001_A-6108-2014_2015-07-22); BGE 142 V 442 E. 5.2 (Gerichte nicht
+ *  gebunden, Berücksichtigung soweit überzeugend). Merkblätter sind AUSGENOMMEN
+ *  (Entscheid Gegenprüfung #1405, M1): das Register führt 8 EDÖB, 2 SECO und 1 ESTV;
+ *  der EDÖB übt sein Amt weisungsunabhängig aus (Art. 43 Abs. 4 DSG), seine Merkblätter
+ *  sind Information an Private, die SECO-Merkblätter ebenso — «binden die Verwaltung
+ *  intern» wäre dort irreführend. Neutral bleiben Berichte
+ *  (Tätigkeitsbericht, gr-bericht …), Information (Mitteilung — das Register
+ *  führt neben zwei EHRA-Praxismitteilungen auch eine ESTV-Mitteilung mit
+ *  Checkliste, nicht durchweg Weisungen), Leitfaden, Anleitung und Checkliste:
+ *  der Hinweis behauptet dort nur, was für jede Behördenpublikation gilt
+ *  (LESER-NAV O-05). */
+const VERWALTUNGSVERORDNUNG: ReadonlySet<DoktypId> = new Set<DoktypId>([
+  'kreisschreiben', 'ks-anhang', 'weisung', 'rundschreiben', 'wegleitung',
+  'mwst-info', 'mwst-branchen-info', 'richtlinie',
+]);
+
+export function istVerwaltungsverordnung(doktyp: DoktypId): boolean {
+  return VERWALTUNGSVERORDNUNG.has(doktyp);
 }
 
 /** Rang-Etikett je Gattung — EINE Quelle für den Hinweis der Einzelseite

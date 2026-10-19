@@ -1,8 +1,11 @@
 import { usePaneKontext } from '../../../components/layout/PaneKontext';
+import { MerkenKnopf } from '../../../components/merkliste/MerkenKnopf';
 import { useKopieren } from '../../../components/useKopieren';
 import { NEUER_TAB } from '../../../lib/benennung';
 import { zitatMitAusweis, heuteIso } from '../../../lib/format';
 import { urlMitHash } from '../../../lib/liveUrlSync';
+import { holeLeserAnsicht } from '../leserOptionen';
+import { permalinkMitLesart } from '../v3/einzelModus';
 
 // ═══ DIE AKTIONEN DES ARTIKELS (Inventar 2.3.10) ═════════════════════════════
 //
@@ -91,9 +94,16 @@ export function ArtikelAktionen({ artikel, basisPfad, zitat, zitatVoll, amtlich,
    *  Halbgeviert («22 a», «36–42», «10. 1») auseinander; ein Leerzeichen im
    *  Permalink bricht zusätzlich die Auto-Verlinkung in Mail und Chat. */
   const ursprung = typeof window !== 'undefined' ? window.location.origin : 'https://lexmetrik.ch';
-  const permalink = urlMitHash(`${ursprung}${basisPfad}`, `art-${artikel}`);
+  const permalinkSchlicht = urlMitHash(`${ursprung}${basisPfad}`, `art-${artikel}`);
 
   const kopiere = (was: 'zitat' | 'link') => {
+    // BG-08 (LESER-NAV): der geteilte Link (NUR «Link», nicht das Zitat im Schriftsatz) trägt im
+    // Einzelmodus des PRIMÄREN Panes die Lesart. Das sekundäre Pane zeigt immer den ganzen Erlass;
+    // `window.location` gehört dort dem Primären. Zum KLICK gelesen: die Lesart kann wechseln,
+    // ohne dass dieser Artikel neu rendert.
+    const permalink = was === 'link' && !istSekundaer && typeof window !== 'undefined'
+      ? permalinkMitLesart(permalinkSchlicht, window.location.search, holeLeserAnsicht())
+      : permalinkSchlicht;
     // B-6 (QS-BASIS): die Zitat-Kopie trägt den Stand-Ausweis (§7 a–d) —
     // `zitatVoll` liefert bereits «… (Stand …)», der Baustein ergänzt
     // Abrufdatum + Permalink (kein doppeltes Standdatum, §5). W2·10-UI-NAV/R3:
@@ -128,6 +138,9 @@ export function ArtikelAktionen({ artikel, basisPfad, zitat, zitatVoll, amtlich,
       <button type="button" onClick={() => kopiere('link')}
         className={`lc-btn-mini ${k}`}
         aria-label="Permalink kopieren">{kopiert === 'link' ? '✓' : 'Link'}</button>
+      {/* LESER-NAV R-2: «Merken» legt die Stelle in die lokale Merkliste (`lib/merkliste`). */}
+      {trenner}
+      <MerkenKnopf pfad={basisPfad} anker={`art-${artikel}`} titel={zitat} klasse={k} />
       {/* EID-2: Outbound zur amtlichen Fassung AN DIESER STELLE (ELI-Form,
           target/rel wie die übrigen amtlichen Links, §12.4). Ä110: EINE
           Schreibung für EIN Ziel — sichtbarer Text = aria-label = title. */}

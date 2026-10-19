@@ -7,7 +7,7 @@ import type { NormSnapshot, NormSnapshotDatei } from './typen';
 import type { KantonSystematik } from './systematik';
 import { randtitelKnoten } from './darstellung';
 import { normtextDateiUrl } from './dateiUrl';
-import { ladeJson, ladeJsonStreng, pruefeFelder } from '../ladeJson';
+import { IST_SPA_RUECKFALL, ladeJson, ladeJsonStreng, pruefeFelder } from '../ladeJson';
 
 const MANIFEST_PRUEFER = pruefeFelder('normtext/register.json', { erlasse: 'array' });
 /** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
@@ -18,9 +18,6 @@ export { DATEI_PRUEFER as NORMTEXT_DATEI_PRUEFER };
 const STRUKTUR_PRUEFER = pruefeFelder('normtext/struktur/<Ebene>/<Erlass>.json', {});
 /** Für den Voll-/Stichprobenlauf gegen public/ (src/tests/ladeJson-public.test.ts). */
 export { STRUKTUR_PRUEFER as NORMTEXT_STRUKTUR_PRUEFER };
-/** Die Struktur-Datei fehlt, wenn `vite dev`/`vite preview` statt eines 404 die index.html (200 text/html) liefern. */
-const IST_HTML = (res: Response) => /\btext\/html\b/i.test(res.headers?.get?.('content-type') ?? '');
-
 // ── Manifest (einmal, gecacht als laufende Promise; Fehlschläge nicht, s. u.) ─
 let manifestPromise: Promise<BrowseManifest> | null = null;
 
@@ -285,7 +282,7 @@ function ladeStrukturDocStreng(ebene: string, key: string): Promise<StrukturDoc 
     // «Datei fehlt» wie ein 404 — nicht «Ausfall» (BG-04-Nachzug, Gegenprüfung
     // PR #1282: falsche Ausfallzeile bei PRHG/DSGVO/NYUE lokal). Mocks ohne
     // Header-Objekt gelten als JSON.
-    p = ladeJson<StrukturDoc>(url, STRUKTUR_PRUEFER, { alsFehlend: IST_HTML });
+    p = ladeJson<StrukturDoc>(url, STRUKTUR_PRUEFER, { alsFehlend: IST_SPA_RUECKFALL });
     p.catch(() => {
       if (strukturCache.get(url) === p) strukturCache.delete(url);
     });

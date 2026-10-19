@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useEffect, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { tabSchluessel } from '../../lib/tabs';
 import { kanonisierePfad } from '../../lib/normtext/erlassAdresse';
 import { lokalSpeicher } from '../../lib/sichererSpeicher';
@@ -59,8 +59,25 @@ function saeubere(arr: unknown[]): string[] {
   return sauber;
 }
 
-function ladePanes(): string[] {
-  if (typeof window === 'undefined') return [];
+/** Gespeicherte Eigen-Ordnung (leer bei fehlendem/defektem Eintrag). */
+function ladeGespeicherte(): string[] {
+  const roh = lokalSpeicher.lies(PANES_KEY);
+  if (!roh) return [];
+  const arr = JSON.parse(roh);
+  return Array.isArray(arr) ? saeubere(arr) : [];
+}
+
+interface PaneStart {
+  panes: string[];
+  /** true, wenn ein geteilter `?p=`-Link eine nicht leere gespeicherte Eigen-Ordnung
+   *  überdeckt: solange diese Seite offen ist, schreibt weder der Link-Satz noch eine
+   *  Änderung daran in den Speicher (LESER-NAV, FB O-27 BG-06 — sonst gingen die
+   *  eigenen Panes durch Schliessen/«Daneben öffnen» im Link-Kontext verloren). */
+  eigenSchuetzen: boolean;
+}
+
+function ladePanes(): PaneStart {
+  if (typeof window === 'undefined') return { panes: [], eigenSchuetzen: false };
   try {
     // B-5: ein geteilter Layout-Link `?p=pfad||pfad` gewinnt über localStorage —
     // so reproduziert das Öffnen eines geteilten Links den Pane-Satz.
@@ -69,14 +86,14 @@ function ladePanes(): string[] {
       // URLSearchParams.get hat bereits dekodiert → NICHT erneut decodeURIComponent.
       const seed = saeubere(geteilt.split('||'));
       // Defektes/leeres ?p= darf gespeicherte Panes NICHT löschen → nur bei Treffer gewinnen.
-      if (seed.length) return seed;
+      if (seed.length) {
+        let eigen: string[] = [];
+        try { eigen = ladeGespeicherte(); } catch { /* defekter Eintrag: nichts zu schützen */ }
+        return { panes: seed, eigenSchuetzen: eigen.length > 0 };
+      }
     }
-    const roh = lokalSpeicher.lies(PANES_KEY);
-    if (!roh) return [];
-    const arr = JSON.parse(roh);
-    if (!Array.isArray(arr)) return [];
-    return saeubere(arr);
-  } catch { return []; }
+    return { panes: ladeGespeicherte(), eigenSchuetzen: false };
+  } catch { return { panes: [], eigenSchuetzen: false }; }
 }
 
 /** Baut den teilbaren Layout-Permalink (aktuelle URL + ?p=sekundär-Pfade). */
@@ -103,24 +120,82 @@ export interface PaneLayout {
   ersetze: (i: number, pfad: string) => void;
 }
 
-export function usePaneLayout(): PaneLayout {
-  const [sekundaer, setSekundaer] = useState<string[]>(ladePanes);
+// ── O-27 (LESER-NAV, 15.10.2026) · EIN LINK-LAYOUT, DAS NICHT BLEIBT, SAGT ES ──
+// Überdeckt ein geteilter `?p=`-Link die gespeicherte Eigen-Ordnung (`eigenSchuetzen`), schreibt nichts
+// in den Speicher. Wer in diesem Tab das Link-Layout selbst umbaut, sah bis hierher nichts davon:
+// der Reload brachte die Eigen-Ordnung zurück, das neu aufgebaute Layout war weg (§8). Die kleinste
+// ehrliche Lösung ist die Auskunft in dem Moment, in dem es zählt — nicht ein Speichern: das hätte
+// genau den Datenverlust von BG-06 wieder geöffnet (Link-Layout überschriebe die eigenen Panes).
+// Der Hinweis steht kurz da (`HINWEIS_MS`) und kommt bei jeder weiteren Änderung wieder; die Leiste
+// (`Reiterleiste`) zeigt ihn, Shell und Hook-Aufrufer bleiben unberührt.
+const HINWEIS_MS = 8000;
+let hinweisSichtbar = false;
+let hinweisTimer: ReturnType<typeof setTimeout> | undefined;
+const hinweisHoerer = new Set<() => void>();
+function setzeHinweis(an: boolean): void {
+  if (hinweisSichtbar === an) return;
+  hinweisSichtbar = an;
+  hinweisHoerer.forEach((h) => h());
+}
+function zeigeLayoutHinweis(): void {
+  clearTimeout(hinweisTimer);
+  setzeHinweis(true);
+  hinweisTimer = setTimeout(() => setzeHinweis(false), HINWEIS_MS);
+}
+/** Gilt gerade der Hinweis «dieses Layout wird nicht gespeichert»? */
+export function layoutHinweisSichtbar(): boolean { return hinweisSichtbar; }
+export function useLayoutHinweis(): boolean {
+  return useSyncExternalStore(
+    (cb) => { hinweisHoerer.add(cb); return () => { hinweisHoerer.delete(cb); }; },
+    layoutHinweisSichtbar,
+    () => false,
+  );
+}
+
+/**
+ * @param ersetzeAdresse O-69b: wie der Seed `?p=` aus der Adresse genommen wird. Gesetzt (Shell: `navigate(…,
+ *   {replace:true})`) läuft es über den Router; ungesetzt (Tests ohne Router) über `history.replaceState`.
+ */
+export function usePaneLayout(ersetzeAdresse?: (ziel: string) => void): PaneLayout {
+  const [start] = useState(ladePanes);
+  const [sekundaer, setSekundaer] = useState<string[]>(start.panes);
+  // Eigen-Ordnung überdeckt (siehe PaneStart): der Speicher bleibt für die ganze
+  // Lebensdauer dieser Seite unberührt. Das Layout des Links (samt Änderungen daran)
+  // gilt nur für diese Sitzung; ein Reload bringt die Eigen-Ordnung zurück. Den Link-
+  // Kontext «verlassen» kann man nicht erkennen — darum nie schreiben statt raten.
+  const schutz = useRef(start.eigenSchuetzen);
 
   // B-5: ?p= war nur Seed (geteilter Link) → nach dem Übernehmen aus der URL
   // entfernen, damit ein Reload den dann lokalen Zustand nutzt (localStorage),
   // nicht erneut den geteilten Satz aufzwingt. Einmalig.
+  //
+  // O-69b (16.10.2026): das ging bis hierher AM ROUTER VORBEI (`history.replaceState`). GEMESSEN (Dev-
+  // Server, headless Chromium 1600×900, visibilityState visible, `/gesetze/bund/ZGB?p=%2Fgesetze%2Fbund%2FOR#art-5`):
+  // die Adressleiste zeigte `/gesetze/bund/ZGB#art-5`, `useLocation()` aber weiter `?p=…`; der Reiter
+  // (`lexmetrik-tabs`) speicherte `/gesetze/bund/ZGB?p=%2Fgesetze%2Fbund%2FOR#art-5`, und «Adresse kopieren»
+  // gab diesen ALTEN Layout-Link heraus, auch nach Umbau des Layouts. Mit `ersetzeAdresse` (Router,
+  // `replace`) sieht jede Quelle dieselbe Adresse. Der Ref hält die Funktion aus den Deps: der Effekt
+  // läuft einmal (Start), nicht bei jeder neuen Navigate-Identität.
+  const ersetzeRef = useRef(ersetzeAdresse);
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const u = new URL(window.location.href);
     if (u.searchParams.has('p')) {
       u.searchParams.delete('p');
-      window.history.replaceState(window.history.state, '', u.pathname + u.search + u.hash);
+      const ziel = u.pathname + u.search + u.hash;
+      if (ersetzeRef.current) ersetzeRef.current(ziel);
+      else window.history.replaceState(window.history.state, '', ziel);
     }
   }, []);
 
   useEffect(() => {
+    if (schutz.current) {
+      // Ein Vergleich mit dem Start statt eines «erster Lauf»-Merkers: der Effekt läuft im StrictMode doppelt.
+      if (JSON.stringify(sekundaer) !== JSON.stringify(start.panes)) zeigeLayoutHinweis();
+      return;
+    }
     lokalSpeicher.schreib(PANES_KEY, JSON.stringify(sekundaer)); // gesperrt → nur für die Sitzung
-  }, [sekundaer]);
+  }, [sekundaer, start.panes]);
 
   const oeffneDaneben = useCallback((roh: string) => {
     // Kanonisiert wie beim Einlesen (Mangel 3): auch ein zur Laufzeit

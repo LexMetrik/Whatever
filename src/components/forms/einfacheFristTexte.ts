@@ -13,7 +13,9 @@ import type { Kanton } from '../../types/legal';
 // Beide Tabellen sind unverändert übernommen, Kommentare inklusive; keine
 // Rechtslogik (§3), reine Beschriftung.
 
-export type Ferien = 'keine' | 'zpo' | 'schkg' | 'vwvg' | 'bgg';
+// RV-37/RV-49: 'stpo' ist ein eigenes Regime (Art. 89 Abs. 2 / 90 Abs. 2 StPO) — vorher lief es unter 'keine'
+// und bekam deshalb den StPO-Hinweis auch bei OR-Fristen. Gleiche Werte wie SchnellRegime (lib/fristenSchnellrechner.ts).
+export type Ferien = 'keine' | 'stpo' | 'zpo' | 'schkg' | 'vwvg' | 'bgg';
 
 // Live-Brücke des Tagerechners (Auftrag David 1.9.2026 «der Rechenweg
 // aktualisiert sich nicht automatisch»): der einfache Rechner meldet seine
@@ -51,6 +53,7 @@ export const FERIEN_OPTIONEN: { code: Ferien; label: string; sub: string }[] = [
   // Fristengesetz (SR 173.110.3, eidg. Recht) — bei reinen Vertragsfristen
   // nicht zwingend; der Rechenweg nennt den Verschiebegrund.
   { code: 'keine', label: 'Keine Ferien', sub: 'Vertrags-/Gesetzesfrist (Art. 77/78 OR) – Verschiebung bei Sa/So/Feiertag (Sa nach Fristengesetz; bei reinen Vertragsfristen nicht zwingend – im Zweifel vorher handeln)' },
+  { code: 'stpo', label: 'Strafverfahren (StPO)', sub: 'Art. 89 Abs. 2 StPO – keine Gerichtsferien; Art. 90 StPO – Beginn am Folgetag, Ende am Sa/So/anerkannten Feiertag → nächster Werktag (Feiertage nach dem Recht des Kantons der Partei oder ihres Rechtsbeistands)' },
   { code: 'zpo', label: 'Gerichtsferien (ZPO)', sub: 'Stillstand nach Art. 145 ZPO – Annahme: ordentliches Verfahren, gesetzliche Frist' },
   // Bug-Check §9 (fachliche Lupe, MITTEL): präzise Art.-63-Kurzform —
   // dritter TAG NACH Ferienende, Sa/So/Feiertage nicht mitgezählt.
@@ -72,7 +75,8 @@ export const FERIEN_OPTIONEN: { code: Ferien; label: string; sub: string }[] = [
 // verweist auf Art. 31 SchKG i.V.m. Art. 142 Abs. 3 ZPO, die Anknüpfung beim
 // Betreibungsamt ist nicht Gegenstand von RL-07. Reine Beschriftung (§3).
 const KANTON_ANKNUEPFUNG: Record<Ferien, string> = {
-  keine: 'Erfüllungsort; StPO: Wohnsitz/Sitz der Partei oder ihres Rechtsbeistands',
+  keine: 'Erfüllungsort',
+  stpo: 'Wohnsitz/Sitz der Partei oder ihres Rechtsbeistands',
   zpo: 'Gerichtsort',
   schkg: '',
   vwvg: 'Wohnsitz/Sitz der Partei oder ihrer Vertretung',

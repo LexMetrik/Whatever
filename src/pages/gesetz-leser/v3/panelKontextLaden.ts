@@ -41,6 +41,9 @@ export interface Geladen<T> {
    *  der Griff stösst den Effekt nur noch einmal an. Fehlt er, gibt es keinen
    *  Wiederholungsweg (Tests, reine Anzeige). */
   erneut?: () => void;
+  /** LESER-NAV O-60: die Lade-Funktion hat GEWORFEN (Abruf gescheitert). Dann ist `wert` `null` wie
+   *  bei «kein Shard» — dieses Flag trennt beides (404 ⇒ `fertig`, kein `fehler`). */
+  fehler?: boolean;
   /** W2·27-BUND-FERTIG (30.9.2026, Befund Zweitprüfung): bei `wert: null` der
    *  Teil, der OHNE die gescheiterte Quelle vorliegt (Bundle-Daten) und darum
    *  sichtbar bleibt — die Fläche zeigt ihn samt Fehlerzeile («unvollständig»),
@@ -59,17 +62,22 @@ const NICHT_FERTIG = { wert: null, fertig: false } as const;
  * jedem Render.
  */
 function useNachladen<T>(erlassKey: string | undefined, laden: boolean, lade: (key: string) => Promise<T | null>): Geladen<T> {
-  const [stand, setStand] = useState<{ key: string; wert: T | null; versuch: number } | null>(null);
+  const [stand, setStand] = useState<{ key: string; wert: T | null; versuch: number; fehler: boolean } | null>(null);
   const [versuch, setVersuch] = useState(0);
   useEffect(() => {
     if (!laden || !erlassKey) return;
     let lebt = true;
-    void lade(erlassKey).then((w) => { if (lebt) setStand({ key: erlassKey, wert: w, versuch }); });
+    // O-60: ein Wurf der Lade-Funktion ist ein gescheiterter Abruf (`fehler`), nicht «kein Shard»
+    // und nicht «lädt ewig» (ohne Fänger blieb `fertig` für immer `false`).
+    void lade(erlassKey).then(
+      (w) => { if (lebt) setStand({ key: erlassKey, wert: w, versuch, fehler: false }); },
+      () => { if (lebt) setStand({ key: erlassKey, wert: null, versuch, fehler: true }); },
+    );
     return () => { lebt = false; };
   }, [erlassKey, laden, lade, versuch]);
   const erneut = useCallback(() => setVersuch((v) => v + 1), []);
   if (!erlassKey || stand?.key !== erlassKey || stand.versuch !== versuch) return NICHT_FERTIG;
-  return { wert: stand.wert, fertig: true, erneut };
+  return { wert: stand.wert, fertig: true, erneut, ...(stand.fehler ? { fehler: true } : {}) };
 }
 
 const ladeRevisionen = (key: string) => revisionenFuerNorm([key]);
@@ -82,9 +90,9 @@ export function useRevisionen(erlassKey: string | undefined, laden: boolean): Ge
 // Derselbe Lade-/Gate-Rhythmus wie `useRevisionen` oben, andere Quelle: der
 // erlass-lokale Revisions-Shard (`ladeRevisionShard`, seit V1c bestandsfest,
 // bisher nur vom Ist-KontextPanel gemountet). `null` = Erlass ohne
-// Revisions-Beleg (kein Fehler, §8 — `ladeRevisionShard` unterscheidet das
-// bereits vom Fetch-Fehler, der dort ebenfalls `null` liefert und dafür den
-// Promise-Cache NICHT setzt, also beim nächsten Aufruf erneut versucht).
+// Revisions-Beleg (kein Fehler, §8). Ein Fetch-Fehler WIRFT seit LESER-NAV O-60
+// (16.10.2026) und setzt den Promise-Cache nicht; `useNachladen` fängt den Wurf
+// und meldet `fehler`, der nächste Aufruf versucht erneut.
 export function useArtikelRevisionShard(erlassKey: string | undefined, laden: boolean): Geladen<RevisionShard | null> {
   return useNachladen(erlassKey, laden, ladeRevisionShard);
 }

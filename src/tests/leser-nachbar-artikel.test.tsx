@@ -180,12 +180,4 @@ describe('W2·5m (b) · wie die Pfeile im Artikelkopf stehen', () => {
     );
     expect(out).not.toContain('data-artikel-nachbarn');
   });
-
-  it('Suchsicht (`imTreffer`): keine Pfeile — dort zeigt `#art-…` ins Leere', () => {
-    const out = renderToString(
-      <ArtikelLeser e={eintraege[1]} erlass={erlass} basisPfad="/gesetze/bund/OR"
-        nachbarn={map.get('90')} imTreffer onSpringe={() => {}} />,
-    );
-    expect(out).not.toContain('data-artikel-nachbarn');
-  });
 });

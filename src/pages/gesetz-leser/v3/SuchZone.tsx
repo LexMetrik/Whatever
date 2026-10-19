@@ -84,7 +84,7 @@ export const SUCH_H_AKTIV = '4.25rem';
 const SCHRITT = 'relative inline-flex h-5 w-5 items-center justify-center border border-line bg-paper leading-none text-ink-900 transition-colors lc-hover-flaeche after:absolute after:left-1/2 after:top-1/2 after:h-[var(--tap-ziel)] after:w-[var(--tap-ziel)] after:-translate-x-1/2 after:-translate-y-1/2';
 
 export function SuchZone({
-  suchFeld, sucheAktiv, bestimmungen, fundstellen, bestimmungsWort, onListe,
+  suchFeld, sucheAktiv, bestimmungen, ueberschriften, fundstellen, bestimmungsWort, onListe,
   onVor, onZurueck, listeSteht, markenSchalter,
 }: {
   /** Das Such-/Sprungfeld. Oberstes Element — das ist die ganze Zusage (Ä19).
@@ -99,6 +99,10 @@ export function SuchZone({
   sucheAktiv: boolean;
   /** Getroffene Bestimmungen (Artikel bzw. Paragraphen). */
   bestimmungen: number;
+  /** Köpfe (Gliederungstitel, geteilte Randtitel) mit Treffer — O-36 b: ein Kopf-Treffer
+   *  steht unter dem ersten Artikel seines Teilbaums, der selbst nicht treffen muss; er
+   *  zählt darum nie als «Artikel», sondern für sich. */
+  ueberschriften: number;
   /** Fundstellen darin — dieselben Zahlen wie im Kopf der Trefferliste (§5). */
   fundstellen: number;
   /** Zähl-Substantiv aus dem Datenmodell (Ä23) — nie ein Bund-Vorgabewert.
@@ -190,7 +194,7 @@ export function SuchZone({
         // rechts der Schritt durch die Fundstellen. Der Zähler bleibt ein
         // eigener Knopf (er hat sein eigenes Ziel); die zwei Griffe stehen
         // NEBEN ihm statt darin, weil ein Knopf im Knopf kein Knopf ist.
-        <div className="flex min-h-5 w-full items-center gap-1">
+        <div className="@container/zaehl flex min-h-5 w-full items-center gap-1">
           {/* ── S1 (Sichtprüfung 21.9.2026) · DIE ZEILE SCHRIEB SICH SELBST ZU ──
               GEMESSEN @390 (hell, OR/«Kündigung», Liste mit ↵ geschlossen):
               die Zeile hat 350 px; der Zähler-Knopf bekam als `flex-1` davon
@@ -218,14 +222,64 @@ export function SuchZone({
               zweite Zeile verstellte den Sprung-Offset jedes Ankers (LM-003). */}
           <button type="button" data-v3-treffer-weg onClick={onListe}
             className="flex min-w-0 flex-1 items-center gap-1 overflow-hidden whitespace-nowrap text-left text-micro text-ink-600 transition-colors hover:text-ink-900">
-            <span className="num">{bestimmungen}</span>
-            <span>{zaehlform(bestimmungen, bestimmungsWort)}</span>
-            <span aria-hidden className="text-ink-300">·</span>
-            <span className="num">{fundstellen}</span>
-            <span>{fundstellen === 1 ? 'Fundstelle' : 'Fundstellen'}</span>
+            {/* ── O-36 b · NACHZUG (15.10.2026) · WAS ZUERST WEICHT, WENN ES ENG WIRD ──
+                «M Artikel · K Überschriften · N Fundstellen» braucht @390 274 px in
+                216 px Kasten (OR «Kündigung»; vor dem dritten Segment 164 px). Die
+                Fundstellen-Zahl ist die Kernauskunft und bleibt IMMER stehen:
+                (1) «K Überschriften» steht erst, wo die Zeile 31 rem (496 px) breit
+                    ist — mit dem langen «Treffer anzeigen →» gemessen reicht das;
+                    darunter fehlt es im Bild, nicht im zugänglichen Namen des Knopfs,
+                    und der Listenkopf nennt es immer. Die Schwelle hängt an der ZEILE
+                    (`@container/zaehl`), nicht am Fenster: dieselbe Zeile steht auch in
+                    schmalen Panes auf breitem Schirm.
+                    NACHZUG (WCAG 2.5.3 «Beschriftung im Namen», Auflage der Prüfung
+                    von #1383): das Segment steht ZWEIMAL im DOM, immer nur eines
+                    davon im Namen. Breit: sichtbar an seiner Stelle, der Name liest
+                    «69 Artikel 28 Überschriften 143 Fundstellen» wie das Bild. Schmal:
+                    `display:none` an dieser Stelle und ein `sr-only`-Segment HINTER
+                    den Fundstellen — die sichtbare Beschriftung «69 Artikel · 143
+                    Fundstellen» steht so am Stück im Namen («69 Artikel 143
+                    Fundstellen 28 Überschriften»), statt dass «28 Überschriften»
+                    mitten hineinläuft. Ein einziges Segment mit CSS-`order` ginge
+                    nur schmal auf: breit läse der Name dann gegen die Bildfolge.
+                (2) Reicht es trotzdem nicht (@280/@320, auch 4-stellige Zahlen), gibt
+                    die vordere Gruppe nach und wird beschnitten; die Gruppe der
+                    Fundstellen (`shrink-0`) nie. Vorher schnitt der Knopf am rechten
+                    Ende — dort stand zuletzt die Fundstellen-Zahl.
+                (3) Unter 16 rem Zeilenbreite bleibt von «Liste →» der Pfeil.
+                GEMESSEN 15.10.2026 (OR «Kündigung» und «Vertrag», Dev-Server,
+                Chromium): ohne (1)–(3) @390 274 px Inhalt in 216 px Kasten, @280
+                Fundstellen-Zahl am rechten Rand abgeschnitten; mit ihnen @280/@320/
+                @360/@390 Inhalt = Kasten (106/146/186/216 px), Zahl überall ganz. */}
+            <span className="flex min-w-0 shrink items-center gap-1 overflow-hidden">
+              {(bestimmungen > 0 || ueberschriften === 0) && (
+                <>
+                  <span className="num">{bestimmungen}</span>
+                  <span>{zaehlform(bestimmungen, bestimmungsWort)}</span>
+                  <span aria-hidden className="text-ink-300">·</span>
+                </>
+              )}
+              {ueberschriften > 0 && (
+                <span data-v3-treffer-ueberschriften className="hidden items-center gap-1 @[31rem]/zaehl:flex">
+                  <span className="num">{ueberschriften}</span>
+                  <span>{ueberschriften === 1 ? 'Überschrift' : 'Überschriften'}</span>
+                  <span aria-hidden className="text-ink-300">·</span>
+                </span>
+              )}
+            </span>
+            <span data-v3-treffer-fundstellen className="flex shrink-0 items-center gap-1">
+              <span className="num">{fundstellen}</span>
+              <span>{fundstellen === 1 ? 'Fundstelle' : 'Fundstellen'}</span>
+            </span>
+            {ueberschriften > 0 && (
+              <span data-v3-treffer-ueberschriften-sr className="sr-only flex items-center gap-1 @[31rem]/zaehl:hidden">
+                <span className="num">{ueberschriften}</span>
+                <span>{ueberschriften === 1 ? 'Überschrift' : 'Überschriften'}</span>
+              </span>
+            )}
             <span aria-hidden className="ml-auto shrink-0 truncate text-brass-700">
               <span className="hidden sm:inline">Treffer anzeigen</span>
-              <span className="sm:hidden">Liste</span> →
+              <span className="sm:hidden"><span className="hidden @[16rem]/zaehl:inline">Liste</span></span> →
             </span>
           </button>
           {fundstellen > 0 && markenSchalter}

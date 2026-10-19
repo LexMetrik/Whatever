@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { allgemeineFristErgebnis, berechneAllgemeineFrist, STPO_FRIST_HINWEIS, type Einheit } from '../../lib/allgemeineFrist';
+import { allgemeineFristErgebnis, berechneAllgemeineFrist, type Einheit } from '../../lib/allgemeineFrist';
+import { feiertagsKontextFuer, schkgFerienzustellungHinweis } from '../../lib/fristenSchnellrechner';
 import { berechneFrist } from '../../lib/zpoFristen';
 import { berechneSchkgFrist } from '../../lib/schkgFristen';
 import { berechneBggVwvgFrist, bvAusnahmenSatz, bvZustellfiktionSatz } from '../../lib/bggVwvgFristen';
@@ -48,23 +49,25 @@ function stillstandFenster(endeISO: string): { vonISO: string; bisISO: string }[
 // «keine Ferien» (Auftrag David: Kalender immer ersichtlich). null bei Fehleingabe.
 function baueMarkierung(start: string, laenge: number, einheit: Einheit, ferien: Ferien, kanton: Kanton): FristMarkierung | null {
   try {
-    if (ferien === 'keine') {
-      const r = berechneAllgemeineFrist({ start, laenge, einheit, wochenendeVerschieben: true, feiertageVerschieben: true, kanton });
-      return { startISO: r.startISO, endeISO: r.endDatumISO, fristbeginnISO: r.fristbeginnISO, verschiebeGruende: r.verschoben ? r.verschiebeGruende : undefined };
+    // RV-53: der Kalender markiert arbeitsfreie Tage im Kontext der rechnenden Engine (lib).
+    const feiertagsKontext = feiertagsKontextFuer(ferien);
+    if (ferien === 'keine' || ferien === 'stpo') {
+      const r = berechneAllgemeineFrist({ start, laenge, einheit, wochenendeVerschieben: true, feiertageVerschieben: true, kanton, ...(ferien === 'stpo' ? { kontext: 'stpo' as const } : {}) });
+      return { startISO: r.startISO, endeISO: r.endDatumISO, fristbeginnISO: r.fristbeginnISO, verschiebeGruende: r.verschoben ? r.verschiebeGruende : undefined, feiertagsKontext };
     }
     if (ferien === 'zpo') {
       const r = berechneFrist({ ereignis: start, einheit, laenge, verfahren: 'ordentlich', kanton, fristnatur: 'gesetzlich' });
       // ZPO-Gerichtsferien (Art. 145): immer markieren — die Perioden gelten unabhängig
       // davon, ob diese konkrete Frist verschoben wurde (Sichtbarkeit, Auftrag David).
-      return { startISO: start, endeISO: r.diesAdQuemISO, hinweis: r.stillstandAktiv ? 'Stillstand (Art. 145 ZPO) berücksichtigt' : undefined, stillstand: stillstandFenster(r.diesAdQuemISO) };
+      return { startISO: start, endeISO: r.diesAdQuemISO, hinweis: r.stillstandAktiv ? 'Stillstand (Art. 145 ZPO) berücksichtigt' : undefined, stillstand: stillstandFenster(r.diesAdQuemISO), feiertagsKontext };
     }
     if (ferien === 'vwvg' || ferien === 'bgg') {
       const r = berechneBggVwvgFrist({ regime: ferien, ereignis: start, einheit, laenge, kanton });
       // VwVG/BGG-Stillstand gilt NUR für nach Tagen bestimmte Fristen → nur dann markieren.
-      return { startISO: start, endeISO: r.diesAdQuemISO, hinweis: r.stillstandAktiv ? `Stillstand (${ferien === 'vwvg' ? 'Art. 22a VwVG' : 'Art. 46 BGG'}) berücksichtigt` : undefined, stillstand: r.stillstandAktiv ? stillstandFenster(r.diesAdQuemISO) : undefined };
+      return { startISO: start, endeISO: r.diesAdQuemISO, hinweis: r.stillstandAktiv ? `Stillstand (${ferien === 'vwvg' ? 'Art. 22a VwVG' : 'Art. 46 BGG'}) berücksichtigt` : undefined, stillstand: r.stillstandAktiv ? stillstandFenster(r.diesAdQuemISO) : undefined, feiertagsKontext };
     }
     const r = berechneSchkgFrist({ ereignis: start, einheit: einheit as 'tage' | 'monate' | 'jahre', laenge, modus: 'schkg_betreibungsferien', fristnatur: 'frist', kanton });
-    return { startISO: start, endeISO: r.diesAdQuemISO };
+    return { startISO: start, endeISO: r.diesAdQuemISO, feiertagsKontext };
   } catch {
     return null;
   }
@@ -139,22 +142,22 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
   let fehler = '';
   if (gueltig && ferien !== null) {
     try {
-      if (ferien === 'keine') {
+      if (ferien === 'keine' || ferien === 'stpo') {
         // `allgemeineFristErgebnis` ist die Hülle derselben Engine (ruft
         // `berechneAllgemeineFrist` mit derselben Eingabe, `resultat` = dessen
         // Rückgabe) und trägt zusätzlich die Normverweise.
+        // RV-37/RV-49: 'stpo' rechnet im StPO-Kontext (Art. 90 Abs. 2 StPO) und trägt den
+        // StPO-Zusatz aus der Engine; 'keine' (OR) bleibt ohne StPO-Text im Standard-Kontext.
         const erg = allgemeineFristErgebnis({
           start, laenge, einheit: einheitEffektiv,
           wochenendeVerschieben: true, feiertageVerschieben: true, kanton,
+          ...(ferien === 'stpo' ? { kontext: 'stpo' as const } : {}),
         });
         const r = erg.resultat;
         normen = erg.normverweise.map((n) => n.artikel);
         ende = `${r.endWochentag}, ${r.endDatum}`;
         endeZusatz = r.verschoben ? `verschoben: ${r.verschiebeGruende.join(' · ')}` : '';
-        // RL-07/Q8-02: «Keine Ferien» ist auch der empfohlene StPO-Pfad (Hinweis
-        // unter der Ferien-Wahl) — der Grundtext schickt gerichtliche Fristen zum
-        // ZPO-Rechner, darum hier der StPO-Zusatz (Art. 89 Abs. 2 / 90 Abs. 2 StPO).
-        zeilen = [...r.hinweise, STPO_FRIST_HINWEIS];
+        zeilen = [...r.hinweise];
       } else if (ferien === 'zpo') {
         const r = berechneFrist({
           ereignis: start, einheit: einheitEffektiv, laenge,
@@ -179,7 +182,9 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
           modus: 'schkg_betreibungsferien', fristnatur: 'frist', kanton,
         });
         ende = r.diesAdQuem;
-        zeilen = [...r.annahmen, ...r.warnungen];
+        // RV-52: die Ferienzustellung (Auslöser) kennt dieser Rechner nicht — Offenlegung statt Schweigen.
+        const ferienZustellung = schkgFerienzustellungHinweis(start);
+        zeilen = [...r.annahmen, ...r.warnungen, ...(ferienZustellung ? [ferienZustellung] : [])];
         normen = r.normverweise.map((n) => n.artikel);
       }
     } catch {
@@ -433,7 +438,7 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
           </div>
           <p className="text-micro text-ink-500 max-w-kleintext">
             Strafprozessuale Fristen kennen KEINE Gerichtsferien (Art. 89 Abs. 2 StPO) –
-            «Keine Ferien» wählen; als Kanton den Wohnsitz/Sitz der Partei oder ihres
+            «Strafverfahren (StPO)» wählen; als Kanton den Wohnsitz/Sitz der Partei oder ihres
             Rechtsbeistands (Art. 90 Abs. 2 StPO) angeben – massgebend ist nicht der Gerichtsort. Der Verwaltungs-Stillstand (Art. 22a VwVG) und der
             BGG-Stillstand (Art. 46 BGG) gelten nur für nach Tagen bestimmte Fristen; in
             den Ausnahmeverfahren nach Abs. 2 (vorsorgliche Massnahmen u. a.) «Keine Ferien»

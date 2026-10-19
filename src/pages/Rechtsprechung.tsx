@@ -380,7 +380,7 @@ export function Rechtsprechung() {
       />
 
       {fehler && (
-        <div className="lc-notice lc-notice-warn">
+        <div role="alert" className="lc-notice lc-notice-warn">
           Die Rechtsprechungs-Sammlung konnte nicht geladen werden. Bitte die Seite neu laden.
         </div>
       )}

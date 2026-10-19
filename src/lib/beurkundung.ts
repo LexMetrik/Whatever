@@ -16,7 +16,7 @@ import { KANTONE } from '../data/tarif/typen';
 import { auswertenTarif, type TarifErgebnis } from './tarif/staffel';
 import { geschaeftsart, type GeschaeftsartId } from '../data/tarif/beurkundung-typen';
 import { GRUNDSTUECKKAUF_BEURKUNDUNG, GENERELLER_WERTTARIF, SONDERTARIFE } from '../data/tarif/beurkundung';
-import { type NgQuelle, type NgPosten, ergebnisSpanne, ngPostenText } from './notariatGrundbuch';
+import { type NgQuelle, type NgPosten, ergebnisSpanne, ngPostenText, mwstSatz } from './notariatGrundbuch';
 
 const quelle = (t: KantonalerTarif): NgQuelle => ({
   erlassName: t.erlassName, erlassNr: t.erlassNr, artikel: t.artikel,
@@ -40,7 +40,7 @@ export function tarifFuer(art: GeschaeftsartId, kanton: KantonCode): { tarif: Ka
 }
 
 /** Regel-Typen, die sich am Geschäftswert bemessen (Wertfeld in der UI nötig). */
-const WERT_TYPEN = ['promille', 'sockel_prozent', 'staffel_inklusiv', 'staffel_exklusiv', 'staffel_sockel_prozent', 'staffel_voll_prozent', 'staffel_rahmen'];
+const WERT_TYPEN = ['promille', 'sockel_prozent', 'staffel_inklusiv', 'staffel_exklusiv', 'staffel_sockel_prozent', 'staffel_voll_prozent', 'staffel_rahmen', 'summe'];
 
 /** true, wenn der für (Geschäftsart, Kanton) aufgelöste Tarif wertbasiert ist
  *  (die UI zeigt dann das Geschäftswert-Feld). Fehlt der Tarif noch, greift der
@@ -98,7 +98,7 @@ export function berechneBeurkundung(e: BeurkundungEingabe): BeurkundungErgebnis 
   const posten: NgPosten = { ergebnis, quelle: quelle(aufgeloest.tarif) };
 
   const hinweise: string[] = [];
-  hinweise.push('Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren, Auslagen und allfällige MwSt. (freies Notariat) sind nicht enthalten.');
+  hinweise.push(`Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren und Auslagen sind nicht enthalten. ${mwstSatz(e.kanton, e.geschaeftsart)}`);
   if (aufgeloest.herkunft === 'genereller_werttarif') hinweise.push('Es gilt der allgemeine wertbasierte Beurkundungstarif des Kantons (kein art-spezifischer Sondersatz im Tarif).');
   if (!ergebnis.deterministisch) hinweise.push('Aufwand-/Rahmentarif – die konkrete Festsetzung erfolgt im Einzelfall; ausgewiesen ist die Spanne bzw. der Hinweis.');
   if (aufgeloest.tarif.hinweis) hinweise.push(aufgeloest.tarif.hinweis);

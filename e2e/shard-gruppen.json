@@ -24,7 +24,9 @@
    "tagerechner-rechenweg-sync.e2e.ts",
    "uinav-v2-v4-normchip.e2e.ts",
    "w224-reiter-umordnen-d16.e2e.ts",
-   "leser-v3-panel-facetten.e2e.ts"
+   "leser-v3-panel-facetten.e2e.ts",
+   "leser-merkliste.e2e.ts",
+   "leser-suche-kopf-o36b.e2e.ts"
   ],
   "2": [
    "a11y.e2e.ts",
@@ -106,7 +108,10 @@
    "w224-r11-reiterleiste.e2e.ts",
    "w229-w1f-blatt-artikel.e2e.ts",
    "w229-w1f-blatt-folgt.e2e.ts",
-   "w224-plus-reiter.e2e.ts"
+   "w224-plus-reiter.e2e.ts",
+   "leser-nav-reiter-b.e2e.ts",
+   "leser-aenderungen-ladezustaende.e2e.ts",
+   "leser-hash-adresse-b1.e2e.ts"
   ],
   "5": [
    "materialien-m1-estv-mwst.e2e.ts",
@@ -162,7 +167,10 @@
    "w224-l6-panekopf.e2e.ts",
    "w229-blatt-runde2.e2e.ts",
    "zustaendigkeit-fluss.e2e.ts",
-   "gesetze-rechtsgebiet-g6.e2e.ts"
+   "gesetze-rechtsgebiet-g6.e2e.ts",
+   "leser-anhang-tieflink.e2e.ts",
+   "leser-suchsprung-spy.e2e.ts",
+   "leser-trefferliste-fusszeile.e2e.ts"
   ]
  },
  "nacht": [

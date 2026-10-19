@@ -98,10 +98,17 @@ gestrichen. Davids einziger Input ist der Bau-Prompt.
   Schritt mit absolutem Pfad anlegen. Einen abgebrochenen Isolations-Agenten neu
   dispatchen, nicht fortsetzen; vor einem Nachzug auf denselben Zweig den alten
   Worktree entfernen. Kein Fixer in einen Worktree mit laufender Prüfung, keine
-  Orchestrator-Commits, wo ein Agent baut (geteilter Index). Scratchpad-Namen agentenspezifisch. Jeder Auftrag endet mit «nach dem Push sofort zurückgeben, keine Warte-/Poll-Schleifen, keine offenen Hintergrundprozesse» (11.10.: Bau-Agent kreiste nach dem Bericht 20 min). Hintergrund-Bash stirbt nach
+  Orchestrator-Commits, wo ein Agent baut (geteilter Index). Scratchpad-Namen agentenspezifisch. Prüfaufträge zitieren den Baubericht wörtlich (16.10.: Paraphrase verdrehte eine Aussage); `lex-pruefung` fährt keine e2e — Browser-Belege im Bau verlangen. Parallele PRs: beim Dispatch FB-Zeilen-Inhalte vergleichen, nicht nur Dateien (16.10.: O-26 und O-50a lösten denselben Zustand). Jeder Auftrag endet mit «nach dem Push sofort zurückgeben, keine Warte-/Poll-Schleifen, keine offenen Hintergrundprozesse» (11.10.: Bau-Agent kreiste nach dem Bericht 20 min). Hintergrund-Bash stirbt nach
   10 min. CI-Wächter aus EINER Abfrage je voller SHA. `gh pr merge` immer als
   eigenen Befehl (der Hook blockt sonst den ganzen Mehrfach-Befehl). Kein `[skip ci]` in
   irgendeinem PR-Commit (der Squash trägt alle Betreffe nach main).
+  Tarif-Daten-Aufträge (15.10.): Testliste immer mit Rundungs-Inventar
+  (`tarifStaffelErweiterung.property`), Export-Ratsche (`rechner-export-ratsche`)
+  und `grundpfand` (B1/B2); Trailer-Zeilen vorformuliert und gezählt (< 72
+  Zeichen, Form `<Norm> — <Begründung>`); Lesarten als Frage, nie als Vorgabe
+  (drei Orchestrator-Vorgaben waren selbst falsch); «Abschluss-Commit mit
+  Inhalt» = der letzte Änderungs-Commit trägt Betreff und Trailer, nie
+  `--allow-empty` (4× in einer Session).
   Normtext-Bewegung ⇒ `npm run projektionen:normtext -- --datum=…`, Materialien
   ⇒ `npm run materialien:kaskade -- --datum=…`, nie Einzelbefehle. Vor dem
   ersten Push eines Daten- oder Bot-PR die Schritte von «Tore · Checks» einzeln
@@ -159,6 +166,7 @@ Schluss, bevor der Kontext knapp wird.
 - Jede Änderung an JETZT als Zeile im Abschlussbericht (Davids Veto); ein
   separater Doku-PR nur bei echtem Rest.
 - Bau-Flächen abräumen (Skill `landung` Session-Ende), eigener Worktree zuletzt.
+- Vault-Wegweiser `03_Projekte/LexMetrik/lexmetrik-wegweiser.md` nachführen («Was läuft gerade», `wartet_auf_david`; vorher `99_KI/LEITFADEN.md`, danach `99_KI/Werkzeuge/pruefe-vault.py`).
 - Bericht beginnt mit der Fortschrittszeile aus ROADMAP ZIEL samt Änderung;
   Schlusssatz: was live ist, was auf David wartet und warum.
 

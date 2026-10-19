@@ -8062,7 +8062,7 @@
   "herkunft": "grundstueckkauf",
   "status": "ok",
   "hinweise": [
-   "Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren, Auslagen und allfällige MwSt. (freies Notariat) sind nicht enthalten.",
+   "Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren und Auslagen sind nicht enthalten. Zuzüglich MwSt 8,1 % (nach kantonalem Tarif LS 243 NotGebV § 2; Dienstanweisung FD 22.11.2023 § 2 (Ausnahmen)), soweit das Notariat mehrwertsteuerpflichtig ist (MWSTG Art. 10).",
    "Amtsnotariat (staatlicher Fixtarif)."
   ]
  },
@@ -8091,7 +8091,7 @@
   "herkunft": "grundstueckkauf",
   "status": "ok",
   "hinweise": [
-   "Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren, Auslagen und allfällige MwSt. (freies Notariat) sind nicht enthalten.",
+   "Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren und Auslagen sind nicht enthalten. Zuzüglich MwSt 8,1 % (nach kantonalem Tarif LS 243 NotGebV § 2; Dienstanweisung FD 22.11.2023 § 2 (Ausnahmen)), soweit das Notariat mehrwertsteuerpflichtig ist (MWSTG Art. 10).",
    "Amtsnotariat (staatlicher Fixtarif)."
   ]
  },
@@ -8120,7 +8120,7 @@
   "herkunft": "grundstueckkauf",
   "status": "ok",
   "hinweise": [
-   "Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren, Auslagen und allfällige MwSt. (freies Notariat) sind nicht enthalten.",
+   "Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren und Auslagen sind nicht enthalten. Zuzüglich MwSt 8,1 % (nach Bundesrecht, MWSTG Art. 25), soweit das Notariat mehrwertsteuerpflichtig ist (MWSTG Art. 10). Tarif schweigt; MWST nach Bundesrecht (MWSTG), Zuordnung offen.",
    "Freies Notariat; bis ½ reduzierbar bei eigenem Vorvertrag. 0,25% bis 2 Mio. (min. 500), Mehrbetrag über 2 Mio. 0,2%, über 5 Mio. 0,1%, über 10 Mio. 0,075%, höchstens 50’000. QS-GP 2.7.2026: Degressionsbänder >5/>10 Mio. am amtlichen Tarif-PDF (Version 3875) verifiziert — vorher fehlten sie."
   ]
  },
@@ -8149,7 +8149,7 @@
   "herkunft": "grundstueckkauf",
   "status": "ok",
   "hinweise": [
-   "Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren, Auslagen und allfällige MwSt. (freies Notariat) sind nicht enthalten.",
+   "Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren und Auslagen sind nicht enthalten. Zuzüglich MwSt 8,1 % (nach Bundesrecht, MWSTG Art. 25), soweit das Notariat mehrwertsteuerpflichtig ist (MWSTG Art. 10). Tarif schweigt; MWST nach Bundesrecht (MWSTG), Zuordnung offen.",
    "Freies Notariat; bis ½ reduzierbar bei eigenem Vorvertrag. 0,25% bis 2 Mio. (min. 500), Mehrbetrag über 2 Mio. 0,2%, über 5 Mio. 0,1%, über 10 Mio. 0,075%, höchstens 50’000. QS-GP 2.7.2026: Degressionsbänder >5/>10 Mio. am amtlichen Tarif-PDF (Version 3875) verifiziert — vorher fehlten sie."
   ]
  },
@@ -8179,7 +8179,7 @@
   "herkunft": "grundstueckkauf",
   "status": "ok",
   "hinweise": [
-   "Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren, Auslagen und allfällige MwSt. (freies Notariat) sind nicht enthalten.",
+   "Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren und Auslagen sind nicht enthalten. Zuzüglich MwSt 8,1 % (nach Bundesrecht, MWSTG Art. 25), soweit das Notariat mehrwertsteuerpflichtig ist (MWSTG Art. 10).",
    "Höchsttarif (Notar darf unterschreiten, Art. 1 cpv. 5)."
   ]
  },
@@ -8190,10 +8190,10 @@
   "posten": {
    "ergebnis": {
     "deterministisch": true,
-    "betragChf": 5375,
+    "betragChf": 5125,
     "schritte": [
      "Sockel CHF 3'875",
-     "0.3 % auf CHF 500'000 (Überschuss über CHF 1'000'000) = CHF 1'500"
+     "0.25 % auf CHF 500'000 (Überschuss über CHF 1'000'000) = CHF 1'250"
     ]
    },
    "quelle": {
@@ -8209,7 +8209,7 @@
   "herkunft": "grundstueckkauf",
   "status": "ok",
   "hinweise": [
-   "Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren, Auslagen und allfällige MwSt. (freies Notariat) sind nicht enthalten.",
+   "Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren und Auslagen sind nicht enthalten. Zuzüglich MwSt 8,1 % (nach Bundesrecht, MWSTG Art. 25), soweit das Notariat mehrwertsteuerpflichtig ist (MWSTG Art. 10).",
    "Höchsttarif (Notar darf unterschreiten, Art. 1 cpv. 5)."
   ]
  },
@@ -8236,7 +8236,7 @@
   "herkunft": "sondertarif",
   "status": "ok",
   "hinweise": [
-   "Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren, Auslagen und allfällige MwSt. (freies Notariat) sind nicht enthalten.",
+   "Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren und Auslagen sind nicht enthalten. Zuzüglich MwSt 8,1 % (nach kantonalem Tarif LS 243 NotGebV § 2; Dienstanweisung FD 22.11.2023 § 2 (Ausnahmen)), soweit das Notariat mehrwertsteuerpflichtig ist (MWSTG Art. 10).",
    "Aufwand-/Rahmentarif – die konkrete Festsetzung erfolgt im Einzelfall; ausgewiesen ist die Spanne bzw. der Hinweis.",
    "KORREKTUR: Hoechstbetrag per 1.1.2024 von 5000 auf 4000 gesenkt (Fussnote 15). Rahmen 200-4000. Bloss ein Testamentsentwurf inkl. Beratung waere Ziff. 4.3.1 (50-2000). MwSt nach § 2 zusaetzlich."
   ]
@@ -8267,7 +8267,7 @@
   "herkunft": "sondertarif",
   "status": "ok",
   "hinweise": [
-   "Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren, Auslagen und allfällige MwSt. (freies Notariat) sind nicht enthalten.",
+   "Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren und Auslagen sind nicht enthalten. Zuzüglich MwSt 8,1 % (nach Bundesrecht, MWSTG Art. 25), soweit das Notariat mehrwertsteuerpflichtig ist (MWSTG Art. 10). Tarif schweigt; MWST nach Bundesrecht (MWSTG), Zuordnung offen.",
    "KORREKTUR: DEGRESSIVE Marginalstaffel. Kapital unter CHF 100000: Rahmen CHF 750 bis CHF 2000; bei CHF 100000 fix CHF 2000 (Sockel); vom Mehrbetrag >100000 0,24%, >200000 0,22%, >1 Mio 0,2%, >3 Mio 0,15%, >5 Mio 0,1%, >10 Mio 0,075%; hoechstens CHF 50000. sockelChf=2000 ist die Gr"
   ]
  },
@@ -8296,7 +8296,7 @@
   "herkunft": "sondertarif",
   "status": "ok",
   "hinweise": [
-   "Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren, Auslagen und allfällige MwSt. (freies Notariat) sind nicht enthalten."
+   "Beurkundungsgebühr des Notariats nach kantonalem Tarif; HReg-/Grundbuchgebühren und Auslagen sind nicht enthalten. Zuzüglich MwSt 8,1 % (nach Bundesrecht, MWSTG Art. 25), soweit das Notariat mehrwertsteuerpflichtig ist (MWSTG Art. 10)."
   ]
  },
  "gb:eigentum_kauf:500k:ZH": {
@@ -8335,24 +8335,25 @@
     "deterministisch": true,
     "betragChf": 500,
     "schritte": [
+     "Bemessungsbasis auf CHF 1'000 aufgerundet: 500'000.",
      "1 ‰ von CHF 500'000 = CHF 500"
     ]
    },
    "quelle": {
     "erlassName": "Verordnung zum EG ZGB",
     "erlassNr": "SG 211.110",
-    "artikel": "§ 51",
+    "artikel": "§ 51 Abs. 1 lit. a/b, Abs. 2 lit. a",
     "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.110",
     "stand": "1.5.2025",
     "verifiziert": "recherche",
-    "hinweis": "Promille gemäss amtl. Merkblatt GVA; § 51-Volltext im Doppelcheck gegenlesen."
+    "hinweis": "Handänderung 1 ‰ des Wertes bzw. Preises (§ 51 Abs. 2 lit. a), mindestens CHF 200, höchstens CHF 50’000 je Eintragung (Abs. 1 lit. a); der Wert bzw. Preis wird für die Gebührenberechnung auf volle Tausend aufgerundet (Abs. 1 lit. b)."
    }
   },
   "herkunft": "eigentum_kauf",
   "status": "ok",
   "hinweise": [
    "Grundbuchgebühr (Eintragung) nach kantonalem Tarif; Notariats-/Beurkundungsgebühr, Handänderungssteuer, Auslagen und MwSt. sind nicht enthalten.",
-   "Promille gemäss amtl. Merkblatt GVA; § 51-Volltext im Doppelcheck gegenlesen."
+   "Handänderung 1 ‰ des Wertes bzw. Preises (§ 51 Abs. 2 lit. a), mindestens CHF 200, höchstens CHF 50’000 je Eintragung (Abs. 1 lit. a); der Wert bzw. Preis wird für die Gebührenberechnung auf volle Tausend aufgerundet (Abs. 1 lit. b)."
   ]
  },
  "gb:eigentum_kauf:500k:TI": {
@@ -8420,6 +8421,7 @@
     "deterministisch": true,
     "betragChf": 400,
     "schritte": [
+     "Bemessungsbasis auf CHF 1'000 aufgerundet: 400'000.",
      "1 ‰ von CHF 400'000 = CHF 400"
     ]
    },
@@ -8547,7 +8549,8 @@
   },
   "hinweise": [
    "Erwerbs-Nebenkosten beim Grundstückkauf: Beurkundung (Notariat) + Grundbucheintrag; optional Grundpfand (Schuldbrief) und Handänderungssteuer.",
-   "Beträge sind die kantonalen Gebühren nach Kaufpreis bzw. Pfandsumme; Auslagen (Porti, Auszüge) und allfällige MwSt. (freies Notariat) sind nicht enthalten."
+   "Beträge sind die kantonalen Gebühren nach Kaufpreis bzw. Pfandsumme; Auslagen (Porti, Auszüge) sind nicht enthalten.",
+   "Beurkundungs- und Schuldbrief-Notariatsgebühren: Zuzüglich MwSt 8,1 % (nach kantonalem Tarif LS 243 NotGebV § 2; Dienstanweisung FD 22.11.2023 § 2 (Ausnahmen)), soweit das Notariat mehrwertsteuerpflichtig ist (MWSTG Art. 10). Grundbuchgebühren: allfällige MwSt nicht beziffert; Steuern ohne MwSt."
   ]
  },
  "ng:kauf:800k:BS": {
@@ -8576,17 +8579,18 @@
     "deterministisch": true,
     "betragChf": 800,
     "schritte": [
+     "Bemessungsbasis auf CHF 1'000 aufgerundet: 800'000.",
      "1 ‰ von CHF 800'000 = CHF 800"
     ]
    },
    "quelle": {
     "erlassName": "Verordnung zum EG ZGB",
     "erlassNr": "SG 211.110",
-    "artikel": "§ 51",
+    "artikel": "§ 51 Abs. 1 lit. a/b, Abs. 2 lit. a",
     "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.110",
     "stand": "1.5.2025",
     "verifiziert": "recherche",
-    "hinweis": "Promille gemäss amtl. Merkblatt GVA; § 51-Volltext im Doppelcheck gegenlesen."
+    "hinweis": "Handänderung 1 ‰ des Wertes bzw. Preises (§ 51 Abs. 2 lit. a), mindestens CHF 200, höchstens CHF 50’000 je Eintragung (Abs. 1 lit. a); der Wert bzw. Preis wird für die Gebührenberechnung auf volle Tausend aufgerundet (Abs. 1 lit. b)."
    }
   },
   "gesamtGebuehren": {
@@ -8599,7 +8603,8 @@
   },
   "hinweise": [
    "Erwerbs-Nebenkosten beim Grundstückkauf: Beurkundung (Notariat) + Grundbucheintrag; optional Grundpfand (Schuldbrief) und Handänderungssteuer.",
-   "Beträge sind die kantonalen Gebühren nach Kaufpreis bzw. Pfandsumme; Auslagen (Porti, Auszüge) und allfällige MwSt. (freies Notariat) sind nicht enthalten."
+   "Beträge sind die kantonalen Gebühren nach Kaufpreis bzw. Pfandsumme; Auslagen (Porti, Auszüge) sind nicht enthalten.",
+   "Beurkundungs- und Schuldbrief-Notariatsgebühren: Zuzüglich MwSt 8,1 % (nach Bundesrecht, MWSTG Art. 25), soweit das Notariat mehrwertsteuerpflichtig ist (MWSTG Art. 10). Tarif schweigt; MWST nach Bundesrecht (MWSTG), Zuordnung offen. Grundbuchgebühren: allfällige MwSt nicht beziffert; Steuern ohne MwSt."
   ]
  },
  "ng:kauf:800k:TI": {
@@ -8652,7 +8657,8 @@
   },
   "hinweise": [
    "Erwerbs-Nebenkosten beim Grundstückkauf: Beurkundung (Notariat) + Grundbucheintrag; optional Grundpfand (Schuldbrief) und Handänderungssteuer.",
-   "Beträge sind die kantonalen Gebühren nach Kaufpreis bzw. Pfandsumme; Auslagen (Porti, Auszüge) und allfällige MwSt. (freies Notariat) sind nicht enthalten."
+   "Beträge sind die kantonalen Gebühren nach Kaufpreis bzw. Pfandsumme; Auslagen (Porti, Auszüge) sind nicht enthalten.",
+   "Beurkundungs- und Schuldbrief-Notariatsgebühren: Zuzüglich MwSt 8,1 % (nach Bundesrecht, MWSTG Art. 25), soweit das Notariat mehrwertsteuerpflichtig ist (MWSTG Art. 10). Grundbuchgebühren: allfällige MwSt nicht beziffert; Steuern ohne MwSt."
   ]
  },
  "ng:kauf:800k:pfand:ZH": {
@@ -8698,17 +8704,21 @@
     "deterministisch": true,
     "betragChf": 1600,
     "schritte": [
-     "2 ‰ von CHF 800'000 = CHF 1'600"
+     "Beurkundung: 1 ‰ von CHF 800'000 = CHF 800",
+     "Beurkundung: Teilbetrag CHF 800",
+     "Grundbucheintrag: 1 ‰ von CHF 800'000 = CHF 800",
+     "Grundbucheintrag: Teilbetrag CHF 800",
+     "Summe der Teile: CHF 1'600"
     ]
    },
    "quelle": {
-    "erlassName": "NotGebV",
+    "erlassName": "Notariatsgebührenverordnung (NotGebV)",
     "erlassNr": "LS 243",
-    "artikel": "Anhang Ziff. 1.2.1 + 2.3.1",
+    "artikel": "Anhang Ziff. 1.2.1 und 2.3.1",
     "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-243-2009_03_09-2009_07_01-123.html",
     "stand": "1.1.2024",
     "verifiziert": "recherche",
-    "hinweis": "Beurkundung 1‰ + Eintrag 1‰."
+    "hinweis": "Beurkundung 1 ‰ + Eintrag 1 ‰ der Pfandsumme, je mindestens 100."
    }
   },
   "gesamtGebuehren": {
@@ -8721,7 +8731,8 @@
   },
   "hinweise": [
    "Erwerbs-Nebenkosten beim Grundstückkauf: Beurkundung (Notariat) + Grundbucheintrag; optional Grundpfand (Schuldbrief) und Handänderungssteuer.",
-   "Beträge sind die kantonalen Gebühren nach Kaufpreis bzw. Pfandsumme; Auslagen (Porti, Auszüge) und allfällige MwSt. (freies Notariat) sind nicht enthalten."
+   "Beträge sind die kantonalen Gebühren nach Kaufpreis bzw. Pfandsumme; Auslagen (Porti, Auszüge) sind nicht enthalten.",
+   "Beurkundungs- und Schuldbrief-Notariatsgebühren: Zuzüglich MwSt 8,1 % (nach kantonalem Tarif LS 243 NotGebV § 2; Dienstanweisung FD 22.11.2023 § 2 (Ausnahmen)), soweit das Notariat mehrwertsteuerpflichtig ist (MWSTG Art. 10). Grundbuchgebühren: allfällige MwSt nicht beziffert; Steuern ohne MwSt."
   ]
  },
  "ng:kauf:800k:steuer:BS": {
@@ -8750,17 +8761,18 @@
     "deterministisch": true,
     "betragChf": 800,
     "schritte": [
+     "Bemessungsbasis auf CHF 1'000 aufgerundet: 800'000.",
      "1 ‰ von CHF 800'000 = CHF 800"
     ]
    },
    "quelle": {
     "erlassName": "Verordnung zum EG ZGB",
     "erlassNr": "SG 211.110",
-    "artikel": "§ 51",
+    "artikel": "§ 51 Abs. 1 lit. a/b, Abs. 2 lit. a",
     "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.110",
     "stand": "1.5.2025",
     "verifiziert": "recherche",
-    "hinweis": "Promille gemäss amtl. Merkblatt GVA; § 51-Volltext im Doppelcheck gegenlesen."
+    "hinweis": "Handänderung 1 ‰ des Wertes bzw. Preises (§ 51 Abs. 2 lit. a), mindestens CHF 200, höchstens CHF 50’000 je Eintragung (Abs. 1 lit. a); der Wert bzw. Preis wird für die Gebührenberechnung auf volle Tausend aufgerundet (Abs. 1 lit. b)."
    }
   },
   "handaenderungssteuer": {
@@ -8791,7 +8803,8 @@
   },
   "hinweise": [
    "Erwerbs-Nebenkosten beim Grundstückkauf: Beurkundung (Notariat) + Grundbucheintrag; optional Grundpfand (Schuldbrief) und Handänderungssteuer.",
-   "Beträge sind die kantonalen Gebühren nach Kaufpreis bzw. Pfandsumme; Auslagen (Porti, Auszüge) und allfällige MwSt. (freies Notariat) sind nicht enthalten.",
+   "Beträge sind die kantonalen Gebühren nach Kaufpreis bzw. Pfandsumme; Auslagen (Porti, Auszüge) sind nicht enthalten.",
+   "Beurkundungs- und Schuldbrief-Notariatsgebühren: Zuzüglich MwSt 8,1 % (nach Bundesrecht, MWSTG Art. 25), soweit das Notariat mehrwertsteuerpflichtig ist (MWSTG Art. 10). Tarif schweigt; MWST nach Bundesrecht (MWSTG), Zuordnung offen. Grundbuchgebühren: allfällige MwSt nicht beziffert; Steuern ohne MwSt.",
    "Die Handänderungssteuer ist eine kantonale/kommunale STEUER (keine Gebühr); Befreiungen (z. B. unter Ehegatten/Nachkommen) sind einzelfallabhängig und hier nicht berücksichtigt."
   ]
  },
@@ -8838,17 +8851,21 @@
     "deterministisch": true,
     "betragChf": 3200,
     "schritte": [
-     "2 ‰ von CHF 1'600'000 = CHF 3'200"
+     "Beurkundung: 1 ‰ von CHF 1'600'000 = CHF 1'600",
+     "Beurkundung: Teilbetrag CHF 1'600",
+     "Grundbucheintrag: 1 ‰ von CHF 1'600'000 = CHF 1'600",
+     "Grundbucheintrag: Teilbetrag CHF 1'600",
+     "Summe der Teile: CHF 3'200"
     ]
    },
    "quelle": {
-    "erlassName": "NotGebV",
+    "erlassName": "Notariatsgebührenverordnung (NotGebV)",
     "erlassNr": "LS 243",
-    "artikel": "Anhang Ziff. 1.2.1 + 2.3.1",
+    "artikel": "Anhang Ziff. 1.2.1 und 2.3.1",
     "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-243-2009_03_09-2009_07_01-123.html",
     "stand": "1.1.2024",
     "verifiziert": "recherche",
-    "hinweis": "Beurkundung 1‰ + Eintrag 1‰."
+    "hinweis": "Beurkundung 1 ‰ + Eintrag 1 ‰ der Pfandsumme, je mindestens 100."
    }
   },
   "handaenderungssteuer": {
@@ -8873,7 +8890,8 @@
   "gesamtMitSteuer": null,
   "hinweise": [
    "Erwerbs-Nebenkosten beim Grundstückkauf: Beurkundung (Notariat) + Grundbucheintrag; optional Grundpfand (Schuldbrief) und Handänderungssteuer.",
-   "Beträge sind die kantonalen Gebühren nach Kaufpreis bzw. Pfandsumme; Auslagen (Porti, Auszüge) und allfällige MwSt. (freies Notariat) sind nicht enthalten.",
+   "Beträge sind die kantonalen Gebühren nach Kaufpreis bzw. Pfandsumme; Auslagen (Porti, Auszüge) sind nicht enthalten.",
+   "Beurkundungs- und Schuldbrief-Notariatsgebühren: Zuzüglich MwSt 8,1 % (nach kantonalem Tarif LS 243 NotGebV § 2; Dienstanweisung FD 22.11.2023 § 2 (Ausnahmen)), soweit das Notariat mehrwertsteuerpflichtig ist (MWSTG Art. 10). Grundbuchgebühren: allfällige MwSt nicht beziffert; Steuern ohne MwSt.",
    "Die Handänderungssteuer ist eine kantonale/kommunale STEUER (keine Gebühr); Befreiungen (z. B. unter Ehegatten/Nachkommen) sind einzelfallabhängig und hier nicht berücksichtigt."
   ]
  },

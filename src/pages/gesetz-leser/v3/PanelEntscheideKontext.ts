@@ -28,8 +28,26 @@ import type { Bezug } from '../../../lib/rechtsprechung/bezuege';
 // («9C_», «4A_») ODER die Kürzung «…». Bewusst NICHT erfasst: «(Beschwerde beim
 // Bundesgericht hängig)» (noch nicht entschieden — eine andere Aussage, die der
 // Erklärtext unten falsch beschriebe) und «(aufgehoben durch BGer …)».
+//
+// LESER-NAV O-32 (16.10.2026): die Nachmessung (5'389 verschiedene Kurzzeilen der
+// Bezugs-Shards, Node-Lauf) fand 22 weitere Zusätze gleicher Bedeutung,
+// die das Muster verfehlte: «(BG 7B_1049/2023)» (der Kommentar oben verspricht «BG»,
+// das Muster verlangte aber «BGe»), «(Bger 4D_114/2025 vom …)» (7×, kleines g), das
+// nackte Aktenzeichen «(6B_927/2025)» / «(7B_985/2024 vom …)» (9×), «(Urteil des BGer
+// …)», «(Urteildispositiv BGer …)», «(Entscheid BGer vom …» und «(Urteil des
+// Bundesgerichts vom…» (Genitiv). Muster 451 → 473 Treffer. Weiterhin NICHT erfasst:
+// «(Beschwerde beim BG hängig)», «(aufgehoben durch BGer …)» und «(BGE 147 III …)»
+// (Verweis auf eine Publikation, kein Weiterzug-Vermerk) — dazu die Tippfehler
+// «Budesgerichtsurteil» / «Bundesgerichsurteil» (2 Zeilen, Quelldaten, nicht hier).
+//
+// LESER-NAV Gegenprüfung #1405 (A4): das nackte «BG» nahm zugleich jede Klammer
+// «(BG über den Datenschutz vom 19. Juni 1992)» oder «(BG Meilen vom …)» (Bundesgesetz,
+// Bezirksgericht) als Weiterzug. «BG» zählt nur noch mit unmittelbar folgendem
+// Aktenzeichen («(BG 7B_1049/2023)»); die übrigen Stichwörter (BGe, BGer, Bger,
+// Bundesgericht …) sind unverändert. Nachmessung 16.10.2026 über alle 4'014 verschiedenen
+// Kurzzeilen von public/rechtsprechung/bezuege: Zahl unverändert, siehe PR-Beschreibung.
 export const WEITERZUG_MUSTER =
-  /\((?:Urteil )?(?:BGer?|Bundesgericht(?:s?urteil)?)(?![a-zA-Z])(?:[^()]*\bvom\b|[^()]*\d[A-Z]_\d|(?:-Nr\.?)?…)/;
+  /\((?:(?:Urteil(?:dispositiv)?|Entscheid)(?: des)? )?(?:(?:BGe|BGr|BGer|Bger|Bundesgericht(?:s?urteil|s)?)(?![a-zA-Z])(?:[^()]*\bvom\b|[^()]*\d[A-Z]_\d|(?:-Nr\.?)?…)|BG\s+\d[A-Z]_\d)|\(\d[A-Z]_\d/;
 export const WEITERZUG_ERKLAERUNG =
   'Klammerzusatz „BGer …“ oder „Bundesgerichtsurteil …“: der Entscheid wurde ans Bundesgericht weitergezogen.';
 /** Exportiert für den gezielten Unit-Test (leser-v3-panel-weiterzug.test.ts) —

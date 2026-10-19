@@ -39,7 +39,7 @@
 
 import type { Sektion, StrukturMap } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
-import { berechneSektionMeta } from './berechnungen';
+import { berechneSektionMeta, bereichText } from './berechnungen';
 import { artikelSchluessel } from './klappKarte';
 
 // ─── Fassade (§6.6-Aufteilung 13.8.2026) ─────────────────────────────────────
@@ -216,7 +216,7 @@ function baueSynth(
     ? undefined
     : eigen === 1
       ? arts[0].artikelLabel
-      : `${arts[0].artikelLabel}–${arts[eigen - 1].artikelLabel.replace(/^(Art\.|§)\s*/, '')}`;
+      : bereichText(arts[0].artikelLabel, arts[eigen - 1].artikelLabel);
   return {
     id,
     art,

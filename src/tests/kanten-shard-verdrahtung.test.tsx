@@ -141,7 +141,12 @@ describe('usePanelTafeln · Fehlerzeile der Artikel-Gruppe nur beim Shard-Ausfal
     expect(text()).not.toContain('nichts erfasst');
     // …und die Artikel-Gruppe trägt keinen eigenen «Erneut laden»-Knopf: den Manifest-
     // Ausfall meldet die Tafel darunter (`PanelErlaeuterungen`, AN-4), nicht die Gruppe.
-    expect(erneutKnoepfe()).toHaveLength(0);
+    // §6.3-DEKLARATION (LESER-NAV O-29, 16.10.2026): die Tafel steht beim Ausfall OFFEN
+    // (vorher zugeklappt ohne Zahl, der Fehlersatz hinter der Klappzeile unsichtbar) —
+    // darum genau EIN Knopf, und der gehört der Tafel, nicht der Gruppe.
+    expect(ziel.querySelectorAll('[data-v3-blatt-artikelgruppe] [data-abruf-erneut]')).toHaveLength(0);
+    expect(erneutKnoepfe()).toHaveLength(1);
+    expect(text()).toContain('Behördliche Erläuterungen konnten nicht geladen werden');
   });
 
   it('Shard fällt aus: Fehlerzeile + «Erneut laden» statt «nichts erfasst»; Klick holt neu', async () => {

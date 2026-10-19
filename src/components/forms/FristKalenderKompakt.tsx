@@ -1,5 +1,6 @@
 import { FristenKalender as FristenKalenderBasis } from '../FristenKalender';
 import type { Kanton } from '../../types/legal';
+import type { FeiertagsKontext } from '../../data/zpoFeiertage';
 
 // ─── Kompakter Fristen-Kalender zum einfachen Fristenrechner (#7) ───────────
 //
@@ -27,6 +28,7 @@ export interface FristMarkierung {
   verschiebeGruende?: string[];  // Verschiebung (nur «keine Ferien»)
   hinweis?: string;              // z.B. «Stillstand (Art. 145 ZPO) berücksichtigt»
   stillstand?: { vonISO: string; bisISO: string }[]; // Gerichtsferien-/Stillstand-Perioden (ISO, inkl.)
+  feiertagsKontext?: FeiertagsKontext; // RV-53: Kontext der rechnenden Engine (Kalender markiert danach)
 }
 
 export function FristKalenderKompakt({ markierung, kanton }: {
@@ -49,6 +51,7 @@ export function FristKalenderKompakt({ markierung, kanton }: {
         kanton={kanton}
         stillstandAktiv={(markierung.stillstand?.length ?? 0) > 0}
         stillstandPerioden={markierung.stillstand}
+        feiertagsKontext={markierung.feiertagsKontext}
         kompakt
       />
       {markierung.hinweis && <p className="text-xs text-ink-500">{markierung.hinweis}</p>}

@@ -117,7 +117,7 @@ export function Shell({ children }: { children: ReactNode }) {
 
   // Split-View (B-1): sekundäre Panes nur ab lg nebeneinander; mobil + Prerender
   // = 1 Pane (istLg startet false → SSR/Default byte-gleich, B-4-Faltung gratis).
-  const pane = usePaneLayout();
+  const pane = usePaneLayout((ziel) => navigate(ziel, { replace: true })); // O-69b: `?p=` über den Router entfernen
   const [istLg, setIstLg] = useState(false);
   useEffect(() => {
     const mq = window.matchMedia('(min-width: 1024px)');

@@ -6,6 +6,7 @@ import { SucheLeerzustand } from '../suche/SucheLeerzustand';
 import { leerOptionen } from '../suche/SucheLeerzustandKontext';
 import { aktivePosition, flacheTreffer, naechsterKey, vorigerKey, gewaehlterHref } from '../suche/trefferAuswahl';
 import { useZuletzt } from './useZuletzt';
+import { useMerkliste } from '../merkliste/useMerkliste';
 import { usePaneSteuerung } from './usePaneLayout';
 import { SchliessKnopf } from '../ui/SchliessKnopf';
 import { kuerzelHinterModal, suchKuerzelEmpfaengerAbmelden, suchKuerzelEmpfaengerAnmelden } from '../suche/fruehesSuchKuerzel';
@@ -116,7 +117,11 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
   // Leerzustands hat einen eigenen Namensraum (Gruppen «verlauf»/«einstieg»,
   // suchOptionId) und kollidiert nie mit den Treffer-oids aus `flach`.
   const verlauf = useZuletzt().slice(0, 5);
-  const flachLeer = useMemo(() => leerOptionen(verlauf, listboxId), [verlauf, listboxId]);
+  // LESER-NAV (David 15.10.2026): die Merkliste steht im selben Leerzustand — gleiche Regel,
+  // EIN Hook-Aufruf für Anzeige UND Pfeiltasten. Kein neuer Eager-Import: `Topbar` zieht
+  // `merkliste/useMerkliste` (über `VerlaufUebersicht`) schon heute in dieselbe Kette.
+  const merkliste = useMerkliste();
+  const flachLeer = useMemo(() => leerOptionen(verlauf, listboxId, merkliste), [verlauf, listboxId, merkliste]);
   // Aktive Pfeil-Auswahl: EIN Key-State über beide Listen hinweg (Panel/Leer sind
   // nie gleichzeitig sichtbar, s. zeigtPanel/zeigtLeer oben) — welche Liste
   // gerade gilt, entscheidet `feldLeer`.
@@ -237,8 +242,12 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
     // KEIN `feld.current?.blur()` mehr (D2): der Fokus bleibt im Feld —
     // Vorbild ist die Erlass-Suche im Leser (`SuchSprungFeld.tsx`), die auf
     // Esc ebenfalls nur leert und nie defokussiert.
+    // LESER-NAV, FB O-64 (16.10.2026): Esc schliesst nur die OBERSTE Fläche. Hat sie schon ein anderer
+    // Zuhörer angenommen (`defaultPrevented`: Blatt, Menü, Dialog), bleibt die Suche stehen — beide
+    // hängen am `window`, die Reihenfolge ihrer Anmeldung entscheidet nicht mit. Gemessen @1440 (OR,
+    // Blatt offen, dann Suche offen): ein Esc schloss beide.
     const esc = (e: KeyboardEvent) => {
-      if (e.key !== 'Escape') return;
+      if (e.key !== 'Escape' || e.defaultPrevented) return;
       e.preventDefault();
       // Nachzug Zweitprüfung #1188: steht der Fokus im Panel (Knopf «Verlauf
       // leeren» im Leerzustand), verschwindet er mit dem Panel und fiele auf
@@ -324,7 +333,9 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
   };
 
   return (
-    <div ref={huelle} className="relative" role="search">
+    // Offen trägt die Hülle die Menü-Markierung (`layout/modalerDialog`, `imMenue`): steht der Fokus im Feld
+    // oder im Panel, gehört Esc der Suche — das Blatt daneben (`usePopoverAutoZu`) nimmt es dann nicht an.
+    <div ref={huelle} className="relative" role="search" data-menue-flaeche={zeigtPanel || zeigtLeer ? '' : undefined}>
       <input
         ref={feld}
         type="search"
@@ -528,7 +539,7 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
             // UI-NAV O1: Leerzustand (⌘K/Fokus ohne Eingabe) — Verlauf + Einstiege.
             // Listbox-Modus (Befund 38): Maus-Klick navigiert UND schliesst/leert
             // das Feld in einem Zug (wie Enter/Tastatur-Auswahl).
-            ? <SucheLeerzustand verlauf={verlauf} listboxId={listboxId} aktivId={aktivId} panelKlasse={LEER_KAPPUNG}
+            ? <SucheLeerzustand verlauf={verlauf} merkliste={merkliste} listboxId={listboxId} aktivId={aktivId} panelKlasse={LEER_KAPPUNG}
                 onNavigate={(href) => { navigate(href); auswahl(); }}
                 onVerlaufGeleert={() => feld.current?.focus()} />
             : <SuchResultate gruppen={gruppen} allesGeladen={allesGeladen} q={q} onAuswahl={auswahl} listboxId={listboxId} aktivId={aktivId} panelKlasse={SCROLL_KAPPUNG}

@@ -25,11 +25,13 @@ import { zaehlform, type BestimmungsWort } from './erlassAnsicht';
 const GRIFF = 'inline-flex h-11 w-11 shrink-0 items-center justify-center text-ink-700 transition-colors lc-hover-flaeche hover:text-ink-900';
 
 export function TrefferLeiste({
-  anzahl, fundstellen, bestimmungsWort, laufend, hatSprung,
+  anzahl, ueberschriften, fundstellen, bestimmungsWort, laufend, hatSprung,
   bereich, setzeBereich, onZurueck, onVor,
 }: {
-  /** Zahl der TREFFER-ARTIKEL (nicht der Fundstellen). */
+  /** Zahl der TREFFER-ARTIKEL mit eigener Fundstelle (nicht der Fundstellen). */
   anzahl: number;
+  /** O-36 b: Köpfe (Überschriften, geteilte Randtitel) mit Treffer — für sich gezählt. */
+  ueberschriften: number;
   fundstellen: number;
   bestimmungsWort: BestimmungsWort;
   /** 1-basierte laufende Fundstelle; 0 = noch kein Sprung (Ä103). */
@@ -95,11 +97,24 @@ export function TrefferLeiste({
             passen darunter), also auch kein CLS (§15.2). */}
         <div className="min-w-0 flex-1">
           <p className="min-h-5 leading-snug">
-            <span className="whitespace-nowrap">
-              <span className="num">{anzahl}</span> {zaehlform(anzahl, bestimmungsWort)}
-              {' '}<span aria-hidden className="text-ink-300">·</span>
-            </span>
-            {' '}
+            {(anzahl > 0 || ueberschriften === 0) && (
+              <>
+                <span className="whitespace-nowrap">
+                  <span className="num">{anzahl}</span> {zaehlform(anzahl, bestimmungsWort)}
+                  {' '}<span aria-hidden className="text-ink-300">·</span>
+                </span>
+                {' '}
+              </>
+            )}
+            {ueberschriften > 0 && (
+              <>
+                <span className="whitespace-nowrap">
+                  <span className="num">{ueberschriften}</span>{ueberschriften === 1 ? ' Überschrift' : ' Überschriften'}
+                  {' '}<span aria-hidden className="text-ink-300">·</span>
+                </span>
+                {' '}
+              </>
+            )}
             <span className="whitespace-nowrap"><span className="num">{fundstellen}</span>{fundstellen === 1 ? ' Fundstelle' : ' Fundstellen'}</span>
           </p>
           {hatSprung && (

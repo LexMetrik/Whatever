@@ -100,6 +100,7 @@ import { parseDatenManifest } from './validierung';
 import { ddlFtsArtikel, ddlFtsEntscheide } from './fts';
 import { rowidFingerabdruckSql } from './stabile-rowid';
 import { leseFtsSchatten, ftsDokumente } from './turso-fts-index';
+import { SCHATTEN } from './hot-groesse';
 import {
   zeilenBytes,
   MAX_PARAM_JE_STMT,
@@ -129,9 +130,10 @@ const TOKEN_DATEI = 'daten/turso-token.txt';
  *  negativ) prüfbar ist, ohne die committete Datei anzufassen. */
 export const MANIFEST_DATEI = process.env.LEXMETRIK_MANIFEST ?? 'daten-manifest.json';
 
-/** Live-Tabellen der HOT-Replika, in Abhängigkeits-Reihenfolge (Basis zuerst).
- *  Der Tausch läuft sie vorwärts (RENAME) und rückwärts (DROP) ab. */
-const SCHATTEN = ['erlasse', 'erlass_fassungen', 'artikel', 'fts_artikel', 'fts_entscheide_schaufenster'] as const;
+// SCHATTEN (Live-Tabellen der HOT-Replika, Abhängigkeits-Reihenfolge, Basis zuerst; der Tausch
+// läuft sie vorwärts (RENAME) und rückwärts (DROP) ab) lebt seit A1-FUNDAMENT in
+// `hot-groesse.ts`: die Grössen-Messung von build.ts liest dieselbe Liste (§5), und dieses
+// Modul lässt sich nicht importieren, ohne den Sync zu starten.
 /** FTS5-Teilmenge (eigener Bau- und Pruefweg: Index-Transfer statt Zeilen). */
 const FTS_TABELLEN = ['fts_artikel', 'fts_entscheide_schaufenster'] as const;
 /** Zugang, sobald geladen — der Sperr-Ausgang unten braucht ihn, um den Stand der Replika

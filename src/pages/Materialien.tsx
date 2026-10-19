@@ -4,6 +4,7 @@ import { SeitenKopf } from '../components/layout/SeitenKopf';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 import { useSucheAusUrl } from '../components/suche/useSucheAusUrl';
 import { MaterialRaster } from '../components/materialien/MaterialRaster';
+import { BsOgdNachweis } from '../components/materialien/BsOgdNachweis';
 import { Leerzustand } from '../components/ui/Leerzustand';
 import { GruppenKopf } from '../components/ui/GruppenKopf';
 import { Ladeanzeige } from '../components/ui/Ladeanzeige';
@@ -86,7 +87,7 @@ export function Materialien() {
       />
 
       {fehler && (
-        <div className="lc-notice lc-notice-warn">
+        <div role="alert" className="lc-notice lc-notice-warn">
           Die Übersicht konnte nicht geladen werden. Bitte die Seite neu laden.
         </div>
       )}
@@ -188,6 +189,8 @@ export function Materialien() {
                         Behördenname bleibt als Lede darunter stehen. */}
                     <GruppenKopf stufe={2} titel={g.kuerzel} zahl={g.materialien.length} />
                     <p className="text-body-s text-ink-500 max-w-reading-s">{g.name}</p>
+                    {/* O-10: CC-BY-Namensnennung der data.bs.ch-Datensätze. */}
+                    {g.behoerde === 'BS-GR' && <p className="text-body-s text-ink-500 max-w-reading-s"><BsOgdNachweis /></p>}
                   </div>
                   {/* W2·31-BILDSCHIRMBREITE B2 (25.9.2026): die Seitenart
                       `materialien` steht auf `weit` (seitenbreite.ts); die

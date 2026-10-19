@@ -44,7 +44,15 @@ import { REITER_MIME } from './reiterleiste/ueberlauf';
 import { BLATT_ZU, type BlattZustand } from './reiterleiste/blatt';
 import { useDialogFokus } from './useDialogFokus';
 import { useKopieren } from '../useKopieren';
-import { usePaneSteuerung } from './usePaneLayout';
+import { SchwebeMeldung } from '../ui/SchwebeMeldung';
+import { istGemerkt, merkRouteAusAdresse, schalteMerkung } from '../../lib/merkliste';
+import { merkAnsage } from '../merkliste/merkAnsage';
+import { sageKopiertAn } from '../ui/kopierAnsage';
+import { useLayoutHinweis, usePaneSteuerung } from './usePaneLayout';
+
+/** O-27: Wortlaut des Hinweises «Link-Layout wird nicht gespeichert» (Pille und Ansage). */
+const LAYOUT_HINWEIS_TEXT = 'Dieses Layout stammt aus einem geteilten Link und wird nicht gespeichert. Beim Neuladen kehrt Ihre eigene Anordnung zurück.';
+
 // ── §15 · DAS KONTEXTMENÜ GEHÖRT NICHT IN DEN START-CHUNK ──────────────────
 // GEMESSEN 6.9.2026 (`npm run check:perf-budget`, gebautes dist/): mit einem
 // statischen Import stieg der Entry-Chunk von 59.7 KB auf 61.3 KB gzip und
@@ -150,6 +158,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   const { pathname, search } = useLocation();
   const navigate = useNavigate();
   const { oeffneDaneben, kannOeffnen, istOffen, schliessePane } = usePaneSteuerung();
+  const layoutHinweis = useLayoutHinweis(); // O-27: Link-Layout wird nicht gespeichert (Herleitung: `usePaneLayout`)
   const [manifesteGeladen, setManifeste] = useState<VerlaufManifeste>({});
   // DFG-F01: dieselben Manifeste samt den Einträgen für die Stelle im Reiter
   // («§ 4», «Art. 12 SchlT ZGB»); bis sie da sind, trägt der Reiter die Rückfallform.
@@ -164,7 +173,19 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   const [blatt, setBlatt] = useState<BlattZustand>(BLATT_ZU);
   const { offen: blattOffen, suche } = blatt;
   const schliesseBlatt = () => setBlatt(BLATT_ZU);
-  const { kopieren } = useKopieren();
+  // O-49 (15.10.2026): «Adresse kopieren» (Reiter-Menü) und «Adresse der Mappe kopieren»
+  // schlossen das Menü und quittierten NUR dem Screenreader (`useKopieren` → sr-only-Region).
+  // Sichtbar blieb nichts — der Klick wirkte wie ein Fehlschlag. `kopiert` steht erst NACH
+  // erfolgreichem Schreiben (R4-D) und fällt nach `KOPIER_DAUER_MS`; die Pille unten ist
+  // dieselbe schwebende Meldung wie der Rücksprung-Chip (`ui/SchwebeMeldung`).
+  const { kopieren, kopiert } = useKopieren();
+  // Nachzug Gegenprüfung #1387: der Hinweis «Layout nicht gespeichert» stand als `role="status"`, das
+  // erst MIT dem Text ins DOM kam — Screenreader überhören eine so eingefügte Region (gleiches Muster
+  // wie O-57, #1384). Die Ansage läuft darum über die EINE vorab angelegte sr-only-Region
+  // (`ui/kopierAnsage`); die sichtbare Pille bleibt für Screenreader stumm (`aria-hidden`), wie «Adresse
+  // kopiert». Beide Pillen stehen an derselben Stelle (unten Mitte): während «Adresse kopiert» steht,
+  // wartet der Hinweis (er steht noch bis zu `HINWEIS_MS` und erscheint danach, falls er noch gilt).
+  useEffect(() => { if (layoutHinweis) sageKopiertAn(LAYOUT_HINWEIS_TEXT); }, [layoutHinweis]);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const blattRef = useRef<HTMLDivElement>(null);
   const leisteRef = useRef<HTMLDivElement>(null);
@@ -845,6 +866,21 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       e.push({ id: 'adresse', label: 'Adresse kopieren',
         onKlick: () => kopieren(new URL(t.path, window.location.origin).href) });
     }
+    // ── LESER-NAV R-2 · «MERKEN» (Merkliste, David 19.9.2026) ───────────────
+    // Gemerkt wird die Stelle des Reiters (Artikel samt Anker, Entscheid,
+    // Rechner, Vorlage) in der lokalen Merkliste (`lib/merkliste`). Der Eintrag
+    // erscheint nur bei merkbaren Inhalts-Adressen (§8: kein toter Eintrag) und
+    // nennt den Zustand im Wort, nicht in einer Marke. Schreibt der Browser nicht,
+    // sagt die Ansage es — kein Erfolg ohne Wirkung.
+    const merkAdresse = merkRouteAusAdresse(t.path);
+    if (merkAdresse) {
+      const titel = reiterKurzformText(t, manifeste);
+      const gemerkt = istGemerkt(merkAdresse);
+      e.push({ id: 'merken', label: gemerkt ? 'Aus Merkliste entfernen' : 'Merken', onKlick: () => {
+        // Date.now() ist in der Darstellungsschicht erlaubt (nicht in src/lib, §2).
+        sageKopiertAn(merkAnsage(titel, schalteMerkung({ route: merkAdresse, titel, zeit: Date.now() })));
+      } });
+    }
     // ── W2·18 WELLE 3 PUNKT 5 · UMORDNEN OHNE MAUS ──────────────────────────
     // GEMESSEN am Vorstand (13.9.2026): die Reihenfolge liess sich NUR per
     // HTML5-Drag (Zeiger) oder Alt+⇧+←/→ (Tastatur mit Alt-Taste) ändern. Auf
@@ -1313,6 +1349,20 @@ export function Reiterleiste({ paneSchluessel = [] }: {
           onWieder={() => { stelleWiederHer(); schliesseBlatt(); }}
           onAlle={() => { alleSchliessen(); schliesseBlatt(); }}
           onZu={schliesseBlatt} />
+      )}
+
+      {layoutHinweis && !kopiert && (
+        <SchwebeMeldung kante="unten" ausrichtung="mitte" daten="data-layout-nur-sitzung" inhaltKlassen="max-w-xl px-4 py-2 text-body-s text-ink-700">
+          <span aria-hidden>{LAYOUT_HINWEIS_TEXT}</span>
+        </SchwebeMeldung>
+      )}
+
+      {kopiert && (
+        // Der Screenreader hört die Kopie schon aus `useKopieren` (sr-only-Region,
+        // `ui/kopierAnsage`) — die sichtbare Pille bleibt darum für ihn stumm (`aria-hidden`).
+        <SchwebeMeldung kante="unten" ausrichtung="mitte" daten="data-reiter-kopiert" inhaltKlassen="px-4 py-2 text-body-s text-ink-700">
+          <span aria-hidden>Adresse kopiert</span>
+        </SchwebeMeldung>
       )}
     </nav>
   );

@@ -59,3 +59,10 @@ Kanton. → Engine-Hinweis-Zeile: «Beurkundung auch ausserkantonal zulässig.»
 - Listen-PDFs sind datiert (SZ 4/2026, OW 5/2026, NE 1/2026, GE 6/2025) —
   **jährlicher Prüfrhythmus**, Eintrag im Parameter-Verfallsregister.
 - UR/AI/BL-Verifikation offen (oben).
+
+## Nachtrag 15.10.2026 (RL-33): `system` ist kein MwSt-Kriterium
+
+Amts- und freie Notare rechnen MwSt (MWSTV SR 641.201 Art. 14 Ziff. 13, Stand 1.1.2025;
+MWSTG SR 641.20 Art. 25 Abs. 1). Die Spalte `system` bleibt Stammdatum der Anlaufstelle;
+die MwSt-Behandlung je Kanton steht in `src/data/tarif/mwst-notariat.ts`, Belege in
+`bibliothek/kosten/beurkundungstarife-kantone.md` (Nachtrag 15.10.2026).

@@ -4,7 +4,9 @@ import { berechneBeurkundung, vergleichBeurkundung, tarifFuer, istWertbasiert } 
 import { berechneNotariatGrundbuch } from '../lib/notariatGrundbuch';
 import { notariatsGebuehrGruendung } from '../lib/notariatsgebuehrenGruendung';
 import { GESCHAEFTSART_IDS, geschaeftsart } from '../data/tarif/beurkundung-typen';
-import { KANTONE, type KantonCode } from '../data/tarif/typen';
+import { KANTONE, type KantonCode, type KantonalerTarif } from '../data/tarif/typen';
+import { SONDERTARIFE } from '../data/tarif/beurkundung';
+import { NOTARIAT } from '../data/tarif/notariat-grundbuch';
 
 describe('Beurkundung — Grundstückkauf parity (keine Regression zum Spezialrechner)', () => {
   it('Beurkundungs-Posten = Notariat-Posten des Grundstückkauf-Rechners (alle 26 Kt)', () => {
@@ -81,8 +83,6 @@ describe('Beurkundung — amtliche Stützstellen (3-fach verifiziert: find→Dop
     expect(det('buergschaft', 'ZH', 100_000)).toBe(100);   // 0,5‰ → min 100
     expect(det('stiftung', 'ZH', 1_000_000)).toBe(1000);   // 1‰
     expect(det('ag_gruendung', 'ZH', 1_000_000)).toBe(1000); // 1‰
-    expect(det('testament', 'UR')).toBe(750);              // Fix
-    expect(det('vollmacht', 'UR')).toBe(40);               // Beglaubigung
     expect(det('dienstbarkeit', 'SZ', 500_000)).toBe(450); // 0,9‰
     // GE Bürgschaft: Korrektur 1‰ (nicht 1%), min 100 / max 500.
     expect(det('buergschaft', 'GE', 200_000)).toBe(200);
@@ -99,11 +99,22 @@ describe('Beurkundung — amtliche Stützstellen (3-fach verifiziert: find→Dop
     expect(det('schenkung', 'GL', 1_000_000)).toBe(1700);   // A1-1 Staffel
   });
 
-  it('Gesamtwert-/Schwellensatz-Tarife (UR Tarif A: Satz × ganzem Wert, Stufen-Minima)', () => {
-    expect(det('schenkung', 'UR', 100_000)).toBe(500);     // 3‰ × 100k = 300 → min 500
-    expect(det('schenkung', 'UR', 500_000)).toBe(1250);    // 2,5‰ × ganzem Wert
-    expect(det('schenkung', 'UR', 1_000_000)).toBe(2500);
-    expect(det('schenkung', 'UR', 3_000_000)).toBe(6000);  // 2‰ × ganzem Wert
+  it('UR: alle Einträge ohne amtlichen Tarif, nicht gerechnet (RL-26, W-14, RB 9.2311 Art. 38 Abs. 3)', () => {
+    const ur = Object.values(SONDERTARIFE).map((m) => m?.UR).filter((t): t is KantonalerTarif => !!t);
+    expect(ur.length).toBe(21);
+    for (const t of ur) {
+      expect(t.regel.typ).toBe('formel_extern');
+      expect(t.erlassNr).toBe('RB 9.2311');
+      expect(t.quelleUrl).not.toContain('urilaw');
+    }
+    expect(berechneBeurkundung({ geschaeftsart: 'testament', kanton: 'UR' }).posten?.ergebnis.deterministisch).toBe(false);
+    expect(berechneBeurkundung({ geschaeftsart: 'vollmacht', kanton: 'UR' }).posten?.ergebnis.deterministisch).toBe(false);
+  });
+
+  it('UR: genau 22 Einträge formel_extern + RB 9.2311 (21 Sondertarife + NOTARIAT.UR)', () => {
+    const alle = [NOTARIAT.UR, ...Object.values(SONDERTARIFE).map((m) => m?.UR)].filter((t): t is KantonalerTarif => !!t);
+    const treffer = alle.filter((t) => t.regel.typ === 'formel_extern' && t.erlassNr === 'RB 9.2311');
+    expect(treffer.length).toBe(22);
   });
 
   it('aktuelle Fassung (ZH NotGebV 1.1.2024, nicht aufgehobene v95) als Rahmen', () => {
@@ -129,16 +140,14 @@ describe('Beurkundung — amtliche Stützstellen (3-fach verifiziert: find→Dop
   });
 });
 
-describe('Beurkundung — AG-Gründung-Parität: allg. System vs. Spezial-Engine (Drift-Schutz, Engine-Synergien 16.6.2026)', () => {
-  // Zwei LIVE geschaltete Encodings derselben Rechtsfrage (Notariatsgebühr der
-  // AG-Gründung):
-  //  · Spezial-Engine notariatsGebuehrGruendung  → genutzt in VorlageAgGruendung.tsx
-  //  · allg. Beurkundungsrechner, Geschäftsart 'ag_gruendung' → beurkundung.ts
-  // Driften sie, kostet dieselbe Gründung im AG-Wizard etwas anderes als im
-  // Beurkundungsrechner (§1/§5 Single Source). Die Spezial-Engine deckt 6 Kantone
-  // (ZH/BE/LU/SG/BS/AG); nur diese werden verglichen. Beide Schichten tragen
-  // 'recherche' (kein 'geprüft'). Der bisherige Parity-Test (oben) deckt nur
-  // 'grundstueckkauf' ab — dieser Block schliesst das Gründungs-Drift-Loch.
+describe('Beurkundung — AG-Gründung: Adapter liefert Engine-Wert (RL-36, ersetzt den Zwei-Encodings-Paritätstest)', () => {
+  // Bis RL-36 hielten notariatsGebuehrGruendung (Spezial-Kopie) und die allgemeine
+  // Engine zwei LIVE geschaltete Encodings derselben Gründungstarife; ein Paritätstest
+  // (6 Kantone, dichter Sweep) hielt sie zusammen. Der Spezial-Rechner ist jetzt ein
+  // dünner Adapter auf berechneBeurkundung('ag_gruendung'): die Parität ist
+  // konstruktionsbedingt, der Test prüft stattdessen, dass der Adapter den
+  // Engine-Wert nicht verfälscht — und zwar für ALLE 26 Kantone (zuvor 6) und
+  // ohne BE-Ausnahme über 20 Mio. Deklarierter Rückbau (W-05, Sammelfreigabe a).
 
   type Kanon =
     | { kind: 'betrag'; chf: number }
@@ -151,7 +160,7 @@ describe('Beurkundung — AG-Gründung-Parität: allg. System vs. Spezial-Engine
     const e = a.ergebnis;
     if (e.typ === 'betrag') return { kind: 'betrag', chf: Math.round(e.chf) };
     if (e.typ === 'rahmen') return { kind: 'rahmen', von: e.vonChf, bis: e.bisChf };
-    return { kind: 'offen' }; // 'aufwand' | 'offen' → beide nicht beziffert
+    return { kind: 'offen' }; // 'nicht_beziffert'
   };
   const kanonAllg = (k: KantonCode, kap: number): Kanon => {
     const r = berechneBeurkundung({ geschaeftsart: 'ag_gruendung', kanton: k, geschaeftswertCHF: kap });
@@ -162,30 +171,116 @@ describe('Beurkundung — AG-Gründung-Parität: allg. System vs. Spezial-Engine
     return { kind: 'offen' }; // 'formel_extern'/Aufwand → nicht beziffert
   };
 
-  // Konvergenz beider Systeme — dicht verifiziert (0 Abweichungen). Fix 16.6.2026:
-  // SG floored auf ganze Tranchen (GebT Nr. 60.13 «je weitere VOLLE 100 000»; das
-  // allg. System rechnete zuvor kontinuierlich 0,08‰ und widersprach seinem eigenen
-  // Hinweis), BE liest jetzt die kapitalspezifische Anhang-4-Stufe (GebVN Art. 21)
-  // statt einer flachen Gesamtspanne. Beide Encodings sind damit angeglichen.
-  // Tripwire gegen jede künftige einseitige Tarif-Änderung in EINEM der Systeme.
-  it('ZH/LU/BS/AG/SG: deckungsgleich über dichten Kapital-Sweep', () => {
-    for (const k of ['ZH', 'LU', 'BS', 'AG', 'SG'] as KantonCode[]) {
+  // Historie (16.6.2026): SG floort auf ganze Tranchen (GebT Nr. 60.13 «je weitere
+  // VOLLE 100 000»), BE liest die kapitalspezifische Anhang-4-Stufe (GebVN Art. 21).
+  // Seit RL-36 gibt es nur noch EIN Encoding; der Test ist Tripwire gegen einen
+  // verfälschenden Adapter (Abbildung Engine → Anzeigeform).
+  it('alle 26 Kantone: Adapter == Engine über dichten Kapital-Sweep', () => {
+    for (const k of KANTONE as readonly KantonCode[]) {
       for (let w = 0; w <= 3_000_000; w += 25_000) {
-        expect(kanonAllg(k, w), `${k} @ ${w}`).toEqual(kanonSpezial(k, w));
+        expect(kanonSpezial(k, w), `${k} @ ${w}`).toEqual(kanonAllg(k, w));
       }
       for (const w of [5_000_000, 10_000_000, 20_000_000, 50_000_000]) {
-        expect(kanonAllg(k, w), `${k} @ ${w}`).toEqual(kanonSpezial(k, w));
+        expect(kanonSpezial(k, w), `${k} @ ${w}`).toEqual(kanonAllg(k, w));
       }
     }
   });
 
-  it('BE: Anhang-4-Stufe deckungsgleich (bis CHF 20 Mio.; Anhang endet dort)', () => {
-    // GebVN BE Art. 21 + Anhang 4: kapitalspezifische Lookup-Stufe [Min..Max]. Beide
-    // Systeme lesen nun dieselbe Stufe. Oberhalb CHF 20 Mio. endet Anhang 4 →
-    // Spezial-Engine 'offen' (nicht verglichen), allg. nutzt die 20-Mio.-Stufe.
-    for (const w of [0, 100_000, 150_000, 250_000, 500_000, 1_000_000, 2_000_000, 5_000_000, 10_000_000, 20_000_000]) {
-      expect(kanonAllg('BE', w), `BE @ ${w}`).toEqual(kanonSpezial('BE', w));
-    }
+  it('BE: Anhang-4-Stufe und Höchststufe über 20 Mio. (16\'450–27\'350)', () => {
     expect(kanonSpezial('BE', 1_000_000)).toEqual({ kind: 'rahmen', von: 2200, bis: 3600 });
+    expect(kanonSpezial('BE', 50_000_000)).toEqual({ kind: 'rahmen', von: 16450, bis: 27350 });
+  });
+});
+
+// ─── RL-28 Teil 2: Schuldbrief NE (Pauschalstufen Ziff. 44), TI-Sockel, VD-Quelle ───
+describe('Beurkundung Schuldbrief — NE, TI, VD nach Norm (RL-28 Teil 2)', () => {
+  const b = (kanton: KantonCode, wert: number): number => {
+    const e = berechneBeurkundung({ geschaeftsart: 'schuldbrief', kanton, geschaeftswertCHF: wert }).posten?.ergebnis;
+    if (!e || !e.deterministisch) throw new Error(`${kanton}: nicht beziffert`);
+    return e.betragChf;
+  };
+  it('NE: RSN 166.31 Ziff. 44 — 500 bis 100’000, +200 je 100’000 bis 1,3 Mio, +100 darüber, ab 3’000’001 4’700', () => {
+    expect(b('NE', 100_000)).toBe(500);
+    expect(b('NE', 100_001)).toBe(700);
+    expect(b('NE', 1_000_000)).toBe(2300);
+    expect(b('NE', 1_000_001)).toBe(2500);
+    expect(b('NE', 3_000_000)).toBe(4600);
+    expect(b('NE', 3_000_001)).toBe(4700);
+    expect(b('NE', 50_000_000)).toBe(4700);
+  });
+  it('TI: Sockel exakt (1 Mio 2187.50 statt gerundet 2188); 400’000 unverändert 1175', () => {
+    expect(b('TI', 1_000_000)).toBe(2187.5);
+    expect(b('TI', 750_000)).toBe(1812.5);
+    expect(b('TI', 400_000)).toBe(1175);
+  });
+  it('VD: Quelle zeigt auf die Fassung 1.3.2016 (lexfind 210344), nicht auf die Fassung 2005 (128150)', () => {
+    expect(SONDERTARIFE.schuldbrief!.VD!.quelleUrl).toBe('https://www.lexfind.ch/tolv/210344/fr');
+    expect(SONDERTARIFE.schuldbrief!.VD!.stand).toBe('01.03.2016');
+  });
+});
+
+describe('Beurkundung — MwSt-Hinweis je Kanton nach Tabelle (RL-33 Teil 2)', () => {
+  const text = (kanton: KantonCode, wert = 500_000) =>
+    berechneBeurkundung({ geschaeftsart: 'grundstueckkauf', kanton, geschaeftswertCHF: wert }).hinweise.join(' | ');
+
+  it('ZG inbegriffen, ZH zuzüglich nach Tarif, GE zuzüglich nach Bundesrecht', () => {
+    expect(text('ZG')).toMatch(/MwSt in den Tarifansätzen inbegriffen \(BGS 641\.1 Ziff\. 109bis\)/);
+    expect(text('ZH')).toMatch(/Zuzüglich MwSt 8,1 % \(nach kantonalem Tarif LS 243/);
+    expect(text('GE')).toMatch(/Zuzüglich MwSt 8,1 % \(nach Bundesrecht, MWSTG Art\. 25\)/);
+  });
+  it('Rest des Satzes (HReg-/Grundbuchgebühren, Auslagen nicht enthalten) bleibt, ohne «freies Notariat»', () => {
+    const h = berechneBeurkundung({ geschaeftsart: 'grundstueckkauf', kanton: 'ZH', geschaeftswertCHF: 500_000 }).hinweise[0];
+    expect(h).toMatch(/HReg-\/Grundbuchgebühren und Auslagen sind nicht enthalten\./);
+    expect(h).not.toMatch(/freies Notariat/);
+  });
+  it('kein Kanton nennt mehr «freies Notariat» als MwSt-Kriterium', () => {
+    for (const k of KANTONE) expect(text(k), k).not.toMatch(/MwSt\. \(freies Notariat\)/);
+  });
+});
+
+describe('Beurkundung — MwSt-Hinweis ZH je Geschäftsart und Bedingung (RL-33 Teil 2 Nachzug)', () => {
+  const zh = (art: 'vollmacht' | 'buergschaft' | 'grundstueckkauf', wert = 100_000) =>
+    berechneBeurkundung({ geschaeftsart: art, kanton: 'ZH', geschaeftswertCHF: wert }).hinweise[0];
+
+  it('ZH Vollmacht: inbegriffen, kein Aufschlag (Dienstanweisung Ziff. 4.5.1)', () => {
+    expect(zh('vollmacht')).toMatch(/MwSt in der Gebühr inbegriffen \(Dienstanweisung FD ZH 22\.11\.2023 § 2 Ziff\. 4\.5\.1\): kein Aufschlag/);
+    expect(zh('vollmacht')).not.toMatch(/Zuzüglich/);
+  });
+  it('ZH Bürgschaft: Grenze CHF 199, darüber zuzüglich', () => {
+    expect(zh('buergschaft')).toMatch(/MwSt in der Gebühr bis CHF 199 inbegriffen .*Ziff\. 4\.4\.1\), darüber zuzüglich 8,1 %/);
+  });
+  it('ZH Grundstückkauf: zuzüglich, mit Bedingung Steuerpflicht (MWSTG Art. 10)', () => {
+    expect(zh('grundstueckkauf', 500_000)).toMatch(/Zuzüglich MwSt 8,1 % .*, soweit das Notariat mehrwertsteuerpflichtig ist \(MWSTG Art\. 10\)/);
+  });
+});
+
+describe('RL-29 Teil 3: GE Kapitalherabsetzung (REmNot Art. 25 al. 4), SG-Praxishinweis, NE-Stand', () => {
+  const geKh = (w: number): number => {
+    const e = berechneBeurkundung({ geschaeftsart: 'kapitalherabsetzung', kanton: 'GE', geschaeftswertCHF: w }).posten!.ergebnis;
+    if (!e.deterministisch) throw new Error('deterministisch erwartet');
+    return e.betragChf;
+  };
+  it('GE: Sockel = Viertel der proportionalen Staffel von al. 2 (87.50 / 162.50 / … / 2887.50), Sätze unverändert', () => {
+    expect(geKh(50_000)).toBe(87.5);
+    expect(geKh(100_000)).toBe(162.5);
+    expect(geKh(200_000)).toBe(287.5);
+    expect(geKh(300_000)).toBe(387.5);
+    expect(geKh(400_000)).toBe(462.5);
+    expect(geKh(500_000)).toBe(512.5);
+    expect(geKh(1_000_000)).toBe(637.5);   // 512.50 + 0.025 % × 500’000
+    expect(geKh(30_000)).toBeCloseTo(52.5, 6); // 0.175 % × 30’000
+  });
+  it('SG: testament/erbvertrag/ehevertrag tragen den Hinweis «Amtspraxis nicht amtlich tarifiert», ohne Praxisbeträge', () => {
+    for (const art of ['testament', 'erbvertrag', 'ehevertrag'] as const) {
+      const t = SONDERTARIFE[art]!.SG!;
+      expect(t.hinweis ?? '', art).toContain('Ermessensrahmen nach GebT');
+      expect(t.hinweis ?? '', art).toContain('nicht amtlich tarifiert');
+    }
+  });
+  it('NE: Stand «13.5.2015» (Etat au 13 mai 2015, FO 2015 N° 20), nie die Jahresangabe «Etat au 2015»', () => {
+    const ne = Object.values(SONDERTARIFE).map((m) => m?.NE).filter((t): t is KantonalerTarif => !!t);
+    expect(ne.length).toBeGreaterThan(10);
+    for (const t of ne) expect(t.stand, t.artikel).not.toMatch(/^Etat au 2015/);
+    expect(SONDERTARIFE.baurecht!.NE!.stand).toBe('13.5.2015');
   });
 });

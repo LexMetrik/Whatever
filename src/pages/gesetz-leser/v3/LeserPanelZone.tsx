@@ -5,8 +5,7 @@ import type { BestimmungsWort } from './erlassAnsicht';
 import { LeserPanel } from './LeserPanel';
 import { PanelEntscheide } from './PanelEntscheide';
 import { usePanelTafeln } from './PanelTafeln';
-import type { Geladen } from './panelKontextLaden';
-import type { HistorieShard } from '../../../lib/normtext/historie-laden';
+import type { HistorieStand } from '../useHistorieShard';
 import type { InternRefs } from '../../../components/NormText';
 import { OEFFNER_SELEKTOR, type PanelBezuege, type PanelZustand } from './panelModell';
 import { usePopoverAutoZu } from './usePopoverAutoZu';
@@ -152,7 +151,7 @@ export function LeserPanelZone({
   /** `BrowseErlass.inkraftGestaffelt` — nur `false` zeigt «Erlass in Kraft seit …» (fehlend = gestaffelt, §8). */
   inkraftGestaffelt?: boolean | null;
   /** P5 · B1: Historie-Shard des Lesers samt Bereitschaft (`historieStand`) — Sperre für «Erlass in Kraft seit»/«nichts erfasst». */
-  historie: Geladen<HistorieShard | null>;
+  historie: HistorieStand;
 }) {
   const titelId = `${panelId}-titel`;
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -292,7 +291,7 @@ export function LeserPanelZone({
         // S6-W1b (E-3/D-3/B-8): der Fehlschlag ist eine eigene Lage, nicht «geladen, leer».
         fehler={bezuege.fehler} onNeuLaden={bezuege.neuLaden}
         klassen={klassen} kantone={kantone} kantoneVerfuegbar={bezuege.kantoneVerfuegbar}
-        histogramm={bezuege.histogramm} bereich={bezuege.bereich}
+        histogramm={bezuege.histogramm} bereich={bezuege.bereich} datenstand={bezuege.datenstand}
         onKlassen={setzeBezugKlassen} onKantone={setzeBezugKantone}
         onBereich={(von, bis) => setzeBezugZeit(von, bis)}
         ebene={ebene} />

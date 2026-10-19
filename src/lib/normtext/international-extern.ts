@@ -37,3 +37,15 @@ export const INTERNATIONAL_EXTERN: ErlassRegistereintrag[] = [
   euVo('ROM_II', 'Rom II', 'Verordnung (EG) Nr. 864/2007 über das auf ausservertragliche Schuldverhältnisse anzuwendende Recht (Rom II)', '32007R0864', '2007-07-11', 96),
   euVo('BRUESSEL_IA', 'Brüssel Ia', 'Verordnung (EU) Nr. 1215/2012 über die gerichtliche Zuständigkeit und die Anerkennung und Vollstreckung von Entscheidungen in Zivil- und Handelssachen (Brüssel Ia)', '32012R1215', '2012-12-12', 97),
 ];
+
+// O-02 (FEHLERBESTAND, §8): bei diesen Einträgen ist `stand` das ERLASSDATUM des
+// Rechtsakts (EUR-Lex, Datum der Verordnung), keine Nachführung. Die Anzeige
+// sagte trotzdem «Stand», wie bei den Fedlex-Stubs (CISG «Stand 22.05.2026» =
+// Nachführung). Zwei Bedeutungen unter einem Wort; die Etiketten trennen sie.
+const ERLASSDATUM_KEYS: ReadonlySet<string> = new Set(INTERNATIONAL_EXTERN.map((e) => e.key));
+
+/** Etikett vor dem Datum `BrowseErlass.stand`: «Erlassen» für die EU-Einträge,
+ *  deren Datum das Erlassdatum ist; sonst «Stand» (Nachführungs-/Fassungsdatum). */
+export function standEtikett(e: { key: string; ebene: string }): 'Stand' | 'Erlassen' {
+  return e.ebene === 'bund' && ERLASSDATUM_KEYS.has(e.key) ? 'Erlassen' : 'Stand';
+}

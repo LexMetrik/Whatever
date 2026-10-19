@@ -88,6 +88,8 @@
 | schuldanerkennung | Nach Zeitaufwand, Stundenansatz CHF 300. | Notariatstarif UR Ziff. 4 (Stundenansatz); Ziff. 5.1 ab | 17.3.2015 |
 | vollmacht | fix 40 | Notariatstarif UR Ziff. 9.1 (Beglaubigung Unterschrift) | 17.3.2015 |
 
+**Nachtrag 15.10.2026 (RL-26):** nicht mehr gerechnet — W-14 (23.9.2026) / B5-04: RB 9.2311 (NotV) Art. 38 Abs. 3 verweist auf einen «beigefügten Tarif», den die amtliche Fassung (Version 812, in Kraft seit 1.1.2001, abgerufen 15.10.2026 unter https://rechtsbuch.ur.ch/app/de/texts_of_law/9.2311) nicht enthält; der Verbands-Konventionaltarif ist kein amtlicher Erlass. Die Werte oben bleiben als Beleg stehen, die Daten rechnen sie nicht mehr (`formel_extern`); GRUNDPFAND.UR = nur Eintragsgebühr.
+
 ## SZ — Schwyz
 
 | Art | Regel | Artikel | Stand |
@@ -592,3 +594,43 @@ JU «Sockel 300 bis 100'000 Kapital» (Kapitalschwelle, kein Gebührenrahmen).
 
 ---
 **Abnahme-Status:** Erstrecherche, 4-fach verifiziert; Davids Abnahme ausstehend.
+
+---
+## Nachtrag 15.10.2026 (RL-33): Mehrwertsteuer auf Notariatsgebühren je Kanton
+
+Frühere Annahme «nur freies Notariat rechnet MwSt» ist überholt (alte Werte oben bleiben stehen, nicht nachgeführt).
+Bund: MWSTG SR 641.20 Art. 25 Abs. 1 (8,1 %, Stand 31.3.2025), Art. 10 Abs. 2 lit. a (Umsatzgrenze CHF 100 000), Art. 12 Abs. 3/4;
+MWSTV SR 641.201 Art. 14 Ziff. 13 (Tätigkeiten von Amtsnotaren unternehmerisch, Stand 1.1.2025) — https://www.fedlex.admin.ch/eli/cc/2009/615/de, https://www.fedlex.admin.ch/eli/cc/2009/828/de.
+Daten: `src/data/tarif/mwst-notariat.ts` (`MWST_BEHANDLUNG`). Am 15.10.2026 selbst geöffnet: ZG, BE, NW, OW, LU, GL, BL, GR, AG, VS (JSON-API der Portale), AR, SG (PDF), ZH nur Dienstanweisung FD 22.11.2023 (NotGebV-Wortlaut über JS-Portal nicht abrufbar); übrige aus Dossier RL-33 (nicht neu geöffnet).
+
+| Kt | MwSt | Grundlage | Stelle | Stand |
+|---|---|---|---|---|
+| ZH | zusätzlich; vollmacht (Ziff. 4.5.1) inbegriffen, buergschaft (4.4.1) bis Gebühr 199 inbegriffen | Tarif | NotGebV § 2; DA FD 22.11.2023 § 2 | 1.1.2024 |
+| BE | zusätzlich | Tarif | GebVN Art. 1 Abs. 3 «in der Gebühr nicht enthalten» | 1.3.2022 |
+| LU | zusätzlich | Tarif | BeurkGebV § 9 Abs. 1 | 1.1.2022 |
+| SZ | zusätzlich | Tarif | GebT § 2 Abs. 2 (Dossier) | 1.2.2021 |
+| OW | zusätzlich | Tarif | Art. 6 Abs. 2 | 1.1.2013 |
+| NW | zusätzlich | Tarif | § 3a Abs. 1 Ziff. 3 | 1.1.2016 |
+| GL | zusätzlich | Tarif | Art. 10 Abs. 3 | 1.1.2009 |
+| ZG | inbegriffen (kein Aufschlag) | Tarif | Verwaltungsgebührentarif BGS 641.1 Ziff. 109bis; Anwalts-Urkundspersonen offen | 22.8.2025 |
+| BL | zusätzlich | Tarif | NotGebV § 11 Abs. 1 | 1.11.2012 |
+| AR | zusätzlich | Tarif | Gebührentarif Gemeinden Art. 12 Abs. 1 | 1.1.2018 |
+| SG | zusätzlich | Tarif | Gebührentarif sGS 821.5 Fn. 5 | 1.1.2026 |
+| GR | zusätzlich | Tarif | NotGebV Art. 1 Abs. 1 | 1.1.2024 |
+| AG | zusätzlich | Tarif | Notariatstarif § 9 Abs. 1 | 1.1.2025 |
+| TG | zusätzlich | Tarif (Preisliste GNI, Rang 4) | Preisliste | 1.1.2026 |
+| VS | zusätzlich | Tarif | Art. 10 al. 1 | 1.1.2011 |
+| NE | zusätzlich | Tarif | Art. 14 (HTML «Etat au 13 mai 2015», Aktualität ungeprüft) | 13.5.2015 |
+| FR, GE, TI, SO, SH, AI | zusätzlich | Bundesrecht (W-16 a, Tarif schweigt) | MWSTG/MWSTV | – |
+| BS, VD, JU | zusätzlich wie bisher | Bundesrecht, Tarif schweigt; Zuordnung wartet auf David | MWSTG/MWSTV | – |
+| UR | offen | kein amtlicher Tarif (RL-26) | – | – |
+
+### Nachzug 15.10.2026 (RL-33, nach Gegenprüfung)
+- TG: Preisliste GNI (Stand 1.1.2026, https://gni.tg.ch/public/upload/assets/123369/Preisliste%20Grundbuchamt%20und%20Notariat.pdf) ist kein Erlass; sie nennt MWST nur bei Beurkundungen von Grundstücksgeschäften, Depotgebühren, Gesellschaftsrecht, Stundenansätzen und *-markierten Erbschaftsgeschäften, schweigt zu Beglaubigungen, Bürgschaften, Familien-/Erbrecht; RB 632.1 schweigt. Grundlage neu «Bundesrecht» (W-16 a), Betrag unverändert (Tabelle oben: TG nicht mehr «Tarif»).
+- SG: für grundstücksbezogene Beurkundungen zusätzlich GB-GebV sGS 914.5 Art. 3 «Soweit die Gebühren der Mehrwertsteuer unterliegen, wird diese hinzugerechnet.» (in Vollzug seit 1.6.2020, https://www.gesetzessammlung.sg.ch/app/de/texts_of_law/914.5, am 15.10.2026 geöffnet).
+- SZ: SRSZ 213.512 § 2 Abs. 2 «wird diese zusätzlich in Rechnung gestellt» (PDF https://www.sz.ch/public/upload/assets/7361/213_512.pdf, am 15.10.2026 geöffnet) bestätigt. Kopfzeile trägt «SRSZ 1.2.2027», Fn. 1 nennt Änderung vom 27.5.2026; «in Kraft 1.7.2026» steht im PDF nicht. Stand in den Daten bleibt 1.2.2021 (offengelegt, nicht belegt nachgeführt).
+
+**Nachtrag 15.10.2026 (RL-28 Nachzug):** schuldbrief AG — Minimum 200 (⅔ × 300, Lesart von SAR 295.250 § 3 Abs. 1; vorher 300); schuldbrief SZ — § 5 Abs. 1 Nr. 2 «bzw. Bruchteile davon», Pfandsumme auf 50'000 aufgerundet, Stand 1.7.2026; schuldbrief OW — Art. 4 (Erhöhung bis zur Hälfte) und Art. 5 lit. a (Herabsetzung um einen Drittel) offengelegt, nicht gerechnet. Belege: notariat-grundbuch-kantone.md, Nachtrag 15.10.2026 (Nachzug).
+
+**Nachtrag 15.10.2026 (RL-28 Teil 2):** schuldbrief NE — RSN 166.31 Art. 14 ch. 44 «Constitution d'un droit de gage immobilier», Etat au 13 mai 2015 (https://rsn.ne.ch/DATA/program/books/RSN2015/20154/htm/16631.htm, am 15.10.2026 geöffnet): Pauschalstufen 500 bis 100'000, +200 je 100'000 bis 1,3 Mio (2'900), +100 je 100'000 bis 3 Mio (4'600), ab 3'000'001 4'700; ersetzt die Zeile «Rahmen 800–10000» oben (falsch). Der Quelltext hat bei der Stufe 1,1–1,2 Mio den Tippfehler «de 1.000.101»; gelesen als 1.100.001. schuldbrief TI — Sockel exakt (1'812.50 / 2'187.50 / 3'437.50 / 6'437.50 / 8'937.50 / 18'937.50 statt gerundet); Lesart A (Art. 6 LTN) kodiert, Lesart B offen (Posten-Hinweis in `grundpfand.ts`). schuldbrief VD — Quelle auf die Fassung 1.3.2016 (https://www.lexfind.ch/tolv/210344/fr) statt der Fassung 2005 (tolv/128150).
+**Nachtrag 15.10.2026 (RL-29 Teil 3):** kapitalherabsetzung GE — REmNot RSG E 6 05.03 Art. 25 al. 4 «le quart de l'émolument proportionnel» (Etat 30.4.2015): Sockel je Band 87.50 / 162.50 / 287.50 / 387.50 / 462.50 / 512.50 / 2'887.50 (vorher je +0.50); der Höchstbetrag 1'000 (al. 4 Satz 2 bezieht ihn auf den festen Teil bei Sanierung) bleibt als offene Lesart im Hinweis. NE — alle Stände «Etat au 2015» auf «13.5.2015» (RSN 166.31, «Etat au 13 mai 2015», FO 2015 N° 20); das Datum 13.6.2012 in einzelnen Artikel-Feldern ist das Erlassdatum und bleibt. SG testament/erbvertrag/ehevertrag und TG buergschaft: Hinweis «Ermessensrahmen; Amtspraxis nicht amtlich tarifiert» (keine Praxisbeträge). Die Tabellenzeilen oben bleiben als Verlauf stehen.

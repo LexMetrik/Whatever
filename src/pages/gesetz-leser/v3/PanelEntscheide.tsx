@@ -1,12 +1,8 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { datumAnzeige } from '../../../components/rechtsprechung/format';
-import { KanteMitVorschau } from '../../../components/verzahnung/KanteMitVorschau';
 import { GruppenKopf } from '../../../components/ui/GruppenKopf';
-import {
-  entscheidDatum, klassifiziereFassungsBezug, revisionFuerToken,
-  type ArtikelRevision, type RevisionShard,
-} from '../../../lib/verzahnung/artikel-revisionen';
+import type { RevisionShard } from '../../../lib/verzahnung/artikel-revisionen';
 import { STATUS_LABEL, type BezugStatus } from '../../../lib/verzahnung/facetten';
 import type { Bezug } from '../../../lib/rechtsprechung/bezuege';
 import { zahl } from '../bezugPortion';
@@ -14,9 +10,10 @@ import { leereEntscheideSatz } from '../artikelBezeichnung';
 import { istBereichOffen, type Histogramm, type Zeitbereich } from '../bezugZeit';
 import { bestimmungDativ, type BestimmungsWort } from './erlassAnsicht';
 import {
-  ERSTE_PORTION, datumInZitierung, gefiltertSatz, kantonWirkung, klassenZahlenAmArtikel, naechsteMenge, ordneEntscheide,
-  regesteTeil, weitereText, type EntscheidGruppe,
+  ERSTE_PORTION, gefiltertSatz, kantonWirkung, klassenZahlenAmArtikel, naechsteMenge, ordneEntscheide,
+  weitereText, type EntscheidGruppe,
 } from './entscheideOrdnung';
+import { Fundstelle } from './PanelEntscheideFundstelle';
 import { PanelFilterZeile } from './PanelFilterZeile';
 import { WEITERZUG_ERKLAERUNG, traegtWeiterzugHinweis } from './PanelEntscheideKontext';
 
@@ -67,87 +64,6 @@ import { WEITERZUG_ERKLAERUNG, traegtWeiterzugHinweis } from './PanelEntscheideK
 // Ä54 (H3-Nachzug): der Mount-Punkt ist jetzt `./PanelFilterZeile` — EINE Zeile
 // mit zwei benannten Klappen statt vier gestapelter Steuer-Blöcke (348 px
 // gemessen). Die geteilten Bausteine selbst sind dabei nicht angefasst worden.
-
-/**
- * Eine Fundstelle: Zitierung · Datum · Regeste-Kurzzeile, verlinkt auf den
- * Entscheid. `?norm=` trägt die Fundstellen-Absicht — das Ziel springt zur
- * ersten Erwägung, die diese Norm zitiert (dieselbe Zusage wie am Artikelfuss).
- *
- * ── Ä106 (Live-Ästhetik-Prüfung 18.8.2026) · DAS ★ IST GESTRICHEN ───────────
- *
- * GEMESSEN am Live-Stand (StPO Art. 429, Reiter «Entscheide»): unter der
- * Overline «LEITENTSCHEIDE 25» trugen ALLE 25 Zeilen ein ★ — fünfundzwanzig
- * Zeichen für eine Auskunft, die der Gruppenkopf zwei Zeilen darüber einmal
- * gibt. Die Marke war als Auszeichnung IN einer gemischten Liste gedacht
- * («und nur als EIN Zusatz», Dichte-Regel); gemischte Listen gibt es hier aber
- * nicht: `gruppiereKanten` (`./panelModell`) legt je Status eine eigene Gruppe
- * an — innerhalb einer Gruppe haben ausnahmslos alle Einträge denselben Status.
- * Das ★ konnte also NIE etwas unterscheiden. Design-Grundlage Kap. 6 nennt
- * genau das die Icon-Flut: ein Zeichen, das an jedem Element steht, trägt keine
- * Information mehr.
- *
- * Die Auskunft bleibt vollständig (§8): der Gruppenkopf nennt die Klasse im
- * Wort («Leitentscheide») UND die Zahl — eine Marke, eine Zahl, wie es der
- * Prüfbefund verlangt.
- *
- * WÄRE die Gruppierung je aufgehoben (eine Liste über alle Instanzen), gehörte
- * die Marke zurück — dann trüge sie wieder einen Unterschied. Sie steht in der
- * Historie dieser Datei, nicht in einer toten Bedingung (§17: gestrichen statt
- * bewacht).
- *
- * ── §7b-DECKUNGSLÜCKE GESCHLOSSEN (21.8.2026, Kontaktbogen H4 §7b Pos. 3/5,
- *    Optik-Entscheid David 21.8.2026 nach Drei-Varianten-Vergleich) ─────────
- *
- * Bis hierhin war die Zeile ein blosser `<Link>` — kein Kurztext-Popover, kein
- * ⧉-Einstieg, kein ↻. Alle drei trägt bereits `KanteMitVorschau` (`W2·10-UI-NAV`,
- * bisher nur an der V1a-Leitfall-Zeile und den B4/B7-Bezüge-Linien gemountet,
- * §5: EIN Bauteil statt einer dritten Kopie):
- *   · Kurztext-Popover auf Hover/Fokus/↓, Esc schliesst (deckt
- *     `leitfaelle-chips.e2e.ts` Fall (d), s. `leser-v3-panel-kurztext.e2e.ts`).
- *   · ⧉ «nebeneinander öffnen» am Chip (Pane-Gating via `usePaneSteuerung`) —
- *     derselbe Einstieg, den `druck-fundstellen-z2.e2e.ts` für den
- *     Split-Ausdruck braucht (V3-Fall in derselben Datei).
- *   · ↻-Badge («Norm seit dem Entscheid revidiert») via `revidiertFuer` unten
- *     (deckt `normrevision-badge.e2e.ts`, s. `leser-v3-panel-revision-badge.e2e.ts`).
- * Das Datum wandert in den `sublabel`-Slot des Chips (`KantenChip` kennt genau
- * diesen Platz bereits, §5 — kein zweiter Anzeige-Pfad).
- *
- * DAVID-VORGABE 21.8.2026 (wörtlich, nach Vorlage dreier Varianten): «man soll
- * regeste direkt lesen können, damit man weiss um was der entscheid geht» —
- * die Regeste steht darum ZUSÄTZLICH zum Chip als eigene, lesbare Zeile
- * (`text-body-s`/14px, NICHT `text-micro` — Davids ausdrücklicher Einwand
- * gegen eine Kompakt-Variante mit Mikroschrift) direkt darunter, zweizeilig
- * gedeckelt (`line-clamp-2`). Das Popover bleibt VERTIEFUNG für den
- * ungekürzten Text, nie der einzige Zugang. Quelle ausschliesslich
- * `regesteKurz` aus dem Shard — nichts generiert (§2).
- */
-function Fundstelle({ b, normZitat, statusLabel, revidiert }: {
-  b: Bezug; normZitat: string; statusLabel: string; revidiert: ArtikelRevision | null;
-}) {
-  // S6-W1b · E-8: trägt die Zitierung ihr Datum schon («… vom 12.12.2025»),
-  // steht es nicht noch einmal als Unterzeile. B-2/E-6: ein führendes
-  // Teil-Kennzeichen wird benannt statt nackt gesetzt (Herleitung an den
-  // Funktionen in `./entscheideOrdnung`).
-  const regeste = b.regesteKurz ? regesteTeil(b.regesteKurz) : null;
-  // PE-E1-B01: Platzhalterdatum (`datumUnbekannt`) als «2025, o. D.», nie als echtes Datum (§8).
-  return (
-    <li data-v3-panel-entscheid={b.key} className="border-l-2 border-t border-line border-l-reg-r py-2 pl-2.5">
-      <KanteMitVorschau
-        ziel={`/rechtsprechung/${encodeURIComponent(b.key)}?norm=${encodeURIComponent(normZitat)}`}
-        zitierung={b.zitierung}
-        sublabel={datumInZitierung(b.zitierung) ? undefined : datumAnzeige(b.datum, b.datumUnbekannt)}
-        kurztext={b.regesteKurz}
-        statusLabel={statusLabel}
-        revidiert={revidiert} />
-      {regeste && (
-        <p className="mt-1 text-body-s leading-snug text-ink-700 line-clamp-2">
-          {regeste.teil && <span data-v3-panel-regeste-teil={regeste.teil} className="text-ink-600">{`Regeste ${regeste.teil}: `}</span>}
-          {regeste.rest}
-        </p>
-      )}
-    </li>
-  );
-}
 
 /**
  * EINE Gruppe des Reiters mit ihrer Portion (S6-W1b, Entscheid David 23.9.2026
@@ -214,7 +130,7 @@ function Gruppe({ g, gesamt, artikelLabel, bestimmungsWort, normZitat, aktArtike
       <ul ref={listeRef} className="mt-0.5">
         {g.liste.slice(0, sichtbar).map((b) => (
           <Fundstelle key={b.key} b={b} normZitat={normZitat} statusLabel={statusLabel}
-            revidiert={revidiertFuer(b, aktArtikel, revisionShard)} />
+            aktArtikel={aktArtikel} revisionShard={revisionShard} />
         ))}
       </ul>
       {offen > 0 && (
@@ -227,17 +143,6 @@ function Gruppe({ g, gesamt, artikelLabel, bestimmungsWort, normZitat, aktArtike
       )}
     </section>
   );
-}
-
-/** §V1c-Klassifikation EINER Kante, gegen den bereits feststehenden Artikel
- *  des Panels — kein `viaArtikel`-Aggregat nötig (Herleitung Kontaktbogen H4
- *  §7b): das V3-Panel ist ohnehin je EINEN Artikel gescopet (Dateikopf), der
- *  Artikel-Token steht also schon fest, bevor die Klassifikation beginnt. */
-function revidiertFuer(b: Bezug, artikel: string | null, shard: RevisionShard | null): ArtikelRevision | null {
-  if (!artikel) return null;
-  const rev = revisionFuerToken(shard, artikel);
-  const eingestuft = klassifiziereFassungsBezug(entscheidDatum(b.datum, b.facetten.status), rev);
-  return eingestuft === 'revidiert' ? (rev ?? null) : null;
 }
 
 // ── K-2b/F37 (W2·13-KANTONE, 31.8.2026) · DIE ABDECKUNG GEHÖRT IN DEN SATZ ───
@@ -283,8 +188,10 @@ const ABDECKUNG_SATZ = 'Erfasst: BGE neuerer Bände, übrige Urteile vereinzelt.
 
 export function PanelEntscheide({
   kanten, alleKanten, aktArtikel, revisionShard, normZitat, artikelLabel, geladen, fehler = false, onNeuLaden,
-  bestimmungsWort, klassen, kantone, kantoneVerfuegbar, histogramm, bereich, onKlassen, onKantone, onBereich, ebene,
+  bestimmungsWort, klassen, kantone, kantoneVerfuegbar, histogramm, bereich, onKlassen, onKantone, onBereich, ebene, datenstand = null,
 }: {
+  /** O-03: Erzeugungsdatum des Bezugs-Shards (ISO, `useBezuege`); `null` ⇒ kein Datenstand (§8). */
+  datenstand?: string | null;
   /** Ebene des gelesenen Erlasses — DURCHGEREICHT aus dem Modell
    *  (`leserV3Modell` → `LeserRahmenV3` → `LeserPanelZone`), nicht hier neu
    *  geladen: sie steht im Erlass-Datensatz, den die Hülle ohnehin hält (§5).
@@ -340,12 +247,12 @@ export function PanelEntscheide({
           die Liste darunter — nicht mehr dem ganzen Erlass. */}
       <PanelFilterZeile klassen={klassen} kantone={kantone} kantoneVerfuegbar={kantoneVerfuegbar}
         klassenZahlen={klassenZahlenAmArtikel(alleKanten, geladen)} zahlOrt={zahlOrt} kantoneOhneWirkung={kw.ohne} kantonHinweis={kw.satz}
-        histogramm={histogramm} bereich={bereich}
-        onKlassen={onKlassen} onKantone={onKantone} onBereich={onBereich} />
+        histogramm={histogramm} bereich={bereich} onKlassen={onKlassen} onKantone={onKantone} onBereich={onBereich} ladefehler={fehler} />
       {/* S6 W1g: ohne eigene Unterlinie — die 2-px-Kante des Gruppenkopfs
           darunter trennt (sonst zwei Linien 8 px übereinander, gemessen @1440). */}
       <p data-v3-panel-abdeckung-zeile className="px-3 py-1.5 text-micro leading-snug text-ink-600">
         {ABDECKUNG_SATZ}{' '}
+        {datenstand && <><span className="num">Datenstand {datumAnzeige(datenstand)}</span>.{' '}</>}
         <Link to="/abdeckung" className="lc-link text-brass-700">Abdeckung ›</Link>
       </p>
 

@@ -52,7 +52,7 @@ import { BREITE, HOEHE, MARKE_X, klickAnteil, leseRechteck, markeAnAnteil, marke
 // Sprungmechanik, die die Einstellung bereits respektiert.
 
 export function TrefferLandkarte({
-  spur, treffer, leseId, register, obenVar, gesamtFundstellen, wortEins, wortMehr, onSprung,
+  spur, treffer, leseId, register, obenVar, gesamtFundstellen, wortEins, wortMehr, artikelAnzahl, ueberschriften = 0, hinweise, onSprung,
 }: {
   /** Die Bausteine des Dokuments mit ihrer Lage (`landkarteSpur`). */
   spur: readonly LandkarteFeld[];
@@ -81,6 +81,19 @@ export function TrefferLandkarte({
    *  «Abschnitten», die Zeile daneben «Artikel» bzw. «Erwägungen»). */
   wortEins: string;
   wortMehr: string;
+  /** LESER-NAV, FB O-36 b: der Name übernimmt das Zählmodell der Zähler-Zeile
+   *  («M Artikel · K Überschriften · N Fundstellen», `zaehleTreffer`) statt die
+   *  Marken zu zählen. Eine Marke steht je Trefferzeile — ein Kopf-Treffer steht
+   *  unter dem ersten Artikel seines Teilbaums, der selbst nicht treffen muss; die
+   *  Markenzahl wäre dann grösser als «M Artikel» (OR «Kündigung»: 74 Marken, 69
+   *  Artikel mit eigener Fundstelle, 28 Überschriften). Ohne Angabe: Marken = Artikel
+   *  (Entscheid-Leser, dort gibt es keine Köpfe). */
+  artikelAnzahl?: number;
+  ueberschriften?: number;
+  /** LESER-NAV, FB O-36 b (Nachzug): Tooltip-Kopf je Marken-Id, wo «Art. N» allein falsch läse — die
+   *  Zeile trägt nur einen Kopf-Treffer, der Artikel selbst trifft nicht. Der Aufrufer nimmt dafür das
+   *  Badge der Listenzeile (`badgesFuer`, §5); ohne Eintrag gilt das Label des Bausteins. */
+  hinweise?: ReadonlyMap<string, string>;
   /** Klick auf Streifen oder Marke: Sprung zum Baustein. */
   onSprung: (id: string) => void;
 }) {
@@ -108,9 +121,13 @@ export function TrefferLandkarte({
   // Zahl, und es entsteht keine dritte Wahrheit.
   const teilmenge = summeMarken < gesamtFundstellen;
   const bezug = teilmenge ? gesamtFundstellen : summeMarken;
-  const name = `Treffer-Landkarte: ${marken.length} ${marken.length === 1 ? wortEins : wortMehr}`
-    + ` · ${teilmenge ? `${summeMarken} von ` : ''}${bezug} ${bezug === 1 ? 'Fundstelle' : 'Fundstellen'}`
-    + (teilmenge ? ' · übrige ausserhalb' : '');
+  const artikel = artikelAnzahl ?? marken.length;
+  const name = 'Treffer-Landkarte: ' + [
+    // Wie in der Zähler-Zeile: ein Segment mit 0 entfällt, wo Überschriften stehen.
+    ...(artikel > 0 || ueberschriften === 0 ? [`${artikel} ${artikel === 1 ? wortEins : wortMehr}`] : []),
+    ...(ueberschriften > 0 ? [`${ueberschriften} ${ueberschriften === 1 ? 'Überschrift' : 'Überschriften'}`] : []),
+    `${teilmenge ? `${summeMarken} von ` : ''}${bezug} ${bezug === 1 ? 'Fundstelle' : 'Fundstellen'}`,
+  ].join(' · ') + (teilmenge ? ' · übrige ausserhalb' : '');
 
   return (
     <div
@@ -144,7 +161,14 @@ export function TrefferLandkarte({
       // vier Dateien der Fläche ENTSCHEID-Leser ab, nicht `gesetz-leser/v3`.
       // Für die v3-Naht gibt es heute keinen Wächter; der Verweis ist darum
       // gestrichen statt ersetzt — geraten wird keiner.)
-      className="fixed right-3 z-sticky hidden cursor-pointer border border-line bg-well print:hidden xl:block"
+      // STAPEL (Nachzug LESER-NAV 15.10.2026): `z-entscheid-sticky` (15), nicht
+      // `z-sticky` (10). Die Fusszeile trägt `z-sticky` und steht später im DOM;
+      // bei gleicher Stufe malte sie am Dokument-Ende über den fixen Streifen
+      // (gemessen 1440×900: 311 von 702 px der Marken darunter, Klicks dort
+      // trafen die Fusszeile). Der Streifen steht nur bei geschlossener Liste;
+      // die offene Liste (`z-sticky` in der Lese-Zelle) bleibt unter der
+      // Fusszeile. Wächter: `e2e/leser-trefferliste-fusszeile.e2e.ts`.
+      className="fixed right-3 z-entscheid-sticky hidden cursor-pointer border border-line bg-well print:hidden xl:block"
       style={{ top: `calc(var(${obenVar}, 7rem) + 0.5rem)`, bottom: '1.5rem', width: `${BREITE}px` }}>
       <svg aria-hidden viewBox={`0 0 ${BREITE} ${HOEHE}`} preserveAspectRatio="none"
         className="block h-full w-full">
@@ -187,7 +211,7 @@ export function TrefferLandkarte({
             <rect key={m.id} x={MARKE_X + (BREITE - 2 * MARKE_X - b) / 2} y={m.von * HOEHE}
               width={b} height={markenHoehe(m.von, m.bis)}
               fill={`var(--reg-${register})`}>
-              <title>{`${m.label} · ${m.anzahl} ${m.anzahl === 1 ? 'Fundstelle' : 'Fundstellen'}`}</title>
+              <title>{`${hinweise?.get(m.id) || m.label} · ${m.anzahl} ${m.anzahl === 1 ? 'Fundstelle' : 'Fundstellen'}`}</title>
             </rect>
           );
         })}

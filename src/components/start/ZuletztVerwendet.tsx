@@ -64,6 +64,12 @@ const MARKE: Record<Register | 'ink', string> = {
   g: 'bg-reg-g', r: 'bg-reg-r', m: 'bg-reg-m', w: 'bg-reg-w', ink: 'bg-ink-500',
 };
 
+/** Der 3-px-Registerstrich vor einem Eintrag — auch die Merkliste (`MerklisteFlaeche`) zeichnet
+ *  ihn hier (§5: eine Zuordnung Typ → Register). */
+export function RegisterStrich({ typ }: { typ: ZuletztTyp }) {
+  return <span aria-hidden className={`mr-1.5 inline-block h-2.5 w-[3px] shrink-0 ${MARKE[REGISTER[typ]]}`} />;
+}
+
 /** U9: höchstens so viele Einträge auf der Startseite (Darstellung, nicht Speicher). */
 const SICHTBAR = 5;
 
@@ -77,8 +83,7 @@ export function ZuletztVerwendet() {
           <li key={e.route} className="flex min-w-0">
             <Link to={e.route} title={e.titel}
               className="inline-flex min-w-0 max-w-full items-center border-b border-rule-soft pb-px no-underline hover:border-ink-900 hover:text-ink-900">
-              <span aria-hidden
-                className={`mr-1.5 inline-block h-2.5 w-[3px] shrink-0 ${MARKE[REGISTER[e.typ]]}`} />
+              <RegisterStrich typ={e.typ} />
               <span className="truncate">{e.titel}</span>
             </Link>
           </li>

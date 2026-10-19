@@ -68,8 +68,11 @@ Kürzel = Zweig-Präfix und Trailer `Roadmap:`.
    «Gilt seit» generisch «lieber leer als falsches Datum» statt Handregister
    (`bibliothek/normtext/generalanweisungen-gilt-seit-2026-10-05.md`), Disp-Text ausserhalb Artikel
    (289 Abschnitte/59 Erlasse), Sidecars (B-75), Positivliste (V-02, V-04).
-   *Offen, vor Lieferstart:* Datenablage bei ~2150 Erlassen (81 MB für 231, `.git` ~594 MiB),
-   Turso-Replika 751 von 1024 MiB (#1350). *Lage:* Vault `03_Projekte/LexMetrik/a1-fundament-2026-10-07/lage.md`.
+   *Datenablage entschieden 16.10.* (David, Variante A: bleibt, wo sie ist): Turso repliziert
+   355 MiB (Gesetze 104, Urteile 251), bei 2150 Erlassen ≈ 750 MiB, Spitze beim Vollneubau bis ≈ 2×;
+   Grenze Turso Free 5 GB (`scripts/datenhaltung/hot-groesse.ts`, Bestätigung aus Davids Konto
+   offen); Vercel ≈ 1,5 GB je Stand, 3 Stände ≈ 4,6 von 10 GB.
+   *Lage:* Vault `03_Projekte/LexMetrik/a1-fundament-2026-10-07/lage.md`.
 2. **Jedes Bundesgesetz** (`A2-BUNDESGESETZE`) · E1·A · Gegenprüfung ja · nach JETZT 1
    *Fertig, wenn* eine Lieferung die 256 fehlenden Bundesgesetze (251+5 dringliche) und 25 VO der
    Bundesversammlung bringt (281), Fortschrittszeile «348/348». *Ort:* FAHRPLAN-FEDLEX-PORTFOLIO §21.
@@ -78,6 +81,14 @@ Kürzel = Zweig-Präfix und Trailer `Roadmap:`.
    (7) → prozesskosten (4) → Vorlagen (RV-06, RV-30, RV-31, RV-47, RV-74, RV-77); je Werkzeug
    Warnhinweis entfernen (Zeile in `src/lib/bekannteFehler.ts`, #1364). RL-43 berührt `historie-parse.ts`/`revisionen-extrakt.ts` ⇒ seriell zu Spur A.
    *Ort:* FB Bereich 5; `fahrplaene/FAHRPLAN-RECHTSLOGIK.md` §4 (W-01…W-22).
+   *Stand 15.10. (abends):* notariat-grundbuch Welle 2b GELANDET: RL-26 Uri (#1379), RL-27 Staffel-Primitiv
+   (#1380), RL-29 T1 Staffeln (#1382) + T3 Rundungen (#1397), RL-28 T1 Deutschschweiz (#1385) + T2/3
+   Romandie/TI + Pfandsteuer (#1398), RL-33 T1 MWST (#1388) + T2 Hinweise/Formulare (#1399), RL-34
+   Emissionsabgabe (#1400), RL-36 Tarifkopien (#1392); RV-17/19/20/24/25/27 erledigt, RV-82 Rest «weitere
+   Geschäftsarten» FR/VD/VS/JU/NE offen; GP-Nebenfunde FB RV-96…102. Nächster Teil: Fristenrechner (7
+   A-Fälle) — Fahrplan §4; Warnhinweis-Zeilen RV-19/20/24/25 entfernt.
+   *Stand 18.10.:* Fristenrechner Teil 1 Tagerechner (RV-37/49/52/53; Warnhinweis zpo-fristen weg, tagerechner nur noch RV-103);
+   Rest RV-49 VD-Hinweis (wartet auf David), RV-103 StPO im Voll-Formular, RV-104 Hinweis-Kleinkram.
 
 *Gestrichen 11.10.:* `WARNHINWEIS` gebaut (#1364 Warnhinweis an 17 Rechnern, Auswahlregel im Kopf von `src/lib/bekannteFehler.ts`; #1365 Urteile U-03/04/10/13/16/24/25, U-06 schon #1149; U-15 offen in FB).
 
@@ -91,9 +102,10 @@ E0
 - 7.10.: Turso nach #1343/#1350: 1. Lauf Vollneubau ~260k Zeilen, dann Delta-Log «erfolgreich» vs. «expired» (M-2) prüfen — FAHRPLAN-DATENHALTUNG §17
 - David-Handgriff: AUTOMERGE_TOKEN bis 20.10. erneuern (FB S-14); normen-monatslauf.yml stösst keine CI an (Lauf 1.11.)
 E1·A
+- 15.10. Korpus-Nachzug UR RB 9.2311 und GL art_7.1 als Kantons-Snapshots (BEKANNTE_LUECKEN in check-vollstaendigkeit.ts) — Korpus-Werkstatt
 - David 7.10.: Messlauf Phase 1 strukturgleich + schneller (1 PR, 6–10 h, kein Tor; Zählung wie segmente-logik.ts; Tempo mit Fedlex-Arm, gleiche Drossel, n ≥ 5)
-- FB Bereich 6: Leser-Navigation: ?p=-Link überschreibt Split-Panes (O-27), Einzelmodus-Zurück (O-31), Weiterlesen (O-34), Deep-Link OR (O-38)
-- FB Bereich 6: Leser-Suche: Stack-Überlauf (O-36), Fehler geschluckt (O-19), OR-Tempo/Suchlatenz (O-20…O-23); O-15 «3 statt 20» zuerst klären
+- 16.10. LESER-NAV gelandet (#1378–#1413, 15 PRs); offen: Suche O-19/O-20/O-23 nach #1352, OR-Tempo O-21/O-22, O-34f, O-56, Nebenfunde O-77…O-83, Nachkontrolle O-75 ab 4.1.2027 — FB Bereich 6
+- wartet auf David 16.10.: LESER-NAV-Fragen O-04/O-05 Wortlaut, O-10, O-11, O-13, O-17, O-21, O-27, O-29, O-32, O-33c, O-36, O-42, O-47, O-50c, O-51, O-52, O-63, O-70, O-74, O-76c — FB Spalte «David?»
 - HN-05: Bundestext-Rest: Zwischentitel (NT-03), AHVG-Anhang (B-21, erst reproduzieren), B-02, B-17 — FB B-16
 - Go David 24.9.: Fehllinks SchKG 39, ChemRRV Anh. 1/2, BGG 123/124 (V-02, HN-09), 12 Fussnoten-Selbstlinks (V-07), dann Normverweis im eigenen Leser (HN-D1) — FB V-06
 - 12.9.: BMV-Pin cc/2009/423 (aufgehoben 1.3.2026) noch im Bestand, «Art. 9 BMV» löst darauf auf (daneben bmv_2025) — FB V-08; src/lib/fedlex/tabelle.ts
@@ -102,27 +114,26 @@ E1·A
 - 14.9.: Folge-Lieferungen A3 Bundesrats-VO (836 fehlend, 2 Lieferungen), A4 Departements-/Amts-VO (635) — FAHRPLAN-FEDLEX-PORTFOLIO §21
 - Sammel: übriger Bundestext — FB Bereich 1
 E1·B
+- 15.10. RECHTSLOGIK-Rest aus GP: GE-Deckel, Rundungsnormen übrige Grundbuch-Posten, Pfandsteuer-Rappen, JU/TI-Lesarten, Golden-Lücke, Hinweis-Kleinkram, TG Schlichtungshinweis — FB RV-94…102
+- wartet auf David 15.10.: W-16 MWST BS/VD/JU «zuzüglich 8,1 % nach Bundesrecht» (Empfehlung ja); AG Grundpfand-Minimum Notariatsteil 200 (umgesetzt) oder 300; A1-FUNDAMENT #1351/#1352 offen
 - Sammel: übrige Rechner/Vorlagen und Urteilsdaten — FB Bereiche 3, 5
 - 5.10.: Gegenprüfungs-Pin «fedlex OR 20260101» überholt (Cache 20261001) ⇒ Gegenprüfungen der OR-Engines neu fällig
 - Abnahme David: Gründungs-Checklisten AG/GmbH nach TJPG — bibliothek/recherche/ag-gruendung.md, gmbh-gruendung.md
 - 7.10.: Widerspruch W-17: FB RV-26 «wartet auf David» vs. FAHRPLAN-RECHTSLOGIK §4 «entschieden 24.9.»; W-09/11/17/22 dort ohne Zeichen
 E3
-- Go David 24.9.: Rest «eine Titel- und Abschnittsordnung» (HN-D2 gebaut #1190/#1197): Band-Rezept, Titelschrift — FB Teil B, N10-14
-- Go David 19.9.: Reiterleisten-Abgleich + Merkliste bauen — FB Teil B
+- Go David 24.9.: Rest «eine Titel- und Abschnittsordnung» (HN-D2 gebaut #1190/#1197, Band-Rezept #1373): Titelschrift — FB Teil B
 - Go David 8.8.: Kalender-Export: Termine als «frei» — FB Teil B
 - David 1.10./3.10.: Deaktiviert-/Hover-Varianten angleichen; Regelsätze von Belegen entflechten — FB Teil B
 - David 2.10.: Rest-Rückbau tote Rechtsprechungs-Zeilen: revisionFuer nur noch Kommentar, data-leitfaelle u. a. prüfen — FB Teil B
 - David 6.10.: Omnilex-Sichtung: 7 Posten U2–U8 (Datums-Tor zu «Gilt seit», Ausgang-Label wartet auf David) — bibliothek/recherche/omnilex-app-sichtung-2026-10-06.md §6
 - 10.10. E0-REGISTER-Rest: wartet auf David quelleUrl auslagern (≈115 KB, Karten-Link ändern); norm-index.json 6 MB UI-ungenutzt; 4 Prüf-Nachzüge — FB S-26
 E3·W
+- 15.10. RECHTSLOGIK-Prozess: Pflicht-Testliste Tarif-PRs (Rundungs-Inventar, Export-Ratsche, grundpfand B1/B2), Trailer < 72 Z., Abschluss-Commit mit Inhalt, Alias-Doppelzählung — Skill bauschritt
 - Go David 5.10.: CI: Dauer-Wackler an der Wurzel (git 3fd5db8f9:bibliothek/betrieb/e2e-fang-historie-2026-10-05/), leser-kopf-cls-s3 hängt an Fedlex, Läufer-Kontingent
-- 10.10. Kahlschlag-Nachlauf: erlass-klassifikation.json docs/→daten/; alte Skill-Namen; gitFlaechen.ts:427, DESIGN-REGLEMENT Z.235/365 Test-gekoppelt; tor-schutz Amend-Fehlalarme; .selbstopt-ereignisse.jsonl ohne Leser; diff-klassieren.ts ohne Test
-- wartet auf David 10.10.: scripts/archiv/ (9 Skripte) löschen oder umbenennen
 - Go David 7.10.: Leser-Logik (162 .ts unter src/pages|components, ~22k Zeilen) nach src/lib/leser, danach Lint-Grenze — §3
-- wartet auf David 7.10.: §5 vs. Ist: ingest.ts liest public/*.json in die DB (JSON faktisch Quelle); Umstellung bauen oder §5 präzisieren
-- wartet auf David 7.10.: Rechtsprechung-Einzelentscheide (300 MB) als Release-Artefakt statt in git — public/rechtsprechung/
+- wartet auf David 7.10./10.10.: §5 vs. Ist (ingest.ts liest public/*.json in die DB); Rechtsprechung-Einzelentscheide (300 MB) als Release-Artefakt statt git; scripts/archiv/ (9 Skripte) löschen
 E4
-- David 21.9./7.10.: Impressum/Datenschutz erst vor Live-Gang (FB S-01); Staatsverträge SR 0.* (3186, 28 gepinnt) verlinken bis dahin auf Fedlex
+- David 21.9./7.10.: Impressum/Datenschutz erst vor Live-Gang (FB S-01); Staatsverträge SR 0.* (3186, 28 gepinnt) verlinken bis dahin auf Fedlex; Vercel Hobby nur nicht-kommerziell (vercel.com/docs/limits/fair-use-guidelines) ⇒ Planwahl vor Live-Gang
 ```
 
 *Ruhend:* FB Teil B (Entscheide/Fragen Davids), nicht nachfragen.

@@ -11,10 +11,15 @@ import {
 import { loeseArtikelEingabe, pfadLabels } from './suchTreffer';
 import { pfadZu } from './helpers';
 import { paneRoot } from './berechnungen';
+import { ankerLandepunkt } from './scrollAnker';
 import {
-  baueLeserSuchIndex, sucheImErlass, zaehleTreffer, fundstellenFolge, artikelFundstellen,
+  baueLeserSuchIndex, sucheImErlass, zaehleTreffer, fundstellenFolge, artikelFundstellen, ersterKlickSprung,
   type SuchBereich,
 } from './leserSuche';
+
+/** Schlüssel eines Sektionskopfs in der je Element geführten Range-Buchführung —
+ *  Artikel führen ihre `id` (`art-…`), Köpfe tragen dieses Präfix (O-36 b). */
+const kopfSchluessel = (sek: string) => `kopf:${sek}`;
 
 // ═══ ABSCHNITT · In-Gesetz-Suche: Treffer, Hervorhebung, Quickjump ═══════════
 //
@@ -200,10 +205,11 @@ export function useSuchTreffer({
   // Verlassen der Suche ist damit billiger als eine Ref-Buchhaltung, die den
   // Index über den Erlasswechsel hinweg am Leben hielte.
   const index = useMemo(
-    () => (sucheAktiv && erlassKey && eintraege ? baueLeserSuchIndex(erlassKey, eintraege, struktur) : null),
-    [sucheAktiv, erlassKey, eintraege, struktur],
+    () => (sucheAktiv && erlassKey && eintraege ? baueLeserSuchIndex(erlassKey, eintraege, struktur, sektionen) : null),
+    [sucheAktiv, erlassKey, eintraege, struktur, sektionen],
   );
   const treffer = useMemo(() => sucheImErlass(index, sucheTrim, bereich), [index, sucheTrim, bereich]);
+  // O-36 b: `artikelAnzahl` = Artikel mit EIGENER Fundstelle; die Köpfe zählt `zaehleTreffer` für sich.
   const { artikel: artikelAnzahl, fundstellen } = useMemo(() => zaehleTreffer(treffer), [treffer]);
   // B5: der Ansicht-Schalter gehört IN die Folge, nicht daneben — bei
   // ausgeblendetem Apparat sind Fussnoten-Stellen nicht malbar, und ein Rang,
@@ -245,10 +251,13 @@ export function useSuchTreffer({
       let geaendert = false;
       for (const e of eintraegeIo) {
         const el = e.target as HTMLElement;
+        // O-36 b: Sektionsköpfe (`data-sek`) werden wie Artikel gemalt, unter
+        // eigenem Schlüssel — ihre Stellen stehen nicht im `<article>`.
+        const schluessel = el.dataset.sek !== undefined ? kopfSchluessel(el.dataset.sek) : el.id;
         if (e.isIntersecting) {
-          rangesRef.current.set(el.id, sammleTrefferRanges(el, sucheTrim));
+          rangesRef.current.set(schluessel, sammleTrefferRanges(el, sucheTrim));
           geaendert = true;
-        } else if (rangesRef.current.delete(el.id)) {
+        } else if (rangesRef.current.delete(schluessel)) {
           geaendert = true;
         }
       }
@@ -265,7 +274,7 @@ export function useSuchTreffer({
       // kein Knoten erzeugt oder bewegt (CLS 0, §15/2).
       rootMargin: '300px 0px',
     });
-    for (const art of leseWurzel.querySelectorAll('article[id^="art-"]')) beob.observe(art);
+    for (const el of leseWurzel.querySelectorAll('article[id^="art-"], [data-sek]')) beob.observe(el);
     return () => {
       beob.disconnect();
       rangesRef.current = new Map();
@@ -364,19 +373,43 @@ export function useSuchTreffer({
       // aufleuchtet; bei einem Ziel ausserhalb des bisherigen Sichtbands wäre
       // das sichtbar zu spät.
       rangesRef.current.set(art.id, ranges);
+      // O-36 b: steht die Fundstelle in einem Sektionskopf, ist DER das Ziel —
+      // dieselbe Sammel-Funktion, nur über das Kopf-Element. Fehlt der Kopf im DOM
+      // (Einzelmodus zeigt nur den Artikel), bleibt es beim Artikel (§8).
+      const kopfEl = eintrag.kopf === null ? null : (leseRef.current ?? document).querySelector<HTMLElement>(
+        `[data-sek="${typeof CSS !== 'undefined' && CSS.escape ? CSS.escape(eintrag.kopf) : eintrag.kopf}"]`);
+      const kopfRanges = kopfEl && eintrag.kopf !== null ? sammleTrefferRanges(kopfEl, sucheTrim) : null;
+      if (kopfRanges && eintrag.kopf !== null) rangesRef.current.set(kopfSchluessel(eintrag.kopf), kopfRanges);
       male();
       // W2·17-UI-BEFUNDE: die Fundstelle, zu der dieser Sprung führt, ist die
       // AKTIVE — derselbe `malRang` wie für das Scrollen unten (§5), nur
       // umgefärbt. Nicht malbar (`null`) ⇒ keine aktive Stelle, es bleibt beim
       // Artikel-Blink. Bei weggeschalteter Hervorhebung wird auch sie nicht gemalt.
-      setzeAktiveFundstelle(
-        markenAus || eintrag.malRang === null ? null : ranges[eintrag.malRang] ?? null,
-        highlightInstanz);
-      const start = eintrag.malRang === null ? undefined : ranges[eintrag.malRang]?.startContainer;
+      const ziel = eintrag.kopf !== null
+        ? kopfRanges?.[eintrag.malRang ?? -1]
+        : eintrag.malRang === null ? undefined : ranges[eintrag.malRang];
+      setzeAktiveFundstelle(markenAus ? null : ziel ?? null, highlightInstanz);
+      const start = ziel?.startContainer;
       const el = (start
         ? (start.nodeType === 1 ? start as Element : start.parentElement) as HTMLElement | null
-        : art);
+        : kopfEl ?? art);
       el?.scrollIntoView({ block: 'center', behavior: 'auto' });
+      // LESER-NAV, FB O-36 (c): `center` stellt die FUNDSTELLE in die Mitte. Ist
+      // der Artikel kurz, liegt seine Oberkante dann UNTER dem Landepunkt, und
+      // die Bezugslinie des Scroll-Spys (`inhalt-hooks.tsx`) fällt in den
+      // Vorgänger: Reiter-Label, Gliederung und Bezüge-Panel meldeten nach dem
+      // Sprung den Artikel DARÜBER (OR «Kündigung», 11 von 13 Sprüngen mit
+      // gemalter Stelle, gemessen 15.10.2026). Dann rückt der Artikel an den
+      // Landepunkt (`.nt-anker`-scroll-margin, derselbe Wert, an dem der Spy
+      // misst); die Fundstelle bleibt sichtbar, sie liegt höchstens eine
+      // halbe Fensterhöhe unter der Artikel-Oberkante. Ein langer Artikel, dessen
+      // Oberkante schon über dem Landepunkt liegt, wird nicht angerührt.
+      const sc = paneRoot(imPane, wurzel);
+      const landung = (sc ? sc.getBoundingClientRect().top : 0) + ankerLandepunkt(art);
+      // Bei einer Stelle im Kopf rückt der KOPF an den Landepunkt (er steht über
+      // seinem Artikel; dessen Oberkante läge sonst unter dem Kopf).
+      const lage = kopfEl ?? art;
+      if (lage.getBoundingClientRect().top > landung + 1) lage.scrollIntoView({ block: 'start', behavior: 'auto' });
       blinkAus();
       art.classList.add('lc-ziel-blink');
       blink.current = { el: art, id: window.setTimeout(() => blinkAus(), 2400) };
@@ -410,7 +443,7 @@ export function useSuchTreffer({
       const el = finde();
       if (el) zeige(el);
     }));
-  }, [blinkAus, folge, male, sucheTrim, bereich, sektionen, setOffen, einzelSprung, markenAus, highlightInstanz]);
+  }, [blinkAus, folge, male, sucheTrim, bereich, sektionen, setOffen, einzelSprung, markenAus, highlightInstanz, imPane, wurzel]);
 
   // Die aktive Stelle gehört zu EINEM Begriff/Bereich: wechselt er (oder die
   // Hervorhebung wird weggeschaltet, oder der Leser verschwindet), räumt der
@@ -427,11 +460,22 @@ export function useSuchTreffer({
     zeigeFundstelle(((basis + delta) % len + len) % len);
   }, [folge, trefferPos, zeigeFundstelle]);
 
-  /** Klick auf einen Treffer-Eintrag: zur ERSTEN Fundstelle dieses Artikels. */
+  /**
+   * Klick auf einen Treffer-Eintrag: zur ersten GEMALTEN Fundstelle dieses Artikels (sonst zur ersten).
+   *
+   * LESER-NAV, FB O-58: ein `token` OHNE Fundstelle (Klick der Landkarte in ein Feld ohne Marke; der
+   * Aufrufer springt danach selbst zum Artikel) bewegt keine Fundstelle — gibt aber die laufende frei.
+   * Sonst blieb sie, gemalt und in Zähler («Fundstelle 8 von 143») und Listenzeile, an einem Artikel
+   * stehen, den der Leser gerade verlassen hat: Ziel und aktive Stelle widersprachen sich (OR
+   * «Kündigung», 8 von 8 Klicks, aktive Stelle blieb an Art. 102). Frei heisst wie nach einem neuen
+   * Begriff: «keine gewählt», ↓ beginnt bei der ersten, ↑ bei der letzten Fundstelle.
+   */
   const springeZuTreffer = useCallback((token: string) => {
-    const n = folge.findIndex((f) => f.token === token);
-    if (n >= 0) zeigeFundstelle(n);
-  }, [folge, zeigeFundstelle]);
+    const n = ersterKlickSprung(folge, token);
+    if (n >= 0) { zeigeFundstelle(n); return; }
+    setNav({ begriff: sucheTrim, bereich, pos: -1, token: null });
+    setzeAktiveFundstelle(null, highlightInstanz);
+  }, [folge, zeigeFundstelle, sucheTrim, bereich, highlightInstanz]);
 
   /**
    * H2 · Klick auf EINE Fundstellen-Zeile der V3-Liste: zu genau dieser Stelle.

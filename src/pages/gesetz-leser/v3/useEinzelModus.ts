@@ -1,5 +1,6 @@
-import { useCallback } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useCallback, useEffect, useRef } from 'react';
+import { useLocation, useNavigate, useNavigationType } from 'react-router-dom';
+import { sitzungsSpeicher } from '../../../lib/sichererSpeicher';
 import { setzeLeserAnsicht, useLeserAnsicht } from '../leserOptionen';
 import {
   einzelAdresse, lesestelle, loeseEinzelToken, modusAusSuche, modusEntscheid, nachbarToken, sucheMitModus,
@@ -40,6 +41,58 @@ import type { LeserV3Modell } from './leserV3Modell';
 // DER MODUSWECHSEL SELBST IST `replaceState` (react-router `replace`). Er ist
 // keine Ortsveränderung, sondern eine Einstellung: wer die Lesart umstellt und
 // danach «Zurück» drückt, will zur vorigen SEITE, nicht in die vorige Lesart.
+//
+// LESER-NAV (FB O-27 BG-07, 15.10.2026): `replace` allein hielt das nicht — die
+// Einträge DAVOR (jedes Blättern ist ein `pushState` mit `?ansicht=artikel`) tragen
+// die alte Lesart in der Adresse, und die Adresse schlägt die Präferenz: «Zurück»
+// nach «Ganzer Erlass» zeigte wieder einen einzelnen Artikel. Darum merkt sich der
+// Hook, welche Einträge VOR dem Wechsel entstanden sind, und zieht einen «Zurück»
+// auf einen solchen Eintrag per `replace` in die gewählte Lesart (derselbe Artikel,
+// keine neue Verlaufsstelle). Einträge NACH dem Wechsel bleiben unberührt.
+//
+// LESER-NAV (FB O-27 BG-07-Rest, 15.10.2026): dieses Gedächtnis lebte nur im Ref und war nach einem
+// Reload oder einem Erlasswechsel (`LeserRahmenV3 key={schluessel}`) leer — «Zurück» auf einen Eintrag
+// von davor kippte dann wieder in dessen Lesart. Es liegt jetzt im Sitzungsspeicher des Tabs
+// (`lm.leser.lesart-wechsel`): `location.key` ist je Verlaufseintrag eindeutig, auch über Erlasse und
+// Reloads hinweg. REGEL (gesetzt, nicht neu erfunden): die Lesart ist eine Einstellung des Nutzers, keine
+// Eigenschaft eines Erlasses — nach der letzten Umstellung zeigt ein «Zurück» auf jeden Eintrag von davor,
+// gleich in welchem Erlass, diese Lesart. Eine frühere Umstellung wird von einer späteren abgelöst.
+
+/** Sitzungsspeicher-Schlüssel des Lesart-Gedächtnisses (Datei-Kopf, BG-07-Rest). */
+const GEDAECHTNIS_KEY = 'lm.leser.lesart-wechsel';
+/** Obergrenze der gemerkten Verlaufseinträge — die Länge des Browser-Verlaufs ist ohnehin begrenzt. */
+const MAX_BESUCHT = 200;
+
+interface Gedaechtnis {
+  besucht: string[];
+  wechsel: { modus: LeserModus; davor: string[] } | null;
+}
+
+/** Kennung des Verlaufseintrags. Der erste Eintrag eines Dokuments trägt immer den Schlüssel «default» —
+ *  nach einem Reload oder einer Adresszeilen-Eingabe ist das ein ANDERER Eintrag und darf nicht als der
+ *  frühere gelten (sonst überschriebe die letzte Umstellung die Lesart eines frisch geöffneten Links).
+ *  Darum trägt «default» den Start des Dokuments mit. */
+const eintragsKennung = (key: string): string => (key === 'default' ? `default@${Math.round(performance.timeOrigin)}` : key);
+
+const istSchluesselListe = (x: unknown): x is string[] => Array.isArray(x) && x.every((k) => typeof k === 'string');
+
+function ladeGedaechtnis(): Gedaechtnis {
+  try {
+    const roh: unknown = JSON.parse(sitzungsSpeicher.lies(GEDAECHTNIS_KEY) ?? 'null');
+    const o = (roh ?? {}) as { besucht?: unknown; wechsel?: { modus?: unknown; davor?: unknown } | null };
+    const w = o.wechsel;
+    return {
+      besucht: istSchluesselListe(o.besucht) ? o.besucht : [],
+      wechsel: w && (w.modus === 'erlass' || w.modus === 'artikel') && istSchluesselListe(w.davor)
+        ? { modus: w.modus, davor: w.davor } : null,
+    };
+  } catch { return { besucht: [], wechsel: null }; }
+}
+
+/** Gesperrt oder voll ⇒ das Gedächtnis gilt nur für diese Seite (wie vor dem Rest-Fix). */
+function speichereGedaechtnis(g: Gedaechtnis): void {
+  sitzungsSpeicher.schreib(GEDAECHTNIS_KEY, JSON.stringify(g));
+}
 
 export interface EinzelModus {
   /** Welche Lesart gilt — Adresse vor Präferenz (`modusEntscheid`). */
@@ -86,6 +139,12 @@ export function useEinzelModus(
   const location = useLocation();
   const navigate = useNavigate();
   const gemerkt = useLeserAnsicht();
+  const navTyp = useNavigationType();
+  // BG-07: besuchte Einträge (location.key) und die zuletzt gewählte Lesart samt Einträgen davor —
+  // im Sitzungsspeicher des Tabs, damit Reload und Erlasswechsel sie nicht leeren (Herleitung im
+  // Datei-Kopf). Gelesen wird lazy beim ersten Gebrauch (nie im Render, nie im Prerender).
+  const gedaechtnisRef = useRef<Gedaechtnis | null>(null);
+  const gedaechtnis = () => (gedaechtnisRef.current ??= ladeGedaechtnis());
   // ── DER EINZELMODUS GILT NUR IN DER PRIMÄREN ANSICHT ──────────────────────
   // Im sekundären Pane bleibt es bei der Gesamtansicht, und das ist kein
   // Rückstand, sondern die Grenze aus Kap. 15.6 («Split-View unverändert»):
@@ -118,6 +177,17 @@ export function useEinzelModus(
   const { token: ausAdresse } = loeseEinzelToken(location.hash, artTokens);
   const token = lesestelle(modus, ausAdresse, aktivToken, artTokens[0] ?? null);
 
+  useEffect(() => {
+    const g = gedaechtnis();
+    const w = g.wechsel;
+    const kennung = eintragsKennung(location.key);
+    if (fuehrtAdresse && navTyp === 'POP' && w?.davor.includes(kennung)
+      && modusEntscheid(modusAusSuche(location.search), gemerkt) !== w.modus) {
+      navigate(`${basisPfad}${sucheMitModus(location.search, w.modus)}${location.hash}`, { replace: true });
+    }
+    if (!g.besucht.includes(kennung)) { g.besucht = [...g.besucht, kennung].slice(-MAX_BESUCHT); speichereGedaechtnis(g); }
+  }, [basisPfad, fuehrtAdresse, gemerkt, location.hash, location.key, location.search, navTyp, navigate]);
+
   const gehZu = useCallback((ziel: string) => {
     // `pushState` (react-router `navigate` ohne `replace`) — die Begründung
     // steht im Datei-Kopf. Der gezeigte Artikel folgt der Adresse von selbst.
@@ -131,6 +201,9 @@ export function useEinzelModus(
     // Die schon geltende Lesart noch einmal zu wählen ist ein No-op (`LeserModusWahl` sagt es zu) —
     // PA-15-B02: die Adresse wurde neu geschrieben und die Gesamtansicht sprang zum Einstiegsanker zurück.
     if (!fuehrtAdresse || m === modus) return;
+    const g = gedaechtnis();
+    g.wechsel = { modus: m, davor: [...g.besucht] };
+    speichereGedaechtnis(g);
     // VERLUSTFREI in beide Richtungen: die Adresse behält den Anker des
     // Artikels, an dem der Leser steht. Nach «Ganzer Erlass» springt die
     // Gesamtansicht damit an genau diese Stelle, nach «Einzelner Artikel»

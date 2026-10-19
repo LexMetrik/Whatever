@@ -15,10 +15,13 @@ import { Datum } from './Datum';
 // nie Mono) an genau einer Stelle stehen.
 //
 // §3: reine Darstellung; über Geltung oder Fristen entscheidet hier nichts.
-export function StandChip({ stand }: {
+export function StandChip({ stand, etikett = 'Stand' }: {
   /** ISO `YYYY-MM-DD`; leer = kein Chip (statt eines Chips ohne Datum, §8). */
   stand: string;
+  /** Wort vor dem Datum; «Erlassen», wo das Datum das Erlassdatum und keine
+   *  Nachführung ist (O-02, `standEtikett`). */
+  etikett?: string;
 }) {
   if (!stand) return null;
-  return <span className="lc-chip whitespace-nowrap">Stand <Datum iso={stand} className="ml-1" /></span>;
+  return <span className="lc-chip whitespace-nowrap">{etikett} <Datum iso={stand} className="ml-1" /></span>;
 }

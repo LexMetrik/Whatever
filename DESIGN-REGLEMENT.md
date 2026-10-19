@@ -411,6 +411,20 @@ gelten nach der Reihenfolge des Stylesheets, nicht des Attributs — ein `classN
 kann den Schriftgrad des Bausteins also nicht übersteuern. Der Standard bleibt die
 Stufe des Bausteins (B2: nur Skalen-Stufen). Wächter: `src/tests/abruf-fehler-klein-w227.test.tsx`.
 
+**F0.13 — Band-Regel: EIN Rezept, der Band-Strich IST die Registermarke (LESER-NAV,
+15.10.2026; vorher nur Kommentar in `src/index.css` «BAND-REZEPT»).** Jedes
+Titelblatt-Band (`.ub-kopf` auf Listen- und Werkzeug-Seiten, `.lc-titelblatt-band`
+im Gesetz-, Entscheid- und Material-Leser) trägt Fläche, 2-px-Strich und
+Innenabstand in genau EINER Regel (`.ub-kopf, .lc-titelblatt-band`); alles andere am
+Band ist ein Modifier und setzt nur die zwei Variablen `--reg-marke-flaeche` und
+`--reg-marke`. Weil der Band-Strich die Registermarke der Route ist, weicht die
+3,5-rem-Routenmarke (`.lc-route[data-reg]::before`) dem Band — für BEIDE Band-Klassen
+(`:has(.ub-kopf, .lc-titelblatt-band)`); gemessen OR @1440 vor dem Fix: Marke 56 × 2 px
+neben dem Strich. Eine neue Band-Klasse gehört in beide Stellen. Wächter:
+`src/tests/design-band-rezept.test.ts` (Rezept-Regel, Modifier, Marke-weicht-Regel;
+fängt Pseudoklassen am Band und logische Eigenschaften wie `padding-block`,
+`border-block-start`).
+
 ---
 
 Gegründet auf doppelt-verifizierte UI-Design-Recherche (25.6.2026,

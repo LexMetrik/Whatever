@@ -709,7 +709,9 @@
     /* Schweiz-Karte, Füllung Stufe 2: mittlerer Erfassungsgrad. */
     --karte-auswahl: hsl(215 38% 74%);
     /* Schweiz-Karte, Füllung Stufe 3: vollständig erfasst. Dunkel bewusst auf 36 % Helligkeit
-       gedeckelt - höher fällt die Kante unter die 3:1-Schwelle. */
+       gedeckelt - höher fällt die Kante unter die 3:1-Schwelle. Stand 15.10.2026 (O-44): dunkel
+       hsl(215 42% 40%), Kante dagegen 3.36:1 (Dunkel-Kante #BFBAB0; die 36 %-Grenze galt für die
+       Kante von 29.8.2026). */
     --karte-voll: hsl(215 42% 60%);
     /* Schweiz-Karte: Kanton ohne erfasste Erlasse, neutral und chromafrei. Der Unterschied wird
        zusätzlich durch eine Schraffur getragen, weil die Helligkeit allein ihn nicht trägt
@@ -991,7 +993,8 @@
        die sie tragen:
          0  --z-base           ArtikelLeser.tsx (Ruhezustand des Artikel-Blocks)
          10 --z-sticky         app-weit: klebende Kopf-/Werkzeugleisten
-         15 --z-entscheid-sticky  EntscheidLeser.tsx (zweite Sticky-Ebene dort)
+         15 --z-entscheid-sticky  EntscheidLeser.tsx (zweite Sticky-Ebene dort),
+                                   leser/TrefferLandkarte.tsx (über der Fusszeile)
          16 --z-reader-scrim   v3/LeserScrim.tsx (Ansicht-Menü-Scrim)
                                 — Träger mit D41 (7.9.2026) entfallen; die
                                 Sprosse bleibt reserviert, weil 17 und 19
@@ -1011,7 +1014,8 @@
     --z-base: 0;
     /* App-weit: klebende Kopf- und Werkzeugleisten. */
     --z-sticky: 10;
-    /* Zweite klebende Ebene im Entscheid-Leser. */
+    /* Zweite klebende Ebene im Entscheid-Leser; Treffer-Landkarte beider Leser (über der Fusszeile
+       z-sticky, unter den Leser-Köpfen 17/19). */
     --z-entscheid-sticky: 15;
     /* Reserviert: abdunkelnde Fläche des Ansicht-Menüs im Leser. Der Träger ist entfallen, die
        Sprosse bleibt reserviert, weil 17 und 19 sich ausdrücklich gegen sie herleiten. */
@@ -1270,10 +1274,18 @@
        innerhalb eines engen, dunklen Bandes. Gemessen dunkel (Playwright, 29.8.):
        Kante gegen Füllung 3.06 / 4.34 / 6.61 / 11.96:1, Stufen untereinander
        1.42–1.52:1. «vollständig» steht auf 36 %, nicht höher — ab 37 % fällt die
-       Kante auf 2.92:1 und reisst die F2-Schwelle. */
-    --karte-duenn: hsl(215 28% 20%);
-    --karte-auswahl: hsl(215 34% 27%);
-    --karte-voll: hsl(215 40% 34%);
+       Kante auf 2.92:1 und reisst die F2-Schwelle.
+
+       NACHTRAG LESER-NAV O-44 (15.10.2026, gemessen WCAG-Formel, Dunkel): die Stufen untereinander
+       lagen bei 1.29 (voll/Auswahl) und 1.27:1 (Auswahl/dünn) — kaum unterscheidbar, hell
+       1.60/1.49. Die Kante ist seit der Dunkel-Rampe #BFBAB0 (gegen «vollständig» 4.18:1, Luft bis
+       3:1): jetzt voll hsl(215 42% 40%) · Auswahl hsl(215 36% 30%) · dünn hsl(215 30% 19%).
+       Gemessen: voll/Auswahl 1.43 · Auswahl/dünn 1.47 · dünn/leer 1.36 (vorher 1.42); Kante gegen
+       voll 3.36 · Auswahl 4.81 · dünn 7.10 · leer 9.68:1 (Pflichtpaare check:farbwelt ≥ 3:1). Die
+       frühere Angabe «36 %» und die Kantenwerte oben sind Stand 29.8.2026. */
+    --karte-duenn: hsl(215 30% 19%);
+    --karte-auswahl: hsl(215 36% 30%);
+    --karte-voll: hsl(215 42% 40%);
     /* W2·24-R1: sm/md bleiben auch dunkel leer (Karten tragen Linien, keine
        Tiefe); nur die schwebende Ebene behält ihren Schatten, dunkel tiefer. */
     --shadow-sm: none;
@@ -2136,6 +2148,17 @@
        ohnehin neutral. Alle ANDEREN Bedienelemente bleiben verborgen. */
     button.lc-zitiermarke { display: inline-block !important; }
 
+    /* O-01 (FEHLERBESTAND, 15.10.2026) · DIE FUSSNOTEN-MARKE IST RECHTSINHALT,
+       KEIN BEDIENELEMENT — derselbe Fall wie die Zitiermarke oben. Der Marker
+       (`ArtikelBody.tsx`, Kennung `data-fn-ref`) ist ein `<button>` und fiel
+       unter die Pauschalregel. GEMESSEN 15.10.2026 (vite dev, Playwright
+       headless, `emulateMedia('print')`, STPO @1440): 285 Marker im DOM, im
+       Druck 0 sichtbar, während die Fussnoten-Texte (`[data-fn-apparat]`: 135)
+       und die Kopf-Marker (`[data-fn-marker]`: 41) druckten — Texte ohne die
+       Zahl, die auf sie verweist. Nur die Zahl kommt zurück; die Klick-Optik
+       ist im Druck neutral, das Popover liegt nie im Druck-DOM. */
+    button[data-fn-ref] { display: inline-block !important; }
+
     /* W2·17-UI-BEFUNDE DFG-G03 (2.10.2026): Tabellen im Druck. Die Zellen tragen am
        Bildschirm teils `whitespace-nowrap` (Zahlen, Beträge), die Prosa bricht um.
        Gedruckt wird nie auf die sichtbare Breite zugeschnitten (Scroll-Kasten →
@@ -2215,8 +2238,12 @@
        e2e/druck-fundstellen-z2.e2e.ts («Split-View-Ausdruck …», öffnet einen
        zweiten Pane real und misst Pane-Überhang + Dokumenthöhe). */
     .nt-art-cv { content-visibility: visible !important; contain-intrinsic-size: none !important; }
+    /* `.min-h-inhalt-region` (calc(100svh - 8rem)) ist eine BILDSCHIRM-Reserve gegen
+       Lade-CLS (Material-/Entscheid-Leser, Gesetze-Übersicht); im Druck bliebe sie als
+       leere Fläche unter dem Inhalt stehen (LESER-NAV O-66, gemessen Material-Leser
+       VERN-6008-30 @1920×1000: Artikel 872 px bei 629 px Inhalt). */
     [class*='overflow-y-auto'], [class*='overflow-x-auto'], [class*='overflow-auto'],
-    [class*='h-dvh'], [class*='h-screen'], [class*='max-h-'] {
+    [class*='h-dvh'], [class*='h-screen'], [class*='max-h-'], .min-h-inhalt-region {
       overflow: visible !important;
       height: auto !important;
       /* `auto` statt einer Zahl — F9 verbietet rohe min-height-Werte. */
@@ -2857,12 +2884,10 @@
   }
   /* W2·29 S2 · Titelblatt-Band: Identität auf der Registerfläche (Farbe als
      Fläche, David 22.9.2026). Nur Tinte mit 4.5:1 darauf (ink-500 4.22 → ③b);
-     Stand/Warnung/Aktionen bleiben auf dem Papier (warn-700 hier 4.45). */
-  .lc-titelblatt-band {
-    background: var(--reg-g-flaeche);
-    border-top: 2px solid var(--reg-g);
-    padding: 0.875rem 1rem 1rem;
-  }
+     Stand/Warnung/Aktionen bleiben auf dem Papier (warn-700 hier 4.45).
+     LESER-NAV (15.10.2026): das Rezept (Fläche · 2-px-Strich · Innenabstand)
+     steht seit dem Zusammenzug EINMAL bei `.ub-kopf` («BAND-REZEPT»);
+     `.lc-titelblatt-band` ist dort der Leser-Modifier (Register fest «Gesetze»). */
   /* Selected-Zustand für Toggle-Chips (W2·17-UI-BEFUNDE-B1, LM-040 · F4
      «selected»): der gewählte Chip einer Facetten-Reihe muss OHNE Farbvergleich
      erkennbar sein — vorher trug er nur eine Rahmen-/Textfarbnuance auf
@@ -3202,6 +3227,15 @@
   .lc-leiste-griff-komfort {
     min-height: var(--tap-ziel-komfort);
     min-width: var(--tap-ziel-komfort);
+  }
+  /* O-49 (15.10.2026): die Kopf-Griffe «Erlass-Blatt · Gliederung · Ansicht» standen
+     auf der Stufe `kompakt` (Tablet, @768) mit 24 px Höhe (gemessen: 70×24, 24×24,
+     70×24) — WCAG-2.5.8-konform, aber für den Finger knapp, obwohl die Kopfzeile dort
+     48 px hoch ist. Auf Geräten mit grobem Zeiger (`pointer: coarse`) trägt der Griff
+     das Komfortmass; Maus-Geräte behalten die dichte Zeile. Nur die Höhe (die Breite
+     gibt der Inhalt, Nachbarn bleiben unberührt). */
+  @media (pointer: coarse) {
+    .lc-leiste-griff-fest { min-height: var(--tap-ziel-komfort); }
   }
   /* ─── Schliess-✕ (A3-1, R3-β 31.8.2026) ──────────────────────────────────
      Anatomie des EINEN Schliess-Knopfes (`components/ui/SchliessKnopf.tsx`,
@@ -4351,6 +4385,14 @@
     transition: transform var(--dur-base) var(--ease);
   }
   details[open] > summary::after { transform: rotate(90deg); }
+  /* O-43 (15.10.2026): trägt die Summary ein Kind mit eigenem `ml-auto` (Zähler,
+     Stand), teilte sich der freie Platz zwischen ihm UND dem `margin-left: auto`
+     des Zeichens zur Hälfte — die Zahl rutschte zur Mitte (Probe `details` 600 px,
+     Titel + `ml-auto`-Zahl: Zahl 237 px vom rechten Rand, statt am Rand). Das Kind
+     nimmt den Platz, das Zeichen folgt ihm dahinter (`margin-left: 0`; der `gap`
+     der Summary trägt den Abstand). Keine neue Zahl: dieselbe Regel, nur ohne zweite
+     Auto-Marge. */
+  details > summary:has(> [class~='ml-auto'], > [class~='ms-auto'])::after { margin-left: 0; }
   @media (prefers-reduced-motion: reduce) {
     details > summary::after { transition: none; }
   }
@@ -4586,7 +4628,16 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
 .lc-route[data-reg="r"] { --reg-marke-flaeche: var(--reg-r-flaeche); }
 .lc-route[data-reg="m"] { --reg-marke-flaeche: var(--reg-m-flaeche); }
 .lc-route[data-reg="w"] { --reg-marke-flaeche: var(--reg-w-flaeche); }
-.ub-kopf {
+/* BAND-REZEPT (LESER-NAV, 15.10.2026, HN-D2 «Eine Titel- und Abschnittsordnung»):
+   EIN Rezept für jedes Titelblatt-Band — Fläche und 2-px-Strich kommen aus den
+   zwei Variablen `--reg-marke-flaeche`/`--reg-marke` (Register der Route, s. o.
+   und GB-1; ohne Register neutral `--well`/`--rule`). Vorher standen zwei Kopien:
+   `.ub-kopf` (Register der Route) und `.lc-titelblatt-band` (Leser S2, fest
+   «Gesetze», dazu je eine Einzelregel für «r» und «m»). Die Leser-Klasse bleibt
+   als DOM-Haken, trägt aber kein eigenes Rezept mehr, nur die Register-Wahl
+   (Modifier unter `.wk-kopf`). */
+.ub-kopf,
+.lc-titelblatt-band {
   background: var(--reg-marke-flaeche, var(--well));
   border-top: 2px solid var(--reg-marke, var(--rule));
   padding: 0.875rem 1rem 1rem;
@@ -4599,13 +4650,24 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
    .ub-kopf .lc-overline { color: var(--ink-600) }` — die Rolle «Tinte leise» (DK-16, unten)
    trägt dasselbe; gemessen Farbe vorher = nachher, siehe PR-Body.) */
 /* Der Band-Strich IST die Registermarke dieser Route — die 3.5-rem-Marke am
-   Routenkopf (GB-1, unten) stünde sonst als zweite Linie darüber. */
-.lc-route[data-reg]:has(.ub-kopf)::before { content: none; }
+   Routenkopf (GB-1, unten) stünde sonst als zweite Linie darüber.
+   O-59 (15.10.2026): die Regel nannte nur `.ub-kopf`; Gesetz- (g) und Entscheid-
+   Leser (r) tragen das Band als `.lc-titelblatt-band` — dort stand die Marke
+   (OR @1440: ::before 56 × 2 px, content «») neben dem Band-Strich. BEIDE Band-
+   Klassen gehören hierher (DESIGN-REGLEMENT F0.13). */
+.lc-route[data-reg]:has(.ub-kopf, .lc-titelblatt-band)::before { content: none; }
 /* W2·29-WERKBANK-VORLAGEN V1 · `layout/WerkzeugKopf`: dasselbe Band, das
    Register fest auf «Werkzeuge» — auch im Pane und auf Routen ohne `data-reg`.
    Kontrast (gemessen, V1): Overline ink-600 und H1 ink-900 auf reg-w-flaeche,
    Werte im PR-Body W2·29-WERKBANK-VORLAGEN V1. */
 .wk-kopf { --reg-marke: var(--reg-w); --reg-marke-flaeche: var(--reg-w-flaeche); }
+/* Leser-Band (`layout/LeserKopfGeruest`, `form="titelblatt"`): das Band trägt sein
+   Register selbst, unabhängig von der Route (Pane, Reiter) — fest «Gesetze» (Entscheid
+   David 22.9.2026, S2), `data-reg="r"` für den Entscheid-Leser (REST S1), «Materialien»
+   über die Route (REST S2). Dasselbe Muster wie `.wk-kopf`: nur die zwei Variablen. */
+.lc-titelblatt-band { --reg-marke: var(--reg-g); --reg-marke-flaeche: var(--reg-g-flaeche); }
+.lc-titelblatt-band[data-reg="r"] { --reg-marke-flaeche: var(--reg-r-flaeche); --reg-marke: var(--reg-r); }
+.lc-route[data-reg="m"] .lc-titelblatt-band { --reg-marke-flaeche: var(--reg-m-flaeche); --reg-marke: var(--reg-m); }
 
 /* Ausgabe-Zeile unter der H1: Archivo 13 px, Tinte auf der Fläche. */
 .ub-ausgabe {
@@ -5246,10 +5308,8 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
    `.lc-route[data-reg] header .lc-overline`: kursive Literata in `reg-r`,
    7.70 / 6.34:1 auf der Fläche); diese Regel ist der Boden ausserhalb davon.
    Nur `[data-reg]`: das Gesetzes-Band bleibt unberührt. */
-.lc-titelblatt-band[data-reg="r"] {
-  background: var(--reg-r-flaeche);
-  border-top-color: var(--reg-r);
-}
+/* (LESER-NAV 15.10.2026: Fläche und Strich «r» setzt der Modifier
+   `.lc-titelblatt-band[data-reg="r"]` beim BAND-REZEPT, unter `.wk-kopf`.) */
 /* (Ergänzung 30.9.2026, W2·19 Kleinaufräumen: hier stand `.lc-titelblatt-band[data-reg]
    .lc-overline { color: var(--ink-600) }` — die Rolle «Tinte leise» (DK-16) trägt `.lc-titelblatt-band`
    samt Overline; gemessen Farbe vorher = nachher. Der Material-Zweig (`[data-reg="m"]`, unten)
@@ -5572,10 +5632,8 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
    (K1); ink-500 der Fakten hebt Regel ③b (oben) auf ink-600. Der Band-Strich
    IST die Registermarke; die 3.5-rem-Marke am Routenkopf (GB-1) entfällt hier
    wie bei `.ub-kopf`. */
-.lc-route[data-reg="m"] .lc-titelblatt-band {
-  background: var(--reg-m-flaeche);
-  border-top-color: var(--reg-m);
-}
+/* (LESER-NAV 15.10.2026: Fläche und Strich «m» setzt der Modifier
+   `.lc-route[data-reg="m"] .lc-titelblatt-band` beim BAND-REZEPT, unter `.wk-kopf`.) */
 /* Sonderregel bleibt (W2·19 Kleinaufräumen 2, 30.9.2026, gemessen im Build @1280):
    ③ `.lc-route[data-reg] header .lc-overline` greift im Band (das Band ist ein
    `div` IM `<header>`) und liefert dort die Registermarke — g hell/dunkel

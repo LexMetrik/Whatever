@@ -1,12 +1,13 @@
 import { datumAnzeige } from '../../../components/rechtsprechung/format';
 import { fedlexLokalisiert, type Locale } from '../../../components/locale';
+import { AbrufFehler } from '../../../components/ui/AbrufFehler';
 import { revisionSchluessel, revisionTitel, type RevisionAnsicht } from '../../../lib/normtext/revisionen';
 import { IN_KRAFT_FUER_CH_LABEL } from '../../../lib/normtext/erlassKopfText';
 import type { ErlassAufhebung } from '../../../lib/normtext/aufhebungen';
 import type { BotschaftBezug } from '../../../lib/materialien/botschaften';
 import type { ArtikelRevision } from '../../../lib/verzahnung/artikel-revisionen';
 import { aenderungZeitbezug, type AenderungZeitbezug } from '../zukunftsfassungen';
-import { aufhebungsBezug, trifftArtikel, wirkungsMarken, type RevisionZeile } from './aenderungModell';
+import { aufhebungsBezug, aufhebungsSatz, trifftArtikel, wirkungsMarken, type RevisionZeile } from './aenderungModell';
 import type { Geladen } from './panelKontextLaden';
 
 // ─── Reiter «Änderungen» (H3) ────────────────────────────────────────────────
@@ -94,7 +95,12 @@ export function PanelAenderungen({ stand, quelleUrl, stichtag, ebene, aufhebung,
   // Auskunft — gemessen 18.8.2026 (oben), nachgezählt 23.9.2026: 0 von 231
   // Sidecars sind kantonal (`ls public/normtext/revisionen | grep -c "^[A-Z][A-Z]-"`). Der Satz
   // sagt das über den Korpus, nicht über den Erlass.
-  if (stand.wert === null && ebene === 'kanton') {
+  // ERGÄNZT 1.10.2026 (W2·17-UI-BEFUNDE PA-13-B03/PE-F4-B01 — der Absatz oben bleibt
+  // als Beleg vom 18.8./23.9. stehen): der Wurzel-Fix steht jetzt in `ladeSidecar`.
+  // «Es gibt keine Datei» (`wert.nichtErfasst`) ist seither von «der Abruf ist
+  // gescheitert» (`wert === null`) getrennt, und ein Fehlschlag wird nicht mehr bis
+  // zum Neuladen festgehalten — darum trägt der Fehlerzustand «Erneut laden».
+  if ((stand.wert === null || stand.wert.nichtErfasst) && ebene === 'kanton') {
     return (
       <p data-v3-panel-reiter-inhalt="aenderungen" data-v3-panel-abdeckung="kanton" className="px-3 py-3 text-body-s text-ink-600">
         Änderungsverläufe sind für kantonale Erlasse bisher nicht erfasst.
@@ -104,20 +110,38 @@ export function PanelAenderungen({ stand, quelleUrl, stichtag, ebene, aufhebung,
     );
   }
   if (stand.wert === null) {
+    // Quelle = die des Erlasses (`quelleUrl`), nie fest Fedlex (EU-Verordnungen!);
+    // ohne bekannte Quelle endet der Satz ohne Link statt mit einem falschen Ziel.
     return (
-      <p data-v3-panel-reiter-inhalt="aenderungen" className="px-3 py-3 text-body-s text-ink-600">
-        Kein Änderungsverlauf verfügbar — für diesen Erlass ist keiner erfasst,
-        oder die Quelle war nicht erreichbar. Amtliche Quelle:{' '}
-        <a href={quelleUrl} rel="nofollow noopener noreferrer" target="_blank" className="lc-link text-brass-700">Amtliche Fassung ↗</a>
+      <AbrufFehler gegenstand="Änderungsverlauf" href={quelleUrl || undefined} onErneut={stand.erneut}
+        className="px-3 py-3" daten={{ 'data-v3-panel-reiter-inhalt': 'aenderungen', 'data-v3-panel-fehler': '' }} />
+    );
+  }
+  if (stand.wert.nichtErfasst) {
+    return (
+      <p data-v3-panel-reiter-inhalt="aenderungen" data-v3-panel-nicht-erfasst className="px-3 py-3 text-body-s text-ink-600">
+        Für diesen Erlass ist kein Änderungsverlauf erfasst.
+        {quelleUrl && (
+          <>{' '}Amtliche Quelle:{' '}
+            <a href={quelleUrl} rel="nofollow noopener noreferrer" target="_blank" className="lc-link text-brass-700">Amtliche Fassung ↗</a></>
+        )}
       </p>
     );
   }
-  const { revisionen, reichweite } = stand.wert;
+  const { revisionen, reichweite, abgerufen } = stand.wert;
+  // O-03: Datenstand des Verlaufs = Abrufdatum des Sidecars (231 von 231 tragen es). Fehlt es,
+  // steht «unbekannt», nie ein Ersatzdatum (§7/§8).
+  const datenstand = (
+    <p data-v3-panel-aenderungen-datenstand className="num pb-1 text-micro text-ink-500">
+      {abgerufen && /^\d{4}-\d{2}-\d{2}$/.test(abgerufen) ? `Datenstand ${datumAnzeige(abgerufen)}` : 'Datenstand unbekannt'}
+    </p>
+  );
   if (revisionen.length === 0) {
     return (
-      <p data-v3-panel-reiter-inhalt="aenderungen" className="px-3 py-3 text-body-s text-ink-600">
-        Für diesen Erlass ist keine Änderung erfasst.
-      </p>
+      <div data-v3-panel-reiter-inhalt="aenderungen" className="px-3 py-3">
+        <p className="pb-1 text-body-s text-ink-600">Für diesen Erlass ist keine Änderung erfasst.</p>
+        {datenstand}
+      </div>
     );
   }
   // ── Ä121 (Live-Ästhetik-Prüfung 18.8.2026) · DIE ERKLÄRUNG STEHT EINMAL ───
@@ -167,6 +191,7 @@ export function PanelAenderungen({ stand, quelleUrl, stichtag, ebene, aufhebung,
           (gemessen 0 px Luft). Eine Zeile, die eine Liste einleitet, gehört
           näher an die Liste als an die Kante des Behälters (4-px-Raster). */}
       {reichweite && <p className="pb-1 pt-1.5 text-micro text-ink-500">{reichweite}</p>}
+      {datenstand}
       {/* AE-8/D-10: die letzte Änderung des gelesenen Artikels — genannt, auch
           wenn sie in der Liste (etwa als Sammelerlass) keine eigene Zeile hat. */}
       {artikel && (
@@ -200,20 +225,30 @@ export function PanelAenderungen({ stand, quelleUrl, stichtag, ebene, aufhebung,
               : 'Aufhebung'}
           </p>
           <ul>
-            {nachAufhebung.map((r) => (
-              <li key={revisionSchluessel(r)} data-v3-panel-aenderung data-v3-panel-aenderung-bezug="nach-aufhebung"
-                className="border-l-2 border-t border-line border-l-line py-2 pl-2.5">
-                <span className="text-body-s font-medium text-ink-700">
-                  {AUFHEBUNGS_TEXT[aufhebungsBezug(r, aufhebung) ?? 'nach-aufhebung']}
-                </span>
-                {r.roFundstelle && <span className="num ml-2 text-micro text-ink-500">{r.roFundstelle}</span>}
-                <span className="mt-0.5 block text-micro leading-snug text-ink-600">
-                  {revisionTitel(r, sprache(locale)) ?? ''}{' '}
-                  <a href={fedlexLokalisiert(r.quelleUrl, locale)} rel="nofollow noopener noreferrer" target="_blank"
-                    className="lc-link whitespace-nowrap text-brass-700">Fedlex ↗</a>
-                </span>
-              </li>
-            ))}
+            {nachAufhebung.map((r) => {
+              const art = aufhebungsBezug(r, aufhebung) ?? 'nach-aufhebung';
+              // PA-7-B02: die Aufhebung des GANZEN Erlasses nennt ihr Datum und, wo sie
+              // nach dem Bezugstag liegt, «künftig». Bezugstag = `currency.geprueftAm`,
+              // sonst das Abrufdatum des Verlaufs (datengetragen, §2) — die PATV hat keinen
+              // currency-Eintrag (Generator legt bei angekündigter Aufhebung keinen an).
+              const satz = art === 'aufhebend' ? aufhebungsSatz(r.dateEntryInForce, stichtag ?? abgerufen) : null;
+              const text = art === 'aufhebend' ? (satz?.label ?? '') : AUFHEBUNGS_TEXT[art];
+              return (
+                <li key={revisionSchluessel(r)} data-v3-panel-aenderung data-v3-panel-aenderung-bezug="nach-aufhebung"
+                  className="border-l-2 border-t border-line border-l-line py-2 pl-2.5">
+                  <span className="text-body-s font-medium text-ink-700">
+                    {text}
+                  </span>
+                  {satz && <span data-v3-panel-aenderung-aufhebung-datum className="num ml-2 text-micro text-ink-700">{satz.datum}</span>}
+                  {r.roFundstelle && <span className="num ml-2 text-micro text-ink-500">{r.roFundstelle}</span>}
+                  <span className="mt-0.5 block text-micro leading-snug text-ink-600">
+                    {revisionTitel(r, sprache(locale)) ?? ''}{' '}
+                    <a href={fedlexLokalisiert(r.quelleUrl, locale)} rel="nofollow noopener noreferrer" target="_blank"
+                      className="lc-link whitespace-nowrap text-brass-700">Fedlex ↗</a>
+                  </span>
+                </li>
+              );
+            })}
           </ul>
         </section>
       )}
@@ -233,9 +268,9 @@ export function PanelAenderungen({ stand, quelleUrl, stichtag, ebene, aufhebung,
   );
 }
 
-const AUFHEBUNGS_TEXT: Readonly<Record<'nachfolger' | 'aufhebend' | 'nach-aufhebung', string>> = {
+// `aufhebend` fehlt hier mit Absicht: sein Satz hängt vom Zeitbezug ab (`aufhebungsSatz`).
+const AUFHEBUNGS_TEXT: Readonly<Record<'nachfolger' | 'nach-aufhebung', string>> = {
   nachfolger: 'Nachfolge-Erlass',
-  aufhebend: 'Hebt diesen Erlass auf',
   'nach-aufhebung': 'Betrifft nicht mehr diesen Erlass',
 };
 

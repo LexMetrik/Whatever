@@ -21,7 +21,7 @@
 // — die diskriminierte Ergebnis-Union zwingt die UI, den Rahmen/Hinweis
 // auszuweisen statt eine Scheinzahl anzuzeigen.
 
-import { chfGanz } from '../format';
+import { chfBedingt, chfGanz, chfOhnePraefix } from '../format';
 
 /** Ein Band einer flachen Bracket-Staffel: bis zur Grenze gilt der Festbetrag.
  *  Das letzte Band MUSS `bisChf: Infinity` tragen (Bereich lückenlos decken). */
@@ -50,7 +50,53 @@ interface RahmenBand {
   mindestChf?: number;
   hoechstChf?: number;
   hinweis?: string;
+  /** Opt-in (RL-27): Richtpunkt. Ist gesetzt und der Band-Rahmen beidseitig
+   *  bezifferbar, interpoliert das Ergebnis den Streitwert linear zwischen der
+   *  unteren Bandgrenze (Streitwert) und `grenzeChf` auf den Rahmen und weist
+   *  das Ergebnis als `richtpunktChf` aus (Rappen). Der Rahmen bleibt Spanne,
+   *  der Richtpunkt ist KEIN Punktwert (§8). Untere Bandgrenze: `vonGrenzeChf`,
+   *  sonst `grenzeChf` des Vorbands; ohne beides, oder bei `grenzeChf: Infinity`,
+   *  ist die Regel fehlerhaft deklariert (RangeError). `interpoliert` braucht also
+   *  ein ENDLICHES Band; im offenen obersten Band (`grenzeChf: Infinity`) wirft
+   *  die Auswertung erst zur Laufzeit, die Datenprüfung dazu folgt mit RL-30. */
+  interpoliert?: true;
+  vonGrenzeChf?: number;
 }
+
+/** Rundung auf ein Vielfaches von `schrittChf` (RL-27, Opt-in). `naechste`
+ *  rundet einen Gleichstand (genau halber Schritt) auf. */
+export interface Rundung {
+  schrittChf: number;
+  richtung: 'auf' | 'ab' | 'naechste';
+}
+
+/** Regel-weite Rundungs-Optionen (RL-27, Opt-in; fehlen sie, gilt das Verhalten
+ *  vor RL-27 unverändert). `basisRundung` wirkt auf den Bemessungswert VOR der
+ *  Bandwahl, `ergebnisRundung` NACH Mindest-/Höchstbetrag auf das Ergebnis
+ *  und klammert danach erneut (Ergebnis bleibt im Fenster [min, max]). Nur für
+ *  deterministische Ergebnisse; bei Spannen wirft die Auswertung ein RangeError. */
+export interface RundungsOptionen {
+  basisRundung?: Rundung;
+  ergebnisRundung?: Rundung;
+}
+
+/** Streitwertabhängiger Faktor auf einen Gebührenrahmen (RL-27, Opt-in), z. B.
+ *  SG/AR/AI «Faktor 2 über CHF 50'000, … je weitere CHF 250'000 plus 1».
+ *  Faktor = `faktor` der höchsten Stufe mit Streitwert STRIKT über `ueberChf`
+ *  (unterhalb der ersten Stufe: 1). Mit `jeWeitereChf` kommt über der letzten
+ *  Stufe je weitere Tranche `plusFaktor` dazu; ob eine angefangene Tranche
+ *  zählt, bestimmt `stufenZaehlung` und ist in den Daten ausdrücklich zu
+ *  wählen (die Primitive entscheidet diese Fachfrage nicht). `seite` 'bis'
+ *  skaliert nur die Obergrenze (Untergrenze konstant), 'beide' beide Grenzen.
+ *  `hoechstChf` deckelt die skalierte Grenze. */
+export type StreitwertFaktor = {
+  stufen: { ueberChf: number; faktor: number }[];
+  hoechstChf?: number;
+  seite: 'bis' | 'beide';
+} & (
+  | { jeWeitereChf?: undefined; plusFaktor?: undefined; stufenZaehlung?: undefined }
+  | { jeWeitereChf: number; plusFaktor: number; stufenZaehlung: 'angefangen' | 'voll' }
+);
 
 /** Ein Band einer mehrbandigen Sockel+Prozent-Staffel: bis zur Grenze gilt
  *  `sockelChf + prozent% × (wert − abChf)`. Der Sockel kumuliert die unteren
@@ -92,11 +138,11 @@ export type TarifRegel =
   /** Sockelbetrag + Prozentsatz auf den Überschuss über eine Schwelle,
    *  optional gedeckelt/mit Mindestbetrag. Z. B. «CHF 3'150 + 8 % über
    *  CHF 20'000». `abChf`/`sockelChf` default 0. */
-  | { typ: 'sockel_prozent'; prozent: number; abChf?: number; sockelChf?: number; minChf?: number; maxChf?: number }
+  | ({ typ: 'sockel_prozent'; prozent: number; abChf?: number; sockelChf?: number; minChf?: number; maxChf?: number } & RundungsOptionen)
   /** Promille des Bemessungswerts, optional gedeckelt/mit Mindestbetrag. */
-  | { typ: 'promille'; promille: number; minChf?: number; maxChf?: number }
-  | { typ: 'staffel_inklusiv'; baender: StaffelBand[] }
-  | { typ: 'staffel_exklusiv'; baender: StaffelBand[] }
+  | ({ typ: 'promille'; promille: number; minChf?: number; maxChf?: number } & RundungsOptionen)
+  | ({ typ: 'staffel_inklusiv'; baender: StaffelBand[] } & RundungsOptionen)
+  | ({ typ: 'staffel_exklusiv'; baender: StaffelBand[] } & RundungsOptionen)
   /** Mehrbandige Sockel+Prozent-Tabelle (deterministische Grundgebühr). */
   /** Mehrbandige Sockel+Prozent-Tabelle. Optionaler regel-weiter ERMESSENS-
    *  AUFSCHLAG (§8): liegt eine behördliche Ermessens-Spanne über dem ganzen
@@ -106,20 +152,30 @@ export type TarifRegel =
    *  default 0). Beispiele: GE Art. 25 (Basis 500–2000 → aufBis 1500), VD Art. 26
    *  (200–2000 → 1800), OW Art. 10 (500–1800 → 1300), NW § 37/§ 40 (aufVon 300,
    *  aufBis 2000), BS Stiftung (400–2000 → aufBis 1600). */
-  | { typ: 'staffel_sockel_prozent'; baender: SockelProzentBand[]; aufschlagVonChf?: number; aufschlagBisChf?: number }
+  | ({ typ: 'staffel_sockel_prozent'; baender: SockelProzentBand[]; aufschlagVonChf?: number; aufschlagBisChf?: number } & RundungsOptionen)
   /** Fix + Prozent vom Gesamtwert je Band (deterministisch). */
-  | { typ: 'staffel_voll_prozent'; baender: VollProzentBand[] }
+  | ({ typ: 'staffel_voll_prozent'; baender: VollProzentBand[] } & RundungsOptionen)
   /** Bracket-Staffel, deren Bänder einen Gebühren-RAHMEN statt eines
    *  Punktwerts tragen (deterministische Band-Wahl, ehrliche Spanne). */
-  | { typ: 'staffel_rahmen'; baender: RahmenBand[] }
-  /** Behördlicher Rahmen ohne deterministischen Punktwert. */
-  | { typ: 'rahmen'; vonChf: number; bisChf: number; hinweis?: string }
+  | ({ typ: 'staffel_rahmen'; baender: RahmenBand[]; streitwertFaktor?: StreitwertFaktor } & RundungsOptionen)
+  /** Behördlicher Rahmen ohne deterministischen Punktwert. Mit `streitwertFaktor`
+   *  (RL-27, Opt-in) wird der Rahmen nach dem Bemessungswert skaliert; dann ist
+   *  der Bemessungswert Pflicht (RangeError bei ungültigem Wert). */
+  | ({ typ: 'rahmen'; vonChf: number; bisChf: number; hinweis?: string; streitwertFaktor?: StreitwertFaktor } & RundungsOptionen)
+  /** Summe mehrerer Teilregeln mit Etikett (RL-27, Opt-in), z. B. Gebühr nach
+   *  zwei Normen. Alle Teile beziffert: Betrag = Summe, dann Mindest-/Höchstbetrag
+   *  der Summe. Ein Teil als Spanne: Spanne (Σ von, Σ bis). Ein Teil ohne
+   *  Ober- bzw. Untergrenze (z. B. `formel_extern`): keine Scheinzahl für die
+   *  betroffene Seite (§8). Deckel je Teil: in der Teilregel selbst. */
+  | ({ typ: 'summe'; teile: { etikett: string; regel: TarifRegel }[]; minChf?: number; maxChf?: number } & Pick<RundungsOptionen, 'ergebnisRundung'>)
   /** Tarif hängt von extern bestimmten Faktoren ab (nicht berechenbar). */
   | { typ: 'formel_extern'; hinweis: string };
 
 export type TarifErgebnis =
   | { deterministisch: true; betragChf: number; schritte: string[] }
-  | { deterministisch: false; vonChf?: number; bisChf?: number; hinweis: string };
+  | { deterministisch: false; vonChf?: number; bisChf?: number; hinweis: string;
+      /** Nur bei Bändern mit `interpoliert` und bei Summen daraus (RL-27). */
+      richtpunktChf?: number };
 
 const round2 = (x: number) => Math.round(x * 100) / 100;
 // Gebühren werden ganzzahlig dargestellt (Frankenbeträge; Bug-Check 14.6.2026).
@@ -160,6 +216,176 @@ const ausStaffel = (baender: StaffelBand[], basisChf: number, inklusiv: boolean)
   return { deterministisch: true, betragChf: round2(treffer.chf), schritte: [`Band ${grenze}: ${chf(treffer.chf)}`] };
 };
 
+// ─── RL-27: Rundung, Streitwertfaktor, Satz-Helfer (alles Opt-in) ───────────
+
+/** Toleranz gegen Gleitkomma-Rauschen: ein Quotient, der um höchstens dies von
+ *  einer ganzen Zahl abweicht, gilt als exaktes Vielfaches (idempotent). Rappen-
+ *  genaue Eingaben liegen bei Schritten bis 10 Mio weit ausserhalb (≥ 1e-9). */
+const VIELFACHES_TOL = 1e-9;
+
+const pruefeRundung = (r: Rundung, was: string): void => {
+  if (!Number.isFinite(r.schrittChf) || r.schrittChf <= 0) {
+    throw new RangeError(`${was}: schrittChf muss eine Zahl > 0 sein (erhalten: ${r.schrittChf}).`);
+  }
+};
+
+/** Rundet auf ein Vielfaches von `schrittChf`; `vorRappen` rundet vorher auf
+ *  Rappen (Ergebnisse: sonst kippt 1610 durch 1609.9999999999998 auf 1600). */
+const runde = (x: number, r: Rundung, vorRappen: boolean): number => {
+  const q = (vorRappen ? round2(x) : x) / r.schrittChf;
+  const nah = Math.round(q);
+  let n: number;
+  if (Math.abs(q - nah) <= VIELFACHES_TOL) n = nah;
+  else if (r.richtung === 'auf') n = Math.ceil(q);
+  else if (r.richtung === 'ab') n = Math.floor(q);
+  else n = Math.round(q);
+  return round2(n * r.schrittChf);
+};
+
+const rundungWort = (r: Rundung): string =>
+  r.richtung === 'auf' ? 'aufgerundet' : r.richtung === 'ab' ? 'abgerundet' : 'gerundet';
+
+/** Hängt einen ganzen Satz an einen Hinweis (setzt den Schlusspunkt, falls er fehlt). */
+const mitSatz = (hinweis: string, satz: string): string => {
+  const h = /[.!?]$/.test(hinweis.trimEnd()) ? hinweis.trimEnd() : `${hinweis.trimEnd()}.`;
+  return `${h} ${satz}`;
+};
+
+/** Faktor der Streitwert-Stufung für den Bemessungswert (siehe `StreitwertFaktor`). */
+const faktorFuer = (f: StreitwertFaktor, basisChf: number): number => {
+  if (f.stufen.length === 0) throw new RangeError('streitwertFaktor: mindestens eine Stufe nötig.');
+  for (const st of f.stufen) {
+    if (!Number.isFinite(st.ueberChf) || !Number.isFinite(st.faktor) || st.faktor <= 0) {
+      throw new RangeError(`streitwertFaktor: Stufe über ${st.ueberChf} mit Faktor ${st.faktor} ist ungültig.`);
+    }
+  }
+  const stufen = [...f.stufen].sort((a, b) => a.ueberChf - b.ueberChf);
+  let faktor = 1;
+  let letzte: (typeof stufen)[number] | undefined;
+  for (const st of stufen) {
+    if (basisChf > st.ueberChf) {
+      faktor = st.faktor;
+      letzte = st;
+    }
+  }
+  if (f.jeWeitereChf !== undefined) {
+    if (!Number.isFinite(f.jeWeitereChf) || f.jeWeitereChf <= 0 || !Number.isFinite(f.plusFaktor)) {
+      throw new RangeError('streitwertFaktor: jeWeitereChf muss > 0 und plusFaktor eine Zahl sein.');
+    }
+    if (letzte === stufen[stufen.length - 1] && letzte !== undefined) {
+      const t = (basisChf - letzte.ueberChf) / f.jeWeitereChf;
+      const n = f.stufenZaehlung === 'angefangen' ? Math.ceil(t - VIELFACHES_TOL) : Math.floor(t + VIELFACHES_TOL);
+      faktor += n * f.plusFaktor;
+    }
+  }
+  return faktor;
+};
+
+/** Skaliert die Grenzen eines Rahmens mit dem Streitwertfaktor. Untergrenze nur
+ *  bei `seite: 'beide'`; `hoechstChf` deckelt. Liefert zusätzlich den Hinweis-Satz. */
+const wendeFaktorAn = (
+  von: number | undefined,
+  bis: number | undefined,
+  f: StreitwertFaktor,
+  basisChf: number,
+): { von: number | undefined; bis: number | undefined; satz: string | undefined } => {
+  const faktor = faktorFuer(f, basisChf);
+  const skal = (x: number): number => {
+    const v = round2(x * faktor);
+    return f.hoechstChf !== undefined ? Math.min(v, f.hoechstChf) : v;
+  };
+  const neuBis = bis !== undefined ? skal(bis) : undefined;
+  const neuVon = f.seite === 'beide' && von !== undefined ? skal(von) : von;
+  if (neuBis === undefined) return { von: neuVon, bis: neuBis, satz: undefined };
+  const gedeckelt = f.hoechstChf !== undefined && round2((bis as number) * faktor) > f.hoechstChf;
+  const deckel = gedeckelt ? ` (Höchstgrenze ${chfBedingt(f.hoechstChf as number)})` : '';
+  const satz = f.seite === 'beide' && neuVon !== undefined
+    ? `Mit Streitwertfaktor ${faktor} beträgt der Gebührenrahmen ${chfBedingt(neuVon)}–${chfBedingt(neuBis)}${deckel}.`
+    : `Mit Streitwertfaktor ${faktor} beträgt die Obergrenze ${chfBedingt(neuBis)}${deckel}.`;
+  return { von: neuVon, bis: neuBis, satz };
+};
+
+/** Wirksames Mindest-/Höchstbetrags-Fenster eines deterministischen Ergebnisses
+ *  (inkl. Band-Grenzen). Wird von `werteAus` befüllt, damit die Ergebnisrundung
+ *  nach dem Runden dieselbe Klammer erneut anwenden kann (RL-27, A2). */
+type Fenster = { minChf?: number; maxChf?: number };
+const merke = (f: Fenster | undefined, minChf: number | undefined, maxChf: number | undefined): void => {
+  if (f) { f.minChf = minChf; f.maxChf = maxChf; }
+};
+
+/** Fasst Teilergebnisse einer `summe` zusammen (siehe Typ-Doku). */
+const ausSumme = (regel: Extract<TarifRegel, { typ: 'summe' }>, basisChf: number, fenster?: Fenster): TarifErgebnis => {
+  if (regel.teile.length === 0) throw new RangeError('Summe braucht mindestens einen Teil.');
+  const erg = regel.teile.map((t) => ({ etikett: t.etikett, e: auswertenTarif(t.regel, basisChf) }));
+
+  if (erg.every((x) => x.e.deterministisch)) {
+    const schritte: string[] = [];
+    let summe = 0;
+    for (const x of erg) {
+      if (!x.e.deterministisch) continue;
+      for (const st of x.e.schritte) schritte.push(`${x.etikett}: ${st}`);
+      schritte.push(`${x.etikett}: Teilbetrag ${chfBedingt(x.e.betragChf)}`);
+      summe = round2(summe + x.e.betragChf);
+    }
+    schritte.push(`Summe der Teile: ${chfBedingt(summe)}`);
+    merke(fenster, regel.minChf, regel.maxChf);
+    return { deterministisch: true, betragChf: klammere(summe, regel.minChf, regel.maxChf, schritte), schritte };
+  }
+
+  const seitenSumme = (wahl: (e: TarifErgebnis) => number | undefined): number | undefined => {
+    let acc = 0;
+    for (const x of erg) {
+      const v = wahl(x.e);
+      if (v === undefined) return undefined;
+      acc = round2(acc + v);
+    }
+    return acc;
+  };
+  let von = seitenSumme((e) => (e.deterministisch ? e.betragChf : e.vonChf));
+  let bis = seitenSumme((e) => (e.deterministisch ? e.betragChf : e.bisChf));
+  let richt = von !== undefined && bis !== undefined
+    ? seitenSumme((e) => (e.deterministisch ? e.betragChf : e.richtpunktChf))
+    : undefined;
+
+  const etiketten = erg.map((x) => x.etikett).join(', ');
+  const unbeziffert = erg.filter((x) => !x.e.deterministisch && x.e.vonChf === undefined && x.e.bisChf === undefined);
+  if (von === undefined && bis === undefined) {
+    const gruende = unbeziffert.map((x) => (x.e.deterministisch ? '' : `${x.etikett}: ${x.e.hinweis}`)).join(' | ');
+    // Ohne unbezifferten Teil haben die Teile nur verschiedene Seiten beziffert
+    // (z. B. einer nur «bis», einer nur «von»): keine leere Klammer ausgeben.
+    const grund = gruende !== ''
+      ? `weil mindestens ein Teil nicht beziffert ist (${gruende})`
+      : 'weil die Teile keine gemeinsame bezifferte Grenze haben';
+    return {
+      deterministisch: false,
+      hinweis: mitSatz(`Summe aus ${etiketten} nicht beziffert, ${grund}`, 'Eine Gesamtsumme wird nicht ausgewiesen.'),
+    };
+  }
+
+  // Mindest-/Höchstbetrag der Summe auf jede ausgewiesene Grenze.
+  let geklammert = false;
+  const klemme = (x: number | undefined): number | undefined => {
+    if (x === undefined) return undefined;
+    const k = klammere(x, regel.minChf, regel.maxChf, []);
+    if (k !== x) geklammert = true;
+    return k;
+  };
+  von = klemme(von);
+  bis = klemme(bis);
+  richt = klemme(richt);
+
+  const spanne = von !== undefined && bis !== undefined ? `${chfBedingt(von)}–${chfBedingt(bis)}`
+    : bis !== undefined ? `bis ${chfBedingt(bis)}`
+    : `ab ${chfBedingt(von as number)}`;
+  let hinweis = `Summe aus ${etiketten}: Gebührenrahmen ${spanne}; Festsetzung der Rahmen-Teile im Ermessen der Behörde.`;
+  if (unbeziffert.length > 0) hinweis = mitSatz(hinweis, `Nicht beziffert: ${unbeziffert.map((x) => x.etikett).join(', ')}.`);
+  if (geklammert) hinweis = mitSatz(hinweis, 'Mindest- bzw. Höchstbetrag der Summe angewandt.');
+  if (richt !== undefined) hinweis = mitSatz(hinweis, `Richtpunkt der Summe: ${chfBedingt(richt)}.`);
+  const out: TarifErgebnis = { deterministisch: false, vonChf: von, bisChf: bis, hinweis };
+  if (richt !== undefined) out.richtpunktChf = richt;
+  return out;
+};
+
 /** Skaliert ein Tarif-Ergebnis mit einer Faktor-SPANNE (z. B. summarisches
  *  Verfahren ½–¾, Rechtsmittelinstanz, Schlichtungs-Bruchteil). Ergebnis wird
  *  zur Spanne (vonChf×faktorMin … bisChf×faktorMax); ein deterministischer
@@ -176,10 +402,8 @@ export function skaliereErgebnis(e: TarifErgebnis, faktorMin: number, faktorMax:
   return { deterministisch: false, vonChf: von, bisChf: bis, hinweis: `${e.hinweis} · ${hinweis}` };
 }
 
-/** Wertet eine Tarifregel über den Bemessungswert aus. Deterministisch für
- *  fix/sockel_prozent/promille/staffel_*; ehrlicher Rahmen/Hinweis für
- *  rahmen/formel_extern. */
-export function auswertenTarif(regel: TarifRegel, basisChf: number): TarifErgebnis {
+/** Kern-Auswertung ohne regel-weite Rundung (siehe `auswertenTarif`). */
+function werteAus(regel: TarifRegel, basisChf: number, fenster?: Fenster): TarifErgebnis {
   switch (regel.typ) {
     case 'fix':
       return { deterministisch: true, betragChf: round2(regel.chf), schritte: [`Fixgebühr ${chf(regel.chf)}`] };
@@ -193,6 +417,7 @@ export function auswertenTarif(regel: TarifRegel, basisChf: number): TarifErgebn
       if (sockel > 0) schritte.push(`Sockel ${chf(sockel)}`);
       schritte.push(`${regel.prozent} % auf ${chf(ueberschuss)}${ab > 0 ? ` (Überschuss über ${chf(ab)})` : ''} = ${chf(ueberschuss * regel.prozent / 100)}`);
       const roh = round2(sockel + (ueberschuss * regel.prozent) / 100);
+      merke(fenster, regel.minChf, regel.maxChf);
       return { deterministisch: true, betragChf: klammere(roh, regel.minChf, regel.maxChf, schritte), schritte };
     }
 
@@ -200,6 +425,7 @@ export function auswertenTarif(regel: TarifRegel, basisChf: number): TarifErgebn
       pruefeBasis(basisChf);
       const schritte = [`${regel.promille} ‰ von ${chf(basisChf)} = ${chf((basisChf * regel.promille) / 1000)}`];
       const roh = round2((basisChf * regel.promille) / 1000);
+      merke(fenster, regel.minChf, regel.maxChf);
       return { deterministisch: true, betragChf: klammere(roh, regel.minChf, regel.maxChf, schritte), schritte };
     }
 
@@ -232,6 +458,7 @@ export function auswertenTarif(regel: TarifRegel, basisChf: number): TarifErgebn
       if (b.sockelChf > 0) schritte.push(`Sockel ${chf(b.sockelChf)}`);
       schritte.push(`${b.prozent} % auf ${chf(ueberschuss)}${b.abChf > 0 ? ` (Überschuss über ${chf(b.abChf)})` : ''} = ${chf((ueberschuss * b.prozent) / 100)}`);
       const roh = round2(b.sockelChf + (ueberschuss * b.prozent) / 100);
+      merke(fenster, b.minChf, b.maxChf);
       const det = klammere(roh, b.minChf, b.maxChf, schritte);
 
       // (b) Regel-weiter Ermessens-Aufschlag: über dem deterministischen Betrag
@@ -257,6 +484,7 @@ export function auswertenTarif(regel: TarifRegel, basisChf: number): TarifErgebn
       if (!b) throw new RangeError(`Voll-Prozent-Staffel deckt ${chf(basisChf)} nicht (letztes Band braucht bisChf: Infinity).`);
       const schritte = [`Fix ${chf(b.fixChf)} + ${b.prozent} % von ${chf(basisChf)} = ${chf(b.fixChf + (basisChf * b.prozent) / 100)}`];
       const roh = round2(b.fixChf + (basisChf * b.prozent) / 100);
+      merke(fenster, b.minChf, b.maxChf);
       return { deterministisch: true, betragChf: klammere(roh, b.minChf, b.maxChf, schritte), schritte };
     }
 
@@ -276,8 +504,16 @@ export function auswertenTarif(regel: TarifRegel, basisChf: number): TarifErgebn
         if (b.hoechstChf != null) v = Math.min(v, b.hoechstChf);
         return v;
       };
-      const von = seite(b.minChf, b.minProzent);
-      const bis = seite(b.maxChf, b.maxProzent);
+      let von = seite(b.minChf, b.minProzent);
+      let bis = seite(b.maxChf, b.maxProzent);
+      // RL-27 (Opt-in): Streitwertfaktor auf die Grenzen des gewählten Bands.
+      let faktorSatz: string | undefined;
+      if (regel.streitwertFaktor) {
+        const skaliert = wendeFaktorAn(von, bis, regel.streitwertFaktor, basisChf);
+        von = skaliert.von;
+        bis = skaliert.bis;
+        faktorSatz = skaliert.satz;
+      }
       const grenze = Number.isFinite(b.grenzeChf) ? `bis und mit ${chf(b.grenzeChf)}` : 'oberstes Band';
       const spanne = von != null && bis != null ? `${chf(von)}–${chf(bis)}`
         : bis != null ? `bis ${chf(bis)}`
@@ -288,18 +524,100 @@ export function auswertenTarif(regel: TarifRegel, basisChf: number): TarifErgebn
         : b.maxProzent != null ? ` (bis ${b.maxProzent} % des Streitwerts)`
         : b.minProzent != null ? ` (ab ${b.minProzent} % des Streitwerts)`
         : '';
+      let hinweis = b.hinweis ?? `Gebührenrahmen ${spanne}${pctNote} (Streitwert-Band ${grenze}); Festsetzung im Ermessen der Behörde.`;
+      if (faktorSatz) hinweis = mitSatz(hinweis, faktorSatz);
+
+      // RL-27 (Opt-in): interpolierter Richtpunkt innerhalb des Band-Rahmens.
+      let richtpunkt: number | undefined;
+      if (b.interpoliert) {
+        const idx = regel.baender.indexOf(b);
+        const unten = b.vonGrenzeChf ?? (idx > 0 ? regel.baender[idx - 1].grenzeChf : undefined);
+        if (!Number.isFinite(b.grenzeChf)) {
+          throw new RangeError('Rahmen-Band mit `interpoliert` braucht ein endliches Band (grenzeChf endlich); das offene oberste Band (Infinity) kann nicht interpoliert werden.');
+        }
+        if (unten === undefined || !(b.grenzeChf > unten)) {
+          throw new RangeError(`Rahmen-Band bis ${b.grenzeChf} mit \`interpoliert\` braucht eine untere Grenze unterhalb von grenzeChf (vonGrenzeChf oder grenzeChf des Vorbands; erhalten: ${unten}).`);
+        }
+        if (von != null && bis != null) {
+          const t = Math.min(1, Math.max(0, (basisChf - unten) / (b.grenzeChf - unten)));
+          richtpunkt = round2(von + t * (bis - von));
+          hinweis = mitSatz(hinweis, `Richtpunkt nach Streitwert interpoliert: ${chfBedingt(richtpunkt)}; die Festsetzung im Rahmen bleibt der Behörde vorbehalten.`);
+        }
+      }
+      const ergebnis: TarifErgebnis = { deterministisch: false, vonChf: von, bisChf: bis, hinweis };
+      if (richtpunkt !== undefined) ergebnis.richtpunktChf = richtpunkt;
+      return ergebnis;
+    }
+
+    case 'rahmen': {
+      if (!regel.streitwertFaktor) {
+        return { deterministisch: false, vonChf: regel.vonChf, bisChf: regel.bisChf, hinweis: regel.hinweis ?? 'Behördlicher Gebührenrahmen – kein fester Punktwert.' };
+      }
+      // RL-27 (Opt-in): Rahmen nach Streitwert skalieren; Bemessungswert Pflicht.
+      pruefeBasis(basisChf);
+      const skaliert = wendeFaktorAn(regel.vonChf, regel.bisChf, regel.streitwertFaktor, basisChf);
+      const basisHinweis = regel.hinweis ?? 'Behördlicher Gebührenrahmen – kein fester Punktwert.';
       return {
         deterministisch: false,
-        vonChf: von,
-        bisChf: bis,
-        hinweis: b.hinweis ?? `Gebührenrahmen ${spanne}${pctNote} (Streitwert-Band ${grenze}); Festsetzung im Ermessen der Behörde.`,
+        vonChf: skaliert.von,
+        bisChf: skaliert.bis,
+        hinweis: skaliert.satz ? mitSatz(basisHinweis, skaliert.satz) : basisHinweis,
       };
     }
 
-    case 'rahmen':
-      return { deterministisch: false, vonChf: regel.vonChf, bisChf: regel.bisChf, hinweis: regel.hinweis ?? 'Behördlicher Gebührenrahmen – kein fester Punktwert.' };
+    case 'summe':
+      return ausSumme(regel, basisChf, fenster);
 
     case 'formel_extern':
       return { deterministisch: false, hinweis: regel.hinweis };
   }
+}
+
+/** Wertet eine Tarifregel über den Bemessungswert aus. Deterministisch für
+ *  fix/sockel_prozent/promille/staffel_*; ehrlicher Rahmen/Hinweis für
+ *  rahmen/formel_extern. Opt-in (RL-27): `basisRundung` rundet den Bemessungs-
+ *  wert VOR der Bandwahl, `ergebnisRundung` das Ergebnis NACH Mindest-/Höchst-
+ *  betrag. Ohne diese Felder läuft ausschliesslich der unveränderte Kern. */
+export function auswertenTarif(regel: TarifRegel, basisChf: number): TarifErgebnis {
+  const opt = regel as Partial<RundungsOptionen>;
+  const br = opt.basisRundung;
+  const er = opt.ergebnisRundung;
+  if (!br && !er) return werteAus(regel, basisChf);
+
+  let basis = basisChf;
+  let basisSatz: string | undefined;
+  if (br) {
+    pruefeRundung(br, 'basisRundung');
+    pruefeBasis(basisChf);
+    basis = runde(basisChf, br, false);
+    basisSatz = `Bemessungsbasis auf ${chfBedingt(br.schrittChf)} ${rundungWort(br)}: ${chfOhnePraefix(basis)}.`;
+  }
+  const fenster: Fenster = {};
+  const e = werteAus(regel, basis, fenster);
+  let aus: TarifErgebnis = e;
+  if (basisSatz) {
+    aus = e.deterministisch
+      ? { ...e, schritte: [basisSatz, ...e.schritte] }
+      : { ...e, hinweis: mitSatz(e.hinweis, basisSatz) };
+  }
+  if (!er) return aus;
+
+  pruefeRundung(er, 'ergebnisRundung');
+  // A3 (Nachzug): Spannen werden nicht gerundet. Rundung der Grenzen liesse
+  // Zahl und Hinweistext auseinanderlaufen und könnte den Rahmen über das
+  // gesetzliche Minimum/Maximum hinaus verschieben; weniger Fähigkeit statt
+  // einer Regel, die dem Nutzer ein falsches Bild zeigt (§1, §8).
+  if (!aus.deterministisch) {
+    throw new RangeError('ergebnisRundung nur für deterministische Ergebnisse: Spannen (Gebührenrahmen, Richtpunkt) werden nicht gerundet.');
+  }
+  const wort = `auf ${chfBedingt(er.schrittChf)} ${rundungWort(er)}`;
+  // A2 (Nachzug): Nach dem Runden erneut klammern. Sonst kann «ab» unter den
+  // Mindest- und «auf» über den Höchstbetrag führen (min 75, «ab 10» → 70;
+  // max 1005, «auf 10» → 1010). Mindest-/Höchstbetrag sind Normgrenzen und gehen
+  // der Rundung vor; ist eine Grenze kein Vielfaches des Schritts, gilt die
+  // Grenze selbst (normkonforme Lesart «Höchstbetrag gilt»).
+  const schritte = [...aus.schritte];
+  schritte.push(`Ergebnis ${wort}: ${chfOhnePraefix(runde(aus.betragChf, er, true))}.`);
+  const betrag = klammere(runde(aus.betragChf, er, true), fenster.minChf, fenster.maxChf, schritte);
+  return { ...aus, betragChf: betrag, schritte };
 }

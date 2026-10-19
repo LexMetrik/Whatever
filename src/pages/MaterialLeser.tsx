@@ -14,6 +14,7 @@ import { FehlSeite } from '../components/ui/FehlSeite';
 import { Ladeanzeige } from '../components/ui/Ladeanzeige';
 import { useMeldeInhaltsKopf } from '../components/layout/InhaltsKopfKontext';
 import type { BrowseMaterial } from '../lib/materialien/typen';
+import { BsOgdNachweis } from '../components/materialien/BsOgdNachweis';
 import { sicherDekodiert } from '../lib/sicherDekodieren';
 
 // ─── Reader EINES Materials (/materialien/:key) ─────────────────────────────
@@ -26,6 +27,14 @@ import { sicherDekodiert } from '../lib/sicherDekodieren';
 // kuratiert, fachlich noch nicht durch David geprüft (Abnahme-Zeitsperre, §8).
 
 const SPRACH_LABEL: Record<string, string> = { de: 'Deutsch', fr: 'Französisch', it: 'Italienisch' };
+
+// O-66 (LESER-NAV, 16.10.2026): so lange hält der Leser den Rückweg-Knopf unsichtbar, während
+// das Kontext-Panel lädt (O-53, gegen Lade-CLS). Ein hängender Abruf hielt den Knopf sonst
+// für immer verborgen (gemessen: Abruf von `norm-index-erlasse.json` offen ⇒ nach 20 s noch
+// `visibility: hidden`). Nach der Frist erscheint der Knopf trotzdem; eine Sichtbarkeit ohne
+// Platzänderung verschiebt nichts. Gleiche Grössenordnung wie die PDF-Ansicht («zu langsam»,
+// 12 s) — langsame, aber ankommende Abrufe (Mobilnetz) sollen die Frist nicht reissen.
+const KONTEXT_FRIST_MS = 10_000;
 
 export function MaterialLeser() {
   const { key = '' } = useParams();
@@ -74,6 +83,19 @@ export function MaterialLeser() {
   const laden = !data || data.key !== key;
   const material = laden ? null : data.material;
 
+  // Frist für die Lade-Unsichtbarkeit des Rückweg-Knopfs (s. KONTEXT_FRIST_MS): ab dem
+  // Zeitpunkt, an dem das Material steht und das Panel zu laden beginnt. Der Zustand merkt
+  // sich den Schlüssel, für den die Frist ablief (Wechsel des Materials ⇒ Frist beginnt neu);
+  // das Aufräumen setzt ihn zurück, sonst stünde bei der Rückkehr zu einem Material im selben
+  // Mount die alte, abgelaufene Frist sofort wieder (Gegenprüfung #1411).
+  const [kontextFristFuer, setKontextFristFuer] = useState<string | null>(null);
+  useEffect(() => {
+    if (laden) return;
+    const t = setTimeout(() => setKontextFristFuer(key), KONTEXT_FRIST_MS);
+    return () => { clearTimeout(t); setKontextFristFuer(null); };
+  }, [laden, key]);
+  const kontextFristAbgelaufen = kontextFristFuer === key;
+
   // W3-7 (Posten, REST S2): der eine Lade-Baustein (`ui/Ladeanzeige`, mit
   // `role="status"`) statt der eigenen Kopie.
   // `min-h-inhalt-region` (W2·31 P13, 30.9.2026): Footer-Sprung beim Laden
@@ -108,7 +130,7 @@ export function MaterialLeser() {
   const m = material;
 
   return (
-    <article className="space-y-8 @container/material">
+    <article className="space-y-8 @container/material group/material min-h-inhalt-region">
       {/* ── B-4 (Design-Konsistenz Runde 2, 31.8.2026) · DERSELBE LESER-KOPF ───
           Dieser Leser lieh sich bis hierher den Kopf der STATISCHEN Seiten
           (`layout/SeitenKopf`) — samt Ablesekante (`scale-rule`), dem Marken-
@@ -170,6 +192,8 @@ export function MaterialLeser() {
             zusätzlich als sichtbarer Text»). Ihn im Zug einer Design-Angleichung
             zu entfernen, wäre ein Abbau von Ehrlichkeit, nicht von Dopplung. */}
         <p className="text-xs text-ink-500 break-all max-w-reading">{m.quelleUrl}</p>
+        {/* O-10: CC-BY-Namensnennung der data.bs.ch-Datensätze (`BsOgdNachweis`). */}
+        {m.behoerde === 'BS-GR' && <p className="text-xs text-ink-500 max-w-reading"><BsOgdNachweis /></p>}
       </LeserKopfGeruest>
 
       {/* ── W2·31-BILDSCHIRMBREITE B8 (25.9.2026) · LESESPALTE + RANDSPALTE ──
@@ -249,7 +273,7 @@ export function MaterialLeser() {
           hat (breiter Kopf, Lesespalte für den Text). Ebenso Kanon ist der im
           selben Befund genannte Entscheid-Aufbau «Titel/Meta breit, Entscheidtext
           in der Lesespalte» (Reglement R1, 60–75 Zeichen). */}
-      <div className="border-t border-rule-soft pt-6 max-w-reading">
+      <div className={`border-t border-rule-soft pt-6 max-w-reading${kontextFristAbgelaufen ? '' : ' group-has-[[data-kontext-laedt]]/material:invisible'}`}>
         <Link to="/materialien" className="lc-btn lc-btn-outline lc-btn-sm">← Alle Materialien</Link>
       </div>
     </article>

@@ -38,21 +38,11 @@ const VERZUGSZINS: readonly BekannterFehler[] = [
   { fb: 'RV-29', text: 'Verzugszins: Zinsforderung bei Mahnung falsch gerechnet (Fall V6: Mahnung – kein Zins).' },
   { fb: 'RV-80', text: 'Verzugszins: Zwischenrundung verschiebt das Ergebnis um bis zu ±5 Rappen.' },
 ];
-const KALENDER_NE_SO: BekannterFehler = {
-  fb: 'RV-53',
-  text: 'Kalender-Ansicht: NE-Schliesstage und der 1. Mai in SO sind nicht als arbeitsfrei markiert.',
-};
 
 export const BEKANNTE_FEHLER: Readonly<Record<string, readonly BekannterFehler[]>> = {
   'notariat-grundbuch': [
-    { fb: 'RV-17', text: 'Uri: rechnet weiter nach dem Verbandstarif der Urner Notare (23 Einträge), obwohl entschieden ist, ihn nicht mehr anzuwenden.' },
     STAFFEL,
-    { fb: 'RV-19', text: 'Grundpfand: Pauschalsätze in 14 Kantonen falsch.' },
-    { fb: 'RV-20', text: 'Notariats- und Grundbuch-Staffeln falsch (TI bis 5-fach; VD, FR, VS, NE, GE, JU, BE).' },
-    { fb: 'RV-24', text: 'Mehrwertsteuer auf Notariatsgebühren fehlt oder ist falsch (7 Kantone).' },
-    { fb: 'RV-25', text: 'Emissionsabgabe fehlt ohne Hinweis im Ergebnis (bis CHF 40’000).' },
-    { fb: 'RV-27', text: 'Kopierte Tarifdaten weichen voneinander ab (u. a. Beurkundung VS).' },
-    { fb: 'RV-82', text: '«Weitere Geschäftsarten» FR, VD, VS, JU, NE nicht abgebildet; GE Kapitalherabsetzung: Sockel 88 statt 87.50.' },
+    { fb: 'RV-82', text: '«Weitere Geschäftsarten» FR, VD, VS, JU, NE nicht abgebildet.' },
   ],
   prozesskosten: [
     STAFFEL,
@@ -71,17 +61,13 @@ export const BEKANNTE_FEHLER: Readonly<Record<string, readonly BekannterFehler[]
   'bgg-fristen': [
     { fb: 'RV-26', text: 'Streitwert wiederkehrender Leistungen nach Art. 51 Abs. 4 BGG falsch berechnet.' },
   ],
+  tagerechner: [
+    { fb: 'RV-103', text: 'Strafverfahren (StPO): das ausführliche Formular und geteilte Links rechnen noch mit den allgemeinen statt den strafprozessualen kantonalen Feiertagen.' },
+  ],
   zustaendigkeit: [
-    { fb: 'RV-27', text: 'Kopierte Tarifdaten der Kostenangaben weichen von der Tarifquelle ab (u. a. Schlichtung AI).' },
     { fb: 'RV-33', text: 'Bestimmung der Schlichtungsbehörde doppelt vorhanden, die beiden Fassungen weichen voneinander ab.' },
     { fb: 'RV-79', text: 'Zwischenentscheide: Rechtsmittel als «zulässig» ausgewiesen, obwohl Art. 92/93 BGG es einschränken.' },
   ],
-  tagerechner: [
-    { fb: 'RV-49', text: 'Strafverfahren (StPO): rechnet mit den allgemeinen statt den strafprozessualen kantonalen Feiertagen.' },
-    { fb: 'RV-52', text: 'Mit SchKG-Ferien: Zustellung während der Betreibungsferien wird nie berücksichtigt, ohne Hinweis.' },
-    KALENDER_NE_SO,
-  ],
-  'zpo-fristen': [KALENDER_NE_SO],
   'schkg-fristen': [
     { fb: 'RV-63', text: 'Monats- und Jahresfristen: die Kachel «Fristbeginn» zeigt bei Ferienzustellung den letzten Ferientag statt des Fristbeginns.' },
   ],
