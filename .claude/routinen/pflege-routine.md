@@ -54,8 +54,9 @@ dem Berechtigungssystem. Ein Erfolgsbericht ohne prüfbares Artefakt
 - Verwaiste Branches löschen; Spitzen-SHA im Bericht.
 - Geplanten Lauf mit transienter Ursache (Netz, Timeout, Runner) einmal neu
   anstossen.
-- Automaten-PR im Merge-Konflikt: Bot-Workflow per `workflow_dispatch` neu
-  starten (der neue PR ersetzt den alten).
+- Automaten-PR im Merge-Konflikt: zuerst `origin/main` einmergen (nie rebase);
+  bleibt ein echter Konflikt in Daten-Dateien, Bot-Workflow per
+  `workflow_dispatch` neu starten (der neue PR ersetzt den alten).
 - Prüf-Routine hat versagt (Punkt 2): Ursache beheben, wenn sie im Katalog
   liegt; sonst «Wartet auf David».
 - Dependabot-PRs der devDependency-Gruppen mit grüner CI: Auto-Merge setzen;
