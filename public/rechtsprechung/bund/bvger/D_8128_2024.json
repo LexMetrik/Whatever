@@ -1,0 +1,87 @@
+{
+  "erzeugt": "2026-10-19",
+  "eintraege": [
+    {
+      "id": "bund/bvger/D_8128_2024",
+      "gericht": "bvger",
+      "gerichtName": "Bundesverwaltungsgericht",
+      "gerichtstyp": "bundesverwaltungsgericht",
+      "kanton": "CH",
+      "abteilung": "Abteilung IV (Asylrecht)",
+      "nummer": "D-8128/2024",
+      "bgeReferenz": null,
+      "zitierung": "BVGer D-8128/2024 vom 6. Oktober 2026",
+      "datum": "2026-10-06",
+      "sprache": "fr",
+      "leitcharakter": "routine",
+      "sachgebiet": "oeffentlich",
+      "legalArea": "administrative",
+      "rubrum": {
+        "besetzung": "Chrystel Tornare Villanueva, juge unique, avec l'approbation de Yanick Felley, juge; Yves Beck, greffier",
+        "parteien": "A._______, né le (...), B._______, née le (...), C._______, né le (..), D._______, né le (...), Turquie, représentés par MLaw Saban Murat Özten, recourants, contre Secrétariat d'Etat aux migrations (SEM), Quellenweg 6, 3003 Berne, autorité inférieure",
+        "gegenstand": null,
+        "vorinstanz": null
+      },
+      "regeste": {
+        "text": "Asile et renvoi (procédure accélérée)",
+        "quelle": "opencaselaw"
+      },
+      "regesteAmtlich": false,
+      "abschnitte": [
+        {
+          "typ": "dispositiv",
+          "bloecke": [
+            {
+              "marke": "1.",
+              "text": "Le recours est rejeté."
+            },
+            {
+              "marke": "2.",
+              "text": "La demande d'assistance judiciaire totale est rejetée."
+            },
+            {
+              "marke": "3.",
+              "text": "Les frais de procédure, d'un montant de 750 francs, sont mis à la charge des recourants. Ce montant doit être versé sur le compte du Tribunal dans les 30 jours dès l'expédition du présent arrêt."
+            },
+            {
+              "marke": "4.",
+              "text": "Le présent arrêt est adressé au mandataire des recourants, au SEM et à l'autorité cantonale. La juge unique: Le greffier: Chrystel Tornare Villanueva Yves Beck Expédition:"
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [
+        "Le recours est rejeté.",
+        "La demande d'assistance judiciaire totale est rejetée.",
+        "Les frais de procédure, d'un montant de 750 francs, sont mis à la charge des recourants. Ce montant doit être versé sur le compte du Tribunal dans les 30 jours dès l'expédition du présent arrêt.",
+        "Le présent arrêt est adressé au mandataire des recourants, au SEM et à l'autorité cantonale.\nLa juge unique:"
+      ],
+      "zitierteNormen": [
+        "Art. 105 LASI",
+        "Art. 106 Abs. 1 LASI",
+        "Art. 108 Abs. 1 LASI",
+        "Art. 109 Abs. 3 LTF",
+        "Art. 111 LASI",
+        "Art. 3 Abs. 1 LASI",
+        "Art. 3 Abs. 2 LASI",
+        "Art. 3 CEDH"
+      ],
+      "normKeys": [
+        "ASYLG",
+        "BGG",
+        "EMRK"
+      ],
+      "zitierteEntscheide": [
+        "D-8128/2024"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://bvger.weblaw.ch/cache?id=16eb669d-40fb-4393-af1f-d80b408d2829&guiLanguage=fr",
+      "abgerufen": "2026-10-19",
+      "fassungsToken": "4a4e664a1bbf38fd404e830684ce3d5e1937ebcd2d403b3c2a8d138406867d7a",
+      "sha": "2eaca7d0b8f4a638c773d28e82b609958cedd51b50384158a08ac98d6bac07e9",
+      "ecli": "ECLI:CH:BVGER:2026:D-8128.2024"
+    }
+  ]
+}

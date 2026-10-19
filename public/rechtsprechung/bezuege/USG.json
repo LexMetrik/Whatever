@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-10-12",
+"erzeugt":"2026-10-19",
 "erlass":"USG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -43,7 +43,8 @@
 "bs_appellationsgericht_VD.2023.56":{"zitierung":"Appellationsgericht BS VD.2023.56 vom 08.05.2024","regesteKurz":"Stromspar-Bonus 2020 (BGer 9C_360/2024 vom 21. Februar 2025)","datum":"2024-05-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2023.9":{"zitierung":"Appellationsgericht BS VD.2023.9 vom 14.04.2024","regesteKurz":"Übernahme der Kosten für Schallschutzfenster","datum":"2024-04-14","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2024.45":{"zitierung":"Appellationsgericht BS VD.2024.45 vom 09.09.2025","regesteKurz":"Bauentscheid in Sachen 7 Standorte für Unterflurcontainer","datum":"2025-09-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_VD.2024.98":{"zitierung":"Appellationsgericht BS VD.2024.98 vom 27.02.2025","regesteKurz":"Ablehnung des Informationszugangs","datum":"2025-02-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+"bs_appellationsgericht_VD.2024.98":{"zitierung":"Appellationsgericht BS VD.2024.98 vom 27.02.2025","regesteKurz":"Ablehnung des Informationszugangs","datum":"2025-02-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.195":{"zitierung":"Appellationsgericht BS VD.2025.195 vom 22.05.2026","regesteKurz":"Planfestsetzungsbeschluss des Regierungsrats (Umgestaltung der Allmend)","datum":"2026-05-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
 "1":[{"key":"bge_152_II_49","gewicht":0},{"key":"bge_150_II_547","gewicht":0},{"key":"bge_147_II_484","gewicht":0},{"key":"bge_146_II_17","gewicht":0},{"key":"bs_appellationsgericht_VD.2022.80","gewicht":null}],
@@ -63,7 +64,7 @@
 "22":[{"key":"bge_147_II_484","gewicht":0},{"key":"bge_146_II_187","gewicht":0}],
 "23":[{"key":"bge_150_II_547","gewicht":0},{"key":"bge_147_II_319","gewicht":0},{"key":"bge_146_II_17","gewicht":1},{"key":"bs_appellationsgericht_VD.2024.45","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.240","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.171","gewicht":null}],
 "24":[{"key":"bge_147_II_484","gewicht":0}],
-"25":[{"key":"bge_150_II_547","gewicht":0},{"key":"bge_149_II_269","gewicht":0},{"key":"bge_147_II_319","gewicht":0},{"key":"bge_146_II_17","gewicht":1},{"key":"bs_appellationsgericht_VD.2024.45","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.9","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.109","gewicht":null}],
+"25":[{"key":"bge_150_II_547","gewicht":0},{"key":"bge_149_II_269","gewicht":0},{"key":"bge_147_II_319","gewicht":0},{"key":"bge_146_II_17","gewicht":1},{"key":"bs_appellationsgericht_VD.2025.195","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.45","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.9","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.109","gewicht":null}],
 "30":[{"key":"bge_150_II_133","gewicht":0},{"key":"bge_148_II_155","gewicht":0}],
 "31":[{"key":"bge_150_II_133","gewicht":0},{"key":"bge_148_II_387","gewicht":0},{"key":"bge_147_I_433","gewicht":0}],
 "32":[{"key":"bge_152_II_518","gewicht":0}],
@@ -106,7 +107,7 @@
 "22":{"bge":2},
 "23":{"bge":3,"kantonal":3},
 "24":{"bge":1},
-"25":{"bge":4,"kantonal":3},
+"25":{"bge":4,"kantonal":4},
 "30":{"bge":2},
 "31":{"bge":3},
 "32":{"bge":1},

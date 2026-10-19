@@ -1,0 +1,93 @@
+{
+  "erzeugt": "2026-10-19",
+  "eintraege": [
+    {
+      "id": "bund/bvger/F_7062_2026",
+      "gericht": "bvger",
+      "gerichtName": "Bundesverwaltungsgericht",
+      "gerichtstyp": "bundesverwaltungsgericht",
+      "kanton": "CH",
+      "abteilung": "Abteilung VI (Ausländer- und Bürgerrecht)",
+      "nummer": "F-7062/2026",
+      "bgeReferenz": null,
+      "zitierung": "BVGer F-7062/2026 vom 8. Oktober 2026",
+      "datum": "2026-10-08",
+      "sprache": "fr",
+      "leitcharakter": "routine",
+      "sachgebiet": "oeffentlich",
+      "legalArea": "administrative",
+      "rubrum": {
+        "besetzung": "Aileen Truttmann, juge unique, avec l'approbation de Gregor Chatton, juge; Beata Jastrzebska, greffière",
+        "parteien": "A.________, né le (...), Somalie, représenté par Valentine Delacrétaz, Caritas Suisse, CFA Boudry, Bâtiment Les Cerisiers, Rue de l'Hôpital 30, 2017 Boudry, recourant, contre Secrétariat d'Etat aux migrations SEM, Quellenweg 6, 3003 Berne, autorité inférieure",
+        "gegenstand": null,
+        "vorinstanz": null
+      },
+      "regeste": {
+        "text": "Asile (non-entrée en matière) et renvoi (procédure Dublin - art. 31a al. 1 let. b LAsi)",
+        "quelle": "opencaselaw"
+      },
+      "regesteAmtlich": false,
+      "abschnitte": [
+        {
+          "typ": "dispositiv",
+          "bloecke": [
+            {
+              "marke": "1.",
+              "text": "Le recours est rejeté dans la mesure où il est recevable."
+            },
+            {
+              "marke": "2.",
+              "text": "La requête d'assistance judiciaire partielle est rejetée."
+            },
+            {
+              "marke": "3.",
+              "text": "Les frais de procédure, d'un montant de 750 francs, sont mis à la charge du recourant. Ce montant doit être versé sur le compte du Tribunal dans les 30 jours dès l'expédition du présent arrêt."
+            },
+            {
+              "marke": "4.",
+              "text": "Le présent arrêt est adressé au recourant, au SEM et à l'autorité cantonale. La juge unique: La greffière: Aileen Truttmann Beata Jastrzebska Expédition: Le présent arrêt est adressé: - à la mandataire du recourant (par lettre recommandée; annexe: une facture) - au SEM, ad N (...) - Service de la population et des migrants du canton de Fribourg (en copie)"
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [
+        "Le recours est rejeté dans la mesure où il est recevable.",
+        "La requête d'assistance judiciaire partielle est rejetée.",
+        "Les frais de procédure, d'un montant de 750 francs, sont mis à la charge du recourant. Ce montant doit être versé sur le compte du Tribunal dans les 30 jours dès l'expédition du présent arrêt.",
+        "Le présent arrêt est adressé au recourant, au SEM et à l'autorité cantonale.\nLa juge unique :"
+      ],
+      "zitierteNormen": [
+        "Art. 105 LASI",
+        "Art. 29a Abs. 3 OA",
+        "Art. 3 CEDH",
+        "Art. 31 LTAF",
+        "Art. 31a Abs. 1 LASI",
+        "Art. 43 RAMM",
+        "Art. 56 PA",
+        "Art. 63 Abs. 1 PA"
+      ],
+      "normKeys": [
+        "ASYLG",
+        "EMRK",
+        "VGG",
+        "VWVG"
+      ],
+      "zitierteEntscheide": [
+        "BGE 144 I 11",
+        "D-4235/2021",
+        "E-543/2020",
+        "E-962/2019",
+        "F-2482/2022",
+        "F-7062/2026"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://bvger.weblaw.ch/cache?id=10d9630c-4c68-426d-a9b3-7c56ba57aa42&guiLanguage=fr",
+      "abgerufen": "2026-10-19",
+      "fassungsToken": "04420b53fd4ec1da1d9e7348cf4e9a0d47040f9decbf123bc7f09c6ec11d6000",
+      "sha": "26d8b173f15dd33e8ba4215199e87ea005d672b96b28b0235190429d69d9190e",
+      "ecli": "ECLI:CH:BVGER:2026:F-7062.2026"
+    }
+  ]
+}

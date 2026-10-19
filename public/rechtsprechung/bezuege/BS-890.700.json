@@ -1,8 +1,9 @@
 {
-"erzeugt":"2026-10-12",
+"erzeugt":"2026-10-19",
 "erlass":"BS-890.700",
 "erlassEbene":"kanton",
 "dokumente":{
+"bs_appellationsgericht_ZB.2026.4":{"zitierung":"Appellationsgericht BS ZB.2026.4 vom 08.06.2026","regesteKurz":"Getrenntleben","datum":"2026-06-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_KV.2023.17":{"zitierung":"Sozialversicherungsgericht BS KV.2023.17 vom 08.05.2024","regesteKurz":"Nachforderung für Krankenkassenprämien korrekt; Beschwerdeabweisung.","datum":"2024-05-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_KV.2023.8":{"zitierung":"Sozialversicherungsgericht BS KV.2023.8 vom 28.11.2023","regesteKurz":"KVG","datum":"2023-11-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_KV.2025.4":{"zitierung":"Sozialversicherungsgericht BS KV.2025.4 vom 08.07.2025","regesteKurz":"KVG, Einstellung der Prämienverbilligung; Mitwirkungspflichtverletzung, (Beschwerde beim Bundesgericht hängig)","datum":"2025-07-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
@@ -10,9 +11,9 @@
 },
 "proArtikel":{
 "1":[{"key":"bs_sozialversicherungsgericht_KV.2025.4","gewicht":null}],
-"5":[{"key":"bs_sozialversicherungsgericht_KV.2025.4","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2023.8","gewicht":null}],
+"5":[{"key":"bs_appellationsgericht_ZB.2026.4","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2025.4","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2023.8","gewicht":null}],
 "6":[{"key":"bs_sozialversicherungsgericht_KV.2025.6","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2025.4","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2023.8","gewicht":null}],
-"7":[{"key":"bs_sozialversicherungsgericht_KV.2025.4","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2023.8","gewicht":null}],
+"7":[{"key":"bs_appellationsgericht_ZB.2026.4","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2025.4","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2023.8","gewicht":null}],
 "13":[{"key":"bs_sozialversicherungsgericht_KV.2025.4","gewicht":null}],
 "15":[{"key":"bs_sozialversicherungsgericht_KV.2025.4","gewicht":null}],
 "16":[{"key":"bs_sozialversicherungsgericht_KV.2025.4","gewicht":null}],
@@ -20,9 +21,9 @@
 },
 "gesamtProArtikel":{
 "1":{"kantonal":1},
-"5":{"kantonal":2},
+"5":{"kantonal":3},
 "6":{"kantonal":3},
-"7":{"kantonal":2},
+"7":{"kantonal":3},
 "13":{"kantonal":1},
 "15":{"kantonal":1},
 "16":{"kantonal":1},

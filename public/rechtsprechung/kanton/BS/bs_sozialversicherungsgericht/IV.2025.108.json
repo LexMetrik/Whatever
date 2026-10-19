@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-12",
+  "erzeugt": "2026-10-19",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.108",
@@ -17,7 +17,7 @@
       "sachgebiet": "sozialversicherung",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "IVG",
+        "gegenstand": "Zweifel an der Schlüssigkeit der RAD-Stellungnahmen; Gutheissung der Beschwerde",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "Dr. iur. A. Pfleiderer (Vorsitz), Dr. med. W. Rühl, lic. phil. D. Borer und Gerichtsschreiber Dr. iur. M. Kreis"
@@ -251,11 +251,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80081&Template=search_result_document.html",
-      "abgerufen": "2026-10-12",
-      "fassungsToken": "2026-10-10",
+      "abgerufen": "2026-10-19",
+      "fassungsToken": "2026-10-15",
       "sha": "39966d1359f2ddebb6f714315158a09c39e5624a045a4960bf1f473b3e8c6460",
       "erstpublikation": "2026-10-10",
-      "aktualisiert": "2026-10-10",
+      "aktualisiert": "2026-10-15",
       "nummerSekundaer": "SVG.2026.164",
       "ecli": "ECLI:CH:BSS:2026:IV.2025.108"
     }

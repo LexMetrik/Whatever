@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-10-12",
+"erzeugt":"2026-10-19",
 "erlass":"BS-780.100",
 "erlassEbene":"kanton",
 "dokumente":{
@@ -7,19 +7,20 @@
 "bs_appellationsgericht_VD.2021.171":{"zitierung":"Appellationsgericht BS VD.2021.171 vom 08.12.2022","regesteKurz":"Lärmempfindlichkeitsstufenplan Innenstadt","datum":"2022-12-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2024.44":{"zitierung":"Appellationsgericht BS VD.2024.44 vom 09.04.2025","regesteKurz":"Planfestsetzungsbeschluss des Regierungsrats betreffend Burgfelderstrasse: Abschnitt Markircherstrasse bis…","datum":"2025-04-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2024.45":{"zitierung":"Appellationsgericht BS VD.2024.45 vom 09.09.2025","regesteKurz":"Bauentscheid in Sachen 7 Standorte für Unterflurcontainer","datum":"2025-09-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.191":{"zitierung":"Appellationsgericht BS VD.2025.191 vom 22.05.2026","regesteKurz":"Planfestsetzungsbeschluss des Regierungsrats (Umgestaltung der Allmend)","datum":"2026-05-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2025.52":{"zitierung":"Appellationsgericht BS VD.2025.52 vom 18.12.2025","regesteKurz":"Verkehrsanordnung Münchensteinerstrasse, Nauenstrasse","datum":"2025-12-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
 "11":[{"key":"bs_appellationsgericht_VD.2021.171","gewicht":null}],
 "12":[{"key":"bs_appellationsgericht_VD.2021.171","gewicht":null}],
-"13":[{"key":"bs_appellationsgericht_VD.2025.52","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.44","gewicht":null}],
+"13":[{"key":"bs_appellationsgericht_VD.2025.191","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.52","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.44","gewicht":null}],
 "23":[{"key":"bs_appellationsgericht_VD.2024.45","gewicht":null}],
 "19c":[{"key":"bs_appellationsgericht_VD.2021.120","gewicht":null}]
 },
 "gesamtProArtikel":{
 "11":{"kantonal":1},
 "12":{"kantonal":1},
-"13":{"kantonal":2},
+"13":{"kantonal":3},
 "23":{"kantonal":1},
 "19c":{"kantonal":1}
 }

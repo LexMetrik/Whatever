@@ -1,0 +1,125 @@
+{
+  "erzeugt": "2026-10-19",
+  "eintraege": [
+    {
+      "id": "bund/bvger/E_7191_2026",
+      "gericht": "bvger",
+      "gerichtName": "Bundesverwaltungsgericht",
+      "gerichtstyp": "bundesverwaltungsgericht",
+      "kanton": "CH",
+      "abteilung": "Abteilung V (Asylrecht)",
+      "nummer": "E-7191/2026",
+      "bgeReferenz": null,
+      "zitierung": "BVGer E-7191/2026 vom 7. Oktober 2026",
+      "datum": "2026-10-07",
+      "sprache": "de",
+      "leitcharakter": "routine",
+      "sachgebiet": "oeffentlich",
+      "legalArea": "administrative",
+      "rubrum": {
+        "besetzung": "Einzelrichterin Constance Leisinger, mit Zustimmung von Richter Thomas Segessenmann; Gerichtsschreiberin Karin Parpan",
+        "parteien": null,
+        "gegenstand": null,
+        "vorinstanz": null
+      },
+      "regeste": {
+        "text": "Vollzug der Wegweisung (Wiedererwägung)",
+        "quelle": "opencaselaw"
+      },
+      "regesteAmtlich": false,
+      "abschnitte": [
+        {
+          "typ": "erwaegung",
+          "bloecke": [
+            {
+              "marke": "E. 1",
+              "tiefe": 1,
+              "text": "Die Beschwerde wird gutgeheissen, soweit damit die Aufhebung der angefochtenen Verfügung beantragt worden ist."
+            },
+            {
+              "marke": "E. 2",
+              "tiefe": 1,
+              "text": "Die Verfügung des SEM vom 25. September 2026 wird aufgehoben. Die Akten werden der Vorinstanz zur korrekten Weiterführung des Verfahrens im Sinn der Erwägungen überwiesen."
+            },
+            {
+              "marke": "E. 3",
+              "tiefe": 1,
+              "text": "Es werden keine Verfahrenskosten erhoben."
+            },
+            {
+              "marke": "E. 4",
+              "tiefe": 1,
+              "text": "Das SEM wird angewiesen, den Beschwerdeführenden für das Verfahren vor dem Bundesverwaltungsgericht eine Parteientschädigung von insgesamt Fr. 700.- auszurichten."
+            },
+            {
+              "marke": "E. 5",
+              "tiefe": 1,
+              "text": "Dieses Urteil geht an die Beschwerdeführenden, das SEM und die zuständige kantonale Behörde. Die Einzelrichterin: Die Gerichtsschreiberin: Constance Leisinger Karin Parpan Versand:"
+            }
+          ]
+        },
+        {
+          "typ": "dispositiv",
+          "bloecke": [
+            {
+              "marke": "1.",
+              "text": "Die Beschwerde wird gutgeheissen, soweit damit die Aufhebung der angefochtenen Verfügung beantragt worden ist."
+            },
+            {
+              "marke": "2.",
+              "text": "Die Verfügung des SEM vom 25. September 2026 wird aufgehoben. Die Akten werden der Vorinstanz zur korrekten Weiterführung des Verfahrens im Sinn der Erwägungen überwiesen."
+            },
+            {
+              "marke": "3.",
+              "text": "Es werden keine Verfahrenskosten erhoben."
+            },
+            {
+              "marke": "4.",
+              "text": "Das SEM wird angewiesen, den Beschwerdeführenden für das Verfahren vor dem Bundesverwaltungsgericht eine Parteientschädigung von insgesamt Fr. 700.- auszurichten."
+            },
+            {
+              "marke": "5.",
+              "text": "Dieses Urteil geht an die Beschwerdeführenden, das SEM und die zuständige kantonale Behörde. Die Einzelrichterin: Die Gerichtsschreiberin: Constance Leisinger Karin Parpan Versand:"
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [
+        "Die Beschwerde wird gutgeheissen, soweit damit die Aufhebung der angefochtenen Verfügung beantragt worden ist.",
+        "Die Verfügung des SEM vom 25. September 2026 wird aufgehoben. Die Akten werden der Vorinstanz zur korrekten Weiterführung des Verfahrens im Sinn der Erwägungen überwiesen.",
+        "Es werden keine Verfahrenskosten erhoben.",
+        "Das SEM wird angewiesen, den Beschwerdeführenden für das Verfahren vor dem Bundesverwaltungsgericht eine Parteientschädigung von insgesamt Fr. 700.- auszurichten.",
+        "Dieses Urteil geht an die Beschwerdeführenden, das SEM und die zuständige kantonale Behörde.\nDie Einzelrichterin:\nDie Gerichtsschreiberin:\nConstance Leisinger\nKarin Parpan\nVersand:"
+      ],
+      "zitierteNormen": [
+        "Art. 105 ASYLG",
+        "Art. 108 Abs. 3 ASYLG",
+        "Art. 111 ASYLG",
+        "Art. 14 Abs. 2 VGKE",
+        "Art. 37 VGG",
+        "Art. 48 Abs. 1 VWVG",
+        "Art. 5 VWVG",
+        "Art. 52 Abs. 1 VWVG"
+      ],
+      "normKeys": [
+        "ASYLG",
+        "VGG",
+        "VGKE",
+        "VWVG"
+      ],
+      "zitierteEntscheide": [
+        "BGE 132 V 74",
+        "E-1862/2025",
+        "E-7191/2026"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://bvger.weblaw.ch/cache?id=20bfdc6a-eb27-4208-87a4-8a7fb90564c3&guiLanguage=de",
+      "abgerufen": "2026-10-19",
+      "fassungsToken": "b1916b2de033ce92f2d74fb2aa664235c56534d3a5f42c0e16447c07952494da",
+      "sha": "cbe88f409153ff1fc1894a692e74824a4ffd438d4112b381e57d6866d3b59dc8",
+      "ecli": "ECLI:CH:BVGER:2026:E-7191.2026"
+    }
+  ]
+}

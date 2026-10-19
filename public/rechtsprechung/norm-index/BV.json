@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-12",
+  "erzeugt": "2026-10-19",
   "erlass": "BV",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -1636,7 +1636,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 14
+        "gewicht": 15
       },
       {
         "key": "bge_147_I_89",
@@ -1679,6 +1679,16 @@
         "gewicht": 7
       },
       {
+        "key": "bge_148_III_30",
+        "zitierung": "BGE 148 III 30",
+        "regesteKurz": "a Art. 79, Art. 80 und Art. 82 Abs. 1 SchKG; Art. 59 Abs. 2 lit. d ZPO. Verhältnis der Anerkennungsklage zur Rechtsöffnung. Rechtsnatur der Anerkennungsklage und der Verfahren auf definitive und provisorische Rechtsöffnung. Die…",
+        "datum": "2021-10-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 7
+      },
+      {
         "key": "bge_147_IV_534",
         "zitierung": "BGE 147 IV 534",
         "regesteKurz": "Art. 139 Abs. 2, Art. 164 Abs. 1 und 2, Art. 177 Abs. 2 StPO; Abklärungen zum Vorleben und den persönlichen Verhältnissen von Zeugen. Art. 164 Abs. 1 StPO dient dem Schutz der Persönlichkeit von Zeuginnen und Zeugen (E. 2.3.2). Über die…",
@@ -1693,16 +1703,6 @@
         "zitierung": "Urteil 1C_624/2022 (nicht publ. in BGE 149 IV 376)",
         "regesteKurz": null,
         "datum": "2023-04-21",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 7
-      },
-      {
-        "key": "bge_148_II_392__voll",
-        "zitierung": "Urteil 2C_336/2021 (nicht publ. in BGE 148 II 392)",
-        "regesteKurz": null,
-        "datum": "2022-05-18",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -1738,7 +1738,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 4
       },
       {
         "key": "bge_147_III_577",

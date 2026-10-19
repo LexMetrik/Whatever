@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-10-12",
+"erzeugt":"2026-10-19",
 "erlass":"VRV",
 "erlassEbene":"bund",
 "dokumente":{
@@ -39,6 +39,7 @@
 "bs_appellationsgericht_VD.2023.170":{"zitierung":"Appellationsgericht BS VD.2023.170 vom 30.06.2024","regesteKurz":"Widerruf der Niederlassungsbewilligung und Wegweisung","datum":"2024-06-30","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2023.24":{"zitierung":"Appellationsgericht BS VD.2023.24 vom 04.07.2023","regesteKurz":"Warnungsentzug des Führerausweises","datum":"2023-07-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2025.11":{"zitierung":"Appellationsgericht BS VD.2025.11 vom 13.06.2025","regesteKurz":"Warnungsentzug des Führerausweises","datum":"2025-06-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.191":{"zitierung":"Appellationsgericht BS VD.2025.191 vom 22.05.2026","regesteKurz":"Planfestsetzungsbeschluss des Regierungsrats (Umgestaltung der Allmend)","datum":"2026-05-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "gr_gerichte_VR1202631":{"zitierung":"Obergericht GR VR1 26 31 vom 09.09.2026","regesteKurz":null,"datum":"2026-09-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}}
 },
 "proArtikel":{
@@ -57,8 +58,9 @@
 "28":[{"key":"bs_appellationsgericht_SB.2020.100","gewicht":null}],
 "33":[{"key":"bs_appellationsgericht_SB.2024.19","gewicht":null}],
 "36":[{"key":"bge_149_II_96","gewicht":0},{"key":"bge_148_IV_374","gewicht":1},{"key":"bs_appellationsgericht_SB.2023.10","gewicht":null},{"key":"bs_appellationsgericht_SB.2020.100","gewicht":null}],
+"41":[{"key":"bs_appellationsgericht_VD.2025.191","gewicht":null}],
 "42":[{"key":"bs_appellationsgericht_VD.2025.11","gewicht":null}],
-"47":[{"key":"bge_148_III_343__voll","gewicht":0,"erwaegungen":["E. 3.4"]},{"key":"bs_appellationsgericht_SB.2023.53","gewicht":null}],
+"47":[{"key":"bge_148_III_343__voll","gewicht":0,"erwaegungen":["E. 3.4"]},{"key":"bs_appellationsgericht_VD.2025.191","gewicht":null},{"key":"bs_appellationsgericht_SB.2023.53","gewicht":null}],
 "56":[{"key":"bge_149_IV_153","gewicht":0}],
 "57":[{"key":"bs_appellationsgericht_SB.2024.48","gewicht":null}],
 "90":[{"key":"gr_gerichte_VR1202631","gewicht":null}],
@@ -81,8 +83,9 @@
 "28":{"kantonal":1},
 "33":{"kantonal":1},
 "36":{"bge":2,"kantonal":2},
+"41":{"kantonal":1},
 "42":{"kantonal":1},
-"47":{"bger":1,"kantonal":1},
+"47":{"bger":1,"kantonal":2},
 "56":{"bge":1},
 "57":{"kantonal":1},
 "90":{"kantonal":1},

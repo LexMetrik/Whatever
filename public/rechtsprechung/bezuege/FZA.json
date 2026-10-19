@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-10-12",
+"erzeugt":"2026-10-19",
 "erlass":"FZA",
 "erlassEbene":"bund",
 "dokumente":{
@@ -62,15 +62,16 @@
 "bs_appellationsgericht_ZS.2024.6":{"zitierung":"Appellationsgericht BS ZS.2024.6 vom 09.01.2025","regesteKurz":"Landesverweisung (Rückweisungsverfahren betr. SB.2019.74) (Beschwerde am BGer hängig)","datum":"2025-01-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_AL.2023.20":{"zitierung":"Sozialversicherungsgericht BS AL.2023.20 vom 10.04.2024","regesteKurz":"AVIG Beschwerde abgewiesen. Kein Anspruch auf ALE nach Umzug in die Schweiz.","datum":"2024-04-10","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_FZ.2023.2":{"zitierung":"Sozialversicherungsgericht BS FZ.2023.2 vom 10.05.2023","regesteKurz":"FLG","datum":"2023-05-10","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
-"bs_sozialversicherungsgericht_KV.2020.3":{"zitierung":"Sozialversicherungsgericht BS KV.2020.3 vom 11.04.2024","regesteKurz":"KVG Internationale Leistungsaushilfe im Bereich der Krankenversicherung nach Art. 23 Verordnung (EG) 88/2004 bei Bezug…","datum":"2024-04-11","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
+"bs_sozialversicherungsgericht_KV.2020.3":{"zitierung":"Sozialversicherungsgericht BS KV.2020.3 vom 11.04.2024","regesteKurz":"KVG Internationale Leistungsaushilfe im Bereich der Krankenversicherung nach Art. 23 Verordnung (EG) 88/2004 bei Bezug…","datum":"2024-04-11","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
+"gr_gerichte_VR1202537":{"zitierung":"Obergericht GR VR1 25 37 vom 23.09.2026","regesteKurz":null,"datum":"2026-09-23","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}}
 },
 "proArtikel":{
-"1":[{"key":"bge_152_II_233","gewicht":0},{"key":"bge_151_V_343","gewicht":0},{"key":"bge_151_II_726","gewicht":0},{"key":"bge_151_II_213","gewicht":1},{"key":"bge_146_II_145","gewicht":1},{"key":"bge_149_I_248__voll","gewicht":3,"erwaegungen":["E. 6.4.1"]},{"key":"bs_appellationsgericht_ZS.2024.6","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.94","gewicht":null},{"key":"bs_appellationsgericht_SB.2021.115","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.28","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.233","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.3","gewicht":null},{"key":"bs_appellationsgericht_SB.2019.74","gewicht":null},{"key":"bs_appellationsgericht_SB.2020.54","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.112","gewicht":null}],
+"1":[{"key":"bge_152_II_233","gewicht":0},{"key":"bge_151_V_343","gewicht":0},{"key":"bge_151_II_726","gewicht":0},{"key":"bge_151_II_213","gewicht":1},{"key":"bge_146_II_145","gewicht":1},{"key":"bge_149_I_248__voll","gewicht":3,"erwaegungen":["E. 6.4.1"]},{"key":"gr_gerichte_VR1202537","gewicht":null},{"key":"bs_appellationsgericht_ZS.2024.6","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.94","gewicht":null},{"key":"bs_appellationsgericht_SB.2021.115","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.28","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.233","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.3","gewicht":null},{"key":"bs_appellationsgericht_SB.2019.74","gewicht":null},{"key":"bs_appellationsgericht_SB.2020.54","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.112","gewicht":null}],
 "2":[{"key":"bge_152_II_233","gewicht":0},{"key":"bge_152_II_224","gewicht":1},{"key":"bge_151_V_343","gewicht":0},{"key":"bge_151_I_113","gewicht":0},{"key":"bge_151_V_198","gewicht":0},{"key":"bge_151_II_213","gewicht":1},{"key":"bge_150_II_202","gewicht":0},{"key":"bge_149_I_248","gewicht":3},{"key":"bge_149_II_34","gewicht":0},{"key":"bge_147_II_375","gewicht":0},{"key":"bge_147_II_35","gewicht":0},{"key":"bge_146_V_152","gewicht":0},{"key":"bge_146_II_89","gewicht":0},{"key":"bs_appellationsgericht_VD.2025.57","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.52","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.31","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.3","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.269","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.203","gewicht":null}],
 "3":[{"key":"bge_151_II_213","gewicht":0},{"key":"bge_149_I_248","gewicht":1},{"key":"bs_appellationsgericht_VD.2022.166","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.3","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.112","gewicht":null}],
-"4":[{"key":"bge_152_II_157","gewicht":0},{"key":"bge_151_II_277","gewicht":0},{"key":"bge_151_II_213","gewicht":0},{"key":"bge_149_I_248","gewicht":2},{"key":"bge_147_II_1","gewicht":2},{"key":"bge_146_II_49__voll","gewicht":0,"erwaegungen":["E. 3.1"]}],
+"4":[{"key":"bge_152_II_157","gewicht":0},{"key":"bge_151_II_277","gewicht":0},{"key":"bge_151_II_213","gewicht":0},{"key":"bge_149_I_248","gewicht":2},{"key":"bge_147_II_1","gewicht":2},{"key":"bge_146_II_49__voll","gewicht":0,"erwaegungen":["E. 3.1"]},{"key":"gr_gerichte_VR1202537","gewicht":null}],
 "5":[{"key":"bge_151_II_640","gewicht":0},{"key":"bge_149_I_248","gewicht":0},{"key":"bge_146_II_49__voll","gewicht":0,"erwaegungen":["E. 4.1"]},{"key":"bs_appellationsgericht_SB.2021.132","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.166","gewicht":null}],
-"6":[{"key":"bge_152_II_157","gewicht":0},{"key":"bge_151_II_277","gewicht":0},{"key":"bge_149_I_248","gewicht":1},{"key":"bs_appellationsgericht_VD.2021.194","gewicht":null}],
+"6":[{"key":"bge_152_II_157","gewicht":0},{"key":"bge_151_II_277","gewicht":0},{"key":"bge_149_I_248","gewicht":1},{"key":"gr_gerichte_VR1202537","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.194","gewicht":null}],
 "7":[{"key":"bge_151_II_726","gewicht":0},{"key":"bge_151_II_213","gewicht":0},{"key":"bs_appellationsgericht_VD.2024.190","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.52","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.2","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.12","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.211","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.121","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.203","gewicht":null}],
 "8":[{"key":"bge_148_V_209","gewicht":0},{"key":"bge_147_V_387","gewicht":0},{"key":"bge_147_V_225","gewicht":0},{"key":"bs_sozialversicherungsgericht_AL.2023.20","gewicht":null}],
 "9":[{"key":"bge_152_II_233","gewicht":0},{"key":"bge_152_II_224","gewicht":1},{"key":"bge_151_II_640","gewicht":0}],
@@ -83,12 +84,12 @@
 "24":[{"key":"bs_appellationsgericht_VD.2024.31","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.203","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.194","gewicht":null}]
 },
 "gesamtProArtikel":{
-"1":{"bge":5,"bger":1,"kantonal":9},
+"1":{"bge":5,"bger":1,"kantonal":10},
 "2":{"bge":13,"kantonal":6},
 "3":{"bge":2,"kantonal":3},
-"4":{"bge":5,"bger":1},
+"4":{"bge":5,"bger":1,"kantonal":1},
 "5":{"bge":2,"bger":1,"kantonal":2},
-"6":{"bge":3,"kantonal":1},
+"6":{"bge":3,"kantonal":2},
 "7":{"bge":2,"kantonal":7},
 "8":{"bge":3,"kantonal":1},
 "9":{"bge":3},

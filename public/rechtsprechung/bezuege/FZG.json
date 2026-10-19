@@ -1,8 +1,9 @@
 {
-"erzeugt":"2026-10-12",
+"erzeugt":"2026-10-19",
 "erlass":"FZG",
 "erlassEbene":"bund",
 "dokumente":{
+"be_verwaltungsgericht_2002026653":{"zitierung":"Verwaltungsgericht BE 200 2026 653 vom 18.09.2026","regesteKurz":null,"datum":"2026-09-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BE","gericht":"be_verwaltungsgericht","status":"kantonal"}},
 "bge_146_III_73":{"zitierung":"BGE 146 III 73","regesteKurz":"Art. 122 f., 207 Abs. 1 und Art. 208 Abs. 1 Ziff. 2 ZGB; Art. 331 Abs. 3 OR; Ehescheidung; Vorsorgeausgleich und güterrechtliche Auseinandersetzung (Errungenschaftsbeteiligung); Berücksichtigung von Arbeitgeberbeitragsreserven. Bei…","datum":"2019-12-11","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_146_V_331":{"zitierung":"BGE 146 V 331","regesteKurz":"Art. 11 Abs. 1 lit. c ELG; Art. 16 Abs. 2 FZV; Zeitpunkt der Anrechnung von Guthaben eines Freizügigkeitskontos bei rückwirkender Ausrichtung von Ergänzungsleistungen zur Invalidenrente. Übersicht über die Rechtsprechung. Ein verzehrbarer…","datum":"2020-09-30","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_146_V_341":{"zitierung":"BGE 146 V 341","regesteKurz":"a Art. 61 BVG; Art. 3 BVV 1; Zuständigkeit der kantonalen BVG-Aufsichtsbehörde. Seit dem Inkrafttreten von Art. 3 BVV 1 in der per 1. Januar 2012 geltenden Fassung (nach der Änderung des BVG vom 19. März 2010 [Strukturreform]) gibt es neu…","datum":"2020-09-30","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
@@ -38,12 +39,12 @@
 "9":[{"key":"bge_151_V_343","gewicht":0},{"key":"bge_148_II_189__voll","gewicht":0,"erwaegungen":["E. 2.2.2"]},{"key":"bs_sozialversicherungsgericht_BV.2021.12","gewicht":null}],
 "18":[{"key":"bge_147_V_86","gewicht":0}],
 "20":[{"key":"bge_151_V_169","gewicht":0},{"key":"bge_150_V_161","gewicht":1},{"key":"bge_148_V_114","gewicht":0}],
-"22":[{"key":"bge_150_III_353","gewicht":0},{"key":"bge_146_V_95","gewicht":0}],
+"22":[{"key":"bge_150_III_353","gewicht":0},{"key":"bge_146_V_95","gewicht":0},{"key":"be_verwaltungsgericht_2002026653","gewicht":null}],
 "26":[{"key":"bge_148_III_232","gewicht":0},{"key":"bge_146_V_341","gewicht":1}],
 "18a":[{"key":"bge_147_V_86","gewicht":0}],
-"22a":[{"key":"bge_151_V_144","gewicht":0},{"key":"bge_150_III_353","gewicht":0},{"key":"bge_146_V_95","gewicht":0},{"key":"sg_gerichte_BV2024_21","gewicht":null}],
-"22c":[{"key":"bge_148_II_189","gewicht":0},{"key":"sg_gerichte_BV2024_21","gewicht":null}],
-"25a":[{"key":"bge_146_V_95","gewicht":0},{"key":"bge_146_III_73","gewicht":0},{"key":"sg_gerichte_BV2024_21","gewicht":null}]
+"22a":[{"key":"bge_151_V_144","gewicht":0},{"key":"bge_150_III_353","gewicht":0},{"key":"bge_146_V_95","gewicht":0},{"key":"be_verwaltungsgericht_2002026653","gewicht":null},{"key":"sg_gerichte_BV2024_21","gewicht":null}],
+"22c":[{"key":"bge_148_II_189","gewicht":0},{"key":"be_verwaltungsgericht_2002026653","gewicht":null},{"key":"sg_gerichte_BV2024_21","gewicht":null}],
+"25a":[{"key":"bge_146_V_95","gewicht":0},{"key":"bge_146_III_73","gewicht":0},{"key":"be_verwaltungsgericht_2002026653","gewicht":null},{"key":"sg_gerichte_BV2024_21","gewicht":null}]
 },
 "gesamtProArtikel":{
 "1":{"bge":4},
@@ -54,11 +55,11 @@
 "9":{"bge":1,"bger":1,"kantonal":1},
 "18":{"bge":1},
 "20":{"bge":3},
-"22":{"bge":2},
+"22":{"bge":2,"kantonal":1},
 "26":{"bge":2},
 "18a":{"bge":1},
-"22a":{"bge":3,"kantonal":1},
-"22c":{"bge":1,"kantonal":1},
-"25a":{"bge":2,"kantonal":1}
+"22a":{"bge":3,"kantonal":2},
+"22c":{"bge":1,"kantonal":2},
+"25a":{"bge":2,"kantonal":2}
 }
 }

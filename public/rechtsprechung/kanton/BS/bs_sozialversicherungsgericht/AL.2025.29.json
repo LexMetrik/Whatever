@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-12",
+  "erzeugt": "2026-10-19",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/AL.2025.29",
@@ -17,7 +17,7 @@
       "sachgebiet": "sozialversicherung",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "AVIG",
+        "gegenstand": "Überprüfbarkeit von Arbeitsbemühungen",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. R. Schnyder (Vorsitz), MLaw A. Zalad, S. Schenker und Gerichtsschreiber MLaw M. Güntert"
@@ -246,11 +246,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80085&Template=search_result_document.html",
-      "abgerufen": "2026-10-12",
-      "fassungsToken": "2026-10-09",
+      "abgerufen": "2026-10-19",
+      "fassungsToken": "2026-10-15",
       "sha": "7dd4d8b4b1ecc45b47e123de7bccbec311e2718d8901e70464a41baac394625b",
       "erstpublikation": "2026-10-09",
-      "aktualisiert": "2026-10-09",
+      "aktualisiert": "2026-10-15",
       "nummerSekundaer": "SVG.2026.165",
       "ecli": "ECLI:CH:BSS:2026:AL.2025.29"
     }
