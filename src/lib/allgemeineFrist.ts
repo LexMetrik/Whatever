@@ -178,10 +178,18 @@ export function berechneAllgemeineFrist(input: AllgFristInput): AllgFristResult 
     label: `Rohes Fristende: ${input.laenge} ${EINHEIT_LABEL[input.einheit]}`,
     datum: fmt(roh), wochentag: wochentag(roh),
     grund: input.einheit === 'tage' || input.einheit === 'wochen'
-      ? 'Kalendertage gezählt ab Folgetag (Art. 77 Abs. 1 Ziff. 1/2 OR)'
+      // N1 (GP RV-103): im Strafverfahren beginnt die Tagesfrist nach Art. 90 Abs. 1 StPO am Folgetag,
+      // nicht nach Art. 77 Abs. 1 Ziff. 1/2 OR; für Wochen gilt das sinngemäss (die StPO nennt nur «Tage»).
+      ? kontext === 'stpo'
+        ? input.einheit === 'tage'
+          ? 'Kalendertage gezählt ab Folgetag (Art. 90 Abs. 1 StPO)'
+          : 'Kalendertage gezählt ab Folgetag (Art. 90 Abs. 1 StPO, für Wochen sinngemäss)'
+        : 'Kalendertage gezählt ab Folgetag (Art. 77 Abs. 1 Ziff. 1/2 OR)'
       : geklemmt
-        ? 'Kein gleichbezeichneter Tag im Zielmonat → letzter Tag des Monats (Art. 77 Abs. 1 Ziff. 3 OR)'
-        : 'Gleichbezeichneter Tag des Zielmonats (Art. 77 Abs. 1 Ziff. 3 OR; BGE 150 III 367)',
+        ? 'Kein gleichbezeichneter Tag im Zielmonat → letzter Tag des Monats (Art. 77 Abs. 1 Ziff. 3 OR'
+          + (kontext === 'stpo' ? ' sinngemäss)' : ')')
+        : 'Gleichbezeichneter Tag des Zielmonats (Art. 77 Abs. 1 Ziff. 3 OR'
+          + (kontext === 'stpo' ? ' sinngemäss' : '; BGE 150 III 367') + ')',
   });
 
   // 2)+3) Verschiebung (Art. 78 OR; SR 173.110.3). Rechtlich ist das EINE
@@ -200,6 +208,13 @@ export function berechneAllgemeineFrist(input: AllgFristInput): AllgFristResult 
   // (Samstag = Werktag) das richtige Ende nennt.
   const grundFuer = (d: Date, lesart: FeiertagsLesart = kontext): string | null => {
     if (input.feiertageVerschieben && input.kanton && istFeiertag(d, input.kanton, lesart)) {
+      // N1 (GP RV-103): im StPO-Kontext zählen auch bedingte kantonale Tage (NE-Schliesstage, SO 1. Mai und
+      // Fristtage), die LI-CPP Art. 9a bzw. EG StPO § 10bis nur einem Feiertag gleichstellen. Solche Tage
+      // erkennt man daran, dass sie im Standard-Kontext NICHT zählen (zpoFeiertage.ts, nur gelesen);
+      // «gesetzlicher Feiertag» wäre dafür zu stark.
+      if (kontext === 'stpo' && !istFeiertag(d, input.kanton, 'allgemein')) {
+        return `Feiertag bzw. gleichgestellter Tag (${input.kanton})`;
+      }
       return `gesetzlicher Feiertag (${input.kanton})`;
     }
     if (wochenende && isSunday(d)) return kontext === 'stpo' ? 'Sonntag (Art. 90 Abs. 2 StPO)' : 'Sonntag (Art. 78 Abs. 1 OR)';
@@ -262,7 +277,9 @@ export function berechneAllgemeineFrist(input: AllgFristInput): AllgFristResult 
     // Gesetzlich unverändert (Golden); vertraglich zusätzlich die Regime-Offenlegung.
     // RL-22-Nachzug: Warnung zu bedingten kantonalen Feiertagen hinten angefügt.
     hinweise: [
-      ...(vertraglich ? [VERTRAGSFRIST_HINWEIS, ALLG_FRIST_HINWEIS] : [ALLG_FRIST_HINWEIS]),
+      // A2 (GP RV-103): ALLG_FRIST_HINWEIS schickt gerichtliche Fristen zum ZPO-Rechner — im Strafverfahren
+      // falsch (Art. 89 Abs. 2 StPO: keine Gerichtsferien); dort steht stattdessen STPO_FRIST_HINWEIS.
+      ...(vertraglich ? [VERTRAGSFRIST_HINWEIS, ALLG_FRIST_HINWEIS] : kontext === 'stpo' ? [] : [ALLG_FRIST_HINWEIS]),
       ...(bedingtHinweis ? [bedingtHinweis] : []),
       // RV-37/RV-49: der StPO-Zusatz gehört der Engine und erscheint nur im StPO-Kontext.
       ...(kontext === 'stpo' ? [STPO_FRIST_HINWEIS] : []),
@@ -609,6 +626,15 @@ export const MECHANIK_PRESETS: { key: string; label: string; patch: Partial<Allg
   { key: 'kalendertage_pur', label: 'Kalendertage ohne Verschiebung',
     patch: { einheit: 'tage', wochenendeVerschieben: false, feiertageVerschieben: false } },
 ];
+
+/** Mechanik-Presets, die im Kontext angeboten werden. Art. 90 Abs. 2 StPO verschiebt zwingend
+ *  (Sa/So und Feiertage): Presets ohne Verschiebung (`kalendertage_pur`) sind im StPO-Kontext
+ *  unvereinbar und werden dort nicht angeboten (GP RV-103, A1). Standard: alle Presets. */
+export function mechanikPresetsFuer(kontext?: AllgKontext): typeof MECHANIK_PRESETS {
+  return kontext === 'stpo'
+    ? MECHANIK_PRESETS.filter((p) => p.patch.wochenendeVerschieben !== false && p.patch.feiertageVerschieben !== false)
+    : MECHANIK_PRESETS;
+}
 
 /** Query eines Mechanik-Presets — dieselben Parameter, die fristQueryLesen
  *  liest (§5); ohne Startdatum (das Datum gibt der Nutzer ein). */

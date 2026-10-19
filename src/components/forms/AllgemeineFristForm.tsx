@@ -6,7 +6,7 @@ import { Tabs } from '../ui/Tabs';
 import { Link } from 'react-router-dom';
 import {
   allgemeineFristErgebnis, tageZwischen, ALLG_FRIST_HINWEIS,
-  rueckwaertsErgebnis, zustellHinweis, fristQueryKodieren, fristQueryLesen, MECHANIK_PRESETS,
+  rueckwaertsErgebnis, zustellHinweis, fristQueryKodieren, fristQueryLesen, mechanikPresetsFuer,
   type AllgFristInput, type AllgFristResult, type Einheit, type FristArt, type RueckVerschiebung, type ZustellArt,
 } from '../../lib/allgemeineFrist';
 import { FAM_STATUS_PRESETS, famPresetPatch } from '../../lib/famStatusPresets';
@@ -308,8 +308,10 @@ export function AllgemeineFristForm({ live }: {
           {/* Presets */}
           <div className="flex flex-wrap items-center gap-2">
             <span className="lc-overline lc-overline-soft">Voreinstellung:</span>
-            {MECHANIK_PRESETS.map((p) => (
-              <button type="button" key={p.label} onClick={() => setForm((f) => ({ ...f, ...p.patch, kontext: 'allgemein' }))}
+            {mechanikPresetsFuer(form.kontext).map((p) => (
+              // A1 (GP RV-103): im StPO-Modus bleiben die mit Art. 90 Abs. 2 StPO vereinbaren Presets im
+              // Kontext (kein stiller Wechsel nach OR); in den Standard-Modus setzt der Preset den Kontext wie bisher.
+              <button type="button" key={p.label} onClick={() => setForm((f) => ({ ...f, ...p.patch, kontext: f.kontext === 'stpo' ? 'stpo' : 'allgemein' }))}
                 title={p.info} className="lc-chip lc-hover-akzent">{p.label}</button>
             ))}
           </div>
