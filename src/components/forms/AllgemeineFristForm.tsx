@@ -6,7 +6,7 @@ import { Tabs } from '../ui/Tabs';
 import { Link } from 'react-router-dom';
 import {
   allgemeineFristErgebnis, tageZwischen, ALLG_FRIST_HINWEIS,
-  rueckwaertsErgebnis, zustellHinweis, fristQueryKodieren, fristQueryLesen, MECHANIK_PRESETS,
+  rueckwaertsErgebnis, zustellHinweis, fristQueryKodieren, fristQueryLesen, mechanikPresetsFuer,
   type AllgFristInput, type AllgFristResult, type Einheit, type FristArt, type RueckVerschiebung, type ZustellArt,
 } from '../../lib/allgemeineFrist';
 import { FAM_STATUS_PRESETS, famPresetPatch } from '../../lib/famStatusPresets';
@@ -23,7 +23,7 @@ import { PflichtDisclaimer } from '../PflichtDisclaimer';
 import { KANTONE } from '../../lib/kantone';
 import { getStandardKanton } from '../../lib/einstellungen';
 import { usePaneKlasse } from '../layout/PaneKontext';
-import type { EinfacheFristMeldung } from './einfacheFristTexte';
+import { KANTON_ANKNUEPFUNG, type EinfacheFristMeldung, type Ferien } from './einfacheFristTexte';
 
 // ─── Allgemeiner Fristenrechner (Free) – UI ─────────────────────────────────
 // Reine Darstellung; sämtliche Rechtsregeln liegen in lib/allgemeineFrist.ts.
@@ -53,10 +53,20 @@ const DEFAULTS: State = {
 
 // RL-24/F1-02: Regime-Wahl (Art. 78 Abs. 1 OR vs. SR 173.110.3) — Rechtsregel
 // in lib/allgemeineFrist.ts, hier nur Beschriftung (§3).
-const FRISTARTEN: { code: FristArt; label: string }[] = [
+// RV-103: dritte Wahl «Strafprozessuale Frist (StPO)» = fristart 'gesetzlich' + kontext 'stpo'
+// (Art. 90 Abs. 2 StPO). EIN Feld statt zweier verhindert die Kombination stpo+vertraglich.
+type Regime = FristArt | 'stpo';
+const FRISTARTEN: { code: Regime; label: string }[] = [
   { code: 'gesetzlich', label: 'Gesetzliche oder behördliche Frist' },
   { code: 'vertraglich', label: 'Vertragsfrist / Erfüllungstag' },
+  { code: 'stpo', label: 'Strafprozessuale Frist (StPO)' },
 ];
+
+// Der StPO-Modus nennt Art. 90 StPO statt Art. 77/78 OR (Rechtsgrundlage steht in der Engine; hier nur Beschriftung, §3).
+const DISCLAIMER_STPO =
+  'Automatisierte Orientierungsberechnung nach Art. 90 StPO – keine Rechtsberatung. ' +
+  'Der Rechner ermittelt das Fristende ab dem eingegebenen Startdatum; den Fristbeginn ' +
+  '(z. B. Zustellfiktionen) bestimmt er nicht. Im Strafverfahren gibt es keine Gerichtsferien (Art. 89 Abs. 2 StPO).';
 
 // Mechanik-Presets seit FE-3 in lib/allgemeineFrist.ts (MECHANIK_PRESETS) —
 // der Preset-Index des Tagerechners listet sie von dort (§5).
@@ -87,7 +97,8 @@ export function AllgemeineFristForm({ live }: {
       const basis = { ...DEFAULTS, kanton: getStandardKanton(), ...(aus ?? {}) };
       // RL-24/R5-06: Patch aus EINER Stelle (famPresetPatch) — Kündigungstermine
       // ohne Werktagsverschiebung.
-      return famAusLink ? { ...basis, ...famPresetPatch(famAusLink) } : basis;
+      // RV-103: Fach-Presets sind OR/ZGB-Fristen — sie setzen den Kontext auf Standard zurück.
+      return famAusLink ? { ...basis, ...famPresetPatch(famAusLink), kontext: 'allgemein' as const } : basis;
     } catch { return DEFAULTS; }
   });
   const [von, setVon] = useState('2026-06-05');
@@ -108,6 +119,16 @@ export function AllgemeineFristForm({ live }: {
   const [zustellDatum, setZustellDatum] = useState('');
 
   const set = <K extends keyof State>(k: K, v: State[K]) => setForm((f) => ({ ...f, [k]: v }));
+  // RV-103: StPO-Modus (Art. 90 Abs. 2 StPO) — Anzeige-Weiche; gerechnet wird in lib/allgemeineFrist.ts.
+  const stpo = form.kontext === 'stpo';
+  const waehleRegime = (r: Regime) => setForm((f) => r === 'stpo'
+    ? { ...f, fristart: 'gesetzlich', kontext: 'stpo', wochenendeVerschieben: true, feiertageVerschieben: true }
+    : { ...f, fristart: r, kontext: 'allgemein' });
+  // Art. 142 Abs. 1bis ZPO (Gerichtsort) ist auf Strafverfahren nicht übertragbar: «A-Post Plus» entfällt dort.
+  const zustellWahl: ZustellArt | '' = stpo && zustellArt === 'apostplus' ? '' : zustellArt;
+  const frist = stpo
+    ? { titel: 'Strafprozessuale Frist (Art. 90 StPO)', norm: 'Art. 90 StPO' }
+    : { titel: 'Allgemeine Frist (Art. 77/78 OR)', norm: 'Art. 77/78 OR' };
 
   // Live-Brücke: Sync während des Renderns (Muster «adjusting state», wie die
   // Hash-Sync der Tagerechner-Seite). Referenzvergleich genügt — die Seite
@@ -133,10 +154,25 @@ export function AllgemeineFristForm({ live }: {
   // Render tabu, react-hooks/refs); nie aktualisiert, nur Vergleichsbasis.
   const [mountForm] = useState(form);
   const [letzterLive, setLetzterLive] = useState<EinfacheFristMeldung | undefined>(undefined);
+  // RV-103: das oben gewählte Regime (keine↔stpo) setzt den Kontext NUR bei einem echten
+  // Wechsel; die erste Meldung nach dem Mount zählt als Wechsel (undefined). Werte-Meldungen
+  // im selben Regime überschreiben eine Hand-Wahl der Fristart unten nicht.
+  const [letztesFerien, setLetztesFerien] = useState<Ferien | undefined>(undefined);
   if (live && live !== letzterLive) {
     setLetzterLive(live);
     const n = { ...form };
     let geaendert = false;
+    if (live.ferien !== letztesFerien) {
+      setLetztesFerien(live.ferien);
+      const kontextNeu = live.ferien === 'stpo' ? 'stpo' : 'allgemein';
+      if (kontextNeu === 'stpo') {
+        // Art. 90 Abs. 2 StPO zwingend: gesetzliche Frist, beide Verschiebungen an.
+        Object.assign(n, { kontext: 'stpo', fristart: 'gesetzlich', wochenendeVerschieben: true, feiertageVerschieben: true });
+      } else n.kontext = kontextNeu;
+      geaendert = (form.kontext ?? 'allgemein') !== kontextNeu
+        || n.fristart !== form.fristart || n.wochenendeVerschieben !== form.wochenendeVerschieben
+        || n.feiertageVerschieben !== form.feiertageVerschieben;
+    }
     (['start', 'laenge', 'einheit', 'kanton'] as const).forEach((k) => {
       if (live.beruehrt.includes(k) || (!ausLinkFelder[k] && form[k] === mountForm[k])) {
         if (n[k] !== live.werte[k]) { (n as Record<string, unknown>)[k] = live.werte[k]; geaendert = true; }
@@ -169,8 +205,8 @@ export function AllgemeineFristForm({ live }: {
     })();
 
   const zustell = (() => {
-    if (!zustellArt || !zustellDatum) return null;
-    try { return zustellHinweis(zustellArt, zustellDatum, form.kanton); } catch { return null; }
+    if (!zustellWahl || !zustellDatum) return null;
+    try { return zustellHinweis(zustellWahl, zustellDatum, form.kanton); } catch { return null; }
   })();
 
   const zwischen: { kalendertage: number; werktageMoFr: number } | null =
@@ -180,14 +216,14 @@ export function AllgemeineFristForm({ live }: {
   const [aktenzeichen, setAktenzeichen] = useState('');
   const pdfConfig: PdfDocConfig = {
     aktenzeichen: aktenzeichen.trim() || undefined,
-    title: 'Allgemeine Frist',
-    rechtsgrundlage: 'Berechnung nach Art. 77/78 OR',
+    title: stpo ? 'Strafprozessuale Frist' : 'Allgemeine Frist',
+    rechtsgrundlage: `Berechnung nach ${frist.norm}`,
     domain: 'allgemeine-frist',
     fileBase: 'Fristenrechner',
     inputs: {
       'Startdatum (Ereignis)': form.start.split('-').reverse().join('.'),
       'Fristlänge': `${form.laenge} ${EINHEITEN.find((e) => e.code === form.einheit)?.label}`,
-      'Fristart': FRISTARTEN.find((f) => f.code === (form.fristart ?? 'gesetzlich'))!.label,
+      'Fristart': FRISTARTEN.find((f) => f.code === (stpo ? 'stpo' : form.fristart ?? 'gesetzlich'))!.label,
       'Wochenenden verschieben': form.wochenendeVerschieben ? 'ja' : 'nein',
       'Feiertage verschieben': form.feiertageVerschieben ? `ja (${form.kanton})` : 'nein',
     },
@@ -197,16 +233,18 @@ export function AllgemeineFristForm({ live }: {
       nebenwerte: [{ label: 'Wochentag', wert: ergebnis.resultat.endWochentag }],
       kontext: `${form.laenge} ${EINHEITEN.find((e) => e.code === form.einheit)?.label} ab ${form.start.split('-').reverse().join('.')}`,
     } : undefined,
-    sections: ergebnis ? [{ titel: 'Allgemeine Frist (Art. 77/78 OR)', ergebnis }] : [],
-    disclaimer: DISCLAIMER,
+    sections: ergebnis ? [{ titel: frist.titel, ergebnis }] : [],
+    disclaimer: stpo ? DISCLAIMER_STPO : DISCLAIMER,
   };
 
   return (
     <BeruehrtRahmen>
     <div className="space-y-6 lc-rechner-spalten">
       <PflichtDisclaimer
-        kurz="Fristende nach Art. 77/78 OR ab dem eingegebenen Startdatum; Fristbeginn (Zustellung) und verfahrensrechtliche Stillstände bestimmt der Rechner nicht."
-        text={DISCLAIMER} />
+        kurz={stpo
+          ? 'Fristende nach Art. 90 StPO ab dem eingegebenen Startdatum; den Fristbeginn (Zustellung) bestimmt der Rechner nicht.'
+          : 'Fristende nach Art. 77/78 OR ab dem eingegebenen Startdatum; Fristbeginn (Zustellung) und verfahrensrechtliche Stillstände bestimmt der Rechner nicht.'}
+        text={stpo ? DISCLAIMER_STPO : DISCLAIMER} />
 
       {/* Tabs: Hauptmodus + informatives Hilfsmittel */}
       <Tabs
@@ -237,11 +275,11 @@ export function AllgemeineFristForm({ live }: {
             </summary>
             <div className={pk('mt-3 grid grid-cols-1 sm:grid-cols-[1fr_1fr_auto] gap-3 items-end', 'mt-3 grid grid-cols-1 @4xl/pane:grid-cols-[1fr_1fr_auto] gap-3 items-end')}>
               <Field label="Zustellart">
-                <select className={inputCls} value={zustellArt} onChange={(e) => setZustellArt(e.target.value as ZustellArt | '')}>
+                <select className={inputCls} value={zustellWahl} onChange={(e) => setZustellArt(e.target.value as ZustellArt | '')}>
                   <option value="">– wählen –</option>
                   <option value="uebergabe">Persönliche Übergabe / Empfang</option>
                   <option value="einschreiben">Einschreiben – erfolgloser Zustellversuch</option>
-                  <option value="apostplus">Gewöhnliche Post / A-Post Plus</option>
+                  {!stpo && <option value="apostplus">Gewöhnliche Post / A-Post Plus</option>}
                 </select>
               </Field>
               <Field label={zustellArt === 'einschreiben' ? 'Datum des Zustellversuchs' : 'Zustell-/Empfangsdatum'}>
@@ -254,6 +292,12 @@ export function AllgemeineFristForm({ live }: {
                 </button>
               )}
             </div>
+            {stpo && (
+              <p className="mt-3 text-body-s text-ink-600">
+                «Gewöhnliche Post / A-Post Plus» wird im Strafverfahren nicht angeboten: Der Helfer wendet dafür
+                Art. 142 Abs. 1bis ZPO (Feiertage am Gerichtsort) an; eine entsprechende Regel für die StPO ist nicht abgebildet.
+              </p>
+            )}
             {zustell && (
               <div className="mt-3 space-y-1.5">
                 {zustell.hinweise.map((h, i) => <p key={i} className="text-body-s text-ink-600"><NormText text={h} /></p>)}
@@ -264,7 +308,10 @@ export function AllgemeineFristForm({ live }: {
           {/* Presets */}
           <div className="flex flex-wrap items-center gap-2">
             <span className="lc-overline lc-overline-soft">Voreinstellung:</span>
-            {MECHANIK_PRESETS.map((p) => (
+            {mechanikPresetsFuer(form.kontext).map((p) => (
+              // A1 (GP RV-103): im StPO-Modus bleiben die mit Art. 90 Abs. 2 StPO vereinbaren Presets im
+              // Kontext (kein stiller Wechsel nach OR): der Patch setzt den Kontext nicht, der Preset ohne
+              // Verschiebung wird dort gar nicht angeboten (mechanikPresetsFuer).
               <button type="button" key={p.label} onClick={() => setForm((f) => ({ ...f, ...p.patch }))}
                 title={p.info} className="lc-chip lc-hover-akzent">{p.label}</button>
             ))}
@@ -277,7 +324,7 @@ export function AllgemeineFristForm({ live }: {
             <span className="lc-overline lc-overline-soft">Familienrecht &amp; Status:</span>
             {FAM_STATUS_PRESETS.map((p) => (
               <button type="button" key={p.label}
-                onClick={() => { setForm((f) => ({ ...f, ...famPresetPatch(p) })); setFamPreset(p); }}
+                onClick={() => { setForm((f) => ({ ...f, ...famPresetPatch(p), kontext: 'allgemein' })); setFamPreset(p); }}
                 title={`${p.norm} — ${p.info}`} className="lc-chip lc-hover-akzent">{p.label}</button>
             ))}
           </div>
@@ -299,7 +346,7 @@ export function AllgemeineFristForm({ live }: {
           )}
 
           <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-4', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-4')}>
-            <Field label="Startdatum (auslösendes Ereignis)" hint="zählt nicht mit – dies a quo non computatur (Art. 77 OR)">
+            <Field label="Startdatum (auslösendes Ereignis)" hint={stpo ? 'zählt nicht mit – dies a quo non computatur (Art. 90 Abs. 1 StPO)' : 'zählt nicht mit – dies a quo non computatur (Art. 77 OR)'}>
               <DatumsFeld value={form.start} onChange={(v) => set('start', v)} className={inputCls} />
             </Field>
             <div className="grid grid-cols-[7rem_1fr] gap-3">
@@ -319,28 +366,34 @@ export function AllgemeineFristForm({ live }: {
                 </select>
               </Field>
             </div>
-            <Field label="Fristart" hint="Samstag verschiebt nur gesetzliche/behördliche Fristen (SR 173.110.3)">
-              <select className={inputCls} value={form.fristart ?? 'gesetzlich'}
-                onChange={(e) => set('fristart', e.target.value as FristArt)}>
+            <Field label="Fristart" hint={stpo
+              ? 'Art. 90 Abs. 2 StPO: Samstag, Sonntag und anerkannte Feiertage verschieben zwingend; keine Gerichtsferien (Art. 89 Abs. 2 StPO)'
+              : 'Samstag verschiebt nur gesetzliche/behördliche Fristen (SR 173.110.3)'}>
+              <select className={inputCls} value={stpo ? 'stpo' : form.fristart ?? 'gesetzlich'}
+                onChange={(e) => waehleRegime(e.target.value as Regime)}>
                 {FRISTARTEN.map((f) => <option key={f.code} value={f.code}>{f.label}</option>)}
               </select>
             </Field>
-            <Field label="Fristende verschieben">
+            <Field label="Fristende verschieben" hint={stpo ? 'zwingend – nicht abwählbar (Art. 90 Abs. 2 StPO)' : undefined}>
               <div className="space-y-1.5 pt-1">
                 {/* Rechtlich EINE Operation «nächster Werktag»: Feiertage
                     implizieren die Wochenend-Verschiebung (gekoppelt) */}
-                <Checkbox checked={form.wochenendeVerschieben || form.feiertageVerschieben}
+                <Checkbox checked={form.wochenendeVerschieben || form.feiertageVerschieben} disabled={stpo}
                   onChange={(v) => setForm((f) => ({ ...f, wochenendeVerschieben: v, feiertageVerschieben: v && f.feiertageVerschieben }))}
-                  label={form.fristart === 'vertraglich'
-                    ? 'Sonntag → nächster Werktag (Art. 78 OR)'
-                    : 'Samstag/Sonntag → nächster Werktag (Art. 78 OR; SR 173.110.3)'} />
-                <Checkbox checked={form.feiertageVerschieben}
+                  label={stpo
+                    ? 'Samstag/Sonntag → nächster Werktag (Art. 90 Abs. 2 StPO)'
+                    : form.fristart === 'vertraglich'
+                      ? 'Sonntag → nächster Werktag (Art. 78 OR)'
+                      : 'Samstag/Sonntag → nächster Werktag (Art. 78 OR; SR 173.110.3)'} />
+                <Checkbox checked={form.feiertageVerschieben} disabled={stpo}
                   onChange={(v) => setForm((f) => ({ ...f, feiertageVerschieben: v, wochenendeVerschieben: f.wochenendeVerschieben || v }))}
-                  label="zusätzlich gesetzliche Feiertage (kantonal)" />
+                  label={stpo
+                    ? 'zusätzlich vom Bundes- oder kantonalen Recht anerkannte Feiertage (Art. 90 Abs. 2 StPO)'
+                    : 'zusätzlich gesetzliche Feiertage (kantonal)'} />
               </div>
             </Field>
             {form.feiertageVerschieben && (
-              <Field label="Kanton (Erfüllungsort)" hint="Feiertage nach EJPD-Verzeichnis, Stand 2011; regionale Besonderheiten im Einzelfall prüfen">
+              <Field label={`Kanton (${stpo ? KANTON_ANKNUEPFUNG.stpo : 'Erfüllungsort'})`} hint="Feiertage nach EJPD-Verzeichnis, Stand 2011; regionale Besonderheiten im Einzelfall prüfen">
                 <select className={inputCls + ' sm:max-w-[9rem]'} value={form.kanton} onChange={(e) => set('kanton', e.target.value as Kanton)}>
                   {KANTONE.map((k) => <option key={k} value={k}>{k}</option>)}
                 </select>
@@ -360,13 +413,14 @@ export function AllgemeineFristForm({ live }: {
                   <EckdatenKachel key={c.label} label={c.label} wert={c.val} num akzent={c.akzent} />
                 ))}
               </div>
-              <ErgebnisAnzeige titel="Allgemeine Frist (Art. 77/78 OR)" ergebnis={ergebnis} />
+              <ErgebnisAnzeige titel={frist.titel} ergebnis={ergebnis} />
               <FristenKalender
                 ereignisISO={ergebnis.resultat.startISO}
                 aQuoISO={ergebnis.resultat.fristbeginnISO!}
                 adQuemISO={ergebnis.resultat.endDatumISO}
                 kanton={form.kanton}
                 stillstandAktiv={false}
+                feiertagsKontext={stpo ? 'stpo' : 'allgemein'}
               />
               {/* Fristbeginn-Baustein wie ZPO/SchKG (Code-Review #5, 7.6.2026):
                   Norm aus der Engine (Art. 77 OR), bei Rückwärtsfrist ohne
@@ -375,16 +429,16 @@ export function AllgemeineFristForm({ live }: {
               <ErgebnisExport aktenzeichen={aktenzeichen} onAktenzeichen={setAktenzeichen} pdf={pdfConfig}
                 query={() => `?${fristQueryKodieren(form)}`}
                 ics={[{ endISO: ergebnis.resultat.endDatumISO,
-                  titel: `Fristende – ${form.laenge} ${EINHEITEN.find((e) => e.code === form.einheit)?.label}`,
-                  beschreibung: `Fristende: ${ergebnis.ergebnis} (Art. 77/78 OR).` }]} />
+                  titel: `Fristende – ${form.laenge} ${EINHEITEN.find((e) => e.code === form.einheit)?.label}${stpo ? ' (StPO)' : ''}`,
+                  beschreibung: `Fristende: ${ergebnis.ergebnis} (${frist.norm}).` }]} />
               {/* QS-UI 8b (B2): Abgrenzungshinweis lief über die volle Kartenbreite —
                   gemessen 910 px gegen die 640-px-Lesespalte. Nur Breite; Wortlaut
                   und Links unverändert (Text aus lib/allgemeineFrist.ts, §5). */}
-              <p className="text-body-s text-ink-500 max-w-reading-s">
+              {!stpo && <p className="text-body-s text-ink-500 max-w-reading-s">
                 {ALLG_FRIST_HINWEIS.replace(' den ZPO-Fristenrechner, für betreibungsrechtliche den SchKG-Fristenrechner verwenden.', ':')}{' '}
                 <Link to="/rechner/zpo-fristen" className="text-brass-700 lc-link hover:text-brass-600">ZPO-Fristen →</Link>{' · '}
                 <Link to="/rechner/schkg-fristen" className="text-brass-700 lc-link hover:text-brass-600">SchKG-Fristen →</Link>
-              </p>
+              </p>}
             </ErgebnisBlock>
           )}
         </>

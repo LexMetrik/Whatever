@@ -12,7 +12,7 @@ export type VerfallTermin = {
   rhythmus?: string;
 };
 
-export const VERFALL_STAND = "6.9.2026";
+export const VERFALL_STAND = "19.10.2026";
 export const VERFALL_QUELLE = "bibliothek/register/parameter-verfall.md";
 export const VERFALL_MANUELL_ANZAHL = 22;
 
@@ -559,6 +559,14 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "fundstelle": "`scripts/fedlex-cache.sh` (OR)",
     "wert": "gepinnt 1.10.2026",
     "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
+  },
+  {
+    "label": "PAT `AUTOMERGE_TOKEN` (GitHub-Secret der Bot-PRs; Fine-grained Token `lexmetrik-automerge-2026-09`)",
+    "datum": "2027-10-19",
+    "quelle": "Tabelle",
+    "fundstelle": "`.github/workflows/fedlex-frische.yml`, `normen-monatslauf.yml`, `materialien-nachzug.yml`, `lik-nachzug.yml`, `rechtsprechung-wochenlauf.yml` (Rückfall ohne Secret: `github.token`)",
+    "wert": "gültig bis 19.10.2027 (neu ausgestellt 19.10.2026, Angabe David). Läuft er ab, entstehen Bot-PRs mit `github.token` ohne eigene CI; ein abgelaufener, aber gesetzter Wert lässt die Läufe scheitern",
+    "rhythmus": "vor Ablauf neu ausstellen («Regenerate token») und Secret ersetzen — nur David (§18); danach Datum hier nachführen"
   },
   {
     "label": "Künftige Fassung GSchV (SR 814.201)",

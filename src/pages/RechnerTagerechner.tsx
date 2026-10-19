@@ -48,8 +48,9 @@ const HASH_VERFAHREN: Record<string, Verfahren> = { '#zpo': 'zpo', '#schkg': 'sc
 // automatisch»): das Ferien-Regime des einfachen Rechners oben bestimmt den
 // Voll-Tab unten. VwVG/BGG haben unten kein Formular — dort keine Zuordnung
 // (der einfache Rechner bleibt für diese Regimes die einzige Anzeige).
+// RV-103: «Strafverfahren (StPO)» rechnet unten im Allgemein-Formular (Fristart «Strafprozessuale Frist (StPO)»).
 const FERIEN_VERFAHREN: Partial<Record<Ferien, Verfahren>> = {
-  keine: 'allgemein', zpo: 'zpo', schkg: 'schkg',
+  keine: 'allgemein', stpo: 'allgemein', zpo: 'zpo', schkg: 'schkg',
 };
 
 // FE-4: Abzweigungs-Treffer — die Preset-Suche prüft deterministisch auch
@@ -300,14 +301,20 @@ export function RechnerTagerechner() {
                 </li>
               </ol>
               <p className="text-body-s text-ink-500 max-w-reading-s">
+                <span className="font-medium text-ink-700">Strafverfahren (StPO):</span> Unter «Allgemein»
+                die Fristart «Strafprozessuale Frist (StPO)» wählen, oder oben «Strafverfahren (StPO)» –
+                ohne Gerichtsferien (Art. 89 Abs. 2 StPO), mit den Feiertagen des Kantons der Partei oder
+                ihres Rechtsbeistands (Art. 90 Abs. 2 StPO).
+              </p>
+              <p className="text-body-s text-ink-500 max-w-reading-s">
                 <span className="font-medium text-ink-700">Nicht abgebildet:</span> Fristen in
-                Straf- (StPO), Verwaltungs- (VwVG) und Bundesgerichtsverfahren (BGG) folgen
+                Verwaltungs- (VwVG) und Bundesgerichtsverfahren (BGG) folgen
                 eigenen Stillstandsregeln – dieser Rechner deckt sie nicht ab.
               </p>
             </div>
           )}
           <p className="text-micro text-ink-500">
-            {verfahren === 'allgemein' && 'Vertrags- und Verwirkungsfristen nach OR/ZGB – ohne Gerichtsferien; inkl. Rückwärtsrechnung, Tage-zwischen, Zustell-Helfer und Kalenderexport.'}
+            {verfahren === 'allgemein' && 'Vertrags- und Verwirkungsfristen nach OR/ZGB sowie Strafverfahrensfristen (Fristart StPO) – ohne Gerichtsferien; inkl. Rückwärtsrechnung, Tage-zwischen, Zustell-Helfer und Kalenderexport.'}
             {verfahren === 'zpo' && 'Gerichtliche und gesetzliche Fristen mit Stillstand (Art. 145 ZPO), kantonalen Feiertagen und Zustellungsregeln.'}
             {verfahren === 'schkg' && 'Betreibungsferien und Rechtsstillstand (Art. 56 ff. SchKG) – getrennt vom ZPO-Stillstand gerechnet.'}
           </p>
@@ -319,7 +326,7 @@ export function RechnerTagerechner() {
             (sonst rechnete etwa die ZPO-Form mit «Keine Ferien»-Eingaben —
             §1: zwei rechtlich verschiedene Regimes nie stillschweigend
             gleich behandeln). */}
-        {verfahren === 'allgemein' && <AllgemeineFristForm key={presetNonce} live={live?.ferien === 'keine' ? live : undefined} />}
+        {verfahren === 'allgemein' && <AllgemeineFristForm key={presetNonce} live={live?.ferien === 'keine' || live?.ferien === 'stpo' ? live : undefined} />}
         {/* WARNHINWEIS: eingebettete ZPO-/SchKG-Rechner tragen zusätzlich die
             Fehler ihres eigenen Werkzeugs (Rahmen vereinigen sich). */}
         {verfahren === 'zpo' && <BekannteFehlerRahmen werkzeug="zpo-fristen"><ZpoFristenForm key={presetNonce} live={live?.ferien === 'zpo' ? live : undefined} /></BekannteFehlerRahmen>}

@@ -46,6 +46,7 @@ export type FristArt = 'gesetzlich' | 'vertraglich';
 // kantonalen Tage (NE-Schliesstage LI-CPP Art. 9a, SO 1. Mai EG StPO § 10bis,
 // zpoFeiertage.ts «Bedingte kantonale Feiertage»), der GL-2.1. nicht. Strafverfahrensfristen
 // sind gesetzliche/behördliche Fristen: 'stpo' mit fristart 'vertraglich' ist ein Widerspruch.
+// RV-103: 'stpo' ohne Wochenend- UND Feiertags-Verschiebung ist ebenfalls ein Widerspruch (Art. 90 Abs. 2 zwingend).
 export type AllgKontext = 'allgemein' | 'stpo';
 
 export interface AllgFristInput {
@@ -140,6 +141,12 @@ export function berechneAllgemeineFrist(input: AllgFristInput): AllgFristResult 
   if (input.kontext === 'stpo' && input.fristart === 'vertraglich') {
     throw new Error('Strafprozessuale Fristen sind gesetzliche bzw. behördliche Fristen, keine Vertragsfristen.');
   }
+  // RV-103: Art. 90 Abs. 2 StPO ist zwingend (Samstag, Sonntag und anerkannte Feiertage verschieben
+  // das Fristende immer) — im StPO-Kontext gibt es keine Option «ohne Verschiebung».
+  if (input.kontext === 'stpo' && !(input.wochenendeVerschieben && input.feiertageVerschieben)) {
+    throw new Error('Im Strafverfahren verschiebt sich das Fristende bei Samstag, Sonntag und anerkannten Feiertagen '
+      + 'zwingend auf den nächsten Werktag (Art. 90 Abs. 2 StPO) – Wochenend- und Feiertags-Verschiebung sind nicht abwählbar.');
+  }
   const kontext: AllgKontext = input.kontext ?? 'allgemein';
   const start = parseISO(input.start);
   if (isNaN(start.getTime())) throw new Error('Ungültiges Startdatum.');
@@ -171,10 +178,18 @@ export function berechneAllgemeineFrist(input: AllgFristInput): AllgFristResult 
     label: `Rohes Fristende: ${input.laenge} ${EINHEIT_LABEL[input.einheit]}`,
     datum: fmt(roh), wochentag: wochentag(roh),
     grund: input.einheit === 'tage' || input.einheit === 'wochen'
-      ? 'Kalendertage gezählt ab Folgetag (Art. 77 Abs. 1 Ziff. 1/2 OR)'
+      // N1 (GP RV-103): im Strafverfahren beginnt die Tagesfrist nach Art. 90 Abs. 1 StPO am Folgetag,
+      // nicht nach Art. 77 Abs. 1 Ziff. 1/2 OR; für Wochen gilt das sinngemäss (die StPO nennt nur «Tage»).
+      ? kontext === 'stpo'
+        ? input.einheit === 'tage'
+          ? 'Kalendertage gezählt ab Folgetag (Art. 90 Abs. 1 StPO)'
+          : 'Kalendertage gezählt ab Folgetag (Art. 90 Abs. 1 StPO, für Wochen sinngemäss)'
+        : 'Kalendertage gezählt ab Folgetag (Art. 77 Abs. 1 Ziff. 1/2 OR)'
       : geklemmt
-        ? 'Kein gleichbezeichneter Tag im Zielmonat → letzter Tag des Monats (Art. 77 Abs. 1 Ziff. 3 OR)'
-        : 'Gleichbezeichneter Tag des Zielmonats (Art. 77 Abs. 1 Ziff. 3 OR; BGE 150 III 367)',
+        ? 'Kein gleichbezeichneter Tag im Zielmonat → letzter Tag des Monats (Art. 77 Abs. 1 Ziff. 3 OR'
+          + (kontext === 'stpo' ? ' sinngemäss)' : ')')
+        : 'Gleichbezeichneter Tag des Zielmonats (Art. 77 Abs. 1 Ziff. 3 OR'
+          + (kontext === 'stpo' ? ' sinngemäss' : '; BGE 150 III 367') + ')',
   });
 
   // 2)+3) Verschiebung (Art. 78 OR; SR 173.110.3). Rechtlich ist das EINE
@@ -193,6 +208,13 @@ export function berechneAllgemeineFrist(input: AllgFristInput): AllgFristResult 
   // (Samstag = Werktag) das richtige Ende nennt.
   const grundFuer = (d: Date, lesart: FeiertagsLesart = kontext): string | null => {
     if (input.feiertageVerschieben && input.kanton && istFeiertag(d, input.kanton, lesart)) {
+      // N1 (GP RV-103): im StPO-Kontext zählen auch bedingte kantonale Tage (NE-Schliesstage, SO 1. Mai und
+      // Fristtage), die LI-CPP Art. 9a bzw. EG StPO § 10bis nur einem Feiertag gleichstellen. Solche Tage
+      // erkennt man daran, dass sie im Standard-Kontext NICHT zählen (zpoFeiertage.ts, nur gelesen);
+      // «gesetzlicher Feiertag» wäre dafür zu stark.
+      if (kontext === 'stpo' && !istFeiertag(d, input.kanton, 'allgemein')) {
+        return `Feiertag bzw. gleichgestellter Tag (${input.kanton})`;
+      }
       return `gesetzlicher Feiertag (${input.kanton})`;
     }
     if (wochenende && isSunday(d)) return kontext === 'stpo' ? 'Sonntag (Art. 90 Abs. 2 StPO)' : 'Sonntag (Art. 78 Abs. 1 OR)';
@@ -219,8 +241,8 @@ export function berechneAllgemeineFrist(input: AllgFristInput): AllgFristResult 
     ende = addDays(ende, 1);
   }
 
-  // RL-22-Nachzug: Feiertags-Kontext 'allgemein' (Art. 78 OR; auch StPO-Nutzung
-  // ohne eigenen Kontext) — kantonale Sonderfeiertage, die nur für bestimmte
+  // RL-22-Nachzug: Feiertags-Kontext 'allgemein' (Art. 78 OR; StPO-Fristen
+  // rechnen seit RV-49/RV-103 im eigenen Kontext 'stpo') — kantonale Sonderfeiertage, die nur für bestimmte
   // Verfahren gelten (NE-Schliesstage, SO 1. Mai), zählen nicht; Warnung, wenn
   // einer das Fristende verschieben würde. RL-23: ebenso Warnung, wenn ein
   // unsicher gezählter Tag (GL 2.1.) verschoben hat. Landung Paket 5 mit RL-24:
@@ -255,7 +277,9 @@ export function berechneAllgemeineFrist(input: AllgFristInput): AllgFristResult 
     // Gesetzlich unverändert (Golden); vertraglich zusätzlich die Regime-Offenlegung.
     // RL-22-Nachzug: Warnung zu bedingten kantonalen Feiertagen hinten angefügt.
     hinweise: [
-      ...(vertraglich ? [VERTRAGSFRIST_HINWEIS, ALLG_FRIST_HINWEIS] : [ALLG_FRIST_HINWEIS]),
+      // A2 (GP RV-103): ALLG_FRIST_HINWEIS schickt gerichtliche Fristen zum ZPO-Rechner — im Strafverfahren
+      // falsch (Art. 89 Abs. 2 StPO: keine Gerichtsferien); dort steht stattdessen STPO_FRIST_HINWEIS.
+      ...(vertraglich ? [VERTRAGSFRIST_HINWEIS, ALLG_FRIST_HINWEIS] : kontext === 'stpo' ? [] : [ALLG_FRIST_HINWEIS]),
       ...(bedingtHinweis ? [bedingtHinweis] : []),
       // RV-37/RV-49: der StPO-Zusatz gehört der Engine und erscheint nur im StPO-Kontext.
       ...(kontext === 'stpo' ? [STPO_FRIST_HINWEIS] : []),
@@ -603,6 +627,15 @@ export const MECHANIK_PRESETS: { key: string; label: string; patch: Partial<Allg
     patch: { einheit: 'tage', wochenendeVerschieben: false, feiertageVerschieben: false } },
 ];
 
+/** Mechanik-Presets, die im Kontext angeboten werden. Art. 90 Abs. 2 StPO verschiebt zwingend
+ *  (Sa/So und Feiertage): Presets ohne Verschiebung (`kalendertage_pur`) sind im StPO-Kontext
+ *  unvereinbar und werden dort nicht angeboten (GP RV-103, A1). Standard: alle Presets. */
+export function mechanikPresetsFuer(kontext?: AllgKontext): typeof MECHANIK_PRESETS {
+  return kontext === 'stpo'
+    ? MECHANIK_PRESETS.filter((p) => p.patch.wochenendeVerschieben !== false && p.patch.feiertageVerschieben !== false)
+    : MECHANIK_PRESETS;
+}
+
 /** Query eines Mechanik-Presets — dieselben Parameter, die fristQueryLesen
  *  liest (§5); ohne Startdatum (das Datum gibt der Nutzer ein). */
 export function mechanikPresetQuery(patch: Partial<AllgFristInput>): string {
@@ -622,7 +655,10 @@ export function fristQueryKodieren(f: AllgFristInput): string {
   if (f.wochenendeVerschieben) p.set('w', '1');
   if (f.feiertageVerschieben) { p.set('f', '1'); if (f.kanton) p.set('k', f.kanton); }
   // RL-24/F1-02: nur die Vertragsfrist wird kodiert — gesetzliche Links bleiben byte-gleich.
+  // RV-103: r=s = StPO-Kontext (Art. 90 Abs. 2 StPO); derselbe Parameter wie r=v, weil ein
+  // Parameter den Widerspruch stpo+vertraglich (Engine-Throw) gar nicht ausdrücken kann.
   if (f.fristart === 'vertraglich') p.set('r', 'v');
+  else if (f.kontext === 'stpo') p.set('r', 's');
   return p.toString();
 }
 
@@ -668,5 +704,10 @@ export function fristQueryLesen(query: string): Partial<AllgFristInput> | null {
     feiertageVerschieben: p.get('f') === '1',
     ...(kanton ? { kanton } : {}),
     ...(p.get('r') === 'v' ? { fristart: 'vertraglich' as const } : {}),
+    // RV-103: StPO-Kontext. Art. 90 Abs. 2 StPO verschiebt zwingend — ein Link mit r=s ohne
+    // w/f würde sonst am Engine-Guard scheitern (kein Ergebnis); darum beide Toggles an.
+    ...(p.get('r') === 's'
+      ? { kontext: 'stpo' as const, wochenendeVerschieben: true, feiertageVerschieben: true }
+      : {}),
   };
 }

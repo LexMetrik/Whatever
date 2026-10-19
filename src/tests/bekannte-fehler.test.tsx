@@ -90,7 +90,7 @@ describe('WARNHINWEIS · Anzeige', () => {
   });
 
   it('verschachtelte Rahmen vereinigen sich ohne Doppel (Streitwert + eingebetteter BGG-Fristenrechner)', () => {
-    // RV-49/52/53 (Tagerechner) sind behoben; am Tagerechner steht seither RV-103. RV-26 steht an beiden Werkzeugen.
+    // RV-49/52/53/103 (Tagerechner) sind behoben; am Tagerechner steht kein Eintrag mehr. RV-26 steht an beiden Werkzeugen.
     const bgg = block(['streitwert', 'bgg-fristen']);
     expect(bgg.split('(RV-26)').length - 1).toBe(1);
     expect(bgg).toContain('(RV-28)');
@@ -106,7 +106,8 @@ describe('WARNHINWEIS · echte Seiten (Vorgabewerte tragen schon ein Ergebnis)',
   it('Mietrecht, Kündigung (B+C) zeigen ihre Fehler; Tagerechner und Verjährung (ohne Eintrag) nicht', () => {
     const miete = seite(RechnerMietrecht, '/rechner/mietrecht');
     for (const id of ['RV-06', 'RV-33', 'RV-40']) expect(miete).toContain(`(${id})`);
-    expect(seite(RechnerTagerechner, '/rechner/tagerechner')).toContain('(RV-103)');
+    // RV-103 behoben (Voll-Formular und Permalink kennen den StPO-Kontext): der Tagerechner trägt keinen Warnhinweis mehr.
+    expect(seite(RechnerTagerechner, '/rechner/tagerechner')).not.toContain(BEKANNTER_FEHLER_TITEL);
     const kuend = seite(RechnerKuendigung, '/rechner/kuendigung#kuendigung');
     for (const id of ['RV-33', 'RV-44']) expect(kuend).toContain(`(${id})`);
     const verj = seite(RechnerVerjaehrung, '/rechner/verjaehrung');

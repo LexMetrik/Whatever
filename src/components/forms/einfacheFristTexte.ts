@@ -74,7 +74,8 @@ export const FERIEN_OPTIONEN: { code: Ferien; label: string; sub: string }[] = [
 // (Feiertage)» bleibt (e2e-Selektor getByLabel). SchKG unverändert: die Engine
 // verweist auf Art. 31 SchKG i.V.m. Art. 142 Abs. 3 ZPO, die Anknüpfung beim
 // Betreibungsamt ist nicht Gegenstand von RL-07. Reine Beschriftung (§3).
-const KANTON_ANKNUEPFUNG: Record<Ferien, string> = {
+// RV-103: exportiert, damit das Voll-Formular (AllgemeineFristForm) den StPO-Wortlaut hieraus liest (§5).
+export const KANTON_ANKNUEPFUNG: Record<Ferien, string> = {
   keine: 'Erfüllungsort',
   stpo: 'Wohnsitz/Sitz der Partei oder ihres Rechtsbeistands',
   zpo: 'Gerichtsort',

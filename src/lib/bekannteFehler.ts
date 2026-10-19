@@ -61,9 +61,6 @@ export const BEKANNTE_FEHLER: Readonly<Record<string, readonly BekannterFehler[]
   'bgg-fristen': [
     { fb: 'RV-26', text: 'Streitwert wiederkehrender Leistungen nach Art. 51 Abs. 4 BGG falsch berechnet.' },
   ],
-  tagerechner: [
-    { fb: 'RV-103', text: 'Strafverfahren (StPO): das ausführliche Formular und geteilte Links rechnen noch mit den allgemeinen statt den strafprozessualen kantonalen Feiertagen.' },
-  ],
   zustaendigkeit: [
     { fb: 'RV-33', text: 'Bestimmung der Schlichtungsbehörde doppelt vorhanden, die beiden Fassungen weichen voneinander ab.' },
     { fb: 'RV-79', text: 'Zwischenentscheide: Rechtsmittel als «zulässig» ausgewiesen, obwohl Art. 92/93 BGG es einschränken.' },
