@@ -36,7 +36,8 @@ Offene, nicht-Draft-PRs mit Bot-Präfix `chore/fedlex-frische-`,
 wegen `Gegenpruefung: ausstehend`, sei es weil eine frühere Quittung nicht
 mehr zum Diff passt (main hat dieselbe Datei geändert; dann neu prüfen und
 neu quittieren). Mehrere desselben Präfixes: nur den
-neuesten; ältere mit «Überholt durch #<neu>» schliessen, Branch löschen.
+neuesten prüfen; ältere schliesst der Bot selbst (`scripts/ci/bot-pr-ueberholt.sh`)
+— die Routine schliesst keine PRs.
 Rot ausser «Merge-Schutz» und dem Merge-Schutz-Schritt im Tore-Job → nicht
 prüfen, Kommentar «nicht geprüft: Tor <name> rot (Run <id>)». Kein Treffer →
 ohne Ausgabe enden. Steht schon ein Routinen-Kommentar mit demselben Grund

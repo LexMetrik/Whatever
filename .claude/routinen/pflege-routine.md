@@ -43,7 +43,14 @@ dem Berechtigungssystem. Ein Erfolgsbericht ohne prüfbares Artefakt
 
 ## 2 Selbst beheben (Katalog)
 
-- Überholte Automaten-PRs schliessen («Überholt durch #<neu>»), Branch löschen.
+- Überholte Automaten-PRs (neuerer PR desselben Bots offen) schliessen
+  («Überholt durch #<neu>»), Branch löschen — aber nur ohne Bearbeitungs-Spur
+  (Schon-Regeln wie `scripts/ci/bot-pr-ueberholt.sh` `schon_grund`): kein Label
+  `in-pruefung`, nur Bot-Autor und -Committer, kein Verdikt ausser «ausstehend»,
+  kein Kommentar oder Review eines Menschen. Mit Spur: «Wartet auf David».
+- Automaten-PR mit Quittung, dessen Merge danach gescheitert ist (CI rot, aus
+  der Queue geworfen): Ursache aus dem Lauf lesen; liegt sie im Katalog,
+  beheben, sonst «Wartet auf David».
 - Verwaiste Branches löschen; Spitzen-SHA im Bericht.
 - Geplanten Lauf mit transienter Ursache (Netz, Timeout, Runner) einmal neu
   anstossen.
