@@ -98,14 +98,19 @@ Feiertags-/Computus-Verschiebung, Regime-Wechsel (Regimes nie kollabiert).
 - **`bestanden`** → im Repo-Wurzelverzeichnis:
 
   ```
-  npm run gegenpruefung:ok -- --verdikt=bestanden \
+  npm run gegenpruefung:ok -- --bereich --verdikt=bestanden \
     --engine="<Snapshot/Engine>" --quelle="fedlex <name> <YYYYMMDD>" \
     --notiz="<was gegen welche Norm/Quelle geprüft>"
   ```
 
   Berechnet den Diff-Hash, schreibt `bibliothek/.gegenpruefung-pending`, hängt
   die Register-Zeile an. Jeder weitere Edit kippt den Hash ⇒ neuer Durchgang.
-  Auflagen vorher einbauen; das Werkzeug kennt nur `bestanden`.
+  Auflagen vorher einbauen; das Werkzeug kennt nur `bestanden`. `check:merge-schutz`
+  gleicht den Hash mit dem Diff ab (neu hinzugefügte Zeile mit Hash über
+  merge-base..KOPF, Verdikt bestanden/behoben; gestapelte Queue-Commits je
+  einzeln, höchstens 60 — darüber ROT, dann Gesamt-Quittung über den
+  Bereich): ROT «Quittung passt nicht zum Diff» ⇒ neu prüfen, erst auf dem
+  Stand quittieren, der landet.
 - **Trailer:** `Gegenpruefung: bestanden (Opus, <Linsen>) — <Befunde>`,
   Befund-Teil ≥ 15 Zeichen (nie nur «keine», sondern «keine: <Beleg>»), bzw.
   `Gegenpruefung: n/a — reine Prüflogik`. Einzeilig, im letzten Absatz, nur

@@ -112,6 +112,8 @@ jobs:
             gh pr create --base main --head "$branch" \
               --title "chore(entstehung): Curia-Vista-Monatslauf ${DATUM}" \
               --body "Automatischer Monats-Vollabgleich der Parlaments-Etappen (W2·6c E4). KEIN Auto-Merge: die Curia-Shards liegen auf dem Risikopfad (istRisikoPfad), die adversariale Gegenpruefung ist nachgelagert."
+            nr=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty' || true)
+            if [ -n "$nr" ]; then bash scripts/ci/bot-pr-ueberholt.sh "chore/curia-monatslauf-" "$branch" "$nr" || echo "::warning::Überholt-Schliessen fehlgeschlagen (nicht fatal)."; fi
           fi
 
   bs-grossrat:
@@ -190,6 +192,8 @@ jobs:
             gh pr create --base main --head "$branch" \
               --title "chore(materialien): BS-Grossrat-Monatslauf ${DATUM}" \
               --body "Automatischer Monats-Vollabgleich der Basler Grossratsgeschaefte (K-16). KEIN Auto-Merge: die Materialien-Artefakte liegen auf dem Risikopfad (istRisikoPfad), die adversariale Gegenpruefung ist nachgelagert."
+            nr=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty' || true)
+            if [ -n "$nr" ]; then bash scripts/ci/bot-pr-ueberholt.sh "chore/bs-grossrat-monatslauf-" "$branch" "$nr" || echo "::warning::Überholt-Schliessen fehlgeschlagen (nicht fatal)."; fi
           fi
 
   vernehmlassungen:
@@ -269,4 +273,6 @@ jobs:
             gh pr create --base main --head "$branch" \
               --title "chore(materialien): Vernehmlassungs-Monatslauf ${DATUM}" \
               --body "Automatischer Monats-Vollabgleich des Vernehmlassungs-Registers (Fedlex-Gesetzgebungs-Graph). KEIN Auto-Merge: die Materialien-Artefakte liegen auf dem Risikopfad (istRisikoPfad), die adversariale Gegenpruefung ist nachgelagert."
+            nr=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty' || true)
+            if [ -n "$nr" ]; then bash scripts/ci/bot-pr-ueberholt.sh "chore/vernehmlassungen-monatslauf-" "$branch" "$nr" || echo "::warning::Überholt-Schliessen fehlgeschlagen (nicht fatal)."; fi
           fi

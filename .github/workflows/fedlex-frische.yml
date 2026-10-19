@@ -25,19 +25,14 @@ on:
   workflow_dispatch:
 
 # Auto-Merge-PRs, die von github.token erstellt werden, lösen KEINE CI aus (GH-
-# Rekursionssperre). Ist ein PAT als Secret AUTOMERGE_TOKEN hinterlegt, wird es
-# genutzt (dann läuft die CI von selbst).
+# Rekursionssperre). Seit 20.9.2026 existiert das Secret AUTOMERGE_TOKEN (PAT) und
+# wird genutzt: PR-Ereignisse des PAT starten die CI von selbst.
 #
-# STAND 3.8.2026 (K1): AUTOMERGE_TOKEN existiert NICHT (`gh secret list` kennt
-# nur TURSO_AUTH_TOKEN), es greift also immer der github.token-Zweig. Die Folge
-# war belegbar: die Läufe 30795814361 und 30795814304 blieben in
-# `action_required` stehen, der Bot-PR trug keinen einzigen Required-Kontext.
-# Der Hinweis «CI ggf. manuell anstossen» im PR-Body war die ganze Vorsorge —
-# eine Bitte an einen Menschen, also keine.
-# Codeseitiger Fix unten: nach der PR-Eröffnung wird ci.yml explizit per
-# `gh workflow run` gestartet (workflow_dispatch ist die dokumentierte Ausnahme
-# von der Rekursionssperre). Der WURZEL-Fix bleibt ein fein granulierter PAT als
-# AUTOMERGE_TOKEN — den kann nur David anlegen.
+# STAND 19.10.2026 (PRUEF-AUTOMATIK): der frühere Zusatz-Dispatch
+# `gh workflow run ci.yml` (K1, 3.8.2026, galt dem Fall «Secret fehlt») ist
+# entfernt: mit dem PAT scheitert er wirkungslos mit HTTP 403 (PAT ohne Actions-
+# Recht; Läufe 37305296617, 39235998398), die CI läuft über das PR-Ereignis.
+# Fehlende Kontexte zieht weiterhin der Wächter (waechter.yml) nach.
 concurrency:
   group: fedlex-frische
   cancel-in-progress: false
@@ -68,10 +63,6 @@ jobs:
       contents: write
       pull-requests: write
       issues: write
-      # `actions: write` seit 3.8.2026 (K1): der Reparatur-PR stösst seine CI
-      # selbst per `gh workflow run` an — von `github.token` erzeugte PR-Events
-      # lösen keine Workflows aus.
-      actions: write
     steps:
       - uses: actions/checkout@v7
         with:
@@ -478,30 +469,14 @@ jobs:
           else
             gh pr create --base main --head "$branch" \
               --title "chore(currency): Fedlex-Frische ${DATUM} (Auto-Merge)" \
-              --body "Automatischer Frische-Lauf (O-2.1 Batch-Re-Pin + O-2.2 Wiedervorlage). David-Rahmen-Gate 16.7.2026 («Ja, voll freigeben»): scheduled Reparatur-PRs auto-mergen bei grünen Toren; main → Prod. Netz-Currency-Tor (check:fedlex-versionen) läuft im wöchentlichen Normen-Monitor. Die CI wird direkt nach dieser Eröffnung per workflow_dispatch angestossen (github.token löst selbst keine Workflows aus); bleibt trotzdem ein Required-Kontext offen, zieht ihn der tägliche Wächter nach."
-          fi
-          # ── CI auf dem Bot-PR explizit anstossen (K1, 3.8.2026) ──────────────
-          # GitHub löst für Events, die `github.token` erzeugt, KEINE Workflows
-          # aus (Rekursionssperre). Der PR-Body verwies bisher nur darauf, die
-          # CI «ggf. manuell anzustossen» — ein Hinweis an einen Menschen ist
-          # keine Automatik. Belegte Folge: die Läufe 30795814361 und
-          # 30795814304 blieben in `action_required` stehen, der Bot-PR trug
-          # keinen einzigen Required-Kontext und war damit nicht mergbar; genau
-          # den Zustand, den auch `--auto` nicht auflöst, weil er auf Kontexte
-          # wartet, die nie kommen.
-          # `workflow_dispatch` ist die dokumentierte Ausnahme von der
-          # Rekursionssperre — ein expliziter Dispatch läuft.
-          # Fehlerseite: schlägt der Dispatch fehl, ist der PR bereits eröffnet
-          # und sichtbar; der Wächter (waechter.yml) zieht fehlende Kontexte in
-          # der nächsten Runde nach. Darum Warnung statt rotem Lauf.
-          if gh workflow run ci.yml --ref "$branch"; then
-            echo "CI (ci.yml) auf '${branch}' angestossen — die Required-Kontexte werden gemeldet."
-          else
-            echo "::warning::ci.yml-Dispatch auf '${branch}' fehlgeschlagen — der Wächter zieht die Kontexte nach."
+              --body "Automatischer Frische-Lauf (O-2.1 Batch-Re-Pin + O-2.2 Wiedervorlage). David-Rahmen-Gate 16.7.2026 («Ja, voll freigeben»): scheduled Reparatur-PRs auto-mergen bei grünen Toren; main → Prod. Netz-Currency-Tor (check:fedlex-versionen) läuft im wöchentlichen Normen-Monitor. Die CI startet über das PR-Ereignis (PAT AUTOMERGE_TOKEN); bleibt ein Required-Kontext offen, zieht ihn der tägliche Wächter nach."
           fi
           # Auto-Merge bleibt tolerant: scheitert NUR an Repo-Setting/Token-Rechten,
           # der PR existiert dann bereits sichtbar und wartet auf Abnahme.
           gh pr merge --auto --squash "$branch" || echo "Auto-Merge nicht aktivierbar (Repo-Setting/Token) — PR bleibt offen zur Abnahme."
+          # Überholte Frische-PRs (gleicher Bot, älteres Datum) schliessen (PRUEF-AUTOMATIK).
+          nr=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty' || true)
+          if [ -n "$nr" ]; then bash scripts/ci/bot-pr-ueberholt.sh "chore/fedlex-frische-" "$branch" "$nr" || echo "::warning::Überholt-Schliessen fehlgeschlagen (nicht fatal)."; fi
 
       # Zettel-Muster (1.10.2026, QS-MONITOR-ROT) wie waechter.yml; schliesst nie selbst. Hier einziges
       # Signal des Handschritts: nur die SUCHE darf zur Warnung werden, eine gescheiterte ANLAGE färbt rot.

@@ -910,7 +910,7 @@ jobs:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
-          filter: blob:none  # Partial Clone (ARCH-REVIEW 7.10.2026): Commit-/Tree-Historie voll, Blobs lazy; Job liest keine alten Blobs in Masse
+          filter: blob:none  # Partial Clone (ARCH-REVIEW 7.10.2026): Commit-/Tree-Historie voll, Blobs lazy; der Job liest nur die Blobs der im Bereich geänderten Risiko-Dateien an der Spitze (Hash-Bindung, bei Queue-Stapel je Einheit), keine alten Blobs in Masse
       # Anlass/Belege: git 3fd5db8f9:archiv/ci-yml-kommentare.md#ci-071
       - uses: ./.github/actions/npm-ci
       - name: Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)

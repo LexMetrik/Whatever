@@ -21,6 +21,7 @@ import { tmpdir } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { afterAll, afterEach, describe, expect, it } from 'vitest';
+import { risikoBereichHash } from '../../scripts/gegenpruefung/kern';
 import {
   baueQueueSquash,
   holePrKoerperFuerKopf,
@@ -376,8 +377,17 @@ function repoMitRisikoUndGueltigemZweigTrailer(): { repo: string; basis: string;
   commit(repo, 'init');
   const basis = git(repo, 'rev-parse', 'HEAD').trim();
   schreib(repo, 'src/lib/vorlagen/x.ts', 'export const x = 1;\n');
-  schreib(repo, 'bibliothek/register/gegenpruefung-register.md', '# Register\n\n- Eintrag X\n');
   commit(repo, 'feat(vorlagen): x\n\nGegenpruefung: bestanden (Opus, Test) — echter Zweig-Trailer mit genug Zeichen im Befund-Teil.\n');
+  // PRUEF-AUTOMATIK (19.10.2026): deklarierte Fixture-Änderung (§6.3) — das Tor
+  // verlangt jetzt eine HASH-gebundene Registerzeile statt irgendeiner Zeile;
+  // die Fixture schreibt sie, die Assertions der Tests bleiben unverändert.
+  const hash = risikoBereichHash({ cwd: repo, bereich: `${basis}..HEAD`, ciErlaubt: true }).hash;
+  schreib(
+    repo,
+    'bibliothek/register/gegenpruefung-register.md',
+    `# Register\n\n- Eintrag X\n| 2026-10-19 | x | ${hash} | bestanden | q | n |\n`,
+  );
+  commit(repo, 'chore(gp): Register-Zeile');
   const kopf = git(repo, 'rev-parse', 'HEAD').trim();
   return { repo, basis, kopf };
 }

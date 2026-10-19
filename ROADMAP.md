@@ -128,10 +128,10 @@ E3
 - David 6.10.: Omnilex-Sichtung: 7 Posten U2–U8 (Datums-Tor zu «Gilt seit», Ausgang-Label wartet auf David) — bibliothek/recherche/omnilex-app-sichtung-2026-10-06.md §6
 - 10.10. E0-REGISTER-Rest: wartet auf David quelleUrl auslagern (≈115 KB, Karten-Link ändern); norm-index.json 6 MB UI-ungenutzt; 4 Prüf-Nachzüge — FB S-26
 E3·W
-- 15.10. RECHTSLOGIK-Prozess: Pflicht-Testliste Tarif-PRs (Rundungs-Inventar, Export-Ratsche, grundpfand B1/B2), Trailer < 72 Z., Abschluss-Commit mit Inhalt, Alias-Doppelzählung — Skill bauschritt
 - Go David 5.10.: CI: Dauer-Wackler an der Wurzel (git 3fd5db8f9:bibliothek/betrieb/e2e-fang-historie-2026-10-05/), leser-kopf-cls-s3 hängt an Fedlex, Läufer-Kontingent
 - Go David 7.10.: Leser-Logik (162 .ts unter src/pages|components, ~22k Zeilen) nach src/lib/leser, danach Lint-Grenze — §3
 - wartet auf David 7.10./10.10.: §5 vs. Ist (ingest.ts liest public/*.json in die DB); Rechtsprechung-Einzelentscheide (300 MB) als Release-Artefakt statt git; scripts/archiv/ (9 Skripte) löschen
+- 19.10. PRUEF-AUTOMATIK: Bot-PRs prüft täglich 21:00 eine Opus-Routine, Pflege-Routine Mo 22:00 repariert selbst — .claude/routinen/; offen: materialien-nachzug-Dispatch 403 (Test pinnt)
 E4
 - David 21.9./7.10.: Impressum/Datenschutz erst vor Live-Gang (FB S-01); Staatsverträge SR 0.* (3186, 28 gepinnt) verlinken bis dahin auf Fedlex; Vercel Hobby nur nicht-kommerziell (vercel.com/docs/limits/fair-use-guidelines) ⇒ Planwahl vor Live-Gang
 ```
