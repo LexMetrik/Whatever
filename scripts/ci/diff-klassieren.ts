@@ -101,6 +101,8 @@ export function klassifiziereDateien(dateien: readonly string[]): DiffArt {
  * je Queue-Eintrag aus (base_sha...head_sha); seine Sonderfälle (Gruppierung
  * ≠ ALLGREEN, Bereich nicht «ahead», 0/≥300 Dateien ⇒ `code`) liegen wie die
  * des push-Zweigs bewusst in der Bash, nicht hier.
+ * 19.10.2026: Parität sichert jetzt scripts/ci/diff-klassieren.test.ts (führt den
+ * echten run-Block aus ci.yml je Zweig aus); steuerwerkzeuge.test.ts gelöscht #1359.
  */
 export function klassifiziereDiff(dateien: readonly string[]): 'doku' | DiffArt {
   if (istReinerDokuDiff(dateien)) return 'doku';
