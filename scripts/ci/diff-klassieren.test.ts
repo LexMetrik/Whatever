@@ -21,8 +21,9 @@
 // gezogen und je Zweig (pull_request, push, merge_group) mit `gh`-/`curl`-
 // Attrappen (PATH-Vorschaltung in einem Temp-Ordner) wirklich ausgeführt; das
 // Ergebnis (`art=…` in GITHUB_OUTPUT) wird gegen Soll UND gegen die TS-Fassung
-// gehalten. Läuft ohne Netz; setzt `bash` und das Paket `yaml` voraus (dort
-// bereits über vite installiert, nicht in package.json gelistet).
+// gehalten. Läuft ohne Netz; setzt `bash` und das Paket `yaml` voraus (nicht in
+// package.json gelistet; hart verlangt nur von der devDependency `knip`, für vite
+// nur optionaler Peer — fällt knip weg, scheitert dieser Test laut beim Import).
 import { spawnSync } from 'node:child_process';
 import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
