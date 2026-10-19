@@ -1,7 +1,7 @@
 {
   "erlassKey": "ELV",
   "sr": "831.301",
-  "abgerufen": "2026-09-23",
+  "abgerufen": "2026-10-19",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
@@ -19,6 +19,22 @@
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/466/de",
       "sha": "3f93e2ca23d45666fba64b4fe613310fdc95a7bf1ca117a9cb75eb6de231ef81"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/545",
+      "dateDocument": "2026-10-02",
+      "roFundstelle": "AS 2026 545",
+      "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV)",
+      "titelFr": "Ordonnance sur les prestations complémentaires à l’assurance-vieillesse, survivants et invalidité (OPC-AVS/AI)",
+      "titelIt": "Ordinanza sulle prestazioni complementari all’assicurazione per la vecchiaia, i superstiti e l’invalidità (OPC-AVS/AI)",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/545/de",
+      "sha": "f374ccb5b91d6235d6bda318dfd4cf63590685628e821e52d2b29212cdaa18cb"
     },
     {
       "art": "aenderung",
@@ -738,5 +754,5 @@
       "sha": "79ebd222bc5d5cf4a826ba193413acc284885ebda3fbe6b9fcc87a9c1519fd2b"
     }
   ],
-  "sha": "48794ae352a7d2a636b292dbb6db3480ca481e9a88a115cb8d6c567c1e88208c"
+  "sha": "cc21a7c9507353c8a9ee253cf600c7e1e2b781d50052ba1486808600eb4bdd6a"
 }

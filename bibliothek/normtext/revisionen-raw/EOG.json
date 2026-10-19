@@ -982,6 +982,7 @@
     "2025-01-01",
     "2025-01-28",
     "2026-06-01",
+    "2027-01-01",
     "2027-07-01"
   ],
   "belegteOcs": [],
@@ -1433,6 +1434,11 @@
         "typ": 2,
         "datum": "2027-07-01",
         "fassung": "2027-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/542",
+        "typ": 1,
+        "datum": "2027-01-01"
       }
     ],
     "ocStamm": {
@@ -1821,6 +1827,13 @@
         "titelDe": "Bundesgesetz über die Armee und Militärverwaltung (Militärgesetz, MG)",
         "titelFr": "Loi fédérale sur l’armée et l’administration militaire (Loi sur l’armée, LAAM)",
         "titelIt": "Legge federale sull’esercito e sull’amministrazione militare (Legge militare, LM)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/542": {
+        "dateForce": "2027-01-01",
+        "dateDoc": "2026-10-02",
+        "titelDe": "Verordnung vom 2. Oktober 2026 über Anpassungen an die Lohn- und Preisentwicklung bei der AHV/IV/EO ab dem Jahr 2027",
+        "titelFr": "Ordonnance du 2 octobre 2026 sur les adaptations à l’évolution des salaires et des prix dans le régime de l’AVS, de l’AI et des APG à partir de 2027",
+        "titelIt": "Ordinanza del 2 ottobre 2026 sugli adeguamenti all’evoluzione dei prezzi e dei salari nell’AVS/AI/IPG dal 2027"
       }
     }
   }

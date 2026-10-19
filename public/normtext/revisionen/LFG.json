@@ -1,9 +1,41 @@
 {
   "erlassKey": "LFG",
   "sr": "748.0",
-  "abgerufen": "2026-09-23",
+  "abgerufen": "2026-10-19",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2026-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/739",
+      "dateDocument": "2025-03-21",
+      "roFundstelle": "AS 2025 739",
+      "titelDe": "Bundesgesetz vom 21. März 2025 über die Bearbeitung von Flugpassagierdaten zur Bekämpfung von terroristischen und anderen schweren Straftaten (Flugpassagierdatengesetz, FPG)",
+      "titelFr": "Loi fédérale du 21 mars 2025 sur le traitement des données relatives aux passagers aériens pour la lutte contre les infractions terroristes et les autres infractions pénales graves (Loi sur les données relatives aux passagers aériens, LDPa)",
+      "titelIt": "Legge federale del 21 marzo 2025 sul trattamento dei dati dei passeggeri aerei per la lotta ai reati terroristici e ad altri reati gravi (Legge sui dati dei passeggeri aerei, LDPA)",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/739/de",
+      "sha": "e692edb046060487130cb00e72ea9ca1c98286225d07c47078d774e18b995a04"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2026-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/510",
+      "dateDocument": "2026-09-18",
+      "roFundstelle": "AS 2026 510",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Flugpassagierdatengesetzes",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la loi sur les données relatives aux passagers aériens",
+      "titelIt": "Ordinanza sull’entrata in vigore integrale della legge sui dati dei passeggeri aerei",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/510/de",
+      "sha": "faea5e228c26f92e748cdcca2ba05bd1b2913060acc17053e5f00a8be2399ca5"
+    },
     {
       "art": "aenderung",
       "dateEntryInForce": "2026-01-01",
@@ -802,5 +834,5 @@
       "sha": "3084a5e588ec07a3df1013be146cc0f656cda7c2c70b97b094a8cf091ba0a4b9"
     }
   ],
-  "sha": "b51f2ffb6813b1e3e7fe0629341749e55a8d1fd0c99339b2848455dad37c0339"
+  "sha": "4d30b0dca8b907e82c0ef315dae534e80fcbf060111b2ae68f20864b38ca51dd"
 }

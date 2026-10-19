@@ -1,7 +1,7 @@
 {
   "erlassKey": "IVG",
   "sr": "831.20",
-  "abgerufen": "2026-09-23",
+  "abgerufen": "2026-10-19",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
@@ -20,6 +20,22 @@
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/204/de",
       "sha": "6d1a7b584c55213ab12e9e35264a29c154dc03c4df135257536a14a2668acc53"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/542",
+      "dateDocument": "2026-10-02",
+      "roFundstelle": "AS 2026 542",
+      "titelDe": "Verordnung vom 2. Oktober 2026 über Anpassungen an die Lohn- und Preisentwicklung bei der AHV/IV/EO ab dem Jahr 2027",
+      "titelFr": "Ordonnance du 2 octobre 2026 sur les adaptations à l’évolution des salaires et des prix dans le régime de l’AVS, de l’AI et des APG à partir de 2027",
+      "titelIt": "Ordinanza del 2 ottobre 2026 sugli adeguamenti all’evoluzione dei prezzi e dei salari nell’AVS/AI/IPG dal 2027",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/542/de",
+      "sha": "27d36c7d529baeb40982c635be6b491bfd33a1d319d0351ceedc34c14f8fd0dc"
     },
     {
       "art": "aenderung",
@@ -1317,5 +1333,5 @@
       "sha": "5bffa62342c296887248150fb5e26c8f1db3346dcd3ad2efdcbe847adbab3d8f"
     }
   ],
-  "sha": "713d021acf4cc9858c1cb80e75a96f6121c9987e5c3eb1af744ed2b8952f04fd"
+  "sha": "06e2fe00b9a414d1fb5d4cbf618f1291e7023923816f19f6fda07c73c83511a4"
 }

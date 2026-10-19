@@ -5657,6 +5657,38 @@
       },
       "oc": {
         "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2026/541"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2027-01-01"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2026-10-02"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Règlement sur l’assurance-vieillesse et survivants (RAVS)"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)"
+      }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "831.101"
+      },
+      "oc": {
+        "type": "uri",
         "value": "https://fedlex.data.admin.ch/eli/oc/63/1185_1183_1185"
       },
       "dateForce": {
@@ -5887,6 +5919,7 @@
     "2024-01-01",
     "2025-01-01",
     "2026-01-01",
+    "2027-01-01",
     "2034-01-01"
   ],
   "belegteOcs": [],
@@ -6985,6 +7018,12 @@
         "typ": 1,
         "datum": "2026-01-01",
         "fassung": "2026-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/541",
+        "typ": 1,
+        "datum": "2027-01-01",
+        "fassung": "2027-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/63/1185_1183_1185",

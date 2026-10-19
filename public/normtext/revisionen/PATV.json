@@ -1,7 +1,7 @@
 {
   "erlassKey": "PATV",
   "sr": "232.141",
-  "abgerufen": "2026-09-23",
+  "abgerufen": "2026-10-19",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
@@ -33,6 +33,20 @@
       "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/338/de",
       "sha": "823804643ce8ce00855fcd498a6b65ed4f4a6849498e9e3a6ba5a5394468990e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/536",
+      "dateDocument": "2026-10-13",
+      "roFundstelle": "AS 2026 536",
+      "titelDe": "Verordnung über die Patente und ergänzenden Schutzzertifikate (Patentverordnung, PatV). Berichtigung",
+      "titelFr": "Ordonnance sur les brevets et les certificats complémentaires de protection (Ordonnance sur les brevets, OBI). Erratum",
+      "titelIt": "Ordinanza relativa ai brevetti e ai certificati protettivi complementari (Ordinanza sui brevetti, OBI). Correzione",
+      "nichtKonsolidiert": true,
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/536/de",
+      "sha": "d2bda7d94f8ee4ea5f4fa22f5bdf4d0a40362915e6409961195ca2d35f1e6623"
     },
     {
       "art": "aenderung",
@@ -505,5 +519,5 @@
       "sha": "3393446023344d94892bc842853341e4d6f420ddabeddf610c6b3ddba7011c25"
     }
   ],
-  "sha": "7abf734612b7047cf22ba3de39ae6286b854e7a1f2be795b0dcd5b316b2e112b"
+  "sha": "a377b43296dbb17842a65f24ed902f84e2f9cb6792c048ad8083a9597b6fbf6b"
 }

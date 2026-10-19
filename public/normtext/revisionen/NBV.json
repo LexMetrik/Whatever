@@ -1,9 +1,25 @@
 {
   "erlassKey": "NBV",
   "sr": "951.131",
-  "abgerufen": "2026-09-23",
+  "abgerufen": "2026-10-19",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2026-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/535",
+      "dateDocument": "2026-08-13",
+      "roFundstelle": "AS 2026 535",
+      "titelDe": "Verordnung zum Bundesgesetz über die Schweizerische Nationalbank (Nationalbankverordnung, NBV)",
+      "titelFr": "Ordonnance relative à la loi fédérale sur la Banque nationale suisse (Ordonnance de la Banque nationale, OBN)",
+      "titelIt": "Ordinanza relativa alla legge federale sulla Banca nazionale svizzera (Ordinanza sulla Banca nazionale, OBN)",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/535/de",
+      "sha": "a6cec419114abd0af01d2d297b4c5751b5b72164834b50215420a9bab2c41829"
+    },
     {
       "art": "aenderung",
       "dateEntryInForce": "2024-07-01",
@@ -216,5 +232,5 @@
       "sha": "072793b96d2648bd68886189c4ca632b926233da6f61b1fad4f9f63626ac7b37"
     }
   ],
-  "sha": "8bfbf0e8a43afd36121873bf13e971d000c0e7a01c5b847b325c99df2eac8e89"
+  "sha": "708339a54655e8eb20ef546f483743142a5c2b6a207acbdb8e63f5fd1cafeca6"
 }

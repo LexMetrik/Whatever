@@ -1,7 +1,7 @@
 {
   "erlassKey": "BVV_2",
   "sr": "831.441.1",
-  "abgerufen": "2026-09-23",
+  "abgerufen": "2026-10-19",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
@@ -23,6 +23,22 @@
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/325/de",
       "sha": "0c4926d607e1a62df7ef94ded36ff6f9e7a91cdc5dcb741c402056986440f7e1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/547",
+      "dateDocument": "2026-10-02",
+      "roFundstelle": "AS 2026 547",
+      "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
+      "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l’invalidità (OPP 2)",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/547/de",
+      "sha": "dc4847866c01235c9c86afcdb53b3e04fd6e93037a1d15b531dd40d5da1ece2c"
     },
     {
       "art": "aenderung",
@@ -1182,5 +1198,5 @@
       "sha": "469fa21645f174c70ae5eb1efdbecf70692763c0f306e69e5578b3f2a656c9fd"
     }
   ],
-  "sha": "b456c9e139d5b620da95f883f45253299a8d13d69f069b5190301da6a46c831e"
+  "sha": "427b9d465331af912a63f6b207b51343992017db67b1b6a473a89b7ce69eb204"
 }

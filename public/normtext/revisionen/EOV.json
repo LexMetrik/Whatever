@@ -1,7 +1,7 @@
 {
   "erlassKey": "EOV",
   "sr": "834.11",
-  "abgerufen": "2026-09-23",
+  "abgerufen": "2026-10-19",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
@@ -35,6 +35,22 @@
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/457/de",
       "sha": "57da8ec50b81e6e75b352610d8c73b44dc317ec0391cd655cc2f47fc03f6fa12"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/548",
+      "dateDocument": "2026-10-02",
+      "roFundstelle": "AS 2026 548",
+      "titelDe": "Erwerbsersatzverordnung (EOV)",
+      "titelFr": "Ordonnance sur les allocations pour perte de gain (OAPG)",
+      "titelIt": "Ordinanza sulle indennità di perdita di guadagno (OIPG)",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/548/de",
+      "sha": "53cfc3759cf59e239fc9ea38e17837585639eb091b93beead7b3fca85b91786e"
     },
     {
       "art": "aenderung",
@@ -519,5 +535,5 @@
       "sha": "dd46728c749b78e120dc91ff0dd2da194ed98fb75e8e9e9fd7d621b6bbb1cdcc"
     }
   ],
-  "sha": "8be095f27e40b5a76a312cdcc93573229ecc7033ae023301b9db41cc6d947a62"
+  "sha": "85d38b8e6f317d0ce18684d5c65922bee384fe4ad951650246d20967b332664b"
 }
