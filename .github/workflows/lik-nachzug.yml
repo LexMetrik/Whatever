@@ -130,6 +130,9 @@ jobs:
               --title "chore(lik): LIK-Reihe bis ${MONAT} nachgeführt (BFS)" \
               --body-file "$body"
           fi
+          # Ältere offene LIK-Nachzug-PRs sind überholt (PRUEF-AUTOMATIK).
+          nr=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')
+          if [ -n "$nr" ]; then bash scripts/ci/bot-pr-ueberholt.sh "chore/lik-nachzug-" "$branch" "$nr"; fi
           # CI anstossen (github.token löst keine PR-Workflows aus; workflow_dispatch ist die Ausnahme).
           if gh workflow run ci.yml --ref "$branch"; then
             echo "CI (ci.yml) auf '${branch}' angestossen."
