@@ -1,7 +1,7 @@
 {
   "erlassKey": "AHVV",
   "sr": "831.101",
-  "abgerufen": "2026-09-23",
+  "abgerufen": "2026-10-19",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
@@ -24,6 +24,22 @@
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/506/de",
       "sha": "ad06445bd195f39bb3dffead6ad455b82aed10a1d8133fc9fef7918daa649139"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/541",
+      "dateDocument": "2026-10-02",
+      "roFundstelle": "AS 2026 541",
+      "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+      "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/541/de",
+      "sha": "4e56f67c79dfa3295cd49973e8c8bf342c8be988c92f6480355a217dbfdd5485"
     },
     {
       "art": "aenderung",
@@ -2385,5 +2401,5 @@
       "sha": "400c3914661b8be9b721e2e82d58aa33f8acd8979e03ffa2bb75e86beed15099"
     }
   ],
-  "sha": "4f22937513b0cd88f2c85f14932e7438a25fdd96d0b38478f0576b5d061c6af6"
+  "sha": "3d7f564ade25a666044b4247b8dfb792c437fc1111cf3eff4ad0f4d7a715ae7e"
 }

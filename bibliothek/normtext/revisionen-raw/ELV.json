@@ -1533,6 +1533,38 @@
         "type": "literal",
         "value": "Ordinanza sulle prestazioni complementari all’assicurazione per la vecchiaia, i superstiti e l’invalidità (OPC-AVS/AI)"
       }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "831.301"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2026/545"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2027-01-01"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2026-10-02"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV)"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Ordonnance sur les prestations complémentaires à l’assurance-vieillesse, survivants et invalidité (OPC-AVS/AI)"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Ordinanza sulle prestazioni complementari all’assicurazione per la vecchiaia, i superstiti e l’invalidità (OPC-AVS/AI)"
+      }
     }
   ],
   "aStaende": [
@@ -1574,6 +1606,7 @@
     "2024-01-01",
     "2024-04-03",
     "2025-01-01",
+    "2027-01-01",
     "2028-01-01"
   ],
   "belegteOcs": [],
@@ -1912,6 +1945,11 @@
         "typ": 1,
         "datum": "2028-01-01",
         "fassung": "2028-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/545",
+        "typ": 1,
+        "datum": "2027-01-01"
       }
     ],
     "ocStamm": {

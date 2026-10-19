@@ -1753,6 +1753,38 @@
         "type": "literal",
         "value": "Ordinanza concernente l’assicurazione facoltativa per la vecchiaia, i superstiti e l’invalidità (OAF)"
       }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "831.111"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2026/543"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2027-01-01"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2026-10-02"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung (VFV)"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Ordonnance concernant l’assurance-vieillesse, survivants et invalidité facultative (OAF)"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Ordinanza concernente l’assicurazione facoltativa per la vecchiaia, i superstiti e l’invalidità (OAF)"
+      }
     }
   ],
   "aStaende": [
@@ -1787,7 +1819,8 @@
     "2021-01-01",
     "2023-01-01",
     "2024-01-01",
-    "2025-01-01"
+    "2025-01-01",
+    "2027-01-01"
   ],
   "belegteOcs": [],
   "rectifiesInfoProOc": {},
@@ -2029,6 +2062,12 @@
         "typ": 1,
         "datum": "2025-01-01",
         "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/543",
+        "typ": 1,
+        "datum": "2027-01-01",
+        "fassung": "2027-01-01"
       }
     ],
     "ocStamm": {

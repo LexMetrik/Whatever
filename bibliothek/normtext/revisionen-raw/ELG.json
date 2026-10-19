@@ -879,6 +879,11 @@
         "typ": 1,
         "datum": "2028-01-01",
         "fassung": "2028-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/546",
+        "typ": 1,
+        "datum": "2027-01-01"
       }
     ],
     "ocStamm": {
@@ -1090,6 +1095,13 @@
         "titelDe": "Bundesgesetz über den Systemwechsel bei der Wohneigentumsbesteuerung",
         "titelFr": "Loi fédérale relative au changement de système d’imposition de la propriété du logement",
         "titelIt": "Legge federale concernente il passaggio a un nuovo sistema di imposizione della proprietà abitativa"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/546": {
+        "dateForce": "2027-01-01",
+        "dateDoc": "2026-10-02",
+        "titelDe": "Verordnung vom 2. Oktober 2026 über Anpassungen bei den Ergänzungsleistungen zur AHV/IV und bei den Überbrückungsleistungen für ältere Arbeitslose ab dem Jahr 2027",
+        "titelFr": "Ordonnance du 2 octobre 2026 concernant les adaptations dans le régime des prestations complémentaires à l’AVS/AI et dans celui des prestations transitoires pour les chômeurs âgés à partir de 2027",
+        "titelIt": "Ordinanza del 2 ottobre 2026 sull’adeguamento delle prestazioni complementari all’AVS/AI e delle prestazioni transitorie per i disoccupati anziani dal 2027"
       }
     }
   }

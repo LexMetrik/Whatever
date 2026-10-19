@@ -1,9 +1,25 @@
 {
   "erlassKey": "VFV",
   "sr": "831.111",
-  "abgerufen": "2026-09-23",
+  "abgerufen": "2026-10-19",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/543",
+      "dateDocument": "2026-10-02",
+      "roFundstelle": "AS 2026 543",
+      "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung (VFV)",
+      "titelFr": "Ordonnance concernant l’assurance-vieillesse, survivants et invalidité facultative (OAF)",
+      "titelIt": "Ordinanza concernente l’assicurazione facoltativa per la vecchiaia, i superstiti e l’invalidità (OAF)",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/543/de",
+      "sha": "5095e482ac03195c5bf9b17574436d4f511e82e8239143fc604d3fcd9717ade8"
+    },
     {
       "art": "aenderung",
       "dateEntryInForce": "2025-01-01",
@@ -498,5 +514,5 @@
       "sha": "9aef275f89cc552425115751eae3689f78eb3a09604d3bd2f092cc78d52ff43b"
     }
   ],
-  "sha": "28dddaa04f554f7bfb4c4e82eea7d2c753d0590123760b7f985633888d7e31ed"
+  "sha": "339055d11b6fd1131aeb710324d04a93c3f3fc934b5d1d4e69972710519e6a1f"
 }

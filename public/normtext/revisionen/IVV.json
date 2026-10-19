@@ -1,7 +1,7 @@
 {
   "erlassKey": "IVV",
   "sr": "831.201",
-  "abgerufen": "2026-09-23",
+  "abgerufen": "2026-10-19",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
@@ -19,6 +19,22 @@
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/457/de",
       "sha": "57da8ec50b81e6e75b352610d8c73b44dc317ec0391cd655cc2f47fc03f6fa12"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/544",
+      "dateDocument": "2026-10-02",
+      "roFundstelle": "AS 2026 544",
+      "titelDe": "Verordnung über die Invalidenversicherung (IVV)",
+      "titelFr": "Règlement sur l’assurance-invalidité (RAI)",
+      "titelIt": "Ordinanza sull’assicurazione per l’invalidità (OAI)",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/544/de",
+      "sha": "5d15cc876364c5ff8e38d89de1c4340a74f8900c1dc77fb135b00e9985ccb2e5"
     },
     {
       "art": "aenderung",
@@ -1931,5 +1947,5 @@
       "sha": "5e6b54d495e1bf71d21f1752db70cfab54194d75c49e7ee7ca61b7299f613aac"
     }
   ],
-  "sha": "ea0dca635176e6a9f77ca4fbe9852e1c3bcd3d755c68ebeab68fe0e535dd2b91"
+  "sha": "68d1a8582d4ab753cc0703223539178498d871cb0ee282da9e5ad36b0d55d577"
 }

@@ -1,7 +1,7 @@
 {
   "erlassKey": "ELG",
   "sr": "831.30",
-  "abgerufen": "2026-09-23",
+  "abgerufen": "2026-10-19",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
@@ -61,6 +61,22 @@
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/434/de",
       "sha": "25c3a001b096651f90369c97fe8473edbfa7207293d1981c426d77ab62671164"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/546",
+      "dateDocument": "2026-10-02",
+      "roFundstelle": "AS 2026 546",
+      "titelDe": "Verordnung vom 2. Oktober 2026 über Anpassungen bei den Ergänzungsleistungen zur AHV/IV und bei den Überbrückungsleistungen für ältere Arbeitslose ab dem Jahr 2027",
+      "titelFr": "Ordonnance du 2 octobre 2026 concernant les adaptations dans le régime des prestations complémentaires à l’AVS/AI et dans celui des prestations transitoires pour les chômeurs âgés à partir de 2027",
+      "titelIt": "Ordinanza del 2 ottobre 2026 sull’adeguamento delle prestazioni complementari all’AVS/AI e delle prestazioni transitorie per i disoccupati anziani dal 2027",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/546/de",
+      "sha": "f13bc6361d1796664a6bc85cfb96d56cc315175b7e7bbce4da860d9e74777ed8"
     },
     {
       "art": "aenderung",
@@ -502,5 +518,5 @@
       "sha": "42f2d77c7d85dae26bde243071e31af731b80a210a15b497fc72a3a49ddd78d3"
     }
   ],
-  "sha": "33fab4ef7abe8ec06700eaa8402f162f3c8e85c47507f9912f1337f6e4221cf9"
+  "sha": "e0fec480025e30395414b89a6235b121bdbbd0e628c56a9fb7ecc2b2e1ae7d1a"
 }

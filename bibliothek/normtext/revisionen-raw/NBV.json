@@ -1617,6 +1617,38 @@
         "type": "literal",
         "value": "Ordinanza relativa alla legge federale sulla Banca nazionale svizzera (Ordinanza sulla Banca nazionale, OBN)"
       }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "951.131"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2026/535"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2026-11-01"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2026-08-13"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Verordnung zum Bundesgesetz über die Schweizerische Nationalbank (Nationalbankverordnung, NBV)"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Ordonnance relative à la loi fédérale sur la Banque nationale suisse (Ordonnance de la Banque nationale, OBN)"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Ordinanza relativa alla legge federale sulla Banca nazionale svizzera (Ordinanza sulla Banca nazionale, OBN)"
+      }
     }
   ],
   "aStaende": [
@@ -1634,7 +1666,8 @@
     "2020-01-01",
     "2021-01-01",
     "2022-01-01",
-    "2024-07-01"
+    "2024-07-01",
+    "2026-11-01"
   ],
   "belegteOcs": [],
   "rectifiesInfoProOc": {},
@@ -1738,6 +1771,12 @@
         "typ": 1,
         "datum": "2024-07-01",
         "fassung": "2024-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/535",
+        "typ": 1,
+        "datum": "2026-11-01",
+        "fassung": "2026-11-01"
       }
     ],
     "ocStamm": {
