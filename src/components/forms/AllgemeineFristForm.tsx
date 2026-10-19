@@ -310,8 +310,9 @@ export function AllgemeineFristForm({ live }: {
             <span className="lc-overline lc-overline-soft">Voreinstellung:</span>
             {mechanikPresetsFuer(form.kontext).map((p) => (
               // A1 (GP RV-103): im StPO-Modus bleiben die mit Art. 90 Abs. 2 StPO vereinbaren Presets im
-              // Kontext (kein stiller Wechsel nach OR); in den Standard-Modus setzt der Preset den Kontext wie bisher.
-              <button type="button" key={p.label} onClick={() => setForm((f) => ({ ...f, ...p.patch, kontext: f.kontext === 'stpo' ? 'stpo' : 'allgemein' }))}
+              // Kontext (kein stiller Wechsel nach OR): der Patch setzt den Kontext nicht, der Preset ohne
+              // Verschiebung wird dort gar nicht angeboten (mechanikPresetsFuer).
+              <button type="button" key={p.label} onClick={() => setForm((f) => ({ ...f, ...p.patch }))}
                 title={p.info} className="lc-chip lc-hover-akzent">{p.label}</button>
             ))}
           </div>
