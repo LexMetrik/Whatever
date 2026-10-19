@@ -8,7 +8,8 @@
 // Risiko-Definition bleibt allein `behalten()` aus kern.ts (§5) — hier wird
 // nichts neu klassifiziert, nur ein anderer Diff-Bereich eingespeist.
 import { execFileSync } from 'node:child_process';
-import { behalten } from './gegenpruefung/kern';
+import { behalten, risikoBereichHash } from './gegenpruefung/kern';
+import { bewerteBindung, leseRegisterQuittungen, type Einheit } from './gegenpruefung/register-bindung';
 import { leseGegenpruefungAusRohLog, pruefeVerdiktForm, vereinigeVerdikte } from './gegenpruefung/squash-trailer';
 import { pruefePrSchutz } from './gegenpruefung/pr-schutz';
 
@@ -148,8 +149,47 @@ if (zugewachsen === 0) {
     `  das schreibt den Eintrag und bindet ihn an genau diesen Diff.`);
 }
 
+// ── HASH-BINDUNG (PRUEF-AUTOMATIK, Entscheid David 19.10.2026) ───────────
+// Zeilenzuwachs allein ist auch selbst-attestierbar (irgendeine Zeile). Darum:
+// eine im Bereich NEU hinzugefügte Registerzeile muss den Hash tragen, den
+// risikoBereichHash() über genau basis..KOPF rechnet (Datei-Menge + Endinhalt an
+// der Spitze, dieselbe Kernfunktion wie `gegenpruefung:ok`), Verdikt bestanden/
+// behoben. Queue-Stapelung (Vordermänner im Bereich): sonst je First-Parent-
+// Commit mit Risiko-Dateien eine eigene Quittung (register-bindung.ts).
+// `ciErlaubt`: der CI-Selbstschutz der Kernfunktion gilt für den Arbiter nicht.
+const hinzugefuegt = git(['diff', '-U0', '--no-color', `${basis}..${KOPF}`, '--', REGISTER])
+  .split('\n')
+  .filter((z) => z.startsWith('+') && !z.startsWith('+++'))
+  .map((z) => z.slice(1));
+const quittungen = leseRegisterQuittungen(hinzugefuegt);
+const voll = risikoBereichHash({ bereich: `${basis}..${KOPF}`, ciErlaubt: true });
+const vollHash = voll.kontext ? voll.hash : null;
+let einheiten: Einheit[] = [];
+if (!vollHash || !quittungen.some((q) => q.hash === vollHash)) {
+  // Nur im Mismatch-Fall (teurer): First-Parent-Commits des Bereichs einzeln.
+  einheiten = git(['rev-list', '--first-parent', '--max-count=60', `${basis}..${KOPF}`])
+    .split('\n').map((z) => z.trim()).filter(Boolean)
+    .map((c) => {
+      const e = risikoBereichHash({ bereich: `${c}^..${c}`, ciErlaubt: true });
+      // nicht bestimmbar (kontext false) ⇒ Platzhalter-Hash, der nie quittiert ist
+      return { ref: c, hash: e.kontext ? e.hash : '0'.repeat(64) };
+    });
+}
+const bindung = bewerteBindung(quittungen, vollHash, einheiten);
+if (!bindung.ok) {
+  raus(1,
+    `check:merge-schutz ROT — ${bindung.grund}\n\n` +
+    `  ${risiko.length} Risiko-Datei(en) im Bereich ${basis.slice(0, 8)}..${KOPF}:\n${liste}\n\n` +
+    `  Weg: Skill »gegenpruefung« auf dem JETZIGEN Stand fahren, dann\n` +
+    `    npm run gegenpruefung:ok -- --bereich\n` +
+    `  und die Registerzeile committen. Der Hash bindet Datei-Menge + Endinhalt: jede\n` +
+    `  Änderung an einer Risiko-Datei nach der Prüfung (auch ein Merge/Rebase, der\n` +
+    `  deren Inhalt ändert) entwertet die Quittung.`);
+}
+
 console.log(
   `check:merge-schutz grün — ${risiko.length} Risiko-Datei(en), ` +
   `${gueltig.length} formal taugliche(s) Verdikt(e), ` +
-  `${REGISTER} um ${zugewachsen} Zeile(n) gewachsen.` +
+  `${REGISTER} um ${zugewachsen} Zeile(n) gewachsen, ` +
+  `Quittung an den Diff gebunden (${bindung.art === 'voll' ? 'Hash passt' : `${bindung.gedeckt} Einheiten einzeln gedeckt`}).` +
   (maengel.length ? ` (${maengel.length} untauglicher Trailer ignoriert.)` : ''));
