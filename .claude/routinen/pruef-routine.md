@@ -32,28 +32,42 @@ dem Berechtigungssystem. Ein Erfolgsbericht ohne prüfbares Artefakt
 Offene, nicht-Draft-PRs mit Bot-Präfix `chore/fedlex-frische-`,
 `chore/materialien-nachzug-`, `chore/lik-nachzug-`, `auto/rechtsprechung-`,
 `chore/curia-monatslauf-`, `chore/bs-grossrat-monatslauf-`,
-`chore/vernehmlassungen-monatslauf-`, deren PR-Body oder letzter Commit
-`Gegenpruefung: ausstehend` trägt. Mehrere desselben Präfixes: nur den
+`chore/vernehmlassungen-monatslauf-`, deren Merge-Schutz rot ist — sei es
+wegen `Gegenpruefung: ausstehend`, sei es weil eine frühere Quittung nicht
+mehr zum Diff passt (main hat dieselbe Datei geändert; dann neu prüfen und
+neu quittieren). Mehrere desselben Präfixes: nur den
 neuesten; ältere mit «Überholt durch #<neu>» schliessen, Branch löschen.
 Rot ausser «Merge-Schutz» und dem Merge-Schutz-Schritt im Tore-Job → nicht
 prüfen, Kommentar «nicht geprüft: Tor <name> rot (Run <id>)». Kein Treffer →
-ohne Ausgabe enden.
+ohne Ausgabe enden. Steht schon ein Routinen-Kommentar mit demselben Grund
+am PR, keinen zweiten schreiben.
 
 ## 2 Prüfung
 
 Nach `.claude/skills/gegenpruefung/SKILL.md` (Eiserne Regeln, Minimum eines
 echten Durchgangs, Red Flags); Quell-Wahl nach Skill
 `scraping-swiss-official-sources` (Fedlex-Filestore-HTML, nie die Webseite).
-Je Datentyp:
 
-- **Gesetze (fedlex-frische):** `npm run check:fedlex-versionen` und
-  `npm run check:caches` selbst fahren (Pins nur bei eigenem Grün übernehmen);
-  Vollständigkeit mit `LEXMETRIK_CACHE_PFLICHT=1 npm run check:vollstaendigkeit`.
-  Je re-gepinntem Erlass (`git diff origin/main... -- scripts/fedlex-cache.sh`)
-  mindestens 3 im Diff geänderte Artikel: Wortlaut ZUERST blind aus der
-  amtlichen Fassung notieren, DANN zeichenweise mit dem Snapshot vergleichen;
-  jagen nach Drop, Fussnoten-Leak, `bis`/`ter`, Tabellen, falschem
-  «aufgehoben». Mindestens ein Randfall je Lauf.
+**Zuerst Netz:** einen echten Quell-Pfad des PRs mit `curl -s -o /dev/null -w
+'%{http_code}' -m 20` abrufen. Sperrt der Proxy (`connect_rejected`, HTTP
+000/403), sofort «nicht geprüft: Netz zu <Host> gesperrt» — der Host gehört in
+die Erlaubten Domains der Cloud-Umgebung («Wartet auf David»).
+
+**Gesetze (fedlex-frische)** — je Dateiklasse im Diff:
+
+| Dateiklasse | Prüfung |
+|---|---|
+| `scripts/fedlex-cache.sh` (Pins) | `npm run check:fedlex-versionen` selbst fahren (SPARQL, ein Lauf). Nur die geänderten Pins abrufen (URL-Schema wie im Skript: `${BASIS}/<eli>/<kons>/de/html/…-de-html-<n>.html`), nie `check:caches` (lädt alle ~230 Erlasse). |
+| `public/normtext/**` Artikeltexte, `struktur/` | je re-gepinntem Erlass mind. 3 geänderte Artikel: Wortlaut ZUERST blind aus der amtlichen Fassung notieren, DANN zeichenweise vergleichen; jagen nach Drop, Fussnoten-Leak, `bis`/`ter`, Tabellen, falschem «aufgehoben». Ist nur das html-N bei gleichem Konsolidierungsdatum gestiegen: Artikelzahl alt/neu vergleichen und 3 Artikel blind abgleichen. |
+| `public/normtext/revisionen/`, `historie/` | je Erlass 2 neue Einträge gegen Fedlex (AS-Fundstelle, Inkrafttreten). |
+| `public/materialien/entstehung/` | je Erlass 1 Eintrag gegen die verlinkte amtliche Quelle (Titel, Datum, Geschäftsnummer). |
+| abgeleitete Dateien (`currency.json`, `confidence.json`, `daten-manifest.json`, `deckungs-sicht.json`, `segmente-soll/`) | gelten über die grünen Offline-Tore des PRs als nachgerechnet; nur Plausibilität (Datum = Laufdatum, Zahlen gegen den PR-Body). |
+
+Mindestens ein Randfall je Lauf. Berührt ein offener Session-PR dieselben
+Pins oder Dateien, im PR-Kommentar nennen (wer später landet, prüft beide).
+
+**Übrige Bots:**
+
 - **Urteile (auto/rechtsprechung-):** Skill `korpus-werkstatt`, Abschnitt
   «Wochen-Nachzug prüfen und landen» Schritte 0–4, Linsen aus «Verifikation»,
   normKeys inhaltlich an Stichproben gegen den Entscheidtext.
