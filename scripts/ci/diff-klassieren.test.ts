@@ -1,5 +1,6 @@
 // scripts/ci/diff-klassieren.test.ts
-// Diff-Klassierung der CI (doku / code-fern / code) — Fälle und Shell↔TS-Parität.
+// Diff-Klassierung der CI (doku / code-fern / code) — Fälle der TS-Fassung und
+// Verhaltenstest des ECHTEN Shell-Schritts aus ci.yml.
 //
 // ANLASS (FB S-31, 19.10.2026): #1419 änderte nur das Register
 // `bibliothek/register/parameter-verfall.md`; der Diff lief als `doku`, der
@@ -8,19 +9,27 @@
 // für genau den verursachenden Diff nicht läuft, kann nicht scheitern). Erster
 // Vorfall derselben Klasse: #619 (`.claude/agents/lex-bau.md`).
 //
-// PARITÄT: ci.yml trägt die Klassierung wortgleich als Shell-ERE (der `diff`-Job
-// ist checkout-/npm-frei und ruft diese Datei nicht auf). Der frühere
-// Paritätstest lag in src/tests/steuerwerkzeuge.test.ts und wurde mit dieser
-// Datei im Kahlschlag #1359 (10.10.2026, «5 Meta-Tests gelöscht») gelöscht —
-// er hing in einer Sammeldatei, deren Hauptgegenstand (scripts/dispatch*.ts)
-// gestrichen wurde. Dieser Test hat darum NUR zwei Abhängigkeiten, die beide
-// bestehen bleiben müssen, solange die Shell-Fassung existiert: diese
-// Klassierungsdatei und ci.yml. Er importiert nichts aus dem Überbau.
-import { execFileSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
+// PARITÄT: ci.yml trägt die Klassierung als Shell (der `diff`-Job ist
+// checkout-/npm-frei und ruft diese Datei nicht auf). Der frühere Paritätstest
+// lag in src/tests/steuerwerkzeuge.test.ts und wurde im Kahlschlag #1359
+// (10.10.2026, «5 Meta-Tests gelöscht») gelöscht. Die erste Neufassung verglich
+// nur den Text des Muster-Literals und die Form der `grep`-Zeilen — drei
+// Sabotagen blieben grün (Gegenprüfung 19.10.2026): im pull_request-Zweig
+// `art=code-fern` → `art=doku`, eine Schatten-Zuweisung hinter dem Literal,
+// der Verfall-UI-Schritt an `art == 'code'` gebunden. Darum jetzt Verhalten:
+// der `run:`-Block des Schritts `klassieren` wird per YAML-Parser aus ci.yml
+// gezogen und je Zweig (pull_request, push, merge_group) mit `gh`-/`curl`-
+// Attrappen (PATH-Vorschaltung in einem Temp-Ordner) wirklich ausgeführt; das
+// Ergebnis (`art=…` in GITHUB_OUTPUT) wird gegen Soll UND gegen die TS-Fassung
+// gehalten. Läuft ohne Netz; setzt `bash` und das Paket `yaml` voraus (dort
+// bereits über vite installiert, nicht in package.json gelistet).
+import { spawnSync } from 'node:child_process';
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { parse } from 'yaml';
 import { describe, expect, it } from 'vitest';
 import {
-  CODE_FERNE_MUSTER,
   istReinerDokuDiff,
   klassifiziereDiff,
   WERKZEUG_TROTZ_MD_MUSTER,
@@ -67,27 +76,116 @@ describe('klassifiziereDiff — Register mit Projektion ist kein Doku-Diff (FB S
   });
 });
 
-// ─── Shell↔TS-Parität ──────────────────────────────────────────────────────────
-// Zwei Vergleichsformen: `.source` textlich (strengste Drift-Sonde, jedes
-// Zeichen) und eine Pfad-Stichprobe, die das gebaute Werkzeug (`grep -E`)
-// wirklich ausführt — Textgleichheit beweist nicht, dass ERE und JS-Regex
-// gleich entscheiden.
-describe('Shell↔TS-Parität — CODE_FERN_RE / WERKZEUG_TROTZ_MD_RE gegen ci.yml', () => {
-  const ciYml = readFileSync('.github/workflows/ci.yml', 'utf8');
+// ─── Shell↔TS-Parität: der echte run-Block, ausgeführt ───────────────────────
+interface Schritt {
+  id?: string;
+  name?: string;
+  if?: string;
+  run?: string;
+}
+interface Workflow {
+  jobs: Record<string, { outputs?: Record<string, string>; steps?: Schritt[] }>;
+}
 
-  function alleLiterale(name: string): string[] {
-    return [...ciYml.matchAll(new RegExp(`^\\s*${name}='(.*)'\\s*$`, 'gm'))].map((t) => t[1]);
+const workflow = parse(readFileSync('.github/workflows/ci.yml', 'utf8')) as Workflow;
+const alleSchritte: Schritt[] = Object.values(workflow.jobs).flatMap((job) => job.steps ?? []);
+
+const klassierSchritte = alleSchritte.filter((st) => st.id === 'klassieren');
+const KLASSIER_SKRIPT = klassierSchritte[0]?.run ?? '';
+
+type Zweig = 'pull_request' | 'push' | 'merge_group';
+const ZWEIGE: readonly Zweig[] = ['pull_request', 'push', 'merge_group'];
+
+// `gh`-Attrappe: Dateiliste aus ATTRAPPE_LISTE statt GitHub-API. Die
+// merge_group-Compare-Abfrage (jq-Ausdruck enthält `.status`) bekommt vorab die
+// Zeile `ahead|0`, die Regelabfrage `ALLGREEN`. Das `--jq` wird nicht
+// ausgewertet — die Attrappe liefert direkt die Zeilen «N|<pfad>».
+const GH_ATTRAPPE = `#!/bin/bash
+case "$*" in
+  *rules/branches*) echo ALLGREEN; exit 0;;
+  *.status*) echo 'ahead|0';;
+esac
+cat "$ATTRAPPE_LISTE"
+`;
+// `curl`-Attrappe: der push-Zweig fragt die Live-Build-Kennung ab; ohne Netz
+// leer ⇒ «Rückfall auf BEFORE», der Zweig läuft sonst unverändert.
+const CURL_ATTRAPPE = '#!/bin/bash\nexit 0\n';
+
+/** Führt den echten Klassier-Schritt aus und liefert den Wert von `art=`. */
+function klassierenInShell(zweig: Zweig, dateien: readonly string[]): string {
+  const dir = mkdtempSync(join(tmpdir(), 'klassieren-test-'));
+  try {
+    const bin = join(dir, 'bin');
+    const arbeit = join(dir, 'arbeit');
+    mkdirSync(bin);
+    mkdirSync(arbeit);
+    writeFileSync(join(bin, 'gh'), GH_ATTRAPPE, { mode: 0o755 });
+    writeFileSync(join(bin, 'curl'), CURL_ATTRAPPE, { mode: 0o755 });
+    const liste = join(dir, 'liste.txt');
+    writeFileSync(liste, dateien.map((d) => `N|${d}\n`).join(''));
+    const ausgabe = join(dir, 'github-output');
+    writeFileSync(ausgabe, '');
+    const skript = join(dir, 'schritt.sh');
+    writeFileSync(skript, KLASSIER_SKRIPT);
+    const sha = (z: string) => z.repeat(40);
+    const lauf = spawnSync('bash', [skript], {
+      cwd: arbeit,
+      encoding: 'utf8',
+      env: {
+        PATH: `${bin}:${process.env.PATH ?? '/usr/bin:/bin'}`,
+        GH_TOKEN: 'attrappe',
+        EVENT: zweig,
+        REPO: 'attrappe/repo',
+        PR: '1',
+        GEMELDET: String(dateien.length),
+        BEFORE: sha('a'),
+        AFTER: sha('b'),
+        MG_BASE: sha('a'),
+        MG_HEAD: sha('b'),
+        MG_BASE_REF: 'refs/heads/main',
+        GITHUB_OUTPUT: ausgabe,
+        ATTRAPPE_LISTE: liste,
+      },
+    });
+    const meldung = `${zweig} ${JSON.stringify(dateien)}: Exit ${lauf.status}\n${lauf.stdout}\n${lauf.stderr}`;
+    expect(lauf.status, meldung).toBe(0);
+    const arten = readFileSync(ausgabe, 'utf8')
+      .split('\n')
+      .filter((z) => z.startsWith('art='));
+    expect(arten, `genau eine art=-Zeile erwartet — ${meldung}`).toHaveLength(1);
+    return arten[0].slice('art='.length);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+}
+
+describe('Shell↔TS-Parität — der echte run-Block aus ci.yml, je Zweig ausgeführt', () => {
+  it('ci.yml trägt genau einen Schritt «klassieren» mit run-Block, und der Job reicht sein Ergebnis weiter', () => {
+    expect(klassierSchritte).toHaveLength(1);
+    expect(KLASSIER_SKRIPT.length).toBeGreaterThan(1000);
+    expect(workflow.jobs.diff?.outputs?.art).toBe('${{ steps.klassieren.outputs.art }}');
+  });
+
+  const FAELLE: ReadonlyArray<readonly [string, readonly string[], 'doku' | 'code-fern' | 'code']> = [
+    ['Register allein', [REGISTER], 'code-fern'],
+    ['plan/FEHLERBESTAND.md', ['plan/FEHLERBESTAND.md'], 'doku'],
+    ['Register + FEHLERBESTAND.md', [REGISTER, 'plan/FEHLERBESTAND.md'], 'code-fern'],
+    ['Register + src/App.tsx', [REGISTER, 'src/App.tsx'], 'code'],
+    ['.claude/agents/lex-bau.md (nicht doku)', ['.claude/agents/lex-bau.md'], 'code-fern'],
+    ['Dispatch-Vorlage', ['docs/token-oekonomie/dispatch-template.md'], 'code-fern'],
+    ['andere Registerliste bleibt doku', ['bibliothek/register/andere-liste.md'], 'doku'],
+  ];
+
+  for (const zweig of ZWEIGE) {
+    it.each(FAELLE)(`${zweig}: %s`, (_name, dateien, soll) => {
+      const shell = klassierenInShell(zweig, dateien);
+      expect(shell).toBe(soll);
+      expect(klassifiziereDiff(dateien)).toBe(soll);
+    });
   }
 
-  // `.source` escaped den Delimiter «/» als «\/» (reiner JS-Literal-Zwang);
-  // in grep -E sind «\/» und «/» gleich.
-  function tsMuster(muster: readonly RegExp[]): string {
-    return `(${muster
-      .map((r) => r.source)
-      .join('|')
-      .replace(/\\\//g, '/')})`;
-  }
-
+  // Einzeldateien quer durch die Muster-Ränder (Anker, Punkt-Escape, Endung):
+  // die Shell-ERE (`grep -E`) muss auf jedem Pfad wie die JS-Regex entscheiden.
   const STICHPROBE = [
     'ROADMAP.md',
     'plan/FEHLERBESTAND.md',
@@ -105,14 +203,14 @@ describe('Shell↔TS-Parität — CODE_FERN_RE / WERKZEUG_TROTZ_MD_RE gegen ci.y
     'xclaude/a.ts', // `^\.claude/`: Punkt ist escaped
     'docs/x.md',
     'docs/token-oekonomie/dispatch-template.md',
-    'docs/token-oekonomie/dispatch-template.md.bak', // `$` im Werkzeug-Muster
-    'docs/token-oekonomie/dispatch-templateXmd', // Punkt-Escape im Werkzeug-Muster
+    'docs/token-oekonomie/dispatch-template.md.bak',
+    'docs/token-oekonomie/dispatch-templateXmd',
     'bibliothek/INDEX.md',
     'bibliothek/register/parameter-verfall.md',
-    'bibliothek/register/parameter-verfall.md.bak', // `$` im Registermuster
-    'bibliothek/register/parameter-verfallXmd', // Punkt-Escape im Registermuster
+    'bibliothek/register/parameter-verfall.md.bak',
+    'bibliothek/register/parameter-verfallXmd',
     'bibliothek/register/unterordner/parameter-verfall.md',
-    'x/bibliothek/register/parameter-verfall.md', // Anfangsanker
+    'x/bibliothek/register/parameter-verfall.md',
     'messwerte/a.json',
     'archiv/alt.ts',
     'package.json',
@@ -121,43 +219,27 @@ describe('Shell↔TS-Parität — CODE_FERN_RE / WERKZEUG_TROTZ_MD_RE gegen ci.y
     'public/normtext/or.json',
   ];
 
-  function grepTreffer(ere: string): string[] {
-    try {
-      const aus = execFileSync('grep', ['-E', ere], { input: STICHPROBE.join('\n') + '\n' });
-      return aus.toString('utf8').split('\n').filter(Boolean);
-    } catch (e) {
-      if ((e as { status?: number }).status === 1) return []; // grep: kein Treffer
-      throw e;
+  it('Einzeldatei-Stichprobe: Shell (pull_request) == TS, und alle drei Klassen kommen vor', () => {
+    const arten = new Set<string>();
+    for (const datei of STICHPROBE) {
+      const shell = klassierenInShell('pull_request', [datei]);
+      expect(shell, datei).toBe(klassifiziereDiff([datei]));
+      arten.add(shell);
     }
-  }
-
-  it.each([
-    ['CODE_FERN_RE', CODE_FERNE_MUSTER],
-    ['WERKZEUG_TROTZ_MD_RE', WERKZEUG_TROTZ_MD_MUSTER],
-  ] as const)('%s: genau ein Literal in ci.yml, textgleich zu TS, grep -E == TS auf der Stichprobe', (name, ts) => {
-    const literale = alleLiterale(name);
-    expect(literale, `${name} muss genau einmal in ci.yml stehen`).toHaveLength(1);
-    expect(literale[0]).toBe(tsMuster(ts));
-    const viaTs = STICHPROBE.filter((d) => ts.some((re) => re.test(d)));
-    expect(grepTreffer(literale[0])).toEqual(viaTs);
-    // Nicht-leer und nicht-alles: sonst wäre die Stichprobe kein Beweis.
-    expect(viaTs.length).toBeGreaterThan(0);
-    expect(viaTs.length).toBeLessThan(STICHPROBE.length);
+    // Sonst wäre die Stichprobe kein Beweis (Tor, das nicht scheitern kann, §6.7).
+    expect([...arten].sort()).toEqual(['code', 'code-fern', 'doku']);
   });
 
-  it('das Registermuster steht in BEIDEN Fassungen (Auslöser FB S-31)', () => {
-    expect(alleLiterale('WERKZEUG_TROTZ_MD_RE')[0]).toContain('^bibliothek/register/parameter-verfall\\.md$');
+  it('das Registermuster steht in der TS-Fassung und wirkt in der Shell-Fassung (Auslöser FB S-31)', () => {
     expect(WERKZEUG_TROTZ_MD_MUSTER.some((re) => re.test(REGISTER))).toBe(true);
+    expect(klassierenInShell('pull_request', [REGISTER])).not.toBe('doku');
   });
+});
 
-  it('alle drei Zweige (pr/push/mg) werten dieselben zwei grep-Bedingungen aus', () => {
-    const doku = [
-      ...ciYml.matchAll(/if grep -qvE '\\\.md\$' (\S+) \|\| grep -qE "\$WERKZEUG_TROTZ_MD_RE" (\S+); then/g),
-    ];
-    const fern = [...ciYml.matchAll(/if grep -qvE "\$CODE_FERN_RE" (\S+); then/g)];
-    const soll = ['mg-dateien.txt', 'pr-dateien.txt', 'push-dateien.txt'];
-    expect(doku.map((t) => t[1]).sort()).toEqual(soll);
-    expect(doku.every((t) => t[1] === t[2])).toBe(true);
-    expect(fern.map((t) => t[1]).sort()).toEqual(soll);
+describe('Verbrauch der Klasse — der Verfall-UI-Schritt läuft bei jedem Nicht-Doku-Diff', () => {
+  it("der Schritt mit check:verfall-ui trägt `if: needs.diff.outputs.art != 'doku'` (nicht == 'code')", () => {
+    const schritte = alleSchritte.filter((st) => st.run?.includes('npm run check:verfall-ui'));
+    expect(schritte).toHaveLength(1);
+    expect(schritte[0].if?.replace(/\s+/g, ' ').trim()).toBe("needs.diff.outputs.art != 'doku'");
   });
 });
