@@ -11,8 +11,9 @@ innerhalb von 45 Tagen liegt oder verstrichen ist, und schliesst ihn selbst, sob
 das Register nachgeführt ist. Er färbt nie rot; den neuen Wert prüft weiterhin eine
 Session (§7).
 
-Stand des Registers: 6.9.2026 (fortlaufend gepflegt — zuletzt inhaltlich
-ergänzt um die maschinelle Fassungsprüfung der kantonalen Tarif-Stammdaten
+Stand des Registers: 19.10.2026 (fortlaufend gepflegt — zuletzt inhaltlich
+ergänzt um das Ablaufdatum des PAT `AUTOMERGE_TOKEN` (19.10.2027, Angabe David
+19.10.2026); davor die maschinelle Fassungsprüfung der kantonalen Tarif-Stammdaten
 (`check:tarif-drift`, W3-TARIF-STAND); davor die BWO-Publikation vom 1.9.2026 zum hypothekarischen
 Referenzzinssatz (unverändert 1.25 %, gültig ab 2.9.2026, nächste Publikation
 1.12.2026); davor die angekündigte TI-LTORF-Fassung per 1.1.2027 samt der Feststellung,
@@ -24,6 +25,7 @@ mitziehen, nicht nur beim jährlichen Audit).
 
 | Parameter | Fundstelle | Wert / Stand | Prüfrhythmus | Nächste Prüfung |
 |---|---|---|---|---|
+| PAT `AUTOMERGE_TOKEN` (GitHub-Secret der Bot-PRs; Fine-grained Token `lexmetrik-automerge-2026-09`) | `.github/workflows/fedlex-frische.yml`, `normen-monatslauf.yml`, `materialien-nachzug.yml`, `lik-nachzug.yml`, `rechtsprechung-wochenlauf.yml` (Rückfall ohne Secret: `github.token`) | gültig bis **19.10.2027** (neu ausgestellt 19.10.2026, Angabe David). Läuft er ab, entstehen Bot-PRs mit `github.token` ohne eigene CI; ein abgelaufener, aber gesetzter Wert lässt die Läufe scheitern | vor Ablauf neu ausstellen («Regenerate token») und Secret ersetzen — nur David (§18); danach Datum hier nachführen | **19.10.2027** |
 | Hypothekarischer Referenzzinssatz | `src/lib/vorlagen/mietvertrag.ts` (`MV_PARAMETER.referenzzinssatz`) | 1.25 % (unverändert; Stand 2.9.2026, publiziert 1.9.2026, BWO https://www.bwo.admin.ch/de/referenzzinssatz) | **quartalsweise** (bwo.admin.ch/de/referenzzinssatz) | 1.12.2026 |
 | MWST-Normalsatz | `src/lib/vorlagen/mietvertrag.ts` (`MV_PARAMETER.mwstSatz`) | 8.1 % (seit 1.1.2024) | bei Satzänderung | — |
 | MWST-Normalsatz (Prozesskosten-Cockpit, MwSt auf Parteientschädigung) | `src/data/tarif/typen.ts` (`MWST_NORMALSATZ_PROZENT`) | 8.1 % (seit 1.1.2024, Art. 25 I MWSTG) | bei Satzänderung — **zusammen mit der Mietvertrags-Kopie pflegen** | — |
