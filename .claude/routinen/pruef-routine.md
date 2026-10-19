@@ -92,6 +92,10 @@ Quelle → nie quittieren.
   `git push origin HEAD:<branch>` (scheitert er: `push_files` auf den Branch).
   Im PR-Body die Zeile `Gegenpruefung: ausstehend …` durch denselben Trailer
   ersetzen (Queue-Squash liest den Body). Dann Auto-Merge (Squash) setzen.
+  Meldet GitHub danach einen Merge-Konflikt (mergeable_state `dirty`):
+  `origin/main` einmergen (nie rebase oder force-push), `npm run check:merge-schutz`
+  muss «Hash passt» melden, dann pushen. Echter Konflikt in Daten-Dateien:
+  nicht auflösen, Kommentar «Konflikt — Bot-Lauf neu nötig».
 - **widerlegt:** nicht quittieren; PR-Kommentar mit Befunden (Erlass/Artikel,
   amtlicher Link, Stand), PR auf Draft, Label `alarm:gegenpruefung`; eine Zeile
   unter «Wartet auf David» im Issue «Pflege-Routine: Befunde».
