@@ -226,8 +226,8 @@ export function berechneAllgemeineFrist(input: AllgFristInput): AllgFristResult 
     ende = addDays(ende, 1);
   }
 
-  // RL-22-Nachzug: Feiertags-Kontext 'allgemein' (Art. 78 OR; auch StPO-Nutzung
-  // ohne eigenen Kontext) — kantonale Sonderfeiertage, die nur für bestimmte
+  // RL-22-Nachzug: Feiertags-Kontext 'allgemein' (Art. 78 OR; StPO-Fristen
+  // rechnen seit RV-49/RV-103 im eigenen Kontext 'stpo') — kantonale Sonderfeiertage, die nur für bestimmte
   // Verfahren gelten (NE-Schliesstage, SO 1. Mai), zählen nicht; Warnung, wenn
   // einer das Fristende verschieben würde. RL-23: ebenso Warnung, wenn ein
   // unsicher gezählter Tag (GL 2.1.) verschoben hat. Landung Paket 5 mit RL-24:
