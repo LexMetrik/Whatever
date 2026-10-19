@@ -88,7 +88,8 @@ Kürzel = Zweig-Präfix und Trailer `Roadmap:`.
    Geschäftsarten» FR/VD/VS/JU/NE offen; GP-Nebenfunde FB RV-96…102. Nächster Teil: Fristenrechner (7
    A-Fälle) — Fahrplan §4; Warnhinweis-Zeilen RV-19/20/24/25 entfernt.
    *Stand 18.10.:* Fristenrechner Teil 1 Tagerechner (RV-37/49/52/53; Warnhinweis zpo-fristen weg, tagerechner nur noch RV-103);
-   Rest RV-49 VD-Hinweis (wartet auf David), RV-103 StPO im Voll-Formular, RV-104 Hinweis-Kleinkram.
+   *Stand 19.10.:* Teil 2 Voll-Formular/Permalink mit StPO-Regime (RV-103, #1420; Warnhinweis tagerechner weg).
+   Rest Fristenrechner: RV-49 VD-Hinweis (wartet auf David), RV-104 Hinweis-Kleinkram; danach prozesskosten (4).
 
 *Gestrichen 11.10.:* `WARNHINWEIS` gebaut (#1364 Warnhinweis an 17 Rechnern, Auswahlregel im Kopf von `src/lib/bekannteFehler.ts`; #1365 Urteile U-03/04/10/13/16/24/25, U-06 schon #1149; U-15 offen in FB).
 
