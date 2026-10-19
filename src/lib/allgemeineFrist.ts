@@ -46,6 +46,7 @@ export type FristArt = 'gesetzlich' | 'vertraglich';
 // kantonalen Tage (NE-Schliesstage LI-CPP Art. 9a, SO 1. Mai EG StPO § 10bis,
 // zpoFeiertage.ts «Bedingte kantonale Feiertage»), der GL-2.1. nicht. Strafverfahrensfristen
 // sind gesetzliche/behördliche Fristen: 'stpo' mit fristart 'vertraglich' ist ein Widerspruch.
+// RV-103: 'stpo' ohne Wochenend- UND Feiertags-Verschiebung ist ebenfalls ein Widerspruch (Art. 90 Abs. 2 zwingend).
 export type AllgKontext = 'allgemein' | 'stpo';
 
 export interface AllgFristInput {
@@ -139,6 +140,12 @@ export function berechneAllgemeineFrist(input: AllgFristInput): AllgFristResult 
   }
   if (input.kontext === 'stpo' && input.fristart === 'vertraglich') {
     throw new Error('Strafprozessuale Fristen sind gesetzliche bzw. behördliche Fristen, keine Vertragsfristen.');
+  }
+  // RV-103: Art. 90 Abs. 2 StPO ist zwingend (Samstag, Sonntag und anerkannte Feiertage verschieben
+  // das Fristende immer) — im StPO-Kontext gibt es keine Option «ohne Verschiebung».
+  if (input.kontext === 'stpo' && !(input.wochenendeVerschieben && input.feiertageVerschieben)) {
+    throw new Error('Im Strafverfahren verschiebt sich das Fristende bei Samstag, Sonntag und anerkannten Feiertagen '
+      + 'zwingend auf den nächsten Werktag (Art. 90 Abs. 2 StPO) – Wochenend- und Feiertags-Verschiebung sind nicht abwählbar.');
   }
   const kontext: AllgKontext = input.kontext ?? 'allgemein';
   const start = parseISO(input.start);
@@ -622,7 +629,10 @@ export function fristQueryKodieren(f: AllgFristInput): string {
   if (f.wochenendeVerschieben) p.set('w', '1');
   if (f.feiertageVerschieben) { p.set('f', '1'); if (f.kanton) p.set('k', f.kanton); }
   // RL-24/F1-02: nur die Vertragsfrist wird kodiert — gesetzliche Links bleiben byte-gleich.
+  // RV-103: r=s = StPO-Kontext (Art. 90 Abs. 2 StPO); derselbe Parameter wie r=v, weil ein
+  // Parameter den Widerspruch stpo+vertraglich (Engine-Throw) gar nicht ausdrücken kann.
   if (f.fristart === 'vertraglich') p.set('r', 'v');
+  else if (f.kontext === 'stpo') p.set('r', 's');
   return p.toString();
 }
 
@@ -668,5 +678,10 @@ export function fristQueryLesen(query: string): Partial<AllgFristInput> | null {
     feiertageVerschieben: p.get('f') === '1',
     ...(kanton ? { kanton } : {}),
     ...(p.get('r') === 'v' ? { fristart: 'vertraglich' as const } : {}),
+    // RV-103: StPO-Kontext. Art. 90 Abs. 2 StPO verschiebt zwingend — ein Link mit r=s ohne
+    // w/f würde sonst am Engine-Guard scheitern (kein Ergebnis); darum beide Toggles an.
+    ...(p.get('r') === 's'
+      ? { kontext: 'stpo' as const, wochenendeVerschieben: true, feiertageVerschieben: true }
+      : {}),
   };
 }
