@@ -48,10 +48,22 @@ export const CODE_FERNE_MUSTER: readonly RegExp[] = [
  * nicht scheitern). Diese Dateien fallen dadurch NICHT aus `code-fern` heraus
  * (sie bleiben über `CODE_FERNE_MUSTER` — `.claude/`/`docs/` — code-fern,
  * Bau + alle Node-Tore laufen weiter voll), nur der `doku`-Kurzschluss greift
- * für sie nicht mehr. */
+ * für sie nicht mehr.
+ *
+ * Zweiter Vorfall derselben Klasse (F10, 19.10.2026, FB S-31): #1419 änderte
+ * nur das Register `bibliothek/register/parameter-verfall.md`, dessen
+ * Projektion `src/data/verfallTermine.generated.ts` (Generator
+ * `scripts/verfall-generieren.ts`) im Tore-Job `check:verfall-ui` prüft. Der
+ * Diff lief als `doku`, das Tor kam für genau den verursachenden Diff nicht
+ * zum Zug (§6.7) — main wurde rot, erst #1420 heilte es. Ein Register mit
+ * Projektion ist daher Werkzeug trotz `.md`-Endung; der Diff bleibt über
+ * `bibliothek/` code-fern (Bau + Node-Tore voll, nur die Browser-Shards
+ * entfallen). Parität zur Shell-Fassung (ci.yml) und Fälle: der Test
+ * `scripts/ci/diff-klassieren.test.ts`. */
 export const WERKZEUG_TROTZ_MD_MUSTER: readonly RegExp[] = [
   /^\.claude\/agents\//,
   /^docs\/token-oekonomie\/dispatch-template\.md$/,
+  /^bibliothek\/register\/parameter-verfall\.md$/,
 ];
 
 export type DiffArt = 'code-fern' | 'code';
