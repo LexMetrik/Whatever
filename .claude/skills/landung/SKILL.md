@@ -83,7 +83,9 @@ Doku-/Plan-/Test-Diff: kein Agenten-Bug-Check.
    amtliche Quelle, Identitäts-Treffer mit Wortgrenze, Quote im PR.
 7. **Einreihen:** Nicht-Risiko `gh pr merge <nr> --squash --auto` nach 0–2;
    **Risikopfad** nach Verdikt von Hand `gh pr merge <nr> --squash`, nie
-   `--auto`. Nie bei Rot. Push auf den Feature-Zweig ist stehend freigegeben. Werkzeug: `scripts/landung/landung-kette.sh <log> <PR>…`
+   `--auto`. Ohne `gh` (Cloud-Session, nur MCP): Risikopfad per Auto-Merge einreihen,
+   nur auf grünem, quittiertem Kopf, danach kein Push bis MERGED (David 19.10., #1420).
+   Nie bei Rot. Push auf den Feature-Zweig ist stehend freigegeben. Werkzeug: `scripts/landung/landung-kette.sh <log> <PR>…`
    (seriell, pollt bis MERGED, hält bei Rot/UNMERGEABLE/LOCKED); nie
    `gh run watch`. Kriterium ist die Required-Liste, nie `mergeStateStatus`;
    DIRTY/UNKNOWN > 2 Runden oder Eintrag > 60 min ⇒ Stillstand melden.
@@ -93,7 +95,7 @@ Doku-/Plan-/Test-Diff: kein Agenten-Bug-Check.
 ## Risiko-Pfade und Trailer
 
 `--auto` ist auf Risiko-Pfaden (`istRisikoPfad()`) gesperrt, weil es nur den
-Stand beim Aktivieren prüft. Das Verdikt braucht prüfbare Form UND Zuwachs im
+Stand beim Aktivieren prüft (einzige Ausnahme: ohne `gh`, Ziff. 7). Das Verdikt braucht prüfbare Form UND Zuwachs im
 Gegenprüfungs-Register (erzwungen von «Merge-Schutz», Hook und
 `check:gegenpruefung`). Risikopfad-PRs einzeln einreihen.
 

@@ -20,7 +20,7 @@ Fremde Skripte (Scratch anderer Agenten/Worktrees) nur lesen, nie ausführen.
 - Nie mit «wartet auf …» enden: Läufe zu Ende pollen oder WIP-Stand mit Wiederaufnahme-Punkt zurückgeben. 600 s ohne Ausgabe bricht ab: lange Läufe `cmd > .gate/<auftrag>.log 2>&1; echo $?`, Netz `curl -m 30`.
 
 ## Klassenpflichten
-- Re-Derivation aus der amtlichen Norm selbst rechnen, Currency-Check selbst fahren (`check:fedlex-versionen`, `check:caches`); nie auf Bau-Pfad, Code oder ein Bau-Grün verweisen.
+- Re-Derivation aus der amtlichen Norm selbst rechnen, Currency-Check selbst fahren (`check:fedlex-versionen`, `check:caches` mit `LEXMETRIK_FEDLEX_CACHE_DIR=<eigener Scratch-Ordner>`, nie Standard-/tmp); nie auf Bau-Pfad, Code oder ein Bau-Grün verweisen.
 - Bau- und Prüf-Modell sind nie identisch: lief der Bau auf opus, weicht die Prüfung per model-Override aus. Eine Prüfung ist ein frischer Agent, nie die Fortsetzung des Bauers.
 - Fedlex nur per Filestore-URL (`…/filestore/fedlex.data.admin.ch/eli/cc/…`), nie Drittspiegel; Downloads nur in den Scratch-Ordner des Auftrags.
 
