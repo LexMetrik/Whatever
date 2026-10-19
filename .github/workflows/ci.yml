@@ -72,7 +72,11 @@ jobs:
           # Kurzschluss unten stufte den Diff als `doku` ein, der Tore-Job
           # (check:dispatch-klausel, gelöscht 10.10., git 3fd5db8f9) lief nicht (§6.7). Wortgleich zu
           # WERKZEUG_TROTZ_MD_MUSTER in scripts/ci/diff-klassieren.ts.
-          WERKZEUG_TROTZ_MD_RE='(^\.claude/agents/|^docs/token-oekonomie/dispatch-template\.md$)'
+          # Zweiter Vorfall (19.10.2026, FB S-31): Register mit Projektion —
+          # bibliothek/register/parameter-verfall.md (→ verfallTermine.generated.ts,
+          # check:verfall-ui, Anlass #1419) läuft ebenfalls durch den Tore-Job.
+          # Parität zur TS-Fassung: scripts/ci/diff-klassieren.test.ts.
+          WERKZEUG_TROTZ_MD_RE='(^\.claude/agents/|^docs/token-oekonomie/dispatch-template\.md$|^bibliothek/register/parameter-verfall\.md$)'
           # UMBENENNUNGEN (Auflage Gegenprüfung 19.9.2026): Compare- und
           # PR-Files-API melden bei `status: renamed` in `.filename` nur den
           # NEUEN Pfad; der alte steht in `.previous_filename`. Ohne ihn wäre
