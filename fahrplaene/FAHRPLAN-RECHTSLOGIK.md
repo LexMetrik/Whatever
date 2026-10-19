@@ -9,7 +9,7 @@
 > `git 3fd5db8f9:plan/posten/`).
 
 **Provenienz:** Prüfung Rechtslogik 23.9.2026 (fünf unabhängige Miner-Teile A–D +
-Judge, Details: `~/Documents/David/03_Projekte/LexMetrik/pruefung-rechtslogik-2026-09-23/`)
+Judge, Details: `~/Documents/Main/03_Projekte/LexMetrik/pruefung-rechtslogik-2026-09-23/`)
 → `UMSETZUNGSPLAN.md` (Abschnitte 3–8, Zeilen/Anker am Worktree-Stand **54ef46198**
 nachgemessen) → Bauplan-Aufnahme **RL-01** (dieser Fahrplan + ROADMAP-Schritte +
 Posten, Go David 23.9.2026 «Ja, wie vorliegend», W-01).
@@ -423,7 +423,7 @@ Zeile in §1 Welle 0 Block «1b Offene Altbefunde» (UMSETZUNGSPLAN.md Abschnitt
 
 Nicht kopiert — nur Verweis: **UMSETZUNGSPLAN.md Abschnitt 8** («Detail je
 Befund») und die zugehörige **BEFUNDLISTE.md**, beide unter
-`~/Documents/David/03_Projekte/LexMetrik/pruefung-rechtslogik-2026-09-23/`.
+`~/Documents/Main/03_Projekte/LexMetrik/pruefung-rechtslogik-2026-09-23/`.
 Vor jedem RL-Bau dort die Fundstelle, Norm-Beleg und den vorgeschlagenen
 Änderungstext nachlesen — dieser Fahrplan bündelt nur die Bau-Reihenfolge,
 Wellen-Zuordnung und die entscheidungsrelevanten Punkte.
