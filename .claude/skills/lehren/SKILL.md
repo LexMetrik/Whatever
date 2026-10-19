@@ -27,7 +27,7 @@ der Nachwachs-Sperre (Skill `refactoring` Ziff. 7).
 | F7 | **Zustandsspiegel nur vorwärts getestet** — History-Back verlor `?q=` | auch rückwärts testen (Back, Forward, geteilte URL, Reload); an `src/components/suche/useSucheAusUrl.ts` andocken |
 | F8 | **Beleg ans Tor angepasst** — datierte Repro-Kommentare auf neuen Stand umgeschrieben | Agent-Definitionen: datierte Belege nur ergänzen, nie nachführen |
 | F9 | **Stand-Leser nimmt Zukunft** — Ankündigungsdatum als Stand gelesen | Tor `stand ≤ heute` über alle Snapshots + Adapter schliesst künftige Daten aus |
-| F10 | **Doku-Klassierung überspringt das Tor** — Hand-Edit an Agent-Definitionen lief als «doku» ohne Tore-Job (#619) | `scripts/ci/diff-klassieren.ts`: `.claude/agents/**` und Hook-/Tor-Dateien zählen als Code; `check:tor-paritaet` |
+| F10 | **Doku-Klassierung überspringt das Tor** — Hand-Edit an Agent-Definitionen lief als «doku» ohne Tore-Job (#619) | `scripts/ci/diff-klassieren.ts`: `.claude/agents/**` und Hook-/Tor-Dateien zählen als Code; `check:tor-paritaet`; 2. Vorfall #1419 (Register mit Projektion als «doku», main rot) → FB S-31 |
 | F11 | **Additiver Refresh überschreibt Bestandsdaten** — Regeste-Refresh löschte `regeste.sprachfassungen` bei 6 von 1259 BGE (#816) | `mergeB1Ergebnis()` in `scripts/normtext/entscheide-b1-merge.ts` behält additive Altfelder; Delta-Prüfung vor jedem Korpus-Refresh |
 
 Offene Ursache: endet ein Push-Lauf auf main «cancelled», bleibt der Stand
