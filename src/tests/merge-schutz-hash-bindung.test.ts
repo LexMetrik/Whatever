@@ -186,3 +186,60 @@ describe('Integration: Hash-Bindung im Tor', () => {
     expect(r2.ausgabe).toContain('Quittung passt nicht zum Diff');
   }, 40000);
 });
+
+// ─── Teil 3: Grenze der Einzel-Quittungen (Auflage 1 der Gegenprüfung 19.10.2026) ──
+// S8: Der älteste Commit setzt eine Risiko-Datei OHNE Quittung, zwei neuere sind
+// einzeln quittiert. `rev-list --max-count=60` schnitt den ältesten still ab ⇒ grün.
+// Jetzt: mehr als 60 First-Parent-Commits ⇒ ROT, nie Abschneiden.
+describe('Integration: Grenze der Einzel-Quittungen (60 First-Parent-Commits)', () => {
+  function stapel(anzahlLeer: number): { repo: string; basis: string; kopf: string } {
+    const repo = neuesRepo();
+    schreib(repo, 'README.md', 'x\n');
+    const basis = commit(repo, 'init');
+    // ältester Commit: Risiko-Datei, KEINE Quittung (trägt den Trailer, damit die Form-Stufe passiert)
+    schreib(repo, 'src/lib/vorlagen/a.ts', "export const a = 'UNGEPRUEFT';\n");
+    commit(repo, `feat(vorlagen): a\n\n${TRAILER}\n`);
+    for (let i = 0; i < anzahlLeer; i++) execFileSync('git', ['-C', repo, 'commit', '-q', '--allow-empty', '-m', `leer ${i}`]);
+    schreib(repo, 'src/lib/vorlagen/b.ts', 'export const b = 1;\n');
+    const cb = commit(repo, 'feat(vorlagen): b');
+    schreib(repo, 'src/lib/vorlagen/c.ts', 'export const c = 1;\n');
+    const cc = commit(repo, 'feat(vorlagen): c');
+    // zwei neuere Einheiten einzeln quittiert (Register ist kein Risiko-Pfad ⇒ eigener Commit)
+    schreib(repo, REG, zeile(hashUeber(repo, `${cb}^..${cb}`)) + zeile(hashUeber(repo, `${cc}^..${cc}`)));
+    const kopf = commit(repo, 'chore(gp): Register');
+    return { repo, basis, kopf };
+  }
+
+  it('ROT-Probe (S8): 62 First-Parent-Commits, ältester unquittiert ⇒ ROT mit Grenz-Meldung statt stillem Grün', () => {
+    const { repo, basis, kopf } = stapel(58); // a + 58 leer + b + c + Register = 62
+    expect(git(repo, 'rev-list', '--first-parent', '--count', `${basis}..${kopf}`).trim()).toBe('62');
+    const r = laufeTor(repo, basis, kopf);
+    expect(r.status).toBe(1);
+    expect(r.ausgabe).toContain('mehr als 60 First-Parent-Commits');
+    expect(r.ausgabe).toContain('Gesamt-Quittung');
+  }, 60000);
+
+  it('Gegenprobe: genau 60 First-Parent-Commits ⇒ Einzel-Auswertung läuft; ältester unquittiert ⇒ ROT wegen fehlender Quittung, nicht wegen der Grenze', () => {
+    const { repo, basis, kopf } = stapel(56); // a + 56 leer + b + c + Register = 60
+    expect(git(repo, 'rev-list', '--first-parent', '--count', `${basis}..${kopf}`).trim()).toBe('60');
+    const r = laufeTor(repo, basis, kopf);
+    expect(r.status).toBe(1);
+    expect(r.ausgabe).not.toContain('mehr als 60');
+    expect(r.ausgabe).toContain('Quittung passt nicht zum Diff');
+  }, 60000);
+
+  it('GRÜN: 62 Commits mit EINER Gesamt-Quittung über den Bereich ⇒ grün (Grenze betrifft nur den Einzel-Weg)', () => {
+    const repo = neuesRepo();
+    schreib(repo, 'README.md', 'x\n');
+    const basis = commit(repo, 'init');
+    schreib(repo, 'src/lib/vorlagen/a.ts', "export const a = 'GEPRUEFT';\n");
+    commit(repo, `feat(vorlagen): a\n\n${TRAILER}\n`);
+    for (let i = 0; i < 60; i++) execFileSync('git', ['-C', repo, 'commit', '-q', '--allow-empty', '-m', `leer ${i}`]);
+    schreib(repo, REG, zeile(hashUeber(repo, `${basis}..HEAD`)));
+    const kopf = commit(repo, 'chore(gp): Register');
+    expect(git(repo, 'rev-list', '--first-parent', '--count', `${basis}..${kopf}`).trim()).toBe('62');
+    const r = laufeTor(repo, basis, kopf);
+    expect(r.ausgabe).toContain('Hash passt');
+    expect(r.status).toBe(0);
+  }, 60000);
+});

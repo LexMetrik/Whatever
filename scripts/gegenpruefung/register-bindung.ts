@@ -7,6 +7,11 @@
 // gebunden. Jetzt muss eine im Bereich NEU hinzugefügte Registerzeile den Hash
 // tragen, den `risikoBereichHash()` über genau diesen Bereich rechnet.
 //
+// Grenze, ehrlich benannt: der Hash bindet nur an den INHALT (er wird ungültig,
+// wenn sich der Inhalt ändert), nicht an den Prüfer. Die Selbst-Attestierung
+// (wer `gegenpruefung:ok` selbst aufruft, quittiert sich selbst) ist damit NICHT
+// behoben, nur die Entkopplung vom geprüften Diff.
+//
 // Queue-Stapelung: im merge_group-Lauf kann der Bereich basis..KOPF mehrere
 // gestapelte Squash-Commits (Vordermänner) enthalten; deren Quittungen gelten je
 // für den EIGENEN Commit. Darum zwei Wege: (1) Hash des Gesamtbereichs, sonst

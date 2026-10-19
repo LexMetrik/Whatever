@@ -475,8 +475,8 @@ jobs:
           # der PR existiert dann bereits sichtbar und wartet auf Abnahme.
           gh pr merge --auto --squash "$branch" || echo "Auto-Merge nicht aktivierbar (Repo-Setting/Token) — PR bleibt offen zur Abnahme."
           # Überholte Frische-PRs (gleicher Bot, älteres Datum) schliessen (PRUEF-AUTOMATIK).
-          nr=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')
-          if [ -n "$nr" ]; then bash scripts/ci/bot-pr-ueberholt.sh "chore/fedlex-frische-" "$branch" "$nr"; fi
+          nr=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty' || true)
+          if [ -n "$nr" ]; then bash scripts/ci/bot-pr-ueberholt.sh "chore/fedlex-frische-" "$branch" "$nr" || echo "::warning::Überholt-Schliessen fehlgeschlagen (nicht fatal)."; fi
 
       # Zettel-Muster (1.10.2026, QS-MONITOR-ROT) wie waechter.yml; schliesst nie selbst. Hier einziges
       # Signal des Handschritts: nur die SUCHE darf zur Warnung werden, eine gescheiterte ANLAGE färbt rot.
