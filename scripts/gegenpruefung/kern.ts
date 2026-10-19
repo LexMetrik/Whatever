@@ -624,7 +624,7 @@ function baumEintraege(root: string, spitze: string, dateien: string[]): Eintrag
  *    das in diesem Fall ROT wird.
  */
 export function risikoBereichHash(
-  opts: { cwd?: string; bereich?: string; behalten?: (p: string) => boolean } = {},
+  opts: { cwd?: string; bereich?: string; behalten?: (p: string) => boolean; ciErlaubt?: boolean } = {},
 ): DiffErgebnis {
   const cwd = opts.cwd ?? process.cwd();
   const behaltenFn = opts.behalten ?? behalten;
@@ -641,7 +641,11 @@ export function risikoBereichHash(
   // machte aus «kein Nachweis» ein irreführendes «Hash-Mismatch» (genau die
   // Fehl-Diagnose, die B3 unten abstellt). Im selben Zug per `git rm --cached`
   // behoben; die Datei ist ab jetzt wirklich lokal.
-  if (process.env.CI || process.env.GITHUB_ACTIONS) {
+  //
+  // PRUEF-AUTOMATIK (19.10.2026): `ciErlaubt` hebt den Selbstschutz NUR fuer den
+  // Arbiter selbst auf — `check:merge-schutz` rechnet in CI denselben Hash neu
+  // und gleicht ihn mit der Register-Zeile ab (Hash-Bindung der Quittung).
+  if (!opts.ciErlaubt && (process.env.CI || process.env.GITHUB_ACTIONS)) {
     return { kontext: false, grund: 'ci-selbstschutz', hash: null, dateien: [] };
   }
 

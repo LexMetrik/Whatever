@@ -41,8 +41,10 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-      # `gh workflow run ci.yml` — von github.token erzeugte PR-Events lösen keine CI aus.
-      actions: write
+      # Kein `actions: write`: der frühere Zusatz-Dispatch `gh workflow run ci.yml` ist
+      # entfernt (PRUEF-AUTOMATIK 19.10.2026) — mit dem PAT AUTOMERGE_TOKEN scheitert er
+      # wirkungslos an HTTP 403 (s. fedlex-frische.yml); die CI läuft über das PR-Ereignis,
+      # fehlende Kontexte zieht der Wächter (waechter.yml) nach.
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v5
@@ -130,12 +132,9 @@ jobs:
               --title "chore(lik): LIK-Reihe bis ${MONAT} nachgeführt (BFS)" \
               --body-file "$body"
           fi
-          # CI anstossen (github.token löst keine PR-Workflows aus; workflow_dispatch ist die Ausnahme).
-          if gh workflow run ci.yml --ref "$branch"; then
-            echo "CI (ci.yml) auf '${branch}' angestossen."
-          else
-            echo "::warning::ci.yml-Dispatch auf '${branch}' fehlgeschlagen — der Wächter zieht die Kontexte nach."
-          fi
+          # Ältere offene LIK-Nachzug-PRs sind überholt (PRUEF-AUTOMATIK).
+          nr=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty' || true)
+          if [ -n "$nr" ]; then bash scripts/ci/bot-pr-ueberholt.sh "chore/lik-nachzug-" "$branch" "$nr" || echo "::warning::Überholt-Schliessen fehlgeschlagen (nicht fatal)."; fi
 
       - name: Lauf rot färben, wenn die Tore rot waren
         if: steps.lauf.outputs.status != 'keine' && steps.tore.outputs.rc != '0'

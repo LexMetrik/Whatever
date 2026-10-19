@@ -127,7 +127,7 @@ gestrichen. Davids einziger Input ist der Bau-Prompt.
 ## Definition of Done (§14.4)
 
 1. CI grün am Kopf-SHA. 2. Risiko-Pfade: Gegenprüfung gelaufen,
-`npm run gegenpruefung:ok`. 3. Struktur-Umbau: golden byte-gleich (Skill
+`npm run gegenpruefung:ok -- --bereich`. 3. Struktur-Umbau: golden byte-gleich (Skill
 `refactoring`). 4. Status-Marker (§8). 5. Regeländerung: alle Stellen
 greppen, die sie zitieren (Reglemente, `.claude/rules/*`, Skills). 6. JETZT
 und EINGANG im abschliessenden PR nachgeführt.

@@ -192,7 +192,7 @@ sperrt nicht) ⇒ Entwurf, weil check:merge-schutz dann nicht sperrte.
    Linsen aus «Verifikation» oben, dazu **normKeys inhaltlich** (Remap-Zuwachs
    an Stichproben gegen den Entscheidtext, Lehre #1099). Die Auto-Stichprobe
    ersetzt die blinde Stichprobe nicht; «nicht prüfbar» von Hand.
-3. Quittung `npm run gegenpruefung:ok` (Register), Verdikt-Commit auf den Zweig.
+3. Quittung `npm run gegenpruefung:ok -- --bereich` (Register), Verdikt-Commit auf den Zweig.
 4. Im PR-Body die Zeile `Gegenpruefung: ausstehend …` durch das Verdikt
    ersetzen — sonst bleibt `check:merge-schutz` rot (Queue-Squash liest den Body).
 5. Zahl-Pins in Tests/e2e, die am Zuwachs reissen, als eigenen `test(`-Commit
