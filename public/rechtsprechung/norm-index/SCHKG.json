@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-10-19",
   "erlass": "SCHKG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -147,6 +147,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_III_347",
+        "zitierung": "BGE 152 III 347",
+        "regesteKurz": "Art. 1 lit. c, Art. 145 Abs. 2 lit. b und Abs. 4, Art. 251 ZPO; Art. 56 Abs. 2, Art. 171 und 174 SchKG; Konkurseröffnung und Weiterziehung; Summarverfahren in Angelegenheiten des SchKG; Stillstand der Fristen. Für die Regelung des…",
+        "datum": "2026-03-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_II_673",
         "zitierung": "BGE 151 II 673",
         "regesteKurz": "Art. 127 Abs. 3 BV; Art. 147 DBG; Art. 51 StHG; formelle Anforderungen an Revisionsgesuche; interkantonale Doppelbesteuerung; nachträgliche Aufhebung oder Änderung von Veranlagungsentscheiden; Revision oder Wiedererwägung. Ersucht eine…",
@@ -181,16 +191,6 @@
         "zitierung": "BGE 147 III 358",
         "regesteKurz": "Art. 68, Art. 80 Abs. 2 Ziff. 2, Art. 149 SchKG; Betreibungskosten im Verlustschein. Für ausgewiesene Kosten im Verlustschein einer öffentlich-rechtlichen Forderung kann definitive Rechtsöffnung erteilt werden (E. 2 und 3). Regeste Art.…",
         "datum": "2021-04-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_III_365",
-        "zitierung": "BGE 147 III 365",
-        "regesteKurz": "Art. 166 Abs. 1 IPRG; Art. 250 SchKG; Anerkennung des ausländischen Konkursdekretes; Kollokationsklage der schweizerischen Hilfskonkursmasse. Grundsätze betreffend die Anerkennung des ausländischen Konkursdekretes und die Befugnisse der…",
-        "datum": "2021-03-30",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -396,7 +396,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
+      },
+      {
+        "key": "bge_152_III_347",
+        "zitierung": "BGE 152 III 347",
+        "regesteKurz": "Art. 1 lit. c, Art. 145 Abs. 2 lit. b und Abs. 4, Art. 251 ZPO; Art. 56 Abs. 2, Art. 171 und 174 SchKG; Konkurseröffnung und Weiterziehung; Summarverfahren in Angelegenheiten des SchKG; Stillstand der Fristen. Für die Regelung des…",
+        "datum": "2026-03-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_150_III_367",
@@ -797,20 +807,30 @@
     ],
     "56": [
       {
-        "key": "bge_150_III_400",
-        "zitierung": "BGE 150 III 400",
-        "regesteKurz": "Art. 83 Abs. 2 SchKG; Art. 239 Abs. 2 und Art. 325 Abs. 1 ZPO; Fristbeginn für die Erhebung der Aberkennungsklage. Die 20-tägige Frist für die Erhebung der Aberkennungsklage beginnt ab Eröffnung des Dispositivs des erstinstanzlichen…",
-        "datum": "2024-06-25",
+        "key": "bge_149_III_179",
+        "zitierung": "BGE 149 III 179",
+        "regesteKurz": "Art. 31, 56 ff., 63, 250 Abs. 2 SchKG; Art. 145 Abs. 1 und 4 ZPO; Frist zur Erhebung einer Kollokationsklage im Konkurs. Für die Erhebung einer Kollokationsklage im Konkurs (Art. 250 SchKG) gelten die Gerichtsferien gemäss Art. 145 Abs. 1…",
+        "datum": "2022-12-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_III_347",
+        "zitierung": "BGE 152 III 347",
+        "regesteKurz": "Art. 1 lit. c, Art. 145 Abs. 2 lit. b und Abs. 4, Art. 251 ZPO; Art. 56 Abs. 2, Art. 171 und 174 SchKG; Konkurseröffnung und Weiterziehung; Summarverfahren in Angelegenheiten des SchKG; Stillstand der Fristen. Für die Regelung des…",
+        "datum": "2026-03-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_149_III_179",
-        "zitierung": "BGE 149 III 179",
-        "regesteKurz": "Art. 31, 56 ff., 63, 250 Abs. 2 SchKG; Art. 145 Abs. 1 und 4 ZPO; Frist zur Erhebung einer Kollokationsklage im Konkurs. Für die Erhebung einer Kollokationsklage im Konkurs (Art. 250 SchKG) gelten die Gerichtsferien gemäss Art. 145 Abs. 1…",
-        "datum": "2022-12-07",
+        "key": "bge_150_III_400",
+        "zitierung": "BGE 150 III 400",
+        "regesteKurz": "Art. 83 Abs. 2 SchKG; Art. 239 Abs. 2 und Art. 325 Abs. 1 ZPO; Fristbeginn für die Erhebung der Aberkennungsklage. Die 20-tägige Frist für die Erhebung der Aberkennungsklage beginnt ab Eröffnung des Dispositivs des erstinstanzlichen…",
+        "datum": "2024-06-25",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -837,6 +857,18 @@
         "gewicht": 0
       }
     ],
+    "57": [
+      {
+        "key": "bge_152_III_347",
+        "zitierung": "BGE 152 III 347",
+        "regesteKurz": "Art. 1 lit. c, Art. 145 Abs. 2 lit. b und Abs. 4, Art. 251 ZPO; Art. 56 Abs. 2, Art. 171 und 174 SchKG; Konkurseröffnung und Weiterziehung; Summarverfahren in Angelegenheiten des SchKG; Stillstand der Fristen. Für die Regelung des…",
+        "datum": "2026-03-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "59": [
       {
         "key": "bge_146_III_106",
@@ -853,6 +885,18 @@
         "zitierung": "BGE 149 III 34",
         "regesteKurz": "Art. 39 Abs. 2 LugÜ; Art. 49 und 52 SchKG; Exequatur- und Arrestbegehren, unverteilte Erbschaft; Betreibungsort des Arrestes. Prüfung und Kognition mit Bezug auf den Arrestort als Ort gemäss Art. 39 Abs. 2 LugÜ, wo die Zwangsvollstreckung…",
         "datum": "2022-10-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "61": [
+      {
+        "key": "bge_152_III_347",
+        "zitierung": "BGE 152 III 347",
+        "regesteKurz": "Art. 1 lit. c, Art. 145 Abs. 2 lit. b und Abs. 4, Art. 251 ZPO; Art. 56 Abs. 2, Art. 171 und 174 SchKG; Konkurseröffnung und Weiterziehung; Summarverfahren in Angelegenheiten des SchKG; Stillstand der Fristen. Für die Regelung des…",
+        "datum": "2026-03-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -883,20 +927,30 @@
     ],
     "63": [
       {
-        "key": "bge_150_III_400",
-        "zitierung": "BGE 150 III 400",
-        "regesteKurz": "Art. 83 Abs. 2 SchKG; Art. 239 Abs. 2 und Art. 325 Abs. 1 ZPO; Fristbeginn für die Erhebung der Aberkennungsklage. Die 20-tägige Frist für die Erhebung der Aberkennungsklage beginnt ab Eröffnung des Dispositivs des erstinstanzlichen…",
-        "datum": "2024-06-25",
+        "key": "bge_149_III_179",
+        "zitierung": "BGE 149 III 179",
+        "regesteKurz": "Art. 31, 56 ff., 63, 250 Abs. 2 SchKG; Art. 145 Abs. 1 und 4 ZPO; Frist zur Erhebung einer Kollokationsklage im Konkurs. Für die Erhebung einer Kollokationsklage im Konkurs (Art. 250 SchKG) gelten die Gerichtsferien gemäss Art. 145 Abs. 1…",
+        "datum": "2022-12-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_III_347",
+        "zitierung": "BGE 152 III 347",
+        "regesteKurz": "Art. 1 lit. c, Art. 145 Abs. 2 lit. b und Abs. 4, Art. 251 ZPO; Art. 56 Abs. 2, Art. 171 und 174 SchKG; Konkurseröffnung und Weiterziehung; Summarverfahren in Angelegenheiten des SchKG; Stillstand der Fristen. Für die Regelung des…",
+        "datum": "2026-03-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_149_III_179",
-        "zitierung": "BGE 149 III 179",
-        "regesteKurz": "Art. 31, 56 ff., 63, 250 Abs. 2 SchKG; Art. 145 Abs. 1 und 4 ZPO; Frist zur Erhebung einer Kollokationsklage im Konkurs. Für die Erhebung einer Kollokationsklage im Konkurs (Art. 250 SchKG) gelten die Gerichtsferien gemäss Art. 145 Abs. 1…",
-        "datum": "2022-12-07",
+        "key": "bge_150_III_400",
+        "zitierung": "BGE 150 III 400",
+        "regesteKurz": "Art. 83 Abs. 2 SchKG; Art. 239 Abs. 2 und Art. 325 Abs. 1 ZPO; Fristbeginn für die Erhebung der Aberkennungsklage. Die 20-tägige Frist für die Erhebung der Aberkennungsklage beginnt ab Eröffnung des Dispositivs des erstinstanzlichen…",
+        "datum": "2024-06-25",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2625,6 +2679,16 @@
     ],
     "171": [
       {
+        "key": "bge_152_III_347",
+        "zitierung": "BGE 152 III 347",
+        "regesteKurz": "Art. 1 lit. c, Art. 145 Abs. 2 lit. b und Abs. 4, Art. 251 ZPO; Art. 56 Abs. 2, Art. 171 und 174 SchKG; Konkurseröffnung und Weiterziehung; Summarverfahren in Angelegenheiten des SchKG; Stillstand der Fristen. Für die Regelung des…",
+        "datum": "2026-03-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_152_III_106",
         "zitierung": "BGE 152 III 106",
         "regesteKurz": "Art. 166 ff. SchKG; Art. 731b Abs. 1 bis Ziff. 3 OR; Art. 103 Abs. 2 lit. a BGG; Konkurseröffnung nach SchKG; Auflösung der Gesellschaft wegen Organmangels und Anordnung der Liquidation nach den Vorschriften über den Konkurs. Das…",
@@ -2648,6 +2712,16 @@
       }
     ],
     "174": [
+      {
+        "key": "bge_152_III_347",
+        "zitierung": "BGE 152 III 347",
+        "regesteKurz": "Art. 1 lit. c, Art. 145 Abs. 2 lit. b und Abs. 4, Art. 251 ZPO; Art. 56 Abs. 2, Art. 171 und 174 SchKG; Konkurseröffnung und Weiterziehung; Summarverfahren in Angelegenheiten des SchKG; Stillstand der Fristen. Für die Regelung des…",
+        "datum": "2026-03-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_152_III_106",
         "zitierung": "BGE 152 III 106",
@@ -4429,6 +4503,18 @@
         "datum": "2024-04-29",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "32a": [
+      {
+        "key": "bge_152_II_518__voll",
+        "zitierung": "Urteil 9C_205/2025 (nicht publ. in BGE 152 II 518)",
+        "regesteKurz": null,
+        "datum": "2026-03-26",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

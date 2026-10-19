@@ -1,0 +1,77 @@
+{
+  "erzeugt": "2026-10-19",
+  "eintraege": [
+    {
+      "id": "bund/bstger/SK_2026_37",
+      "gericht": "bstger",
+      "gerichtName": "Bundesstrafgericht",
+      "gerichtstyp": "bundesstrafgericht",
+      "kanton": "CH",
+      "abteilung": "SK",
+      "nummer": "SK.2026.37",
+      "bgeReferenz": null,
+      "zitierung": "BStGer SK.2026.37 vom 17. September 2026",
+      "datum": "2026-09-17",
+      "sprache": "de",
+      "leitcharakter": "routine",
+      "sachgebiet": "straf",
+      "legalArea": "criminal",
+      "rubrum": {
+        "besetzung": "Bundesstrafrichter Alberto Fabbri, Einzelrichter Gerichtsschreiber David Heeb",
+        "parteien": "Bundesanwaltschaft, vertreten durch Staatsanwältin des Bundes Nina Fiechter-Wüthrich gegen A., polnischer Staatsangehöriger",
+        "gegenstand": null,
+        "vorinstanz": null
+      },
+      "regeste": {
+        "text": "Hinderung einer Amtshandlung (Art. 286 StGB)",
+        "quelle": "opencaselaw"
+      },
+      "regesteAmtlich": false,
+      "abschnitte": [
+        {
+          "typ": "erwaegung",
+          "bloecke": [
+            {
+              "marke": "E. 2",
+              "tiefe": 1,
+              "text": "A. wird bestraft mit einer Geldstrafe von 10 Tagessätzen zu je Fr. 30.--, bedingt vollziehbar bei einer Probezeit von 2 Jahren."
+            },
+            {
+              "marke": "E. 3",
+              "tiefe": 1,
+              "text": "Mündliche Eröffnung und Aushändigung im Dispositiv an: − Herrn A. (Beschuldigter) (brevi manu) Zustellung des Dispositivs an: − Bundesanwaltschaft, Staatsanwältin des Bundes Nina Fiechter-Wüthrich Nach Eintritt der Rechtskraft mitzuteilen an: − Bundesanwaltschaft, Dienst Urteilsvollzug, zum Vollzug − Migrationsamt Kanton Aargau (gestützt auf Art. 82 VZAE)\n\nRechtsmittelbelehrung Das Gericht verzichtet auf eine schriftliche Begründung, wenn es das Urteil mündlich begründet und nicht eine Freiheitsstrafe von mehr als zwei Jahren, eine Verwahrung nach Artikel 64 StGB, eine Behandlung nach Artikel 59 StGB oder, bei gleichzeitig zu widerrufenden bedingten Sanktionen, einen Freiheitsentzug von mehr als zwei Jahren ausspricht (Art. 82 Abs. 1 StPO). Das Gericht stellt den Parteien nachträglich ein begründetes Urteil zu, wenn eine Partei dies innert 10 Tagen nach der Zustellung des Dispositivs verlangt oder eine Partei ein Rechtsmittel ergreift (Art. 82 Abs. 2 StPO). Berufung an die Berufungskammer des Bundesstrafgerichts Gegen Urteile der Strafkammer des Bundesstrafgerichts, die das Verfahren ganz oder teilweise abschliessen, sowie gegen selbstständige nachträgliche Entscheide und gegen selbstständige Einziehungsentscheide kann innert 10 Tagen seit Eröffnung bei der Strafkammer des Bundesstrafgerichts mündlich oder schriftlich Berufung angemeldet werden (Art. 399 Abs. 1 i.V.m. Art. 398 Abs. 1 StPO; Art. 38a StBOG).\n\nMit der Berufung kann das Urteil in allen Punkten umfassend angefochten werden. Mit der Berufung können gerügt werden: Rechtsverletzungen, einschliesslich Überschreitung und Missbrauch des Ermessens, Rechtsverweigerung und Rechtsverzögerung, die unvollständige oder unrichtige Feststellung des Sachverhaltes sowie Unangemessenheit (Art. 398 Abs. 2 und 3 StPO).\n\nDie Berufung erhebende Partei hat innert 20 Tagen nach Zustellung des begründeten Urteils der Berufungskammer des Bundesstrafgerichts eine schriftliche Berufungserklärung einzureichen. Sie hat darin anzugeben, ob sie das Urteil vollumfänglich oder nur in Teilen anficht, welche Abänderungen des erstinstanzlichen Urteils sie verlangt und welche Beweisanträge sie stellt. Werden nur Teile des Urteils angefochten, ist verbindlich anzugeben, auf welche sich die Berufung beschränkt (Art. 399 Abs. 3 und 4 StPO). Einhaltung der Fristen Eingaben müssen spätestens am letzten Tag der Frist bei der Strafbehörde abgegeben oder zu deren Handen der Schweizerischen Post, einer schweizerischen diplomatischen oder konsularischen Vertretung oder, im Falle von inhaftierten Personen, der Anstaltsleitung übergeben werden (Art. 91 Abs. 2 StPO). __________________________________________________________________________________________\n\nHinweis: Auf eine schriftliche Begründung des Urteils wurde gemäss Art. 82 Abs. 1 StPO verzichtet.\n\nVersand: 17. September 2026"
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [],
+      "zitierteNormen": [
+        "Art. 286 STGB",
+        "Art. 38a STBOG",
+        "Art. 398 Abs. 1 STPO",
+        "Art. 59 STGB",
+        "Art. 64 STGB",
+        "Art. 82 Abs. 1 STPO",
+        "Art. 82 Abs. 2 STPO",
+        "Art. 82 VZAE"
+      ],
+      "normKeys": [
+        "STBOG",
+        "STGB",
+        "STPO",
+        "VZAE"
+      ],
+      "zitierteEntscheide": [
+        "SK.2026.37"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://bstger.weblaw.ch/api/getDocumentContent/8b26f282-f7ac-32d0-94b8-5a8667fce9fd",
+      "abgerufen": "2026-10-19",
+      "fassungsToken": "54b3e396eb9a822305705a1995124237b126405e7fc9289531b6782eba7ffb14",
+      "sha": "dcd30f8b21d97a49091c9d829f1dfbb983305bade06a57e5fb25825521ac110f",
+      "ecli": "ECLI:CH:BSTGER:2026:SK.2026.37"
+    }
+  ]
+}

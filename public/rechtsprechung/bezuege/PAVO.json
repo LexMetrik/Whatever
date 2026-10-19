@@ -1,14 +1,21 @@
 {
-"erzeugt":"2026-10-04",
+"erzeugt":"2026-10-19",
 "erlass":"PAVO",
 "erlassEbene":"bund",
 "dokumente":{
+"bge_152_II_501":{"zitierung":"BGE 152 II 501","regesteKurz":"Art. 33 Abs. 3 DBG; Art. 9 Abs. 2 lit. m StHG; Abzugsfähigkeit der Kinderbetreuungskosten; Begriff der Drittbetreuung. Auslegung des Begriffs der Drittbetreuung im Sinne von Art. 33 Abs. 3 DBG (E. 6). Dieser Begriff muss mit Hilfe mehrerer…","datum":"2026-01-29","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bs_appellationsgericht_VD.2022.132":{"zitierung":"Appellationsgericht BS VD.2022.132 vom 22.03.2023","regesteKurz":"Bewilligung einer Kindertagesstätte","datum":"2023-03-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
-"15":[{"key":"bs_appellationsgericht_VD.2022.132","gewicht":null}]
+"5":[{"key":"bge_152_II_501","gewicht":0}],
+"12":[{"key":"bge_152_II_501","gewicht":0}],
+"15":[{"key":"bs_appellationsgericht_VD.2022.132","gewicht":null}],
+"1a":[{"key":"bge_152_II_501","gewicht":0}]
 },
 "gesamtProArtikel":{
-"15":{"kantonal":1}
+"5":{"bge":1},
+"12":{"bge":1},
+"15":{"kantonal":1},
+"1a":{"bge":1}
 }
 }

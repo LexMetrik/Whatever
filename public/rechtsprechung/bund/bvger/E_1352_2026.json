@@ -1,0 +1,88 @@
+{
+  "erzeugt": "2026-10-19",
+  "eintraege": [
+    {
+      "id": "bund/bvger/E_1352_2026",
+      "gericht": "bvger",
+      "gerichtName": "Bundesverwaltungsgericht",
+      "gerichtstyp": "bundesverwaltungsgericht",
+      "kanton": "CH",
+      "abteilung": "Abteilung V (Asylrecht)",
+      "nummer": "E-1352/2026",
+      "bgeReferenz": null,
+      "zitierung": "BVGer E-1352/2026 vom 6. Oktober 2026",
+      "datum": "2026-10-06",
+      "sprache": "de",
+      "leitcharakter": "routine",
+      "sachgebiet": "oeffentlich",
+      "legalArea": "administrative",
+      "rubrum": {
+        "besetzung": "Einzelrichterin Barbara Balmelli, mit Zustimmung von Richter Lukas Müller; Gerichtsschreiber Olivier Gloor",
+        "parteien": null,
+        "gegenstand": null,
+        "vorinstanz": null
+      },
+      "regeste": {
+        "text": "Asyl und Wegweisung",
+        "quelle": "opencaselaw"
+      },
+      "regesteAmtlich": false,
+      "abschnitte": [
+        {
+          "typ": "dispositiv",
+          "bloecke": [
+            {
+              "marke": "1.",
+              "text": "Die Beschwerde wird abgewiesen, soweit darauf eingetreten wird."
+            },
+            {
+              "marke": "2.",
+              "text": "Die Verfahrenskosten von Fr. 1'000.- werden dem Beschwerdeführer auferlegt. Der geleistete Kostenvorschuss in gleicher Höhe wird zur Bezahlung verwendet."
+            },
+            {
+              "marke": "3.",
+              "text": "Das Gesuch um Einbezug in die Flüchtlingseigenschaft der Ehefrau (vgl. act. 4 der Beschwerdeakten) wird zuständigkeitshalber an die Vorinstanz überwiesen."
+            },
+            {
+              "marke": "4.",
+              "text": "Dieses Urteil geht an den Beschwerdeführer, das SEM und die zuständige kantonale Behörde. Die Einzelrichterin: Der Gerichtsschreiber: Barbara Balmelli Olivier Gloor Versand:"
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [
+        "Die Beschwerde wird abgewiesen, soweit darauf eingetreten wird.",
+        "Die Verfahrenskosten von Fr. 1'000.- werden dem Beschwerdeführer auferlegt. Der geleistete Kostenvorschuss in gleicher Höhe wird zur Bezahlung verwendet.",
+        "Das Gesuch um Einbezug in die Flüchtlingseigenschaft der Ehefrau (vgl. act. 4 der Beschwerdeakten) wird zuständigkeitshalber an die Vorinstanz überwiesen.",
+        "Dieses Urteil geht an den Beschwerdeführer, das SEM und die zuständige kantonale Behörde.\nDie Einzelrichterin:\nDer Gerichtsschreiber:\nBarbara Balmelli\nOlivier Gloor\nVersand:"
+      ],
+      "zitierteNormen": [
+        "Art. 106 Abs. 1 ASYLG",
+        "Art. 108 Abs. 2 ASYLG",
+        "Art. 111 ASYLG",
+        "Art. 111a Abs. 2 ASYLG",
+        "Art. 31 VGG",
+        "Art. 44 ASYLG",
+        "Art. 48 Abs. 1 VWVG",
+        "Art. 49 VWVG"
+      ],
+      "normKeys": [
+        "ASYLG",
+        "VGG",
+        "VWVG"
+      ],
+      "zitierteEntscheide": [
+        "E-1352/2026",
+        "E-4103/2024"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://bvger.weblaw.ch/cache?id=2b477c85-dcd6-4863-befb-163098cda24e&guiLanguage=de",
+      "abgerufen": "2026-10-19",
+      "fassungsToken": "95e0cc7a4ee6d0a54ebd1111d5666b829abfa91bda142e286e600e4e3caf6dcb",
+      "sha": "e3b4d355ad174dd22bc6493c265a5393bec4782f9e3b469e8361084bdb29a4b8",
+      "ecli": "ECLI:CH:BVGER:2026:E-1352.2026"
+    }
+  ]
+}

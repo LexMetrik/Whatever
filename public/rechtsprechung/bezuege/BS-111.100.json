@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-10-04",
+"erzeugt":"2026-10-19",
 "erlass":"BS-111.100",
 "erlassEbene":"kanton",
 "dokumente":{
@@ -61,6 +61,7 @@
 "bs_appellationsgericht_VD.2025.13":{"zitierung":"Appellationsgericht BS VD.2025.13 vom 13.10.2025","regesteKurz":"Verkehrsanordnung Fatiostrasse, Jungstrasse des Amtes für Mobilität vom 16. März 2024 (Beschwerde beim Bundesgericht…","datum":"2025-10-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2025.133":{"zitierung":"Appellationsgericht BS VD.2025.133 vom 26.11.2025","regesteKurz":"wiederholtes Nichtbestehen der Fachprüfung 2 und Auflösung des Ausbildungsverhältnisses","datum":"2025-11-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2025.148":{"zitierung":"Appellationsgericht BS VD.2025.148 vom 24.03.2026","regesteKurz":"Demonstrationsverbot (Beschwerde am BGer hängig)","datum":"2026-03-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.191":{"zitierung":"Appellationsgericht BS VD.2025.191 vom 22.05.2026","regesteKurz":"Planfestsetzungsbeschluss des Regierungsrats (Umgestaltung der Allmend)","datum":"2026-05-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2025.192":{"zitierung":"Appellationsgericht BS VD.2025.192 vom 08.07.2026","regesteKurz":"Widerruf einer Standbetriebsbewilligung (nicht rechtskräftig)","datum":"2026-07-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2025.23":{"zitierung":"Appellationsgericht BS VD.2025.23 vom 30.03.2026","regesteKurz":"Kündigung des Arbeitsverhältnisses","datum":"2026-03-30","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2025.53":{"zitierung":"Appellationsgericht BS VD.2025.53 vom 19.09.2025","regesteKurz":"Gemeindesteuern pro 2008 bis 2017","datum":"2025-09-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
@@ -95,6 +96,7 @@
 "47":[{"key":"bs_appellationsgericht_VG.2024.1","gewicht":null},{"key":"bs_appellationsgericht_VG.2020.10","gewicht":null}],
 "48":[{"key":"bs_appellationsgericht_VD.2024.164","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.166","gewicht":null},{"key":"bs_appellationsgericht_VG.2024.1","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.155","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.136","gewicht":null},{"key":"bs_appellationsgericht_VG.2020.10","gewicht":null}],
 "49":[{"key":"bs_appellationsgericht_VG.2024.1","gewicht":null}],
+"55":[{"key":"bs_appellationsgericht_VD.2025.191","gewicht":null}],
 "57":[{"key":"bs_appellationsgericht_VD.2025.53","gewicht":null}],
 "66":[{"key":"bs_appellationsgericht_VG.2024.1","gewicht":null}],
 "75":[{"key":"bs_appellationsgericht_VD.2025.69","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.98","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.160","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.224","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.6","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.7","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.148","gewicht":null}],
@@ -130,6 +132,7 @@
 "47":{"kantonal":2},
 "48":{"kantonal":6},
 "49":{"kantonal":1},
+"55":{"kantonal":1},
 "57":{"kantonal":1},
 "66":{"kantonal":1},
 "75":{"kantonal":7},

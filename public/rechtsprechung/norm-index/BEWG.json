@@ -1,14 +1,36 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-10-19",
   "erlass": "BEWG",
   "gewichtQuelle": "alt",
   "proArtikel": {
+    "1": [
+      {
+        "key": "bge_152_II_473",
+        "zitierung": "BGE 152 II 473",
+        "regesteKurz": "Art. 1, 3, 7 lit. b und Art. 9 Abs. 2 BewG; Art. 8 lit. a BewV; Bewilligungspflichtigkeit der Übertragung einer Ferienwohnung auf einen Trust. Kognition des Bundesgerichts (E. 2). Streitgegenstand, rechtliche Ausgangslage nach dem BewG…",
+        "datum": "2026-02-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "2": [
       {
         "key": "bge_147_II_281",
         "zitierung": "BGE 147 II 281",
         "regesteKurz": "Art. 1, Art. 2 Abs. 2 lit. a und Abs. 3, Art. 9 Abs. 1 lit. a BewG; Art. 3 BewV; fehlende Rechtsgrundlage für den bewilligungsfreien Erwerb eines Grundstücks, welches mit Personalwohnungen überbaut werden soll, durch eine Person im…",
         "datum": "2021-03-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_473",
+        "zitierung": "BGE 152 II 473",
+        "regesteKurz": "Art. 1, 3, 7 lit. b und Art. 9 Abs. 2 BewG; Art. 8 lit. a BewV; Bewilligungspflichtigkeit der Übertragung einer Ferienwohnung auf einen Trust. Kognition des Bundesgerichts (E. 2). Streitgegenstand, rechtliche Ausgangslage nach dem BewG…",
+        "datum": "2026-02-05",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -25,22 +47,44 @@
         "gewicht": 0
       }
     ],
-    "4": [
+    "3": [
       {
-        "key": "bge_149_III_268__voll",
-        "zitierung": "Urteil 4A_378/2022 (nicht publ. in BGE 149 III 268)",
-        "regesteKurz": null,
-        "datum": "2023-03-30",
-        "leitcharakter": "routine",
-        "gericht": "bger",
+        "key": "bge_152_II_473",
+        "zitierung": "BGE 152 II 473",
+        "regesteKurz": "Art. 1, 3, 7 lit. b und Art. 9 Abs. 2 BewG; Art. 8 lit. a BewV; Bewilligungspflichtigkeit der Übertragung einer Ferienwohnung auf einen Trust. Kognition des Bundesgerichts (E. 2). Streitgegenstand, rechtliche Ausgangslage nach dem BewG…",
+        "datum": "2026-02-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
+      }
+    ],
+    "4": [
       {
         "key": "bge_147_II_281__voll",
         "zitierung": "Urteil 2C_589/2020 (nicht publ. in BGE 147 II 281)",
         "regesteKurz": null,
         "datum": "2021-03-22",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_473",
+        "zitierung": "BGE 152 II 473",
+        "regesteKurz": "Art. 1, 3, 7 lit. b und Art. 9 Abs. 2 BewG; Art. 8 lit. a BewV; Bewilligungspflichtigkeit der Übertragung einer Ferienwohnung auf einen Trust. Kognition des Bundesgerichts (E. 2). Streitgegenstand, rechtliche Ausgangslage nach dem BewG…",
+        "datum": "2026-02-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_III_268__voll",
+        "zitierung": "Urteil 4A_378/2022 (nicht publ. in BGE 149 III 268)",
+        "regesteKurz": null,
+        "datum": "2023-03-30",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -49,20 +93,30 @@
     ],
     "5": [
       {
-        "key": "bge_149_III_268__voll",
-        "zitierung": "Urteil 4A_378/2022 (nicht publ. in BGE 149 III 268)",
-        "regesteKurz": null,
-        "datum": "2023-03-30",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_147_II_281__voll",
         "zitierung": "Urteil 2C_589/2020 (nicht publ. in BGE 147 II 281)",
         "regesteKurz": null,
         "datum": "2021-03-22",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_473",
+        "zitierung": "BGE 152 II 473",
+        "regesteKurz": "Art. 1, 3, 7 lit. b und Art. 9 Abs. 2 BewG; Art. 8 lit. a BewV; Bewilligungspflichtigkeit der Übertragung einer Ferienwohnung auf einen Trust. Kognition des Bundesgerichts (E. 2). Streitgegenstand, rechtliche Ausgangslage nach dem BewG…",
+        "datum": "2026-02-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_III_268__voll",
+        "zitierung": "Urteil 4A_378/2022 (nicht publ. in BGE 149 III 268)",
+        "regesteKurz": null,
+        "datum": "2023-03-30",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -78,6 +132,28 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_473",
+        "zitierung": "BGE 152 II 473",
+        "regesteKurz": "Art. 1, 3, 7 lit. b und Art. 9 Abs. 2 BewG; Art. 8 lit. a BewV; Bewilligungspflichtigkeit der Übertragung einer Ferienwohnung auf einen Trust. Kognition des Bundesgerichts (E. 2). Streitgegenstand, rechtliche Ausgangslage nach dem BewG…",
+        "datum": "2026-02-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "8": [
+      {
+        "key": "bge_152_II_473",
+        "zitierung": "BGE 152 II 473",
+        "regesteKurz": "Art. 1, 3, 7 lit. b und Art. 9 Abs. 2 BewG; Art. 8 lit. a BewV; Bewilligungspflichtigkeit der Übertragung einer Ferienwohnung auf einen Trust. Kognition des Bundesgerichts (E. 2). Streitgegenstand, rechtliche Ausgangslage nach dem BewG…",
+        "datum": "2026-02-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
         "gewicht": 0
       }
     ],
@@ -87,6 +163,16 @@
         "zitierung": "BGE 147 II 281",
         "regesteKurz": "Art. 1, Art. 2 Abs. 2 lit. a und Abs. 3, Art. 9 Abs. 1 lit. a BewG; Art. 3 BewV; fehlende Rechtsgrundlage für den bewilligungsfreien Erwerb eines Grundstücks, welches mit Personalwohnungen überbaut werden soll, durch eine Person im…",
         "datum": "2021-03-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_473",
+        "zitierung": "BGE 152 II 473",
+        "regesteKurz": "Art. 1, 3, 7 lit. b und Art. 9 Abs. 2 BewG; Art. 8 lit. a BewV; Bewilligungspflichtigkeit der Übertragung einer Ferienwohnung auf einen Trust. Kognition des Bundesgerichts (E. 2). Streitgegenstand, rechtliche Ausgangslage nach dem BewG…",
+        "datum": "2026-02-05",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -123,6 +209,28 @@
         "zitierung": "Urteil 2C_589/2020 (nicht publ. in BGE 147 II 281)",
         "regesteKurz": null,
         "datum": "2021-03-22",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_473__voll",
+        "zitierung": "Urteil 2C_437/2024 (nicht publ. in BGE 152 II 473)",
+        "regesteKurz": null,
+        "datum": "2026-02-05",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "21": [
+      {
+        "key": "bge_152_II_473__voll",
+        "zitierung": "Urteil 2C_437/2024 (nicht publ. in BGE 152 II 473)",
+        "regesteKurz": null,
+        "datum": "2026-02-05",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",

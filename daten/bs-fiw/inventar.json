@@ -1,14 +1,14 @@
 {
- "erzeugt": "2026-10-03",
+ "erzeugt": "2026-10-19",
  "quelle": "https://rechtsprechung.gerichte.bs.ch (amtliches Portal, Findinfo/Omnis)",
  "portal": {
-  "gesamtN": 11049,
+  "gesamtN": 11085,
   "jahre": {
    "2022": 973,
    "2023": 905,
    "2024": 893,
-   "2025": 838,
-   "2026": 309
+   "2025": 840,
+   "2026": 343
   }
  },
  "eintraege": [
@@ -30865,6 +30865,15 @@
    "aktualisiert": "2026-05-21"
   },
   {
+   "key": 79001,
+   "gn": "AL.2025.10",
+   "gnSekundaer": "SVG.2025.191",
+   "datum": "2025-08-28",
+   "titel": "Einstellung in der Anspruchsberechtigung bei unterlassener Bewerbung",
+   "erstpublikation": "2026-10-09",
+   "aktualisiert": "2026-10-09"
+  },
+  {
    "key": 79002,
    "gn": "ZB.2025.37",
    "gnSekundaer": "AG.2025.645",
@@ -32624,9 +32633,9 @@
    "gn": "ZB.2025.17",
    "gnSekundaer": "AG.2026.71",
    "datum": null,
-   "titel": "Bauhandwerkerpfandrecht (definitive Eintragung) (Beschwerde beim BG hängig)",
+   "titel": "Bauhandwerkerpfandrecht (definitive Eintragung) (BGer 5A_211/2026 vom 14.09.2026)",
    "erstpublikation": "2026-03-07",
-   "aktualisiert": "2026-05-12"
+   "aktualisiert": "2026-10-14"
   },
   {
    "key": 79282,
@@ -33086,6 +33095,15 @@
    "titel": "Restarbeitsfähigkeit; Einkommensvergleich",
    "erstpublikation": "2026-03-11",
    "aktualisiert": "2026-03-13"
+  },
+  {
+   "key": 79374,
+   "gn": "KE.2024.20",
+   "gnSekundaer": "AG.2026.119",
+   "datum": "2025-10-31",
+   "titel": "Aufhebung des Besuchsrechts, der Weisungen und der Beistandschaft sowie Zuteilung der alleinigen elterlichen Sorge (BGer 5A_322/2026 vom 31. Juli 2026)",
+   "erstpublikation": "2026-10-08",
+   "aktualisiert": "2026-10-08"
   },
   {
    "key": 79375,
@@ -33554,6 +33572,15 @@
    "titel": "Rechtsöffnung",
    "erstpublikation": "2026-08-20",
    "aktualisiert": "2026-08-20"
+  },
+  {
+   "key": 79444,
+   "gn": "KE.2025.47",
+   "gnSekundaer": "AG.2026.170",
+   "datum": "2026-03-12",
+   "titel": "Umwandlung einer superprovisorischen Massnahme in eine vorsorgliche Massnahme – Anordnung einer Kontosperre und Auftragserteilung zur Vertretung",
+   "erstpublikation": "2026-10-08",
+   "aktualisiert": "2026-10-08"
   },
   {
    "key": 79445,
@@ -34375,6 +34402,15 @@
    "aktualisiert": "2026-07-15"
   },
   {
+   "key": 79597,
+   "gn": "BES.2025.92",
+   "gnSekundaer": "AG.2026.279",
+   "datum": "2026-04-30",
+   "titel": "Verfahrenseinstellung",
+   "erstpublikation": "2026-10-06",
+   "aktualisiert": "2026-10-06"
+  },
+  {
    "key": 79598,
    "gn": "VD.2025.146",
    "gnSekundaer": "AG.2026.280",
@@ -34424,9 +34460,9 @@
    "gn": "DGZ.2025.8",
    "gnSekundaer": "AG.2026.284",
    "datum": "2026-05-07",
-   "titel": "Gesuch um internationale Zustellhilfe vom 19. September 2025",
+   "titel": "Gesuch um internationale Zustellhilfe vom 19. September 2025 (BGer 4A_174/2026)",
    "erstpublikation": "2026-09-04",
-   "aktualisiert": "2026-09-04"
+   "aktualisiert": "2026-10-13"
   },
   {
    "key": 79608,
@@ -34915,6 +34951,24 @@
    "aktualisiert": "2026-06-20"
   },
   {
+   "key": 79714,
+   "gn": "SB.2025.74",
+   "gnSekundaer": "AG.2026.352",
+   "datum": "2026-03-18",
+   "titel": "Raub, Drohung, Strafzumessung",
+   "erstpublikation": "2026-10-08",
+   "aktualisiert": "2026-10-08"
+  },
+  {
+   "key": 79715,
+   "gn": "SB.2025.72",
+   "gnSekundaer": "AG.2026.353",
+   "datum": "2026-04-29",
+   "titel": "Verlängerung der stationären Massnahme gemäss Art. 59 Abs. 4 StGB",
+   "erstpublikation": "2026-10-16",
+   "aktualisiert": "2026-10-16"
+  },
+  {
    "key": 79717,
    "gn": "IV.2025.116",
    "gnSekundaer": "SVG.2026.109",
@@ -35005,6 +35059,15 @@
    "aktualisiert": "2026-06-20"
   },
   {
+   "key": 79729,
+   "gn": "VD.2025.191",
+   "gnSekundaer": "AG.2026.359",
+   "datum": "2026-05-22",
+   "titel": "Planfestsetzungsbeschluss des Regierungsrats (Umgestaltung der Allmend)",
+   "erstpublikation": "2026-10-17",
+   "aktualisiert": "2026-10-17"
+  },
+  {
    "key": 79731,
    "gn": "AL.2025.9",
    "gnSekundaer": "SVG.2026.116",
@@ -35021,6 +35084,15 @@
    "titel": "amtliche Verteidigung (noch nicht rechtskräftig)",
    "erstpublikation": "2026-06-30",
    "aktualisiert": "2026-06-30"
+  },
+  {
+   "key": 79743,
+   "gn": "BES.2023.166",
+   "gnSekundaer": "AG.2026.365",
+   "datum": "2026-06-09",
+   "titel": "Gesuch um Konfliktbeilegung im Rahmen der behördlichen Rechtshilfe gemäss Art. 48 Abs. 1 StPO (UT.[...])",
+   "erstpublikation": "2026-10-16",
+   "aktualisiert": "2026-10-16"
   },
   {
    "key": 79744,
@@ -35050,6 +35122,24 @@
    "aktualisiert": "2026-08-21"
   },
   {
+   "key": 79750,
+   "gn": "ZB.2026.4",
+   "gnSekundaer": "AG.2026.368",
+   "datum": "2026-06-08",
+   "titel": "Getrenntleben",
+   "erstpublikation": "2026-10-17",
+   "aktualisiert": "2026-10-17"
+  },
+  {
+   "key": 79753,
+   "gn": "VD.2025.195",
+   "gnSekundaer": "AG.2026.370",
+   "datum": "2026-05-22",
+   "titel": "Planfestsetzungsbeschluss des Regierungsrats (Umgestaltung der Allmend)",
+   "erstpublikation": "2026-10-17",
+   "aktualisiert": "2026-10-17"
+  },
+  {
    "key": 79755,
    "gn": "VD.2025.97",
    "gnSekundaer": "AG.2026.372",
@@ -35057,6 +35147,15 @@
    "titel": "Freistellung und Ordentliche Kündigung aufgrund schwerer Pflichtverletzungen (nicht rechtskräftig) (Beschwerde beim BGer hängig)",
    "erstpublikation": "2026-06-25",
    "aktualisiert": "2026-08-21"
+  },
+  {
+   "key": 79758,
+   "gn": "BES.2026.43",
+   "gnSekundaer": "AG.2026.373",
+   "datum": "2026-06-09",
+   "titel": "Nichteintreten auf Einsprache infolge Verspätung (Verfügung BG 7B_807/2026 vom 3. August 2026)",
+   "erstpublikation": "2026-10-15",
+   "aktualisiert": "2026-10-15"
   },
   {
    "key": 79761,
@@ -35093,6 +35192,24 @@
    "titel": "UVG Unselbständige Akkordarbeit sowie Inaktivität von juristischen Personen (Subunternehmen); Umgehungsgeschäft.",
    "erstpublikation": "2026-07-24",
    "aktualisiert": "2026-07-25"
+  },
+  {
+   "key": 79768,
+   "gn": "VD.2026.35",
+   "gnSekundaer": "AG.2026.379",
+   "datum": "2026-06-10",
+   "titel": "Versetzung in eine andere Strafanstalt",
+   "erstpublikation": "2026-10-16",
+   "aktualisiert": "2026-10-16"
+  },
+  {
+   "key": 79769,
+   "gn": "VD.2025.196",
+   "gnSekundaer": "AG.2026.380",
+   "datum": "2026-06-11",
+   "titel": "Gesuch um Strafverbüssung in der Form der elektronischen Überwachung (Beschwerde beim Bundesgericht hängig)",
+   "erstpublikation": "2026-10-13",
+   "aktualisiert": "2026-10-13"
   },
   {
    "key": 79770,
@@ -35455,6 +35572,24 @@
    "aktualisiert": "2026-09-19"
   },
   {
+   "key": 79950,
+   "gn": "KE.2026.15",
+   "gnSekundaer": "AG.2026.506",
+   "datum": "2026-08-07",
+   "titel": "Aufhebung der Beistandschaft gemäss Art. 308 Abs. 1 und 2 ZGB für C____",
+   "erstpublikation": "2026-10-13",
+   "aktualisiert": "2026-10-13"
+  },
+  {
+   "key": 79953,
+   "gn": "SB.2025.92",
+   "gnSekundaer": "AG.2026.508",
+   "datum": "2026-06-16",
+   "titel": "einfache Körperverletzung, Sachbeschädigung",
+   "erstpublikation": "2026-10-13",
+   "aktualisiert": "2026-10-13"
+  },
+  {
    "key": 79954,
    "gn": "AUS.2026.68",
    "gnSekundaer": "AG.2026.509",
@@ -35504,27 +35639,27 @@
    "gn": "IV.2025.67",
    "gnSekundaer": "SVG.2026.141",
    "datum": "2026-02-05",
-   "titel": "IVG (Beschwerde beim Bundesgericht hängig)",
+   "titel": "Kosten der Nachtwache; Fehlen der gesetzlichen Voraussetzungen einer medizinischen Massnahme",
    "erstpublikation": "2026-09-19",
-   "aktualisiert": "2026-09-22"
+   "aktualisiert": "2026-10-15"
   },
   {
    "key": 79981,
    "gn": "IV.2025.68",
    "gnSekundaer": "SVG.2026.142",
    "datum": "2026-02-05",
-   "titel": "IVG",
+   "titel": "Finanzierung von Mineralwasser im Rahmen eines Off-Label-Use? Nichtvergütung von Mineralwasser rechtmässig",
    "erstpublikation": "2026-09-19",
-   "aktualisiert": "2026-09-19"
+   "aktualisiert": "2026-10-15"
   },
   {
    "key": 79982,
    "gn": "IV.2025.69",
    "gnSekundaer": "SVG.2026.143",
    "datum": "2026-02-05",
-   "titel": "IVG",
+   "titel": "Frage der Kostenübernahme des Wachstumshormons Omnitrope",
    "erstpublikation": "2026-09-19",
-   "aktualisiert": "2026-09-19"
+   "aktualisiert": "2026-10-15"
   },
   {
    "key": 79983,
@@ -35554,6 +35689,15 @@
    "aktualisiert": "2026-09-19"
   },
   {
+   "key": 79999,
+   "gn": "BES.2026.69",
+   "gnSekundaer": "AG.2026.539",
+   "datum": "2026-08-21",
+   "titel": "Nichteintreten auf Einsprache infolge Verspätung",
+   "erstpublikation": "2026-10-13",
+   "aktualisiert": "2026-10-13"
+  },
+  {
    "key": 80001,
    "gn": "IV.2026.17",
    "gnSekundaer": "SVG.2026.146",
@@ -35576,18 +35720,18 @@
    "gn": "AL.2026.1",
    "gnSekundaer": "SVG.2026.148",
    "datum": "2026-06-04",
-   "titel": "AVIG",
+   "titel": "Selbstverschuldete Arbeitslosigkeit bejaht",
    "erstpublikation": "2026-09-19",
-   "aktualisiert": "2026-09-19"
+   "aktualisiert": "2026-10-15"
   },
   {
    "key": 80009,
    "gn": "UV.2025.44",
    "gnSekundaer": "SVG.2026.149",
    "datum": "2026-03-25",
-   "titel": "UVG",
+   "titel": "Medizinische Aktenlage unklar; es liegen zumindest geringe Zweifel vor",
    "erstpublikation": "2026-09-19",
-   "aktualisiert": "2026-09-19"
+   "aktualisiert": "2026-10-15"
   },
   {
    "key": 80014,
@@ -35630,9 +35774,9 @@
    "gn": "AUS.2026.74",
    "gnSekundaer": "AG.2026.552",
    "datum": "2026-09-03",
-   "titel": "Verlängerung Ausschaffungshaft",
+   "titel": "Verlängerung der Ausschaffungshaft",
    "erstpublikation": "2026-09-05",
-   "aktualisiert": "2026-09-05"
+   "aktualisiert": "2026-10-07"
   },
   {
    "key": 80029,
@@ -35657,9 +35801,9 @@
    "gn": "IV.2025.44",
    "gnSekundaer": "SVG.2026.154",
    "datum": "2026-02-11",
-   "titel": "IVG",
+   "titel": "Rente",
    "erstpublikation": "2026-09-30",
-   "aktualisiert": "2026-09-30"
+   "aktualisiert": "2026-10-15"
   },
   {
    "key": 80040,
@@ -35680,13 +35824,40 @@
    "aktualisiert": "2026-09-18"
   },
   {
+   "key": 80052,
+   "gn": "UV.2025.47",
+   "gnSekundaer": "SVG.2026.157",
+   "datum": "2026-02-11",
+   "titel": "UVG",
+   "erstpublikation": "2026-10-16",
+   "aktualisiert": "2026-10-16"
+  },
+  {
+   "key": 80063,
+   "gn": "IV.2025.99",
+   "gnSekundaer": "SVG.2026.159",
+   "datum": "2026-05-26",
+   "titel": "Erhebliche gesundheitliche Verschlechterung sowie Anspruch auf Umschulung verneint.",
+   "erstpublikation": "2026-10-09",
+   "aktualisiert": "2026-10-15"
+  },
+  {
+   "key": 80065,
+   "gn": "IV.2025.148",
+   "gnSekundaer": "SVG.2026.160",
+   "datum": "2026-05-21",
+   "titel": "Invalidenrente",
+   "erstpublikation": "2026-10-15",
+   "aktualisiert": "2026-10-15"
+  },
+  {
    "key": 80070,
    "gn": "IV.2025.110",
    "gnSekundaer": "SVG.2026.161",
    "datum": "2026-03-25",
-   "titel": "IVG",
+   "titel": "Beweiswert Gutachten verneint",
    "erstpublikation": "2026-09-25",
-   "aktualisiert": "2026-09-25"
+   "aktualisiert": "2026-10-15"
   },
   {
    "key": 80073,
@@ -35698,13 +35869,85 @@
    "aktualisiert": "2026-09-23"
   },
   {
+   "key": 80077,
+   "gn": "SB.2025.11",
+   "gnSekundaer": "AG.2026.590",
+   "datum": "2026-08-11",
+   "titel": "fahrlässige einfache Körperverletzung",
+   "erstpublikation": "2026-10-13",
+   "aktualisiert": "2026-10-13"
+  },
+  {
+   "key": 80081,
+   "gn": "IV.2025.108",
+   "gnSekundaer": "SVG.2026.164",
+   "datum": "2026-06-09",
+   "titel": "Zweifel an der Schlüssigkeit der RAD-Stellungnahmen; Gutheissung der Beschwerde",
+   "erstpublikation": "2026-10-10",
+   "aktualisiert": "2026-10-15"
+  },
+  {
+   "key": 80085,
+   "gn": "AL.2025.29",
+   "gnSekundaer": "SVG.2026.165",
+   "datum": "2026-06-04",
+   "titel": "Überprüfbarkeit von Arbeitsbemühungen",
+   "erstpublikation": "2026-10-09",
+   "aktualisiert": "2026-10-15"
+  },
+  {
+   "key": 80086,
+   "gn": "IV.2025.130",
+   "gnSekundaer": "SVG.2026.166",
+   "datum": "2026-06-04",
+   "titel": "Invalidenrente",
+   "erstpublikation": "2026-10-13",
+   "aktualisiert": "2026-10-15"
+  },
+  {
+   "key": 80090,
+   "gn": "IV.2025.138",
+   "gnSekundaer": "SVG.2026.167",
+   "datum": "2026-06-23",
+   "titel": "IVG",
+   "erstpublikation": "2026-10-15",
+   "aktualisiert": "2026-10-15"
+  },
+  {
+   "key": 80093,
+   "gn": "IV.2025.112",
+   "gnSekundaer": "SVG.2026.168",
+   "datum": "2026-04-30",
+   "titel": "Gutachten beweiswertig; Beschwerde abgewiesen",
+   "erstpublikation": "2026-10-10",
+   "aktualisiert": "2026-10-15"
+  },
+  {
+   "key": 80097,
+   "gn": "AUS.2026.83",
+   "gnSekundaer": "AG.2026.601",
+   "datum": "2026-09-25",
+   "titel": "Verlängerung der Durchsetzungshaft",
+   "erstpublikation": "2026-10-15",
+   "aktualisiert": "2026-10-15"
+  },
+  {
+   "key": 80105,
+   "gn": "BES.2026.88",
+   "gnSekundaer": "AG.2026.609",
+   "datum": "2026-09-22",
+   "titel": "Erlass der Verfahrenskosten und Abschlussgebühr (noch nicht rechtskräftig)",
+   "erstpublikation": "2026-10-13",
+   "aktualisiert": "2026-10-13"
+  },
+  {
    "key": 80112,
    "gn": "AUS.2026.85",
    "gnSekundaer": "AG.2026.613",
    "datum": "2026-09-30",
-   "titel": "Ausschaffungshaft",
+   "titel": "Anordnung der Ausschaffungshaft",
    "erstpublikation": "2026-10-02",
-   "aktualisiert": "2026-10-02"
+   "aktualisiert": "2026-10-07"
   },
   {
    "key": 80115,
@@ -35723,6 +35966,87 @@
    "titel": "(nicht rechtskräftig)",
    "erstpublikation": "2026-10-03",
    "aktualisiert": "2026-10-03"
+  },
+  {
+   "key": 80119,
+   "gn": "AUS.2026.86",
+   "gnSekundaer": "AG.2026.619",
+   "datum": "2026-10-02",
+   "titel": "Ausschaffungshaft nach Art. 76a AIG (Haft im Rahmen des Dublin-Verfahrens)",
+   "erstpublikation": "2026-10-06",
+   "aktualisiert": "2026-10-16"
+  },
+  {
+   "key": 80123,
+   "gn": "AH.2025.9",
+   "gnSekundaer": "SVG.2026.169",
+   "datum": "2026-06-04",
+   "titel": "AHVG",
+   "erstpublikation": "2026-10-16",
+   "aktualisiert": "2026-10-16"
+  },
+  {
+   "key": 80124,
+   "gn": "UV.2025.46",
+   "gnSekundaer": "SVG.2026.170",
+   "datum": "2026-05-21",
+   "titel": "UVG",
+   "erstpublikation": "2026-10-16",
+   "aktualisiert": "2026-10-16"
+  },
+  {
+   "key": 80125,
+   "gn": "UV.2026.5",
+   "gnSekundaer": "SVG.2026.171",
+   "datum": "2026-06-18",
+   "titel": "UVG",
+   "erstpublikation": "2026-10-16",
+   "aktualisiert": "2026-10-16"
+  },
+  {
+   "key": 80126,
+   "gn": "AUS.2026.84",
+   "gnSekundaer": "AG.2026.623",
+   "datum": "2026-10-05",
+   "titel": "Verlängerung der Ausschaffungshaft",
+   "erstpublikation": "2026-10-14",
+   "aktualisiert": "2026-10-14"
+  },
+  {
+   "key": 80128,
+   "gn": "AUS.2026.87",
+   "gnSekundaer": "AG.2026.624",
+   "datum": "2026-10-06",
+   "titel": "Ausschaffungshaft mit Verzicht auf mündliche Verhandlung",
+   "erstpublikation": "2026-10-15",
+   "aktualisiert": "2026-10-15"
+  },
+  {
+   "key": 80130,
+   "gn": "IV.2025.127",
+   "gnSekundaer": "SVG.2026.172",
+   "datum": "2026-06-18",
+   "titel": "IVG",
+   "erstpublikation": "2026-10-16",
+   "aktualisiert": "2026-10-16"
+  },
+  {
+   "key": 80136,
+   "gn": "IV.2026.29",
+   "gnSekundaer": "SVG.2026.173",
+   "datum": "2026-06-24",
+   "titel": "IVG",
+   "erstpublikation": "2026-10-15",
+   "aktualisiert": "2026-10-15"
+  },
+  {
+   "key": 80143,
+   "gn": "AUS.2026.88",
+   "gnSekundaer": "AG.2026.633",
+   "datum": "2026-10-13",
+   "titel": "Vorbereitungshaft nach Art. 76a AIG (Haft im Rahmen des Dublin-Verfahrens)",
+   "erstpublikation": "2026-10-14",
+   "aktualisiert": "2026-10-14"
   }
  ]
 }
