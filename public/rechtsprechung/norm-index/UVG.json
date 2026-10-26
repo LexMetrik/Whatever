@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-10-26",
   "erlass": "UVG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -437,20 +437,30 @@
         "gewicht": 2
       },
       {
-        "key": "bge_150_V_33",
-        "zitierung": "BGE 150 V 33",
-        "regesteKurz": "Art. 15 UVG; Art. 13 Abs. 1, aArt. 22 Abs. 4, aArt. 23 Abs. 5, Art. 24 und aArt. 99 UVV; Berechnung des für die Invalidenrente massgeblichen versicherten Verdienstes bei Mehrfachbeschäftigung. In der UVV wird der versicherte Verdienst bei…",
-        "datum": "2023-11-29",
+        "key": "bge_149_V_129",
+        "zitierung": "BGE 149 V 129",
+        "regesteKurz": "Art. 20 Abs. 2 UVG; Art. 69 Abs. 2 ATSG; Komplementärrente; Anrechnung von Anwaltskosten. Das Komplementärrentensystem der Unfallversicherung geht der Überentschädigungsregel des Art. 69 Abs. 2 ATSG vor. Im Unterschied zu Letzterer lässt…",
+        "datum": "2023-03-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_193",
+        "zitierung": "BGE 152 V 193",
+        "regesteKurz": "Art. 20 Abs. 2 und 3 UVG; Art. 32 Abs. 1 UVV; Komplementärrente; Festsetzung der Komplementärrente beim erstmaligen Zusammentreffen mit einer Invalidenrente. Wird mit der Rente der Invalidenversicherung nicht nur die Erwerbsunfähigkeit in…",
+        "datum": "2026-04-08",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_149_V_129",
-        "zitierung": "BGE 149 V 129",
-        "regesteKurz": "Art. 20 Abs. 2 UVG; Art. 69 Abs. 2 ATSG; Komplementärrente; Anrechnung von Anwaltskosten. Das Komplementärrentensystem der Unfallversicherung geht der Überentschädigungsregel des Art. 69 Abs. 2 ATSG vor. Im Unterschied zu Letzterer lässt…",
-        "datum": "2023-03-27",
+        "key": "bge_150_V_33",
+        "zitierung": "BGE 150 V 33",
+        "regesteKurz": "Art. 15 UVG; Art. 13 Abs. 1, aArt. 22 Abs. 4, aArt. 23 Abs. 5, Art. 24 und aArt. 99 UVV; Berechnung des für die Invalidenrente massgeblichen versicherten Verdienstes bei Mehrfachbeschäftigung. In der UVV wird der versicherte Verdienst bei…",
+        "datum": "2023-11-29",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -677,6 +687,16 @@
     ],
     "20": [
       {
+        "key": "bge_149_V_129",
+        "zitierung": "BGE 149 V 129",
+        "regesteKurz": "Art. 20 Abs. 2 UVG; Art. 69 Abs. 2 ATSG; Komplementärrente; Anrechnung von Anwaltskosten. Das Komplementärrentensystem der Unfallversicherung geht der Überentschädigungsregel des Art. 69 Abs. 2 ATSG vor. Im Unterschied zu Letzterer lässt…",
+        "datum": "2023-03-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_147_V_213",
         "zitierung": "BGE 147 V 213",
         "regesteKurz": "Art. 15 UVG; Art. 24 Abs. 3 UVV; Berentung eines Lehrlings und Rentenrevision. Unter dem Vorbehalt von Art. 24 Abs. 4 UVV bleibt der bei Rentenbeginn gemäss zweitem Teilsatz von Art. 15 Abs. 2 UVG erstmalig festgesetzte versicherte…",
@@ -687,10 +707,10 @@
         "gewicht": 1
       },
       {
-        "key": "bge_149_V_129",
-        "zitierung": "BGE 149 V 129",
-        "regesteKurz": "Art. 20 Abs. 2 UVG; Art. 69 Abs. 2 ATSG; Komplementärrente; Anrechnung von Anwaltskosten. Das Komplementärrentensystem der Unfallversicherung geht der Überentschädigungsregel des Art. 69 Abs. 2 ATSG vor. Im Unterschied zu Letzterer lässt…",
-        "datum": "2023-03-27",
+        "key": "bge_152_V_193",
+        "zitierung": "BGE 152 V 193",
+        "regesteKurz": "Art. 20 Abs. 2 und 3 UVG; Art. 32 Abs. 1 UVV; Komplementärrente; Festsetzung der Komplementärrente beim erstmaligen Zusammentreffen mit einer Invalidenrente. Wird mit der Rente der Invalidenversicherung nicht nur die Erwerbsunfähigkeit in…",
+        "datum": "2026-04-08",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -743,16 +763,6 @@
         "datum": "2020-08-26",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_152_V_52__voll",
-        "zitierung": "Urteil 8C_162/2025 (nicht publ. in BGE 152 V 52)",
-        "regesteKurz": null,
-        "datum": "2026-01-27",
-        "leitcharakter": "routine",
-        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -879,6 +889,16 @@
         "datum": "2020-09-02",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_V_193__voll",
+        "zitierung": "Urteil 8C_137/2025 (nicht publ. in BGE 152 V 193)",
+        "regesteKurz": null,
+        "datum": "2026-04-08",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

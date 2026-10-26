@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-10-26",
   "erlass": "KLV",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -252,6 +252,16 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_184__voll",
+        "zitierung": "Urteil 9C_212/2025 (nicht publ. in BGE 152 V 184)",
+        "regesteKurz": null,
+        "datum": "2026-03-18",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
         "gewicht": 0
       }
     ],
@@ -378,7 +388,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 5
+        "gewicht": 6
       },
       {
         "key": "bge_147_V_464",
@@ -388,7 +398,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
+      },
+      {
+        "key": "bge_150_V_372",
+        "zitierung": "BGE 150 V 372",
+        "regesteKurz": "Art. 32 KVG; Art. 64a, 65b, 65c, 65d und 65e KVV; Art. 34d, 34f und 34g KLV (sämtliche Bestimmungen in den vorliegend anwendbaren, bis Ende 2023 gültig gewesenen Fassungen); dreijährliche Überprüfung der Aufnahmebedingungen eines…",
+        "datum": "2024-07-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
       },
       {
         "key": "bge_147_V_470",
@@ -397,6 +417,16 @@
         "datum": "2021-09-22",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_148_V_348__voll",
+        "zitierung": "Urteil 9C_400/2021 (nicht publ. in BGE 148 V 348)",
+        "regesteKurz": null,
+        "datum": "2022-04-20",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       },
@@ -411,10 +441,10 @@
         "gewicht": 1
       },
       {
-        "key": "bge_150_V_372",
-        "zitierung": "BGE 150 V 372",
+        "key": "bge_152_V_184",
+        "zitierung": "BGE 152 V 184",
         "regesteKurz": "Art. 32 KVG; Art. 64a, 65b, 65c, 65d und 65e KVV; Art. 34d, 34f und 34g KLV (sämtliche Bestimmungen in den vorliegend anwendbaren, bis Ende 2023 gültig gewesenen Fassungen); dreijährliche Überprüfung der Aufnahmebedingungen eines…",
-        "datum": "2024-07-16",
+        "datum": "2026-03-18",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -427,16 +457,6 @@
         "datum": "2021-12-10",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_V_348__voll",
-        "zitierung": "Urteil 9C_400/2021 (nicht publ. in BGE 148 V 348)",
-        "regesteKurz": null,
-        "datum": "2022-04-20",
-        "leitcharakter": "routine",
-        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -462,7 +482,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 4
+        "gewicht": 5
       },
       {
         "key": "bge_147_V_464",
@@ -472,7 +492,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
+      },
+      {
+        "key": "bge_150_V_372",
+        "zitierung": "BGE 150 V 372",
+        "regesteKurz": "Art. 32 KVG; Art. 64a, 65b, 65c, 65d und 65e KVV; Art. 34d, 34f und 34g KLV (sämtliche Bestimmungen in den vorliegend anwendbaren, bis Ende 2023 gültig gewesenen Fassungen); dreijährliche Überprüfung der Aufnahmebedingungen eines…",
+        "datum": "2024-07-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
       },
       {
         "key": "bge_147_V_470",
@@ -495,10 +525,10 @@
         "gewicht": 1
       },
       {
-        "key": "bge_150_V_372",
-        "zitierung": "BGE 150 V 372",
+        "key": "bge_152_V_184",
+        "zitierung": "BGE 152 V 184",
         "regesteKurz": "Art. 32 KVG; Art. 64a, 65b, 65c, 65d und 65e KVV; Art. 34d, 34f und 34g KLV (sämtliche Bestimmungen in den vorliegend anwendbaren, bis Ende 2023 gültig gewesenen Fassungen); dreijährliche Überprüfung der Aufnahmebedingungen eines…",
-        "datum": "2024-07-16",
+        "datum": "2026-03-18",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -521,6 +551,16 @@
         "zitierung": "BGE 150 V 372",
         "regesteKurz": "Art. 32 KVG; Art. 64a, 65b, 65c, 65d und 65e KVV; Art. 34d, 34f und 34g KLV (sämtliche Bestimmungen in den vorliegend anwendbaren, bis Ende 2023 gültig gewesenen Fassungen); dreijährliche Überprüfung der Aufnahmebedingungen eines…",
         "datum": "2024-07-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_184",
+        "zitierung": "BGE 152 V 184",
+        "regesteKurz": "Art. 32 KVG; Art. 64a, 65b, 65c, 65d und 65e KVV; Art. 34d, 34f und 34g KLV (sämtliche Bestimmungen in den vorliegend anwendbaren, bis Ende 2023 gültig gewesenen Fassungen); dreijährliche Überprüfung der Aufnahmebedingungen eines…",
+        "datum": "2026-03-18",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

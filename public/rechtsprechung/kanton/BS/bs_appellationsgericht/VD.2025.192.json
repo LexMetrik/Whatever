@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-25",
+  "erzeugt": "2026-10-26",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/VD.2025.192",
@@ -17,7 +17,7 @@
       "sachgebiet": "oeffentlich",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Widerruf einer Standbetriebsbewilligung (nicht rechtskräftig)",
+        "gegenstand": "Widerruf einer Standbetriebsbewilligung",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "Dr. Stephan Wullschleger, lic. iur. André Equey, Prof. Dr. Daniela Thurnherr Keller und Gerichtsschreiber MLaw Damian Wyss"
@@ -300,11 +300,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79838&Template=search_result_document.html",
-      "abgerufen": "2026-09-25",
-      "fassungsToken": "2026-08-05",
+      "abgerufen": "2026-10-26",
+      "fassungsToken": "2026-10-23",
       "sha": "f81b7e6d1b7b5c070fb871a7a01c291e314d25d0f2ee2f4d7d7dd856bd3cfd51",
       "erstpublikation": "2026-08-05",
-      "aktualisiert": "2026-08-05",
+      "aktualisiert": "2026-10-23",
       "nummerSekundaer": "AG.2026.434",
       "ecli": "ECLI:CH:BSA:2026:VD.2025.192"
     }

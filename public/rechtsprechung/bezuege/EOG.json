@@ -1,8 +1,9 @@
 {
-"erzeugt":"2026-10-04",
+"erzeugt":"2026-10-26",
 "erlass":"EOG",
 "erlassEbene":"bund",
 "dokumente":{
+"be_verwaltungsgericht_2002025853":{"zitierung":"Verwaltungsgericht BE 200 2025 853 vom 30.09.2026","regesteKurz":null,"datum":"2026-09-30","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BE","gericht":"be_verwaltungsgericht","status":"kantonal"}},
 "bge_146_V_378":{"zitierung":"BGE 146 V 378","regesteKurz":"Art. 8 und Art. 14 EMRK; Art. 8 Abs. 3 und Art. 190 BV; Art. 8 Abs. 1 und Art. 16b-h EOG; kein Anspruch auf Betriebszulagen bei Mutterschaft. Nach dem klaren Willen des Gesetzgebers besteht bei Mutterschaft selbständig erwerbender Frauen,…","datum":"2020-06-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_147_V_278":{"zitierung":"BGE 147 V 278","regesteKurz":"Art. 2 Abs. 3 bis und Art. 5 Abs. 2 Covid-19-Verordnung Erwerbsausfall in der vom 23. April bis 5. Juli 2020 in Kraft stehenden Fassung; Art. 11 Abs. 1 EOG; Art. 7 Abs. 1 EOV; Anspruchsgrundlagen Corona-Erwerbsersatz für…","datum":"2021-06-30","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_147_V_423":{"zitierung":"BGE 147 V 423","regesteKurz":"a Art. 1 Covid-19-Verordnung Erwerbsausfall; Art. 1 EOG i.V.m. Art. 58 Abs. 1 ATSG und Art. 24 Abs. 1 EOG (e contrario). Im Gegensatz zur Zuständigkeit bei Beschwerden gegen Verfügungen und Einspracheentscheide kantonaler Ausgleichskassen…","datum":"2021-09-15","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
@@ -22,7 +23,7 @@
 "bs_sozialversicherungsgericht_FZ.2025.1":{"zitierung":"Sozialversicherungsgericht BS FZ.2025.1 vom 10.04.2025","regesteKurz":"FLG Ausbildungszulage","datum":"2025-04-10","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
 },
 "proArtikel":{
-"1":[{"key":"bge_147_V_423","gewicht":0}],
+"1":[{"key":"bge_147_V_423","gewicht":0},{"key":"be_verwaltungsgericht_2002025853","gewicht":null}],
 "8":[{"key":"bge_146_V_378","gewicht":0}],
 "9":[{"key":"bge_148_V_373","gewicht":0}],
 "10":[{"key":"bge_148_V_427","gewicht":0},{"key":"bge_148_V_373","gewicht":0}],
@@ -46,10 +47,10 @@
 "16q":[{"key":"bge_151_V_129","gewicht":0},{"key":"bs_sozialversicherungsgericht_EO.2025.1","gewicht":null}],
 "16r":[{"key":"bs_sozialversicherungsgericht_EO.2025.1","gewicht":null}],
 "16s":[{"key":"bge_151_V_129","gewicht":0},{"key":"bs_sozialversicherungsgericht_EO.2025.1","gewicht":null}],
-"1a":[{"key":"bge_148_V_427","gewicht":0},{"key":"bge_148_V_373","gewicht":0},{"key":"bge_146_V_378","gewicht":0},{"key":"bs_sozialversicherungsgericht_FZ.2025.1","gewicht":null}]
+"1a":[{"key":"bge_148_V_427","gewicht":0},{"key":"bge_148_V_373","gewicht":0},{"key":"bge_146_V_378","gewicht":0},{"key":"be_verwaltungsgericht_2002025853","gewicht":null},{"key":"bs_sozialversicherungsgericht_FZ.2025.1","gewicht":null}]
 },
 "gesamtProArtikel":{
-"1":{"bge":1},
+"1":{"bge":1,"kantonal":1},
 "8":{"bge":1},
 "9":{"bge":1},
 "10":{"bge":2},
@@ -73,6 +74,6 @@
 "16q":{"bge":1,"kantonal":1},
 "16r":{"kantonal":1},
 "16s":{"bge":1,"kantonal":1},
-"1a":{"bge":3,"kantonal":1}
+"1a":{"bge":3,"kantonal":2}
 }
 }

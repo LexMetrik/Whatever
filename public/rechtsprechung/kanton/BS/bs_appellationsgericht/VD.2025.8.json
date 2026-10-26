@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-26",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/VD.2025.8",
@@ -17,7 +17,7 @@
       "sachgebiet": "oeffentlich",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Abbruch der bestehende Häuser und Garagen; Neubau MFH mit Autoeinstellhalle, Neubadstrasse 107-115, Laupenring 131, Basel (nicht rechtskräftig)",
+        "gegenstand": "Abbruch der bestehende Häuser und Garagen; Neubau MFH mit Autoeinstellhalle, Neubadstrasse 107-115, Laupenring 131, Basel",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "Dr. Claudius Gelzer (Vorsitz), Dr. Stephan Wullschleger, Dr. Andreas Traub und Gerichtsschreiberin Dr. Michèle Guth"
@@ -320,11 +320,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79796&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2026-07-08",
+      "abgerufen": "2026-10-26",
+      "fassungsToken": "2026-10-23",
       "sha": "6731b188859794bbd48bc48ea243afe282cd0eb2e282cabccd9eea2b7f01cb50",
       "erstpublikation": "2026-07-08",
-      "aktualisiert": "2026-07-08",
+      "aktualisiert": "2026-10-23",
       "nummerSekundaer": "AG.2026.401",
       "ecli": "ECLI:CH:BSA:2026:VD.2025.8"
     }

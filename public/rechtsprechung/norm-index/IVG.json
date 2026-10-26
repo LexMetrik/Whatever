@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-10-26",
   "erlass": "IVG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -61,6 +61,16 @@
         "datum": "2020-05-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_V_162__voll",
+        "zitierung": "Urteil 8C_672/2025 (nicht publ. in BGE 152 V 162)",
+        "regesteKurz": null,
+        "datum": "2026-05-28",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1840,7 +1850,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
+      },
+      {
+        "key": "bge_152_V_167",
+        "zitierung": "BGE 152 V 167",
+        "regesteKurz": "Art. 42 quater ff. IVG; Art. 39c und 39g IVV; Assistenzbeitrag. Die aufgrund des BGE 148 V 408 durch das Bundesamt für Sozialversicherungen (BSV) vorgenommenen Anpassungen in Rz. 4035 und 4036 des Kreisschreibens über den Assistenzbeitrag…",
+        "datum": "2026-04-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_I_73",
@@ -1885,6 +1905,26 @@
     ],
     "42quinquies": [
       {
+        "key": "bge_148_V_408",
+        "zitierung": "BGE 148 V 408",
+        "regesteKurz": "Art. 42sexies Abs. 1 IVG; Assistenzbeitrag. BGE 140 V 543 E. 3.2.2 ist in dem Sinne zu präzisieren, als das standardisierte Abklärungsinstrument FAKT2 kein geeignetes Instrument zur Ermittlung des gesamten Hilfebedarfs einer versicherten…",
+        "datum": "2022-09-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_167",
+        "zitierung": "BGE 152 V 167",
+        "regesteKurz": "Art. 42 quater ff. IVG; Art. 39c und 39g IVV; Assistenzbeitrag. Die aufgrund des BGE 148 V 408 durch das Bundesamt für Sozialversicherungen (BSV) vorgenommenen Anpassungen in Rz. 4035 und 4036 des Kreisschreibens über den Assistenzbeitrag…",
+        "datum": "2026-04-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_V_263",
         "zitierung": "BGE 150 V 263",
         "regesteKurz": "Art. 42 quinquies lit. a IVG; Assistenzbeitrag; Arbeitgebermodell. Für Hilfeleistungen von Assistenzpersonen, die nicht in einem Arbeitsverhältnis mit der versicherten Person, sondern mit einer juristischen Person stehen, besteht kein…",
@@ -1899,16 +1939,6 @@
         "zitierung": "BGE 150 V 105",
         "regesteKurz": "Art. 8 Abs. 1 BV; Art. 14 Abs. 1 lit. b und Abs. 2 ELG; Art. 12 Abs. 1 der st. gallischen Verordnung vom 11. Dezember 2007 über die Vergütung von Krankheits- und Behinderungskosten bei den Ergänzungsleistungen; Pflege und Betreuung durch…",
         "datum": "2024-03-06",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_V_408",
-        "zitierung": "BGE 148 V 408",
-        "regesteKurz": "Art. 42sexies Abs. 1 IVG; Assistenzbeitrag. BGE 140 V 543 E. 3.2.2 ist in dem Sinne zu präzisieren, als das standardisierte Abklärungsinstrument FAKT2 kein geeignetes Instrument zur Ermittlung des gesamten Hilfebedarfs einer versicherten…",
-        "datum": "2022-09-06",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

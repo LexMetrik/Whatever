@@ -1,6 +1,273 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-10-26",
   "entscheide": [
+    {
+      "key": "bs_appellationsgericht_AUS.2026.92",
+      "nummer": "AUS.2026.92",
+      "bgeReferenz": null,
+      "datum": "2026-10-23",
+      "zitierung": "Appellationsgericht BS AUS.2026.92 vom 23.10.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.92.json",
+      "richter": [
+        {
+          "s": "jucker-beat",
+          "r": "vorsitz"
+        }
+      ]
+    },
+    {
+      "key": "bs_appellationsgericht_AUS.2026.94",
+      "nummer": "AUS.2026.94",
+      "bgeReferenz": null,
+      "datum": "2026-10-23",
+      "zitierung": "Appellationsgericht BS AUS.2026.94 vom 23.10.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.94.json",
+      "richter": [
+        {
+          "s": "jucker-beat",
+          "r": "vorsitz"
+        }
+      ]
+    },
+    {
+      "key": "gr_gerichte_ZR12026127",
+      "nummer": "ZR1 26 127",
+      "bgeReferenz": null,
+      "datum": "2026-10-19",
+      "zitierung": "Obergericht GR ZR1 26 127 vom 19.10.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/GR/gr_gerichte/ZR12026127.json"
+    },
+    {
+      "key": "bvger_A_1238_2026",
+      "nummer": "A-1238/2026",
+      "bgeReferenz": null,
+      "datum": "2026-10-15",
+      "zitierung": "BVGer A-1238/2026 vom 15. Oktober 2026",
+      "leitcharakter": "routine",
+      "datei": "bund/bvger/A_1238_2026.json",
+      "richter": [
+        {
+          "s": "widmer-iris",
+          "r": "vorsitz"
+        },
+        {
+          "s": "imstepf-ralf",
+          "r": "mitglied"
+        },
+        {
+          "s": "mutombo-keita",
+          "r": "mitglied"
+        },
+        {
+          "s": "begemann-anna",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bvger_A_6499_2025",
+      "nummer": "A-6499/2025",
+      "bgeReferenz": null,
+      "datum": "2026-10-15",
+      "zitierung": "BVGer A-6499/2025 vom 15. Oktober 2026",
+      "leitcharakter": "routine",
+      "datei": "bund/bvger/A_6499_2025.json",
+      "richter": [
+        {
+          "s": "misic-alexander",
+          "r": "vorsitz"
+        },
+        {
+          "s": "attenhofer-jonas",
+          "r": "mitglied"
+        },
+        {
+          "s": "marcel-tiefenthal-jurg",
+          "r": "mitglied"
+        },
+        {
+          "s": "peerdeman-flurina",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bvger_E_4570_2026",
+      "nummer": "E-4570/2026",
+      "bgeReferenz": null,
+      "datum": "2026-10-15",
+      "zitierung": "BVGer E-4570/2026 vom 15. Oktober 2026",
+      "leitcharakter": "routine",
+      "datei": "bund/bvger/E_4570_2026.json",
+      "richter": [
+        {
+          "s": "daveni-deborah",
+          "r": "vorsitz"
+        },
+        {
+          "s": "tornare-villanueva-chrystel",
+          "r": "mitglied"
+        },
+        {
+          "s": "stevanin-alessandra",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bvger_F_6599_2026",
+      "nummer": "F-6599/2026",
+      "bgeReferenz": null,
+      "datum": "2026-10-15",
+      "zitierung": "BVGer F-6599/2026 vom 15. Oktober 2026",
+      "leitcharakter": "routine",
+      "datei": "bund/bvger/F_6599_2026.json",
+      "richter": [
+        {
+          "s": "chatton-gregor",
+          "r": "vorsitz"
+        },
+        {
+          "s": "genner-susanne",
+          "r": "mitglied"
+        },
+        {
+          "s": "vallenari-alissa",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bvger_F_7333_2026",
+      "nummer": "F-7333/2026",
+      "bgeReferenz": null,
+      "datum": "2026-10-15",
+      "zitierung": "BVGer F-7333/2026 vom 15. Oktober 2026",
+      "leitcharakter": "routine",
+      "datei": "bund/bvger/F_7333_2026.json",
+      "richter": [
+        {
+          "s": "truttmann-aileen",
+          "r": "vorsitz"
+        },
+        {
+          "s": "preisig-christa",
+          "r": "mitglied"
+        },
+        {
+          "s": "jakobovits-dorit",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "gr_gerichte_SBK202657",
+      "nummer": "SBK 26 57",
+      "bgeReferenz": null,
+      "datum": "2026-10-14",
+      "zitierung": "Obergericht GR SBK 26 57 vom 14.10.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/GR/gr_gerichte/SBK202657.json"
+    },
+    {
+      "key": "bs_appellationsgericht_AUS.2026.88",
+      "nummer": "AUS.2026.88",
+      "bgeReferenz": null,
+      "datum": "2026-10-13",
+      "zitierung": "Appellationsgericht BS AUS.2026.88 vom 13.10.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.88.json",
+      "richter": [
+        {
+          "s": "jucker-beat",
+          "r": "vorsitz"
+        }
+      ]
+    },
+    {
+      "key": "gr_gerichte_ZR2202545",
+      "nummer": "ZR2 25 45",
+      "bgeReferenz": null,
+      "datum": "2026-10-12",
+      "zitierung": "Obergericht GR ZR2 25 45 vom 12.10.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/GR/gr_gerichte/ZR2202545.json"
+    },
+    {
+      "key": "gr_gerichte_SBK202686",
+      "nummer": "SBK 26 86",
+      "bgeReferenz": null,
+      "datum": "2026-10-08",
+      "zitierung": "Obergericht GR SBK 26 86 vom 08.10.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/GR/gr_gerichte/SBK202686.json"
+    },
+    {
+      "key": "bs_appellationsgericht_AUS.2026.87",
+      "nummer": "AUS.2026.87",
+      "bgeReferenz": null,
+      "datum": "2026-10-06",
+      "zitierung": "Appellationsgericht BS AUS.2026.87 vom 06.10.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.87.json",
+      "richter": [
+        {
+          "s": "inoue-thomas",
+          "r": "vorsitz"
+        }
+      ]
+    },
+    {
+      "key": "gr_gerichte_SR2202641",
+      "nummer": "SR2 26 41",
+      "bgeReferenz": null,
+      "datum": "2026-10-06",
+      "zitierung": "Obergericht GR SR2 26 41 vom 06.10.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/GR/gr_gerichte/SR2202641.json"
+    },
+    {
+      "key": "gr_gerichte_VR1202645",
+      "nummer": "VR1 26 45",
+      "bgeReferenz": null,
+      "datum": "2026-10-06",
+      "zitierung": "Obergericht GR VR1 26 45 vom 06.10.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/GR/gr_gerichte/VR1202645.json"
+    },
+    {
+      "key": "bs_appellationsgericht_AUS.2026.84",
+      "nummer": "AUS.2026.84",
+      "bgeReferenz": null,
+      "datum": "2026-10-05",
+      "zitierung": "Appellationsgericht BS AUS.2026.84 vom 05.10.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.84.json",
+      "richter": [
+        {
+          "s": "inoue-thomas",
+          "r": "vorsitz"
+        }
+      ]
+    },
+    {
+      "key": "bs_appellationsgericht_AUS.2026.86",
+      "nummer": "AUS.2026.86",
+      "bgeReferenz": null,
+      "datum": "2026-10-02",
+      "zitierung": "Appellationsgericht BS AUS.2026.86 vom 02.10.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.86.json",
+      "richter": [
+        {
+          "s": "jucker-beat",
+          "r": "vorsitz"
+        }
+      ]
+    },
     {
       "key": "bs_appellationsgericht_AUS.2026.85",
       "nummer": "AUS.2026.85",
@@ -28,6 +295,229 @@
         {
           "s": "zurcher-alexander",
           "r": "vorsitz"
+        }
+      ]
+    },
+    {
+      "key": "bstger_BV_2026_12",
+      "nummer": "BV.2026.12",
+      "bgeReferenz": null,
+      "datum": "2026-09-30",
+      "zitierung": "BStGer BV.2026.12 vom 30. September 2026",
+      "leitcharakter": "routine",
+      "datei": "bund/bstger/BV_2026_12.json",
+      "richter": [
+        {
+          "s": "robert-nicoud-patrick",
+          "r": "vorsitz"
+        },
+        {
+          "s": "garre-roy",
+          "r": "mitglied"
+        },
+        {
+          "s": "zufferey-nathalie",
+          "r": "mitglied"
+        },
+        {
+          "s": "vacalli-giampiero",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "be_verwaltungsgericht_2002025853",
+      "nummer": "200 2025 853",
+      "bgeReferenz": null,
+      "datum": "2026-09-30",
+      "zitierung": "Verwaltungsgericht BE 200 2025 853 vom 30.09.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BE/be_verwaltungsgericht/2002025853.json"
+    },
+    {
+      "key": "be_verwaltungsgericht_2002026762",
+      "nummer": "200 2026 762",
+      "bgeReferenz": null,
+      "datum": "2026-09-30",
+      "zitierung": "Verwaltungsgericht BE 200 2026 762 vom 30.09.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BE/be_verwaltungsgericht/2002026762.json"
+    },
+    {
+      "key": "be_verwaltungsgericht_2002025520",
+      "nummer": "200 2025 520",
+      "bgeReferenz": null,
+      "datum": "2026-09-29",
+      "zitierung": "Verwaltungsgericht BE 200 2025 520 vom 29.09.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BE/be_verwaltungsgericht/2002025520.json"
+    },
+    {
+      "key": "be_verwaltungsgericht_2002025573",
+      "nummer": "200 2025 573",
+      "bgeReferenz": null,
+      "datum": "2026-09-29",
+      "zitierung": "Verwaltungsgericht BE 200 2025 573 vom 29.09.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BE/be_verwaltungsgericht/2002025573.json"
+    },
+    {
+      "key": "be_verwaltungsgericht_2002026682",
+      "nummer": "200 2026 682",
+      "bgeReferenz": null,
+      "datum": "2026-09-29",
+      "zitierung": "Verwaltungsgericht BE 200 2026 682 vom 29.09.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BE/be_verwaltungsgericht/2002026682.json"
+    },
+    {
+      "key": "bs_appellationsgericht_AUS.2026.83",
+      "nummer": "AUS.2026.83",
+      "bgeReferenz": null,
+      "datum": "2026-09-25",
+      "zitierung": "Appellationsgericht BS AUS.2026.83 vom 25.09.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.83.json",
+      "richter": [
+        {
+          "s": "inoue-thomas",
+          "r": "vorsitz"
+        }
+      ]
+    },
+    {
+      "key": "bstger_BB_2026_89",
+      "nummer": "BB.2026.89",
+      "bgeReferenz": null,
+      "datum": "2026-09-25",
+      "zitierung": "BStGer BB.2026.89 vom 25. September 2026",
+      "leitcharakter": "routine",
+      "datei": "bund/bstger/BB_2026_89.json",
+      "richter": [
+        {
+          "s": "robert-nicoud-patrick",
+          "r": "vorsitz"
+        },
+        {
+          "s": "zufferey-nathalie",
+          "r": "mitglied"
+        },
+        {
+          "s": "heimgartner-stefan",
+          "r": "mitglied"
+        },
+        {
+          "s": "husson-albertoni-claude-fabienne",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bstger_BG_2026_67",
+      "nummer": "BG.2026.67",
+      "bgeReferenz": null,
+      "datum": "2026-09-25",
+      "zitierung": "BStGer BG.2026.67 vom 25. September 2026",
+      "leitcharakter": "routine",
+      "datei": "bund/bstger/BG_2026_67.json",
+      "richter": [
+        {
+          "s": "robert-nicoud-patrick",
+          "r": "vorsitz"
+        },
+        {
+          "s": "zufferey-nathalie",
+          "r": "mitglied"
+        },
+        {
+          "s": "heimgartner-stefan",
+          "r": "mitglied"
+        },
+        {
+          "s": "husson-albertoni-claude-fabienne",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "be_verwaltungsgericht_2002025186",
+      "nummer": "200 2025 186",
+      "bgeReferenz": null,
+      "datum": "2026-09-25",
+      "zitierung": "Verwaltungsgericht BE 200 2025 186 vom 25.09.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BE/be_verwaltungsgericht/2002025186.json"
+    },
+    {
+      "key": "bstger_BE_2026_18",
+      "nummer": "BE.2026.18",
+      "bgeReferenz": null,
+      "datum": "2026-09-23",
+      "zitierung": "BStGer BE.2026.18 vom 23. September 2026",
+      "leitcharakter": "routine",
+      "datei": "bund/bstger/BE_2026_18.json",
+      "richter": [
+        {
+          "s": "robert-nicoud-patrick",
+          "r": "vorsitz"
+        },
+        {
+          "s": "zufferey-nathalie",
+          "r": "mitglied"
+        },
+        {
+          "s": "ulrich-felix",
+          "r": "mitglied"
+        },
+        {
+          "s": "alder-moynat-yann",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bstger_BG_2026_74",
+      "nummer": "BG.2026.74",
+      "bgeReferenz": null,
+      "datum": "2026-09-23",
+      "zitierung": "BStGer BG.2026.74 vom 23. September 2026",
+      "leitcharakter": "routine",
+      "datei": "bund/bstger/BG_2026_74.json",
+      "richter": [
+        {
+          "s": "robert-nicoud-patrick",
+          "r": "vorsitz"
+        },
+        {
+          "s": "garre-roy",
+          "r": "mitglied"
+        },
+        {
+          "s": "heimgartner-stefan",
+          "r": "mitglied"
+        },
+        {
+          "s": "vacalli-giampiero",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_appellationsgericht_BES.2026.88",
+      "nummer": "BES.2026.88",
+      "bgeReferenz": null,
+      "datum": "2026-09-22",
+      "zitierung": "Appellationsgericht BS BES.2026.88 vom 22.09.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/BES.2026.88.json",
+      "richter": [
+        {
+          "s": "schleiminger-dorrit",
+          "r": "vorsitz"
+        },
+        {
+          "s": "friedli-rahel",
+          "r": "gerichtsschreiber"
         }
       ]
     },
@@ -861,6 +1351,15 @@
       "datei": "kanton/BE/be_verwaltungsgericht/2002026218.json"
     },
     {
+      "key": "zh_obergericht_PQ260079",
+      "nummer": "PQ260079",
+      "bgeReferenz": null,
+      "datum": "2026-08-31",
+      "zitierung": "Obergericht ZH PQ260079 vom 31.08.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/ZH/zh_obergericht/PQ260079.json"
+    },
+    {
       "key": "be_verwaltungsgericht_2002026259",
       "nummer": "200 2026 259",
       "bgeReferenz": null,
@@ -870,6 +1369,15 @@
       "datei": "kanton/BE/be_verwaltungsgericht/2002026259.json"
     },
     {
+      "key": "zh_obergericht_PS260168",
+      "nummer": "PS260168",
+      "bgeReferenz": null,
+      "datum": "2026-08-28",
+      "zitierung": "Obergericht ZH PS260168 vom 28.08.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/ZH/zh_obergericht/PS260168.json"
+    },
+    {
       "key": "be_verwaltungsgericht_2002025401",
       "nummer": "200 2025 401",
       "bgeReferenz": null,
@@ -877,6 +1385,24 @@
       "zitierung": "Verwaltungsgericht BE 200 2025 401 vom 27.08.2026",
       "leitcharakter": "routine",
       "datei": "kanton/BE/be_verwaltungsgericht/2002025401.json"
+    },
+    {
+      "key": "zh_obergericht_LF260089",
+      "nummer": "LF260089",
+      "bgeReferenz": null,
+      "datum": "2026-08-27",
+      "zitierung": "Obergericht ZH LF260089 vom 27.08.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/ZH/zh_obergericht/LF260089.json"
+    },
+    {
+      "key": "zh_obergericht_PS260266",
+      "nummer": "PS260266",
+      "bgeReferenz": null,
+      "datum": "2026-08-27",
+      "zitierung": "Obergericht ZH PS260266 vom 27.08.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/ZH/zh_obergericht/PS260266.json"
     },
     {
       "key": "bstger_RR_2025_198",
@@ -904,6 +1430,24 @@
           "r": "gerichtsschreiber"
         }
       ]
+    },
+    {
+      "key": "zh_obergericht_PA260006",
+      "nummer": "PA260006",
+      "bgeReferenz": null,
+      "datum": "2026-08-26",
+      "zitierung": "Obergericht ZH PA260006 vom 26.08.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/ZH/zh_obergericht/PA260006.json"
+    },
+    {
+      "key": "zh_obergericht_PS260166",
+      "nummer": "PS260166",
+      "bgeReferenz": null,
+      "datum": "2026-08-26",
+      "zitierung": "Obergericht ZH PS260166 vom 26.08.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/ZH/zh_obergericht/PS260166.json"
     },
     {
       "key": "be_verwaltungsgericht_200202668",
@@ -964,6 +1508,25 @@
         },
         {
           "s": "vacalli-giampiero",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_appellationsgericht_BES.2026.69",
+      "nummer": "BES.2026.69",
+      "bgeReferenz": null,
+      "datum": "2026-08-21",
+      "zitierung": "Appellationsgericht BS BES.2026.69 vom 21.08.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/BES.2026.69.json",
+      "richter": [
+        {
+          "s": "oser-marc",
+          "r": "vorsitz"
+        },
+        {
+          "s": "traub-flavia",
           "r": "gerichtsschreiber"
         }
       ]
@@ -1230,6 +1793,33 @@
       ]
     },
     {
+      "key": "bs_appellationsgericht_SB.2025.11",
+      "nummer": "SB.2025.11",
+      "bgeReferenz": null,
+      "datum": "2026-08-11",
+      "zitierung": "Appellationsgericht BS SB.2025.11 vom 11.08.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/SB.2025.11.json",
+      "richter": [
+        {
+          "s": "schmid-patrizia",
+          "r": "vorsitz"
+        },
+        {
+          "s": "renaud-lucienne",
+          "r": "mitglied"
+        },
+        {
+          "s": "weber-jonas",
+          "r": "mitglied"
+        },
+        {
+          "s": "de-luca-nathalie",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bs_appellationsgericht_AUS.2026.66",
       "nummer": "AUS.2026.66",
       "bgeReferenz": null,
@@ -1267,6 +1857,33 @@
         },
         {
           "s": "ebneter-stephan",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_appellationsgericht_KE.2026.15",
+      "nummer": "KE.2026.15",
+      "bgeReferenz": null,
+      "datum": "2026-08-07",
+      "zitierung": "Appellationsgericht BS KE.2026.15 vom 07.08.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/KE.2026.15.json",
+      "richter": [
+        {
+          "s": "wullschleger-stephan",
+          "r": "vorsitz"
+        },
+        {
+          "s": "renaud-lucienne",
+          "r": "mitglied"
+        },
+        {
+          "s": "blum-nina",
+          "r": "mitglied"
+        },
+        {
+          "s": "de-luca-nathalie",
           "r": "gerichtsschreiber"
         }
       ]
@@ -1480,6 +2097,15 @@
       "datei": "kanton/ZH/zh_obergericht/PS260072.json"
     },
     {
+      "key": "bpatger_S2026_003",
+      "nummer": "S2026_003",
+      "bgeReferenz": null,
+      "datum": "2026-07-20",
+      "zitierung": "BPatGer S2026_003 vom 20. Juli 2026",
+      "leitcharakter": "routine",
+      "datei": "bund/bpatger/S2026_003.json"
+    },
+    {
       "key": "bpatger_S2025_003",
       "nummer": "S2025_003",
       "bgeReferenz": null,
@@ -1636,6 +2262,60 @@
       "datei": "kanton/ZH/zh_obergericht/PQ260063.json"
     },
     {
+      "key": "bs_sozialversicherungsgericht_IV.2026.22",
+      "nummer": "IV.2026.22",
+      "bgeReferenz": null,
+      "datum": "2026-07-02",
+      "zitierung": "Sozialversicherungsgericht BS IV.2026.22 vom 02.07.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2026.22.json",
+      "richter": [
+        {
+          "s": "schnyder-r",
+          "r": "vorsitz"
+        },
+        {
+          "s": "von-aarburg-r",
+          "r": "mitglied"
+        },
+        {
+          "s": "schenker-s",
+          "r": "mitglied"
+        },
+        {
+          "s": "bertazzo-b",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_IV.2026.6",
+      "nummer": "IV.2026.6",
+      "bgeReferenz": null,
+      "datum": "2026-07-02",
+      "zitierung": "Sozialversicherungsgericht BS IV.2026.6 vom 02.07.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2026.6.json",
+      "richter": [
+        {
+          "s": "schnyder-r",
+          "r": "vorsitz"
+        },
+        {
+          "s": "von-aarburg-r",
+          "r": "mitglied"
+        },
+        {
+          "s": "schenker-s",
+          "r": "mitglied"
+        },
+        {
+          "s": "bertazzo-b",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bs_appellationsgericht_AUS.2026.52",
       "nummer": "AUS.2026.52",
       "bgeReferenz": null,
@@ -1725,6 +2405,60 @@
         },
         {
           "s": "wyss-damian",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_IV.2026.29",
+      "nummer": "IV.2026.29",
+      "bgeReferenz": null,
+      "datum": "2026-06-24",
+      "zitierung": "Sozialversicherungsgericht BS IV.2026.29 vom 24.06.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2026.29.json",
+      "richter": [
+        {
+          "s": "thomi-g",
+          "r": "vorsitz"
+        },
+        {
+          "s": "prack-hoenen-m",
+          "r": "mitglied"
+        },
+        {
+          "s": "ruhl-w",
+          "r": "mitglied"
+        },
+        {
+          "s": "wepfer-l",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_IV.2025.138",
+      "nummer": "IV.2025.138",
+      "bgeReferenz": null,
+      "datum": "2026-06-23",
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.138 vom 23.06.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.138.json",
+      "richter": [
+        {
+          "s": "pfleiderer-andrea",
+          "r": "vorsitz"
+        },
+        {
+          "s": "muller-c",
+          "r": "mitglied"
+        },
+        {
+          "s": "fasnacht-tobias",
+          "r": "mitglied"
+        },
+        {
+          "s": "wepfer-l",
           "r": "gerichtsschreiber"
         }
       ]
@@ -1848,6 +2582,60 @@
         },
         {
           "s": "ursprung-roosli-a",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_IV.2025.127",
+      "nummer": "IV.2025.127",
+      "bgeReferenz": null,
+      "datum": "2026-06-18",
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.127 vom 18.06.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.127.json",
+      "richter": [
+        {
+          "s": "schnyder-r",
+          "r": "vorsitz"
+        },
+        {
+          "s": "zalad-a",
+          "r": "mitglied"
+        },
+        {
+          "s": "eymann-f",
+          "r": "mitglied"
+        },
+        {
+          "s": "pongracz-leimer-b",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_UV.2026.5",
+      "nummer": "UV.2026.5",
+      "bgeReferenz": null,
+      "datum": "2026-06-18",
+      "zitierung": "Sozialversicherungsgericht BS UV.2026.5 vom 18.06.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/UV.2026.5.json",
+      "richter": [
+        {
+          "s": "schnyder-r",
+          "r": "vorsitz"
+        },
+        {
+          "s": "zalad-a",
+          "r": "mitglied"
+        },
+        {
+          "s": "eymann-f",
+          "r": "mitglied"
+        },
+        {
+          "s": "loretz-f",
           "r": "gerichtsschreiber"
         }
       ]
@@ -2007,6 +2795,33 @@
       ]
     },
     {
+      "key": "bs_appellationsgericht_SB.2025.92",
+      "nummer": "SB.2025.92",
+      "bgeReferenz": null,
+      "datum": "2026-06-16",
+      "zitierung": "Appellationsgericht BS SB.2025.92 vom 16.06.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/SB.2025.92.json",
+      "richter": [
+        {
+          "s": "christ-eva",
+          "r": "vorsitz"
+        },
+        {
+          "s": "spenle-christoph",
+          "r": "mitglied"
+        },
+        {
+          "s": "mabillard-ramon",
+          "r": "mitglied"
+        },
+        {
+          "s": "de-luca-nathalie",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bger_12T_3_2025",
       "nummer": "12T_3/2025",
       "bgeReferenz": null,
@@ -2134,6 +2949,25 @@
       "datei": "kanton/BS/bs_sozialversicherungsgericht/KV.2025.6.json"
     },
     {
+      "key": "bs_appellationsgericht_BES.2023.166",
+      "nummer": "BES.2023.166",
+      "bgeReferenz": null,
+      "datum": "2026-06-12",
+      "zitierung": "Appellationsgericht BS BES.2023.166 vom 12.06.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/BES.2023.166.json",
+      "richter": [
+        {
+          "s": "schleiminger-dorrit",
+          "r": "vorsitz"
+        },
+        {
+          "s": "von-kaenel-lukas",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bger_5A_678_2025",
       "nummer": "5A_678/2025",
       "bgeReferenz": null,
@@ -2207,6 +3041,33 @@
       ]
     },
     {
+      "key": "bs_appellationsgericht_VD.2025.196",
+      "nummer": "VD.2025.196",
+      "bgeReferenz": null,
+      "datum": "2026-06-11",
+      "zitierung": "Appellationsgericht BS VD.2025.196 vom 11.06.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/VD.2025.196.json",
+      "richter": [
+        {
+          "s": "wullschleger-stephan",
+          "r": "vorsitz"
+        },
+        {
+          "s": "oser-marc",
+          "r": "mitglied"
+        },
+        {
+          "s": "spenle-christoph",
+          "r": "mitglied"
+        },
+        {
+          "s": "de-luca-nathalie",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "gr_gerichte_ZR2202624",
       "nummer": "ZR2 26 24",
       "bgeReferenz": null,
@@ -2223,6 +3084,25 @@
       "zitierung": "Obergericht GR SR2 25 89 vom 10.06.2026",
       "leitcharakter": "routine",
       "datei": "kanton/GR/gr_gerichte/SR2202589.json"
+    },
+    {
+      "key": "bs_appellationsgericht_VD.2026.35",
+      "nummer": "VD.2026.35",
+      "bgeReferenz": null,
+      "datum": "2026-06-10",
+      "zitierung": "Appellationsgericht BS VD.2026.35 vom 10.06.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/VD.2026.35.json",
+      "richter": [
+        {
+          "s": "wullschleger-stephan",
+          "r": "vorsitz"
+        },
+        {
+          "s": "von-kaenel-lukas",
+          "r": "gerichtsschreiber"
+        }
+      ]
     },
     {
       "key": "bstger_CR_2026_4",
@@ -2331,6 +3211,79 @@
         },
         {
           "s": "dreyer-s",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_appellationsgericht_BES.2026.43",
+      "nummer": "BES.2026.43",
+      "bgeReferenz": null,
+      "datum": "2026-06-09",
+      "zitierung": "Appellationsgericht BS BES.2026.43 vom 09.06.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/BES.2026.43.json",
+      "richter": [
+        {
+          "s": "hoenen-christian",
+          "r": "vorsitz"
+        },
+        {
+          "s": "spring-andrin",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_IV.2025.108",
+      "nummer": "IV.2025.108",
+      "bgeReferenz": null,
+      "datum": "2026-06-09",
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.108 vom 09.06.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.108.json",
+      "richter": [
+        {
+          "s": "pfleiderer-andrea",
+          "r": "vorsitz"
+        },
+        {
+          "s": "ruhl-w",
+          "r": "mitglied"
+        },
+        {
+          "s": "borer-d",
+          "r": "mitglied"
+        },
+        {
+          "s": "kreis-manuel",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_appellationsgericht_ZB.2026.4",
+      "nummer": "ZB.2026.4",
+      "bgeReferenz": null,
+      "datum": "2026-06-08",
+      "zitierung": "Appellationsgericht BS ZB.2026.4 vom 08.06.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/ZB.2026.4.json",
+      "richter": [
+        {
+          "s": "wullschleger-stephan",
+          "r": "vorsitz"
+        },
+        {
+          "s": "equey-andre",
+          "r": "mitglied"
+        },
+        {
+          "s": "kuster-nicole",
+          "r": "mitglied"
+        },
+        {
+          "s": "spring-andrin",
           "r": "gerichtsschreiber"
         }
       ]
@@ -2482,6 +3435,87 @@
       "datei": "kanton/BS/bs_sozialversicherungsgericht/UV.2025.57.json"
     },
     {
+      "key": "bs_sozialversicherungsgericht_AH.2025.9",
+      "nummer": "AH.2025.9",
+      "bgeReferenz": null,
+      "datum": "2026-06-04",
+      "zitierung": "Sozialversicherungsgericht BS AH.2025.9 vom 04.06.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/AH.2025.9.json",
+      "richter": [
+        {
+          "s": "schnyder-r",
+          "r": "vorsitz"
+        },
+        {
+          "s": "zalad-a",
+          "r": "mitglied"
+        },
+        {
+          "s": "schenker-s",
+          "r": "mitglied"
+        },
+        {
+          "s": "loretz-f",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_AL.2025.29",
+      "nummer": "AL.2025.29",
+      "bgeReferenz": null,
+      "datum": "2026-06-04",
+      "zitierung": "Sozialversicherungsgericht BS AL.2025.29 vom 04.06.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/AL.2025.29.json",
+      "richter": [
+        {
+          "s": "schnyder-r",
+          "r": "vorsitz"
+        },
+        {
+          "s": "zalad-a",
+          "r": "mitglied"
+        },
+        {
+          "s": "schenker-s",
+          "r": "mitglied"
+        },
+        {
+          "s": "guntert-m",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_IV.2025.130",
+      "nummer": "IV.2025.130",
+      "bgeReferenz": null,
+      "datum": "2026-06-04",
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.130 vom 04.06.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.130.json",
+      "richter": [
+        {
+          "s": "schnyder-r",
+          "r": "vorsitz"
+        },
+        {
+          "s": "zalad-a",
+          "r": "mitglied"
+        },
+        {
+          "s": "schenker-s",
+          "r": "mitglied"
+        },
+        {
+          "s": "bertazzo-b",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bs_appellationsgericht_VD.2025.97",
       "nummer": "VD.2025.97",
       "bgeReferenz": null,
@@ -2611,6 +3645,55 @@
       "datei": "kanton/BS/bs_sozialversicherungsgericht/BV.2026.5.json"
     },
     {
+      "key": "bge_152_V_162",
+      "nummer": "152 V 162",
+      "bgeReferenz": "152 V 162",
+      "datum": "2026-05-28",
+      "zitierung": "BGE 152 V 162",
+      "leitcharakter": "leitentscheid",
+      "datei": "bund/bge/152_V_162.json",
+      "richter": [
+        {
+          "s": "viscione",
+          "r": "vorsitz"
+        },
+        {
+          "s": "maillard",
+          "r": "mitglied"
+        },
+        {
+          "s": "heine",
+          "r": "mitglied"
+        },
+        {
+          "s": "scherrer-reber",
+          "r": "mitglied"
+        },
+        {
+          "s": "metral",
+          "r": "mitglied"
+        },
+        {
+          "s": "ourny",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bge_152_V_162__voll",
+      "nummer": "8C_672/2025",
+      "bgeReferenz": null,
+      "datum": "2026-05-28",
+      "zitierung": "BGer 8C_672/2025",
+      "leitcharakter": "routine",
+      "datei": null,
+      "verweis": {
+        "zielKey": "bge_152_V_162",
+        "ansicht": "voll",
+        "bgeReferenz": "152 V 162"
+      }
+    },
+    {
       "key": "bs_sozialversicherungsgericht_IV.2025.55",
       "nummer": "IV.2025.55",
       "bgeReferenz": null,
@@ -2633,6 +3716,33 @@
         },
         {
           "s": "dreyer-s",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_IV.2025.99",
+      "nummer": "IV.2025.99",
+      "bgeReferenz": null,
+      "datum": "2026-05-26",
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.99 vom 26.05.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.99.json",
+      "richter": [
+        {
+          "s": "pfleiderer-andrea",
+          "r": "vorsitz"
+        },
+        {
+          "s": "muller-c",
+          "r": "mitglied"
+        },
+        {
+          "s": "bammatter-glattli-s",
+          "r": "mitglied"
+        },
+        {
+          "s": "pongracz-leimer-b",
           "r": "gerichtsschreiber"
         }
       ]
@@ -2722,6 +3832,60 @@
       ]
     },
     {
+      "key": "bs_appellationsgericht_VD.2025.191",
+      "nummer": "VD.2025.191",
+      "bgeReferenz": null,
+      "datum": "2026-05-22",
+      "zitierung": "Appellationsgericht BS VD.2025.191 vom 22.05.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/VD.2025.191.json",
+      "richter": [
+        {
+          "s": "wullschleger-stephan",
+          "r": "vorsitz"
+        },
+        {
+          "s": "gelzer-claudius",
+          "r": "mitglied"
+        },
+        {
+          "s": "fuchs-mia",
+          "r": "mitglied"
+        },
+        {
+          "s": "manyoki-martin",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_appellationsgericht_VD.2025.195",
+      "nummer": "VD.2025.195",
+      "bgeReferenz": null,
+      "datum": "2026-05-22",
+      "zitierung": "Appellationsgericht BS VD.2025.195 vom 22.05.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/VD.2025.195.json",
+      "richter": [
+        {
+          "s": "wullschleger-stephan",
+          "r": "vorsitz"
+        },
+        {
+          "s": "gelzer-claudius",
+          "r": "mitglied"
+        },
+        {
+          "s": "fuchs-mia",
+          "r": "mitglied"
+        },
+        {
+          "s": "manyoki-martin",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bs_sozialversicherungsgericht_UV.2025.58",
       "nummer": "UV.2025.58",
       "bgeReferenz": null,
@@ -2771,6 +3935,60 @@
         },
         {
           "s": "menzinger-david",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_IV.2025.148",
+      "nummer": "IV.2025.148",
+      "bgeReferenz": null,
+      "datum": "2026-05-21",
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.148 vom 21.05.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.148.json",
+      "richter": [
+        {
+          "s": "schnyder-r",
+          "r": "vorsitz"
+        },
+        {
+          "s": "kaderli-p",
+          "r": "mitglied"
+        },
+        {
+          "s": "eymann-f",
+          "r": "mitglied"
+        },
+        {
+          "s": "bertazzo-b",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_UV.2025.46",
+      "nummer": "UV.2025.46",
+      "bgeReferenz": null,
+      "datum": "2026-05-21",
+      "zitierung": "Sozialversicherungsgericht BS UV.2025.46 vom 21.05.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/UV.2025.46.json",
+      "richter": [
+        {
+          "s": "schnyder-r",
+          "r": "vorsitz"
+        },
+        {
+          "s": "kaderli-p",
+          "r": "mitglied"
+        },
+        {
+          "s": "eymann-f",
+          "r": "mitglied"
+        },
+        {
+          "s": "loretz-f",
           "r": "gerichtsschreiber"
         }
       ]
@@ -3492,6 +4710,29 @@
       ]
     },
     {
+      "key": "bge_152_V_200",
+      "nummer": "152 V 200",
+      "bgeReferenz": "152 V 200",
+      "datum": "2026-05-07",
+      "zitierung": "BGE 152 V 200",
+      "leitcharakter": "leitentscheid",
+      "datei": "bund/bge/152_V_200.json"
+    },
+    {
+      "key": "bge_152_V_200__voll",
+      "nummer": "8C_667/2025",
+      "bgeReferenz": null,
+      "datum": "2026-05-07",
+      "zitierung": "BGer 8C_667/2025",
+      "leitcharakter": "routine",
+      "datei": null,
+      "verweis": {
+        "zielKey": "bge_152_V_200",
+        "ansicht": "voll",
+        "bgeReferenz": "152 V 200"
+      }
+    },
+    {
       "key": "bs_appellationsgericht_BES.2025.117",
       "nummer": "BES.2025.117",
       "bgeReferenz": null,
@@ -3654,6 +4895,52 @@
       ]
     },
     {
+      "key": "bs_appellationsgericht_BES.2025.92",
+      "nummer": "BES.2025.92",
+      "bgeReferenz": null,
+      "datum": "2026-04-30",
+      "zitierung": "Appellationsgericht BS BES.2025.92 vom 30.04.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/BES.2025.92.json",
+      "richter": [
+        {
+          "s": "oser-marc",
+          "r": "vorsitz"
+        },
+        {
+          "s": "burckhardt-jenny",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_IV.2025.112",
+      "nummer": "IV.2025.112",
+      "bgeReferenz": null,
+      "datum": "2026-04-30",
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.112 vom 30.04.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.112.json",
+      "richter": [
+        {
+          "s": "schnyder-r",
+          "r": "vorsitz"
+        },
+        {
+          "s": "kaderli-p",
+          "r": "mitglied"
+        },
+        {
+          "s": "bechtel-n",
+          "r": "mitglied"
+        },
+        {
+          "s": "kreis-manuel",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bs_sozialversicherungsgericht_AH.2025.11",
       "nummer": "AH.2025.11",
       "bgeReferenz": null,
@@ -3730,6 +5017,41 @@
         },
         {
           "s": "pongracz-leimer-b",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_appellationsgericht_SB.2025.72",
+      "nummer": "SB.2025.72",
+      "bgeReferenz": null,
+      "datum": "2026-04-29",
+      "zitierung": "Appellationsgericht BS SB.2025.72 vom 29.04.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/SB.2025.72.json",
+      "richter": [
+        {
+          "s": "oser-marc",
+          "r": "vorsitz"
+        },
+        {
+          "s": "mabillard-ramon",
+          "r": "mitglied"
+        },
+        {
+          "s": "lotscher-cordula",
+          "r": "mitglied"
+        },
+        {
+          "s": "lamm-sara",
+          "r": "mitglied"
+        },
+        {
+          "s": "blum-nina",
+          "r": "mitglied"
+        },
+        {
+          "s": "von-kaenel-lukas",
           "r": "gerichtsschreiber"
         }
       ]
@@ -3960,6 +5282,55 @@
       ]
     },
     {
+      "key": "bge_152_V_167",
+      "nummer": "152 V 167",
+      "bgeReferenz": "152 V 167",
+      "datum": "2026-04-27",
+      "zitierung": "BGE 152 V 167",
+      "leitcharakter": "leitentscheid",
+      "datei": "bund/bge/152_V_167.json",
+      "richter": [
+        {
+          "s": "viscione",
+          "r": "vorsitz"
+        },
+        {
+          "s": "maillard",
+          "r": "mitglied"
+        },
+        {
+          "s": "heine",
+          "r": "mitglied"
+        },
+        {
+          "s": "scherrer-reber",
+          "r": "mitglied"
+        },
+        {
+          "s": "metral",
+          "r": "mitglied"
+        },
+        {
+          "s": "aliu",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bge_152_V_167__voll",
+      "nummer": "8C_444/2025",
+      "bgeReferenz": null,
+      "datum": "2026-04-27",
+      "zitierung": "BGer 8C_444/2025",
+      "leitcharakter": "routine",
+      "datei": null,
+      "verweis": {
+        "zielKey": "bge_152_V_167",
+        "ansicht": "voll",
+        "bgeReferenz": "152 V 167"
+      }
+    },
+    {
       "key": "gr_gerichte_ZR12024196",
       "nummer": "ZR1 24 196",
       "bgeReferenz": null,
@@ -4059,6 +5430,55 @@
       "datei": "kanton/ZH/zh_obergericht/PS260151.json"
     },
     {
+      "key": "bge_152_II_486",
+      "nummer": "152 II 486",
+      "bgeReferenz": "152 II 486",
+      "datum": "2026-04-23",
+      "zitierung": "BGE 152 II 486",
+      "leitcharakter": "leitentscheid",
+      "datei": "bund/bge/152_II_486.json",
+      "richter": [
+        {
+          "s": "moser-szeless",
+          "r": "vorsitz"
+        },
+        {
+          "s": "stadelmann",
+          "r": "mitglied"
+        },
+        {
+          "s": "parrino",
+          "r": "mitglied"
+        },
+        {
+          "s": "beusch",
+          "r": "mitglied"
+        },
+        {
+          "s": "bollinger",
+          "r": "mitglied"
+        },
+        {
+          "s": "schorno",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bge_152_II_486__voll",
+      "nummer": "9C_503/2024",
+      "bgeReferenz": null,
+      "datum": "2026-04-23",
+      "zitierung": "BGer 9C_503/2024",
+      "leitcharakter": "routine",
+      "datei": null,
+      "verweis": {
+        "zielKey": "bge_152_II_486",
+        "ansicht": "voll",
+        "bgeReferenz": "152 II 486"
+      }
+    },
+    {
       "key": "bs_appellationsgericht_VD.2025.8",
       "nummer": "VD.2025.8",
       "bgeReferenz": null,
@@ -4120,6 +5540,55 @@
           "r": "gerichtsschreiber"
         }
       ]
+    },
+    {
+      "key": "bge_152_III_335",
+      "nummer": "152 III 335",
+      "bgeReferenz": "152 III 335",
+      "datum": "2026-04-22",
+      "zitierung": "BGE 152 III 335",
+      "leitcharakter": "leitentscheid",
+      "datei": "bund/bge/152_III_335.json",
+      "richter": [
+        {
+          "s": "hurni",
+          "r": "vorsitz"
+        },
+        {
+          "s": "kiss",
+          "r": "mitglied"
+        },
+        {
+          "s": "denys",
+          "r": "mitglied"
+        },
+        {
+          "s": "ruedi",
+          "r": "mitglied"
+        },
+        {
+          "s": "may-canellas",
+          "r": "mitglied"
+        },
+        {
+          "s": "sauberli",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bge_152_III_335__voll",
+      "nummer": "4A_604/2025",
+      "bgeReferenz": null,
+      "datum": "2026-04-22",
+      "zitierung": "BGer 4A_604/2025",
+      "leitcharakter": "routine",
+      "datei": null,
+      "verweis": {
+        "zielKey": "bge_152_III_335",
+        "ansicht": "voll",
+        "bgeReferenz": "152 III 335"
+      }
     },
     {
       "key": "bs_appellationsgericht_DGS.2026.15",
@@ -4734,6 +6203,55 @@
       ]
     },
     {
+      "key": "bge_152_V_193",
+      "nummer": "152 V 193",
+      "bgeReferenz": "152 V 193",
+      "datum": "2026-04-08",
+      "zitierung": "BGE 152 V 193",
+      "leitcharakter": "leitentscheid",
+      "datei": "bund/bge/152_V_193.json",
+      "richter": [
+        {
+          "s": "viscione",
+          "r": "vorsitz"
+        },
+        {
+          "s": "maillard",
+          "r": "mitglied"
+        },
+        {
+          "s": "heine",
+          "r": "mitglied"
+        },
+        {
+          "s": "scherrer-reber",
+          "r": "mitglied"
+        },
+        {
+          "s": "metral",
+          "r": "mitglied"
+        },
+        {
+          "s": "barman-ionta",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bge_152_V_193__voll",
+      "nummer": "8C_137/2025",
+      "bgeReferenz": null,
+      "datum": "2026-04-08",
+      "zitierung": "BGer 8C_137/2025",
+      "leitcharakter": "routine",
+      "datei": null,
+      "verweis": {
+        "zielKey": "bge_152_V_193",
+        "ansicht": "voll",
+        "bgeReferenz": "152 V 193"
+      }
+    },
+    {
       "key": "bs_appellationsgericht_DGS.2026.4",
       "nummer": "DGS.2026.4",
       "bgeReferenz": null,
@@ -4923,6 +6441,104 @@
           "r": "gerichtsschreiber"
         }
       ]
+    },
+    {
+      "key": "bge_152_II_535",
+      "nummer": "152 II 535",
+      "bgeReferenz": "152 II 535",
+      "datum": "2026-04-01",
+      "zitierung": "BGE 152 II 535",
+      "leitcharakter": "leitentscheid",
+      "datei": "bund/bge/152_II_535.json",
+      "richter": [
+        {
+          "s": "haag",
+          "r": "vorsitz"
+        },
+        {
+          "s": "chaix",
+          "r": "mitglied"
+        },
+        {
+          "s": "kneubuhler",
+          "r": "mitglied"
+        },
+        {
+          "s": "muller",
+          "r": "mitglied"
+        },
+        {
+          "s": "merz",
+          "r": "mitglied"
+        },
+        {
+          "s": "poffet",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bge_152_II_535__voll",
+      "nummer": "1C_500/2025",
+      "bgeReferenz": null,
+      "datum": "2026-04-01",
+      "zitierung": "BGer 1C_500/2025",
+      "leitcharakter": "routine",
+      "datei": null,
+      "verweis": {
+        "zielKey": "bge_152_II_535",
+        "ansicht": "voll",
+        "bgeReferenz": "152 II 535"
+      }
+    },
+    {
+      "key": "bge_152_III_302",
+      "nummer": "152 III 302",
+      "bgeReferenz": "152 III 302",
+      "datum": "2026-04-01",
+      "zitierung": "BGE 152 III 302",
+      "leitcharakter": "leitentscheid",
+      "datei": "bund/bge/152_III_302.json",
+      "richter": [
+        {
+          "s": "bovey",
+          "r": "vorsitz"
+        },
+        {
+          "s": "herrmann",
+          "r": "mitglied"
+        },
+        {
+          "s": "hartmann",
+          "r": "mitglied"
+        },
+        {
+          "s": "de-rossa",
+          "r": "mitglied"
+        },
+        {
+          "s": "arndt",
+          "r": "mitglied"
+        },
+        {
+          "s": "sieber",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bge_152_III_302__voll",
+      "nummer": "5A_356/2025",
+      "bgeReferenz": null,
+      "datum": "2026-04-01",
+      "zitierung": "BGer 5A_356/2025",
+      "leitcharakter": "routine",
+      "datei": null,
+      "verweis": {
+        "zielKey": "bge_152_III_302",
+        "ansicht": "voll",
+        "bgeReferenz": "152 III 302"
+      }
     },
     {
       "key": "bs_appellationsgericht_AUS.2026.25",
@@ -5165,6 +6781,55 @@
       ]
     },
     {
+      "key": "bge_152_III_347",
+      "nummer": "152 III 347",
+      "bgeReferenz": "152 III 347",
+      "datum": "2026-03-27",
+      "zitierung": "BGE 152 III 347",
+      "leitcharakter": "leitentscheid",
+      "datei": "bund/bge/152_III_347.json",
+      "richter": [
+        {
+          "s": "bovey",
+          "r": "vorsitz"
+        },
+        {
+          "s": "herrmann",
+          "r": "mitglied"
+        },
+        {
+          "s": "hartmann",
+          "r": "mitglied"
+        },
+        {
+          "s": "de-rossa",
+          "r": "mitglied"
+        },
+        {
+          "s": "josi",
+          "r": "mitglied"
+        },
+        {
+          "s": "levante",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bge_152_III_347__voll",
+      "nummer": "5A_989/2025",
+      "bgeReferenz": null,
+      "datum": "2026-03-27",
+      "zitierung": "BGer 5A_989/2025",
+      "leitcharakter": "routine",
+      "datei": null,
+      "verweis": {
+        "zielKey": "bge_152_III_347",
+        "ansicht": "voll",
+        "bgeReferenz": "152 III 347"
+      }
+    },
+    {
       "key": "bs_sozialversicherungsgericht_IV.2025.109",
       "nummer": "IV.2025.109",
       "bgeReferenz": null,
@@ -5263,6 +6928,55 @@
           "r": "gerichtsschreiber"
         }
       ]
+    },
+    {
+      "key": "bge_152_II_518",
+      "nummer": "152 II 518",
+      "bgeReferenz": "152 II 518",
+      "datum": "2026-03-26",
+      "zitierung": "BGE 152 II 518",
+      "leitcharakter": "leitentscheid",
+      "datei": "bund/bge/152_II_518.json",
+      "richter": [
+        {
+          "s": "moser-szeless",
+          "r": "vorsitz"
+        },
+        {
+          "s": "stadelmann",
+          "r": "mitglied"
+        },
+        {
+          "s": "parrino",
+          "r": "mitglied"
+        },
+        {
+          "s": "beusch",
+          "r": "mitglied"
+        },
+        {
+          "s": "bollinger",
+          "r": "mitglied"
+        },
+        {
+          "s": "vuadens",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bge_152_II_518__voll",
+      "nummer": "9C_205/2025",
+      "bgeReferenz": null,
+      "datum": "2026-03-26",
+      "zitierung": "BGer 9C_205/2025",
+      "leitcharakter": "routine",
+      "datei": null,
+      "verweis": {
+        "zielKey": "bge_152_II_518",
+        "ansicht": "voll",
+        "bgeReferenz": "152 II 518"
+      }
     },
     {
       "key": "bs_sozialversicherungsgericht_IV.2025.64",
@@ -5710,6 +7424,33 @@
       ]
     },
     {
+      "key": "bs_sozialversicherungsgericht_AL.2025.31",
+      "nummer": "AL.2025.31",
+      "bgeReferenz": null,
+      "datum": "2026-03-24",
+      "zitierung": "Sozialversicherungsgericht BS AL.2025.31 vom 24.03.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/AL.2025.31.json",
+      "richter": [
+        {
+          "s": "pfleiderer-andrea",
+          "r": "vorsitz"
+        },
+        {
+          "s": "borer-d",
+          "r": "mitglied"
+        },
+        {
+          "s": "von-aarburg-r",
+          "r": "mitglied"
+        },
+        {
+          "s": "ozturk-t",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bs_appellationsgericht_AUS.2026.24",
       "nummer": "AUS.2026.24",
       "bgeReferenz": null,
@@ -5945,6 +7686,82 @@
       ]
     },
     {
+      "key": "bge_152_V_184",
+      "nummer": "152 V 184",
+      "bgeReferenz": "152 V 184",
+      "datum": "2026-03-18",
+      "zitierung": "BGE 152 V 184",
+      "leitcharakter": "leitentscheid",
+      "datei": "bund/bge/152_V_184.json",
+      "richter": [
+        {
+          "s": "moser-szeless",
+          "r": "vorsitz"
+        },
+        {
+          "s": "stadelmann",
+          "r": "mitglied"
+        },
+        {
+          "s": "parrino",
+          "r": "mitglied"
+        },
+        {
+          "s": "beusch",
+          "r": "mitglied"
+        },
+        {
+          "s": "bollinger",
+          "r": "mitglied"
+        },
+        {
+          "s": "fleischanderl",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bge_152_V_184__voll",
+      "nummer": "9C_212/2025",
+      "bgeReferenz": null,
+      "datum": "2026-03-18",
+      "zitierung": "BGer 9C_212/2025",
+      "leitcharakter": "routine",
+      "datei": null,
+      "verweis": {
+        "zielKey": "bge_152_V_184",
+        "ansicht": "voll",
+        "bgeReferenz": "152 V 184"
+      }
+    },
+    {
+      "key": "bs_appellationsgericht_SB.2025.74",
+      "nummer": "SB.2025.74",
+      "bgeReferenz": null,
+      "datum": "2026-03-18",
+      "zitierung": "Appellationsgericht BS SB.2025.74 vom 18.03.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/SB.2025.74.json",
+      "richter": [
+        {
+          "s": "christ-eva",
+          "r": "vorsitz"
+        },
+        {
+          "s": "weber-jonas",
+          "r": "mitglied"
+        },
+        {
+          "s": "dillena-anja",
+          "r": "mitglied"
+        },
+        {
+          "s": "macula-laura",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bs_appellationsgericht_AUS.2026.22",
       "nummer": "AUS.2026.22",
       "bgeReferenz": null,
@@ -5998,6 +7815,55 @@
       ]
     },
     {
+      "key": "bge_152_III_342",
+      "nummer": "152 III 342",
+      "bgeReferenz": "152 III 342",
+      "datum": "2026-03-16",
+      "zitierung": "BGE 152 III 342",
+      "leitcharakter": "leitentscheid",
+      "datei": "bund/bge/152_III_342.json",
+      "richter": [
+        {
+          "s": "bovey",
+          "r": "vorsitz"
+        },
+        {
+          "s": "herrmann",
+          "r": "mitglied"
+        },
+        {
+          "s": "hartmann",
+          "r": "mitglied"
+        },
+        {
+          "s": "de-rossa",
+          "r": "mitglied"
+        },
+        {
+          "s": "josi",
+          "r": "mitglied"
+        },
+        {
+          "s": "sieber",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bge_152_III_342__voll",
+      "nummer": "5A_373/2025",
+      "bgeReferenz": null,
+      "datum": "2026-03-16",
+      "zitierung": "BGer 5A_373/2025",
+      "leitcharakter": "routine",
+      "datei": null,
+      "verweis": {
+        "zielKey": "bge_152_III_342",
+        "ansicht": "voll",
+        "bgeReferenz": "152 III 342"
+      }
+    },
+    {
       "key": "bs_appellationsgericht_AUS.2026.21",
       "nummer": "AUS.2026.21",
       "bgeReferenz": null,
@@ -6038,6 +7904,55 @@
           "r": "gerichtsschreiber"
         }
       ]
+    },
+    {
+      "key": "bge_152_III_297",
+      "nummer": "152 III 297",
+      "bgeReferenz": "152 III 297",
+      "datum": "2026-03-13",
+      "zitierung": "BGE 152 III 297",
+      "leitcharakter": "leitentscheid",
+      "datei": "bund/bge/152_III_297.json",
+      "richter": [
+        {
+          "s": "bovey",
+          "r": "vorsitz"
+        },
+        {
+          "s": "herrmann",
+          "r": "mitglied"
+        },
+        {
+          "s": "hartmann",
+          "r": "mitglied"
+        },
+        {
+          "s": "de-rossa",
+          "r": "mitglied"
+        },
+        {
+          "s": "josi",
+          "r": "mitglied"
+        },
+        {
+          "s": "monn",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bge_152_III_297__voll",
+      "nummer": "5A_405/2025",
+      "bgeReferenz": null,
+      "datum": "2026-03-13",
+      "zitierung": "BGer 5A_405/2025",
+      "leitcharakter": "routine",
+      "datei": null,
+      "verweis": {
+        "zielKey": "bge_152_III_297",
+        "ansicht": "voll",
+        "bgeReferenz": "152 III 297"
+      }
     },
     {
       "key": "bs_sozialversicherungsgericht_AH.2025.5",
@@ -6189,6 +8104,25 @@
         },
         {
           "s": "hofer-h",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_appellationsgericht_KE.2025.47",
+      "nummer": "KE.2025.47",
+      "bgeReferenz": null,
+      "datum": "2026-03-12",
+      "zitierung": "Appellationsgericht BS KE.2025.47 vom 12.03.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/KE.2025.47.json",
+      "richter": [
+        {
+          "s": "wullschleger-stephan",
+          "r": "vorsitz"
+        },
+        {
+          "s": "spring-andrin",
           "r": "gerichtsschreiber"
         }
       ]
@@ -6449,6 +8383,55 @@
           "r": "gerichtsschreiber"
         }
       ]
+    },
+    {
+      "key": "bge_152_V_176",
+      "nummer": "152 V 176",
+      "bgeReferenz": "152 V 176",
+      "datum": "2026-03-09",
+      "zitierung": "BGE 152 V 176",
+      "leitcharakter": "leitentscheid",
+      "datei": "bund/bge/152_V_176.json",
+      "richter": [
+        {
+          "s": "moser-szeless",
+          "r": "vorsitz"
+        },
+        {
+          "s": "stadelmann",
+          "r": "mitglied"
+        },
+        {
+          "s": "parrino",
+          "r": "mitglied"
+        },
+        {
+          "s": "beusch",
+          "r": "mitglied"
+        },
+        {
+          "s": "bollinger",
+          "r": "mitglied"
+        },
+        {
+          "s": "keel-baumann",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bge_152_V_176__voll",
+      "nummer": "9C_199/2025",
+      "bgeReferenz": null,
+      "datum": "2026-03-09",
+      "zitierung": "BGer 9C_199/2025",
+      "leitcharakter": "routine",
+      "datei": null,
+      "verweis": {
+        "zielKey": "bge_152_V_176",
+        "ansicht": "voll",
+        "bgeReferenz": "152 V 176"
+      }
     },
     {
       "key": "bs_appellationsgericht_AUS.2026.14",
@@ -7572,6 +9555,33 @@
       ]
     },
     {
+      "key": "bs_sozialversicherungsgericht_UV.2025.47",
+      "nummer": "UV.2025.47",
+      "bgeReferenz": null,
+      "datum": "2026-02-11",
+      "zitierung": "Sozialversicherungsgericht BS UV.2025.47 vom 11.02.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/UV.2025.47.json",
+      "richter": [
+        {
+          "s": "thomi-g",
+          "r": "vorsitz"
+        },
+        {
+          "s": "prack-hoenen-m",
+          "r": "mitglied"
+        },
+        {
+          "s": "von-aarburg-r",
+          "r": "mitglied"
+        },
+        {
+          "s": "loretz-f",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bs_appellationsgericht_AUS.2026.10",
       "nummer": "AUS.2026.10",
       "bgeReferenz": null,
@@ -8171,6 +10181,55 @@
       ]
     },
     {
+      "key": "bge_152_II_473",
+      "nummer": "152 II 473",
+      "bgeReferenz": "152 II 473",
+      "datum": "2026-02-05",
+      "zitierung": "BGE 152 II 473",
+      "leitcharakter": "leitentscheid",
+      "datei": "bund/bge/152_II_473.json",
+      "richter": [
+        {
+          "s": "aubry-girardin",
+          "r": "vorsitz"
+        },
+        {
+          "s": "donzallaz",
+          "r": "mitglied"
+        },
+        {
+          "s": "hanni",
+          "r": "mitglied"
+        },
+        {
+          "s": "ryter",
+          "r": "mitglied"
+        },
+        {
+          "s": "kradolfer",
+          "r": "mitglied"
+        },
+        {
+          "s": "kaufmann",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bge_152_II_473__voll",
+      "nummer": "2C_437/2024",
+      "bgeReferenz": null,
+      "datum": "2026-02-05",
+      "zitierung": "BGer 2C_437/2024",
+      "leitcharakter": "routine",
+      "datei": null,
+      "verweis": {
+        "zielKey": "bge_152_II_473",
+        "ansicht": "voll",
+        "bgeReferenz": "152 II 473"
+      }
+    },
+    {
       "key": "bs_appellationsgericht_ZS.2025.7",
       "nummer": "ZS.2025.7",
       "bgeReferenz": null,
@@ -8439,6 +10498,55 @@
       "datei": "kanton/BS/bs_sozialversicherungsgericht/BV.2025.15.json"
     },
     {
+      "key": "bge_152_III_319",
+      "nummer": "152 III 319",
+      "bgeReferenz": "152 III 319",
+      "datum": "2026-01-30",
+      "zitierung": "BGE 152 III 319",
+      "leitcharakter": "leitentscheid",
+      "datei": "bund/bge/152_III_319.json",
+      "richter": [
+        {
+          "s": "hurni",
+          "r": "vorsitz"
+        },
+        {
+          "s": "kiss",
+          "r": "mitglied"
+        },
+        {
+          "s": "denys",
+          "r": "mitglied"
+        },
+        {
+          "s": "ruedi",
+          "r": "mitglied"
+        },
+        {
+          "s": "may-canellas",
+          "r": "mitglied"
+        },
+        {
+          "s": "botteron",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bge_152_III_319__voll",
+      "nummer": "4A_648/2024",
+      "bgeReferenz": null,
+      "datum": "2026-01-30",
+      "zitierung": "BGer 4A_648/2024",
+      "leitcharakter": "routine",
+      "datei": null,
+      "verweis": {
+        "zielKey": "bge_152_III_319",
+        "ansicht": "voll",
+        "bgeReferenz": "152 III 319"
+      }
+    },
+    {
       "key": "bge_152_V_2",
       "nummer": "152 V 2",
       "bgeReferenz": "152 V 2",
@@ -8568,6 +10676,55 @@
           "r": "gerichtsschreiber"
         }
       ]
+    },
+    {
+      "key": "bge_152_II_501",
+      "nummer": "152 II 501",
+      "bgeReferenz": "152 II 501",
+      "datum": "2026-01-29",
+      "zitierung": "BGE 152 II 501",
+      "leitcharakter": "leitentscheid",
+      "datei": "bund/bge/152_II_501.json",
+      "richter": [
+        {
+          "s": "moser-szeless",
+          "r": "vorsitz"
+        },
+        {
+          "s": "stadelmann",
+          "r": "mitglied"
+        },
+        {
+          "s": "parrino",
+          "r": "mitglied"
+        },
+        {
+          "s": "beusch",
+          "r": "mitglied"
+        },
+        {
+          "s": "bollinger",
+          "r": "mitglied"
+        },
+        {
+          "s": "vuadens",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bge_152_II_501__voll",
+      "nummer": "9C_156/2025",
+      "bgeReferenz": null,
+      "datum": "2026-01-29",
+      "zitierung": "BGer 9C_156/2025",
+      "leitcharakter": "routine",
+      "datei": null,
+      "verweis": {
+        "zielKey": "bge_152_II_501",
+        "ansicht": "voll",
+        "bgeReferenz": "152 II 501"
+      }
     },
     {
       "key": "bs_appellationsgericht_ZB.2025.17",
@@ -9433,6 +11590,33 @@
       ]
     },
     {
+      "key": "bs_sozialversicherungsgericht_AL.2025.18",
+      "nummer": "AL.2025.18",
+      "bgeReferenz": null,
+      "datum": "2026-01-21",
+      "zitierung": "Sozialversicherungsgericht BS AL.2025.18 vom 21.01.2026",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/AL.2025.18.json",
+      "richter": [
+        {
+          "s": "thomi-g",
+          "r": "vorsitz"
+        },
+        {
+          "s": "waegeli-p",
+          "r": "mitglied"
+        },
+        {
+          "s": "furbringer-b",
+          "r": "mitglied"
+        },
+        {
+          "s": "aellig-l",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bs_appellationsgericht_ZZ.2025.2",
       "nummer": "ZZ.2025.2",
       "bgeReferenz": null,
@@ -9682,6 +11866,55 @@
           "r": "gerichtsschreiber"
         }
       ]
+    },
+    {
+      "key": "bge_152_III_310",
+      "nummer": "152 III 310",
+      "bgeReferenz": "152 III 310",
+      "datum": "2026-01-15",
+      "zitierung": "BGE 152 III 310",
+      "leitcharakter": "leitentscheid",
+      "datei": "bund/bge/152_III_310.json",
+      "richter": [
+        {
+          "s": "bovey",
+          "r": "vorsitz"
+        },
+        {
+          "s": "herrmann",
+          "r": "mitglied"
+        },
+        {
+          "s": "hartmann",
+          "r": "mitglied"
+        },
+        {
+          "s": "de-rossa",
+          "r": "mitglied"
+        },
+        {
+          "s": "josi",
+          "r": "mitglied"
+        },
+        {
+          "s": "mockli",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bge_152_III_310__voll",
+      "nummer": "5A_422/2024",
+      "bgeReferenz": null,
+      "datum": "2026-01-15",
+      "zitierung": "BGer 5A_422/2024",
+      "leitcharakter": "routine",
+      "datei": null,
+      "verweis": {
+        "zielKey": "bge_152_III_310",
+        "ansicht": "voll",
+        "bgeReferenz": "152 III 310"
+      }
     },
     {
       "key": "bs_appellationsgericht_SB.2025.16",
@@ -15025,6 +17258,33 @@
       ]
     },
     {
+      "key": "bs_appellationsgericht_KE.2024.20",
+      "nummer": "KE.2024.20",
+      "bgeReferenz": null,
+      "datum": "2025-10-31",
+      "zitierung": "Appellationsgericht BS KE.2024.20 vom 31.10.2025",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_appellationsgericht/KE.2024.20.json",
+      "richter": [
+        {
+          "s": "schmid-patrizia",
+          "r": "vorsitz"
+        },
+        {
+          "s": "hoenen-christian",
+          "r": "mitglied"
+        },
+        {
+          "s": "frossard-jacqueline",
+          "r": "mitglied"
+        },
+        {
+          "s": "guth-michele",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bge_152_I_105",
       "nummer": "152 I 105",
       "bgeReferenz": "152 I 105",
@@ -17483,6 +19743,60 @@
         },
         {
           "s": "schibli-r",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_IV.2025.71",
+      "nummer": "IV.2025.71",
+      "bgeReferenz": null,
+      "datum": "2025-09-30",
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.71 vom 30.09.2025",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.71.json",
+      "richter": [
+        {
+          "s": "thomi-g",
+          "r": "vorsitz"
+        },
+        {
+          "s": "muller-c",
+          "r": "mitglied"
+        },
+        {
+          "s": "eymann-f",
+          "r": "mitglied"
+        },
+        {
+          "s": "marti-l",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_UV.2025.23",
+      "nummer": "UV.2025.23",
+      "bgeReferenz": null,
+      "datum": "2025-09-30",
+      "zitierung": "Sozialversicherungsgericht BS UV.2025.23 vom 30.09.2025",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/UV.2025.23.json",
+      "richter": [
+        {
+          "s": "thomi-g",
+          "r": "vorsitz"
+        },
+        {
+          "s": "muller-c",
+          "r": "mitglied"
+        },
+        {
+          "s": "eymann-f",
+          "r": "mitglied"
+        },
+        {
+          "s": "marti-l",
           "r": "gerichtsschreiber"
         }
       ]
@@ -20956,6 +23270,33 @@
         },
         {
           "s": "spinnler-rahel",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_AL.2025.10",
+      "nummer": "AL.2025.10",
+      "bgeReferenz": null,
+      "datum": "2025-08-28",
+      "zitierung": "Sozialversicherungsgericht BS AL.2025.10 vom 28.08.2025",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/AL.2025.10.json",
+      "richter": [
+        {
+          "s": "pfleiderer-andrea",
+          "r": "vorsitz"
+        },
+        {
+          "s": "eymann-f",
+          "r": "mitglied"
+        },
+        {
+          "s": "bechtel-n",
+          "r": "mitglied"
+        },
+        {
+          "s": "loretz-f",
           "r": "gerichtsschreiber"
         }
       ]

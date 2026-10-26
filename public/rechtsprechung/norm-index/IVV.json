@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-10-26",
   "erlass": "IVV",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -146,6 +146,16 @@
       }
     ],
     "26": [
+      {
+        "key": "bge_152_V_176",
+        "zitierung": "BGE 152 V 176",
+        "regesteKurz": "Art. 23 lit. a BVG; Art. 26 Abs. 1 IVV in der bis 31. Dezember 2021 gültig gewesenen Fassung; Unterbrechung des zeitlichen Zusammenhanges. Die Rechtsprechung, wonach für die Unterbrechung des zeitlichen Zusammenhanges in einer…",
+        "datum": "2026-03-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_150_V_410",
         "zitierung": "BGE 150 V 410",
@@ -880,6 +890,16 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_167",
+        "zitierung": "BGE 152 V 167",
+        "regesteKurz": "Art. 42 quater ff. IVG; Art. 39c und 39g IVV; Assistenzbeitrag. Die aufgrund des BGE 148 V 408 durch das Bundesamt für Sozialversicherungen (BSV) vorgenommenen Anpassungen in Rz. 4035 und 4036 des Kreisschreibens über den Assistenzbeitrag…",
+        "datum": "2026-04-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
         "gewicht": 0
       }
     ],
@@ -913,6 +933,16 @@
         "zitierung": "BGE 148 V 408",
         "regesteKurz": "Art. 42sexies Abs. 1 IVG; Assistenzbeitrag. BGE 140 V 543 E. 3.2.2 ist in dem Sinne zu präzisieren, als das standardisierte Abklärungsinstrument FAKT2 kein geeignetes Instrument zur Ermittlung des gesamten Hilfebedarfs einer versicherten…",
         "datum": "2022-09-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_167",
+        "zitierung": "BGE 152 V 167",
+        "regesteKurz": "Art. 42 quater ff. IVG; Art. 39c und 39g IVV; Assistenzbeitrag. Die aufgrund des BGE 148 V 408 durch das Bundesamt für Sozialversicherungen (BSV) vorgenommenen Anpassungen in Rz. 4035 und 4036 des Kreisschreibens über den Assistenzbeitrag…",
+        "datum": "2026-04-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

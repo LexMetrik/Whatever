@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-10-04",
+"erzeugt":"2026-10-26",
 "erlass":"LSV",
 "erlassEbene":"bund",
 "dokumente":{
@@ -17,14 +17,15 @@
 "bs_appellationsgericht_VD.2023.174":{"zitierung":"Appellationsgericht BS VD.2023.174 vom 14.06.2024","regesteKurz":"Rechtsverweigerung (Beschwerde beim Bundesgericht hängig)","datum":"2024-06-14","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2023.9":{"zitierung":"Appellationsgericht BS VD.2023.9 vom 14.04.2024","regesteKurz":"Übernahme der Kosten für Schallschutzfenster","datum":"2024-04-14","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2024.152":{"zitierung":"Appellationsgericht BS VD.2024.152 vom 27.02.2025","regesteKurz":"Strassenlärmsanierung einer Gemeindestrasse (Entzug der aufschiebenden Wirkung) (BGer 1C_191/2025 vom 3. Juli 2025)","datum":"2025-02-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_VD.2024.45":{"zitierung":"Appellationsgericht BS VD.2024.45 vom 09.09.2025","regesteKurz":"Bauentscheid in Sachen 7 Standorte für Unterflurcontainer","datum":"2025-09-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+"bs_appellationsgericht_VD.2024.45":{"zitierung":"Appellationsgericht BS VD.2024.45 vom 09.09.2025","regesteKurz":"Bauentscheid in Sachen 7 Standorte für Unterflurcontainer","datum":"2025-09-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.195":{"zitierung":"Appellationsgericht BS VD.2025.195 vom 22.05.2026","regesteKurz":"Planfestsetzungsbeschluss des Regierungsrats (Umgestaltung der Allmend)","datum":"2026-05-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
 "1":[{"key":"bge_147_II_357","gewicht":0}],
 "2":[{"key":"bge_150_II_547","gewicht":0},{"key":"bge_147_II_484","gewicht":0},{"key":"bge_147_II_357","gewicht":0},{"key":"bs_appellationsgericht_VD.2021.109","gewicht":null}],
 "4":[{"key":"bge_146_II_17","gewicht":0}],
 "7":[{"key":"bge_150_II_547","gewicht":0},{"key":"bge_147_II_319","gewicht":0},{"key":"bs_appellationsgericht_VD.2024.45","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.9","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.240","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.171","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.109","gewicht":null}],
-"8":[{"key":"bge_150_II_547","gewicht":0},{"key":"bs_appellationsgericht_VD.2023.9","gewicht":null}],
+"8":[{"key":"bge_150_II_547","gewicht":0},{"key":"bs_appellationsgericht_VD.2025.195","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.9","gewicht":null}],
 "9":[{"key":"bge_150_II_547","gewicht":0},{"key":"bs_appellationsgericht_VD.2023.9","gewicht":null}],
 "10":[{"key":"bge_150_II_547","gewicht":0},{"key":"bs_appellationsgericht_VD.2023.9","gewicht":null}],
 "11":[{"key":"bge_150_II_547","gewicht":0},{"key":"bs_appellationsgericht_VD.2023.9","gewicht":null}],
@@ -41,7 +42,7 @@
 "39":[{"key":"bge_146_II_187","gewicht":0}],
 "40":[{"key":"bge_147_II_357","gewicht":0},{"key":"bge_147_II_319","gewicht":0},{"key":"bs_appellationsgericht_VD.2024.45","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.171","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.104","gewicht":null}],
 "41":[{"key":"bge_147_II_357","gewicht":0}],
-"43":[{"key":"bge_147_II_357","gewicht":0},{"key":"bge_146_II_187","gewicht":0},{"key":"bs_appellationsgericht_VD.2021.171","gewicht":null}],
+"43":[{"key":"bge_147_II_357","gewicht":0},{"key":"bge_146_II_187","gewicht":0},{"key":"bs_appellationsgericht_VD.2025.195","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.171","gewicht":null}],
 "44":[{"key":"bs_appellationsgericht_VD.2021.171","gewicht":null}],
 "37a":[{"key":"bs_appellationsgericht_VD.2023.9","gewicht":null}]
 },
@@ -50,7 +51,7 @@
 "2":{"bge":3,"kantonal":1},
 "4":{"bge":1},
 "7":{"bge":2,"kantonal":5},
-"8":{"bge":1,"kantonal":1},
+"8":{"bge":1,"kantonal":2},
 "9":{"bge":1,"kantonal":1},
 "10":{"bge":1,"kantonal":1},
 "11":{"bge":1,"kantonal":1},
@@ -67,7 +68,7 @@
 "39":{"bge":1},
 "40":{"bge":2,"kantonal":3},
 "41":{"bge":1},
-"43":{"bge":2,"kantonal":1},
+"43":{"bge":2,"kantonal":2},
 "44":{"kantonal":1},
 "37a":{"kantonal":1}
 }

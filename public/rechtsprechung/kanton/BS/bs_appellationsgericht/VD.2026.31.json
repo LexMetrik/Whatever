@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-26",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/VD.2026.31",
@@ -17,7 +17,7 @@
       "sachgebiet": "oeffentlich",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "bedingte Entlassung aus dem Strafvollzug nach Art. 86 StGB (noch nicht rechtskräftig)",
+        "gegenstand": "bedingte Entlassung aus dem Strafvollzug nach Art. 86 StGB",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "Dr. Stephan Wullschleger, lic. iur. Marc Oser, Dr. Andreas Traub und Gerichtsschreiber MLaw Damian Wyss"
@@ -228,11 +228,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79777&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2026-06-30",
+      "abgerufen": "2026-10-26",
+      "fassungsToken": "2026-10-23",
       "sha": "00f2b2f4e45a8547ad2aace1013a2dc02570839c1a38c30f3b9e9f279b0606f5",
       "erstpublikation": "2026-06-30",
-      "aktualisiert": "2026-06-30",
+      "aktualisiert": "2026-10-23",
       "nummerSekundaer": "AG.2026.386",
       "ecli": "ECLI:CH:BSA:2026:VD.2026.31"
     }

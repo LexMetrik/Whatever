@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-10-26",
   "erlass": "ATSG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -1015,6 +1015,16 @@
         "gewicht": 2
       },
       {
+        "key": "bge_148_V_408",
+        "zitierung": "BGE 148 V 408",
+        "regesteKurz": "Art. 42sexies Abs. 1 IVG; Assistenzbeitrag. BGE 140 V 543 E. 3.2.2 ist in dem Sinne zu präzisieren, als das standardisierte Abklärungsinstrument FAKT2 kein geeignetes Instrument zur Ermittlung des gesamten Hilfebedarfs einer versicherten…",
+        "datum": "2022-09-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_147_V_213",
         "zitierung": "BGE 147 V 213",
         "regesteKurz": "Art. 15 UVG; Art. 24 Abs. 3 UVV; Berentung eines Lehrlings und Rentenrevision. Unter dem Vorbehalt von Art. 24 Abs. 4 UVV bleibt der bei Rentenbeginn gemäss zweitem Teilsatz von Art. 15 Abs. 2 UVG erstmalig festgesetzte versicherte…",
@@ -1041,16 +1051,6 @@
         "datum": "2020-10-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_151_V_66__voll",
-        "zitierung": "Urteil 8C_104/2024 (nicht publ. in BGE 151 V 66)",
-        "regesteKurz": null,
-        "datum": "2024-10-22",
-        "leitcharakter": "routine",
-        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       }
@@ -1434,6 +1434,16 @@
       }
     ],
     "27": [
+      {
+        "key": "bge_152_V_162",
+        "zitierung": "BGE 152 V 162",
+        "regesteKurz": "Art. 37 VGG; Art. 3 lit. d bis und Art. 21a VwVG; Art. 55 ATSG; Zulässigkeit der elektronischen Beschwerde an das BVGer im invalidenversicherungsrechtlichen Verfahren. Die Verfahrensregeln des ATSG, insbesondere Art. 55 und 56 ff., finden…",
+        "datum": "2026-05-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_152_V_79",
         "zitierung": "BGE 152 V 79",
@@ -2167,6 +2177,16 @@
     ],
     "55": [
       {
+        "key": "bge_152_V_162",
+        "zitierung": "BGE 152 V 162",
+        "regesteKurz": "Art. 37 VGG; Art. 3 lit. d bis und Art. 21a VwVG; Art. 55 ATSG; Zulässigkeit der elektronischen Beschwerde an das BVGer im invalidenversicherungsrechtlichen Verfahren. Die Verfahrensregeln des ATSG, insbesondere Art. 55 und 56 ff., finden…",
+        "datum": "2026-05-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_II_673",
         "zitierung": "BGE 151 II 673",
         "regesteKurz": "Art. 127 Abs. 3 BV; Art. 147 DBG; Art. 51 StHG; formelle Anforderungen an Revisionsgesuche; interkantonale Doppelbesteuerung; nachträgliche Aufhebung oder Änderung von Veranlagungsentscheiden; Revision oder Wiedererwägung. Ersucht eine…",
@@ -2238,6 +2258,16 @@
       }
     ],
     "56": [
+      {
+        "key": "bge_152_V_162",
+        "zitierung": "BGE 152 V 162",
+        "regesteKurz": "Art. 37 VGG; Art. 3 lit. d bis und Art. 21a VwVG; Art. 55 ATSG; Zulässigkeit der elektronischen Beschwerde an das BVGer im invalidenversicherungsrechtlichen Verfahren. Die Verfahrensregeln des ATSG, insbesondere Art. 55 und 56 ff., finden…",
+        "datum": "2026-05-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_151_V_219",
         "zitierung": "BGE 151 V 219",
@@ -2459,20 +2489,20 @@
         "gewicht": 1
       },
       {
-        "key": "bge_152_V_79",
-        "zitierung": "BGE 152 V 79",
-        "regesteKurz": "Art. 43a Abs. 1-6 und Art. 61 lit. c ATSG; Observationsmaterial des Privatversicherers im Sozialversicherungsverfahren. Die Zulässigkeit der Observation richtet sich für den Privatversicherer nicht nach Art. 43a und 43b ATSG (E. 3.1). Im…",
-        "datum": "2026-03-27",
+        "key": "bge_152_V_162",
+        "zitierung": "BGE 152 V 162",
+        "regesteKurz": "Art. 37 VGG; Art. 3 lit. d bis und Art. 21a VwVG; Art. 55 ATSG; Zulässigkeit der elektronischen Beschwerde an das BVGer im invalidenversicherungsrechtlichen Verfahren. Die Verfahrensregeln des ATSG, insbesondere Art. 55 und 56 ff., finden…",
+        "datum": "2026-05-28",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_151_V_219",
-        "zitierung": "BGE 151 V 219",
-        "regesteKurz": "a Art. 15 Abs. 2 BVG i.V.m. Art. 12 lit. j und k BVV 2; Art. 104 f. OR; Verzugszinssatz. Ist dem Vorsorgereglement in Bezug auf die in zeitlicher Hinsicht massgebliche Höhe des Verzugszinssatzes keine Regelung zu entnehmen, gelangen die…",
-        "datum": "2024-10-24",
+        "key": "bge_152_V_79",
+        "zitierung": "BGE 152 V 79",
+        "regesteKurz": "Art. 43a Abs. 1-6 und Art. 61 lit. c ATSG; Observationsmaterial des Privatversicherers im Sozialversicherungsverfahren. Die Zulässigkeit der Observation richtet sich für den Privatversicherer nicht nach Art. 43a und 43b ATSG (E. 3.1). Im…",
+        "datum": "2026-03-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2631,6 +2661,16 @@
     ],
     "67": [
       {
+        "key": "bge_152_V_162",
+        "zitierung": "BGE 152 V 162",
+        "regesteKurz": "Art. 37 VGG; Art. 3 lit. d bis und Art. 21a VwVG; Art. 55 ATSG; Zulässigkeit der elektronischen Beschwerde an das BVGer im invalidenversicherungsrechtlichen Verfahren. Die Verfahrensregeln des ATSG, insbesondere Art. 55 und 56 ff., finden…",
+        "datum": "2026-05-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_146_V_129",
         "zitierung": "BGE 146 V 129",
         "regesteKurz": "Art. 70 Abs. 2 ATSG; Vorleistungspflicht; Gesetzeslücke. In Ergänzung von Art. 70 Abs. 2 ATSG ist die Invalidenversicherung vorleistungspflichtig für Hilfsmittel, deren Übernahme durch die Invaliden- oder Unfallversicherung umstritten (und…",
@@ -2642,6 +2682,16 @@
       }
     ],
     "68": [
+      {
+        "key": "bge_152_V_193",
+        "zitierung": "BGE 152 V 193",
+        "regesteKurz": "Art. 20 Abs. 2 und 3 UVG; Art. 32 Abs. 1 UVV; Komplementärrente; Festsetzung der Komplementärrente beim erstmaligen Zusammentreffen mit einer Invalidenrente. Wird mit der Rente der Invalidenversicherung nicht nur die Erwerbsunfähigkeit in…",
+        "datum": "2026-04-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_151_V_198",
         "zitierung": "BGE 151 V 198",
@@ -2675,6 +2725,16 @@
     ],
     "69": [
       {
+        "key": "bge_149_V_129",
+        "zitierung": "BGE 149 V 129",
+        "regesteKurz": "Art. 20 Abs. 2 UVG; Art. 69 Abs. 2 ATSG; Komplementärrente; Anrechnung von Anwaltskosten. Das Komplementärrentensystem der Unfallversicherung geht der Überentschädigungsregel des Art. 69 Abs. 2 ATSG vor. Im Unterschied zu Letzterer lässt…",
+        "datum": "2023-03-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_148_V_28",
         "zitierung": "BGE 148 V 28",
         "regesteKurz": "Art. 10 Abs. 3 UVG (in der seit 1. Januar 2017 geltenden Fassung); Art. 18 Abs. 2 lit. b UVV (in der seit 1. Januar 2017 geltenden Fassung); Hilfe und Pflege zu Hause; Verhältnis des Beitrags des Versicherers an nichtmedizinische Hilfe zu…",
@@ -2693,6 +2753,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_193",
+        "zitierung": "BGE 152 V 193",
+        "regesteKurz": "Art. 20 Abs. 2 und 3 UVG; Art. 32 Abs. 1 UVV; Komplementärrente; Festsetzung der Komplementärrente beim erstmaligen Zusammentreffen mit einer Invalidenrente. Wird mit der Rente der Invalidenversicherung nicht nur die Erwerbsunfähigkeit in…",
+        "datum": "2026-04-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_V_1",
@@ -2715,16 +2785,6 @@
         "gewicht": 0
       },
       {
-        "key": "bge_149_V_129",
-        "zitierung": "BGE 149 V 129",
-        "regesteKurz": "Art. 20 Abs. 2 UVG; Art. 69 Abs. 2 ATSG; Komplementärrente; Anrechnung von Anwaltskosten. Das Komplementärrentensystem der Unfallversicherung geht der Überentschädigungsregel des Art. 69 Abs. 2 ATSG vor. Im Unterschied zu Letzterer lässt…",
-        "datum": "2023-03-27",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_148_V_419",
         "zitierung": "BGE 148 V 419",
         "regesteKurz": "Art. 16 ATSG; Art. 18 Abs. 2 UVG; Art. 28 Abs. 4 UVV; Anwendungsfall von Art. 28 Abs. 4 UVV; Verhältnis zum Abzug vom Tabellenlohn wegen des Alters. Bei Anwendungsfällen von Art. 28 Abs. 4 UVV fällt ein Abzug zufolge fortgeschrittenen…",
@@ -2739,16 +2799,6 @@
         "zitierung": "BGE 148 V 286",
         "regesteKurz": "Art. 5 und 15 UVG; Art. 24 Abs. 2 und Art. 138 UVV; Anpassung des versicherten Verdienstes bei verzögertem Rentenbeginn in der freiwilligen Versicherung. Der erhebliche und langandauernde Unterschied zwischen dem im Unfallzeitpunkt…",
         "datum": "2022-05-04",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_V_55",
-        "zitierung": "BGE 147 V 55",
-        "regesteKurz": "Art. 51 Abs. 2 UVV; Anmeldung bei einer anderen Sozialversicherung. Die Aufforderung zur Anmeldung bei einer anderen, möglicherweise leistungspflichtigen Sozialversicherung ist nicht bloss einmalig und auch nicht nur vor der erstmaligen…",
-        "datum": "2020-08-26",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

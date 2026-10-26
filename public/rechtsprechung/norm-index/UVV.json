@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-10-26",
   "erlass": "UVV",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -444,6 +444,16 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_193",
+        "zitierung": "BGE 152 V 193",
+        "regesteKurz": "Art. 20 Abs. 2 und 3 UVG; Art. 32 Abs. 1 UVV; Komplementärrente; Festsetzung der Komplementärrente beim erstmaligen Zusammentreffen mit einer Invalidenrente. Wird mit der Rente der Invalidenversicherung nicht nur die Erwerbsunfähigkeit in…",
+        "datum": "2026-04-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
         "gewicht": 0
       }
     ],
@@ -467,6 +477,16 @@
         "datum": "2024-10-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_V_193__voll",
+        "zitierung": "Urteil 8C_137/2025 (nicht publ. in BGE 152 V 193)",
+        "regesteKurz": null,
+        "datum": "2026-04-08",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

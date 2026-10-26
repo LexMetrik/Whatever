@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-10-26",
   "erlass": "KVV",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -855,6 +855,26 @@
     ],
     "64a": [
       {
+        "key": "bge_150_V_372",
+        "zitierung": "BGE 150 V 372",
+        "regesteKurz": "Art. 32 KVG; Art. 64a, 65b, 65c, 65d und 65e KVV; Art. 34d, 34f und 34g KLV (sämtliche Bestimmungen in den vorliegend anwendbaren, bis Ende 2023 gültig gewesenen Fassungen); dreijährliche Überprüfung der Aufnahmebedingungen eines…",
+        "datum": "2024-07-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_148_V_348",
+        "zitierung": "BGE 148 V 348",
+        "regesteKurz": "Art. 32 Abs. 1 und 2 KVG; Art. 65b Abs. 2 lit. a, Art. 65d Abs. 1 und 2 KVV; Art. 34a bis , 34d und 34e KLV; dreijährliche Überprüfung der Aufnahmebedingungen eines Medikaments in die Spezialitätenliste; Auslandpreisvergleich (APV). Bei…",
+        "datum": "2022-04-20",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_147_V_328",
         "zitierung": "BGE 147 V 328",
         "regesteKurz": "Art. 32 Abs. 1 und Art. 96 KVG; Art. 65b Abs. 6 und Art. 65d KVV; Art. 34f KLV; Wirtschaftlichkeitsbeurteilung eines patentgeschützten Medikaments im Rahmen des therapeutischen Quervergleichs (TQV). Bei der Beurteilung der…",
@@ -865,20 +885,10 @@
         "gewicht": 1
       },
       {
-        "key": "bge_150_V_372",
-        "zitierung": "BGE 150 V 372",
+        "key": "bge_152_V_184",
+        "zitierung": "BGE 152 V 184",
         "regesteKurz": "Art. 32 KVG; Art. 64a, 65b, 65c, 65d und 65e KVV; Art. 34d, 34f und 34g KLV (sämtliche Bestimmungen in den vorliegend anwendbaren, bis Ende 2023 gültig gewesenen Fassungen); dreijährliche Überprüfung der Aufnahmebedingungen eines…",
-        "datum": "2024-07-16",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_V_348",
-        "zitierung": "BGE 148 V 348",
-        "regesteKurz": "Art. 32 Abs. 1 und 2 KVG; Art. 65b Abs. 2 lit. a, Art. 65d Abs. 1 und 2 KVV; Art. 34a bis , 34d und 34e KLV; dreijährliche Überprüfung der Aufnahmebedingungen eines Medikaments in die Spezialitätenliste; Auslandpreisvergleich (APV). Bei…",
-        "datum": "2022-04-20",
+        "datum": "2026-03-18",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -906,7 +916,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 5
+        "gewicht": 6
       },
       {
         "key": "bge_147_V_464",
@@ -916,7 +926,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
+      },
+      {
+        "key": "bge_150_V_372",
+        "zitierung": "BGE 150 V 372",
+        "regesteKurz": "Art. 32 KVG; Art. 64a, 65b, 65c, 65d und 65e KVV; Art. 34d, 34f und 34g KLV (sämtliche Bestimmungen in den vorliegend anwendbaren, bis Ende 2023 gültig gewesenen Fassungen); dreijährliche Überprüfung der Aufnahmebedingungen eines…",
+        "datum": "2024-07-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
       },
       {
         "key": "bge_147_V_470",
@@ -939,10 +959,20 @@
         "gewicht": 1
       },
       {
-        "key": "bge_150_V_372",
-        "zitierung": "BGE 150 V 372",
+        "key": "bge_148_V_348__voll",
+        "zitierung": "Urteil 9C_400/2021 (nicht publ. in BGE 148 V 348)",
+        "regesteKurz": null,
+        "datum": "2022-04-20",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_184",
+        "zitierung": "BGE 152 V 184",
         "regesteKurz": "Art. 32 KVG; Art. 64a, 65b, 65c, 65d und 65e KVV; Art. 34d, 34f und 34g KLV (sämtliche Bestimmungen in den vorliegend anwendbaren, bis Ende 2023 gültig gewesenen Fassungen); dreijährliche Überprüfung der Aufnahmebedingungen eines…",
-        "datum": "2024-07-16",
+        "datum": "2026-03-18",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -957,26 +987,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_149_V_119",
-        "zitierung": "BGE 149 V 119",
-        "regesteKurz": "Art. 65b Abs. 2, Art. 65d Abs. 2 und 3 (je in den ab 1. März 2017 geltenden Fassungen), Art. 67 Abs. 2 ter (in der vom 10. Mai 2006 bis 31. Mai 2015 gültig gewesenen Fassung), Art. 67a Abs. 1 KVV (in der ab 1. Juni 2015 geltenden Fassung);…",
-        "datum": "2023-04-04",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_V_348__voll",
-        "zitierung": "Urteil 9C_400/2021 (nicht publ. in BGE 148 V 348)",
-        "regesteKurz": null,
-        "datum": "2022-04-20",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "65c": [
@@ -985,6 +995,16 @@
         "zitierung": "BGE 150 V 372",
         "regesteKurz": "Art. 32 KVG; Art. 64a, 65b, 65c, 65d und 65e KVV; Art. 34d, 34f und 34g KLV (sämtliche Bestimmungen in den vorliegend anwendbaren, bis Ende 2023 gültig gewesenen Fassungen); dreijährliche Überprüfung der Aufnahmebedingungen eines…",
         "datum": "2024-07-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_184",
+        "zitierung": "BGE 152 V 184",
+        "regesteKurz": "Art. 32 KVG; Art. 64a, 65b, 65c, 65d und 65e KVV; Art. 34d, 34f und 34g KLV (sämtliche Bestimmungen in den vorliegend anwendbaren, bis Ende 2023 gültig gewesenen Fassungen); dreijährliche Überprüfung der Aufnahmebedingungen eines…",
+        "datum": "2026-03-18",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1000,7 +1020,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 5
+        "gewicht": 6
       },
       {
         "key": "bge_147_V_464",
@@ -1010,7 +1030,27 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
+      },
+      {
+        "key": "bge_150_V_372",
+        "zitierung": "BGE 150 V 372",
+        "regesteKurz": "Art. 32 KVG; Art. 64a, 65b, 65c, 65d und 65e KVV; Art. 34d, 34f und 34g KLV (sämtliche Bestimmungen in den vorliegend anwendbaren, bis Ende 2023 gültig gewesenen Fassungen); dreijährliche Überprüfung der Aufnahmebedingungen eines…",
+        "datum": "2024-07-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_148_V_348",
+        "zitierung": "BGE 148 V 348",
+        "regesteKurz": "Art. 32 Abs. 1 und 2 KVG; Art. 65b Abs. 2 lit. a, Art. 65d Abs. 1 und 2 KVV; Art. 34a bis , 34d und 34e KLV; dreijährliche Überprüfung der Aufnahmebedingungen eines Medikaments in die Spezialitätenliste; Auslandpreisvergleich (APV). Bei…",
+        "datum": "2022-04-20",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
       },
       {
         "key": "bge_147_V_470",
@@ -1033,10 +1073,10 @@
         "gewicht": 1
       },
       {
-        "key": "bge_150_V_372",
-        "zitierung": "BGE 150 V 372",
+        "key": "bge_152_V_184",
+        "zitierung": "BGE 152 V 184",
         "regesteKurz": "Art. 32 KVG; Art. 64a, 65b, 65c, 65d und 65e KVV; Art. 34d, 34f und 34g KLV (sämtliche Bestimmungen in den vorliegend anwendbaren, bis Ende 2023 gültig gewesenen Fassungen); dreijährliche Überprüfung der Aufnahmebedingungen eines…",
-        "datum": "2024-07-16",
+        "datum": "2026-03-18",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1051,29 +1091,19 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_148_V_348",
-        "zitierung": "BGE 148 V 348",
-        "regesteKurz": "Art. 32 Abs. 1 und 2 KVG; Art. 65b Abs. 2 lit. a, Art. 65d Abs. 1 und 2 KVV; Art. 34a bis , 34d und 34e KLV; dreijährliche Überprüfung der Aufnahmebedingungen eines Medikaments in die Spezialitätenliste; Auslandpreisvergleich (APV). Bei…",
-        "datum": "2022-04-20",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_V_128",
-        "zitierung": "BGE 148 V 128",
-        "regesteKurz": "Art. 32 KVG; Art. 65d Abs. 1 KVV; Art. 33, 34d und 34f KLV; Therapeutischer Quervergleich (TQV) im Rahmen der dreijährlichen Überprüfung der Aufnahmebedingungen; Begriff der Zweckmässigkeit. Die Frage der Packungsgrösse des zu…",
-        "datum": "2021-12-10",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "65e": [
+      {
+        "key": "bge_150_V_372",
+        "zitierung": "BGE 150 V 372",
+        "regesteKurz": "Art. 32 KVG; Art. 64a, 65b, 65c, 65d und 65e KVV; Art. 34d, 34f und 34g KLV (sämtliche Bestimmungen in den vorliegend anwendbaren, bis Ende 2023 gültig gewesenen Fassungen); dreijährliche Überprüfung der Aufnahmebedingungen eines…",
+        "datum": "2024-07-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
       {
         "key": "bge_147_V_328",
         "zitierung": "BGE 147 V 328",
@@ -1085,10 +1115,10 @@
         "gewicht": 1
       },
       {
-        "key": "bge_150_V_372",
-        "zitierung": "BGE 150 V 372",
+        "key": "bge_152_V_184",
+        "zitierung": "BGE 152 V 184",
         "regesteKurz": "Art. 32 KVG; Art. 64a, 65b, 65c, 65d und 65e KVV; Art. 34d, 34f und 34g KLV (sämtliche Bestimmungen in den vorliegend anwendbaren, bis Ende 2023 gültig gewesenen Fassungen); dreijährliche Überprüfung der Aufnahmebedingungen eines…",
-        "datum": "2024-07-16",
+        "datum": "2026-03-18",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

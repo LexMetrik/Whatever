@@ -1,21 +1,24 @@
 {
-"erzeugt":"2026-10-04",
+"erzeugt":"2026-10-26",
 "erlass":"FAMZV",
 "erlassEbene":"bund",
 "dokumente":{
 "bge_146_V_121":{"zitierung":"BGE 146 V 121","regesteKurz":"Art. 89 BGG; Art. 62 Abs. 1 bis ATSG; Beschwerdelegitimation der Suva, Abteilung Militärversicherung. Die Beschwerdelegitimation der Suva, Abteilung Militärversicherung, ergibt sich weder aus der allgemeinen Legitimationsklausel noch aus…","datum":"2020-04-08","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_147_V_285":{"zitierung":"BGE 147 V 285","regesteKurz":"Art. 4 Abs. 3 und Art. 7 Abs. 2 FamZG; Art. 7 Abs. 1 FamZV; Art. 67 und 68 der Verordnung (EG) Nr. 883/2004 des Europäischen Parlaments und des Rates vom 29. April 2004 zur Koordinierung der Systeme der sozialen Sicherheit; Art. 60 der…","datum":"2021-05-20","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_152_V_200":{"zitierung":"BGE 152 V 200","regesteKurz":"Art. 19 Abs. 1 FamZG; Art. 16 lit. b FamZV; Anspruch nichterwerbstätiger Personen auf Familienzulagen; Auslegung. Art. 16 lit. b FamZV kann keine Anwendung finden, weil damit der Kreis der nichterwerbstätigen Personen mit Anspruch auf…","datum":"2026-05-07","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bs_sozialversicherungsgericht_FZ.2023.2":{"zitierung":"Sozialversicherungsgericht BS FZ.2023.2 vom 10.05.2023","regesteKurz":"FLG","datum":"2023-05-10","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_FZ.2023.4":{"zitierung":"Sozialversicherungsgericht BS FZ.2023.4 vom 21.05.2024","regesteKurz":"Ausbildungszulagen: Es fehlt an einem systematischen Vorbereitungsaufwand auf ein anerkanntes Ausbildungsziel im Umfang…","datum":"2024-05-21","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
 },
 "proArtikel":{
 "1":[{"key":"bs_sozialversicherungsgericht_FZ.2023.4","gewicht":null}],
 "7":[{"key":"bge_147_V_285","gewicht":0},{"key":"bs_sozialversicherungsgericht_FZ.2023.2","gewicht":null}],
+"16":[{"key":"bge_152_V_200","gewicht":0}],
 "19":[{"key":"bge_146_V_121","gewicht":0}]
 },
 "gesamtProArtikel":{
 "1":{"kantonal":1},
 "7":{"bge":1,"kantonal":1},
+"16":{"bge":1},
 "19":{"bge":1}
 }
 }

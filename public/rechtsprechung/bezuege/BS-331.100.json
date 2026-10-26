@@ -1,10 +1,11 @@
 {
-"erzeugt":"2026-10-04",
+"erzeugt":"2026-10-26",
 "erlass":"BS-331.100",
 "erlassEbene":"kanton",
 "dokumente":{
 "bs_appellationsgericht_BES.2020.86":{"zitierung":"Appellationsgericht BS BES.2020.86 vom 12.04.2022","regesteKurz":"Nichtanhandnahme, Verfahrenseinstellung und Beweisanträge","datum":"2022-04-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_BES.2022.86":{"zitierung":"Appellationsgericht BS BES.2022.86 vom 28.10.2022","regesteKurz":"Editions-/Beschlagnahmeverfügung","datum":"2022-10-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_BES.2023.166":{"zitierung":"Appellationsgericht BS BES.2023.166 vom 12.06.2026","regesteKurz":"Gesuch um Konfliktbeilegung im Rahmen der behördlichen Rechtshilfe gemäss Art. 48 Abs. 1 StPO (UT.[...])","datum":"2026-06-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2023.25":{"zitierung":"Appellationsgericht BS SB.2023.25 vom 19.04.2024","regesteKurz":"Schreckung der Bevölkerung","datum":"2024-04-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2021.138":{"zitierung":"Appellationsgericht BS VD.2021.138 vom 28.02.2022","regesteKurz":"Ordentliche Kündigung wegen Arbeitsverhinderung aufgrund von Krankheit","datum":"2022-02-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2022.8":{"zitierung":"Appellationsgericht BS VD.2022.8 vom 19.10.2022","regesteKurz":"Ordentliche Kündigung wegen mangelhaften Verhaltens","datum":"2022-10-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
@@ -14,7 +15,7 @@
 },
 "proArtikel":{
 "1":[{"key":"bs_appellationsgericht_VD.2025.86","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.8","gewicht":null},{"key":"bs_appellationsgericht_BES.2020.86","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.138","gewicht":null}],
-"2":[{"key":"bs_appellationsgericht_VD.2025.86","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.61","gewicht":null},{"key":"bs_appellationsgericht_BES.2022.86","gewicht":null}],
+"2":[{"key":"bs_appellationsgericht_BES.2023.166","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.86","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.61","gewicht":null},{"key":"bs_appellationsgericht_BES.2022.86","gewicht":null}],
 "6":[{"key":"bs_appellationsgericht_VD.2025.86","gewicht":null}],
 "7":[{"key":"bs_appellationsgericht_VD.2025.86","gewicht":null}],
 "8":[{"key":"bs_appellationsgericht_VD.2025.86","gewicht":null}],
@@ -26,7 +27,7 @@
 },
 "gesamtProArtikel":{
 "1":{"kantonal":4},
-"2":{"kantonal":3},
+"2":{"kantonal":4},
 "6":{"kantonal":1},
 "7":{"kantonal":1},
 "8":{"kantonal":1},
