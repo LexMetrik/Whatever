@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-10-26",
   "erlass": "ZPO",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -9,6 +9,26 @@
         "zitierung": "BGE 152 III 154",
         "regesteKurz": "Art. 111 Abs. 1 Satz 2 ZPO; Art. 68 SchKG; Rückerstattung des Kostenvorschusses an obsiegende Partei in summarischen SchKG-Verfahren nach Art. 251 ZPO. Art. 111 Abs. 1 Satz 2 ZPO ist auch in summarischen SchKG-Verfahren gemäss Art. 251 ZPO…",
         "datum": "2025-12-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_149_III_179",
+        "zitierung": "BGE 149 III 179",
+        "regesteKurz": "Art. 31, 56 ff., 63, 250 Abs. 2 SchKG; Art. 145 Abs. 1 und 4 ZPO; Frist zur Erhebung einer Kollokationsklage im Konkurs. Für die Erhebung einer Kollokationsklage im Konkurs (Art. 250 SchKG) gelten die Gerichtsferien gemäss Art. 145 Abs. 1…",
+        "datum": "2022-12-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_III_347",
+        "zitierung": "BGE 152 III 347",
+        "regesteKurz": "Art. 1 lit. c, Art. 145 Abs. 2 lit. b und Abs. 4, Art. 251 ZPO; Art. 56 Abs. 2, Art. 171 und 174 SchKG; Konkurseröffnung und Weiterziehung; Summarverfahren in Angelegenheiten des SchKG; Stillstand der Fristen. Für die Regelung des…",
+        "datum": "2026-03-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -55,30 +75,10 @@
         "gewicht": 0
       },
       {
-        "key": "bge_149_III_179",
-        "zitierung": "BGE 149 III 179",
-        "regesteKurz": "Art. 31, 56 ff., 63, 250 Abs. 2 SchKG; Art. 145 Abs. 1 und 4 ZPO; Frist zur Erhebung einer Kollokationsklage im Konkurs. Für die Erhebung einer Kollokationsklage im Konkurs (Art. 250 SchKG) gelten die Gerichtsferien gemäss Art. 145 Abs. 1…",
-        "datum": "2022-12-07",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_148_III_172",
         "zitierung": "BGE 148 III 172",
         "regesteKurz": "Art. 5 Abs. 5 StromVV, Art. 1 lit. a ZPO, Art. 164 und Art. 182 Abs. 1 BV; Zuständigkeitsordnung; Regelung auf der Stufe des formellen Gesetzes. Art. 5 Abs. 5 der Stromversorgungsverordnung (StromVV) verstösst gegen Art. 164 und Art. 182…",
         "datum": "2022-01-11",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_III_440",
-        "zitierung": "BGE 147 III 440",
-        "regesteKurz": "Art. 212 und 243 ff. ZPO; Entscheidungsbefugnis der Schlichtungsbehörde; anwendbares Verfahren; Verhandlungsmaxime; Säumnis der beklagten Partei. Vermögensrechtliche Streitigkeiten bis zu einem Streitwert von 2'000 Franken kann die…",
-        "datum": "2021-06-02",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -721,6 +721,26 @@
         "gewicht": 1
       },
       {
+        "key": "bge_147_III_582__voll",
+        "zitierung": "Urteil 4A_155/2021 (nicht publ. in BGE 147 III 582)",
+        "regesteKurz": null,
+        "datum": "2021-09-30",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_III_335",
+        "zitierung": "BGE 152 III 335",
+        "regesteKurz": "Art. 30 Abs. 1 BV; Art. 47 und 49 ZPO; Ausstandsgesuch gegen sämtliche Mitglieder eines Gerichts. Pauschale Ausstandsgesuche gegen sämtliche Mitglieder eines Gerichts, einer Abteilung oder eines Spruchkörpers sind grundsätzlich unzulässig…",
+        "datum": "2026-04-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_I_68",
         "zitierung": "BGE 150 I 68",
         "regesteKurz": "Art. 30 Abs. 1 BV; Anspruch auf ein unabhängiges Gericht; Gefährdung der inneren richterlichen Unabhängigkeit durch informelle Hierarchien; verspätete Geltendmachung; Ausstand von Amtes wegen bei offensichtlicher Befangenheit. Die…",
@@ -749,17 +769,21 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
+      }
+    ],
+    "48": [
       {
-        "key": "bge_152_III_61__voll",
-        "zitierung": "Urteil 4A_237/2025 (nicht publ. in BGE 152 III 61)",
-        "regesteKurz": null,
-        "datum": "2025-08-04",
-        "leitcharakter": "routine",
-        "gericht": "bger",
+        "key": "bge_152_III_335",
+        "zitierung": "BGE 152 III 335",
+        "regesteKurz": "Art. 30 Abs. 1 BV; Art. 47 und 49 ZPO; Ausstandsgesuch gegen sämtliche Mitglieder eines Gerichts. Pauschale Ausstandsgesuche gegen sämtliche Mitglieder eines Gerichts, einer Abteilung oder eines Spruchkörpers sind grundsätzlich unzulässig…",
+        "datum": "2026-04-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
+      }
+    ],
+    "49": [
       {
         "key": "bge_147_III_582__voll",
         "zitierung": "Urteil 4A_155/2021 (nicht publ. in BGE 147 III 582)",
@@ -768,10 +792,18 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_III_335",
+        "zitierung": "BGE 152 III 335",
+        "regesteKurz": "Art. 30 Abs. 1 BV; Art. 47 und 49 ZPO; Ausstandsgesuch gegen sämtliche Mitglieder eines Gerichts. Pauschale Ausstandsgesuche gegen sämtliche Mitglieder eines Gerichts, einer Abteilung oder eines Spruchkörpers sind grundsätzlich unzulässig…",
+        "datum": "2026-04-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
         "gewicht": 0
-      }
-    ],
-    "49": [
+      },
       {
         "key": "bge_147_III_89",
         "zitierung": "BGE 147 III 89",
@@ -791,19 +823,29 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_147_III_582__voll",
-        "zitierung": "Urteil 4A_155/2021 (nicht publ. in BGE 147 III 582)",
-        "regesteKurz": null,
-        "datum": "2021-09-30",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "50": [
+      {
+        "key": "bge_147_III_582",
+        "zitierung": "BGE 147 III 582",
+        "regesteKurz": "Art. 50 Abs. 1, 124 Abs. 2 und 183 Abs. 1 ZPO; Ernennung eines Sachverständigen, der von einer der Parteien als parteiisch angezweifelt wurde. Der in Art. 50 Abs. 1 ZPO verwendete Ausdruck \"Gericht\" meint bloss, dass die Kantone eine…",
+        "datum": "2021-09-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_III_335",
+        "zitierung": "BGE 152 III 335",
+        "regesteKurz": "Art. 30 Abs. 1 BV; Art. 47 und 49 ZPO; Ausstandsgesuch gegen sämtliche Mitglieder eines Gerichts. Pauschale Ausstandsgesuche gegen sämtliche Mitglieder eines Gerichts, einer Abteilung oder eines Spruchkörpers sind grundsätzlich unzulässig…",
+        "datum": "2026-04-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_151_III_344",
         "zitierung": "BGE 151 III 344",
@@ -819,16 +861,6 @@
         "zitierung": "BGE 151 III 287",
         "regesteKurz": "Art. 158, 242 und 319 lit. b Ziff. 2 ZPO; vorsorgliche Beweisführung; Rechtsmittel; Beschwerde. Der Entscheid, womit das Gericht den Abschluss einer vorsorglichen Beweisführung feststellt und über die Kosten und Auslagen entscheidet,…",
         "datum": "2024-12-20",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_III_582",
-        "zitierung": "BGE 147 III 582",
-        "regesteKurz": "Art. 50 Abs. 1, 124 Abs. 2 und 183 Abs. 1 ZPO; Ernennung eines Sachverständigen, der von einer der Parteien als parteiisch angezweifelt wurde. Der in Art. 50 Abs. 1 ZPO verwendete Ausdruck \"Gericht\" meint bloss, dass die Kantone eine…",
-        "datum": "2021-09-30",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -939,20 +971,20 @@
         "gewicht": 0
       },
       {
-        "key": "bge_152_III_1__voll",
-        "zitierung": "Urteil 5A_347/2024 (nicht publ. in BGE 152 III 1)",
+        "key": "bge_152_III_302__voll",
+        "zitierung": "Urteil 5A_356/2025 (nicht publ. in BGE 152 III 302)",
         "regesteKurz": null,
-        "datum": "2025-08-13",
+        "datum": "2026-04-01",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_151_III_217__voll",
-        "zitierung": "Urteil 5A_441/2024 (nicht publ. in BGE 151 III 217)",
+        "key": "bge_152_III_1__voll",
+        "zitierung": "Urteil 5A_347/2024 (nicht publ. in BGE 152 III 1)",
         "regesteKurz": null,
-        "datum": "2024-11-06",
+        "datum": "2025-08-13",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -1105,6 +1137,16 @@
         "gewicht": 2
       },
       {
+        "key": "bge_152_III_257",
+        "zitierung": "BGE 152 III 257",
+        "regesteKurz": "a Art. 55 Abs. 1, Art. 277 Abs. 1 und Art. 296 Abs. 1 ZPO; Auswirkung der Prozessmaximen des Kindesunterhalts auf den nachehelichen Unterhalt. Die kraft der uneingeschränkten Untersuchungsmaxime für den Kindesunterhalt gewonnenen…",
+        "datum": "2026-02-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_151_III_122",
         "zitierung": "BGE 151 III 122",
         "regesteKurz": "Art. 98 ff. IPRG; Klage auf Feststellung des Eigentums an einer gestohlenen Uhr. Auf den Erwerb sowie die Ausübung eines dinglichen Rechts an einer beweglichen Sache anwendbares Recht. Unterscheidung zwischen der Konstellation, in welcher…",
@@ -1135,30 +1177,20 @@
         "gewicht": 1
       },
       {
-        "key": "bge_152_III_257",
-        "zitierung": "BGE 152 III 257",
-        "regesteKurz": "a Art. 55 Abs. 1, Art. 277 Abs. 1 und Art. 296 Abs. 1 ZPO; Auswirkung der Prozessmaximen des Kindesunterhalts auf den nachehelichen Unterhalt. Die kraft der uneingeschränkten Untersuchungsmaxime für den Kindesunterhalt gewonnenen…",
-        "datum": "2026-02-16",
+        "key": "bge_152_III_335",
+        "zitierung": "BGE 152 III 335",
+        "regesteKurz": "Art. 30 Abs. 1 BV; Art. 47 und 49 ZPO; Ausstandsgesuch gegen sämtliche Mitglieder eines Gerichts. Pauschale Ausstandsgesuche gegen sämtliche Mitglieder eines Gerichts, einer Abteilung oder eines Spruchkörpers sind grundsätzlich unzulässig…",
+        "datum": "2026-04-22",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_151_III_497",
-        "zitierung": "BGE 151 III 497",
-        "regesteKurz": "Prozessstandschaft; Prozessmaxime betreffend die Prozessvoraussetzungen der Klage; gerichtliche Fragepflicht. Die Befugnis, im eigenen Namen das Recht eines Dritten gerichtlich geltend zu machen (Prozessstandschaft), stellt eine…",
-        "datum": "2025-05-07",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_III_304",
-        "zitierung": "BGE 149 III 304",
-        "regesteKurz": "Einsprache gegen die missbräuchliche Kündigung (Art. 336b OR). Der Kläger muss die Tatsachen behaupten und beweisen, gestützt auf welche das Gericht schliessen kann, dass er gegen die angeblich missbräuchliche Kündigung Einsprache erhoben…",
-        "datum": "2023-05-11",
+        "key": "bge_152_III_302",
+        "zitierung": "BGE 152 III 302",
+        "regesteKurz": "Art. 125 ZGB; nachehelicher Unterhalt; Frage der Lebensprägung bei einer Altersehe. Für die Festlegung des gebührenden Unterhalts (Art. 125 Abs. 1 ZGB) nimmt die Rechtsprechung zum Ausgangspunkt, ob die Ehe lebensprägend war oder nicht (E.…",
+        "datum": "2026-04-01",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1321,6 +1353,16 @@
     ],
     "58": [
       {
+        "key": "bge_147_III_393__voll",
+        "zitierung": "Urteil 5A_582/2018 (nicht publ. in BGE 147 III 393)",
+        "regesteKurz": null,
+        "datum": "2021-07-01",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
         "key": "bge_148_III_322",
         "zitierung": "BGE 148 III 322",
         "regesteKurz": "Art. 84 Abs. 2, Art. 85 Abs. 1, Art. 221 Abs. 1 lit. b und Art. 244 Abs. 1 lit. b ZPO; Rechtsbegehren; unbezifferte Forderungsklage. Beruft sich die klagende Partei auf eine Ausnahme von der Pflicht zur Bezifferung einer Klage auf…",
@@ -1351,14 +1393,14 @@
         "gewicht": 1
       },
       {
-        "key": "bge_147_III_393__voll",
-        "zitierung": "Urteil 5A_582/2018 (nicht publ. in BGE 147 III 393)",
-        "regesteKurz": null,
-        "datum": "2021-07-01",
-        "leitcharakter": "routine",
-        "gericht": "bger",
+        "key": "bge_152_III_342",
+        "zitierung": "BGE 152 III 342",
+        "regesteKurz": "Art. 296 Abs. 1 und 3 ZPO; Tragweite des Untersuchungs- und des Offizialgrundsatzes bei Rückweisung einer Angelegenheit durch das Bundesgericht. Sowohl der Untersuchungs- als auch der Offizialgrundsatz (Art. 296 Abs. 1 und 3 ZPO) wirken…",
+        "datum": "2026-03-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 0
       },
       {
         "key": "bge_151_III_227",
@@ -1385,16 +1427,6 @@
         "zitierung": "BGE 150 III 353",
         "regesteKurz": "Art. 124e Abs. 1 und Art. 247 ff. ZGB; Art. 30c BVG; Gütertrennung; Unmöglichkeit des Vorsorgeausgleichs aus Vorsorgemitteln; Entschädigung bei Vorbezug für Wohneigentum. Zur Frage, wie die angemessene Entschädigung (Art. 124e Abs. 1 ZGB)…",
         "datum": "2024-07-17",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_III_137",
-        "zitierung": "BGE 150 III 137",
-        "regesteKurz": "Art. 295b SchKG; Verlängerung der Stundung. Nur der Sachwalter ist berechtigt, beim Nachlassgericht einen Antrag gemäss Art. 295b SchKG zur Verlängerung der definitiven Stundung zu stellen. Wird vor Ablauf der bewilligten Stundungsdauer…",
-        "datum": "2024-01-12",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1691,6 +1723,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_III_347",
+        "zitierung": "BGE 152 III 347",
+        "regesteKurz": "Art. 1 lit. c, Art. 145 Abs. 2 lit. b und Abs. 4, Art. 251 ZPO; Art. 56 Abs. 2, Art. 171 und 174 SchKG; Konkurseröffnung und Weiterziehung; Summarverfahren in Angelegenheiten des SchKG; Stillstand der Fristen. Für die Regelung des…",
+        "datum": "2026-03-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_152_III_115",
         "zitierung": "BGE 152 III 115",
         "regesteKurz": "a Art. 9 Abs. 1 und 2 IPRG; Art. 199 Abs. 2 ZPO; internationale Rechtshängigkeit; erste, für die Klageeinleitung notwendige Verfahrenshandlung. Um die Rechtshängigkeit im Sinne von Art. 9 Abs. 2 IPRG zu begründen, genügt die Einreichung…",
@@ -1725,16 +1767,6 @@
         "zitierung": "BGE 149 III 145",
         "regesteKurz": "a Art. 241, 308 ff., 328 Abs. 1 lit. c ZPO; Rechtsmittel im Fall eines Klagerückzugs. Zur Unterscheidung von Wirksamkeit und Wirkung des Klagerückzugs (Art. 241 ZPO) und zu den Folgen, die sich daraus für das zulässige Rechtsmittel -…",
         "datum": "2022-12-15",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_III_30",
-        "zitierung": "BGE 148 III 30",
-        "regesteKurz": "a Art. 79, Art. 80 und Art. 82 Abs. 1 SchKG; Art. 59 Abs. 2 lit. d ZPO. Verhältnis der Anerkennungsklage zur Rechtsöffnung. Rechtsnatur der Anerkennungsklage und der Verfahren auf definitive und provisorische Rechtsöffnung. Die…",
-        "datum": "2021-10-22",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2389,6 +2421,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_III_319",
+        "zitierung": "BGE 152 III 319",
+        "regesteKurz": "a Art. 60 OR; Art. 6 EMRK. Im vorliegenden Fall ist der Beginn der Verjährungsfrist mit Art. 6 EMRK vereinbar (E. 5). Regeste b Art. 60 Abs. 2 OR; Art. 122 StGB. Eine dauerhafte Schädigung eines Embryos oder eines lebend geborenen Fötus…",
+        "datum": "2026-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_152_III_1",
         "zitierung": "BGE 152 III 1",
         "regesteKurz": "Art. 533 Abs. 1 ZGB; Verwirkung der Herabsetzungsklage bei (lebzeitigen) Zuwendungen an mehr als eine Person; separater Lauf der Verwirkungsfristen. Der Lauf der einjährigen Frist für die Herabsetzungsklage beginnt bei (lebzeitigen)…",
@@ -2427,19 +2469,19 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_147_III_166",
-        "zitierung": "BGE 147 III 166",
-        "regesteKurz": "Art. 71 Abs. 1, 81 Abs. 1, 82 Abs. 1, Satz 2, 85 Abs. 1 ZPO; 135 Ziff. 2 OR. Der Antrag auf Zulassung der Streitverkündungsklage muss Rechtsbegehren enthalten, die geeignet sind, die Verjährung zu unterbrechen, sowie eine Begründung, die…",
-        "datum": "2021-03-08",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "86": [
+      {
+        "key": "bge_147_III_172",
+        "zitierung": "BGE 147 III 172",
+        "regesteKurz": "Art. 86 und 224 ZPO; Teilklage und negative Feststellungswiderklage. Die Ausnahme vom Erfordernis der gleichen Verfahrensart gemäss Art. 224 Abs. 1 ZPO für negative Feststellungswiderklagen gilt unabhängig davon, ob diese in Reaktion auf…",
+        "datum": "2020-12-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
       {
         "key": "bge_146_III_14__voll",
         "zitierung": "Urteil 4A_299/2013 (nicht publ. in BGE 146 III 14)",
@@ -2451,20 +2493,20 @@
         "gewicht": 1
       },
       {
-        "key": "bge_147_III_345",
-        "zitierung": "BGE 147 III 345",
-        "regesteKurz": "Art. 59 Abs. 2 lit. e und Art. 86 ZPO; Rechtskraft; Teilklage. Macht die klagende Partei mit einer Teilklage einen einzig betragsmässig beschränkten Teil einer Forderung geltend, schliesst die rechtskräftige Abweisung der Teilklage aus,…",
-        "datum": "2021-03-23",
+        "key": "bge_152_III_319",
+        "zitierung": "BGE 152 III 319",
+        "regesteKurz": "a Art. 60 OR; Art. 6 EMRK. Im vorliegenden Fall ist der Beginn der Verjährungsfrist mit Art. 6 EMRK vereinbar (E. 5). Regeste b Art. 60 Abs. 2 OR; Art. 122 StGB. Eine dauerhafte Schädigung eines Embryos oder eines lebend geborenen Fötus…",
+        "datum": "2026-01-30",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_147_III_172",
-        "zitierung": "BGE 147 III 172",
-        "regesteKurz": "Art. 86 und 224 ZPO; Teilklage und negative Feststellungswiderklage. Die Ausnahme vom Erfordernis der gleichen Verfahrensart gemäss Art. 224 Abs. 1 ZPO für negative Feststellungswiderklagen gilt unabhängig davon, ob diese in Reaktion auf…",
-        "datum": "2020-12-22",
+        "key": "bge_147_III_345",
+        "zitierung": "BGE 147 III 345",
+        "regesteKurz": "Art. 59 Abs. 2 lit. e und Art. 86 ZPO; Rechtskraft; Teilklage. Macht die klagende Partei mit einer Teilklage einen einzig betragsmässig beschränkten Teil einer Forderung geltend, schliesst die rechtskräftige Abweisung der Teilklage aus,…",
+        "datum": "2021-03-23",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -3695,6 +3737,18 @@
         "gewicht": 0
       }
     ],
+    "135": [
+      {
+        "key": "bge_152_III_347",
+        "zitierung": "BGE 152 III 347",
+        "regesteKurz": "Art. 1 lit. c, Art. 145 Abs. 2 lit. b und Abs. 4, Art. 251 ZPO; Art. 56 Abs. 2, Art. 171 und 174 SchKG; Konkurseröffnung und Weiterziehung; Summarverfahren in Angelegenheiten des SchKG; Stillstand der Fristen. Für die Regelung des…",
+        "datum": "2026-03-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "136": [
       {
         "key": "bge_152_III_115",
@@ -3859,6 +3913,18 @@
         "gewicht": 0
       }
     ],
+    "144": [
+      {
+        "key": "bge_152_III_347",
+        "zitierung": "BGE 152 III 347",
+        "regesteKurz": "Art. 1 lit. c, Art. 145 Abs. 2 lit. b und Abs. 4, Art. 251 ZPO; Art. 56 Abs. 2, Art. 171 und 174 SchKG; Konkurseröffnung und Weiterziehung; Summarverfahren in Angelegenheiten des SchKG; Stillstand der Fristen. Für die Regelung des…",
+        "datum": "2026-03-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "145": [
       {
         "key": "bge_149_III_179",
@@ -3868,13 +3934,23 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
         "key": "bge_152_III_154",
         "zitierung": "BGE 152 III 154",
         "regesteKurz": "Art. 111 Abs. 1 Satz 2 ZPO; Art. 68 SchKG; Rückerstattung des Kostenvorschusses an obsiegende Partei in summarischen SchKG-Verfahren nach Art. 251 ZPO. Art. 111 Abs. 1 Satz 2 ZPO ist auch in summarischen SchKG-Verfahren gemäss Art. 251 ZPO…",
         "datum": "2025-12-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_III_347",
+        "zitierung": "BGE 152 III 347",
+        "regesteKurz": "Art. 1 lit. c, Art. 145 Abs. 2 lit. b und Abs. 4, Art. 251 ZPO; Art. 56 Abs. 2, Art. 171 und 174 SchKG; Konkurseröffnung und Weiterziehung; Summarverfahren in Angelegenheiten des SchKG; Stillstand der Fristen. Für die Regelung des…",
+        "datum": "2026-03-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -3996,6 +4072,16 @@
       }
     ],
     "148": [
+      {
+        "key": "bge_152_III_347",
+        "zitierung": "BGE 152 III 347",
+        "regesteKurz": "Art. 1 lit. c, Art. 145 Abs. 2 lit. b und Abs. 4, Art. 251 ZPO; Art. 56 Abs. 2, Art. 171 und 174 SchKG; Konkurseröffnung und Weiterziehung; Summarverfahren in Angelegenheiten des SchKG; Stillstand der Fristen. Für die Regelung des…",
+        "datum": "2026-03-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_146_III_297",
         "zitierung": "BGE 146 III 297",
@@ -4440,6 +4526,16 @@
       }
     ],
     "164": [
+      {
+        "key": "bge_152_III_302__voll",
+        "zitierung": "Urteil 5A_356/2025 (nicht publ. in BGE 152 III 302)",
+        "regesteKurz": null,
+        "datum": "2026-04-01",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_148_III_186__voll",
         "zitierung": "Urteil 4A_169/2021 (nicht publ. in BGE 148 III 186)",
@@ -5667,6 +5763,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_III_347",
+        "zitierung": "BGE 152 III 347",
+        "regesteKurz": "Art. 1 lit. c, Art. 145 Abs. 2 lit. b und Abs. 4, Art. 251 ZPO; Art. 56 Abs. 2, Art. 171 und 174 SchKG; Konkurseröffnung und Weiterziehung; Summarverfahren in Angelegenheiten des SchKG; Stillstand der Fristen. Für die Regelung des…",
+        "datum": "2026-03-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_152_III_115",
         "zitierung": "BGE 152 III 115",
         "regesteKurz": "a Art. 9 Abs. 1 und 2 IPRG; Art. 199 Abs. 2 ZPO; internationale Rechtshängigkeit; erste, für die Klageeinleitung notwendige Verfahrenshandlung. Um die Rechtshängigkeit im Sinne von Art. 9 Abs. 2 IPRG zu begründen, genügt die Einreichung…",
@@ -5701,16 +5807,6 @@
         "zitierung": "BGE 149 III 54",
         "regesteKurz": "Art. 84 Abs. 1 und Art. 135 Ziff. 2 OR; Forderung in Euro; Unterbrechung der Verjährung durch ein Schlichtungsgesuch, worin die Forderung in Schweizer Franken beziffert ist. Hinweis auf die Rechtsprechung bezüglich der Währung, in der der…",
         "datum": "2022-11-08",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_III_322",
-        "zitierung": "BGE 148 III 322",
-        "regesteKurz": "Art. 84 Abs. 2, Art. 85 Abs. 1, Art. 221 Abs. 1 lit. b und Art. 244 Abs. 1 lit. b ZPO; Rechtsbegehren; unbezifferte Forderungsklage. Beruft sich die klagende Partei auf eine Ausnahme von der Pflicht zur Bezifferung einer Klage auf…",
-        "datum": "2022-05-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -6830,6 +6926,26 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_149_III_179",
+        "zitierung": "BGE 149 III 179",
+        "regesteKurz": "Art. 31, 56 ff., 63, 250 Abs. 2 SchKG; Art. 145 Abs. 1 und 4 ZPO; Frist zur Erhebung einer Kollokationsklage im Konkurs. Für die Erhebung einer Kollokationsklage im Konkurs (Art. 250 SchKG) gelten die Gerichtsferien gemäss Art. 145 Abs. 1…",
+        "datum": "2022-12-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_III_347",
+        "zitierung": "BGE 152 III 347",
+        "regesteKurz": "Art. 1 lit. c, Art. 145 Abs. 2 lit. b und Abs. 4, Art. 251 ZPO; Art. 56 Abs. 2, Art. 171 und 174 SchKG; Konkurseröffnung und Weiterziehung; Summarverfahren in Angelegenheiten des SchKG; Stillstand der Fristen. Für die Regelung des…",
+        "datum": "2026-03-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
         "gewicht": 0
       },
       {
@@ -6863,16 +6979,6 @@
         "gewicht": 0
       },
       {
-        "key": "bge_149_III_179",
-        "zitierung": "BGE 149 III 179",
-        "regesteKurz": "Art. 31, 56 ff., 63, 250 Abs. 2 SchKG; Art. 145 Abs. 1 und 4 ZPO; Frist zur Erhebung einer Kollokationsklage im Konkurs. Für die Erhebung einer Kollokationsklage im Konkurs (Art. 250 SchKG) gelten die Gerichtsferien gemäss Art. 145 Abs. 1…",
-        "datum": "2022-12-07",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_148_III_377",
         "zitierung": "BGE 148 III 377",
         "regesteKurz": "Art. 271 Abs. 1 Ziff. 4, Art. 272 Abs. 1 und Art. 278 SchKG; Art. 305bis StGB; Art. 9 BV; Verarrestierung von Guthaben, die auf Bankkonten in der Schweiz deponiert sind; Arresteinsprache. Verletzung des Willkürverbotes durch die kantonale…",
@@ -6884,6 +6990,16 @@
       }
     ],
     "252": [
+      {
+        "key": "bge_152_III_347",
+        "zitierung": "BGE 152 III 347",
+        "regesteKurz": "Art. 1 lit. c, Art. 145 Abs. 2 lit. b und Abs. 4, Art. 251 ZPO; Art. 56 Abs. 2, Art. 171 und 174 SchKG; Konkurseröffnung und Weiterziehung; Summarverfahren in Angelegenheiten des SchKG; Stillstand der Fristen. Für die Regelung des…",
+        "datum": "2026-03-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_150_III_209",
         "zitierung": "BGE 150 III 209",
@@ -7074,6 +7190,16 @@
       }
     ],
     "257": [
+      {
+        "key": "bge_152_III_347",
+        "zitierung": "BGE 152 III 347",
+        "regesteKurz": "Art. 1 lit. c, Art. 145 Abs. 2 lit. b und Abs. 4, Art. 251 ZPO; Art. 56 Abs. 2, Art. 171 und 174 SchKG; Konkurseröffnung und Weiterziehung; Summarverfahren in Angelegenheiten des SchKG; Stillstand der Fristen. Für die Regelung des…",
+        "datum": "2026-03-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_149_III_67",
         "zitierung": "BGE 149 III 67",
@@ -7285,20 +7411,30 @@
     ],
     "277": [
       {
-        "key": "bge_147_III_301",
-        "zitierung": "BGE 147 III 301",
-        "regesteKurz": "a Art. 58 Abs. 1, Art. 271 lit. a, Art. 277 Abs. 1 und Art. 296 Abs. 1 und 3 ZPO; Auswirkung der Prozessmaximen für den Kindesunterhalt auf den (nach-)ehelichen Unterhalt. Die kraft der uneingeschränkten Untersuchungsmaxime für den…",
-        "datum": "2021-02-09",
+        "key": "bge_147_III_293",
+        "zitierung": "BGE 147 III 293",
+        "regesteKurz": "Art. 125 ZGB; Berechnung des nachehelichen Unterhalts; Verbindlichkeit der zweistufigen Methode mit Überschussverteilung. Ein- und zweistufige Methode (E. 4.1). Bisheriger Methodenpluralismus (E. 4.2). Zusammenstellung der Rechtsprechung…",
+        "datum": "2021-02-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_152_III_257",
+        "zitierung": "BGE 152 III 257",
+        "regesteKurz": "a Art. 55 Abs. 1, Art. 277 Abs. 1 und Art. 296 Abs. 1 ZPO; Auswirkung der Prozessmaximen des Kindesunterhalts auf den nachehelichen Unterhalt. Die kraft der uneingeschränkten Untersuchungsmaxime für den Kindesunterhalt gewonnenen…",
+        "datum": "2026-02-16",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
       },
       {
-        "key": "bge_147_III_293",
-        "zitierung": "BGE 147 III 293",
-        "regesteKurz": "Art. 125 ZGB; Berechnung des nachehelichen Unterhalts; Verbindlichkeit der zweistufigen Methode mit Überschussverteilung. Ein- und zweistufige Methode (E. 4.1). Bisheriger Methodenpluralismus (E. 4.2). Zusammenstellung der Rechtsprechung…",
-        "datum": "2021-02-02",
+        "key": "bge_147_III_301",
+        "zitierung": "BGE 147 III 301",
+        "regesteKurz": "a Art. 58 Abs. 1, Art. 271 lit. a, Art. 277 Abs. 1 und Art. 296 Abs. 1 und 3 ZPO; Auswirkung der Prozessmaximen für den Kindesunterhalt auf den (nach-)ehelichen Unterhalt. Die kraft der uneingeschränkten Untersuchungsmaxime für den…",
+        "datum": "2021-02-09",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -7313,16 +7449,6 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
-      },
-      {
-        "key": "bge_152_III_257",
-        "zitierung": "BGE 152 III 257",
-        "regesteKurz": "a Art. 55 Abs. 1, Art. 277 Abs. 1 und Art. 296 Abs. 1 ZPO; Auswirkung der Prozessmaximen des Kindesunterhalts auf den nachehelichen Unterhalt. Die kraft der uneingeschränkten Untersuchungsmaxime für den Kindesunterhalt gewonnenen…",
-        "datum": "2026-02-16",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       },
       {
         "key": "bge_151_II_427",
@@ -7341,6 +7467,16 @@
         "datum": "2024-07-17",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_III_302__voll",
+        "zitierung": "Urteil 5A_356/2025 (nicht publ. in BGE 152 III 302)",
+        "regesteKurz": null,
+        "datum": "2026-04-01",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
@@ -7491,10 +7627,30 @@
         "gewicht": 2
       },
       {
+        "key": "bge_147_III_393__voll",
+        "zitierung": "Urteil 5A_582/2018 (nicht publ. in BGE 147 III 393)",
+        "regesteKurz": null,
+        "datum": "2021-07-01",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
         "key": "bge_151_III_261",
         "zitierung": "BGE 151 III 261",
         "regesteKurz": "Art. 285 und 4 ZGB; Überschussverteilung bei der Berechnung des Kindesunterhalts nach der zweistufig-konkreten Methode. Grundsätze für die Verteilung eines bei der zweistufig-konkreten Methode resultierenden rechnerischen Überschusses,…",
         "datum": "2024-11-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_150_III_385",
+        "zitierung": "BGE 150 III 385",
+        "regesteKurz": "Art. 29 Abs. 2 BV; Art. 296 Abs. 1 ZPO; Ehescheidung; elterliche Sorge; Tragweite des Anspruchs auf rechtliches Gehör und des uneingeschränkten Untersuchungsgrundsatzes bei Rückweisung einer Kinderbelange betreffenden Angelegenheit durch…",
+        "datum": "2024-08-20",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -7531,30 +7687,10 @@
         "gewicht": 1
       },
       {
-        "key": "bge_147_III_393__voll",
-        "zitierung": "Urteil 5A_582/2018 (nicht publ. in BGE 147 III 393)",
-        "regesteKurz": null,
-        "datum": "2021-07-01",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_152_III_257",
-        "zitierung": "BGE 152 III 257",
-        "regesteKurz": "a Art. 55 Abs. 1, Art. 277 Abs. 1 und Art. 296 Abs. 1 ZPO; Auswirkung der Prozessmaximen des Kindesunterhalts auf den nachehelichen Unterhalt. Die kraft der uneingeschränkten Untersuchungsmaxime für den Kindesunterhalt gewonnenen…",
-        "datum": "2026-02-16",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_III_385",
-        "zitierung": "BGE 150 III 385",
-        "regesteKurz": "Art. 29 Abs. 2 BV; Art. 296 Abs. 1 ZPO; Ehescheidung; elterliche Sorge; Tragweite des Anspruchs auf rechtliches Gehör und des uneingeschränkten Untersuchungsgrundsatzes bei Rückweisung einer Kinderbelange betreffenden Angelegenheit durch…",
-        "datum": "2024-08-20",
+        "key": "bge_152_III_342",
+        "zitierung": "BGE 152 III 342",
+        "regesteKurz": "Art. 296 Abs. 1 und 3 ZPO; Tragweite des Untersuchungs- und des Offizialgrundsatzes bei Rückweisung einer Angelegenheit durch das Bundesgericht. Sowohl der Untersuchungs- als auch der Offizialgrundsatz (Art. 296 Abs. 1 und 3 ZPO) wirken…",
+        "datum": "2026-03-16",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -7574,6 +7710,16 @@
       }
     ],
     "298": [
+      {
+        "key": "bge_152_III_342",
+        "zitierung": "BGE 152 III 342",
+        "regesteKurz": "Art. 296 Abs. 1 und 3 ZPO; Tragweite des Untersuchungs- und des Offizialgrundsatzes bei Rückweisung einer Angelegenheit durch das Bundesgericht. Sowohl der Untersuchungs- als auch der Offizialgrundsatz (Art. 296 Abs. 1 und 3 ZPO) wirken…",
+        "datum": "2026-03-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_146_III_203",
         "zitierung": "BGE 146 III 203",
@@ -7995,6 +8141,26 @@
     ],
     "317": [
       {
+        "key": "bge_150_III_385",
+        "zitierung": "BGE 150 III 385",
+        "regesteKurz": "Art. 29 Abs. 2 BV; Art. 296 Abs. 1 ZPO; Ehescheidung; elterliche Sorge; Tragweite des Anspruchs auf rechtliches Gehör und des uneingeschränkten Untersuchungsgrundsatzes bei Rückweisung einer Kinderbelange betreffenden Angelegenheit durch…",
+        "datum": "2024-08-20",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_III_342",
+        "zitierung": "BGE 152 III 342",
+        "regesteKurz": "Art. 296 Abs. 1 und 3 ZPO; Tragweite des Untersuchungs- und des Offizialgrundsatzes bei Rückweisung einer Angelegenheit durch das Bundesgericht. Sowohl der Untersuchungs- als auch der Offizialgrundsatz (Art. 296 Abs. 1 und 3 ZPO) wirken…",
+        "datum": "2026-03-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_III_497",
         "zitierung": "BGE 151 III 497",
         "regesteKurz": "Prozessstandschaft; Prozessmaxime betreffend die Prozessvoraussetzungen der Klage; gerichtliche Fragepflicht. Die Befugnis, im eigenen Namen das Recht eines Dritten gerichtlich geltend zu machen (Prozessstandschaft), stellt eine…",
@@ -8019,16 +8185,6 @@
         "zitierung": "BGE 151 III 122",
         "regesteKurz": "Art. 98 ff. IPRG; Klage auf Feststellung des Eigentums an einer gestohlenen Uhr. Auf den Erwerb sowie die Ausübung eines dinglichen Rechts an einer beweglichen Sache anwendbares Recht. Unterscheidung zwischen der Konstellation, in welcher…",
         "datum": "2024-09-13",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_III_385",
-        "zitierung": "BGE 150 III 385",
-        "regesteKurz": "Art. 29 Abs. 2 BV; Art. 296 Abs. 1 ZPO; Ehescheidung; elterliche Sorge; Tragweite des Anspruchs auf rechtliches Gehör und des uneingeschränkten Untersuchungsgrundsatzes bei Rückweisung einer Kinderbelange betreffenden Angelegenheit durch…",
-        "datum": "2024-08-20",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -8061,16 +8217,6 @@
         "datum": "2021-02-09",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_152_III_240__voll",
-        "zitierung": "Urteil 4A_149/2025 (nicht publ. in BGE 152 III 240)",
-        "regesteKurz": null,
-        "datum": "2026-01-12",
-        "leitcharakter": "routine",
-        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -8441,6 +8587,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_152_III_342__voll",
+        "zitierung": "Urteil 5A_373/2025 (nicht publ. in BGE 152 III 342)",
+        "regesteKurz": null,
+        "datum": "2026-03-16",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_III_249__voll",
         "zitierung": "Urteil 5A_925/2021 (nicht publ. in BGE 149 III 249)",
         "regesteKurz": null,
@@ -8479,6 +8635,16 @@
         "datum": "2025-05-01",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_III_342__voll",
+        "zitierung": "Urteil 5A_373/2025 (nicht publ. in BGE 152 III 342)",
+        "regesteKurz": null,
+        "datum": "2026-03-16",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
@@ -8582,6 +8748,16 @@
       }
     ],
     "339": [
+      {
+        "key": "bge_152_III_347",
+        "zitierung": "BGE 152 III 347",
+        "regesteKurz": "Art. 1 lit. c, Art. 145 Abs. 2 lit. b und Abs. 4, Art. 251 ZPO; Art. 56 Abs. 2, Art. 171 und 174 SchKG; Konkurseröffnung und Weiterziehung; Summarverfahren in Angelegenheiten des SchKG; Stillstand der Fristen. Für die Regelung des…",
+        "datum": "2026-03-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_152_III_168",
         "zitierung": "BGE 152 III 168",

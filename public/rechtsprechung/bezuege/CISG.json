@@ -1,14 +1,39 @@
 {
-"erzeugt":"2026-10-04",
+"erzeugt":"2026-10-26",
 "erlass":"CISG",
 "erlassEbene":"bund",
 "dokumente":{
-"bge_148_III_50":{"zitierung":"BGE 148 III 50","regesteKurz":"Art. 5 Nr. 1 Bst. b erster Spiegelstrich LugÜ; Erfüllungsort. Beschränkt sich die vertragliche Pflicht des Verkäufers darauf, eine bewegliche Kaufsache zu Handen des Käufers zur Abholung bereitzustellen, gilt als Lieferort im Sinne von…","datum":"2022-01-27","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+"bge_148_III_50":{"zitierung":"BGE 148 III 50","regesteKurz":"Art. 5 Nr. 1 Bst. b erster Spiegelstrich LugÜ; Erfüllungsort. Beschränkt sich die vertragliche Pflicht des Verkäufers darauf, eine bewegliche Kaufsache zu Handen des Käufers zur Abholung bereitzustellen, gilt als Lieferort im Sinne von…","datum":"2022-01-27","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"gr_gerichte_ZR2202545":{"zitierung":"Obergericht GR ZR2 25 45 vom 12.10.2026","regesteKurz":null,"datum":"2026-10-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}}
 },
 "proArtikel":{
-"31":[{"key":"bge_148_III_50","gewicht":0}]
+"1":[{"key":"gr_gerichte_ZR2202545","gewicht":null}],
+"25":[{"key":"gr_gerichte_ZR2202545","gewicht":null}],
+"31":[{"key":"bge_148_III_50","gewicht":0},{"key":"gr_gerichte_ZR2202545","gewicht":null}],
+"32":[{"key":"gr_gerichte_ZR2202545","gewicht":null}],
+"39":[{"key":"gr_gerichte_ZR2202545","gewicht":null}],
+"45":[{"key":"gr_gerichte_ZR2202545","gewicht":null}],
+"49":[{"key":"gr_gerichte_ZR2202545","gewicht":null}],
+"51":[{"key":"gr_gerichte_ZR2202545","gewicht":null}],
+"57":[{"key":"gr_gerichte_ZR2202545","gewicht":null}],
+"79":[{"key":"gr_gerichte_ZR2202545","gewicht":null}],
+"81":[{"key":"gr_gerichte_ZR2202545","gewicht":null}],
+"84":[{"key":"gr_gerichte_ZR2202545","gewicht":null}],
+"86":[{"key":"gr_gerichte_ZR2202545","gewicht":null}]
 },
 "gesamtProArtikel":{
-"31":{"bge":1}
+"1":{"kantonal":1},
+"25":{"kantonal":1},
+"31":{"bge":1,"kantonal":1},
+"32":{"kantonal":1},
+"39":{"kantonal":1},
+"45":{"kantonal":1},
+"49":{"kantonal":1},
+"51":{"kantonal":1},
+"57":{"kantonal":1},
+"79":{"kantonal":1},
+"81":{"kantonal":1},
+"84":{"kantonal":1},
+"86":{"kantonal":1}
 }
 }

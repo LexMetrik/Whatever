@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-10-26",
   "erlass": "BVG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -235,6 +235,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_176",
+        "zitierung": "BGE 152 V 176",
+        "regesteKurz": "Art. 23 lit. a BVG; Art. 26 Abs. 1 IVV in der bis 31. Dezember 2021 gültig gewesenen Fassung; Unterbrechung des zeitlichen Zusammenhanges. Die Rechtsprechung, wonach für die Unterbrechung des zeitlichen Zusammenhanges in einer…",
+        "datum": "2026-03-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_148_II_73",
@@ -514,6 +524,16 @@
       }
     ],
     "23": [
+      {
+        "key": "bge_152_V_176",
+        "zitierung": "BGE 152 V 176",
+        "regesteKurz": "Art. 23 lit. a BVG; Art. 26 Abs. 1 IVV in der bis 31. Dezember 2021 gültig gewesenen Fassung; Unterbrechung des zeitlichen Zusammenhanges. Die Rechtsprechung, wonach für die Unterbrechung des zeitlichen Zusammenhanges in einer…",
+        "datum": "2026-03-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_150_V_410",
         "zitierung": "BGE 150 V 410",

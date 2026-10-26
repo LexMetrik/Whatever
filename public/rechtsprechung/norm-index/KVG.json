@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-10-26",
   "erlass": "KVG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -248,13 +248,23 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 5
+        "gewicht": 6
       },
       {
         "key": "bge_147_V_464__voll",
         "zitierung": "Urteil 9C_710/2020 (nicht publ. in BGE 147 V 464)",
         "regesteKurz": null,
         "datum": "2021-08-10",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 3
+      },
+      {
+        "key": "bge_148_V_348__voll",
+        "zitierung": "Urteil 9C_400/2021 (nicht publ. in BGE 148 V 348)",
+        "regesteKurz": null,
+        "datum": "2022-04-20",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -281,10 +291,10 @@
         "gewicht": 1
       },
       {
-        "key": "bge_148_V_348__voll",
-        "zitierung": "Urteil 9C_400/2021 (nicht publ. in BGE 148 V 348)",
+        "key": "bge_150_V_372__voll",
+        "zitierung": "Urteil 9C_726/2023 (nicht publ. in BGE 150 V 372)",
         "regesteKurz": null,
-        "datum": "2022-04-20",
+        "datum": "2024-07-16",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -309,16 +319,6 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
-      },
-      {
-        "key": "bge_152_V_20",
-        "zitierung": "BGE 152 V 20",
-        "regesteKurz": "Art. 24 Abs. 1 KVG; Ziff. 1.2 Anhang 1 KLV; Art. 14 Abs. 2 lit. b Transplantationsgesetz; Ersatz von Erwerbsausfall bei Organspende. Der vom Organspender direkt gegenüber dem obligatorischen Krankenpflegeversicherer der Organempfängerin…",
-        "datum": "2025-06-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "27": [
@@ -416,7 +416,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 5
+        "gewicht": 6
       },
       {
         "key": "bge_150_V_129",
@@ -429,6 +429,16 @@
         "gewicht": 4
       },
       {
+        "key": "bge_147_V_464__voll",
+        "zitierung": "Urteil 9C_710/2020 (nicht publ. in BGE 147 V 464)",
+        "regesteKurz": null,
+        "datum": "2021-08-10",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 3
+      },
+      {
         "key": "bge_151_V_30",
         "zitierung": "BGE 151 V 30",
         "regesteKurz": "Art. 32 Abs. 1, Art. 42 Abs. 3, 3 bis , 4 und 5, Art. 56 Abs. 1 und 2, Art. 57, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a, Art. 59a Abs. 1 und 3, Art. 84 Abs. 1 und 2, Art. 84a Abs. 1 lit. a KVG; Art. 30-30c, Art. 59 Abs. 1, Art. 59a bis und…",
@@ -439,20 +449,20 @@
         "gewicht": 2
       },
       {
-        "key": "bge_147_V_464__voll",
-        "zitierung": "Urteil 9C_710/2020 (nicht publ. in BGE 147 V 464)",
-        "regesteKurz": null,
-        "datum": "2021-08-10",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 2
-      },
-      {
         "key": "bge_148_V_348",
         "zitierung": "BGE 148 V 348",
         "regesteKurz": "Art. 32 Abs. 1 und 2 KVG; Art. 65b Abs. 2 lit. a, Art. 65d Abs. 1 und 2 KVV; Art. 34a bis , 34d und 34e KLV; dreijährliche Überprüfung der Aufnahmebedingungen eines Medikaments in die Spezialitätenliste; Auslandpreisvergleich (APV). Bei…",
         "datum": "2022-04-20",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_150_V_372",
+        "zitierung": "BGE 150 V 372",
+        "regesteKurz": "Art. 32 KVG; Art. 64a, 65b, 65c, 65d und 65e KVV; Art. 34d, 34f und 34g KLV (sämtliche Bestimmungen in den vorliegend anwendbaren, bis Ende 2023 gültig gewesenen Fassungen); dreijährliche Überprüfung der Aufnahmebedingungen eines…",
+        "datum": "2024-07-16",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -473,16 +483,6 @@
         "zitierung": "Urteil 9C_166/2022 (nicht publ. in BGE 151 V 233)",
         "regesteKurz": null,
         "datum": "2024-12-09",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_150_V_178__voll",
-        "zitierung": "Urteil 9C_201/2023 (nicht publ. in BGE 150 V 178)",
-        "regesteKurz": null,
-        "datum": "2024-04-03",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -854,7 +854,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 5
+        "gewicht": 6
       },
       {
         "key": "bge_147_V_464",
@@ -864,7 +864,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
       },
       {
         "key": "bge_150_V_129",
@@ -897,30 +897,30 @@
         "gewicht": 1
       },
       {
+        "key": "bge_150_V_372__voll",
+        "zitierung": "Urteil 9C_726/2023 (nicht publ. in BGE 150 V 372)",
+        "regesteKurz": null,
+        "datum": "2024-07-16",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_148_V_348__voll",
+        "zitierung": "Urteil 9C_400/2021 (nicht publ. in BGE 148 V 348)",
+        "regesteKurz": null,
+        "datum": "2022-04-20",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_151_V_30",
         "zitierung": "BGE 151 V 30",
         "regesteKurz": "Art. 32 Abs. 1, Art. 42 Abs. 3, 3 bis , 4 und 5, Art. 56 Abs. 1 und 2, Art. 57, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a, Art. 59a Abs. 1 und 3, Art. 84 Abs. 1 und 2, Art. 84a Abs. 1 lit. a KVG; Art. 30-30c, Art. 59 Abs. 1, Art. 59a bis und…",
         "datum": "2024-09-10",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_V_1",
-        "zitierung": "BGE 151 V 1",
-        "regesteKurz": "Art. 69 Abs. 1 und 2 ATSG, Art. 122 Abs. 1 KVV; Art. 14 und 15 ATSG; Art. 25a Abs. 1 KVG, Art. 7 Abs. 1 und Abs. 2 lit. c KLV; Art. 9 ATSG, Art. 42 und 42 ter Abs. 1 und Abs. 3 IVG; intersystemische Koordination von Beiträgen der…",
-        "datum": "2024-08-29",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_V_381",
-        "zitierung": "BGE 150 V 381",
-        "regesteKurz": "Art. 43, Art. 35 Abs. 2 lit. n KVG; Auslegung des Begriffs \"Institut\" (Französisch: \"institut\"/Italienisch: \"istituti\") gemäss Interpretationen in der Tarifstruktur TARMED zu den Notfall-Inkonvenienzpauschalen A und B sowie zum…",
-        "datum": "2024-06-24",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1076,7 +1076,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 5
+        "gewicht": 6
       },
       {
         "key": "bge_147_V_464__voll",
@@ -1086,13 +1086,23 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
       },
       {
         "key": "bge_148_V_348",
         "zitierung": "BGE 148 V 348",
         "regesteKurz": "Art. 32 Abs. 1 und 2 KVG; Art. 65b Abs. 2 lit. a, Art. 65d Abs. 1 und 2 KVV; Art. 34a bis , 34d und 34e KLV; dreijährliche Überprüfung der Aufnahmebedingungen eines Medikaments in die Spezialitätenliste; Auslandpreisvergleich (APV). Bei…",
         "datum": "2022-04-20",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_150_V_372",
+        "zitierung": "BGE 150 V 372",
+        "regesteKurz": "Art. 32 KVG; Art. 64a, 65b, 65c, 65d und 65e KVV; Art. 34d, 34f und 34g KLV (sämtliche Bestimmungen in den vorliegend anwendbaren, bis Ende 2023 gültig gewesenen Fassungen); dreijährliche Überprüfung der Aufnahmebedingungen eines…",
+        "datum": "2024-07-16",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1117,16 +1127,6 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
-      },
-      {
-        "key": "bge_150_V_372",
-        "zitierung": "BGE 150 V 372",
-        "regesteKurz": "Art. 32 KVG; Art. 64a, 65b, 65c, 65d und 65e KVV; Art. 34d, 34f und 34g KLV (sämtliche Bestimmungen in den vorliegend anwendbaren, bis Ende 2023 gültig gewesenen Fassungen); dreijährliche Überprüfung der Aufnahmebedingungen eines…",
-        "datum": "2024-07-16",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       },
       {
         "key": "bge_150_V_210",
@@ -1651,6 +1651,26 @@
         "gewicht": 1
       },
       {
+        "key": "bge_150_V_372__voll",
+        "zitierung": "Urteil 9C_726/2023 (nicht publ. in BGE 150 V 372)",
+        "regesteKurz": null,
+        "datum": "2024-07-16",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_148_V_348__voll",
+        "zitierung": "Urteil 9C_400/2021 (nicht publ. in BGE 148 V 348)",
+        "regesteKurz": null,
+        "datum": "2022-04-20",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_146_V_253",
         "zitierung": "BGE 146 V 253",
         "regesteKurz": "Art. 25, 27 und 52 Abs. 2 KVG; Art. 33 und 35 KVV; Art. 5 KLV; therapeutische Massnahmen im Zusammenhang mit Geburtsgebrechen. Es besteht kein Anspruch darauf, dass die Kosten einer Hippotherapie, welche der an angeborenen cerebralen…",
@@ -1661,20 +1681,10 @@
         "gewicht": 0
       },
       {
-        "key": "bge_150_V_372__voll",
-        "zitierung": "Urteil 9C_726/2023 (nicht publ. in BGE 150 V 372)",
+        "key": "bge_152_V_184__voll",
+        "zitierung": "Urteil 9C_212/2025 (nicht publ. in BGE 152 V 184)",
         "regesteKurz": null,
-        "datum": "2024-07-16",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_V_348__voll",
-        "zitierung": "Urteil 9C_400/2021 (nicht publ. in BGE 148 V 348)",
-        "regesteKurz": null,
-        "datum": "2022-04-20",
+        "datum": "2026-03-18",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",

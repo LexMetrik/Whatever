@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-10-04",
+"erzeugt":"2026-10-26",
 "erlass":"VSTV",
 "erlassEbene":"bund",
 "dokumente":{
@@ -7,16 +7,17 @@
 "bge_150_II_437__voll":{"zitierung":"Urteil 9C_661/2022 (nicht publ. in BGE 150 II 437)","regesteKurz":null,"datum":"2024-03-26","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"150 II 437","urteil":"9C_661/2022"}},
 "bge_150_IV_57__voll":{"zitierung":"Urteil 6B_1005/2021 (nicht publ. in BGE 150 IV 57)","regesteKurz":null,"datum":"2024-01-29","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"150 IV 57","urteil":"6B_1005/2021"}},
 "bge_151_II_827":{"zitierung":"BGE 151 II 827","regesteKurz":"Art. 5 aAbs. 1 bis VStG; Kapitaleinlageprinzip; gesonderte Verbuchung in der Handelsbilanz und Meldung an die ESTV; Vermächtnis. Wenn Inhaber von Beteiligungsrechten der Gesellschaft vermächtnisweise Aktiven zuwenden, liegt eine…","datum":"2025-03-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_151_II_884__voll":{"zitierung":"Urteil 9C_41/2024 (nicht publ. in BGE 151 II 884)","regesteKurz":null,"datum":"2025-03-26","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 II 884","urteil":"9C_41/2024"}}
+"bge_151_II_884__voll":{"zitierung":"Urteil 9C_41/2024 (nicht publ. in BGE 151 II 884)","regesteKurz":null,"datum":"2025-03-26","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 II 884","urteil":"9C_41/2024"}},
+"bvger_A_1238_2026":{"zitierung":"BVGer A-1238/2026 vom 15. Oktober 2026","regesteKurz":"Verrechnungssteuer","datum":"2026-10-15","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bvger","status":"eidg"}}
 },
 "proArtikel":{
-"20":[{"key":"bge_150_II_437__voll","gewicht":0,"erwaegungen":["E. 2.1.1"]}],
+"20":[{"key":"bge_150_II_437__voll","gewicht":0,"erwaegungen":["E. 2.1.1"]},{"key":"bvger_A_1238_2026","gewicht":null}],
 "21":[{"key":"bge_150_II_437","gewicht":0},{"key":"bge_150_IV_57__voll","gewicht":1,"erwaegungen":["E. 1.2.3","E. 1.2.4"]}],
 "57":[{"key":"bge_151_II_884__voll","gewicht":0,"erwaegungen":["E. 1.2"]}],
 "26a":[{"key":"bge_151_II_827","gewicht":0}]
 },
 "gesamtProArtikel":{
-"20":{"bger":1},
+"20":{"bger":1,"eidg":1},
 "21":{"bge":1,"bger":1},
 "57":{"bger":1},
 "26a":{"bge":1}

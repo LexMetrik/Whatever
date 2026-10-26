@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-10-04",
+"erzeugt":"2026-10-26",
 "erlass":"SVG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -135,6 +135,7 @@
 "bs_appellationsgericht_SB.2024.56":{"zitierung":"Appellationsgericht BS SB.2024.56 vom 07.01.2025","regesteKurz":"grobe Verletzung der Verkehrsregeln","datum":"2025-01-07","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2024.89":{"zitierung":"Appellationsgericht BS SB.2024.89 vom 06.05.2025","regesteKurz":"qualifizierte grobe Verletzung der Verkehrsregeln","datum":"2025-05-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2024.91":{"zitierung":"Appellationsgericht BS SB.2024.91 vom 21.05.2025","regesteKurz":"Verletzung der Verkehrsregeln","datum":"2025-05-21","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_SB.2025.11":{"zitierung":"Appellationsgericht BS SB.2025.11 vom 11.08.2026","regesteKurz":"fahrlässige einfache Körperverletzung","datum":"2026-08-11","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2025.22":{"zitierung":"Appellationsgericht BS SB.2025.22 vom 27.01.2026","regesteKurz":"unrechtmässige Aneignung","datum":"2026-01-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2019.144":{"zitierung":"Appellationsgericht BS VD.2019.144 vom 23.07.2024","regesteKurz":"Sicherungsentzug des Führerausweises","datum":"2024-07-23","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2021.263":{"zitierung":"Appellationsgericht BS VD.2021.263 vom 10.02.2022","regesteKurz":"Warnungsentzug des Führerausweises","datum":"2022-02-10","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
@@ -189,7 +190,7 @@
 "49":[{"key":"bge_151_II_934","gewicht":0},{"key":"bs_appellationsgericht_SB.2021.32","gewicht":null}],
 "51":[{"key":"bge_149_IV_153","gewicht":0},{"key":"bge_146_IV_358","gewicht":0},{"key":"bs_appellationsgericht_ZS.2024.4","gewicht":null},{"key":"bs_appellationsgericht_SB.2023.64","gewicht":null},{"key":"bs_appellationsgericht_SB.2020.14","gewicht":null}],
 "55":[{"key":"bge_147_IV_439","gewicht":0},{"key":"bge_146_IV_88","gewicht":0},{"key":"bs_appellationsgericht_SB.2021.4","gewicht":null},{"key":"bs_appellationsgericht_BES.2023.125","gewicht":null},{"key":"bs_appellationsgericht_BES.2023.47","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.41","gewicht":null}],
-"57":[{"key":"bs_appellationsgericht_SB.2024.48","gewicht":null}],
+"57":[{"key":"bs_appellationsgericht_SB.2025.11","gewicht":null},{"key":"bs_appellationsgericht_SB.2024.48","gewicht":null}],
 "58":[{"key":"bge_152_V_20","gewicht":0},{"key":"bge_152_III_7","gewicht":0},{"key":"bge_148_III_401","gewicht":0},{"key":"bge_148_IV_432","gewicht":1},{"key":"bge_147_III_402__voll","gewicht":0,"erwaegungen":["E. 4"]}],
 "62":[{"key":"bge_148_III_401","gewicht":0},{"key":"bge_148_IV_432","gewicht":1}],
 "63":[{"key":"bge_152_III_30","gewicht":0},{"key":"bge_152_III_7","gewicht":0},{"key":"bge_146_III_362","gewicht":0}],
@@ -253,7 +254,7 @@
 "49":{"bge":1,"kantonal":1},
 "51":{"bge":2,"kantonal":3},
 "55":{"bge":2,"kantonal":4},
-"57":{"kantonal":1},
+"57":{"kantonal":2},
 "58":{"bge":4,"bger":1},
 "62":{"bge":2},
 "63":{"bge":3},

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-25",
+  "erzeugt": "2026-10-26",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/AL.2026.1",
@@ -17,7 +17,7 @@
       "sachgebiet": "sozialversicherung",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "AVIG",
+        "gegenstand": "Selbstverschuldete Arbeitslosigkeit bejaht",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. R. Schnyder (Vorsitz), MLaw A. Zalad, S. Schenker und a.o. Gerichtsschreiber MLaw N. Karatas"
@@ -241,11 +241,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80008&Template=search_result_document.html",
-      "abgerufen": "2026-09-25",
-      "fassungsToken": "2026-09-19",
+      "abgerufen": "2026-10-26",
+      "fassungsToken": "2026-10-15",
       "sha": "d6fed166128f317691e15f1c098e97da0265ea62d8b765be6a04934c8c8fa318",
       "erstpublikation": "2026-09-19",
-      "aktualisiert": "2026-09-19",
+      "aktualisiert": "2026-10-15",
       "nummerSekundaer": "SVG.2026.148",
       "ecli": "ECLI:CH:BSS:2026:AL.2026.1"
     }

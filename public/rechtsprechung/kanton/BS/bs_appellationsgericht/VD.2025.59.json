@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-26",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/VD.2025.59",
@@ -17,7 +17,7 @@
       "sachgebiet": "oeffentlich",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Vorentscheid Generelles Baubegehren Nr. [...] (1) vom 3. Juni 2024 in Sachen Grundsatzfragen zum Vorhaben: Abbruch und Neubau MFH, Gotthardstrasse 1, 1a, Basel (nicht rechtskräftig)",
+        "gegenstand": "Vorentscheid Generelles Baubegehren Nr. [...] (1) vom 3. Juni 2024 in Sachen Grundsatzfragen zum Vorhaben: Abbruch und Neubau MFH, Gotthardstrasse 1, 1a, Basel",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "Dr. Stephan Wullschleger (Vorsitz), Dr. Claudius Gelzer, Dr. Andreas Traub und Gerichtsschreiberin Dr. Michèle Guth"
@@ -275,11 +275,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79672&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2026-07-09",
+      "abgerufen": "2026-10-26",
+      "fassungsToken": "2026-10-23",
       "sha": "a9228dc353d7ab84db16946fbab92b393b3d872b5c85c04aac325b38f6e2c4f9",
       "erstpublikation": "2026-06-17",
-      "aktualisiert": "2026-07-09",
+      "aktualisiert": "2026-10-23",
       "nummerSekundaer": "AG.2026.329",
       "ecli": "ECLI:CH:BSA:2026:VD.2025.59"
     }

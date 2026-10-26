@@ -1,0 +1,85 @@
+{
+  "erzeugt": "2026-10-26",
+  "eintraege": [
+    {
+      "id": "bund/bvger/E_4570_2026",
+      "gericht": "bvger",
+      "gerichtName": "Bundesverwaltungsgericht",
+      "gerichtstyp": "bundesverwaltungsgericht",
+      "kanton": "CH",
+      "abteilung": "Abteilung V (Asylrecht)",
+      "nummer": "E-4570/2026",
+      "bgeReferenz": null,
+      "zitierung": "BVGer E-4570/2026 vom 15. Oktober 2026",
+      "datum": "2026-10-15",
+      "sprache": "fr",
+      "leitcharakter": "routine",
+      "sachgebiet": "oeffentlich",
+      "legalArea": "administrative",
+      "rubrum": {
+        "besetzung": "Deborah D'Aveni, juge unique, avec l'approbation de Chrystel Tornare Villanueva, juge; Alessandra Stevanin, greffière",
+        "parteien": "A._______, née le (...), et sa fille, B._______, née le (...), Brésil, les deux représentées par Bertrand Roger Jiogue, (...), recourantes, contre Secrétariat d'Etat aux migrations (SEM), Quellenweg 6, 3003 Berne, autorité inférieure",
+        "gegenstand": null,
+        "vorinstanz": null
+      },
+      "regeste": {
+        "text": "Asile et renvoi",
+        "quelle": "opencaselaw"
+      },
+      "regesteAmtlich": false,
+      "abschnitte": [
+        {
+          "typ": "dispositiv",
+          "bloecke": [
+            {
+              "marke": "1.",
+              "text": "Le recours est rejeté."
+            },
+            {
+              "marke": "2.",
+              "text": "Les frais de procédure, d'un montant de 1'000 francs, sont mis à la charge de la recourante. Ils sont entièrement couverts par l'avance de frais de même montant déjà versée le 7 septembre 2026."
+            },
+            {
+              "marke": "3.",
+              "text": "Le présent arrêt est adressé à la recourante, au SEM et à l'autorité cantonale. La juge unique: La greffière: Deborah D'Aveni Alessandra Stevanin Expédition:"
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [
+        "Le recours est rejeté.",
+        "Les frais de procédure, d'un montant de 1'000 francs, sont mis à la charge de la recourante. Ils sont entièrement couverts par l'avance de frais de même montant déjà versée le 7 septembre 2026.",
+        "Le présent arrêt est adressé à la recourante, au SEM et à l'autorité cantonale.\nLa juge unique :"
+      ],
+      "zitierteNormen": [
+        "Art. 105 LASI",
+        "Art. 111 LASI",
+        "Art. 20 Abs. 3 PA",
+        "Art. 3 Abs. 1 LASI",
+        "Art. 3 Abs. 2 LASI",
+        "Art. 3 CEDH",
+        "Art. 3 LASI",
+        "Art. 31 LTAF"
+      ],
+      "normKeys": [
+        "ASYLG",
+        "EMRK",
+        "VGG",
+        "VWVG"
+      ],
+      "zitierteEntscheide": [
+        "E-2437/2021",
+        "E-2937/2025",
+        "E-4570/2026"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://bvger.weblaw.ch/cache?id=8cb2ccf2-70c4-4c06-8e80-f75821a7ea59&guiLanguage=fr",
+      "abgerufen": "2026-10-26",
+      "fassungsToken": "f7ee2fed35edbfbb0a87c290830c11c365bac6cc911081111dc225e0aa626cd5",
+      "sha": "33569faccf7a54f28ec6fdc4d48c9827a47a35a2b4d27a19a36ca92b27625acf",
+      "ecli": "ECLI:CH:BVGER:2026:E-4570.2026"
+    }
+  ]
+}

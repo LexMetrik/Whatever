@@ -1,8 +1,9 @@
 {
-"erzeugt":"2026-10-04",
+"erzeugt":"2026-10-26",
 "erlass":"BS-300.100",
 "erlassEbene":"kanton",
 "dokumente":{
+"bs_appellationsgericht_BES.2023.166":{"zitierung":"Appellationsgericht BS BES.2023.166 vom 12.06.2026","regesteKurz":"Gesuch um Konfliktbeilegung im Rahmen der behördlichen Rechtshilfe gemäss Art. 48 Abs. 1 StPO (UT.[...])","datum":"2026-06-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_BES.2024.59":{"zitierung":"Appellationsgericht BS BES.2024.59 vom 22.08.2024","regesteKurz":"Rechtsverzögerung und unentgeltliche Rechtspflege","datum":"2024-08-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2023.25":{"zitierung":"Appellationsgericht BS SB.2023.25 vom 19.04.2024","regesteKurz":"Schreckung der Bevölkerung","datum":"2024-04-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2022.229":{"zitierung":"Appellationsgericht BS VD.2022.229 vom 08.02.2023","regesteKurz":"Entbindung von der beruflichen Schweigepflicht","datum":"2023-02-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
@@ -12,15 +13,19 @@
 },
 "proArtikel":{
 "4":[{"key":"bs_appellationsgericht_VG.2021.3","gewicht":null}],
+"15":[{"key":"bs_appellationsgericht_BES.2023.166","gewicht":null}],
 "26":[{"key":"bs_appellationsgericht_VD.2025.80","gewicht":null},{"key":"bs_appellationsgericht_BES.2024.59","gewicht":null},{"key":"bs_appellationsgericht_SB.2023.25","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.229","gewicht":null}],
 "27":[{"key":"bs_appellationsgericht_SB.2023.25","gewicht":null}],
+"29":[{"key":"bs_appellationsgericht_BES.2023.166","gewicht":null}],
 "38":[{"key":"bs_appellationsgericht_VD.2025.49","gewicht":null}],
 "51":[{"key":"bs_appellationsgericht_VG.2021.3","gewicht":null}]
 },
 "gesamtProArtikel":{
 "4":{"kantonal":1},
+"15":{"kantonal":1},
 "26":{"kantonal":4},
 "27":{"kantonal":1},
+"29":{"kantonal":1},
 "38":{"kantonal":1},
 "51":{"kantonal":1}
 }

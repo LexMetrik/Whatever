@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-10-26",
   "erlass": "AHVG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -16,6 +16,16 @@
       }
     ],
     "3": [
+      {
+        "key": "bge_152_V_200",
+        "zitierung": "BGE 152 V 200",
+        "regesteKurz": "Art. 19 Abs. 1 FamZG; Art. 16 lit. b FamZV; Anspruch nichterwerbstätiger Personen auf Familienzulagen; Auslegung. Art. 16 lit. b FamZV kann keine Anwendung finden, weil damit der Kreis der nichterwerbstätigen Personen mit Anspruch auf…",
+        "datum": "2026-05-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_147_V_225",
         "zitierung": "BGE 147 V 225",
@@ -395,6 +405,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_200",
+        "zitierung": "BGE 152 V 200",
+        "regesteKurz": "Art. 19 Abs. 1 FamZG; Art. 16 lit. b FamZV; Anspruch nichterwerbstätiger Personen auf Familienzulagen; Auslegung. Art. 16 lit. b FamZV kann keine Anwendung finden, weil damit der Kreis der nichterwerbstätigen Personen mit Anspruch auf…",
+        "datum": "2026-05-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_149_III_258",
