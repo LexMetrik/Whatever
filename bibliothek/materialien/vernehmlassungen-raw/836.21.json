@@ -1,0 +1,31 @@
+[
+  {
+    "sr": {
+      "type": "literal",
+      "value": "836.21"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/36/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/6"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Voller Lastenausgleich. Verordnungsanpassung und Inkrafttreten"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Compensation intégrale des charges. Modification de l’ordonnance et entrée en vigueur"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Perequazione completa degli oneri. Modifica dell’ordinanza ed entrata in vigore"
+    }
+  }
+]
