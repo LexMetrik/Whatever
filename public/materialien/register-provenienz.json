@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-05",
+  "erzeugt": "2026-11-01",
   "eintraege": {
     "ESTV-KS-DBG-5A": {
       "sha": "394a1b86f4be4483680f2d32241be25826662b9f8d28ada6850b41e7df254fcc"
@@ -15219,8 +15219,34 @@
     "VERN-2025-86": {
       "sha": "807a062d07aec12caea5c87c66fa8fd6ad452367ea4bafb755f5d678ea9fb811"
     },
+    "BS-GR-26.1506": {
+      "sha": "bfe3f67d01dcf5e929f5994f7d5a4e1507decda59cb96ce025b8a18441342da9",
+      "ereignisse": [
+        {
+          "code": 1010,
+          "datum": "2026-10-28",
+          "res": "https://grosserrat.bs.ch/?dnr=26.1506.01",
+          "vok": "bs-gr",
+          "bez": "Ratschlag des RR"
+        }
+      ],
+      "bsKanten": [
+        {
+          "erlass": "BS-164.100",
+          "quelle": "maschinell",
+          "regel": "sg-nummer",
+          "beleg": "SG 164.100"
+        },
+        {
+          "erlass": "BS-166.100",
+          "quelle": "maschinell",
+          "regel": "sg-nummer",
+          "beleg": "SG 166.100"
+        }
+      ]
+    },
     "BS-GR-26.1358": {
-      "sha": "1e0cde01c193bef21b8f44832bbed016c6797b6948cba5c60ed805cf3b714a34",
+      "sha": "239415037460cb720fb9e19e57f4b8527318487b001eb0f296461eaec4fbe800",
       "ereignisse": [
         {
           "code": 1010,
@@ -15240,7 +15266,7 @@
       ]
     },
     "BS-GR-24.1692": {
-      "sha": "d03c24922c787f92c2776747fcd395dd1c06a57368d178995730666c09688b53",
+      "sha": "176b714755e13a859b4d09fed8d9c44dc6b6f6b51d70a0e0e3b003aa718eea75",
       "ereignisse": [
         {
           "code": 1010,
@@ -15267,7 +15293,7 @@
       ]
     },
     "BS-GR-26.0600": {
-      "sha": "e7cc8f84cacf62f8e3d17855545188bed6ef6e0c08349fc75cc483c8d05b4530",
+      "sha": "5b600f7b0d84accd13b18f764f8eed418238f3ca3c0b938b24a5e326ccb6c8a4",
       "ereignisse": [
         {
           "code": 1010,
@@ -15294,7 +15320,7 @@
       ]
     },
     "BS-GR-26.0321": {
-      "sha": "2f5b6c61ae400439e3cf2005f225073becf83460ee6a975c2ef84e522b90a30c",
+      "sha": "29ba6f80c313f6448cd8a9797ee5814a5fba2dce30aecc3a6c6bc0cb397bb796",
       "ereignisse": [
         {
           "code": 1010,
@@ -15321,7 +15347,7 @@
       ]
     },
     "BS-GR-26.0508": {
-      "sha": "79b8af73055274fa3354d2f984979e8725bcd2b1d3ee850dbba151015bf8452b",
+      "sha": "129fb01733110119cb72a0513e1ce4dfcde24fa55e3e61700169d3b4a9141783",
       "ereignisse": [
         {
           "code": 1010,
@@ -15362,7 +15388,7 @@
       ]
     },
     "BS-GR-25.1222": {
-      "sha": "da46d5cf1e7a7ed2baa166ded109eaee259b537bc29deda5834255765ef8a70d",
+      "sha": "14ff59efa864f973bad1ae9148a4d3dbfa4e5ea8dd6e8158697e725981d9c9d2",
       "ereignisse": [
         {
           "code": 1010,
@@ -15396,7 +15422,7 @@
       ]
     },
     "BS-GR-25.1370": {
-      "sha": "c78fad66a628978b485d5b250bb2e2ee5a1ad96a5e797cb7a5f1aa8379f084fb",
+      "sha": "fe8adf239ee8234670780d40944d0a03df8b27885d9b731e02d21cee914a69a3",
       "ereignisse": [
         {
           "code": 1010,
@@ -15423,7 +15449,7 @@
       ]
     },
     "BS-GR-25.0675": {
-      "sha": "58da3bfbf5583b990954c8337527dc0bd129dd70c1042afc77c6ed6af4f6417c",
+      "sha": "28d52dcb8dbcceb24762a24c7d19be0c5c355ed9937dca2513566b90341db662",
       "ereignisse": [
         {
           "code": 1010,
@@ -15485,7 +15511,7 @@
       ]
     },
     "BS-GR-25.0082": {
-      "sha": "53bfdb855e158e317b7d536eddff6aac634ce293c196fc0f60530f800b7d7509",
+      "sha": "1b500828ed025468c9fb49d58398ac4e3ea00278da28163dd5b4e26b5cd70395",
       "ereignisse": [
         {
           "code": 1010,
@@ -15526,7 +15552,7 @@
       ]
     },
     "BS-GR-24.1746": {
-      "sha": "84244a2adc13ac7ac1afbb1106dcb6c3b7b7fd0b54096f8a205c8de7d0db9862",
+      "sha": "045b54cf2641cc60476a3b324d522a0890bc64aa82a3be99f4d94bf586de4a80",
       "ereignisse": [
         {
           "code": 1010,
@@ -15567,7 +15593,7 @@
       ]
     },
     "BS-GR-24.0748": {
-      "sha": "6f90f540fa1977b4bbbe8b7622266652112e7365ed5b011f4b83440b0f886443",
+      "sha": "94f35b200bd210a0ec73f716334df00ae6d1149b281fe52d46f12fbb54f13055",
       "ereignisse": [
         {
           "code": 1010,
@@ -15608,7 +15634,7 @@
       ]
     },
     "BS-GR-21.1247": {
-      "sha": "cc417dc90e2a036f9faabdffc5f661193f977cc80339f7c1b8a1ff220cdb4bb0",
+      "sha": "77fcfb361f97985292a1f890e1245a312df5d3dcb136972bed4c58bac7117450",
       "ereignisse": [
         {
           "code": 1020,
@@ -15719,7 +15745,7 @@
       ]
     },
     "BS-GR-23.0859": {
-      "sha": "724975744f1f719f16c32e1c4ddaed8e8ea7d4db8bbce88ae69b75b19c7266e5",
+      "sha": "85231f30ce632f1edbd585cb087b3a4e711ef56564bc335605e50e93d5ff27c5",
       "ereignisse": [
         {
           "code": 1010,
@@ -15760,7 +15786,7 @@
       ]
     },
     "BS-GR-23.1410": {
-      "sha": "83316e03c8719d2c954fc32328032e76cf5f61608f0d7db6bd8f640264793c62",
+      "sha": "81959538fda59514f02b1171fd94a6bac60595df92a313fbbc7239deb45d95ce",
       "ereignisse": [
         {
           "code": 1010,
@@ -15808,7 +15834,7 @@
       ]
     },
     "BS-GR-23.1307": {
-      "sha": "061660ace582659f7f8a7d2c5d6c582189004d55086b107477ad4693bafb1d1d",
+      "sha": "56c106d08f43cbd985e4e6c12ff3dc7e0b4fdb8c7ee81889fd33752474e1cd32",
       "ereignisse": [
         {
           "code": 1010,
@@ -15849,7 +15875,7 @@
       ]
     },
     "BS-GR-22.1784": {
-      "sha": "8b42f96f483a4523430958f13b50840595b5c196483eb1a13b4da4d6b831b429",
+      "sha": "d4f470208bb9b9802b8167ff973a9422f0bbebaff9dd56f319d87706c5ac9345",
       "ereignisse": [
         {
           "code": 1010,
@@ -15883,7 +15909,7 @@
       ]
     },
     "BS-GR-22.0538": {
-      "sha": "5eae9659c43742afec68e3bc91264c68b865ed9eff12ae37a6b345b5be90dfd2",
+      "sha": "4e64bfe3c3ef6eeea1add76134969e5391cc9597a720c7f3271578a2a21d9d7a",
       "ereignisse": [
         {
           "code": 1010,
@@ -15917,7 +15943,7 @@
       ]
     },
     "BS-GR-22.0168": {
-      "sha": "84195d2db48cd21e37d081a716a89780c3935ef616095e09e96a12b4efea7822",
+      "sha": "2082eadafbef684ec5818074dd2eae8ee516bc36a7be7da061948a0ec96584ec",
       "ereignisse": [
         {
           "code": 1010,
@@ -15951,7 +15977,7 @@
       ]
     },
     "BS-GR-21.1809": {
-      "sha": "d605bc67b70eeda03c74248b0e7d4a98e2d42a504b0c6ced4abac90584fef0d0",
+      "sha": "2a466a2eef96b926b702db0bd6141d2d50307f1ed68c5ec8061e56804a1c66e7",
       "ereignisse": [
         {
           "code": 1010,
@@ -15992,7 +16018,7 @@
       ]
     },
     "BS-GR-21.1696": {
-      "sha": "8167459db44eb02fcc15daf0ab167b91238f22aa384ee4ab6a283f4b9ade9087",
+      "sha": "ca33d6ec2e10281fddace80cf6e24d7a23321d6590ae39423c27d6175b4ca068",
       "ereignisse": [
         {
           "code": 1010,
@@ -16033,7 +16059,7 @@
       ]
     },
     "BS-GR-21.1239": {
-      "sha": "c2cde95d1cca7b00fb21bde1e975ced24faa7caf869045892ba88acd75a70750",
+      "sha": "f577cf28fd9bd0e8ce1e4d65bbb010241cf7ee0a338d396e121844834feb5e18",
       "ereignisse": [
         {
           "code": 1010,
@@ -16074,7 +16100,7 @@
       ]
     },
     "BS-GR-20.1675": {
-      "sha": "16948f40809cfa755a90eb5899f0d36767f3480886176f063e312a5d78414237",
+      "sha": "90439395481b91f90bfc6f2644279a7c5289d2ee03a286eb7e67e6d566a4fd19",
       "ereignisse": [
         {
           "code": 1010,
@@ -16115,7 +16141,7 @@
       ]
     },
     "BS-GR-21.0550": {
-      "sha": "759e7a8558c5d3ce610d0a0424a2712e16b686b0c9a1feb53a2bb16ae66f2cab",
+      "sha": "3d317cfa46550cd751c98c6f839b41f9402b924a2063b97775af389b84cd15ff",
       "ereignisse": [
         {
           "code": 1010,
@@ -16149,7 +16175,7 @@
       ]
     },
     "BS-GR-21.0406": {
-      "sha": "50cf0527e38360e0ad88f25679cfa16cef03d5d888613897626b8dbb3441e38e",
+      "sha": "4095a695002ace39f0b1bd63a12e63a9810383080de0187f9c2000da82944d91",
       "ereignisse": [
         {
           "code": 1010,
@@ -16183,7 +16209,7 @@
       ]
     },
     "BS-GR-20.1734": {
-      "sha": "cd4fd585e9a7ea70f1d2351e2268e32ac6c13c533b1fc949aedb954f68685072",
+      "sha": "271271524ddab5d51bd2ec6f4e200889cc373cd2ca634ff149bd4c72c1263495",
       "ereignisse": [
         {
           "code": 1010,
@@ -16224,7 +16250,7 @@
       ]
     },
     "BS-GR-20.0651": {
-      "sha": "3fc127204a8241187050852553d08221cea23e2a6406f8299b3cbe83bc67f950",
+      "sha": "88be4233d85fe3116f8a25a1549f0924b92c22dc8429de210bc926e662e3a003",
       "ereignisse": [
         {
           "code": 1010,
@@ -16279,7 +16305,7 @@
       ]
     },
     "BS-GR-20.1038": {
-      "sha": "a3a0906532bdf01822486e73ec0093a6595227df5a65c02a62d719d5311443a0",
+      "sha": "e93060a09460ed89f5e743df816ab3978ada180b36497a012e1f9331ac68a52e",
       "ereignisse": [
         {
           "code": 1010,
@@ -16313,7 +16339,7 @@
       ]
     },
     "BS-GR-20.0944": {
-      "sha": "c19fd1f7da815f5894bf8b21e2049411f04ec38f8e14237d824cd9293fa41954",
+      "sha": "c1227a0131b0d2e47115b218d82dff597fc4399480a1c62059419891e12be624",
       "ereignisse": [
         {
           "code": 1010,
@@ -16354,7 +16380,7 @@
       ]
     },
     "BS-GR-20.0533": {
-      "sha": "066b0326388968a3c7d3c70076388d1ba049fa301e22695971cee424466a7c63",
+      "sha": "42407c791d33ba804060b619586273436cf2ffd1ff93b0fc74d97ee77c79b399",
       "ereignisse": [
         {
           "code": 1010,
@@ -16388,7 +16414,7 @@
       ]
     },
     "BS-GR-19.1830": {
-      "sha": "35f254f9216ab86b932a109d9c947be69e137e2d84c2bd8f80917a04cfe446a1",
+      "sha": "e3ac124cd721d9e88c37bfef34c18efc903012402c57da1107acae1b921156a1",
       "ereignisse": [
         {
           "code": 1010,
@@ -16422,7 +16448,7 @@
       ]
     },
     "BS-GR-19.1517": {
-      "sha": "fc93d142396f8a020c13c69e4f046d8283cf9a2c54c055c996f969dc49d2d593",
+      "sha": "8ab87370035fa9da2f2abf44e2dfc2ed07a17ee9bad118c727e69ec7a4e4f7de",
       "ereignisse": [
         {
           "code": 1010,
@@ -16463,7 +16489,7 @@
       ]
     },
     "BS-GR-19.0843": {
-      "sha": "a7bc751c54e31db3070a51f7e61b7fc4fa20006082107a7f5c8b8cf5e7ac8a7f",
+      "sha": "682360d6ee5e52415352339313d2cd82b56fc787d5d3f65fec2da6aa18de1113",
       "ereignisse": [
         {
           "code": 1010,
@@ -16490,7 +16516,7 @@
       ]
     },
     "BS-GR-18.0206": {
-      "sha": "366063ab3389ad7f3b3a5912c8a0289dcb2e79a5ca63c3a6271afc924051a6f9",
+      "sha": "0846af15651e50593834ec0129e0c5db704f778f0334218fff006a087ab591e7",
       "ereignisse": [
         {
           "code": 1010,
@@ -16531,7 +16557,7 @@
       ]
     },
     "BS-GR-18.1625": {
-      "sha": "42950f9e7c09116c43217ced6c272548fbd9746646ca0fb1f8f67b1b49eae757",
+      "sha": "3da64644bb01ce965eef7cabd82a3cd9b6800c931b95927ae89be309cb18e4a7",
       "ereignisse": [
         {
           "code": 1020,
@@ -16572,7 +16598,7 @@
       ]
     },
     "BS-GR-18.0919": {
-      "sha": "1a4e9b45b86b131dff0f7c2ecc7e7e7cf26814c7e01251665cfd960381812480",
+      "sha": "153ce22692b3f28ece34db2d0a11e745f72b0bda9dd3137abd81f9f870764505",
       "ereignisse": [
         {
           "code": 1010,
@@ -16613,7 +16639,7 @@
       ]
     },
     "BS-GR-18.0541": {
-      "sha": "8f533997ef3860ad55660493c78046e8d527598cd116cd4366bbdf0c5020a206",
+      "sha": "0ea2c7d4e2d3de640fa945609e911668144ad941550568df9fc48f5d45a6fae3",
       "ereignisse": [
         {
           "code": 1010,
@@ -16647,7 +16673,7 @@
       ]
     },
     "BS-GR-18.0110": {
-      "sha": "b0ea5417f2a040621c1f7e582039675c203a6ae99bbca20aede1e1bf8384d976",
+      "sha": "1a50a4e915022ffa16185087d029098bdc6c43f6593316c0966a0b42e279b88e",
       "ereignisse": [
         {
           "code": 1010,
@@ -16688,7 +16714,7 @@
       ]
     },
     "BS-GR-18.0111": {
-      "sha": "d5dbabe891c9dd71aa6eac71dc281b94ca006e0c982102f07d1d4b17a73722da",
+      "sha": "27b858ca53c187f84cb4ac39987cca8700d3543621d55850e31d3b6041203468",
       "ereignisse": [
         {
           "code": 1010,
@@ -16729,7 +16755,7 @@
       ]
     },
     "BS-GR-17.1961": {
-      "sha": "697347fffd91f496ae7acf13c98004bc02f51a9e233610116cf0f3fe50c07047",
+      "sha": "40eba1e667724aea97efe1a940b5b67cf019fa611068a8358a4de2799ead6634",
       "ereignisse": [
         {
           "code": 1010,
@@ -16770,7 +16796,7 @@
       ]
     },
     "BS-GR-17.0752": {
-      "sha": "3798f0119466485073ecfd9a3c3dd83748cb8623fec01eab61c9a01bb6613fb5",
+      "sha": "c52e587d03d2c0b0c54174f835e3953606537614f75756412584d65c4be32ffb",
       "ereignisse": [
         {
           "code": 1010,
@@ -16804,7 +16830,7 @@
       ]
     },
     "BS-GR-17.1203": {
-      "sha": "ad74541815377c7c05307270be8a88076f6ee32a9be8a83dfda0cc78ec1d5df9",
+      "sha": "954d251f09593d6155f9502d9f25eb637fb0a01a3545bc485f234a7dfe927361",
       "ereignisse": [
         {
           "code": 1010,
@@ -16838,7 +16864,7 @@
       ]
     },
     "BS-GR-17.0998": {
-      "sha": "066f43a47652f9678bb3cac5cf01432a1a14c9d55b0a144273b90d94cbddf466",
+      "sha": "f302d5bd2164f5338d06d2b8314dedf3426e7b3fcdc3dac06bf8bcf1e87f45b2",
       "ereignisse": [
         {
           "code": 1010,
@@ -16872,7 +16898,7 @@
       ]
     },
     "BS-GR-17.0670": {
-      "sha": "d97f336dcbbb2aa36ac08c90474ddafdd5e0a07940c5e6b1cafd3bb2d8c532e4",
+      "sha": "f3b70c006c3fecd468846437c8611c5030d649f13618e0f4476baa5ddd85f354",
       "ereignisse": [
         {
           "code": 1010,
@@ -16906,7 +16932,7 @@
       ]
     },
     "BS-GR-17.0347": {
-      "sha": "a7bc34e02334fd811c2fdc21fff3629b9c058d459e291c94076af865e3a2279c",
+      "sha": "06f29804fd9fcf920f9405ad102dda73c70de1155873bff224ae7f02cf9771ac",
       "ereignisse": [
         {
           "code": 1010,
@@ -16947,7 +16973,7 @@
       ]
     },
     "BS-GR-17.0067": {
-      "sha": "05efda34bcd650e0a8434cd750519e6bafe5532db076298155cfba02deaff8ff",
+      "sha": "0745d78dbc3d61772718690b171516ee00b6063516c8abe91583a27545f33b36",
       "ereignisse": [
         {
           "code": 1010,
@@ -17002,7 +17028,7 @@
       ]
     },
     "BS-GR-16.1509": {
-      "sha": "7149f60853c4722fa233ab989e9394400010734919e5ae2a60e50a559138fb38",
+      "sha": "c958c8b8dbf1121b4bf4892789d75027fb105796e2f809bdaa019b0d89ed40bb",
       "ereignisse": [
         {
           "code": 1020,
@@ -17036,7 +17062,7 @@
       ]
     },
     "BS-GR-16.0736": {
-      "sha": "d3657955651666e8f726437b958b3831095e574f4b65541389a3388f864db24b",
+      "sha": "b84b50964361e21b916bda3a5ee0961629c0267c03416c7b59396e4dc7824caa",
       "ereignisse": [
         {
           "code": 1010,
@@ -17070,7 +17096,7 @@
       ]
     },
     "BS-GR-16.0479": {
-      "sha": "c2fca897247402b03ef00ec3ffb12ea81dd1ec3b16035b5a4d24b0efb74b1d90",
+      "sha": "f9c587da5e8e5035d88c52470773750f1ff9bbba20aa5341f0e78daa6c209b42",
       "ereignisse": [
         {
           "code": 1010,
@@ -17111,7 +17137,7 @@
       ]
     },
     "BS-GR-16.0252": {
-      "sha": "4052c5797c42d559af179b9e7c7ab08a92bbd2777eff8edc7e563a573e46a9d4",
+      "sha": "5246b72c0a99c2c8c112ca7dc90bdd04af1f4e4bf1456d0ff0466a9e42361a3e",
       "ereignisse": [
         {
           "code": 1010,
@@ -17152,7 +17178,7 @@
       ]
     },
     "BS-GR-16.0031": {
-      "sha": "c6bf94afea523cd49d633ca3e3825163489ea8fdd42c8ca4122203d4f4d2ad5e",
+      "sha": "5f1990f21e511ee374faadd3d65a233be2babd1bc859e2a591f1fda4593d4dc8",
       "ereignisse": [
         {
           "code": 1010,
@@ -17193,7 +17219,7 @@
       ]
     },
     "BS-GR-15.1353": {
-      "sha": "2b6be3bace11cc20c88a6a50968eda26ea34dc99f49ef6a30b3d19873cdeb140",
+      "sha": "a5ac37e57a81de3e934ff9656b5e408a3b401db9d760234b2a541c0f1f4a1dab",
       "ereignisse": [
         {
           "code": 1010,
@@ -17234,7 +17260,7 @@
       ]
     },
     "BS-GR-15.1308": {
-      "sha": "7947d4ed7feda9982563dc85a94dce30155954e75d9b6cd63ca26773b4f38c69",
+      "sha": "2bdc888019b4fe141acb854720fd387962ae66cf6f5d3e6024fa63aa825edce4",
       "ereignisse": [
         {
           "code": 1010,
@@ -17275,7 +17301,7 @@
       ]
     },
     "BS-GR-15.1315": {
-      "sha": "a1139d4b6f0d411bd93e3c4df787595d1411728a0644fc3e0d76040ab9d260cf",
+      "sha": "55b10a788595ddeb33efea77d3c8b638902a1f35623fdfc17737221cd744fa81",
       "ereignisse": [
         {
           "code": 1010,
@@ -17316,7 +17342,7 @@
       ]
     },
     "BS-GR-15.1159": {
-      "sha": "ee4fd4e72e498b4a231ba659e2f8ad5d2710b5d700ab8d612599ba196841c946",
+      "sha": "0ad6a6a2eeb6d290de9e1256449543d1a42b349b6a63480eab66f3c63cf5a297",
       "ereignisse": [
         {
           "code": 1020,
@@ -17350,7 +17376,7 @@
       ]
     },
     "BS-GR-14.1792": {
-      "sha": "16533b4d7424ef9967e6882afc5f9694405a8d2c6c6e611804516ea60c429efe",
+      "sha": "50641f46dd91196f1b9b5f5c3995e9983315b2ea402d0efd600e4f69faaeb244",
       "ereignisse": [
         {
           "code": 1010,
@@ -17391,7 +17417,7 @@
       ]
     },
     "BS-GR-14.1864": {
-      "sha": "24c08d32daa037bf6126e96af2836146735c33383f770927746e2ab56b945d95",
+      "sha": "9c8961c78cf136d2aee8b45ba2563ed0b4659376e0c97c33ea10af912831d17c",
       "ereignisse": [
         {
           "code": 1010,
@@ -17425,7 +17451,7 @@
       ]
     },
     "BS-GR-14.1710": {
-      "sha": "7cca2328987041bb68627d6d3ad24f209cabe3beb18b195d5d4a44b3120ba47f",
+      "sha": "61bc334c48172bfb7d89b5e4e9cb193ada6387d95b787ec223e63ed371beb8ef",
       "ereignisse": [
         {
           "code": 1010,
@@ -17459,7 +17485,7 @@
       ]
     },
     "BS-GR-14.1218": {
-      "sha": "81234375889d4a878ef2400509073891f66ba94ca81bb97a064f77b2673cd2d9",
+      "sha": "08321d37587c384aadf234d3b957e9298e285b47e1086cbbcf7627fd83da1a97",
       "ereignisse": [
         {
           "code": 1010,
@@ -17500,7 +17526,7 @@
       ]
     },
     "BS-GR-14.0923": {
-      "sha": "c75e3103f9552649ef1e8239f29bdbe1530c34a86e75dd6c33d8a2ee8bd2eb77",
+      "sha": "2c9470489328ac5562b65fe747c0c7da7baf59429323a15b31c711a0bf053d06",
       "ereignisse": [
         {
           "code": 1010,
@@ -17534,7 +17560,7 @@
       ]
     },
     "BS-GR-14.0386": {
-      "sha": "d9e3ba293096a5ead10029721dffa641e349aac086ed80be445f964f26c887dd",
+      "sha": "4eeeeef4188c249fa630460c46313fa628c5c151b19c6b74d4ad6dd51f602fb1",
       "ereignisse": [
         {
           "code": 1010,
@@ -17575,7 +17601,7 @@
       ]
     },
     "BS-GR-13.0779": {
-      "sha": "92affaa6611d60358e4386d5c5331e7f7459da43ca1e180de15c1bd9f1626d84",
+      "sha": "8e8cb5dfde27ec5c4d5f103e48486dffc4058d3f21c50254744ecb39ef4c91c2",
       "ereignisse": [
         {
           "code": 1010,
@@ -17616,7 +17642,7 @@
       ]
     },
     "BS-GR-13.0303": {
-      "sha": "be991bcf62c7b9a2a4116e0ec09920ba7028d6328958dde8e9ef6e89360130eb",
+      "sha": "b0e2c6998c975430ef4043da2f24422c19c6c8618785c03845e4dd2ee4e63334",
       "ereignisse": [
         {
           "code": 1010,
@@ -17663,7 +17689,7 @@
       ]
     },
     "BS-GR-13.0434": {
-      "sha": "a0f320e575fb9f1d66f063908a0fc30bcfa5a5675168b30b3c7df9e77bafbad9",
+      "sha": "596d8379c7292d8a72670851994cef05dbd28fcf2c9b2dd2e2ddaebde2de565f",
       "ereignisse": [
         {
           "code": 1010,
@@ -17690,7 +17716,7 @@
       ]
     },
     "BS-GR-13.0334": {
-      "sha": "e6d24dec514ebb596813a2dd0d5935c205fc14e688b5a54cb689309c035c73be",
+      "sha": "c0398f1b2ad39fa2e155b6af33beca40c78d888f56a4c95bf0726439e178c6f6",
       "ereignisse": [
         {
           "code": 1010,
@@ -17731,7 +17757,7 @@
       ]
     },
     "BS-GR-12.2084": {
-      "sha": "764c926411946fc808588c33b63808331ab26fff466c2d04a50e41e8a9176f5e",
+      "sha": "b21c2049135ad5cec571e6cb5a151106bda9f78f96cb1afacede1292ba727e9e",
       "ereignisse": [
         {
           "code": 1010,
@@ -17771,7 +17797,7 @@
       ]
     },
     "BS-GR-12.2005": {
-      "sha": "6761ee6f5fdece25a836f50334e4b3898771e8a83bfdfe1fd2f89c2c146782cb",
+      "sha": "22b63f66ab017f29e26fe698f349d392b9e33daf57456f89971426572159bdd9",
       "ereignisse": [
         {
           "code": 1010,
@@ -17805,7 +17831,7 @@
       ]
     },
     "BS-GR-12.1414": {
-      "sha": "5d0be156af8c2fedc3785fbea79fdd5514e4ce62d94f7a1b96795fc001d29c49",
+      "sha": "bec28dfa568e8cd6539678d0289c7372c71105ff1555662d13dfea065de3c2b4",
       "ereignisse": [
         {
           "code": 1010,
@@ -17839,7 +17865,7 @@
       ]
     },
     "BS-GR-12.0895": {
-      "sha": "fbc6682a78611aaa2f8ae649a52a14e634151410aa0159b19393e9e3ee270dfc",
+      "sha": "234b5991266ef9a11b4195f34123aa1639c98a4d4739966cca01c9cafcb3f824",
       "ereignisse": [
         {
           "code": 1010,
@@ -17873,7 +17899,7 @@
       ]
     },
     "BS-GR-12.0652": {
-      "sha": "38ce135224bef1b58a8c437705c2ab99a5415650bd544748c465760b49e171d5",
+      "sha": "e1b47f9b20359df28a1860ca418396a955b8524e1394a850262f1916b8f12196",
       "ereignisse": [
         {
           "code": 1010,
@@ -17914,7 +17940,7 @@
       ]
     },
     "BS-GR-12.0697": {
-      "sha": "c86ec73c7b663fe928712004399c4f02a85f4cfbbce6b9ef1fb2682dc0eec8e5",
+      "sha": "dc1a9d04c5ef6bb76119a6b685217b1566e4b7ffdb87286730e81b02c4eb11be",
       "ereignisse": [
         {
           "code": 1010,
@@ -17948,7 +17974,7 @@
       ]
     },
     "BS-GR-12.0472": {
-      "sha": "ea975289d5ec929c36747441b5674694653860b5ebc63423bb85cedcaf39ec98",
+      "sha": "7f37d9cf9556585356d8a6c138cf34d22756b0042093dda3a7731c568a1ba0e3",
       "ereignisse": [
         {
           "code": 1010,
@@ -17989,7 +18015,7 @@
       ]
     },
     "BS-GR-12.0199": {
-      "sha": "d4803eec1032db6d401d5143a089292ec9a67a7ed700ac4ec964f5277065ae32",
+      "sha": "8f360798ea774439fbf5f8f4ee9ef36d74ea88af7f5d69f572e33560d26215ff",
       "ereignisse": [
         {
           "code": 1010,
@@ -18023,7 +18049,7 @@
       ]
     },
     "BS-GR-11.1996": {
-      "sha": "26b0d96ee21ce613a23e490a5cb9b9a5d62459086a268d6ddcf50e2ad5c3783d",
+      "sha": "b444ac7401fe181af5d6cf55d2a86c753bda0799389f109a3ee84022a618d67b",
       "ereignisse": [
         {
           "code": 1010,
@@ -18064,7 +18090,7 @@
       ]
     },
     "BS-GR-11.1520": {
-      "sha": "cef87ade79163ad2b7f42f104c51d8a2dff680bfc3034dbe13953da9d321a3ca",
+      "sha": "f0bc01413017e63524542dde92c831a74815cd4b5f289ecb2a1367e2ba1de3cb",
       "ereignisse": [
         {
           "code": 1010,
@@ -18105,7 +18131,7 @@
       ]
     },
     "BS-GR-11.1273": {
-      "sha": "dfb4533206165402d12e0f29ec139d768df6b915645b3553e8a7982b3d87b646",
+      "sha": "3e82528072583b24a22b67ce1c758681ca50f61cc6bb0b5e0b61dda856816009",
       "ereignisse": [
         {
           "code": 1010,
@@ -18146,7 +18172,7 @@
       ]
     },
     "BS-GR-11.0152": {
-      "sha": "1ecf3ba08fdbdda64cc3c53a1d440857e02351fd8781821320aee059ace99d1f",
+      "sha": "d2920f71eb377fd6022b6e202462ead3ec4c90222c4de8eace018ee3c868ac87",
       "ereignisse": [
         {
           "code": 1010,
@@ -18180,7 +18206,7 @@
       ]
     },
     "BS-GR-10.1642": {
-      "sha": "2074cd4f0a610a8a8128d2003a8dfe052b7e10948f2c17b5919a81895d038e31",
+      "sha": "9a88e2ff1b29ad8797ec02900338b7be1f566a5a33d91f0fcbb0d9db82422bcc",
       "ereignisse": [
         {
           "code": 1010,
@@ -18221,7 +18247,7 @@
       ]
     },
     "BS-GR-10.1600": {
-      "sha": "423f6a7e7eabf9fd8f9cad36fbe0e19a060a8f8d1d14d0e946d13e6cb2f31818",
+      "sha": "724f73934e5d87ce092c724d8233a4ff13636110f592e6e37def10309595aad9",
       "ereignisse": [
         {
           "code": 1010,
@@ -18262,7 +18288,7 @@
       ]
     },
     "BS-GR-10.1162": {
-      "sha": "619d9c07dfa24be02dccfb0ad10bb70a22fdf319cc3a13e29698def3798a8277",
+      "sha": "e802a13fd1a486725e1f3f84dc2215153c071ead9a32ef44497b02ebeada19d5",
       "ereignisse": [
         {
           "code": 1010,
@@ -18296,7 +18322,7 @@
       ]
     },
     "BS-GR-10.0902": {
-      "sha": "d8c9934f928b7e4ff68b5d365ec6e5a5a0477bbfc1b849e7d8b59a58a4ebf238",
+      "sha": "a748772c5cd3abefcbc6d686568c71d4fb79c148945ddc8a41e6952f47a4af5c",
       "ereignisse": [
         {
           "code": 1010,
@@ -18337,7 +18363,7 @@
       ]
     },
     "BS-GR-10.0197": {
-      "sha": "9dd28383886d434b5b9041a9367a9ba5cb441f27e2a2c5dd4f692fc2c10b1a62",
+      "sha": "3e7d0d44cc093c7171c02c7aa2d6036ccef0569ae23ba22bb4e0e7e5bbd3e55a",
       "ereignisse": [
         {
           "code": 1010,
@@ -18378,7 +18404,7 @@
       ]
     },
     "BS-GR-09.0594": {
-      "sha": "424aaa27746ba313107f70870d17bbecbdd0773ec4c95bc3ef5d2a9aaf3aa39c",
+      "sha": "70f49265c759df0e2203401fcda5454009b73baac80d023745a32c13bdb9bc41",
       "ereignisse": [
         {
           "code": 1010,
@@ -18419,7 +18445,7 @@
       ]
     },
     "BS-GR-08.1776": {
-      "sha": "750f38e093441ab1f804bf20004a83d7268a15358d2a796fef54e54cb34a9519",
+      "sha": "ecff7795019ec89ccac8948e82deaeb5b55066b578db2a022d6f8da08f2544ef",
       "ereignisse": [
         {
           "code": 1010,
@@ -18453,7 +18479,7 @@
       ]
     },
     "BS-GR-08.1828": {
-      "sha": "5a819733b6d1e1012df3ad1d2f6a73cb3c4ce3fe08827baf23e15a9905e3802a",
+      "sha": "bae95e2b3ee609faf2dd58251e512de750a6b5658376db49b42022c18b2f30b5",
       "ereignisse": [
         {
           "code": 1010,
@@ -18487,7 +18513,7 @@
       ]
     },
     "BS-GR-07.1956": {
-      "sha": "701f49f17c50281f1a86b4414241cb918fe1dfb515265abd834f3d2beb7cd7aa",
+      "sha": "841d6df2660aa36f2d9eeeb748a23f321a41d881d1cbc8fb7d452bc75f16f935",
       "ereignisse": [
         {
           "code": 1010,
@@ -18528,7 +18554,7 @@
       ]
     },
     "BS-GR-08.0948": {
-      "sha": "40202579b347d0f18400abcc2e9e39d683b4f6df94b7d5b928fd1bba57db8a5e",
+      "sha": "0ff914257ea9c3f57309e4a06251c7b34edf8f510d67d5233c820527fa00e6a2",
       "ereignisse": [
         {
           "code": 1010,
@@ -18569,7 +18595,7 @@
       ]
     },
     "BS-GR-06.1706": {
-      "sha": "618ecd43ef1373d1c30fe9913cf1cd1e42ddee5cc5ae0e40bb2f357784aa16a0",
+      "sha": "4aecd27174f77258f1b0c71cbe2973da30ad94355e63f89803180556bd715984",
       "ereignisse": [
         {
           "code": 1010,
@@ -18624,7 +18650,7 @@
       ]
     },
     "BS-GR-07.0128": {
-      "sha": "39380ce5196f5dad1ceb6fbc4d83793b886fa2211ec5205f50f94177bdcfecb3",
+      "sha": "1febe349cc9c4723b98f4bd5ac1aa64300f52447622267394219ac87db4edfdf",
       "ereignisse": [
         {
           "code": 1010,
@@ -18665,7 +18691,7 @@
       ]
     },
     "BS-GR-07.0972": {
-      "sha": "3db0a8457cba6e03676b9bdf40713e53696046c497a79913b0eb47dde951cc9b",
+      "sha": "3f6c2efa067145714a2d42dac4b8a4011e124e8269ed7e06747bd3218b36d694",
       "ereignisse": [
         {
           "code": 1010,
@@ -18692,7 +18718,7 @@
       ]
     },
     "BS-GR-07.0904": {
-      "sha": "df10e976945c790f101be2421d2b0814b0f3242ae53459b2556c860b7d2da2d2",
+      "sha": "06a0b686afc6a574584f43823f9f3aa7a89d240997f81fc273338967619af496",
       "ereignisse": [
         {
           "code": 1010,
@@ -18719,7 +18745,7 @@
       ]
     },
     "BS-GR-06.1970": {
-      "sha": "a3f9ec2b28c18099308e8af76a405fc8d60e0305da3bb6aa8f0efa9bbc28380a",
+      "sha": "8838e14066ba6d6618d039cffe5a13ea69dbb3d55b5df77188c463a297217966",
       "ereignisse": [
         {
           "code": 1010,
@@ -18760,7 +18786,7 @@
       ]
     },
     "BS-GR-05.1156": {
-      "sha": "29b06054cdba63c198bac6a7cb4abad049267d0cf9758c0e12b8d3f058b79099",
+      "sha": "1dbd407e7cfd7455a850454721419b12da774decaaae9d885a04730f2f9cca3c",
       "ereignisse": [
         {
           "code": 1010,
@@ -18794,7 +18820,7 @@
       ]
     },
     "BS-GR-05.0699": {
-      "sha": "20b79892bebd19e1552d5670f99f2276819a4873ebe72024cec4b3c1ed6db9ca",
+      "sha": "1ef136ce60a00119c95688b028f560833324f2637bff3340ca1754efe7bff83b",
       "ereignisse": [
         {
           "code": 1010,
@@ -18849,7 +18875,7 @@
       ]
     },
     "BS-GR-05.1161": {
-      "sha": "b81c2e880b44e3245a065eab6009f1e133aba6e7cae1383c7295482891b0ca33",
+      "sha": "4ff8f4c506ab35f260e5ed72050fdd3d693923c409ee7918a3adb02f14060c7d",
       "ereignisse": [
         {
           "code": 1010,
@@ -18890,7 +18916,7 @@
       ]
     },
     "BS-GR-05.8376": {
-      "sha": "7878e7387e488983863180041014fa132538cbafe32ad66fce031e8a8e21eb1f",
+      "sha": "bcca2e4aa10e997135fdc861fa9334d65935bad75a2f32c03b192072993170d2",
       "ereignisse": [
         {
           "code": 1050,
@@ -18917,7 +18943,7 @@
       ]
     },
     "BS-GR-04.0683": {
-      "sha": "0d70ea5f321d42e2fb9baf789508219b74ae785254df9e2b4d53ffd6ed5817ae",
+      "sha": "41e10e906f73872f1339f6b8598157465953457456e12d367953340fefb9dfae",
       "ereignisse": [
         {
           "code": 1010,
@@ -18951,7 +18977,7 @@
       ]
     },
     "BS-GR-04.2014": {
-      "sha": "818b72806053a2e2874d18800d8773cb0d50ed9a3c2bf6c8a67242730cce9593",
+      "sha": "cb74e95512d8a04b4f46012227fa01e718efc8b09775b7014a9083aa1009c864",
       "ereignisse": [
         {
           "code": 1010,
@@ -18978,7 +19004,7 @@
       ]
     },
     "BS-GR-04.8107": {
-      "sha": "953c002ddf93a2f487dc96c811c752e4de3054a28cadfce31384783a5801683d",
+      "sha": "5249d4c574916e8349afa05487996dd745e6d72d77b6429bbb64636ca32d0e59",
       "ereignisse": [
         {
           "code": 1030,
@@ -19018,7 +19044,7 @@
       ]
     },
     "BS-GR-03.2068": {
-      "sha": "832c48dcf4584665d089d8d5583846ea1419b5700cd8dbd9ef98e765c689e161",
+      "sha": "1610f5a1f0446a5ee847422795a34d5e5e8bf0604f513dcbf12f81188db7a056",
       "ereignisse": [
         {
           "code": 1050,
@@ -19100,7 +19126,7 @@
       ]
     },
     "BS-GR-03.0728": {
-      "sha": "5180c20ac55ca95ff257c7f0c13a85cc712cf5ab72ace076064d24702d25fbc5",
+      "sha": "c5b2c136fb1df18ab7b6bfa605c7d128a9b19193bdb5513590ec861ca56532c3",
       "ereignisse": [
         {
           "code": 1010,
@@ -19141,7 +19167,7 @@
       ]
     },
     "BS-GR-04.0801": {
-      "sha": "198cea9130c29a438073980f7e3a7d76096ca7c9303a1552e2d1d13389bea7d4",
+      "sha": "5e1f351841df5b2425c1cce39229ef2af5eff03b0a85ca163c078b495cdd560e",
       "ereignisse": [
         {
           "code": 1050,
@@ -19161,7 +19187,7 @@
       ]
     },
     "BS-GR-04.0869": {
-      "sha": "54a11bbc1ea469a3d4d12dbc0c623b7a2a55feaeedd07a677735ba3908ef0a9a",
+      "sha": "683561f80fa403c2a511dc1d2a45e30ba6bebdd2439e5a8536ef646d3214b365",
       "ereignisse": [
         {
           "code": 1050,
@@ -19194,7 +19220,7 @@
       ]
     },
     "BS-GR-04.0707": {
-      "sha": "44b9e8e24d025df663f96b7fd5baef56f7df6421cab17d903921f8c1b10d487e",
+      "sha": "3c835b433ddd6bf63192f14cb7e0386dc203cdeafd218f98a0587ed918b4a614",
       "ereignisse": [
         {
           "code": 1010,
@@ -19235,7 +19261,7 @@
       ]
     },
     "BS-GR-03.1945": {
-      "sha": "fa1c5a445c7d18e54f14dad4115431bd083a3b7a27df743bd20ca7578bdf3993",
+      "sha": "da19aae88f5c8bddc86f8194da7318f6bb3b972bdda0ea2b90d45d6e17340999",
       "ereignisse": [
         {
           "code": 1050,
@@ -19269,7 +19295,7 @@
       ]
     },
     "BS-GR-03.1560": {
-      "sha": "f4f8ba87d20e4adaf06760df85cf5de9e89ec3611d2ab54a1db8a38beab9c5a9",
+      "sha": "c229936fdc33e987bd2ed5b0bf4251566f996074a0b8dfff433d13ab6bcdbf63",
       "ereignisse": [
         {
           "code": 1050,
@@ -19296,7 +19322,7 @@
       ]
     },
     "BS-GR-03.1858": {
-      "sha": "397368297e8ce83dd064a2a1eff45cc0d76ce14aa27e2f3d7bd85ba8c3ff2929",
+      "sha": "babf3321482a3a2bf0185dd22134b01ddc2e63d6862947df3c78aab33d9f1a24",
       "ereignisse": [
         {
           "code": 1050,
@@ -19323,7 +19349,7 @@
       ]
     },
     "BS-GR-03.1561": {
-      "sha": "58b8909208ddacfa035d7bc4b065bcc225ca4ac84ec3b26de5911f02e629616b",
+      "sha": "c85ca5d261cc57b92843cc1367007e6d6451bccab930d05a297d805644650591",
       "ereignisse": [
         {
           "code": 1050,
@@ -19350,7 +19376,7 @@
       ]
     },
     "BS-GR-03.1361": {
-      "sha": "4b151af46c9641df193a67a39884434fe5b088f79314b9b7c5873bc78db16b1c",
+      "sha": "4a61d41ba795d27d03c666ab1beebc931aa6ebc78d4429b26d50b67f6930707f",
       "ereignisse": [
         {
           "code": 1050,
@@ -19377,7 +19403,7 @@
       ]
     },
     "BS-GR-03.0267": {
-      "sha": "db0c8d7bb4aefbca5b7e7c2bba813582d5435128eceed7d58fd0281188349f41",
+      "sha": "4a908fc99a86b3a76808f2bcafd9d29aa908ae473589999bd6f4377162de0869",
       "ereignisse": [
         {
           "code": 1050,
@@ -19404,7 +19430,7 @@
       ]
     },
     "BS-GR-02.2030": {
-      "sha": "166f4e5422765f6ef96edf2eefd0a5cb8c55fd6355ef69526de0e093da43579d",
+      "sha": "a403f104a306e068db6204165992d93463f0a9afba1071a13fc400e20328e40f",
       "ereignisse": [
         {
           "code": 1050,
@@ -19431,7 +19457,7 @@
       ]
     },
     "BS-GR-02.2427": {
-      "sha": "f96a7bfe4dcad85c73e585f342c2e057acb7c2c1c773f91225327701af40d3f0",
+      "sha": "f58a97499c34146c5b5e48aabd0bb4472104cb5fe15298ce9e0c0c32714f6beb",
       "ereignisse": [
         {
           "code": 1010,
@@ -19486,7 +19512,7 @@
       ]
     },
     "BS-GR-02.0403": {
-      "sha": "20271995fb2044507ed04b06b8cc81114cfb796eec6adba63fa9f88c02c3c1f9",
+      "sha": "c287432604b87a68bb63395bb47e7ff7f1a419cdd1f0bd5f68ab554a8b9d7def",
       "ereignisse": [
         {
           "code": 1010,
@@ -19519,7 +19545,7 @@
       ]
     },
     "BS-GR-01.0353": {
-      "sha": "a88f51760e0b302bccb7a364eaad768ba5c0e561c2935e9b8edbd1520e247fa0",
+      "sha": "e65ff59c59d932263dd1cd82f1792d5c9726f7aff62a516dba2378666b1c9b36",
       "ereignisse": [
         {
           "code": 1010,
@@ -19552,7 +19578,7 @@
       ]
     },
     "BS-GR-01.0221": {
-      "sha": "94a2ad873a48b7946681e4df0318aa0fe70980d42ff48151b98524385030b148",
+      "sha": "8a716ed8527d240520861e695ddab67e51f169fd68a3750be4b3ae0453297fd3",
       "ereignisse": [
         {
           "code": 1010,
@@ -19591,7 +19617,7 @@
       ]
     },
     "BS-GR-96.1713": {
-      "sha": "82d7867327fac8f9af3fa53ef97551873e10a1861876947592c0490851ca9897",
+      "sha": "ea269d36b99421320f04260ed98b637b1005d82b632fc77d9c1f4291ad23032e",
       "ereignisse": [
         {
           "code": 1010,
@@ -19617,7 +19643,7 @@
       ]
     },
     "BS-GR-93.1135": {
-      "sha": "8c9c6545f6747d291bd006d72ae74834c686232b7ed788e148adb578514d5313",
+      "sha": "e47c6919ba075404b95b642b59dd040bf92d82ed2c4771b742de3f9dfaedada5",
       "bsKanten": [
         {
           "erlass": "BS-211.100",
@@ -19628,7 +19654,7 @@
       ]
     },
     "BS-GR-93.1938": {
-      "sha": "83287c8d7b5348533bb200d363e8c3788332a23f4a7a725e2bc6084c9345f65c",
+      "sha": "41397a2d858ebb57b272b6485a0440c244fd88b51c32fdbd320a4a778b8196e6",
       "bsKanten": [
         {
           "erlass": "BS-230.900",
@@ -19639,7 +19665,7 @@
       ]
     },
     "BS-GR-85.0123": {
-      "sha": "ca18755cf673e999ef52557f32b010b3f4d7eba2a51fb13e797ce3a43841b50b",
+      "sha": "88a4cfedddda7ac2affe101f133679eb0bda8a728b3491ca6f4c143c1a679664",
       "bsKanten": [
         {
           "erlass": "BS-650.500",
