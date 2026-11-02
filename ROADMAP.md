@@ -73,6 +73,9 @@ Kürzel = Zweig-Präfix und Trailer `Roadmap:`.
    Grenze Turso Free 5 GB (`scripts/datenhaltung/hot-groesse.ts`, Bestätigung aus Davids Konto
    offen); Vercel ≈ 1,5 GB je Stand, 3 Stände ≈ 4,6 von 10 GB.
    *Lage:* Vault `03_Projekte/LexMetrik/a1-fundament-2026-10-07/lage.md`.
+   *Stand 2.11. (kein David-Entscheid offen):* #1351 wartet auf Opus-Delta-Gegenprüfung (Kopf e4bcbe053, CI rot, main
+   nachziehen). #1352 erst nach Präfix-Parität von `api/suche` samt Synonymen (David 7.10. «Vor dem Live-Gang»; Materialien
+   und BGE-Sprung bleiben; Prefix-Index = ein Vollneubau ≈ 260k Zeilen).
 2. **Jedes Bundesgesetz** (`A2-BUNDESGESETZE`) · E1·A · Gegenprüfung ja · nach JETZT 1
    *Fertig, wenn* eine Lieferung die 256 fehlenden Bundesgesetze (251+5 dringliche) und 25 VO der
    Bundesversammlung bringt (281), Fortschrittszeile «348/348». *Ort:* FAHRPLAN-FEDLEX-PORTFOLIO §21.
@@ -100,13 +103,13 @@ Kürzel = Zweig-Präfix und Trailer `Roadmap:`.
 
 ```
 E0
-- 7.10.: Turso nach #1343/#1350: 1. Lauf Vollneubau ~260k Zeilen, dann Delta-Log «erfolgreich» vs. «expired» (M-2) prüfen — FAHRPLAN-DATENHALTUNG §17
-- David-Handgriff: AUTOMERGE_TOKEN bis 20.10. erneuern (FB S-14); normen-monatslauf.yml stösst keine CI an (Lauf 1.11.)
+- 2.11.: Re-Pin-Termin 1.11. verstrichen (StGB, AIG und 6 weitere, #1337), Fedlex-Frische rot ohne PR (letzter 19.10.), Monitor #1428, Wächter #1425 — Skill korpus-werkstatt
 E1·A
 - 15.10. Korpus-Nachzug UR RB 9.2311 und GL art_7.1 als Kantons-Snapshots (BEKANNTE_LUECKEN in check-vollstaendigkeit.ts) — Korpus-Werkstatt
 - David 7.10.: Messlauf Phase 1 strukturgleich + schneller (1 PR, 6–10 h, kein Tor; Zählung wie segmente-logik.ts; Tempo mit Fedlex-Arm, gleiche Drossel, n ≥ 5)
 - 16.10. LESER-NAV gelandet (#1378–#1413, 15 PRs); offen: Suche O-19/O-20/O-23 nach #1352, OR-Tempo O-21/O-22, O-34f, O-56, Nebenfunde O-77…O-83, Nachkontrolle O-75 ab 4.1.2027 — FB Bereich 6
-- wartet auf David 16.10.: LESER-NAV-Fragen O-04/O-05 Wortlaut, O-10, O-11, O-13, O-17, O-21, O-27, O-29, O-32, O-33c, O-36, O-42, O-47, O-50c, O-51, O-52, O-63, O-70, O-74, O-76c — FB Spalte «David?»
+- wartet auf David 16.10.: 21 LESER-NAV-Fragen O-04…O-76c, FB Spalte «David?»; Empfehlungen 2.11.: Vault sichtung-wartend-2026-11-02/
+- 2.11.: #1315 Wochen-Nachzug rot seit 5.10., Urteile auf main bis 1.10.: Befunde beheben, landen — Skill korpus-werkstatt
 - HN-05: Bundestext-Rest: Zwischentitel (NT-03), AHVG-Anhang (B-21, erst reproduzieren), B-02, B-17 — FB B-16
 - Go David 24.9.: Fehllinks SchKG 39, ChemRRV Anh. 1/2, BGG 123/124 (V-02, HN-09), 12 Fussnoten-Selbstlinks (V-07), dann Normverweis im eigenen Leser (HN-D1) — FB V-06
 - 12.9.: BMV-Pin cc/2009/423 (aufgehoben 1.3.2026) noch im Bestand, «Art. 9 BMV» löst darauf auf (daneben bmv_2025) — FB V-08; src/lib/fedlex/tabelle.ts
@@ -116,10 +119,10 @@ E1·A
 - Sammel: übriger Bundestext — FB Bereich 1
 E1·B
 - 15.10. RECHTSLOGIK-Rest aus GP: GE-Deckel, Rundungsnormen übrige Grundbuch-Posten, Pfandsteuer-Rappen, JU/TI-Lesarten, Golden-Lücke, Hinweis-Kleinkram, TG Schlichtungshinweis — FB RV-94…102
-- wartet auf David 15.10.: W-16 MWST BS/VD/JU «zuzüglich 8,1 % nach Bundesrecht» (Empfehlung ja); AG Grundpfand-Minimum Notariatsteil 200 (umgesetzt) oder 300; A1-FUNDAMENT #1351/#1352 offen
+- wartet auf David 15.10.: W-16 MWST BS/VD/JU «zuzüglich 8,1 % nach Bundesrecht» (Empfehlung ja); AG Grundpfand-Minimum Notariatsteil 200 (umgesetzt) oder 300
 - Sammel: übrige Rechner/Vorlagen und Urteilsdaten — FB Bereiche 3, 5
 - 5.10.: Gegenprüfungs-Pin «fedlex OR 20260101» überholt (Cache 20261001) ⇒ Gegenprüfungen der OR-Engines neu fällig
-- Abnahme David: Gründungs-Checklisten AG/GmbH nach TJPG — bibliothek/recherche/ag-gruendung.md, gmbh-gruendung.md
+- Abnahme David (nicht proaktiv): Gründungs-Checklisten AG/GmbH nach TJPG — bibliothek/recherche/ag-gruendung.md, gmbh-gruendung.md
 - 7.10.: Widerspruch W-17: FB RV-26 «wartet auf David» vs. FAHRPLAN-RECHTSLOGIK §4 «entschieden 24.9.»; W-09/11/17/22 dort ohne Zeichen
 E3
 - Go David 24.9.: Rest «eine Titel- und Abschnittsordnung» (HN-D2 gebaut #1190/#1197, Band-Rezept #1373): Titelschrift — FB Teil B
@@ -131,7 +134,7 @@ E3
 E3·W
 - Go David 5.10.: CI: Dauer-Wackler an der Wurzel (git 3fd5db8f9:bibliothek/betrieb/e2e-fang-historie-2026-10-05/), leser-kopf-cls-s3 hängt an Fedlex, Läufer-Kontingent
 - Go David 7.10.: Leser-Logik (162 .ts unter src/pages|components, ~22k Zeilen) nach src/lib/leser, danach Lint-Grenze — §3
-- wartet auf David 7.10./10.10.: §5 vs. Ist (ingest.ts liest public/*.json in die DB); Rechtsprechung-Einzelentscheide (300 MB) als Release-Artefakt statt git; scripts/archiv/ (9 Skripte) löschen
+- 7.10./10.10.: §5 vs. Ist (ingest.ts liest public/*.json in die DB, STRUKTUR legt es offen); Einzelentscheide (300 MB) als Release-Artefakt; wartet auf David: scripts/archiv/ (9 Skripte) löschen
 - 19.10. PRUEF-AUTOMATIK: Bot-PRs prüft täglich 21:00 eine Opus-Routine, Pflege-Routine Mo 22:00 repariert selbst — .claude/routinen/; offen: materialien-nachzug-Dispatch 403 (Test pinnt)
 E4
 - David 21.9./7.10.: Impressum/Datenschutz erst vor Live-Gang (FB S-01); Staatsverträge SR 0.* (3186, 28 gepinnt) verlinken bis dahin auf Fedlex; Vercel Hobby nur nicht-kommerziell (vercel.com/docs/limits/fair-use-guidelines) ⇒ Planwahl vor Live-Gang
