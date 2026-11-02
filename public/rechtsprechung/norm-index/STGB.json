@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-26",
+  "erzeugt": "2026-11-02",
   "erlass": "STGB",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -1743,6 +1743,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_I_178",
+        "zitierung": "BGE 152 I 178",
+        "regesteKurz": "Art. 36 Abs. 1 lit. b, Art. 37 und 38 Abs. 1 MedBG; Art. 27 und 36 Abs. 3 BV; Entzug der Bewilligung eines Arztes zur Berufsausübung in eigener fachlicher Verantwortung wegen sexuellen Handlungen mit Patientinnen. Verfahrensgegenstand (E.…",
+        "datum": "2025-11-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_IV_321",
         "zitierung": "BGE 149 IV 321",
         "regesteKurz": "Art. 42 Abs. 4 StGB; Höhe der Verbindungsbusse. Die Verbindungsbusse i.S.v. Art. 42 Abs. 4 StGB darf höchstens 20 % der in der Summe schuldangemessenen Sanktion - bestehend aus einer bedingt ausgesprochenen Hauptstrafe kombiniert mit einer…",
@@ -1757,16 +1767,6 @@
         "zitierung": "BGE 149 IV 161",
         "regesteKurz": "Art. 67 Abs. 3 lit. d Ziff. 2 i.V.m. Art. 67 Abs. 4 bis StGB; Ausnahme vom lebenslänglichen Tätigkeitsverbot. Darstellung, unter welchen kumulativen Voraussetzungen ausnahmsweise von der Anordnung eines Tätigkeitsverbots gemäss Art. 67…",
         "datum": "2023-04-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_IV_265",
-        "zitierung": "BGE 148 IV 265",
-        "regesteKurz": "Art. 355 Abs. 3, Art. 356 Abs. 7 und Art. 392 StPO; Strafbefehlsverfahren; Antrag auf Aufhebung des Strafbefehls gestützt auf Art. 392 StPO; Zuständigkeit der Staatsanwaltschaft und der Erstinstanz. Art. 356 Abs. 7 StPO, soweit er eine…",
-        "datum": "2022-07-14",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -3694,7 +3694,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
+      },
+      {
+        "key": "bge_152_I_169",
+        "zitierung": "BGE 152 I 169",
+        "regesteKurz": "Art. 13 Abs. 1 BV; Art. 8 EMRK; Art. 66d Abs. 1 lit. b StGB; Entstehung neuer ehelicher oder familiärer Bindungen und Aufschub des Vollzugs der strafrechtlichen Landesverweisung. Begriff der zwingenden Normen (ius cogens) des Völkerrechts…",
+        "datum": "2026-06-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_152_II_89",
@@ -3783,6 +3793,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_152_I_178",
+        "zitierung": "BGE 152 I 178",
+        "regesteKurz": "Art. 36 Abs. 1 lit. b, Art. 37 und 38 Abs. 1 MedBG; Art. 27 und 36 Abs. 3 BV; Entzug der Bewilligung eines Arztes zur Berufsausübung in eigener fachlicher Verantwortung wegen sexuellen Handlungen mit Patientinnen. Verfahrensgegenstand (E.…",
+        "datum": "2025-11-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_IV_57",
         "zitierung": "BGE 151 IV 57",
         "regesteKurz": "Art. 221 Abs. 1 StPO; aArt. 72 Ziff. 2 StGB; altrechtliche Unterbrechung der Verfolgungsverjährung. Ist die der beschuldigten Person vorgeworfene Straftat mit grosser Wahrscheinlichkeit bereits verjährt, muss der dringende Tatverdacht…",
@@ -3827,16 +3847,6 @@
         "zitierung": "BGE 149 IV 240",
         "regesteKurz": "Verletzung der Fürsorge- oder Erziehungspflicht (Art. 219 StGB); Verfolgungsverjährung, tatbestandliche Handlungseinheit (Art. 98 lit. b StGB). Der in Art. 219 StGB definierte Straftatbestand setzt in der Regel voraus, dass der Täter…",
         "datum": "2023-04-17",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_V_195",
-        "zitierung": "BGE 148 V 195",
-        "regesteKurz": "Art. 17 Abs. 1, Art. 21 Abs. 1 und Art. 53 Abs. 2 ATSG; Art. 37 Abs. 3 UVG; Art. 54 StGB; Art. 90 Abs. 2 SVG; Leistungskürzung bei einem Unfall, der bei Ausübung eines Verbrechens oder Vergehens herbeigeführt wurde; Wiedererwägung;…",
-        "datum": "2022-03-01",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -6583,6 +6593,16 @@
         "zitierung": "BGE 152 III 319",
         "regesteKurz": "a Art. 60 OR; Art. 6 EMRK. Im vorliegenden Fall ist der Beginn der Verjährungsfrist mit Art. 6 EMRK vereinbar (E. 5). Regeste b Art. 60 Abs. 2 OR; Art. 122 StGB. Eine dauerhafte Schädigung eines Embryos oder eines lebend geborenen Fötus…",
         "datum": "2026-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_I_178",
+        "zitierung": "BGE 152 I 178",
+        "regesteKurz": "Art. 36 Abs. 1 lit. b, Art. 37 und 38 Abs. 1 MedBG; Art. 27 und 36 Abs. 3 BV; Entzug der Bewilligung eines Arztes zur Berufsausübung in eigener fachlicher Verantwortung wegen sexuellen Handlungen mit Patientinnen. Verfahrensgegenstand (E.…",
+        "datum": "2025-11-06",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -9562,7 +9582,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 6
+        "gewicht": 7
       },
       {
         "key": "bge_146_IV_105",
@@ -9582,7 +9602,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 4
       },
       {
         "key": "bge_146_IV_311",
@@ -9680,7 +9700,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 4
       },
       {
         "key": "bge_147_IV_453",
@@ -9690,7 +9710,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 4
+      },
+      {
+        "key": "bge_152_I_169",
+        "zitierung": "BGE 152 I 169",
+        "regesteKurz": "Art. 13 Abs. 1 BV; Art. 8 EMRK; Art. 66d Abs. 1 lit. b StGB; Entstehung neuer ehelicher oder familiärer Bindungen und Aufschub des Vollzugs der strafrechtlichen Landesverweisung. Begriff der zwingenden Normen (ius cogens) des Völkerrechts…",
+        "datum": "2026-06-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_152_II_89",

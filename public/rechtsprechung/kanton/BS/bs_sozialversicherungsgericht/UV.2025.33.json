@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-11-02",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/UV.2025.33",
@@ -17,7 +17,7 @@
       "sachgebiet": "sozialversicherung",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Invalideneinkommen; Abstellen auf den tatsächlichen Lohn (Beschwerde beim Bundesgericht hängig)",
+        "gegenstand": "Invalideneinkommen; Abstellen auf den tatsächlichen Lohn (Bundesgerichtsurteil 8C_734/2025 vom 22.10.2026)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "Dr. A. Pfleiderer (Vorsitz), P. Kaderli, Dr. phil. N. Bechtel und Gerichtsschreiberin lic. iur. S. Dreyer"
@@ -277,11 +277,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79008&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2025-12-18",
+      "abgerufen": "2026-11-02",
+      "fassungsToken": "2026-10-27",
       "sha": "e5ba2e5e5aa23e3cd7b1da7090982b715fe3145e90399f90d69cfbd702e47882",
       "erstpublikation": "2025-11-26",
-      "aktualisiert": "2025-12-18",
+      "aktualisiert": "2026-10-27",
       "nummerSekundaer": "SVG.2025.192",
       "ecli": "ECLI:CH:BSS:2025:UV.2025.33"
     }

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-26",
+  "erzeugt": "2026-11-02",
   "erlass": "EMRK",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -116,7 +116,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
       },
       {
         "key": "bge_147_IV_453__voll",
@@ -126,7 +126,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
       },
       {
         "key": "bge_149_II_302",
@@ -159,6 +159,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_I_169",
+        "zitierung": "BGE 152 I 169",
+        "regesteKurz": "Art. 13 Abs. 1 BV; Art. 8 EMRK; Art. 66d Abs. 1 lit. b StGB; Entstehung neuer ehelicher oder familiärer Bindungen und Aufschub des Vollzugs der strafrechtlichen Landesverweisung. Begriff der zwingenden Normen (ius cogens) des Völkerrechts…",
+        "datum": "2026-06-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_152_II_409",
         "zitierung": "BGE 152 II 409",
         "regesteKurz": "Art. 13 Abs. 1, Art. 84 Abs. 5, Art. 89 und 90 lit. c AIG; Art. 8 Abs. 1 und 2 lit. a und b und Art. 31 Abs. 2 VZAE; Art. 8 EMRK; Identitätsnachweis bei der Erteilung einer Aufenthaltsbewilligung anstelle der vorläufigen Aufnahme; Schritte…",
@@ -173,16 +183,6 @@
         "zitierung": "BGE 152 I 157",
         "regesteKurz": "Art. 3 EMRK; Art. 50 Abs. 1 lit. b und Abs. 2 und Art. 52 AIG; Härtefall nach Auflösung der Ehe oder Familiengemeinschaft, wenn Homosexualität im Wegweisungsland strafbar ist. Wichtige persönliche Gründe, die eine Verlängerung der…",
         "datum": "2025-10-02",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_IV_1",
-        "zitierung": "BGE 151 IV 1",
-        "regesteKurz": "Art. 112 StGB, Art. 2 Abs. 1 des Bundesgesetzes vom 12. Dezember 2014 über das Verbot der Gruppierungen \"Al-Qaïda\" und \"Islamischer Staat\" sowie verwandter Organisationen; Idealkonkurrenz. Der Täter, der einen Mordversuch auf…",
-        "datum": "2025-02-20",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -335,6 +335,16 @@
         "gewicht": 7
       },
       {
+        "key": "bge_149_IV_9",
+        "zitierung": "BGE 149 IV 9",
+        "regesteKurz": "a Art. 6 EMRK, Art. 14 Abs. 3 lit. g UNO-Pakt II, Art. 32 BV und Art. 113 StPO; Selbstbelastungsprivileg (\"nemo tenetur se ipsum accusare\") und Recht zu schweigen; Verpflichtung, die Personalien anzugeben. Allgemeiner Geltungsbereich des…",
+        "datum": "2022-09-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 6
+      },
+      {
         "key": "bge_148_IV_205",
         "zitierung": "BGE 148 IV 205",
         "regesteKurz": "Art. 3, Art. 113, Art. 140 Abs. 1, Art. 141 Abs. 1 und Art. 293 Abs. 4 StPO; Art. 6 Ziff. 1 EMRK; verdeckte Ermittlung; Selbstbelastungsfreiheit; Beweisverwertungsverbot. Die Verwertbarkeit von Beweismitteln, die im Rahmen einer verdeckten…",
@@ -343,16 +353,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 6
-      },
-      {
-        "key": "bge_149_IV_9",
-        "zitierung": "BGE 149 IV 9",
-        "regesteKurz": "a Art. 6 EMRK, Art. 14 Abs. 3 lit. g UNO-Pakt II, Art. 32 BV und Art. 113 StPO; Selbstbelastungsprivileg (\"nemo tenetur se ipsum accusare\") und Recht zu schweigen; Verpflichtung, die Personalien anzugeben. Allgemeiner Geltungsbereich des…",
-        "datum": "2022-09-27",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 5
       },
       {
         "key": "bge_146_I_30",
@@ -499,6 +499,16 @@
         "gewicht": 13
       },
       {
+        "key": "bge_149_IV_231",
+        "zitierung": "BGE 149 IV 231",
+        "regesteKurz": "Art. 66a und 66d StGB; strafrechtliche Landesverweisung. Bestätigung der Grundzüge der strafrechtlichen Landesverweisung (E. 2.1). Allfällige Vollzugshindernisse der Landesverweisung im Sinne von Art. 66d Abs. 1 StGB müssen bereits im…",
+        "datum": "2023-03-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 6
+      },
+      {
         "key": "bge_148_V_174",
         "zitierung": "BGE 148 V 174",
         "regesteKurz": "Art. 28a Abs. 1 IVG in der bis 31. Dezember 2021 gültig gewesenen Fassung; Art. 16 ATSG; Bemessung des Invalideneinkommens anhand der Schweizerischen Lohnstrukturerhebung (LSE). Im heutigen Zeitpunkt besteht kein ernsthafter sachlicher…",
@@ -523,16 +533,6 @@
         "zitierung": "BGE 149 I 207",
         "regesteKurz": "Art. 8 EMRK; mögliche Anrufung des Rechts auf Achtung des Privatlebens, um nach einem längeren illegalen Aufenthalt in der Schweiz eine Aufenthaltsbewilligung zu erhalten. Präzisierung der Rechtsprechung. Es ist nicht ausgeschlossen, nach…",
         "datum": "2023-05-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 5
-      },
-      {
-        "key": "bge_149_IV_231",
-        "zitierung": "BGE 149 IV 231",
-        "regesteKurz": "Art. 66a und 66d StGB; strafrechtliche Landesverweisung. Bestätigung der Grundzüge der strafrechtlichen Landesverweisung (E. 2.1). Allfällige Vollzugshindernisse der Landesverweisung im Sinne von Art. 66d Abs. 1 StGB müssen bereits im…",
-        "datum": "2023-03-06",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -963,6 +963,16 @@
     ],
     "15": [
       {
+        "key": "bge_151_II_630",
+        "zitierung": "BGE 151 II 630",
+        "regesteKurz": "Art. 25a Abs. 3 Bst. c DBA CH-RU; Voraussetzungen und Grenzen der Sistierung eines Verfahrens der internationalen Amtshilfe in Steuersachen; Schicksal eines russischen Amtshilfeersuchens im Zusammenhang mit dem Krieg gegen die Ukraine.…",
+        "datum": "2025-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_149_II_302",
         "zitierung": "BGE 149 II 302",
         "regesteKurz": "Multilaterale Vereinbarung vom 29. Oktober 2014 der zuständigen Behörden über den automatischen Informationsaustausch über Finanzkonten; Art. 8 und 13 EMRK; Art. 19 Abs. 2 Satz 2 AIAG; automatischer Informationsaustausch; Recht auf eine…",
@@ -973,10 +983,10 @@
         "gewicht": 1
       },
       {
-        "key": "bge_151_II_630",
-        "zitierung": "BGE 151 II 630",
-        "regesteKurz": "Art. 25a Abs. 3 Bst. c DBA CH-RU; Voraussetzungen und Grenzen der Sistierung eines Verfahrens der internationalen Amtshilfe in Steuersachen; Schicksal eines russischen Amtshilfeersuchens im Zusammenhang mit dem Krieg gegen die Ukraine.…",
-        "datum": "2025-01-30",
+        "key": "bge_152_I_169",
+        "zitierung": "BGE 152 I 169",
+        "regesteKurz": "Art. 13 Abs. 1 BV; Art. 8 EMRK; Art. 66d Abs. 1 lit. b StGB; Entstehung neuer ehelicher oder familiärer Bindungen und Aufschub des Vollzugs der strafrechtlichen Landesverweisung. Begriff der zwingenden Normen (ius cogens) des Völkerrechts…",
+        "datum": "2026-06-04",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

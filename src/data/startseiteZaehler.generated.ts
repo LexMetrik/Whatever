@@ -176,43 +176,43 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
     "LugÜ",
     "HZÜ"
   ],
-  "rechtsprechungVolltext": 5573,
-  "rechtsprechungVollurteilVerweise": 1351,
+  "rechtsprechungVolltext": 5625,
+  "rechtsprechungVollurteilVerweise": 1355,
   "rechtsprechungSachgebiete": [
     {
       "id": "privat",
       "label": "Privatrecht",
-      "anzahl": 1109
+      "anzahl": 1115
     },
     {
       "id": "straf",
       "label": "Strafrecht",
-      "anzahl": 1515
+      "anzahl": 1523
     },
     {
       "id": "prozess",
       "label": "Verfahrensrecht",
-      "anzahl": 93
+      "anzahl": 94
     },
     {
       "id": "oeffentlich",
       "label": "Öffentliches Recht",
-      "anzahl": 1490
+      "anzahl": 1509
     },
     {
       "id": "steuern",
       "label": "Steuern & Abgaben",
-      "anzahl": 129
+      "anzahl": 130
     },
     {
       "id": "sozialversicherung",
       "label": "Sozialversicherung",
-      "anzahl": 1237
+      "anzahl": 1254
     }
   ],
-  "rechtsprechungLeitentscheide": 1358,
-  "materialien": 1687,
-  "materialienGesetzgebung": 1360,
+  "rechtsprechungLeitentscheide": 1362,
+  "materialien": 1690,
+  "materialienGesetzgebung": 1363,
   "materialienErlaeuterungen": 327,
   "materialienBehoerden": [
     {
@@ -267,7 +267,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
       "id": "BUND",
       "kuerzel": "Bund",
       "name": "Bund (Vernehmlassungen)",
-      "anzahl": 833
+      "anzahl": 836
     },
     {
       "id": "BS-GR",
@@ -279,9 +279,9 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
   "rechner": 23,
   "vorlagen": 26,
   "standGesetze": "2026-10-05",
-  "standRechtsprechung": "2026-10-26",
-  "standMaterialien": "2026-10-05",
+  "standRechtsprechung": "2026-11-02",
+  "standMaterialien": "2026-11-01",
   "juengsterGesetzStand": "2026-10-01",
-  "juengsterEntscheid": "2026-10-23",
-  "juengsteMaterialie": "2026-10-05"
+  "juengsterEntscheid": "2026-10-30",
+  "juengsteMaterialie": "2026-11-01"
 };

@@ -1,0 +1,82 @@
+{
+  "erzeugt": "2026-11-02",
+  "eintraege": [
+    {
+      "id": "bund/bstger/SK_2025_11",
+      "gericht": "bstger",
+      "gerichtName": "Bundesstrafgericht",
+      "gerichtstyp": "bundesstrafgericht",
+      "kanton": "CH",
+      "abteilung": "SK",
+      "nummer": "SK.2025.11",
+      "bgeReferenz": null,
+      "zitierung": "BStGer SK.2025.11 vom 1. Oktober 2026",
+      "datum": "2026-10-01",
+      "sprache": "de",
+      "leitcharakter": "routine",
+      "sachgebiet": "straf",
+      "legalArea": "criminal",
+      "rubrum": {
+        "besetzung": "Bundesstrafrichter Maric Demont, Einzelrichter Gerichtsschreiberin Annina Seydel",
+        "parteien": "1. Bundesanwaltschaft, vertreten durch Stefan Tränkle 2. Eidgenössisches Finanzdepartement, Generalsekretariat EFD, vertreten durch Rechtsanwältin Lucie Schafroth gegen A",
+        "gegenstand": null,
+        "vorinstanz": null
+      },
+      "regeste": {
+        "text": "Abschreibung des Verfahrens (Art. 10 Abs. 4 VStrR analog)",
+        "quelle": "opencaselaw"
+      },
+      "regesteAmtlich": false,
+      "abschnitte": [
+        {
+          "typ": "erwaegung",
+          "bloecke": [
+            {
+              "marke": "E. 1",
+              "tiefe": 1,
+              "text": "Das Verfahren SK.2025.11 wird als gegenstandslos abgeschrieben."
+            },
+            {
+              "marke": "E. 2",
+              "tiefe": 1,
+              "text": "Die Verfahrenskosten von Fr. 300.-- werden A. auferlegt."
+            },
+            {
+              "marke": "E. 3",
+              "tiefe": 1,
+              "text": "Diese Verfügung wird den Parteien schriftlich eröffnet.\n\nIm Namen der Strafkammer des Bundesstrafgerichts\n\nDer Einzelrichter\n\nDie Gerichtsschreiberin\n\nSK.2025.11 5 Zustellung an − Bundesanwaltschaft, Herrn Stefan Tränkle, Leiter Rechtsdienst − Eidg. Finanzdepartement EFD, Strafrechtsdienst, Frau Rechtsanwältin Lucie Schafroth − Herrn A. Nach Eintritt der Rechtskraft mitzuteilen an − Eidg. Finanzdepartement EFD als Vollzugsbehörde Rechtsmittelbelehrung Beschwerde an die Beschwerdekammer des Bundesstrafgerichts Gegen Verfügungen und Beschlüsse sowie die Verfahrenshandlungen der Strafkammer des Bundesstrafgerichts als erstinstanzliches Gericht, ausgenommen verfahrensleitende Entscheide, kann innert 10 Tagen schriftlich und begründet Beschwerde bei der Beschwerdekammer des Bundesstrafgerichts geführt werden (Art. 393 Abs. 1 lit. b und Art. 396 Abs. 1 StPO; Art. 37 Abs. 1 StBOG).\n\nMit der Beschwerde können gerügt werden: a. Rechtsverletzungen, einschliesslich Überschreitung und Missbrauch des Ermessens, Rechtsverweigerung und Rechtsverzögerung; b. die unvollständige oder unrichtige Feststellung des Sachverhalts; c. Unangemessenheit (Art. 393 Abs. 2 StPO). Einhaltung der Fristen Eingaben müssen spätestens am letzten Tag der Frist bei der Strafbehörde abgegeben oder zu deren Handen der Schweizerischen Post, einer schweizerischen diplomatischen oder konsularischen Vertretung oder, im Falle von inhaftierten Personen, der Anstaltsleitung übergeben werden (Art. 91 Abs. 2 StPO).\n\nVersand: 1. Oktober 2026"
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [],
+      "zitierteNormen": [
+        "Art. 10 Abs. 4 VSTRR",
+        "Art. 19 Abs. 2 STPO",
+        "Art. 36 Abs. 2 STBOG",
+        "Art. 37 Abs. 1 STBOG",
+        "Art. 393 Abs. 2 STPO",
+        "Art. 396 Abs. 1 STPO",
+        "Art. 91 Abs. 2 STPO",
+        "Art. 97 Abs. 1 VSTRR"
+      ],
+      "normKeys": [
+        "STBOG",
+        "STPO",
+        "VSTRR"
+      ],
+      "zitierteEntscheide": [
+        "2C_237/2009",
+        "SK.2025.11"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://bstger.weblaw.ch/api/getDocumentContent/26628af0-4dd3-3170-ba5f-61aa9c601faf",
+      "abgerufen": "2026-11-02",
+      "fassungsToken": "f219d03460c0f6c3d1f13165ac95cdb86654ca07aa63e84b1c30e7ec11b35916",
+      "sha": "89c774d6c80aa2f113b4bd22514cef7c6aaab3c57435ec73a803ef88b3af520e",
+      "ecli": "ECLI:CH:BSTGER:2026:SK.2025.11"
+    }
+  ]
+}

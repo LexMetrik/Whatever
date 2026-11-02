@@ -1,6 +1,96 @@
 {
-  "erzeugt": "2026-10-26",
+  "erzeugt": "2026-11-02",
   "entscheide": [
+    {
+      "key": "bs_appellationsgericht_AUS.2026.97",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "AUS.2026.97",
+      "bgeReferenz": null,
+      "datum": "2026-10-30",
+      "zitierung": "Appellationsgericht BS AUS.2026.97 vom 30.10.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Ausschaffungshaft",
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "AIG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.97.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80212&Template=search_result_document.html",
+      "richter": [
+        {
+          "s": "jucker-beat",
+          "r": "vorsitz"
+        }
+      ]
+    },
+    {
+      "key": "bs_appellationsgericht_AUS.2026.95",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "AUS.2026.95",
+      "bgeReferenz": null,
+      "datum": "2026-10-28",
+      "zitierung": "Appellationsgericht BS AUS.2026.95 vom 28.10.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Anordnung der Ausschaffungshaft",
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "AIG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.95.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80203&Template=search_result_document.html",
+      "richter": [
+        {
+          "s": "jucker-beat",
+          "r": "vorsitz"
+        }
+      ]
+    },
+    {
+      "key": "bs_appellationsgericht_AUS.2026.96",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "AUS.2026.96",
+      "bgeReferenz": null,
+      "datum": "2026-10-28",
+      "zitierung": "Appellationsgericht BS AUS.2026.96 vom 28.10.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Vorbereitungshaft nach Art. 76a AIG (Haft im Rahmen des Dublin-Verfahrens)",
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "AIG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.96.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80202&Template=search_result_document.html",
+      "richter": [
+        {
+          "s": "jucker-beat",
+          "r": "vorsitz"
+        }
+      ]
+    },
     {
       "key": "bs_appellationsgericht_AUS.2026.92",
       "gericht": "bs_appellationsgericht",
@@ -58,6 +148,238 @@
         {
           "s": "jucker-beat",
           "r": "vorsitz"
+        }
+      ]
+    },
+    {
+      "key": "bs_appellationsgericht_AUS.2026.91",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "AUS.2026.91",
+      "bgeReferenz": null,
+      "datum": "2026-10-22",
+      "zitierung": "Appellationsgericht BS AUS.2026.91 vom 22.10.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Ausschaffungshaft (Art. 76 Abs. 1 AIG)",
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "AIG",
+        "STGB"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.91.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80193&Template=search_result_document.html",
+      "richter": [
+        {
+          "s": "zurcher-alexander",
+          "r": "vorsitz"
+        }
+      ]
+    },
+    {
+      "key": "bvger_C_4806_2026",
+      "gericht": "bvger",
+      "gerichtName": "Bundesverwaltungsgericht",
+      "gerichtstyp": "bundesverwaltungsgericht",
+      "kanton": "CH",
+      "nummer": "C-4806/2026",
+      "bgeReferenz": null,
+      "datum": "2026-10-22",
+      "zitierung": "BVGer C-4806/2026 vom 22. Oktober 2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": true,
+      "regesteKurz": "Zwangsanschluss an die Auffangeinrichtung",
+      "sachgebiet": "sozialversicherung",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "BVG",
+        "VGG",
+        "VWVG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "bund/bvger/C_4806_2026.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://bvger.weblaw.ch/cache?id=1c77a702-ba4e-4964-afa5-6dc02b8b0988&guiLanguage=de",
+      "richter": [
+        {
+          "s": "egli-philipp",
+          "r": "vorsitz"
+        },
+        {
+          "s": "meier-andrea",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bvger_E_5533_2025",
+      "gericht": "bvger",
+      "gerichtName": "Bundesverwaltungsgericht",
+      "gerichtstyp": "bundesverwaltungsgericht",
+      "kanton": "CH",
+      "nummer": "E-5533/2025",
+      "bgeReferenz": null,
+      "datum": "2026-10-22",
+      "zitierung": "BVGer E-5533/2025 vom 22. Oktober 2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": true,
+      "regesteKurz": "Asyl und Wegweisung",
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "AIG",
+        "ASYLG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "VGG",
+        "VWVG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "bund/bvger/E_5533_2025.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://bvger.weblaw.ch/cache?id=88a14111-c689-4eea-aead-9611c28430a8&guiLanguage=de",
+      "richter": [
+        {
+          "s": "noli-lorenz",
+          "r": "vorsitz"
+        },
+        {
+          "s": "scherrer-banziger-jeannine",
+          "r": "mitglied"
+        },
+        {
+          "s": "breitenmoser-irene",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bvger_E_7454_2026",
+      "gericht": "bvger",
+      "gerichtName": "Bundesverwaltungsgericht",
+      "gerichtstyp": "bundesverwaltungsgericht",
+      "kanton": "CH",
+      "nummer": "E-7454/2026",
+      "bgeReferenz": null,
+      "datum": "2026-10-22",
+      "zitierung": "BVGer E-7454/2026 vom 22. Oktober 2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": true,
+      "regesteKurz": "Asyl und Wegweisung (Mehrfachgesuch/Wiedererwägung)",
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "ASYLG",
+        "BV",
+        "VGG",
+        "VWVG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "bund/bvger/E_7454_2026.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://bvger.weblaw.ch/cache?id=31ae3d82-1bdf-4b14-bde7-248b2f0f4cc4&guiLanguage=de",
+      "richter": [
+        {
+          "s": "balmelli-barbara",
+          "r": "vorsitz"
+        },
+        {
+          "s": "scherrer-banziger-jeannine",
+          "r": "mitglied"
+        },
+        {
+          "s": "gloor-olivier",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bvger_C_3212_2026",
+      "gericht": "bvger",
+      "gerichtName": "Bundesverwaltungsgericht",
+      "gerichtstyp": "bundesverwaltungsgericht",
+      "kanton": "CH",
+      "nummer": "C-3212/2026",
+      "bgeReferenz": null,
+      "datum": "2026-10-21",
+      "zitierung": "BVGer C-3212/2026 vom 21. Oktober 2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": true,
+      "regesteKurz": "Befreiung Versicherungspflicht",
+      "sachgebiet": "sozialversicherung",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "KVG",
+        "VGG",
+        "VWVG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "bund/bvger/C_3212_2026.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://bvger.weblaw.ch/cache?id=a73b61bc-ec4e-4515-a403-bffd723eda5c&guiLanguage=de",
+      "richter": [
+        {
+          "s": "egli-philipp",
+          "r": "vorsitz"
+        },
+        {
+          "s": "meier-andrea",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bvger_D_7327_2026",
+      "gericht": "bvger",
+      "gerichtName": "Bundesverwaltungsgericht",
+      "gerichtstyp": "bundesverwaltungsgericht",
+      "kanton": "CH",
+      "nummer": "D-7327/2026",
+      "bgeReferenz": null,
+      "datum": "2026-10-21",
+      "zitierung": "BVGer D-7327/2026 vom 21. Oktober 2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": true,
+      "regesteKurz": "Vollzug der Wegweisung (Wiedererwägung)",
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "ASYLG",
+        "BGG",
+        "EMRK",
+        "VGG",
+        "VWVG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "bund/bvger/D_7327_2026.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://bvger.weblaw.ch/cache?id=f4f26977-27f8-46d3-b2cf-374f83a79b96&guiLanguage=de",
+      "richter": [
+        {
+          "s": "theis-contessina",
+          "r": "vorsitz"
+        },
+        {
+          "s": "gerber-kaspar",
+          "r": "mitglied"
+        },
+        {
+          "s": "von-wattenwyl-martina",
+          "r": "gerichtsschreiber"
         }
       ]
     },
@@ -332,6 +654,32 @@
       "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/SBK_2026_57_ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd6097637d86dd02d5476b5a1df8bc6b4c5ed335675ca9b0d2e3459635248d456089a7aedc1bc0425c099a9488a18062b80f8de?path=ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd6097637d86dd02d5476b5a1df8bc6b4c5ed335675ca9b0d2e3459635248d456089a7aedc1bc0425c099a9488a18062b80f8de&pathIsEncrypted=1&dossiernummer=SBK_2026_57"
     },
     {
+      "key": "gr_gerichte_SV2202652",
+      "gericht": "gr_gerichte",
+      "gerichtName": "Obergericht GR",
+      "gerichtstyp": "kantonal",
+      "kanton": "GR",
+      "nummer": "SV2 26 52",
+      "bgeReferenz": null,
+      "datum": "2026-10-14",
+      "zitierung": "Obergericht GR SV2 26 52 vom 14.10.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "sozialversicherung",
+      "sprache": "de",
+      "normKeys": [
+        "AHVG",
+        "AHVV",
+        "ATSG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/GR/gr_gerichte/SV2202652.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/SV2_2026_52_1c5ca38e769f089c2e67b39c2d2861d0eb5ebec6b0b1194a6306e363c3b963a5ac43650e32b1728b9d0d3c42ed7a44dc803a726c4a17dddf6c94d829b700801c5a5f25e66155e009fe9ca2f452b7c8e4?path=1c5ca38e769f089c2e67b39c2d2861d0eb5ebec6b0b1194a6306e363c3b963a5ac43650e32b1728b9d0d3c42ed7a44dc803a726c4a17dddf6c94d829b700801c5a5f25e66155e009fe9ca2f452b7c8e4&pathIsEncrypted=1&dossiernummer=SV2_2026_52"
+    },
+    {
       "key": "bs_appellationsgericht_AUS.2026.88",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -358,6 +706,93 @@
         {
           "s": "jucker-beat",
           "r": "vorsitz"
+        }
+      ]
+    },
+    {
+      "key": "bstger_BE_2025_23",
+      "gericht": "bstger",
+      "gerichtName": "Bundesstrafgericht",
+      "gerichtstyp": "bundesstrafgericht",
+      "kanton": "CH",
+      "nummer": "BE.2025.23",
+      "bgeReferenz": null,
+      "datum": "2026-10-13",
+      "zitierung": "BStGer BE.2025.23 vom 13. Oktober 2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": true,
+      "regesteKurz": "Entsiegelung (Art. 50 Abs. 3 VStrR)",
+      "sachgebiet": "straf",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "STBOG",
+        "VSTRR"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "bund/bstger/BE_2025_23.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://bstger.weblaw.ch/api/getDocumentContent/fa2b8812-4f65-3357-82b1-83af6065b4ff",
+      "richter": [
+        {
+          "s": "robert-nicoud-patrick",
+          "r": "vorsitz"
+        },
+        {
+          "s": "forni-miriam",
+          "r": "mitglied"
+        },
+        {
+          "s": "heimgartner-stefan",
+          "r": "mitglied"
+        },
+        {
+          "s": "ebneter-stephan",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bstger_BG_2026_79",
+      "gericht": "bstger",
+      "gerichtName": "Bundesstrafgericht",
+      "gerichtstyp": "bundesstrafgericht",
+      "kanton": "CH",
+      "nummer": "BG.2026.79",
+      "bgeReferenz": null,
+      "datum": "2026-10-13",
+      "zitierung": "BStGer BG.2026.79 vom 13. Oktober 2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": true,
+      "regesteKurz": "Conflit de fors (art. 40 al. 2 CPP)",
+      "sachgebiet": "straf",
+      "sprache": "fr",
+      "normKeys": [
+        "STGB",
+        "STPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "bund/bstger/BG_2026_79.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://bstger.weblaw.ch/api/getDocumentContent/e1f18d0b-9381-3408-ac83-99817003ef9d",
+      "richter": [
+        {
+          "s": "robert-nicoud-patrick",
+          "r": "vorsitz"
+        },
+        {
+          "s": "garre-roy",
+          "r": "mitglied"
+        },
+        {
+          "s": "zufferey-nathalie",
+          "r": "mitglied"
+        },
+        {
+          "s": "fontana-joelle",
+          "r": "gerichtsschreiber"
         }
       ]
     },
@@ -390,6 +825,59 @@
       "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/ZR2_2025_45_1c5ca38e769f089c2e67b39c2d2861d0eb5ebec6b0b1194a6306e363c3b963a5ecc3dbd5b4e4a8b4d49c00a11250e44e22a43cd20d62a02a8b9afa28b59cfc9179d588be5384148f687fa7ade05ab6c7?path=1c5ca38e769f089c2e67b39c2d2861d0eb5ebec6b0b1194a6306e363c3b963a5ecc3dbd5b4e4a8b4d49c00a11250e44e22a43cd20d62a02a8b9afa28b59cfc9179d588be5384148f687fa7ade05ab6c7&pathIsEncrypted=1&dossiernummer=ZR2_2025_45"
     },
     {
+      "key": "be_verwaltungsgericht_2002026572",
+      "gericht": "be_verwaltungsgericht",
+      "gerichtName": "Verwaltungsgericht BE",
+      "gerichtstyp": "kantonal",
+      "kanton": "BE",
+      "nummer": "200 2026 572",
+      "bgeReferenz": null,
+      "datum": "2026-10-12",
+      "zitierung": "Verwaltungsgericht BE 200 2026 572 vom 12.10.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "sozialversicherung",
+      "sprache": "de",
+      "normKeys": [
+        "AHVG",
+        "ATSG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BE/be_verwaltungsgericht/2002026572.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://www.vg-urteile.apps.be.ch/tribunapublikation/tribunavtplus/ServletDownload/200_2026_572_1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad20316e09752dcadc82f648f6832963cf615200911e375a184fc86f9687dea3e5332db0661c9c865ef727c2726d28198c1?path=1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad20316e09752dcadc82f648f6832963cf615200911e375a184fc86f9687dea3e5332db0661c9c865ef727c2726d28198c1&pathIsEncrypted=1&dossiernummer=200_2026_572"
+    },
+    {
+      "key": "be_verwaltungsgericht_2002025687",
+      "gericht": "be_verwaltungsgericht",
+      "gerichtName": "Verwaltungsgericht BE",
+      "gerichtstyp": "kantonal",
+      "kanton": "BE",
+      "nummer": "200 2025 687",
+      "bgeReferenz": null,
+      "datum": "2026-10-09",
+      "zitierung": "Verwaltungsgericht BE 200 2025 687 vom 09.10.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "privat",
+      "sprache": "de",
+      "normKeys": [
+        "ATSG",
+        "ELG",
+        "ELV",
+        "OR",
+        "ZGB"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BE/be_verwaltungsgericht/2002025687.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://www.vg-urteile.apps.be.ch/tribunapublikation/tribunavtplus/ServletDownload/200_2025_687_1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2f1fe4d2ac469bab49b9d238ba1ae0993194f6154f86f32d9cbbc35a8b8d42069f74ad62647cf668884433f0af68234fe?path=1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2f1fe4d2ac469bab49b9d238ba1ae0993194f6154f86f32d9cbbc35a8b8d42069f74ad62647cf668884433f0af68234fe&pathIsEncrypted=1&dossiernummer=200_2025_687"
+    },
+    {
       "key": "gr_gerichte_SBK202686",
       "gericht": "gr_gerichte",
       "gerichtName": "Obergericht GR",
@@ -414,6 +902,128 @@
       "datei": "kanton/GR/gr_gerichte/SBK202686.json",
       "quelle": "opencaselaw",
       "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/SBK_2026_86_1c5ca38e769f089c2e67b39c2d2861d0eb5ebec6b0b1194a6306e363c3b963a5aec5c9c1b5d72d8bb9529780b1e2a9ceeb96ecba98eb7cfddce74ea07125c6366b0d33c62b183cb9c4075bdea8ca87dd?path=1c5ca38e769f089c2e67b39c2d2861d0eb5ebec6b0b1194a6306e363c3b963a5aec5c9c1b5d72d8bb9529780b1e2a9ceeb96ecba98eb7cfddce74ea07125c6366b0d33c62b183cb9c4075bdea8ca87dd&pathIsEncrypted=1&dossiernummer=SBK_2026_86"
+    },
+    {
+      "key": "gr_gerichte_SBK2026101",
+      "gericht": "gr_gerichte",
+      "gerichtName": "Obergericht GR",
+      "gerichtstyp": "kantonal",
+      "kanton": "GR",
+      "nummer": "SBK 26 101",
+      "bgeReferenz": null,
+      "datum": "2026-10-08",
+      "zitierung": "Obergericht GR SBK 26 101 vom 08.10.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "MWSTG",
+        "SCHKG",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/GR/gr_gerichte/SBK2026101.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/SBK_2026_101_1c5ca38e769f089c2e67b39c2d2861d0eb5ebec6b0b1194a6306e363c3b963a5b364368ebedf39005812f20ffb0f070ec123d7d851d120413adcc2db7638cb9c328a00faa68bd1ff76422bb2b03c7e68?path=1c5ca38e769f089c2e67b39c2d2861d0eb5ebec6b0b1194a6306e363c3b963a5b364368ebedf39005812f20ffb0f070ec123d7d851d120413adcc2db7638cb9c328a00faa68bd1ff76422bb2b03c7e68&pathIsEncrypted=1&dossiernummer=SBK_2026_101"
+    },
+    {
+      "key": "gr_gerichte_VR320266",
+      "gericht": "gr_gerichte",
+      "gerichtName": "Obergericht GR",
+      "gerichtstyp": "kantonal",
+      "kanton": "GR",
+      "nummer": "VR3 26 6",
+      "bgeReferenz": null,
+      "datum": "2026-10-08",
+      "zitierung": "Obergericht GR VR3 26 6 vom 08.10.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "BV",
+        "NHG",
+        "RPG",
+        "RPV"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/GR/gr_gerichte/VR320266.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/VR3_2026_6_1c5ca38e769f089c2e67b39c2d2861d0eb5ebec6b0b1194a6306e363c3b963a51f6bc31f98d363693539daad9bb06ae02775643b5a8cfc0fcc8dd906d38b4012a37c5972069eb3daaab94fd752e51b21?path=1c5ca38e769f089c2e67b39c2d2861d0eb5ebec6b0b1194a6306e363c3b963a51f6bc31f98d363693539daad9bb06ae02775643b5a8cfc0fcc8dd906d38b4012a37c5972069eb3daaab94fd752e51b21&pathIsEncrypted=1&dossiernummer=VR3_2026_6"
+    },
+    {
+      "key": "bstger_BE_2026_26",
+      "gericht": "bstger",
+      "gerichtName": "Bundesstrafgericht",
+      "gerichtstyp": "bundesstrafgericht",
+      "kanton": "CH",
+      "nummer": "BE.2026.26",
+      "bgeReferenz": null,
+      "datum": "2026-10-07",
+      "zitierung": "BStGer BE.2026.26 vom 7. Oktober 2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": true,
+      "regesteKurz": "Entsiegelung (Art. 50 Abs. 3 VStrR)",
+      "sachgebiet": "straf",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "STBOG",
+        "VSTRR"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "bund/bstger/BE_2026_26.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://bstger.weblaw.ch/api/getDocumentContent/694090ed-ecb7-3817-8741-da4aaa096ef5",
+      "richter": [
+        {
+          "s": "robert-nicoud-patrick",
+          "r": "vorsitz"
+        },
+        {
+          "s": "heimgartner-stefan",
+          "r": "mitglied"
+        },
+        {
+          "s": "ulrich-felix",
+          "r": "mitglied"
+        },
+        {
+          "s": "ebneter-stephan",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "be_verwaltungsgericht_2002025261",
+      "gericht": "be_verwaltungsgericht",
+      "gerichtName": "Verwaltungsgericht BE",
+      "gerichtstyp": "kantonal",
+      "kanton": "BE",
+      "nummer": "200 2025 261",
+      "bgeReferenz": null,
+      "datum": "2026-10-07",
+      "zitierung": "Verwaltungsgericht BE 200 2025 261 vom 07.10.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "sozialversicherung",
+      "sprache": "de",
+      "normKeys": [
+        "ATSG",
+        "UVG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BE/be_verwaltungsgericht/2002025261.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://www.vg-urteile.apps.be.ch/tribunapublikation/tribunavtplus/ServletDownload/200_2025_261_1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad297226f502bdba528d14f2bde2d7dfa5f14e894a1d9ff04602fd21858779d20a0ccfae9d90dfad806954da79e9fe2a8f1?path=1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad297226f502bdba528d14f2bde2d7dfa5f14e894a1d9ff04602fd21858779d20a0ccfae9d90dfad806954da79e9fe2a8f1&pathIsEncrypted=1&dossiernummer=200_2025_261"
     },
     {
       "key": "bs_appellationsgericht_AUS.2026.87",
@@ -504,6 +1114,136 @@
       "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/VR1_2026_45_ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd609764bbaba210a0b378889d25f8b2341b10d21ea40c65893e02b60d8f9ab1325be47edc1bc0425c099a9488a18062b80f8de?path=ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd609764bbaba210a0b378889d25f8b2341b10d21ea40c65893e02b60d8f9ab1325be47edc1bc0425c099a9488a18062b80f8de&pathIsEncrypted=1&dossiernummer=VR1_2026_45"
     },
     {
+      "key": "be_verwaltungsgericht_100202665",
+      "gericht": "be_verwaltungsgericht",
+      "gerichtName": "Verwaltungsgericht BE",
+      "gerichtstyp": "kantonal",
+      "kanton": "BE",
+      "nummer": "100 2026 65",
+      "bgeReferenz": null,
+      "datum": "2026-10-06",
+      "zitierung": "Verwaltungsgericht BE 100 2026 65 vom 06.10.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "steuern",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "DBG",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BE/be_verwaltungsgericht/100202665.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://www.vg-urteile.apps.be.ch/tribunapublikation/tribunavtplus/ServletDownload/100_2026_65_1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2ee73de18325d592cddd1cca617c0cb65aa29395fe82e1238f796dbed9af91445ee0105e5968c7501affaf398b4d9f591?path=1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2ee73de18325d592cddd1cca617c0cb65aa29395fe82e1238f796dbed9af91445ee0105e5968c7501affaf398b4d9f591&pathIsEncrypted=1&dossiernummer=100_2026_65"
+    },
+    {
+      "key": "be_verwaltungsgericht_2002025173",
+      "gericht": "be_verwaltungsgericht",
+      "gerichtName": "Verwaltungsgericht BE",
+      "gerichtstyp": "kantonal",
+      "kanton": "BE",
+      "nummer": "200 2025 173",
+      "bgeReferenz": null,
+      "datum": "2026-10-06",
+      "zitierung": "Verwaltungsgericht BE 200 2025 173 vom 06.10.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "sozialversicherung",
+      "sprache": "de",
+      "normKeys": [
+        "ATSG",
+        "IVG",
+        "IVV"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BE/be_verwaltungsgericht/2002025173.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://www.vg-urteile.apps.be.ch/tribunapublikation/tribunavtplus/ServletDownload/200_2025_173_1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2f26d714c6fe3456dd2dc9560ca7a106be2cadf8aaf228314734f9c04c60da6dd687da8783345693809211873b3604c80?path=1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2f26d714c6fe3456dd2dc9560ca7a106be2cadf8aaf228314734f9c04c60da6dd687da8783345693809211873b3604c80&pathIsEncrypted=1&dossiernummer=200_2025_173"
+    },
+    {
+      "key": "be_verwaltungsgericht_200202529",
+      "gericht": "be_verwaltungsgericht",
+      "gerichtName": "Verwaltungsgericht BE",
+      "gerichtstyp": "kantonal",
+      "kanton": "BE",
+      "nummer": "200 2025 29",
+      "bgeReferenz": null,
+      "datum": "2026-10-06",
+      "zitierung": "Verwaltungsgericht BE 200 2025 29 vom 06.10.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "sozialversicherung",
+      "sprache": "de",
+      "normKeys": [
+        "ATSG",
+        "IVG",
+        "IVV"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BE/be_verwaltungsgericht/200202529.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://www.vg-urteile.apps.be.ch/tribunapublikation/tribunavtplus/ServletDownload/200_2025_29_1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2f2ff69e1392cba1d9ce7171988d38899aab50c87fa3eb7d467ec5f392781844a02946b40c488664cd5e50242df880186?path=1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2f2ff69e1392cba1d9ce7171988d38899aab50c87fa3eb7d467ec5f392781844a02946b40c488664cd5e50242df880186&pathIsEncrypted=1&dossiernummer=200_2025_29"
+    },
+    {
+      "key": "gr_gerichte_SV2202636",
+      "gericht": "gr_gerichte",
+      "gerichtName": "Obergericht GR",
+      "gerichtstyp": "kantonal",
+      "kanton": "GR",
+      "nummer": "SV2 26 36",
+      "bgeReferenz": null,
+      "datum": "2026-10-06",
+      "zitierung": "Obergericht GR SV2 26 36 vom 06.10.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "sozialversicherung",
+      "sprache": "de",
+      "normKeys": [
+        "AHVG",
+        "AHVV",
+        "ATSG",
+        "BVG",
+        "OR",
+        "SCHKG",
+        "ZGB"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/GR/gr_gerichte/SV2202636.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/SV2_2026_36_1c5ca38e769f089c2e67b39c2d2861d0eb5ebec6b0b1194a6306e363c3b963a5d878b22b89a20121f3d2bd7e418606031ca883d167444335f771572a464414f007802735978308d4e3bda2a8f3204a65?path=1c5ca38e769f089c2e67b39c2d2861d0eb5ebec6b0b1194a6306e363c3b963a5d878b22b89a20121f3d2bd7e418606031ca883d167444335f771572a464414f007802735978308d4e3bda2a8f3204a65&pathIsEncrypted=1&dossiernummer=SV2_2026_36"
+    },
+    {
+      "key": "gr_gerichte_ZR12026155",
+      "gericht": "gr_gerichte",
+      "gerichtName": "Obergericht GR",
+      "gerichtstyp": "kantonal",
+      "kanton": "GR",
+      "nummer": "ZR1 26 155",
+      "bgeReferenz": null,
+      "datum": "2026-10-06",
+      "zitierung": "Obergericht GR ZR1 26 155 vom 06.10.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/GR/gr_gerichte/ZR12026155.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/ZR1_2026_155_1c5ca38e769f089c2e67b39c2d2861d0eb5ebec6b0b1194a6306e363c3b963a5cced555fe90bdb23b7eda3cdb1f33bc3a030672a929b2d3e9df36f7576e2987d4e70edf138f8e615894403c02ff0b3fa?path=1c5ca38e769f089c2e67b39c2d2861d0eb5ebec6b0b1194a6306e363c3b963a5cced555fe90bdb23b7eda3cdb1f33bc3a030672a929b2d3e9df36f7576e2987d4e70edf138f8e615894403c02ff0b3fa&pathIsEncrypted=1&dossiernummer=ZR1_2026_155"
+    },
+    {
       "key": "bs_appellationsgericht_AUS.2026.84",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -534,6 +1274,34 @@
           "r": "vorsitz"
         }
       ]
+    },
+    {
+      "key": "gr_gerichte_SR2202669",
+      "gericht": "gr_gerichte",
+      "gerichtName": "Obergericht GR",
+      "gerichtstyp": "kantonal",
+      "kanton": "GR",
+      "nummer": "SR2 26 69",
+      "bgeReferenz": null,
+      "datum": "2026-10-05",
+      "zitierung": "Obergericht GR SR2 26 69 vom 05.10.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "BETMG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/GR/gr_gerichte/SR2202669.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/SR2_2026_69_1c5ca38e769f089c2e67b39c2d2861d0eb5ebec6b0b1194a6306e363c3b963a5777585c72731a7a670530d2516ca3f41d06d51758e117ec047c86fa8179c1f23778b6f0cad49bbb59d59f8c1ea3e0952?path=1c5ca38e769f089c2e67b39c2d2861d0eb5ebec6b0b1194a6306e363c3b963a5777585c72731a7a670530d2516ca3f41d06d51758e117ec047c86fa8179c1f23778b6f0cad49bbb59d59f8c1ea3e0952&pathIsEncrypted=1&dossiernummer=SR2_2026_69"
     },
     {
       "key": "bs_appellationsgericht_AUS.2026.86",
@@ -592,6 +1360,42 @@
         {
           "s": "jucker-beat",
           "r": "vorsitz"
+        }
+      ]
+    },
+    {
+      "key": "bstger_SK_2025_11",
+      "gericht": "bstger",
+      "gerichtName": "Bundesstrafgericht",
+      "gerichtstyp": "bundesstrafgericht",
+      "kanton": "CH",
+      "nummer": "SK.2025.11",
+      "bgeReferenz": null,
+      "datum": "2026-10-01",
+      "zitierung": "BStGer SK.2025.11 vom 1. Oktober 2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": true,
+      "regesteKurz": "Abschreibung des Verfahrens (Art. 10 Abs. 4 VStrR analog)",
+      "sachgebiet": "straf",
+      "sprache": "de",
+      "normKeys": [
+        "STBOG",
+        "STPO",
+        "VSTRR"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "bund/bstger/SK_2025_11.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://bstger.weblaw.ch/api/getDocumentContent/26628af0-4dd3-3170-ba5f-61aa9c601faf",
+      "richter": [
+        {
+          "s": "demont-maric",
+          "r": "vorsitz"
+        },
+        {
+          "s": "seydel-annina",
+          "r": "gerichtsschreiber"
         }
       ]
     },
@@ -939,6 +1743,51 @@
       "datei": "kanton/BE/be_verwaltungsgericht/2002025186.json",
       "quelle": "opencaselaw",
       "quelleUrl": "https://www.vg-urteile.apps.be.ch/tribunapublikation/tribunavtplus/ServletDownload/200_2025_186_1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2653ee0ae4c0808deddff64d66350882ed42ed879a37eb184d5a8e630e3b6cffc29f96eda0b8ff860ab947905c17e1a60?path=1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2653ee0ae4c0808deddff64d66350882ed42ed879a37eb184d5a8e630e3b6cffc29f96eda0b8ff860ab947905c17e1a60&pathIsEncrypted=1&dossiernummer=200_2025_186"
+    },
+    {
+      "key": "bstger_RR_2026_114",
+      "gericht": "bstger",
+      "gerichtName": "Bundesstrafgericht",
+      "gerichtstyp": "bundesstrafgericht",
+      "kanton": "CH",
+      "nummer": "RR.2026.114",
+      "bgeReferenz": null,
+      "datum": "2026-09-24",
+      "zitierung": "BStGer RR.2026.114 vom 24. September 2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": true,
+      "regesteKurz": "Entraide judiciaire internationale en matière pénale au Portugal; remise de moyens de preuve (art. 74 EIMP)",
+      "sachgebiet": "straf",
+      "sprache": "fr",
+      "normKeys": [
+        "BGG",
+        "IRSG",
+        "STBOG",
+        "VWVG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "bund/bstger/RR_2026_114.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://bstger.weblaw.ch/api/getDocumentContent/91e4177c-9bde-32da-9a2b-88e4258a1e11",
+      "richter": [
+        {
+          "s": "robert-nicoud-patrick",
+          "r": "vorsitz"
+        },
+        {
+          "s": "garre-roy",
+          "r": "mitglied"
+        },
+        {
+          "s": "zufferey-nathalie",
+          "r": "mitglied"
+        },
+        {
+          "s": "fontana-joelle",
+          "r": "gerichtsschreiber"
+        }
+      ]
     },
     {
       "key": "bstger_BE_2026_18",
@@ -1453,6 +2302,32 @@
       "datei": "kanton/GR/gr_gerichte/VR1202564.json",
       "quelle": "opencaselaw",
       "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/VR1_2025_64_ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd609764f255cc8d300344f555948e97517c2e52631158dbee78310732aefd978ef1631edc1bc0425c099a9488a18062b80f8de?path=ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd609764f255cc8d300344f555948e97517c2e52631158dbee78310732aefd978ef1631edc1bc0425c099a9488a18062b80f8de&pathIsEncrypted=1&dossiernummer=VR1_2025_64"
+    },
+    {
+      "key": "zh_obergericht_PA260007",
+      "gericht": "zh_obergericht",
+      "gerichtName": "Obergericht ZH",
+      "gerichtstyp": "kantonal",
+      "kanton": "ZH",
+      "nummer": "PA260007",
+      "bgeReferenz": null,
+      "datum": "2026-09-16",
+      "zitierung": "Obergericht ZH PA260007 vom 16.09.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "privat",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/ZH/zh_obergericht/PA260007.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://www.gerichte-zh.ch/entscheide/entscheide-drucken.html?tx_frpentscheidsammlungextended_pi3[entscheidDrucken]=42232"
     },
     {
       "key": "bvger_D_6406_2026",
@@ -2717,6 +3592,57 @@
       "quelleUrl": "https://www.gerichte-zh.ch/entscheide/entscheide-drucken.html?tx_frpentscheidsammlungextended_pi3[entscheidDrucken]=42070"
     },
     {
+      "key": "zh_obergericht_LB260022",
+      "gericht": "zh_obergericht",
+      "gerichtName": "Obergericht ZH",
+      "gerichtstyp": "kantonal",
+      "kanton": "ZH",
+      "nummer": "LB260022",
+      "bgeReferenz": null,
+      "datum": "2026-08-31",
+      "zitierung": "Obergericht ZH LB260022 vom 31.08.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "privat",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "OR",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/ZH/zh_obergericht/LB260022.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://www.gerichte-zh.ch/entscheide/entscheide-drucken.html?tx_frpentscheidsammlungextended_pi3[entscheidDrucken]=42225"
+    },
+    {
+      "key": "zh_obergericht_PP260016",
+      "gericht": "zh_obergericht",
+      "gerichtName": "Obergericht ZH",
+      "gerichtstyp": "kantonal",
+      "kanton": "ZH",
+      "nummer": "PP260016",
+      "bgeReferenz": null,
+      "datum": "2026-08-31",
+      "zitierung": "Obergericht ZH PP260016 vom 31.08.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/ZH/zh_obergericht/PP260016.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://www.gerichte-zh.ch/entscheide/entscheide-drucken.html?tx_frpentscheidsammlungextended_pi3[entscheidDrucken]=42226"
+    },
+    {
       "key": "be_verwaltungsgericht_2002026259",
       "gericht": "be_verwaltungsgericht",
       "gerichtName": "Verwaltungsgericht BE",
@@ -2975,6 +3901,85 @@
       "datei": "kanton/BE/be_verwaltungsgericht/200202668.json",
       "quelle": "opencaselaw",
       "quelleUrl": "https://www.vg-urteile.apps.be.ch/tribunapublikation/tribunavtplus/ServletDownload/200_2026_68_1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad227cccd2ea22bfe5ef165aadbb76748fd0f36c676e64b0a793b764e7d2ad5415860bd8b9a81c3280ab2cb4101192cd8dc?path=1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad227cccd2ea22bfe5ef165aadbb76748fd0f36c676e64b0a793b764e7d2ad5415860bd8b9a81c3280ab2cb4101192cd8dc&pathIsEncrypted=1&dossiernummer=200_2026_68"
+    },
+    {
+      "key": "zh_obergericht_PP260018",
+      "gericht": "zh_obergericht",
+      "gerichtName": "Obergericht ZH",
+      "gerichtstyp": "kantonal",
+      "kanton": "ZH",
+      "nummer": "PP260018",
+      "bgeReferenz": null,
+      "datum": "2026-08-25",
+      "zitierung": "Obergericht ZH PP260018 vom 25.08.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/ZH/zh_obergericht/PP260018.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://www.gerichte-zh.ch/entscheide/entscheide-drucken.html?tx_frpentscheidsammlungextended_pi3[entscheidDrucken]=42172"
+    },
+    {
+      "key": "zh_obergericht_PS260238",
+      "gericht": "zh_obergericht",
+      "gerichtName": "Obergericht ZH",
+      "gerichtstyp": "kantonal",
+      "kanton": "ZH",
+      "nummer": "PS260238",
+      "bgeReferenz": null,
+      "datum": "2026-08-25",
+      "zitierung": "Obergericht ZH PS260238 vom 25.08.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "GEBV_SCHKG",
+        "SCHKG",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/ZH/zh_obergericht/PS260238.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://www.gerichte-zh.ch/entscheide/entscheide-drucken.html?tx_frpentscheidsammlungextended_pi3[entscheidDrucken]=42060"
+    },
+    {
+      "key": "zh_obergericht_PS260283",
+      "gericht": "zh_obergericht",
+      "gerichtName": "Obergericht ZH",
+      "gerichtstyp": "kantonal",
+      "kanton": "ZH",
+      "nummer": "PS260283",
+      "bgeReferenz": null,
+      "datum": "2026-08-25",
+      "zitierung": "Obergericht ZH PS260283 vom 25.08.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "GEBV_SCHKG",
+        "SCHKG",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/ZH/zh_obergericht/PS260283.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://www.gerichte-zh.ch/entscheide/entscheide-drucken.html?tx_frpentscheidsammlungextended_pi3[entscheidDrucken]=42014"
     },
     {
       "key": "be_verwaltungsgericht_2002026454",
@@ -4603,6 +5608,41 @@
       "quelleUrl": "https://www.gerichte-zh.ch/entscheide/entscheide-drucken.html?tx_frpentscheidsammlungextended_pi3[entscheidDrucken]=41582"
     },
     {
+      "key": "bs_appellationsgericht_BEZ.2026.32",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "BEZ.2026.32",
+      "bgeReferenz": null,
+      "datum": "2026-07-08",
+      "zitierung": "Appellationsgericht BS BEZ.2026.32 vom 08.07.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Nachzahlung von Prozesskosten",
+      "sachgebiet": "privat",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/BEZ.2026.32.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79825&Template=search_result_document.html",
+      "richter": [
+        {
+          "s": "steiner-olivier",
+          "r": "vorsitz"
+        },
+        {
+          "s": "menzinger-david",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bs_appellationsgericht_AUS.2026.55",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -4658,6 +5698,52 @@
       "datei": "kanton/ZH/zh_obergericht/PF260026.json",
       "quelle": "opencaselaw",
       "quelleUrl": "https://www.gerichte-zh.ch/entscheide/entscheide-drucken.html?tx_frpentscheidsammlungextended_pi3[entscheidDrucken]=41789"
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_AH.2026.2",
+      "gericht": "bs_sozialversicherungsgericht",
+      "gerichtName": "Sozialversicherungsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "AH.2026.2",
+      "bgeReferenz": null,
+      "datum": "2026-07-07",
+      "zitierung": "Sozialversicherungsgericht BS AH.2026.2 vom 07.07.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "AHVG",
+      "sachgebiet": "sozialversicherung",
+      "sprache": "de",
+      "normKeys": [
+        "AHVG",
+        "AHVV",
+        "ATSG",
+        "BGG",
+        "IVV"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/AH.2026.2.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80183&Template=search_result_document.html",
+      "richter": [
+        {
+          "s": "pfleiderer-andrea",
+          "r": "vorsitz"
+        },
+        {
+          "s": "ruhl-w",
+          "r": "mitglied"
+        },
+        {
+          "s": "muller-c",
+          "r": "mitglied"
+        },
+        {
+          "s": "dreyer-s",
+          "r": "gerichtsschreiber"
+        }
+      ]
     },
     {
       "key": "zh_obergericht_NE260004",
@@ -4783,6 +5869,132 @@
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2026.6.json",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80148&Template=search_result_document.html",
+      "richter": [
+        {
+          "s": "schnyder-r",
+          "r": "vorsitz"
+        },
+        {
+          "s": "von-aarburg-r",
+          "r": "mitglied"
+        },
+        {
+          "s": "schenker-s",
+          "r": "mitglied"
+        },
+        {
+          "s": "bertazzo-b",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_appellationsgericht_BES.2025.121",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "BES.2025.121",
+      "bgeReferenz": null,
+      "datum": "2026-07-02",
+      "zitierung": "Appellationsgericht BS BES.2025.121 vom 02.07.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Verfahrenseinstellung",
+      "sachgebiet": "straf",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/BES.2025.121.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79830&Template=search_result_document.html",
+      "richter": [
+        {
+          "s": "hoenen-christian",
+          "r": "vorsitz"
+        },
+        {
+          "s": "hauenstein-pascal",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_EL.2025.15",
+      "gericht": "bs_sozialversicherungsgericht",
+      "gerichtName": "Sozialversicherungsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "EL.2025.15",
+      "bgeReferenz": null,
+      "datum": "2026-07-02",
+      "zitierung": "Sozialversicherungsgericht BS EL.2025.15 vom 02.07.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "ELG",
+      "sachgebiet": "sozialversicherung",
+      "sprache": "de",
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "BV",
+        "ELG",
+        "ELV"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/EL.2025.15.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80165&Template=search_result_document.html",
+      "richter": [
+        {
+          "s": "schnyder-r",
+          "r": "vorsitz"
+        },
+        {
+          "s": "von-aarburg-r",
+          "r": "mitglied"
+        },
+        {
+          "s": "schenker-s",
+          "r": "mitglied"
+        },
+        {
+          "s": "wepfer-l",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_KV.2025.12",
+      "gericht": "bs_sozialversicherungsgericht",
+      "gerichtName": "Sozialversicherungsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "KV.2025.12",
+      "bgeReferenz": null,
+      "datum": "2026-07-02",
+      "zitierung": "Sozialversicherungsgericht BS KV.2025.12 vom 02.07.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "KVG",
+      "sachgebiet": "sozialversicherung",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "VVG",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/KV.2025.12.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80164&Template=search_result_document.html",
       "richter": [
         {
           "s": "schnyder-r",
@@ -5041,6 +6253,50 @@
       ]
     },
     {
+      "key": "bs_appellationsgericht_BEZ.2026.2",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "BEZ.2026.2",
+      "bgeReferenz": null,
+      "datum": "2026-06-24",
+      "zitierung": "Appellationsgericht BS BEZ.2026.2 vom 24.06.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Sistierung",
+      "sachgebiet": "privat",
+      "sprache": "de",
+      "normKeys": [
+        "BEWG",
+        "BGG",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/BEZ.2026.2.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79792&Template=search_result_document.html",
+      "richter": [
+        {
+          "s": "steiner-olivier",
+          "r": "vorsitz"
+        },
+        {
+          "s": "gelzer-claudius",
+          "r": "mitglied"
+        },
+        {
+          "s": "equey-andre",
+          "r": "mitglied"
+        },
+        {
+          "s": "zurcher-alexander",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bs_sozialversicherungsgericht_IV.2025.138",
       "gericht": "bs_sozialversicherungsgericht",
       "gerichtName": "Sozialversicherungsgericht BS",
@@ -5080,6 +6336,51 @@
         },
         {
           "s": "wepfer-l",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_AL.2025.25",
+      "gericht": "bs_sozialversicherungsgericht",
+      "gerichtName": "Sozialversicherungsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "AL.2025.25",
+      "bgeReferenz": null,
+      "datum": "2026-06-23",
+      "zitierung": "Sozialversicherungsgericht BS AL.2025.25 vom 23.06.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "AVIG",
+      "sachgebiet": "sozialversicherung",
+      "sprache": "de",
+      "normKeys": [
+        "ATSG",
+        "AVIG",
+        "AVIV",
+        "BGG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/AL.2025.25.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80139&Template=search_result_document.html",
+      "richter": [
+        {
+          "s": "pfleiderer-andrea",
+          "r": "vorsitz"
+        },
+        {
+          "s": "muller-c",
+          "r": "mitglied"
+        },
+        {
+          "s": "fasnacht-tobias",
+          "r": "mitglied"
+        },
+        {
+          "s": "marti-l",
           "r": "gerichtsschreiber"
         }
       ]
@@ -5156,6 +6457,92 @@
         },
         {
           "s": "pydar-matthew",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_appellationsgericht_VD.2025.169",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "VD.2025.169",
+      "bgeReferenz": null,
+      "datum": "2026-06-19",
+      "zitierung": "Appellationsgericht BS VD.2025.169 vom 19.06.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Beschränkung der Bewilligung für die Mitbenutzung des Materialraums der Gymnastikhalle auf dem Areal der Primarschule…",
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "BGG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/VD.2025.169.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79819&Template=search_result_document.html",
+      "richter": [
+        {
+          "s": "wullschleger-stephan",
+          "r": "vorsitz"
+        },
+        {
+          "s": "equey-andre",
+          "r": "mitglied"
+        },
+        {
+          "s": "dillena-anja",
+          "r": "mitglied"
+        },
+        {
+          "s": "hauenstein-pascal",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_appellationsgericht_ZB.2026.23",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "ZB.2026.23",
+      "bgeReferenz": null,
+      "datum": "2026-06-19",
+      "zitierung": "Appellationsgericht BS ZB.2026.23 vom 19.06.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Auflösung der Gesellschaft",
+      "sachgebiet": "privat",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "OR",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/ZB.2026.23.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80142&Template=search_result_document.html",
+      "richter": [
+        {
+          "s": "steiner-olivier",
+          "r": "vorsitz"
+        },
+        {
+          "s": "gelzer-claudius",
+          "r": "mitglied"
+        },
+        {
+          "s": "equey-andre",
+          "r": "mitglied"
+        },
+        {
+          "s": "menzinger-david",
           "r": "gerichtsschreiber"
         }
       ]
@@ -6503,6 +7890,50 @@
       ]
     },
     {
+      "key": "bs_sozialversicherungsgericht_IV.2025.105",
+      "gericht": "bs_sozialversicherungsgericht",
+      "gerichtName": "Sozialversicherungsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "IV.2025.105",
+      "bgeReferenz": null,
+      "datum": "2026-06-09",
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.105 vom 09.06.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "IVG",
+      "sachgebiet": "sozialversicherung",
+      "sprache": "de",
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.105.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80187&Template=search_result_document.html",
+      "richter": [
+        {
+          "s": "pfleiderer-andrea",
+          "r": "vorsitz"
+        },
+        {
+          "s": "ruhl-w",
+          "r": "mitglied"
+        },
+        {
+          "s": "borer-d",
+          "r": "mitglied"
+        },
+        {
+          "s": "bertazzo-b",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bs_appellationsgericht_ZB.2026.4",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -6966,6 +8397,88 @@
       ]
     },
     {
+      "key": "bge_152_I_169",
+      "gericht": "bge",
+      "gerichtName": "Bundesgericht",
+      "gerichtstyp": "bundesgericht",
+      "kanton": "CH",
+      "nummer": "152 I 169",
+      "bgeReferenz": "152 I 169",
+      "datum": "2026-06-04",
+      "zitierung": "BGE 152 I 169",
+      "leitcharakter": "leitentscheid",
+      "regesteVorhanden": true,
+      "regesteKurz": "Art. 13 Abs. 1 BV; Art. 8 EMRK; Art. 66d Abs. 1 lit. b StGB; Entstehung neuer ehelicher oder familiärer Bindungen und Aufschub des Vollzugs der strafrechtlichen Landesverweisung. Begriff der zwingenden Normen (ius cogens) des Völkerrechts…",
+      "sachgebiet": "prozess",
+      "sprache": "fr",
+      "normKeys": [
+        "ASYLG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "bund/bge/152_I_169.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://search.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-I-169%3Ade&lang=de&zoom=&type=show_document",
+      "richter": [
+        {
+          "s": "abrecht",
+          "r": "vorsitz"
+        },
+        {
+          "s": "van-de-graaf",
+          "r": "mitglied"
+        },
+        {
+          "s": "koch",
+          "r": "mitglied"
+        },
+        {
+          "s": "kolz",
+          "r": "mitglied"
+        },
+        {
+          "s": "hofmann",
+          "r": "mitglied"
+        },
+        {
+          "s": "fragniere",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bge_152_I_169__voll",
+      "gericht": "bger",
+      "gerichtName": "Bundesgericht",
+      "gerichtstyp": "bundesgericht",
+      "kanton": "CH",
+      "nummer": "7B_594/2024",
+      "bgeReferenz": null,
+      "datum": "2026-06-04",
+      "zitierung": "BGer 7B_594/2024",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "prozess",
+      "sprache": "fr",
+      "normKeys": [],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": null,
+      "quelle": "opencaselaw",
+      "quelleUrl": "http://relevancy.bger.ch/php/aza/http/index.php?highlight_docid=aza://04-06-2026-7B_594-2024&lang=de&type=show_document",
+      "verweis": {
+        "zielKey": "bge_152_I_169",
+        "ansicht": "voll",
+        "bgeReferenz": "152 I 169"
+      }
+    },
+    {
       "key": "bs_appellationsgericht_VD.2025.97",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -7388,6 +8901,52 @@
       ]
     },
     {
+      "key": "bs_sozialversicherungsgericht_AH.2025.10",
+      "gericht": "bs_sozialversicherungsgericht",
+      "gerichtName": "Sozialversicherungsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "AH.2025.10",
+      "bgeReferenz": null,
+      "datum": "2026-05-26",
+      "zitierung": "Sozialversicherungsgericht BS AH.2025.10 vom 26.05.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "AHVG",
+      "sachgebiet": "sozialversicherung",
+      "sprache": "de",
+      "normKeys": [
+        "AHVG",
+        "AHVV",
+        "ATSG",
+        "BGG",
+        "OR"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/AH.2025.10.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80138&Template=search_result_document.html",
+      "richter": [
+        {
+          "s": "pfleiderer-andrea",
+          "r": "vorsitz"
+        },
+        {
+          "s": "muller-c",
+          "r": "mitglied"
+        },
+        {
+          "s": "bammatter-glattli-s",
+          "r": "mitglied"
+        },
+        {
+          "s": "kreis-manuel",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bs_appellationsgericht_AUS.2026.44",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -7789,6 +9348,50 @@
       "datei": "kanton/BS/bs_sozialversicherungsgericht/UV.2025.46.json",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80124&Template=search_result_document.html",
+      "richter": [
+        {
+          "s": "schnyder-r",
+          "r": "vorsitz"
+        },
+        {
+          "s": "kaderli-p",
+          "r": "mitglied"
+        },
+        {
+          "s": "eymann-f",
+          "r": "mitglied"
+        },
+        {
+          "s": "loretz-f",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_UV.2025.53",
+      "gericht": "bs_sozialversicherungsgericht",
+      "gerichtName": "Sozialversicherungsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "UV.2025.53",
+      "bgeReferenz": null,
+      "datum": "2026-05-21",
+      "zitierung": "Sozialversicherungsgericht BS UV.2025.53 vom 21.05.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "UVG",
+      "sachgebiet": "sozialversicherung",
+      "sprache": "de",
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "UVG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/UV.2025.53.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80043&Template=search_result_document.html",
       "richter": [
         {
           "s": "schnyder-r",
@@ -8311,6 +9914,51 @@
         },
         {
           "s": "de-luca-nathalie",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_AH.2026.1",
+      "gericht": "bs_sozialversicherungsgericht",
+      "gerichtName": "Sozialversicherungsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "AH.2026.1",
+      "bgeReferenz": null,
+      "datum": "2026-05-13",
+      "zitierung": "Sozialversicherungsgericht BS AH.2026.1 vom 13.05.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "AHVG",
+      "sachgebiet": "sozialversicherung",
+      "sprache": "de",
+      "normKeys": [
+        "AHVG",
+        "AHVV",
+        "ATSG",
+        "BGG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/AH.2026.1.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80173&Template=search_result_document.html",
+      "richter": [
+        {
+          "s": "thomi-g",
+          "r": "vorsitz"
+        },
+        {
+          "s": "ruhl-w",
+          "r": "mitglied"
+        },
+        {
+          "s": "aeschbach-th",
+          "r": "mitglied"
+        },
+        {
+          "s": "wepfer-l",
           "r": "gerichtsschreiber"
         }
       ]
@@ -9354,6 +11002,85 @@
       ]
     },
     {
+      "key": "bge_152_I_200",
+      "gericht": "bge",
+      "gerichtName": "Bundesgericht",
+      "gerichtstyp": "bundesgericht",
+      "kanton": "CH",
+      "nummer": "152 I 200",
+      "bgeReferenz": "152 I 200",
+      "datum": "2026-05-04",
+      "zitierung": "BGE 152 I 200",
+      "leitcharakter": "leitentscheid",
+      "regesteVorhanden": true,
+      "regesteKurz": "Art. 49 Abs. 1 BV; Art. 83 lit. f Ziff. 1, Art. 86 Abs. 1 und 2, Art. 120 BGG; Art. 52 Abs. 2 IVöB; Beschwerden gegen Beschaffungen der oberen kantonalen Gerichtsbehörden; Vorrang des Bundesrechts; Vorinstanzen des Bundesgerichts;…",
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "BV",
+        "DBG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "bund/bge/152_I_200.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://search.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-I-200%3Ade&lang=de&zoom=&type=show_document",
+      "richter": [
+        {
+          "s": "aubry-girardin",
+          "r": "vorsitz"
+        },
+        {
+          "s": "donzallaz",
+          "r": "mitglied"
+        },
+        {
+          "s": "hanni",
+          "r": "mitglied"
+        },
+        {
+          "s": "ryter",
+          "r": "mitglied"
+        },
+        {
+          "s": "kradolfer",
+          "r": "mitglied"
+        },
+        {
+          "s": "zollinger",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bge_152_I_200__voll",
+      "gericht": "bger",
+      "gerichtName": "Bundesgericht",
+      "gerichtstyp": "bundesgericht",
+      "kanton": "CH",
+      "nummer": "2C_735/2025",
+      "bgeReferenz": null,
+      "datum": "2026-05-04",
+      "zitierung": "BGer 2C_735/2025",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": null,
+      "quelle": "opencaselaw",
+      "quelleUrl": "http://relevancy.bger.ch/php/aza/http/index.php?highlight_docid=aza://04-05-2026-2C_735-2025&lang=de&type=show_document",
+      "verweis": {
+        "zielKey": "bge_152_I_200",
+        "ansicht": "voll",
+        "bgeReferenz": "152 I 200"
+      }
+    },
+    {
       "key": "bs_appellationsgericht_AUS.2026.36",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -9516,7 +11243,7 @@
       "zitierung": "Sozialversicherungsgericht BS IV.2025.112 vom 30.04.2026",
       "leitcharakter": "routine",
       "regesteVorhanden": false,
-      "regesteKurz": "Gutachten beweiswertig; Beschwerde abgewiesen",
+      "regesteKurz": "Gutachten beweiswertig; Beschwerde abgewiesen (Beschwerde beim Bundesgericht hängig)",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
       "normKeys": [
@@ -9529,6 +11256,50 @@
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.112.json",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80093&Template=search_result_document.html",
+      "richter": [
+        {
+          "s": "schnyder-r",
+          "r": "vorsitz"
+        },
+        {
+          "s": "kaderli-p",
+          "r": "mitglied"
+        },
+        {
+          "s": "bechtel-n",
+          "r": "mitglied"
+        },
+        {
+          "s": "kreis-manuel",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_IV.2025.139",
+      "gericht": "bs_sozialversicherungsgericht",
+      "gerichtName": "Sozialversicherungsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "IV.2025.139",
+      "bgeReferenz": null,
+      "datum": "2026-04-30",
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.139 vom 30.04.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "IVG",
+      "sachgebiet": "sozialversicherung",
+      "sprache": "de",
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.139.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80137&Template=search_result_document.html",
       "richter": [
         {
           "s": "schnyder-r",
@@ -11010,6 +12781,86 @@
       "datei": "kanton/ZH/zh_obergericht/RE260005.json",
       "quelle": "opencaselaw",
       "quelleUrl": "https://www.gerichte-zh.ch/entscheide/entscheide-drucken.html?tx_frpentscheidsammlungextended_pi3[entscheidDrucken]=40845"
+    },
+    {
+      "key": "bge_152_I_193",
+      "gericht": "bge",
+      "gerichtName": "Bundesgericht",
+      "gerichtstyp": "bundesgericht",
+      "kanton": "CH",
+      "nummer": "152 I 193",
+      "bgeReferenz": "152 I 193",
+      "datum": "2026-04-17",
+      "zitierung": "BGE 152 I 193",
+      "leitcharakter": "leitentscheid",
+      "regesteVorhanden": true,
+      "regesteKurz": "Art. 29 Abs. 1 und Art. 29a BV; Art. 6 EMRK; überspitzter Formalismus; Wiederherstellung der Frist zur Leistung eines Kostenvorschusses. Die mit der Überweisung des Kostenvorschusses beauftragte Bank ist Hilfsperson der Partei. Allfällige…",
+      "sachgebiet": "oeffentlich",
+      "sprache": "fr",
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "VWVG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "bund/bge/152_I_193.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://search.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-I-193%3Ade&lang=de&zoom=&type=show_document",
+      "richter": [
+        {
+          "s": "haag",
+          "r": "vorsitz"
+        },
+        {
+          "s": "chaix",
+          "r": "mitglied"
+        },
+        {
+          "s": "kneubuhler",
+          "r": "mitglied"
+        },
+        {
+          "s": "muller",
+          "r": "mitglied"
+        },
+        {
+          "s": "merz",
+          "r": "mitglied"
+        },
+        {
+          "s": "rouiller",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bge_152_I_193__voll",
+      "gericht": "bger",
+      "gerichtName": "Bundesgericht",
+      "gerichtstyp": "bundesgericht",
+      "kanton": "CH",
+      "nummer": "1C_506/2025",
+      "bgeReferenz": null,
+      "datum": "2026-04-17",
+      "zitierung": "BGer 1C_506/2025",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "oeffentlich",
+      "sprache": "fr",
+      "normKeys": [],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": null,
+      "quelle": "opencaselaw",
+      "quelleUrl": "http://relevancy.bger.ch/php/aza/http/index.php?highlight_docid=aza://17-04-2026-1C_506-2025&lang=de&type=show_document",
+      "verweis": {
+        "zielKey": "bge_152_I_193",
+        "ansicht": "voll",
+        "bgeReferenz": "152 I 193"
+      }
     },
     {
       "key": "gr_gerichte_ZR1202620",
@@ -16480,7 +18331,7 @@
       "zitierung": "Appellationsgericht BS BEZ.2025.78 vom 25.02.2026",
       "leitcharakter": "routine",
       "regesteVorhanden": false,
-      "regesteKurz": "Rechtsöffnung",
+      "regesteKurz": "Rechtsöffnung (BGer 4A_160/2026 vom 1. Oktober 2026)",
       "sachgebiet": "privat",
       "sprache": "de",
       "normKeys": [
@@ -21173,6 +23024,59 @@
         },
         {
           "s": "menzinger-david",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_appellationsgericht_ZS.2025.1",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "ZS.2025.1",
+      "bgeReferenz": null,
+      "datum": "2026-01-20",
+      "zitierung": "Appellationsgericht BS ZS.2025.1 vom 20.01.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "fakultative Landesverweisung",
+      "sachgebiet": "straf",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/ZS.2025.1.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79561&Template=search_result_document.html",
+      "richter": [
+        {
+          "s": "hoenen-christian",
+          "r": "vorsitz"
+        },
+        {
+          "s": "renaud-lucienne",
+          "r": "mitglied"
+        },
+        {
+          "s": "frossard-jacqueline",
+          "r": "mitglied"
+        },
+        {
+          "s": "weber-jonas",
+          "r": "mitglied"
+        },
+        {
+          "s": "blum-nina",
+          "r": "mitglied"
+        },
+        {
+          "s": "seelmann-martin",
           "r": "gerichtsschreiber"
         }
       ]
@@ -29729,6 +31633,50 @@
       ]
     },
     {
+      "key": "bs_appellationsgericht_SB.2024.103",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "SB.2024.103",
+      "bgeReferenz": null,
+      "datum": "2025-11-11",
+      "zitierung": "Appellationsgericht BS SB.2024.103 vom 11.11.2025",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Gewalt und Drohung gegen Behörden und Beamte",
+      "sachgebiet": "straf",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/SB.2024.103.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79232&Template=search_result_document.html",
+      "richter": [
+        {
+          "s": "schmid-patrizia",
+          "r": "vorsitz"
+        },
+        {
+          "s": "renaud-lucienne",
+          "r": "mitglied"
+        },
+        {
+          "s": "schaub-lukas",
+          "r": "mitglied"
+        },
+        {
+          "s": "seelmann-martin",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bs_appellationsgericht_BES.2024.119",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -30246,6 +32194,85 @@
           "r": "gerichtsschreiber"
         }
       ]
+    },
+    {
+      "key": "bge_152_I_178",
+      "gericht": "bge",
+      "gerichtName": "Bundesgericht",
+      "gerichtstyp": "bundesgericht",
+      "kanton": "CH",
+      "nummer": "152 I 178",
+      "bgeReferenz": "152 I 178",
+      "datum": "2025-11-06",
+      "zitierung": "BGE 152 I 178",
+      "leitcharakter": "leitentscheid",
+      "regesteVorhanden": true,
+      "regesteKurz": "Art. 36 Abs. 1 lit. b, Art. 37 und 38 Abs. 1 MedBG; Art. 27 und 36 Abs. 3 BV; Entzug der Bewilligung eines Arztes zur Berufsausübung in eigener fachlicher Verantwortung wegen sexuellen Handlungen mit Patientinnen. Verfahrensgegenstand (E.…",
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "bund/bge/152_I_178.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://search.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-I-178%3Ade&lang=de&zoom=&type=show_document",
+      "richter": [
+        {
+          "s": "aubry-girardin",
+          "r": "vorsitz"
+        },
+        {
+          "s": "donzallaz",
+          "r": "mitglied"
+        },
+        {
+          "s": "hanni",
+          "r": "mitglied"
+        },
+        {
+          "s": "ryter",
+          "r": "mitglied"
+        },
+        {
+          "s": "kradolfer",
+          "r": "mitglied"
+        },
+        {
+          "s": "braun",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bge_152_I_178__voll",
+      "gericht": "bger",
+      "gerichtName": "Bundesgericht",
+      "gerichtstyp": "bundesgericht",
+      "kanton": "CH",
+      "nummer": "2C_630/2024",
+      "bgeReferenz": null,
+      "datum": "2025-11-06",
+      "zitierung": "BGer 2C_630/2024",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": null,
+      "quelle": "opencaselaw",
+      "quelleUrl": "http://relevancy.bger.ch/php/aza/http/index.php?highlight_docid=aza://06-11-2025-2C_630-2024&lang=de&type=show_document",
+      "verweis": {
+        "zielKey": "bge_152_I_178",
+        "ansicht": "voll",
+        "bgeReferenz": "152 I 178"
+      }
     },
     {
       "key": "bge_152_III_71",
@@ -31990,7 +34017,7 @@
       "zitierung": "Sozialversicherungsgericht BS UV.2025.33 vom 23.10.2025",
       "leitcharakter": "routine",
       "regesteVorhanden": false,
-      "regesteKurz": "Invalideneinkommen; Abstellen auf den tatsächlichen Lohn (Beschwerde beim Bundesgericht hängig)",
+      "regesteKurz": "Invalideneinkommen; Abstellen auf den tatsächlichen Lohn (Bundesgerichtsurteil 8C_734/2025 vom 22.10.2026)",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
       "normKeys": [

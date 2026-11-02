@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-10-26",
+"erzeugt":"2026-11-02",
 "erlass":"BVG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -140,6 +140,8 @@
 "bs_sozialversicherungsgericht_BV.2025.4":{"zitierung":"Sozialversicherungsgericht BS BV.2025.4 vom 08.01.2026","regesteKurz":"BVG Anspruch auf eine Invalidenrente; zeitlicher Zusammenhang","datum":"2026-01-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_BV.2025.7":{"zitierung":"Sozialversicherungsgericht BS BV.2025.7 vom 16.04.2026","regesteKurz":"Eintritt der Arbeitsunfähigkeit und zeitlicher Zusammenhang","datum":"2026-04-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_BV.2026.5":{"zitierung":"Sozialversicherungsgericht BS BV.2026.5 vom 28.05.2026","regesteKurz":"Vorleistungspflicht nach Art. 26 Abs. 4 BVG","datum":"2026-05-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
+"bvger_C_4806_2026":{"zitierung":"BVGer C-4806/2026 vom 22. Oktober 2026","regesteKurz":"Zwangsanschluss an die Auffangeinrichtung","datum":"2026-10-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bvger","status":"eidg"}},
+"gr_gerichte_SV2202636":{"zitierung":"Obergericht GR SV2 26 36 vom 06.10.2026","regesteKurz":null,"datum":"2026-10-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}},
 "sg_gerichte_BV2024_21":{"zitierung":"Versicherungsgericht SG BV 2024/21 vom 04.08.2025","regesteKurz":"Art. 122 ff. ZGB; Art. 281 Abs. 3 ZPO; Art. 22c FZG. Vorsorgeausgleich (Entscheid des Versicherungsgerichts des Kantons St. Gallen vom 4. August 2025, BV 2024/21).","datum":"2025-08-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"SG","gericht":"sg_gerichte","status":"kantonal"}}
 },
 "proArtikel":{
@@ -177,9 +179,9 @@
 "49":[{"key":"bge_150_V_447","gewicht":0},{"key":"bge_150_V_89","gewicht":0},{"key":"bge_150_V_26","gewicht":0},{"key":"bge_148_V_234","gewicht":0},{"key":"bge_148_V_58","gewicht":0},{"key":"bge_147_V_146","gewicht":0},{"key":"bge_146_V_28","gewicht":0},{"key":"bge_151_V_280__voll","gewicht":0,"erwaegungen":["E. 1.1"]},{"key":"bge_148_III_201__voll","gewicht":0,"erwaegungen":["E. 1.1"]},{"key":"bge_146_V_341__voll","gewicht":0,"erwaegungen":["E. 7.2"]},{"key":"be_verwaltungsgericht_2002022398","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2026.5","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2025.2","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2022.13-20250508","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2024.2","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2023.17","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2023.15","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2023.4","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2023.14","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2023.8","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2023.2","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2022.13","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2021.21","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2021.12","gewicht":null}],
 "50":[{"key":"be_verwaltungsgericht_2002022398","gewicht":null}],
 "51":[{"key":"bge_146_V_341","gewicht":0},{"key":"bge_146_V_169","gewicht":0}],
-"52":[{"key":"bge_147_V_86","gewicht":0},{"key":"bge_150_V_26__voll","gewicht":0,"erwaegungen":["E. 2.2"]}],
+"52":[{"key":"bge_147_V_86","gewicht":0},{"key":"bge_150_V_26__voll","gewicht":0,"erwaegungen":["E. 2.2"]},{"key":"gr_gerichte_SV2202636","gewicht":null}],
 "56":[{"key":"bs_sozialversicherungsgericht_BV.2022.14","gewicht":null}],
-"60":[{"key":"bge_147_V_322","gewicht":0},{"key":"bge_146_V_169","gewicht":0}],
+"60":[{"key":"bge_147_V_322","gewicht":0},{"key":"bge_146_V_169","gewicht":0},{"key":"bvger_C_4806_2026","gewicht":null}],
 "61":[{"key":"bge_150_V_26","gewicht":0},{"key":"bge_147_V_259","gewicht":0},{"key":"bge_146_V_341","gewicht":0},{"key":"bge_146_V_169","gewicht":0},{"key":"bs_sozialversicherungsgericht_BV.2025.4","gewicht":null}],
 "62":[{"key":"bge_150_V_26","gewicht":0},{"key":"bge_147_V_259","gewicht":0},{"key":"bge_146_V_341","gewicht":0}],
 "65":[{"key":"bge_150_II_202","gewicht":0},{"key":"bge_147_V_86","gewicht":0}],
@@ -261,9 +263,9 @@
 "49":{"bge":7,"bger":3,"kantonal":14},
 "50":{"kantonal":1},
 "51":{"bge":2},
-"52":{"bge":1,"bger":1},
+"52":{"bge":1,"bger":1,"kantonal":1},
 "56":{"kantonal":1},
-"60":{"bge":2},
+"60":{"bge":2,"eidg":1},
 "61":{"bge":4,"kantonal":1},
 "62":{"bge":3},
 "65":{"bge":2},

@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-10-26",
+"erzeugt":"2026-11-02",
 "erlass":"RPV",
 "erlassEbene":"bund",
 "dokumente":{
@@ -31,7 +31,8 @@
 "bs_appellationsgericht_VD.2025.191":{"zitierung":"Appellationsgericht BS VD.2025.191 vom 22.05.2026","regesteKurz":"Planfestsetzungsbeschluss des Regierungsrats (Umgestaltung der Allmend)","datum":"2026-05-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2025.36":{"zitierung":"Appellationsgericht BS VD.2025.36 vom 06.01.2026","regesteKurz":"Bauentscheid Nr. BBG [...] (1) vom 13. Dezember 2023 in Sachen Abbruch Wohnbaute, Inzlingerstrasse 230 sowie Abbruch…","datum":"2026-01-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2025.37":{"zitierung":"Appellationsgericht BS VD.2025.37 vom 06.01.2026","regesteKurz":"Bauentscheid Nr. BBG [...] (1) vom 13. Dezember 2023 in Sachen Abbruch Wohnbaute, Inzlingerstrasse 230 sowie Abbruch…","datum":"2026-01-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"gr_gerichte_VR1202631":{"zitierung":"Obergericht GR VR1 26 31 vom 09.09.2026","regesteKurz":null,"datum":"2026-09-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}}
+"gr_gerichte_VR1202631":{"zitierung":"Obergericht GR VR1 26 31 vom 09.09.2026","regesteKurz":null,"datum":"2026-09-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}},
+"gr_gerichte_VR320266":{"zitierung":"Obergericht GR VR3 26 6 vom 08.10.2026","regesteKurz":null,"datum":"2026-10-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}}
 },
 "proArtikel":{
 "1":[{"key":"bge_150_II_2__voll","gewicht":0,"erwaegungen":["E. 1.2"]}],
@@ -53,7 +54,7 @@
 "47":[{"key":"bge_150_II_133","gewicht":0},{"key":"bge_147_II_319","gewicht":0},{"key":"bge_146_II_289","gewicht":0},{"key":"bs_appellationsgericht_VD.2025.36","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.37","gewicht":null}],
 "52":[{"key":"bge_151_II_737","gewicht":0}],
 "18a":[{"key":"bge_152_II_276","gewicht":0}],
-"32a":[{"key":"bge_152_II_276","gewicht":0}],
+"32a":[{"key":"bge_152_II_276","gewicht":0},{"key":"gr_gerichte_VR320266","gewicht":null}],
 "32b":[{"key":"bge_152_II_276","gewicht":0}],
 "42a":[{"key":"bge_147_II_25__voll","gewicht":0,"erwaegungen":["E. 4.1","E. 4.2"]}],
 "43a":[{"key":"bge_147_II_465","gewicht":0},{"key":"bge_147_II_25","gewicht":0},{"key":"bge_146_II_376","gewicht":0},{"key":"bge_146_II_304","gewicht":0}],
@@ -79,7 +80,7 @@
 "47":{"bge":3,"kantonal":2},
 "52":{"bge":1},
 "18a":{"bge":1},
-"32a":{"bge":1},
+"32a":{"bge":1,"kantonal":1},
 "32b":{"bge":1},
 "42a":{"bger":1},
 "43a":{"bge":4},

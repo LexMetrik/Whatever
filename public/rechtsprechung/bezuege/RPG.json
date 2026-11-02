@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-10-26",
+"erzeugt":"2026-11-02",
 "erlass":"RPG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -85,6 +85,7 @@
 "bs_appellationsgericht_VD.2025.191":{"zitierung":"Appellationsgericht BS VD.2025.191 vom 22.05.2026","regesteKurz":"Planfestsetzungsbeschluss des Regierungsrats (Umgestaltung der Allmend)","datum":"2026-05-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2025.195":{"zitierung":"Appellationsgericht BS VD.2025.195 vom 22.05.2026","regesteKurz":"Planfestsetzungsbeschluss des Regierungsrats (Umgestaltung der Allmend)","datum":"2026-05-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "gr_gerichte_VR1202631":{"zitierung":"Obergericht GR VR1 26 31 vom 09.09.2026","regesteKurz":null,"datum":"2026-09-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}},
+"gr_gerichte_VR320266":{"zitierung":"Obergericht GR VR3 26 6 vom 08.10.2026","regesteKurz":null,"datum":"2026-10-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}},
 "sg_gerichte_B2024_150":{"zitierung":"Verwaltungsgericht SG B 2024/150 vom 22.08.2025","regesteKurz":"Baurecht, Art. 19 Abs. 1 RPG, Art. 67 lit. a PBG, Art. 63 Abs. 2 und Art. 100 StrG; Art. 6 Abs. 1 NHG, Art. 115 lit. g PBG; Art. 79 PBG, kommunale Bauordnung. Die Beschwerdeführer beanstanden die Bewilligung des Abbruchs und Neubaus eines…","datum":"2025-08-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"SG","gericht":"sg_gerichte","status":"kantonal"}}
 },
 "proArtikel":{
@@ -108,7 +109,7 @@
 "19":[{"key":"bge_147_II_484","gewicht":0},{"key":"bge_150_III_17__voll","gewicht":0,"erwaegungen":["E. 3.2.2"]},{"key":"sg_gerichte_B2024_150","gewicht":null}],
 "20":[{"key":"bge_150_III_17__voll","gewicht":0,"erwaegungen":["E. 3.2.2"]}],
 "21":[{"key":"bge_152_II_311","gewicht":0},{"key":"bge_152_II_289","gewicht":0},{"key":"bge_150_II_48","gewicht":0},{"key":"bge_148_II_417","gewicht":1},{"key":"bge_148_II_139","gewicht":0},{"key":"bge_146_II_289","gewicht":1},{"key":"bge_149_II_79__voll","gewicht":0},{"key":"bge_148_II_359__voll","gewicht":0,"erwaegungen":["E. 5.4"]},{"key":"bs_appellationsgericht_VD.2021.2","gewicht":null}],
-"22":[{"key":"bge_152_II_276","gewicht":0},{"key":"bge_152_II_461","gewicht":0},{"key":"bge_150_II_566","gewicht":0},{"key":"bge_150_II_379","gewicht":0},{"key":"bge_150_II_489","gewicht":0},{"key":"bge_148_II_139","gewicht":0},{"key":"bge_146_II_376","gewicht":0},{"key":"bge_146_II_289__voll","gewicht":0,"erwaegungen":["E. 8"]},{"key":"bs_appellationsgericht_VD.2025.147","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.166","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.99","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.219","gewicht":null}],
+"22":[{"key":"bge_152_II_276","gewicht":0},{"key":"bge_152_II_461","gewicht":0},{"key":"bge_150_II_566","gewicht":0},{"key":"bge_150_II_379","gewicht":0},{"key":"bge_150_II_489","gewicht":0},{"key":"bge_148_II_139","gewicht":0},{"key":"bge_146_II_376","gewicht":0},{"key":"bge_146_II_289__voll","gewicht":0,"erwaegungen":["E. 8"]},{"key":"gr_gerichte_VR320266","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.147","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.166","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.99","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.219","gewicht":null}],
 "24":[{"key":"bge_152_II_350","gewicht":0},{"key":"bge_152_II_276","gewicht":0},{"key":"bge_151_II_918","gewicht":0},{"key":"bge_150_II_489","gewicht":0},{"key":"bge_148_II_139","gewicht":0},{"key":"bge_147_II_300","gewicht":0},{"key":"bge_147_II_351","gewicht":1},{"key":"bge_147_II_25","gewicht":0},{"key":"bge_146_II_376","gewicht":0},{"key":"bge_146_II_289__voll","gewicht":0,"erwaegungen":["E. 8"]},{"key":"bge_146_II_304__voll","gewicht":0,"erwaegungen":["E. 10.3","E. 12.3"]},{"key":"bs_appellationsgericht_VD.2021.236","gewicht":null}],
 "25":[{"key":"bge_152_II_350","gewicht":0},{"key":"bge_151_II_918","gewicht":0},{"key":"bge_150_II_489","gewicht":0},{"key":"bge_149_II_237","gewicht":0},{"key":"bge_147_II_465","gewicht":0},{"key":"bge_147_II_300","gewicht":0},{"key":"bge_147_II_25__voll","gewicht":0,"erwaegungen":["E. 6.1","E. 6.2"]},{"key":"bs_appellationsgericht_VD.2023.136","gewicht":null}],
 "26":[{"key":"bge_149_II_368","gewicht":0},{"key":"bge_146_II_80","gewicht":0},{"key":"bge_146_I_36","gewicht":1},{"key":"bge_151_II_304__voll","gewicht":0,"erwaegungen":["E. 3"]},{"key":"bge_149_I_33__voll","gewicht":0,"erwaegungen":["E. 4.2"]},{"key":"bge_147_I_433__voll","gewicht":0,"erwaegungen":["E. 2.3"]},{"key":"bge_146_II_289__voll","gewicht":0,"erwaegungen":["E. 4.1"]},{"key":"bs_appellationsgericht_VD.2021.171","gewicht":null}],
@@ -118,7 +119,7 @@
 "35":[{"key":"bge_149_II_368","gewicht":0},{"key":"bge_146_II_289__voll","gewicht":0,"erwaegungen":["E. 4","E. 4.3"]}],
 "36":[{"key":"bge_149_II_368","gewicht":0},{"key":"bge_146_II_289__voll","gewicht":0,"erwaegungen":["E. 4"]}],
 "16a":[{"key":"bge_150_II_48","gewicht":0},{"key":"bge_147_II_351","gewicht":0},{"key":"bge_147_II_25","gewicht":0},{"key":"gr_gerichte_VR1202631","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.236","gewicht":null}],
-"18a":[{"key":"bge_152_II_276","gewicht":0},{"key":"bge_150_II_379","gewicht":0},{"key":"bge_150_II_489","gewicht":0},{"key":"bge_149_I_49","gewicht":0},{"key":"bge_146_II_367","gewicht":0},{"key":"bge_146_II_304","gewicht":0},{"key":"bs_appellationsgericht_VD.2022.180","gewicht":null}],
+"18a":[{"key":"bge_152_II_276","gewicht":0},{"key":"bge_150_II_379","gewicht":0},{"key":"bge_150_II_489","gewicht":0},{"key":"bge_149_I_49","gewicht":0},{"key":"bge_146_II_367","gewicht":0},{"key":"bge_146_II_304","gewicht":0},{"key":"gr_gerichte_VR320266","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.180","gewicht":null}],
 "24a":[{"key":"bge_146_II_376","gewicht":0}],
 "24c":[{"key":"bge_150_II_48","gewicht":0},{"key":"bge_147_II_465","gewicht":0},{"key":"bge_147_II_309","gewicht":0},{"key":"bge_147_II_351","gewicht":0},{"key":"bge_147_II_25","gewicht":0},{"key":"bge_146_II_304","gewicht":0}],
 "24d":[{"key":"bge_147_II_465","gewicht":0},{"key":"bge_147_II_25","gewicht":0}],
@@ -149,7 +150,7 @@
 "19":{"bge":1,"bger":1,"kantonal":1},
 "20":{"bger":1},
 "21":{"bge":6,"bger":2,"kantonal":1},
-"22":{"bge":7,"bger":1,"kantonal":4},
+"22":{"bge":7,"bger":1,"kantonal":5},
 "24":{"bge":9,"bger":2,"kantonal":1},
 "25":{"bge":6,"bger":1,"kantonal":1},
 "26":{"bge":3,"bger":4,"kantonal":1},
@@ -159,7 +160,7 @@
 "35":{"bge":1,"bger":1},
 "36":{"bge":1,"bger":1},
 "16a":{"bge":3,"kantonal":2},
-"18a":{"bge":6,"kantonal":1},
+"18a":{"bge":6,"kantonal":2},
 "24a":{"bge":1},
 "24c":{"bge":6},
 "24d":{"bge":2},

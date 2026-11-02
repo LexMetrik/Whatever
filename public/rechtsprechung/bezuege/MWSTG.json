@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-10-26",
+"erzeugt":"2026-11-02",
 "erlass":"MWSTG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -42,6 +42,7 @@
 "bs_appellationsgericht_BEZ.2021.36":{"zitierung":"Appellationsgericht BS BEZ.2021.36 vom 16.03.2022","regesteKurz":"Arrest","datum":"2022-03-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2022.126":{"zitierung":"Appellationsgericht BS VD.2022.126 vom 09.12.2022","regesteKurz":"Gesuche um Ausfallentschädigung im Kulturbereich","datum":"2022-12-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bstger_BE_2026_18":{"zitierung":"BStGer BE.2026.18 vom 23. September 2026","regesteKurz":"Levée des scellés (art. 50 al. 3 DPA)","datum":"2026-09-23","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bstger","status":"eidg"}},
+"gr_gerichte_SBK2026101":{"zitierung":"Obergericht GR SBK 26 101 vom 08.10.2026","regesteKurz":null,"datum":"2026-10-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}},
 "gr_gerichte_SBK202686":{"zitierung":"Obergericht GR SBK 26 86 vom 08.10.2026","regesteKurz":null,"datum":"2026-10-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}},
 "gr_gerichte_ZR12026127":{"zitierung":"Obergericht GR ZR1 26 127 vom 19.10.2026","regesteKurz":null,"datum":"2026-10-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}},
 "gr_gerichte_ZR2202545":{"zitierung":"Obergericht GR ZR2 25 45 vom 12.10.2026","regesteKurz":null,"datum":"2026-10-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}}
@@ -68,7 +69,7 @@
 "24":[{"key":"bge_149_II_290","gewicht":0},{"key":"bge_149_II_53","gewicht":1}],
 "25":[{"key":"bge_149_II_290","gewicht":0},{"key":"bge_148_II_233","gewicht":1},{"key":"bs_appellationsgericht_VD.2022.126","gewicht":null}],
 "27":[{"key":"bge_151_II_569","gewicht":0},{"key":"bge_148_II_233","gewicht":0}],
-"28":[{"key":"bge_149_II_255","gewicht":0},{"key":"bge_149_II_43","gewicht":2},{"key":"bge_149_II_147","gewicht":0},{"key":"bge_148_II_233","gewicht":3},{"key":"bge_151_II_364__voll","gewicht":0,"erwaegungen":["E. 3.1","E. 4.1","E. 4.3.1","E. 4.3.2"]},{"key":"gr_gerichte_SBK202686","gewicht":null},{"key":"ag_gerichte_HOR_2024_19","gewicht":null}],
+"28":[{"key":"bge_149_II_255","gewicht":0},{"key":"bge_149_II_43","gewicht":2},{"key":"bge_149_II_147","gewicht":0},{"key":"bge_148_II_233","gewicht":3},{"key":"bge_151_II_364__voll","gewicht":0,"erwaegungen":["E. 3.1","E. 4.1","E. 4.3.1","E. 4.3.2"]},{"key":"gr_gerichte_SBK2026101","gewicht":null},{"key":"gr_gerichte_SBK202686","gewicht":null},{"key":"ag_gerichte_HOR_2024_19","gewicht":null}],
 "29":[{"key":"bge_152_II_486","gewicht":0},{"key":"bge_149_II_255","gewicht":0},{"key":"bge_149_II_147","gewicht":1},{"key":"bge_151_II_364__voll","gewicht":1,"erwaegungen":["E. 4.1"]}],
 "30":[{"key":"bge_152_II_486","gewicht":0},{"key":"bge_146_II_73","gewicht":0},{"key":"bge_151_II_364__voll","gewicht":1,"erwaegungen":["E. 4.3.1"]}],
 "33":[{"key":"bge_149_II_255","gewicht":0},{"key":"bge_149_II_43","gewicht":2},{"key":"bge_151_II_364__voll","gewicht":0,"erwaegungen":["E. 4.1"]}],
@@ -136,7 +137,7 @@
 "24":{"bge":2},
 "25":{"bge":2,"kantonal":1},
 "27":{"bge":2},
-"28":{"bge":4,"bger":1,"kantonal":2},
+"28":{"bge":4,"bger":1,"kantonal":3},
 "29":{"bge":3,"bger":1},
 "30":{"bge":2,"bger":1},
 "33":{"bge":2,"bger":1},

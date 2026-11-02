@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-10-26",
+"erzeugt":"2026-11-02",
 "erlass":"VVG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -34,6 +34,7 @@
 "bs_sozialversicherungsgericht_BV.2023.2":{"zitierung":"Sozialversicherungsgericht BS BV.2023.2 vom 06.07.2023","regesteKurz":"Kündigung des Versicherungsvertrages wegen Anzeigepflichtverletzung zu Recht erfolgt; Klageabweisung.","datum":"2023-07-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_BV.2023.4":{"zitierung":"Sozialversicherungsgericht BS BV.2023.4 vom 13.06.2024","regesteKurz":"BVG","datum":"2024-06-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_BV.2024.10":{"zitierung":"Sozialversicherungsgericht BS BV.2024.10 vom 26.02.2025","regesteKurz":"Beitragsbefreiung","datum":"2025-02-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
+"bs_sozialversicherungsgericht_KV.2025.12":{"zitierung":"Sozialversicherungsgericht BS KV.2025.12 vom 02.07.2026","regesteKurz":"KVG","datum":"2026-07-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_ZV.2020.18":{"zitierung":"Sozialversicherungsgericht BS ZV.2020.18 vom 28.06.2022","regesteKurz":"Klage abgewiesen. Arbeitsunfähigkeitsmeldung verspätet. Kein Anspruch auf Leistungen wegen fehlender…","datum":"2022-06-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_ZV.2020.18-20241219":{"zitierung":"Sozialversicherungsgericht BS ZV.2020.18 vom 19.12.2024","regesteKurz":"ZV01 Verletzung der Schadenminderungspflicht; Klageabweisung. (Bundesgerichtsurteil 4A_562/2025 vom 24.04.2026)","datum":"2024-12-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_ZV.2021.5":{"zitierung":"Sozialversicherungsgericht BS ZV.2021.5 vom 17.02.2022","regesteKurz":"Krankentaggeld; keine Versicherungsunterstellung","datum":"2022-02-17","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
@@ -86,7 +87,7 @@
 "97":[{"key":"bge_152_III_145","gewicht":0}],
 "98":[{"key":"bge_152_III_145","gewicht":0},{"key":"bs_sozialversicherungsgericht_BV.2024.10","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.5","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.2","gewicht":null}],
 "100":[{"key":"bge_149_III_242","gewicht":0},{"key":"bge_148_III_105","gewicht":0},{"key":"bs_sozialversicherungsgericht_ZV.2024.10","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2023.17","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2022.12","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2020.5","gewicht":null}],
-"103a":[{"key":"bge_151_III_35","gewicht":0},{"key":"bs_sozialversicherungsgericht_ZV.2024.6","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2024.8","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2024.3","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2020.18-20241219","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.7","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.8","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.5","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.4","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.2","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2022.12","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2022.2","gewicht":null}],
+"103a":[{"key":"bge_151_III_35","gewicht":0},{"key":"bs_sozialversicherungsgericht_KV.2025.12","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2024.6","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2024.8","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2024.3","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2020.18-20241219","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.7","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.8","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.5","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.4","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.2","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2022.12","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2022.2","gewicht":null}],
 "35a":[{"key":"bge_151_III_35__voll","gewicht":0,"erwaegungen":["E. 2.4.5"]},{"key":"bs_sozialversicherungsgericht_ZV.2025.3","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2024.6","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2024.8","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.8","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2024.1","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2022.12","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2022.2","gewicht":null}],
 "35b":[{"key":"bge_151_III_35__voll","gewicht":0,"erwaegungen":["E. 2.4.4","E. 2.4.5"]},{"key":"bs_sozialversicherungsgericht_ZV.2024.6","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2024.8","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.8","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2022.12","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2022.2","gewicht":null}],
 "38a":[{"key":"bge_152_III_145","gewicht":0},{"key":"bs_appellationsgericht_ZB.2023.66","gewicht":null},{"key":"bs_appellationsgericht_ZB.2023.64","gewicht":null}],
@@ -124,7 +125,7 @@
 "97":{"bge":1},
 "98":{"bge":1,"kantonal":3},
 "100":{"bge":2,"kantonal":4},
-"103a":{"bge":1,"kantonal":11},
+"103a":{"bge":1,"kantonal":12},
 "35a":{"bger":1,"kantonal":7},
 "35b":{"bger":1,"kantonal":5},
 "38a":{"bge":1,"kantonal":2},
