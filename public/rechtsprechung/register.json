@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-11-02",
+  "erzeugt": "2026-11-03",
   "entscheide": [
     {
       "key": "bs_appellationsgericht_AUS.2026.97",
@@ -43980,6 +43980,51 @@
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.50.json",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79592&Template=search_result_document.html",
+      "richter": [
+        {
+          "s": "thomi-g",
+          "r": "vorsitz"
+        },
+        {
+          "s": "von-aarburg-r",
+          "r": "mitglied"
+        },
+        {
+          "s": "fasnacht-tobias",
+          "r": "mitglied"
+        },
+        {
+          "s": "marti-l",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_IV.2025.26",
+      "gericht": "bs_sozialversicherungsgericht",
+      "gerichtName": "Sozialversicherungsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "IV.2025.26",
+      "bgeReferenz": null,
+      "datum": "2025-08-19",
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.26 vom 19.08.2025",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "IVG (Beschwerde beim Bundesgericht hängig)",
+      "sachgebiet": "sozialversicherung",
+      "sprache": "de",
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.26.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79690&Template=search_result_document.html",
       "richter": [
         {
           "s": "thomi-g",

@@ -6508,6 +6508,7 @@ export const ERFASST: ReadonlySet<string> = new Set([
   "bs_sozialversicherungsgericht_IV.2025.23",
   "bs_sozialversicherungsgericht_IV.2025.24",
   "bs_sozialversicherungsgericht_IV.2025.25",
+  "bs_sozialversicherungsgericht_IV.2025.26",
   "bs_sozialversicherungsgericht_IV.2025.29",
   "bs_sozialversicherungsgericht_IV.2025.3",
   "bs_sozialversicherungsgericht_IV.2025.30",

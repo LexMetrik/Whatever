@@ -176,7 +176,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
     "LugÜ",
     "HZÜ"
   ],
-  "rechtsprechungVolltext": 5625,
+  "rechtsprechungVolltext": 5626,
   "rechtsprechungVollurteilVerweise": 1355,
   "rechtsprechungSachgebiete": [
     {
@@ -207,7 +207,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
     {
       "id": "sozialversicherung",
       "label": "Sozialversicherung",
-      "anzahl": 1254
+      "anzahl": 1255
     }
   ],
   "rechtsprechungLeitentscheide": 1362,
@@ -279,7 +279,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
   "rechner": 23,
   "vorlagen": 26,
   "standGesetze": "2026-10-05",
-  "standRechtsprechung": "2026-11-02",
+  "standRechtsprechung": "2026-11-03",
   "standMaterialien": "2026-11-01",
   "juengsterGesetzStand": "2026-10-01",
   "juengsterEntscheid": "2026-10-30",

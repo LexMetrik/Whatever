@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-11-02",
+  "erzeugt": "2026-11-03",
   "entscheide": [
     {
       "key": "bs_appellationsgericht_AUS.2026.97",
@@ -24993,6 +24993,33 @@
       "zitierung": "Sozialversicherungsgericht BS IV.2025.50 vom 19.08.2025",
       "leitcharakter": "routine",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.50.json",
+      "richter": [
+        {
+          "s": "thomi-g",
+          "r": "vorsitz"
+        },
+        {
+          "s": "von-aarburg-r",
+          "r": "mitglied"
+        },
+        {
+          "s": "fasnacht-tobias",
+          "r": "mitglied"
+        },
+        {
+          "s": "marti-l",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_IV.2025.26",
+      "nummer": "IV.2025.26",
+      "bgeReferenz": null,
+      "datum": "2025-08-19",
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.26 vom 19.08.2025",
+      "leitcharakter": "routine",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.26.json",
       "richter": [
         {
           "s": "thomi-g",
