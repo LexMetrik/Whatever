@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-25",
+  "erzeugt": "2026-10-26",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/BES.2025.124",
@@ -17,7 +17,7 @@
       "sachgebiet": "straf",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Nichtinvasive Probenahme und DNA-Analyse (nicht rechtskräftig)",
+        "gegenstand": "Nichtinvasive Probenahme und DNA-Analyse",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. Marc Oser und Gerichtsschreiberin MLaw Ariana de la Cruz"
@@ -221,11 +221,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79761&Template=search_result_document.html",
-      "abgerufen": "2026-09-25",
-      "fassungsToken": "2026-07-21",
+      "abgerufen": "2026-10-26",
+      "fassungsToken": "2026-10-23",
       "sha": "e8380445088b639a7d29368fc003334686f6c38186d5f7542b83d68ad47591ea",
       "erstpublikation": "2026-07-21",
-      "aktualisiert": "2026-07-21",
+      "aktualisiert": "2026-10-23",
       "nummerSekundaer": "AG.2026.375",
       "ecli": "ECLI:CH:BSA:2026:BES.2025.124"
     }

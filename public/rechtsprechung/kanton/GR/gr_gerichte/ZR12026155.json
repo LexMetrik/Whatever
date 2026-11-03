@@ -1,0 +1,85 @@
+{
+  "erzeugt": "2026-11-02",
+  "eintraege": [
+    {
+      "id": "kanton/GR/gr_gerichte/ZR12026155",
+      "gericht": "gr_gerichte",
+      "gerichtName": "Obergericht GR",
+      "gerichtstyp": "kantonal",
+      "kanton": "GR",
+      "abteilung": "ZR1",
+      "nummer": "ZR1 26 155",
+      "bgeReferenz": null,
+      "zitierung": "Obergericht GR ZR1 26 155 vom 06.10.2026",
+      "datum": "2026-10-06",
+      "sprache": "de",
+      "leitcharakter": "routine",
+      "sachgebiet": "oeffentlich",
+      "legalArea": null,
+      "rubrum": null,
+      "regeste": null,
+      "regesteAmtlich": false,
+      "abschnitte": [
+        {
+          "typ": "erwaegung",
+          "bloecke": [
+            {
+              "marke": "E. 1",
+              "tiefe": 1,
+              "text": "Die Beschwerde gegen die fürsorgerische Unterbringung wird gutgeheissen und die fürsorgerische Unterbringung wird aufgehoben."
+            },
+            {
+              "marke": "E. 2",
+              "tiefe": 1,
+              "text": "Die Kosten des Beschwerdeverfahrens von CHF 2'640.00 (Gerichtskosten von CHF 1'500.00 und Gutachterkosten von CHF 1'140.00) gehen zu Lasten des Kantons Graubünden."
+            },
+            {
+              "marke": "E. 3",
+              "tiefe": 1,
+              "text": "[Rechtsmittelbelehrung]"
+            },
+            {
+              "marke": "E. 4",
+              "tiefe": 1,
+              "text": "[Mitteilung an:]"
+            }
+          ]
+        },
+        {
+          "typ": "dispositiv",
+          "bloecke": [
+            {
+              "marke": "1.",
+              "text": "Die Beschwerde gegen die fürsorgerische Unterbringung wird gutgeheissen und die fürsorgerische Unterbringung wird aufgehoben."
+            },
+            {
+              "marke": "2.",
+              "text": "Die Kosten des Beschwerdeverfahrens von CHF 2'640.00 (Gerichtskosten von CHF 1'500.00 und Gutachterkosten von CHF 1'140.00) gehen zu Lasten des Kantons Graubünden."
+            },
+            {
+              "marke": "3.",
+              "text": "[Rechtsmittelbelehrung] 4. [Mitteilung an:]"
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [
+        "Die Beschwerde gegen die fürsorgerische Unterbringung wird gutgeheissen\nund die fürsorgerische Unterbringung wird aufgehoben.",
+        "Die Kosten des Beschwerdeverfahrens von CHF 2'640.00 (Gerichtskosten\nvon CHF 1'500.00 und Gutachterkosten von CHF 1'140.00) gehen zu Lasten\ndes Kantons Graubünden.",
+        "[Rechtsmittelbelehrung]",
+        "[Mitteilung an:]"
+      ],
+      "zitierteNormen": [],
+      "normKeys": [],
+      "zitierteEntscheide": [],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/ZR1_2026_155_1c5ca38e769f089c2e67b39c2d2861d0eb5ebec6b0b1194a6306e363c3b963a5cced555fe90bdb23b7eda3cdb1f33bc3a030672a929b2d3e9df36f7576e2987d4e70edf138f8e615894403c02ff0b3fa?path=1c5ca38e769f089c2e67b39c2d2861d0eb5ebec6b0b1194a6306e363c3b963a5cced555fe90bdb23b7eda3cdb1f33bc3a030672a929b2d3e9df36f7576e2987d4e70edf138f8e615894403c02ff0b3fa&pathIsEncrypted=1&dossiernummer=ZR1_2026_155",
+      "abgerufen": "2026-11-02",
+      "fassungsToken": "21bf5912961f7a00bec7cb53e5dbb793032fd82c2a58e7426a6485851ad13732",
+      "sha": "17f5e721c5ccb76b586fc4b03bbfcb8ba8b2316b5a3d57795219c63d1449f115",
+      "ecli": "ECLI:CH:GRG:2026:ZR1.2026.155"
+    }
+  ]
+}

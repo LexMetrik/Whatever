@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-25",
+  "erzeugt": "2026-10-26",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/DGS.2026.29",
@@ -17,7 +17,7 @@
       "sachgebiet": "straf",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Gesuch um Erlass bzw. Stundung (Entscheid des Appellationsgerichts SB.2024.114 vom 6. Oktober 2025) (nicht rechtskräftig)",
+        "gegenstand": "Gesuch um Erlass bzw. Stundung (Entscheid des Appellationsgerichts SB.2024.114 vom 6. Oktober 2025)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. Eva Christ und Gerichtsschreiberin MLaw Ariana de la Cruz"
@@ -163,11 +163,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79947&Template=search_result_document.html",
-      "abgerufen": "2026-09-25",
-      "fassungsToken": "2026-08-20",
+      "abgerufen": "2026-10-26",
+      "fassungsToken": "2026-10-23",
       "sha": "9cd6435ecef2b6a811093c8dffe84766d174aaca3bca85958bb853be9af6bcdd",
       "erstpublikation": "2026-08-20",
-      "aktualisiert": "2026-08-20",
+      "aktualisiert": "2026-10-23",
       "nummerSekundaer": "AG.2026.504",
       "ecli": "ECLI:CH:BSA:2026:DGS.2026.29"
     }

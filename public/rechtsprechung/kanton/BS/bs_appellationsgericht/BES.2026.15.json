@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-26",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/BES.2026.15",
@@ -17,7 +17,7 @@
       "sachgebiet": "straf",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "geheime Überwachungsmassnahmen (noch nicht rechtskräftig)",
+        "gegenstand": "geheime Überwachungsmassnahmen",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. Christian Hoenen und Gerichtsschreiber MLaw Damian Wyss"
@@ -319,11 +319,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79799&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2026-07-10",
+      "abgerufen": "2026-10-26",
+      "fassungsToken": "2026-10-23",
       "sha": "7729b3d29228fb146cb3cafadda8d201973e1d5ea13cbb7b1f6975056b884813",
       "erstpublikation": "2026-07-10",
-      "aktualisiert": "2026-07-10",
+      "aktualisiert": "2026-10-23",
       "nummerSekundaer": "AG.2026.404",
       "ecli": "ECLI:CH:BSA:2026:BES.2026.15"
     }

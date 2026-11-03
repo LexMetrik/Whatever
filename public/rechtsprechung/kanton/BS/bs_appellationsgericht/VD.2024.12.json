@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-26",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/VD.2024.12",
@@ -17,7 +17,7 @@
       "sachgebiet": "oeffentlich",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung (Beschwerde beim BGer hängig)",
+        "gegenstand": "Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung (BGer 2C_325/2024 vom 28. Mai 2025)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "Dr. Stephan Wullschleger, lic. iur. André Equey, MLaw Manuel Kreis und a.o. Gerichtsschreiberin MLaw Stephanie Vögtli"
@@ -284,11 +284,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=76869&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2025-02-05",
+      "abgerufen": "2026-10-26",
+      "fassungsToken": "2026-10-22",
       "sha": "762281d4896087f0979efc120117c4085ba64941594fba2c5a65ec6433b091b3",
       "erstpublikation": "2025-02-05",
-      "aktualisiert": "2025-02-05",
+      "aktualisiert": "2026-10-22",
       "nummerSekundaer": "AG.2024.319",
       "ecli": "ECLI:CH:BSA:2024:VD.2024.12"
     }

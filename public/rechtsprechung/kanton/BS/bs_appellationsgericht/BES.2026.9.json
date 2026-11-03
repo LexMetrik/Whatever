@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-26",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/BES.2026.9",
@@ -17,7 +17,7 @@
       "sachgebiet": "straf",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Akteneinsicht (noch nicht rechtskräftig)",
+        "gegenstand": "Akteneinsicht",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. Marc Oser und Gerichtsschreiber MLaw Damian Wyss"
@@ -259,11 +259,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79785&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2026-07-10",
+      "abgerufen": "2026-10-26",
+      "fassungsToken": "2026-10-23",
       "sha": "e98e2546ae9d3470dfe674488307dcb88af09a6c30b3cf773334a25519b06999",
       "erstpublikation": "2026-07-10",
-      "aktualisiert": "2026-07-10",
+      "aktualisiert": "2026-10-23",
       "nummerSekundaer": "AG.2026.394",
       "ecli": "ECLI:CH:BSA:2026:BES.2026.9"
     }

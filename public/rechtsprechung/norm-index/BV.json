@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-11-03",
   "erlass": "BV",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -77,30 +77,30 @@
         "gewicht": 1
       },
       {
+        "key": "bge_150_II_346",
+        "zitierung": "BGE 150 II 346",
+        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
+        "datum": "2024-05-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_I_200",
+        "zitierung": "BGE 152 I 200",
+        "regesteKurz": "Art. 49 Abs. 1 BV; Art. 83 lit. f Ziff. 1, Art. 86 Abs. 1 und 2, Art. 120 BGG; Art. 52 Abs. 2 IVöB; Beschwerden gegen Beschaffungen der oberen kantonalen Gerichtsbehörden; Vorrang des Bundesrechts; Vorinstanzen des Bundesgerichts;…",
+        "datum": "2026-05-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_I_113",
         "zitierung": "BGE 151 I 113",
         "regesteKurz": "Art. 27, 48 Abs. 5, Art. 49 Abs. 1 und Art. 94 BV; Art. 63 Abs. 4 der Interkantonalen Vereinbarung über das öffentliche Beschaffungswesen (IVöB 2019); Art. 27, 29 und 31 BöB/IVöB 2019; Art. VIII Abs. 1 des Übereinkommens der…",
         "datum": "2025-01-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_I_314",
-        "zitierung": "BGE 151 I 314",
-        "regesteKurz": "Art. 8 Abs. 2 und 3, Art. 15 und 35 BV; Übertragung der Führung einer öffentlichen Mädchensekundarschule an die Stiftung Schule St. Katharina. (Grundrechtliche) Gewährleistungsverantwortung des Gemeinwesens bei der Übertragung der…",
-        "datum": "2025-01-17",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_I_137",
-        "zitierung": "BGE 151 I 137",
-        "regesteKurz": "a Automatische Fahrzeugfahndung und Verkehrsüberwachung (AFV) gemäss § 4 quinquies PolG/LU; Gesetzgebungskompetenz (Art. 3 und 123 BV; Art. 15 Abs. 1 StPO); Verhältnismässigkeit des Grundrechtseingriffs (Art. 13 Abs. 2 und Art. 36 BV; Art.…",
-        "datum": "2024-10-17",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -158,7 +158,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 8
+        "gewicht": 10
       },
       {
         "key": "bge_149_II_337",
@@ -168,7 +168,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 6
+        "gewicht": 7
       },
       {
         "key": "bge_148_II_475",
@@ -188,7 +188,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 4
+        "gewicht": 5
       },
       {
         "key": "bge_147_I_393",
@@ -324,7 +324,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 20
+        "gewicht": 21
       },
       {
         "key": "bge_148_I_160",
@@ -426,7 +426,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 22
+        "gewicht": 26
       },
       {
         "key": "bge_148_IV_409",
@@ -449,6 +449,16 @@
         "gewicht": 19
       },
       {
+        "key": "bge_149_II_337",
+        "zitierung": "BGE 149 II 337",
+        "regesteKurz": "Art. 10 Abs. 3 lit. a und b, Art. 28 Abs. 1, 2 und 3, Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 26 Abs. 2, Art. 173 Abs. 1 lit. a und b, Art. 183 Abs. 1 lit. a GAV SBB (2019); Art. 328b OR; Art. 2 Abs. 1 lit. b, Art. 3 lit. c Ziff. 2,…",
+        "datum": "2023-08-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 12
+      },
+      {
         "key": "bge_146_IV_114",
         "zitierung": "BGE 146 IV 114",
         "regesteKurz": "Art. 116 StGB; Kindstötung. Tötet eine Mutter ihr Kind nach der Geburt, setzt der privilegierende Tatbestand der Kindstötung voraus, dass sie unter dem Einfluss des Geburtsvorganges handelte, welcher bis zur Nachgeburt unwiderlegbar…",
@@ -457,16 +467,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 12
-      },
-      {
-        "key": "bge_149_II_337",
-        "zitierung": "BGE 149 II 337",
-        "regesteKurz": "Art. 10 Abs. 3 lit. a und b, Art. 28 Abs. 1, 2 und 3, Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 26 Abs. 2, Art. 173 Abs. 1 lit. a und b, Art. 183 Abs. 1 lit. a GAV SBB (2019); Art. 328b OR; Art. 2 Abs. 1 lit. b, Art. 3 lit. c Ziff. 2,…",
-        "datum": "2023-08-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 11
       },
       {
         "key": "bge_150_I_50",
@@ -737,6 +737,16 @@
         "gewicht": 10
       },
       {
+        "key": "bge_149_IV_231",
+        "zitierung": "BGE 149 IV 231",
+        "regesteKurz": "Art. 66a und 66d StGB; strafrechtliche Landesverweisung. Bestätigung der Grundzüge der strafrechtlichen Landesverweisung (E. 2.1). Allfällige Vollzugshindernisse der Landesverweisung im Sinne von Art. 66d Abs. 1 StGB müssen bereits im…",
+        "datum": "2023-03-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 6
+      },
+      {
         "key": "bge_147_I_268",
         "zitierung": "BGE 147 I 268",
         "regesteKurz": "Art. 83 lit. c Ziff. 2 BGG; Art. 8 EMRK; prekärer Aufenthalt; Umwandlung des Status der vorläufigen Aufnahme in eine Aufenthaltsbewilligung im Lichte des Anspruchs auf Achtung des Privatlebens. Zulässigkeit der Beschwerde in…",
@@ -747,16 +757,6 @@
         "gewicht": 6
       },
       {
-        "key": "bge_149_IV_231",
-        "zitierung": "BGE 149 IV 231",
-        "regesteKurz": "Art. 66a und 66d StGB; strafrechtliche Landesverweisung. Bestätigung der Grundzüge der strafrechtlichen Landesverweisung (E. 2.1). Allfällige Vollzugshindernisse der Landesverweisung im Sinne von Art. 66d Abs. 1 StGB müssen bereits im…",
-        "datum": "2023-03-06",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 5
-      },
-      {
         "key": "bge_147_IV_453",
         "zitierung": "BGE 147 IV 453",
         "regesteKurz": "Art. 66a und 66d StGB; Art. 42 Abs. 2, Art. 78 Abs. 2 lit. b und Art. 81 Abs. 1 lit. b BGG; Zulässigkeit der Beschwerde in Strafsachen gegen einen Entscheid, in dem der Aufschub des Vollzugs der obligatorischen Landesverweisung abgewiesen…",
@@ -764,7 +764,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 4
       },
       {
         "key": "bge_147_I_280",
@@ -1398,13 +1398,23 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
         "key": "bge_149_IV_231",
         "zitierung": "BGE 149 IV 231",
         "regesteKurz": "Art. 66a und 66d StGB; strafrechtliche Landesverweisung. Bestätigung der Grundzüge der strafrechtlichen Landesverweisung (E. 2.1). Allfällige Vollzugshindernisse der Landesverweisung im Sinne von Art. 66d Abs. 1 StGB müssen bereits im…",
         "datum": "2023-03-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_I_169",
+        "zitierung": "BGE 152 I 169",
+        "regesteKurz": "Art. 13 Abs. 1 BV; Art. 8 EMRK; Art. 66d Abs. 1 lit. b StGB; Entstehung neuer ehelicher oder familiärer Bindungen und Aufschub des Vollzugs der strafrechtlichen Landesverweisung. Begriff der zwingenden Normen (ius cogens) des Völkerrechts…",
+        "datum": "2026-06-04",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1525,20 +1535,20 @@
         "gewicht": 4
       },
       {
-        "key": "bge_148_II_564",
-        "zitierung": "BGE 148 II 564",
-        "regesteKurz": "Art. 2 Abs. 7 und Art. 9 Abs. 3 BGBM; Vergabe eines Monopols zum Plakataushang ohne Ausschreibung; Frage und Folgen der Nichtigkeit eines solchen Entscheids. Der Entscheid über die Vergabe eines Monopols zum Plakataushang ohne vorgängige…",
-        "datum": "2022-11-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 3
-      },
-      {
         "key": "bge_147_V_423",
         "zitierung": "BGE 147 V 423",
         "regesteKurz": "a Art. 1 Covid-19-Verordnung Erwerbsausfall; Art. 1 EOG i.V.m. Art. 58 Abs. 1 ATSG und Art. 24 Abs. 1 EOG (e contrario). Im Gegensatz zur Zuständigkeit bei Beschwerden gegen Verfügungen und Einspracheentscheide kantonaler Ausgleichskassen…",
         "datum": "2021-09-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 4
+      },
+      {
+        "key": "bge_148_II_564",
+        "zitierung": "BGE 148 II 564",
+        "regesteKurz": "Art. 2 Abs. 7 und Art. 9 Abs. 3 BGBM; Vergabe eines Monopols zum Plakataushang ohne Ausschreibung; Frage und Folgen der Nichtigkeit eines solchen Entscheids. Der Entscheid über die Vergabe eines Monopols zum Plakataushang ohne vorgängige…",
+        "datum": "2022-11-30",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1585,10 +1595,10 @@
         "gewicht": 2
       },
       {
-        "key": "bge_147_IV_73",
-        "zitierung": "BGE 147 IV 73",
-        "regesteKurz": "Art. 146 Abs. 1 StGB; Betrug; Entgelt für sexuelle Dienstleistungen; Täuschung über die Zahlungsbereitschaft; Arglist; Vermögensschaden. Die Vorspiegelung der Zahlungsbereitschaft ist als Täuschung über innere Tatsachen grundsätzlich…",
-        "datum": "2021-01-08",
+        "key": "bge_148_II_392",
+        "zitierung": "BGE 148 II 392",
+        "regesteKurz": "Art. 27, 29 Abs. 2, Art. 94 Abs. 4, Art. 106 und 190 BV; Art. 3 lit. a, Art. 4, 9, 21, 24 Abs. 1 und Art. 86 ff. BGS; DNS-Zugangssperre für von ausländischen Unternehmen in der Schweiz angebotene Online-Geldspiele. Gegen Entscheide des…",
+        "datum": "2022-05-18",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1636,7 +1646,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 14
+        "gewicht": 15
       },
       {
         "key": "bge_147_I_89",
@@ -1656,7 +1666,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 7
+        "gewicht": 8
+      },
+      {
+        "key": "bge_149_IV_9",
+        "zitierung": "BGE 149 IV 9",
+        "regesteKurz": "a Art. 6 EMRK, Art. 14 Abs. 3 lit. g UNO-Pakt II, Art. 32 BV und Art. 113 StPO; Selbstbelastungsprivileg (\"nemo tenetur se ipsum accusare\") und Recht zu schweigen; Verpflichtung, die Personalien anzugeben. Allgemeiner Geltungsbereich des…",
+        "datum": "2022-09-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 8
       },
       {
         "key": "bge_149_I_91",
@@ -1669,10 +1689,10 @@
         "gewicht": 7
       },
       {
-        "key": "bge_149_IV_9",
-        "zitierung": "BGE 149 IV 9",
-        "regesteKurz": "a Art. 6 EMRK, Art. 14 Abs. 3 lit. g UNO-Pakt II, Art. 32 BV und Art. 113 StPO; Selbstbelastungsprivileg (\"nemo tenetur se ipsum accusare\") und Recht zu schweigen; Verpflichtung, die Personalien anzugeben. Allgemeiner Geltungsbereich des…",
-        "datum": "2022-09-27",
+        "key": "bge_148_III_30",
+        "zitierung": "BGE 148 III 30",
+        "regesteKurz": "a Art. 79, Art. 80 und Art. 82 Abs. 1 SchKG; Art. 59 Abs. 2 lit. d ZPO. Verhältnis der Anerkennungsklage zur Rechtsöffnung. Rechtsnatur der Anerkennungsklage und der Verfahren auf definitive und provisorische Rechtsöffnung. Die…",
+        "datum": "2021-10-22",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1693,16 +1713,6 @@
         "zitierung": "Urteil 1C_624/2022 (nicht publ. in BGE 149 IV 376)",
         "regesteKurz": null,
         "datum": "2023-04-21",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 7
-      },
-      {
-        "key": "bge_148_II_392__voll",
-        "zitierung": "Urteil 2C_336/2021 (nicht publ. in BGE 148 II 392)",
-        "regesteKurz": null,
-        "datum": "2022-05-18",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -1738,7 +1748,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 4
       },
       {
         "key": "bge_147_III_577",
@@ -1781,10 +1791,10 @@
         "gewicht": 1
       },
       {
-        "key": "bge_148_I_145",
-        "zitierung": "BGE 148 I 145",
-        "regesteKurz": "Art. 6 Ziff. 1 EMRK; Art. 9 BV; Art. 431 Abs. 1 StPO; aArt. 60 Abs. 1 OR; Art. 7 des Gesetzes des Kantons Waadt über die Haftung des Staats, der Gemeinden und ihrer Amtsträger (LRECA/VD); Staatshaftung für rechtswidrige Zwangsmassnahmen;…",
-        "datum": "2022-05-12",
+        "key": "bge_151_I_93",
+        "zitierung": "BGE 151 I 93",
+        "regesteKurz": "Art. 29a und 30 Abs. 1 BV; Art. 86 Abs. 1 lit. d und Abs. 2 BGG; § 42 lit. c Ziff. 1 des Verwaltungsrechtspflegegesetzes des Kantons Zürich vom 24. Mai 1959; Anforderungen an die Vorinstanzen des Bundesgerichts im Bereich der…",
+        "datum": "2024-08-22",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2659,20 +2669,20 @@
         "gewicht": 1
       },
       {
-        "key": "bge_151_II_673",
-        "zitierung": "BGE 151 II 673",
-        "regesteKurz": "Art. 127 Abs. 3 BV; Art. 147 DBG; Art. 51 StHG; formelle Anforderungen an Revisionsgesuche; interkantonale Doppelbesteuerung; nachträgliche Aufhebung oder Änderung von Veranlagungsentscheiden; Revision oder Wiedererwägung. Ersucht eine…",
-        "datum": "2025-05-01",
+        "key": "bge_152_I_200",
+        "zitierung": "BGE 152 I 200",
+        "regesteKurz": "Art. 49 Abs. 1 BV; Art. 83 lit. f Ziff. 1, Art. 86 Abs. 1 und 2, Art. 120 BGG; Art. 52 Abs. 2 IVöB; Beschwerden gegen Beschaffungen der oberen kantonalen Gerichtsbehörden; Vorrang des Bundesrechts; Vorinstanzen des Bundesgerichts;…",
+        "datum": "2026-05-04",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_151_II_918",
-        "zitierung": "BGE 151 II 918",
-        "regesteKurz": "Art. 25 Abs. 2 und Art. 25a RPG; Art. 87 Abs. 3 des Raumplanungsgesetzes für den Kanton Graubünden vom 6. Dezember 2004 (KRG/GR); Unvereinbarkeit der Bündner Zuständigkeitsordnung mit Art. 25 Abs. 2 RPG und Verletzung des…",
-        "datum": "2025-03-05",
+        "key": "bge_151_II_673",
+        "zitierung": "BGE 151 II 673",
+        "regesteKurz": "Art. 127 Abs. 3 BV; Art. 147 DBG; Art. 51 StHG; formelle Anforderungen an Revisionsgesuche; interkantonale Doppelbesteuerung; nachträgliche Aufhebung oder Änderung von Veranlagungsentscheiden; Revision oder Wiedererwägung. Ersucht eine…",
+        "datum": "2025-05-01",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2689,6 +2699,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 2
+      },
+      {
+        "key": "bge_152_I_200",
+        "zitierung": "BGE 152 I 200",
+        "regesteKurz": "Art. 49 Abs. 1 BV; Art. 83 lit. f Ziff. 1, Art. 86 Abs. 1 und 2, Art. 120 BGG; Art. 52 Abs. 2 IVöB; Beschwerden gegen Beschaffungen der oberen kantonalen Gerichtsbehörden; Vorrang des Bundesrechts; Vorinstanzen des Bundesgerichts;…",
+        "datum": "2026-05-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_I_285",
@@ -2744,16 +2764,6 @@
         "key": "bge_148_I_19",
         "zitierung": "BGE 148 I 19",
         "regesteKurz": "Art. 22, Art. 34, Art. 36 Abs. 1 und 3, Art. 49 BV; Art. 40 EpG; Art. 8 Covid-19-Verordnung besondere Lage; Covid-19-Reglement des Kantons Uri vom 26. März 2021; Beschränkung der Teilnehmerzahl an politischen und zivilgesellschaftlichen…",
-        "datum": "2021-09-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_I_33",
-        "zitierung": "BGE 148 I 33",
-        "regesteKurz": "Art. 22, Art. 36 Abs. 1 und 3, Art. 49 BV; Art. 40 EpG; Art. 8 Covid-19-Verordnung besondere Lage; Covid-19-Verordnung des Kantons Bern vom 4. November 2020; Beschränkung der Teilnehmerzahl an politischen und zivilgesellschaftlichen…",
         "datum": "2021-09-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
@@ -2815,6 +2825,16 @@
         "gewicht": 5
       },
       {
+        "key": "bge_150_I_213",
+        "zitierung": "BGE 150 I 213",
+        "regesteKurz": "Art. 49 Abs. 1 und Art. 77 BV; Art. 699 ZGB; Art. 14 WaG; Art. 19 Abs. 1 WaldG/GE; Art. 23 Abs. 3 WaldV/GE; Grundsatz des Vorrangs des Bundesrechts; Unterstellung von Lasergame-Spielen im Wald unter eine vorherige punktuelle…",
+        "datum": "2024-05-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 3
+      },
+      {
         "key": "bge_147_III_351",
         "zitierung": "BGE 147 III 351",
         "regesteKurz": "Art. 49 Abs. 1 BV, Art. 59 und 124 Abs. 1 ZPO, Art. 12 lit. c und 34 Abs. 1 BGFA; Zuständigkeit für den Entscheid über die Vertretungsbefugnis des Anwalts in einem hängigen Verfahren. Der Entscheid über die Vertretungsbefugnis des Anwalts…",
@@ -2845,10 +2865,20 @@
         "gewicht": 3
       },
       {
-        "key": "bge_150_I_213",
-        "zitierung": "BGE 150 I 213",
-        "regesteKurz": "Art. 49 Abs. 1 und Art. 77 BV; Art. 699 ZGB; Art. 14 WaG; Art. 19 Abs. 1 WaldG/GE; Art. 23 Abs. 3 WaldV/GE; Grundsatz des Vorrangs des Bundesrechts; Unterstellung von Lasergame-Spielen im Wald unter eine vorherige punktuelle…",
-        "datum": "2024-05-24",
+        "key": "bge_152_I_26",
+        "zitierung": "BGE 152 I 26",
+        "regesteKurz": "Art. 49 Abs. 1 BV; Art. 36 und 37 MedBG; Art. 57 Abs. 1 des Gesetzes von Republik und Kanton Neuenburg vom 6. Februar 1995 über die Gesundheit (LS/NE); Vorrang des Bundesrechts; Festlegung einer absoluten Altersgrenze für die Ausübung des…",
+        "datum": "2025-04-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_150_II_308",
+        "zitierung": "BGE 150 II 308",
+        "regesteKurz": "a Art. 20 BGFA; aArt. 369 Abs. 7 StGB; Berücksichtigung von im kantonalen Anwaltsregister bereits gelöschten Disziplinarmassnahmen bei der Bemessung von Sanktionen. Bisherige Rechtsprechung des Bundesgerichts zur Berücksichtigung von…",
+        "datum": "2024-03-25",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2859,26 +2889,6 @@
         "zitierung": "BGE 150 I 120",
         "regesteKurz": "Art. 8, 27, 49 Abs. 1, 74, 82 Abs. 1, 89 Abs. 3 und 94 BV; Art. 106 Abs. 3 SVG; Art. 10-13 CO2-Gesetz; Art. 17f Abs. 2 lit. a CO2-Verordnung; Art. 10 und Anhang 4.1 EnEV; Art. 10 Abs. 2 lit. c, 18 Abs. 2, 24 Abs. 2 und 26 Abs. 2 des Genfer…",
         "datum": "2024-02-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 2
-      },
-      {
-        "key": "bge_148_II_121",
-        "zitierung": "BGE 148 II 121",
-        "regesteKurz": "Art. 9, 27, 49, 94 Abs. 1, 127 BV; Art. 34 KAG; Art. 39 FINIG; Art. 103 FusG; Handänderungsabgabe, die anlässlich des Wechsels der Leitung eines Immobilien-Anlagefonds erhoben wird; Wirtschaftsfreiheit und Wettbewerbsneutralität; Vorrang…",
-        "datum": "2022-03-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 2
-      },
-      {
-        "key": "bge_148_I_198",
-        "zitierung": "BGE 148 I 198",
-        "regesteKurz": "Art. 49 Abs. 1 BV; Art. 23 Abs. 1 des Tessiner Ladenöffnungsgesetzes (LAN/ TI); Prinzip des Vorrangs des Bundesrechts; Bestimmung, welche den Schutz des Arbeitnehmers bezweckt. Kognition des Bundesgerichts im Rahmen der abstrakten…",
-        "datum": "2021-12-22",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2894,7 +2904,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 4
+        "gewicht": 5
       },
       {
         "key": "bge_146_I_83",
@@ -2905,6 +2915,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_535",
+        "zitierung": "BGE 152 II 535",
+        "regesteKurz": "Art. 89 Abs. 1 und 2 lit. c BGG; Beschwerdelegitimation einer Gemeinde bzw. einer kommunalen Baubehörde. Eine Gemeinde ist grundsätzlich nicht legitimiert, gegen die Verweigerung einer Baubewilligung Beschwerde beim Bundesgericht zu…",
+        "datum": "2026-04-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_152_II_276",
@@ -2951,16 +2971,6 @@
         "zitierung": "BGE 147 I 433",
         "regesteKurz": "Art. 29 Abs. 2 und Art. 50 BV, Art. 85 und 95 KV/ZH, Art. 4 und 9 f. RPG, Art. 31 Abs. 1 USG, Art. 4 f. VVEA, § 23 f. und 35 AbfG/ZH; Abfall- und Deponieplanung; Festsetzung der Deponiestandorte im Richtplan; Mitwirkung der Gemeinden und…",
         "datum": "2021-02-04",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_146_II_367",
-        "zitierung": "BGE 146 II 367",
-        "regesteKurz": "Art. 18a Abs. 4 und Art. 33 Abs. 3 lit. b RPG. Beurteilungsspielraum des Kantonsgerichts bei der Auslegung eines Gemeindereglements; Interesse an der Produktion von Solarenergie. Das Kantonsgericht prüfte einzig, ob die von der Gemeinde…",
-        "datum": "2020-06-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -4361,6 +4371,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_152_I_193__voll",
+        "zitierung": "Urteil 1C_506/2025 (nicht publ. in BGE 152 I 193)",
+        "regesteKurz": null,
+        "datum": "2026-04-17",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "114": [
@@ -5207,6 +5227,16 @@
     ],
     "139": [
       {
+        "key": "bge_152_I_169",
+        "zitierung": "BGE 152 I 169",
+        "regesteKurz": "Art. 13 Abs. 1 BV; Art. 8 EMRK; Art. 66d Abs. 1 lit. b StGB; Entstehung neuer ehelicher oder familiärer Bindungen und Aufschub des Vollzugs der strafrechtlichen Landesverweisung. Begriff der zwingenden Normen (ius cogens) des Völkerrechts…",
+        "datum": "2026-06-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_152_IV_73",
         "zitierung": "BGE 152 IV 73",
         "regesteKurz": "Art. 181 und 239 Ziff. 1 StGB i.V.m. Art. 22 BV und Art. 11 EMRK; Straftaten, die im Rahmen einer nicht bewilligten, friedlichen Kundgebung begangen werden, und Vereinbarkeit einer solchen Verurteilung mit dem Recht auf…",
@@ -5383,6 +5413,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_147_IV_510",
+        "zitierung": "BGE 147 IV 510",
+        "regesteKurz": "Art. 86 StPO und Art. 9 VeÜ-ZSSV; kein Rechtsanspruch auf elektronische Zustellung von Mitteilungen der Strafbehörden. In Strafsachen sieht Art. 86 StPO vor, dass Mitteilungen der Strafbehörden an die betroffene Person mit deren…",
+        "datum": "2021-06-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_147_I_354",
         "zitierung": "BGE 147 I 354",
         "regesteKurz": "Art. 13 BV, Art. 8 EMRK, Art. 321 StGB, Art. 68 des Tessiner Gesundheitsgesetzes (LSan/TI); ärztliches Berufsgeheimnis, Bestimmungen des kantonalen Rechts über die Meldepflicht von Angehörigen der Gesundheitsberufe gegenüber der…",
@@ -5391,6 +5431,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_200",
+        "zitierung": "BGE 152 V 200",
+        "regesteKurz": "Art. 19 Abs. 1 FamZG; Art. 16 lit. b FamZV; Anspruch nichterwerbstätiger Personen auf Familienzulagen; Auslegung. Art. 16 lit. b FamZV kann keine Anwendung finden, weil damit der Kreis der nichterwerbstätigen Personen mit Anspruch auf…",
+        "datum": "2026-05-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_III_553",
@@ -5427,26 +5477,6 @@
         "zitierung": "BGE 151 II 593",
         "regesteKurz": "Art. 11 Abs. 2 USG; Art. 12 Abs. 1 und 2, Art. 14 Abs. 2 NISV; Ziff. 63 Anhang 1 NISV; adaptive Mobilfunkantennen; Anwendung eines Korrekturfaktors auf die maximale Sendeleistung und Mittelung der massgeblichen Sendeleistung; Tauglichkeit…",
         "datum": "2024-12-09",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_II_475",
-        "zitierung": "BGE 151 II 475",
-        "regesteKurz": "Art. 1 und 8 Abs. 1, Art. 10 und 11 Abs. 2, Art. 17 und 32 LVA; Art. 4 Abs. 1, Art. 5 Abs. 1 und 3 lit. a sowie Art. 49a Abs. 1 KG; Art. 29 Abs. 1 BV; Art. 6 Ziff. 1 EMRK; Preisabreden im Bereich Luftfracht; anwendbares Recht und…",
-        "datum": "2024-11-26",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_II_334",
-        "zitierung": "BGE 150 II 334",
-        "regesteKurz": "Art. 19 Abs. 1 lit. e, Art. 19 Abs. 4 lit. d und Art. 72 Abs. 1 EnG; Art. 2 lit. a, Art. 16 Abs. 2 und Anhang 1.5 Ziff. 2.1.2 lit. g EnFV; Unterscheidung zwischen \"Mischanlagen\" und Hybridanlagen; Klärgas als nicht förderungsberechtigter…",
-        "datum": "2024-03-22",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -5565,6 +5595,26 @@
     ],
     "182": [
       {
+        "key": "bge_147_IV_510",
+        "zitierung": "BGE 147 IV 510",
+        "regesteKurz": "Art. 86 StPO und Art. 9 VeÜ-ZSSV; kein Rechtsanspruch auf elektronische Zustellung von Mitteilungen der Strafbehörden. In Strafsachen sieht Art. 86 StPO vor, dass Mitteilungen der Strafbehörden an die betroffene Person mit deren…",
+        "datum": "2021-06-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_200",
+        "zitierung": "BGE 152 V 200",
+        "regesteKurz": "Art. 19 Abs. 1 FamZG; Art. 16 lit. b FamZV; Anspruch nichterwerbstätiger Personen auf Familienzulagen; Auslegung. Art. 16 lit. b FamZV kann keine Anwendung finden, weil damit der Kreis der nichterwerbstätigen Personen mit Anspruch auf…",
+        "datum": "2026-05-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_I_382",
         "zitierung": "BGE 151 I 382",
         "regesteKurz": "Art. 2 UNO-Pakt II; Art. 6 und 13 EMRK; Art. 29, 30, 190 und 191c BV; Art. 99 AIG; Prüfung der Kompetenz des Staatssekretariats für Migration (SEM), kantonalen Gerichtsurteilen die Zustimmung zu verweigern, auf ihre Verfassungs- und…",
@@ -5589,16 +5639,6 @@
         "zitierung": "BGE 148 III 172",
         "regesteKurz": "Art. 5 Abs. 5 StromVV, Art. 1 lit. a ZPO, Art. 164 und Art. 182 Abs. 1 BV; Zuständigkeitsordnung; Regelung auf der Stufe des formellen Gesetzes. Art. 5 Abs. 5 der Stromversorgungsverordnung (StromVV) verstösst gegen Art. 164 und Art. 182…",
         "datum": "2022-01-11",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_IV_510",
-        "zitierung": "BGE 147 IV 510",
-        "regesteKurz": "Art. 86 StPO und Art. 9 VeÜ-ZSSV; kein Rechtsanspruch auf elektronische Zustellung von Mitteilungen der Strafbehörden. In Strafsachen sieht Art. 86 StPO vor, dass Mitteilungen der Strafbehörden an die betroffene Person mit deren…",
-        "datum": "2021-06-04",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -5957,6 +5997,16 @@
         "gewicht": 3
       },
       {
+        "key": "bge_148_II_392",
+        "zitierung": "BGE 148 II 392",
+        "regesteKurz": "Art. 27, 29 Abs. 2, Art. 94 Abs. 4, Art. 106 und 190 BV; Art. 3 lit. a, Art. 4, 9, 21, 24 Abs. 1 und Art. 86 ff. BGS; DNS-Zugangssperre für von ausländischen Unternehmen in der Schweiz angebotene Online-Geldspiele. Gegen Entscheide des…",
+        "datum": "2022-05-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 3
+      },
+      {
         "key": "bge_147_I_280",
         "zitierung": "BGE 147 I 280",
         "regesteKurz": "Unterlassungs- und Feststellungsgesuche betreffend Funk- und Kabelaufklärung (Art. 38 ff. NDG); Anspruch auf materielle Beurteilung der Gesuche (Art. 25 Abs. 1 DSG; Art. 13 EMRK). Bei der Funk- und Kabelaufklärung werden Personendaten…",
@@ -6007,16 +6057,6 @@
         "gewicht": 2
       },
       {
-        "key": "bge_148_II_392",
-        "zitierung": "BGE 148 II 392",
-        "regesteKurz": "Art. 27, 29 Abs. 2, Art. 94 Abs. 4, Art. 106 und 190 BV; Art. 3 lit. a, Art. 4, 9, 21, 24 Abs. 1 und Art. 86 ff. BGS; DNS-Zugangssperre für von ausländischen Unternehmen in der Schweiz angebotene Online-Geldspiele. Gegen Entscheide des…",
-        "datum": "2022-05-18",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 2
-      },
-      {
         "key": "bge_147_I_206",
         "zitierung": "BGE 147 I 206",
         "regesteKurz": "Art. 73, 77 und 80 BPR, Art. 29a und 34 BV; Rückzug einer eidgenössischen Volksinitiative. Gegen den Rückzug einer eidgenössischen Volksinitiative ist die Beschwerde ans Bundesgericht möglich (E. 2). Der Rückzug einer eidgenössischen…",
@@ -6028,6 +6068,16 @@
       }
     ],
     "191": [
+      {
+        "key": "bge_152_I_200",
+        "zitierung": "BGE 152 I 200",
+        "regesteKurz": "Art. 49 Abs. 1 BV; Art. 83 lit. f Ziff. 1, Art. 86 Abs. 1 und 2, Art. 120 BGG; Art. 52 Abs. 2 IVöB; Beschwerden gegen Beschaffungen der oberen kantonalen Gerichtsbehörden; Vorrang des Bundesrechts; Vorinstanzen des Bundesgerichts;…",
+        "datum": "2026-05-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_151_II_533",
         "zitierung": "BGE 151 II 533",
@@ -6467,6 +6517,16 @@
         "gewicht": 3
       },
       {
+        "key": "bge_149_I_146",
+        "zitierung": "BGE 149 I 146",
+        "regesteKurz": "Art. 29a BV; Rechtsweggarantie; Ermessenssubventionen. Dem Entscheid über die Ausrichtung von Beiträgen aus dem kommunalen Kurtaxenertrag, die nach dem kantonalen Recht Ermessenssubventionen darstellen, kommt kein vorwiegend politischer…",
+        "datum": "2023-03-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
         "key": "bge_149_I_2",
         "zitierung": "BGE 149 I 2",
         "regesteKurz": "Art. 10 und 13 EMRK; Art. 16, 29a, 35 und 93 Abs. 3 BV; Art. 2 lit. cbis, Art. 5a, 25 Abs. 3 lit. b, Art. 83 Abs. 1 lit. a und Art. 93 Abs. 1 und 95 Abs. 1 RTVG; Art. 28 ff. ZGB; Art. 1, 3, 5 Abs. 4 und Art. 18 der SRG-Konzession; Löschen…",
@@ -6481,16 +6541,6 @@
         "zitierung": "BGE 147 I 194",
         "regesteKurz": "Art. 34, 142 Abs. 2, Art. 189 Abs. 4 BV, Art. 77 BPR; Eidgenössische Volksabstimmung über die Konzernverantwortungsinitiative; die Kritik am Erfordernis des Ständemehrs ist sofort gegen die Abstimmungsanordnung zu erheben. Die allgemeine…",
         "datum": "2021-03-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 2
-      },
-      {
-        "key": "bge_146_IV_30",
-        "zitierung": "BGE 146 IV 30",
-        "regesteKurz": "Art. 85 Abs. 4 lit. a und 356 Abs. 4 StPO; Einsprache gegen einen Strafbefehl, Nichterscheinen an der Hauptverhandlung im Verfahren vor dem erstinstanzlichen Gericht, Rückzugsfiktion der Einsprache. Die gesetzliche Fiktion, wonach bei…",
-        "datum": "2019-11-21",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

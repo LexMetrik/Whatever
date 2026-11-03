@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-25",
+  "erzeugt": "2026-11-02",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/BEZ.2025.78",
@@ -17,7 +17,7 @@
       "sachgebiet": "privat",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Rechtsöffnung",
+        "gegenstand": "Rechtsöffnung (BGer 4A_160/2026 vom 1. Oktober 2026)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "Dr. iur. Olivier Steiner, Dr. Claudius Gelzer, lic. iur. André Equey und Gerichtsschreiber PD Dr. Benedikt Seiler"
@@ -188,11 +188,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79377&Template=search_result_document.html",
-      "abgerufen": "2026-09-25",
-      "fassungsToken": "2026-08-20",
+      "abgerufen": "2026-11-02",
+      "fassungsToken": "2026-10-28",
       "sha": "a1e50717f4e19e39906a2e17eecee59311a9678607d18cf7f984c4fee546ce09",
       "erstpublikation": "2026-08-20",
-      "aktualisiert": "2026-08-20",
+      "aktualisiert": "2026-10-28",
       "nummerSekundaer": "AG.2026.121",
       "ecli": "ECLI:CH:BSA:2026:BEZ.2025.78"
     }

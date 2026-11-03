@@ -1,0 +1,96 @@
+{
+  "erzeugt": "2026-11-02",
+  "eintraege": [
+    {
+      "id": "bund/bvger/E_7454_2026",
+      "gericht": "bvger",
+      "gerichtName": "Bundesverwaltungsgericht",
+      "gerichtstyp": "bundesverwaltungsgericht",
+      "kanton": "CH",
+      "abteilung": "Abteilung V (Asylrecht)",
+      "nummer": "E-7454/2026",
+      "bgeReferenz": null,
+      "zitierung": "BVGer E-7454/2026 vom 22. Oktober 2026",
+      "datum": "2026-10-22",
+      "sprache": "de",
+      "leitcharakter": "routine",
+      "sachgebiet": "oeffentlich",
+      "legalArea": "public",
+      "rubrum": {
+        "besetzung": "Einzelrichterin Barbara Balmelli, mit Zustimmung von Richterin Jeannine Scherrer-Bänziger; Gerichtsschreiber Olivier Gloor",
+        "parteien": null,
+        "gegenstand": null,
+        "vorinstanz": null
+      },
+      "regeste": {
+        "text": "Asyl und Wegweisung (Mehrfachgesuch/Wiedererwägung)",
+        "quelle": "opencaselaw"
+      },
+      "regesteAmtlich": false,
+      "abschnitte": [
+        {
+          "typ": "dispositiv",
+          "bloecke": [
+            {
+              "marke": "1.",
+              "text": "Die Beschwerde wird gutgeheissen, soweit darauf einzutreten ist."
+            },
+            {
+              "marke": "2.",
+              "text": "Die Verfügung vom 6. Oktober 2026 wird aufgehoben und die Sache zur neuen Entscheidung an das SEM zurückgewiesen."
+            },
+            {
+              "marke": "3.",
+              "text": "Es werden keine Verfahrenskosten erhoben."
+            },
+            {
+              "marke": "4.",
+              "text": "Das SEM wird angewiesen, den Beschwerdeführenden für das Verfahren vor dem Bundesverwaltungsgericht eine Parteientschädigung von insgesamt Fr. 300.- auszurichten."
+            },
+            {
+              "marke": "5.",
+              "text": "Dieses Urteil geht an die Beschwerdeführenden, das SEM und die zuständige kantonale Behörde. Die Einzelrichterin: Der Gerichtsschreiber: Barbara Balmelli Olivier Gloor Versand:"
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [
+        "Die Beschwerde wird gutgeheissen, soweit darauf einzutreten ist.",
+        "Die Verfügung vom 6. Oktober 2026 wird aufgehoben und die Sache zur neuen Entscheidung an das SEM zurückgewiesen.",
+        "Es werden keine Verfahrenskosten erhoben.",
+        "Das SEM wird angewiesen, den Beschwerdeführenden für das Verfahren vor dem Bundesverwaltungsgericht eine Parteientschädigung von insgesamt Fr. 300.- auszurichten.",
+        "Dieses Urteil geht an die Beschwerdeführenden, das SEM und die zuständige kantonale Behörde.\nDie Einzelrichterin:\nDer Gerichtsschreiber:\nBarbara Balmelli\nOlivier Gloor\nVersand:"
+      ],
+      "zitierteNormen": [
+        "Art. 106 Abs. 1 ASYLG",
+        "Art. 108 Abs. 3 ASYLG",
+        "Art. 111 ASYLG",
+        "Art. 111a Abs. 2 ASYLG",
+        "Art. 29 Abs. 2 BV",
+        "Art. 31 VGG",
+        "Art. 48 Abs. 1 VWVG",
+        "Art. 49 VWVG"
+      ],
+      "normKeys": [
+        "ASYLG",
+        "BV",
+        "VGG",
+        "VWVG"
+      ],
+      "zitierteEntscheide": [
+        "E-6082/2026",
+        "E-7339/2026",
+        "E-7454/2026",
+        "E-8060/2024"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://bvger.weblaw.ch/cache?id=31ae3d82-1bdf-4b14-bde7-248b2f0f4cc4&guiLanguage=de",
+      "abgerufen": "2026-11-02",
+      "fassungsToken": "77e3f5ab7d47dfe4f4e6506fda7f63ea66b503aa7d201a8dd538d6ecea8d69d5",
+      "sha": "35190ac8f602f272bed8776ad7c5ef127989a2340967480d21696eb37f7d4e8b",
+      "ecli": "ECLI:CH:BVGER:2026:E-7454.2026"
+    }
+  ]
+}
