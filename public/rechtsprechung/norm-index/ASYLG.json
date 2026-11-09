@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-11-09",
   "erlass": "ASYLG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -36,7 +36,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
       },
       {
         "key": "bge_152_II_89",
@@ -45,6 +45,16 @@
         "datum": "2026-01-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_I_169__voll",
+        "zitierung": "Urteil 7B_594/2024 (nicht publ. in BGE 152 I 169)",
+        "regesteKurz": null,
+        "datum": "2026-06-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },

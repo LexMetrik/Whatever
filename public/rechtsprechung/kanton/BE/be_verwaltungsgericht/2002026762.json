@@ -1,0 +1,71 @@
+{
+  "erzeugt": "2026-10-26",
+  "eintraege": [
+    {
+      "id": "kanton/BE/be_verwaltungsgericht/2002026762",
+      "gericht": "be_verwaltungsgericht",
+      "gerichtName": "Verwaltungsgericht BE",
+      "gerichtstyp": "kantonal",
+      "kanton": "BE",
+      "abteilung": null,
+      "nummer": "200 2026 762",
+      "bgeReferenz": null,
+      "zitierung": "Verwaltungsgericht BE 200 2026 762 vom 30.09.2026",
+      "datum": "2026-09-30",
+      "sprache": "de",
+      "leitcharakter": "routine",
+      "sachgebiet": "oeffentlich",
+      "legalArea": null,
+      "rubrum": null,
+      "regeste": null,
+      "regesteAmtlich": false,
+      "abschnitte": [
+        {
+          "typ": "erwaegung",
+          "bloecke": [
+            {
+              "marke": "E. 1",
+              "tiefe": 1,
+              "text": "Die Beschwerde wird abgewiesen."
+            },
+            {
+              "marke": "E. 2",
+              "tiefe": 1,
+              "text": "Die Verfahrenskosten, gerichtlich festgelegt auf Fr. 200.--, werden dem Beschwerdeführer zur Bezahlung auferlegt."
+            },
+            {
+              "marke": "E. 3",
+              "tiefe": 1,
+              "text": "Es wird keine Parteientschädigung zugesprochen."
+            },
+            {
+              "marke": "E. 4",
+              "tiefe": 1,
+              "text": "Zu eröffnen (R): - A.________ - Regierungsstatthalterin des Verwaltungskreises Seeland (samt Eingabe des Beschwerdeführers vom 23. September 2026) Die Kammerpräsidentin: Die Gerichtsschreiberin: Rechtsmittelbelehrung Gegen dieses Urteil kann innert 30 Tagen seit Zustellung der schriftlichen Begründung beim Bundesgericht, Schweizerhofquai 6, 6004 Luzern, Beschwerde in öffentlich-rechtlichen Angelegenheiten gemäss Art. 39 ff., 82 ff. und 90 ff. des Bundesgesetzes vom 17. Juni 2005 über das Bundesgericht (BGG; SR 173.110) geführt werden."
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [],
+      "zitierteNormen": [
+        "Art. 102 VRPG",
+        "Art. 104 Abs. 2 VRPG",
+        "Art. 69 Abs. 1 VRPG",
+        "Art. 79 Abs. 1 VRPG",
+        "Art. 79 VRPG"
+      ],
+      "normKeys": [],
+      "zitierteEntscheide": [
+        "BGE 124 V 285"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://www.vg-urteile.apps.be.ch/tribunapublikation/tribunavtplus/ServletDownload/200_2026_762_1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2ac80aab5d00efbdbcade76af4494abbb36ce702e095f068e46fcb63a64b0e0b5c2576bb1101b2a5f84f7d01961ab8310?path=1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2ac80aab5d00efbdbcade76af4494abbb36ce702e095f068e46fcb63a64b0e0b5c2576bb1101b2a5f84f7d01961ab8310&pathIsEncrypted=1&dossiernummer=200_2026_762",
+      "abgerufen": "2026-10-26",
+      "fassungsToken": "e99732cc2181ec2dadfd91231b471032450b88e0da27270c437ee15f5a1477d1",
+      "sha": "aeab219fa9371cc40a5468ceaaf9b186c1bd121a87425ecc110fd13fcfecf6bf",
+      "ecli": "ECLI:CH:BEV:2026:200.2026.762"
+    }
+  ]
+}

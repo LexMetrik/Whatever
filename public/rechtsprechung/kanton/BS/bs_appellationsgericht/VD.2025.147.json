@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-26",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/VD.2025.147",
@@ -17,7 +17,7 @@
       "sachgebiet": "oeffentlich",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Änderung des Linienplans am Rheintalweg in Riehen (noch nicht rechtskräftig)",
+        "gegenstand": "Änderung des Linienplans am Rheintalweg in Riehen",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "Dr. Stephan Wullschleger, Dr. Claudius Gelzer, Prof. Dr. Daniela Thurnherr Keller und Gerichtsschreiber MLaw Damian Wyss"
@@ -226,11 +226,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79800&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2026-07-10",
+      "abgerufen": "2026-10-26",
+      "fassungsToken": "2026-10-23",
       "sha": "c8a5fd8c9678d67bf27d93a95e2a183f3ed5a1c12e7cc056e4781260344c5b8a",
       "erstpublikation": "2026-07-10",
-      "aktualisiert": "2026-07-10",
+      "aktualisiert": "2026-10-23",
       "nummerSekundaer": "AG.2026.405",
       "ecli": "ECLI:CH:BSA:2026:VD.2025.147"
     }

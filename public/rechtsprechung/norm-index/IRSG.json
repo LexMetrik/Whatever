@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-11-09",
   "erlass": "IRSG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -234,13 +234,23 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 0
+        "gewicht": 1
       },
       {
         "key": "bge_146_IV_36",
         "zitierung": "BGE 146 IV 36",
         "regesteKurz": "Art. 280, 272, 277 StPO, Art. 30 IRSG; Aufzeichnungen im Ausland mithilfe eines technischen Überwachungsgerätes (Mikrofon). Die technischen Überwachungsmassnahmen im Sinn von Art. 280 StPO sind Zwangsmassnahmen (E. 2.1). Aufgrund des…",
         "datum": "2019-11-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_285",
+        "zitierung": "BGE 152 IV 285",
+        "regesteKurz": "Art. 277, 280, 281 StPO; Art. 30, 67a, 80d bis IRSG; Gesuch um internationale Rechtshilfe in Strafsachen; Voraussetzungen für die Erteilung einer nachträglichen Genehmigung zur Verwertung von im Rahmen von geheimen technischen…",
+        "datum": "2026-02-12",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -488,6 +498,16 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_285",
+        "zitierung": "BGE 152 IV 285",
+        "regesteKurz": "Art. 277, 280, 281 StPO; Art. 30, 67a, 80d bis IRSG; Gesuch um internationale Rechtshilfe in Strafsachen; Voraussetzungen für die Erteilung einer nachträglichen Genehmigung zur Verwertung von im Rahmen von geheimen technischen…",
+        "datum": "2026-02-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
         "gewicht": 0
       }
     ],
@@ -515,20 +535,30 @@
     ],
     "67a": [
       {
-        "key": "bge_150_IV_201",
-        "zitierung": "BGE 150 IV 201",
-        "regesteKurz": "Art. 2 IRSG; Art. 26 BV; Rechtshilfe an Russland, Aufrechterhaltung einer Kontosperre. Wer lediglich von einer rechtshilfeweisen Kontosperre in der Schweiz betroffen ist, kann sich nicht auf Art. 2 IRSG (Rechsthilfeausschlussgrund des…",
-        "datum": "2024-03-07",
+        "key": "bge_146_IV_36",
+        "zitierung": "BGE 146 IV 36",
+        "regesteKurz": "Art. 280, 272, 277 StPO, Art. 30 IRSG; Aufzeichnungen im Ausland mithilfe eines technischen Überwachungsgerätes (Mikrofon). Die technischen Überwachungsmassnahmen im Sinn von Art. 280 StPO sind Zwangsmassnahmen (E. 2.1). Aufgrund des…",
+        "datum": "2019-11-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_285",
+        "zitierung": "BGE 152 IV 285",
+        "regesteKurz": "Art. 277, 280, 281 StPO; Art. 30, 67a, 80d bis IRSG; Gesuch um internationale Rechtshilfe in Strafsachen; Voraussetzungen für die Erteilung einer nachträglichen Genehmigung zur Verwertung von im Rahmen von geheimen technischen…",
+        "datum": "2026-02-12",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_146_IV_36",
-        "zitierung": "BGE 146 IV 36",
-        "regesteKurz": "Art. 280, 272, 277 StPO, Art. 30 IRSG; Aufzeichnungen im Ausland mithilfe eines technischen Überwachungsgerätes (Mikrofon). Die technischen Überwachungsmassnahmen im Sinn von Art. 280 StPO sind Zwangsmassnahmen (E. 2.1). Aufgrund des…",
-        "datum": "2019-11-15",
+        "key": "bge_150_IV_201",
+        "zitierung": "BGE 150 IV 201",
+        "regesteKurz": "Art. 2 IRSG; Art. 26 BV; Rechtshilfe an Russland, Aufrechterhaltung einer Kontosperre. Wer lediglich von einer rechtshilfeweisen Kontosperre in der Schweiz betroffen ist, kann sich nicht auf Art. 2 IRSG (Rechsthilfeausschlussgrund des…",
+        "datum": "2024-03-07",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

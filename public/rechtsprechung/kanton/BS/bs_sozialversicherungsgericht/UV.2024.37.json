@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-11-09",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/UV.2024.37",
@@ -17,7 +17,7 @@
       "sachgebiet": "sozialversicherung",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "UVG (Beschwerde beim Bundesgericht hängig) Long-Covid als Berufskrankheit, insbes. Nachweis einer stattgehabten Infektion bei fehlendem positivem Covid-19-Test während der Akuterkrankung",
+        "gegenstand": "Long-Covid als Berufskrankheit, insbes. Nachweis einer stattgehabten Infektion bei fehlendem positivem Covid-19-Test während der Akuterkrankung (Beschwerde beim Bundesgericht hängig)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "Dr. G. Thomi (Vorsitz), lic. phil. D. Borer, lic. iur. S. Bammatter-Glättli und Gerichtsschreiberin lic. iur. H. Hofer"
@@ -260,11 +260,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79526&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2026-05-22",
+      "abgerufen": "2026-11-09",
+      "fassungsToken": "2026-11-06",
       "sha": "39e7ca6c2c3e98bbf0505c96144b8b22bfdce3063760e50bdf8fae2c712daf73",
       "erstpublikation": "2026-05-06",
-      "aktualisiert": "2026-05-22",
+      "aktualisiert": "2026-11-06",
       "nummerSekundaer": "SVG.2026.65",
       "ecli": "ECLI:CH:BSS:2025:UV.2024.37"
     }

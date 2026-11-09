@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-04",
+  "erzeugt": "2026-11-09",
   "erlass": "STGB",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -55,6 +55,16 @@
         "gewicht": 2
       },
       {
+        "key": "bge_150_IV_255",
+        "zitierung": "BGE 150 IV 255",
+        "regesteKurz": "Art. 1 StGB; Art. 10, 11 Abs. 1 und Art. 20 Abs. 1 lit. e BetmG; Beihilfe zum Suizid; Verschreibung einer tödlich wirkenden Substanz (Natriumpentobarbital); Legalitätsprinzip. Die Verschreibung von Natriumpentobarbital durch einen Arzt an…",
+        "datum": "2024-03-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_149_I_248",
         "zitierung": "BGE 149 I 248",
         "regesteKurz": "Art. 8 Abs. 2, Art. 10 Abs. 2, Art. 16, 27 und 36 BV; Art. 8, 10 und 14 EMRK; Grund- und Menschenrechtskonformität eines partiellen Bettelverbots; abstrakte Normenkontrolle. Bettelei fällt in den Schutzbereich des Grundrechts der…",
@@ -69,16 +79,6 @@
         "zitierung": "BGE 148 IV 298",
         "regesteKurz": "Anwendungsbereich von aArt. 260 ter Ziff. 1 bzw. Art. 260 ter Abs. 1 StGB, von Art. 2 Abs. 1 des \"Al-Qaïda/IS-Gesetzes\" vom 12. Dezember 2014 und von Art. 74 Abs. 4 NDG; Vereinbarkeit von Art. 2 Abs. 1 des Al-Qaïda/ IS-Gesetzes mit dem…",
         "datum": "2022-04-11",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_148_IV_1",
-        "zitierung": "BGE 148 IV 1",
-        "regesteKurz": "Art. 59 Abs. 1 und 4, Art. 62a Abs. 1 lit. b, Art. 62c Abs. 1 lit. a, Abs. 3 und 4, Art. 63 Abs. 1, Art. 63a Abs. 2 und 3, Art. 63b Abs. 5 und Art. 64 Abs. 1 StGB; Art. 2 Abs. 2, Art. 29 f., Art. 80 Abs. 1, Art. 197 Abs. 1 lit. a, Art. 393…",
-        "datum": "2021-08-23",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1641,6 +1641,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_152_IV_276__voll",
+        "zitierung": "Urteil 6B_541/2025 (nicht publ. in BGE 152 IV 276)",
+        "regesteKurz": null,
+        "datum": "2026-02-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_IV_377__voll",
         "zitierung": "Urteil 6B_1100/2023 (nicht publ. in BGE 150 IV 377)",
         "regesteKurz": null,
@@ -1743,6 +1753,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_I_178",
+        "zitierung": "BGE 152 I 178",
+        "regesteKurz": "Art. 36 Abs. 1 lit. b, Art. 37 und 38 Abs. 1 MedBG; Art. 27 und 36 Abs. 3 BV; Entzug der Bewilligung eines Arztes zur Berufsausübung in eigener fachlicher Verantwortung wegen sexuellen Handlungen mit Patientinnen. Verfahrensgegenstand (E.…",
+        "datum": "2025-11-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_IV_321",
         "zitierung": "BGE 149 IV 321",
         "regesteKurz": "Art. 42 Abs. 4 StGB; Höhe der Verbindungsbusse. Die Verbindungsbusse i.S.v. Art. 42 Abs. 4 StGB darf höchstens 20 % der in der Summe schuldangemessenen Sanktion - bestehend aus einer bedingt ausgesprochenen Hauptstrafe kombiniert mit einer…",
@@ -1757,16 +1777,6 @@
         "zitierung": "BGE 149 IV 161",
         "regesteKurz": "Art. 67 Abs. 3 lit. d Ziff. 2 i.V.m. Art. 67 Abs. 4 bis StGB; Ausnahme vom lebenslänglichen Tätigkeitsverbot. Darstellung, unter welchen kumulativen Voraussetzungen ausnahmsweise von der Anordnung eines Tätigkeitsverbots gemäss Art. 67…",
         "datum": "2023-04-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_IV_265",
-        "zitierung": "BGE 148 IV 265",
-        "regesteKurz": "Art. 355 Abs. 3, Art. 356 Abs. 7 und Art. 392 StPO; Strafbefehlsverfahren; Antrag auf Aufhebung des Strafbefehls gestützt auf Art. 392 StPO; Zuständigkeit der Staatsanwaltschaft und der Erstinstanz. Art. 356 Abs. 7 StPO, soweit er eine…",
-        "datum": "2022-07-14",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1868,7 +1878,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 8
+        "gewicht": 9
       },
       {
         "key": "bge_146_IV_88__voll",
@@ -1881,6 +1891,16 @@
         "gewicht": 7
       },
       {
+        "key": "bge_147_IV_241",
+        "zitierung": "BGE 147 IV 241",
+        "regesteKurz": "Art. 34 und 2 StGB; Strafzumessung, Wahl der Strafart, Geldstrafe, Übergangsrecht. Der Richter bestimmt bei der Aussprechung einer Strafe zuerst die Art der Strafe und setzt danach das Strafmass fest. Bei der Wahl der Strafart trägt er…",
+        "datum": "2021-05-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 4
+      },
+      {
         "key": "bge_146_IV_297",
         "zitierung": "BGE 146 IV 297",
         "regesteKurz": "Art. 5 Abs. 3 BV; Art. 116 Abs. 1 lit. a i.V.m. Abs. 2 AIG; Art. 17 StGB; Förderung der rechtswidrigen Einreise; Notstandshilfe; Dublin-Verfahren. Die Beschwerde ist gegen Entscheide des Bundesverwaltungsgerichts auf dem Gebiet des Asyls…",
@@ -1889,16 +1909,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 4
-      },
-      {
-        "key": "bge_147_IV_241",
-        "zitierung": "BGE 147 IV 241",
-        "regesteKurz": "Art. 34 und 2 StGB; Strafzumessung, Wahl der Strafart, Geldstrafe, Übergangsrecht. Der Richter bestimmt bei der Aussprechung einer Strafe zuerst die Art der Strafe und setzt danach das Strafmass fest. Bei der Wahl der Strafart trägt er…",
-        "datum": "2021-05-05",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 3
       },
       {
         "key": "bge_146_IV_311__voll",
@@ -2025,6 +2035,16 @@
         "gewicht": 3
       },
       {
+        "key": "bge_147_IV_241",
+        "zitierung": "BGE 147 IV 241",
+        "regesteKurz": "Art. 34 und 2 StGB; Strafzumessung, Wahl der Strafart, Geldstrafe, Übergangsrecht. Der Richter bestimmt bei der Aussprechung einer Strafe zuerst die Art der Strafe und setzt danach das Strafmass fest. Bei der Wahl der Strafart trägt er…",
+        "datum": "2021-05-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
         "key": "bge_146_IV_311",
         "zitierung": "BGE 146 IV 311",
         "regesteKurz": "Art. 2 Abs. 1, Art. 49 Abs. 2 und Art. 66a sowie Art. 66b StGB; strafrechtliches Rückwirkungsverbot in Bezug auf die neuen Bestimmungen über die Landesverweisung; Wiederholungsfall; retrospektive Konkurrenz bei Landesverweisung. Das…",
@@ -2033,16 +2053,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 2
-      },
-      {
-        "key": "bge_147_IV_241",
-        "zitierung": "BGE 147 IV 241",
-        "regesteKurz": "Art. 34 und 2 StGB; Strafzumessung, Wahl der Strafart, Geldstrafe, Übergangsrecht. Der Richter bestimmt bei der Aussprechung einer Strafe zuerst die Art der Strafe und setzt danach das Strafmass fest. Bei der Wahl der Strafart trägt er…",
-        "datum": "2021-05-05",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
       },
       {
         "key": "bge_148_IV_89__voll",
@@ -3694,7 +3704,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
+      },
+      {
+        "key": "bge_152_I_169",
+        "zitierung": "BGE 152 I 169",
+        "regesteKurz": "Art. 13 Abs. 1 BV; Art. 8 EMRK; Art. 66d Abs. 1 lit. b StGB; Entstehung neuer ehelicher oder familiärer Bindungen und Aufschub des Vollzugs der strafrechtlichen Landesverweisung. Begriff der zwingenden Normen (ius cogens) des Völkerrechts…",
+        "datum": "2026-06-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_152_II_89",
@@ -3773,6 +3793,26 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_III_319",
+        "zitierung": "BGE 152 III 319",
+        "regesteKurz": "a Art. 60 OR; Art. 6 EMRK. Im vorliegenden Fall ist der Beginn der Verjährungsfrist mit Art. 6 EMRK vereinbar (E. 5). Regeste b Art. 60 Abs. 2 OR; Art. 122 StGB. Eine dauerhafte Schädigung eines Embryos oder eines lebend geborenen Fötus…",
+        "datum": "2026-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_I_178",
+        "zitierung": "BGE 152 I 178",
+        "regesteKurz": "Art. 36 Abs. 1 lit. b, Art. 37 und 38 Abs. 1 MedBG; Art. 27 und 36 Abs. 3 BV; Entzug der Bewilligung eines Arztes zur Berufsausübung in eigener fachlicher Verantwortung wegen sexuellen Handlungen mit Patientinnen. Verfahrensgegenstand (E.…",
+        "datum": "2025-11-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_IV_57",
         "zitierung": "BGE 151 IV 57",
         "regesteKurz": "Art. 221 Abs. 1 StPO; aArt. 72 Ziff. 2 StGB; altrechtliche Unterbrechung der Verfolgungsverjährung. Ist die der beschuldigten Person vorgeworfene Straftat mit grosser Wahrscheinlichkeit bereits verjährt, muss der dringende Tatverdacht…",
@@ -3817,26 +3857,6 @@
         "zitierung": "BGE 149 IV 240",
         "regesteKurz": "Verletzung der Fürsorge- oder Erziehungspflicht (Art. 219 StGB); Verfolgungsverjährung, tatbestandliche Handlungseinheit (Art. 98 lit. b StGB). Der in Art. 219 StGB definierte Straftatbestand setzt in der Regel voraus, dass der Täter…",
         "datum": "2023-04-17",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_V_195",
-        "zitierung": "BGE 148 V 195",
-        "regesteKurz": "Art. 17 Abs. 1, Art. 21 Abs. 1 und Art. 53 Abs. 2 ATSG; Art. 37 Abs. 3 UVG; Art. 54 StGB; Art. 90 Abs. 2 SVG; Leistungskürzung bei einem Unfall, der bei Ausübung eines Verbrechens oder Vergehens herbeigeführt wurde; Wiedererwägung;…",
-        "datum": "2022-03-01",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_IV_274",
-        "zitierung": "BGE 147 IV 274",
-        "regesteKurz": "a Art. 6 Ziff. 1 EMRK; Art. 30 Abs. 1 BV; Art. 70 VStrR; Art. 97 Abs. 3 StGB; Strafverfügung; Verjährungsunterbrechung. Bestätigung der Rechtsprechung, wonach eine Strafverfügung gemäss Art. 70 VStrR verjährungsrechtlich im Sinne von Art.…",
-        "datum": "2021-01-11",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -4219,6 +4239,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_152_IV_276__voll",
+        "zitierung": "Urteil 6B_541/2025 (nicht publ. in BGE 152 IV 276)",
+        "regesteKurz": null,
+        "datum": "2026-02-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_II_475__voll",
         "zitierung": "Urteil 2C_64/2023 (nicht publ. in BGE 151 II 475)",
         "regesteKurz": null,
@@ -4313,6 +4343,16 @@
     ],
     "111": [
       {
+        "key": "bge_152_III_319",
+        "zitierung": "BGE 152 III 319",
+        "regesteKurz": "a Art. 60 OR; Art. 6 EMRK. Im vorliegenden Fall ist der Beginn der Verjährungsfrist mit Art. 6 EMRK vereinbar (E. 5). Regeste b Art. 60 Abs. 2 OR; Art. 122 StGB. Eine dauerhafte Schädigung eines Embryos oder eines lebend geborenen Fötus…",
+        "datum": "2026-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_IV_153",
         "zitierung": "BGE 151 IV 153",
         "regesteKurz": "Art. 172 und 264 Abs. 1 lit. c StPO; Art. 17 Abs. 3 BV; Art. 10 EMRK; Verbot der Beschlagnahme von Unterlagen aus dem Verkehr des Beschuldigten mit Medienschaffenden. Das Motiv des Informanten, mithin auch ein allfällig \"täuschendes\"…",
@@ -4377,16 +4417,6 @@
         "zitierung": "Urteil 6B_900/2022 (nicht publ. in BGE 149 IV 266)",
         "regesteKurz": null,
         "datum": "2023-05-22",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bger_1B_278_2022",
-        "zitierung": "BGer 1B_278/2022 vom 20. Juni 2022",
-        "regesteKurz": "Untersuchungshaft",
-        "datum": "2022-06-20",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -4456,6 +4486,16 @@
       }
     ],
     "113": [
+      {
+        "key": "bge_152_III_319",
+        "zitierung": "BGE 152 III 319",
+        "regesteKurz": "a Art. 60 OR; Art. 6 EMRK. Im vorliegenden Fall ist der Beginn der Verjährungsfrist mit Art. 6 EMRK vereinbar (E. 5). Regeste b Art. 60 Abs. 2 OR; Art. 122 StGB. Eine dauerhafte Schädigung eines Embryos oder eines lebend geborenen Fötus…",
+        "datum": "2026-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_149_IV_217",
         "zitierung": "BGE 149 IV 217",
@@ -4624,6 +4664,16 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_III_319",
+        "zitierung": "BGE 152 III 319",
+        "regesteKurz": "a Art. 60 OR; Art. 6 EMRK. Im vorliegenden Fall ist der Beginn der Verjährungsfrist mit Art. 6 EMRK vereinbar (E. 5). Regeste b Art. 60 Abs. 2 OR; Art. 122 StGB. Eine dauerhafte Schädigung eines Embryos oder eines lebend geborenen Fötus…",
+        "datum": "2026-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
         "gewicht": 0
       }
     ],
@@ -4663,6 +4713,16 @@
     ],
     "122": [
       {
+        "key": "bge_150_IV_121__voll",
+        "zitierung": "Urteil 6B_964/2023 (nicht publ. in BGE 150 IV 121)",
+        "regesteKurz": null,
+        "datum": "2024-04-17",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
         "key": "bge_148_IV_124",
         "zitierung": "BGE 148 IV 124",
         "regesteKurz": "Art. 11 Abs. 1, Art. 119 Abs. 2 lit. a, Art. 319 Abs. 1 lit. a, Art. 320 Abs. 4, Art. 324 Abs. 2, Art. 333 Abs. 1 StPO; Art. 4 des Protokolls Nr. 7 zur EMRK; Art. 14 Abs. 7 UNO-Pakt II; Teileinstellungsverfügung; Grundsatz \"ne bis in…",
@@ -4673,14 +4733,24 @@
         "gewicht": 1
       },
       {
-        "key": "bge_150_IV_121__voll",
-        "zitierung": "Urteil 6B_964/2023 (nicht publ. in BGE 150 IV 121)",
+        "key": "bge_152_IV_1__voll",
+        "zitierung": "Urteil 6B_399/2024 (nicht publ. in BGE 152 IV 1)",
         "regesteKurz": null,
-        "datum": "2024-04-17",
+        "datum": "2025-09-05",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_III_319",
+        "zitierung": "BGE 152 III 319",
+        "regesteKurz": "a Art. 60 OR; Art. 6 EMRK. Im vorliegenden Fall ist der Beginn der Verjährungsfrist mit Art. 6 EMRK vereinbar (E. 5). Regeste b Art. 60 Abs. 2 OR; Art. 122 StGB. Eine dauerhafte Schädigung eines Embryos oder eines lebend geborenen Fötus…",
+        "datum": "2026-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_150_IV_384",
@@ -4721,26 +4791,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_146_IV_105",
-        "zitierung": "BGE 146 IV 105",
-        "regesteKurz": "Art. 66a Abs. 2 StGB, Art. 8 EMRK; Landesverweis, Härtefallprüfung bei in der Schweiz geborenen oder aufgewachsenen Ausländern, Vereinbarkeit mit dem Konventionsrecht. Ob ein Härtefall vorliegt, bestimmt sich weder anhand von starren…",
-        "datum": "2019-12-04",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_152_IV_1__voll",
-        "zitierung": "Urteil 6B_399/2024 (nicht publ. in BGE 152 IV 1)",
-        "regesteKurz": null,
-        "datum": "2025-09-05",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "123": [
@@ -4752,7 +4802,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
         "key": "bge_152_IV_1",
@@ -4762,23 +4812,23 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_IV_185",
-        "zitierung": "BGE 151 IV 185",
-        "regesteKurz": "Art. 221 Abs. 1 lit. c StPO; Haft wegen einfacher Wiederholungsgefahr; Vortatenerfordernis. Die Auslegung von Art. 221 Abs. 1 lit. c StPO ergibt, dass die beschuldigte Person nur wegen einfacher Wiederholungsgefahr inhaftiert werden kann,…",
-        "datum": "2024-11-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
+        "gewicht": 1
       },
       {
         "key": "bge_151_IV_46",
         "zitierung": "BGE 151 IV 46",
         "regesteKurz": "Art. 360 StPO; Auslegung; Umfang des Rechts der Privatklägerschaft, die Anklageschrift im abgekürzten Verfahren abzulehnen. Die Ablehnung einer im abgekürzten Verfahren ergangenen Anklageschrift durch die Privatklägerschaft (Art. 360 Abs.…",
         "datum": "2024-11-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_IV_185",
+        "zitierung": "BGE 151 IV 185",
+        "regesteKurz": "Art. 221 Abs. 1 lit. c StPO; Haft wegen einfacher Wiederholungsgefahr; Vortatenerfordernis. Die Auslegung von Art. 221 Abs. 1 lit. c StPO ergibt, dass die beschuldigte Person nur wegen einfacher Wiederholungsgefahr inhaftiert werden kann,…",
+        "datum": "2024-11-19",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -4825,6 +4875,18 @@
         "gewicht": 0
       }
     ],
+    "124": [
+      {
+        "key": "bge_152_III_319",
+        "zitierung": "BGE 152 III 319",
+        "regesteKurz": "a Art. 60 OR; Art. 6 EMRK. Im vorliegenden Fall ist der Beginn der Verjährungsfrist mit Art. 6 EMRK vereinbar (E. 5). Regeste b Art. 60 Abs. 2 OR; Art. 122 StGB. Eine dauerhafte Schädigung eines Embryos oder eines lebend geborenen Fötus…",
+        "datum": "2026-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "125": [
       {
         "key": "bge_149_IV_42",
@@ -4849,6 +4911,16 @@
     ],
     "126": [
       {
+        "key": "bge_150_IV_121__voll",
+        "zitierung": "Urteil 6B_964/2023 (nicht publ. in BGE 150 IV 121)",
+        "regesteKurz": null,
+        "datum": "2024-04-17",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_147_IV_471",
         "zitierung": "BGE 147 IV 471",
         "regesteKurz": "Art. 2 Abs. 2 StGB; Bestimmung des milderen Rechts bei drohender Übertretungsbusse einerseits und (bedingter) Geldstrafe andererseits. Bestätigung der rechtlichen Grundlagen (E. 4). Bussen und Geldstrafen sind keine gleichartigen Strafen.…",
@@ -4859,10 +4931,10 @@
         "gewicht": 0
       },
       {
-        "key": "bge_150_IV_121__voll",
-        "zitierung": "Urteil 6B_964/2023 (nicht publ. in BGE 150 IV 121)",
+        "key": "bge_152_IV_276__voll",
+        "zitierung": "Urteil 6B_541/2025 (nicht publ. in BGE 152 IV 276)",
         "regesteKurz": null,
-        "datum": "2024-04-17",
+        "datum": "2026-02-04",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -5449,10 +5521,10 @@
         "gewicht": 1
       },
       {
-        "key": "bge_152_IV_249",
-        "zitierung": "BGE 152 IV 249",
-        "regesteKurz": "Art. 104 Abs. 1 lit. b i.V.m. Art. 118 Abs. 1 und Art. 119 Abs. 2 lit. a, Art. 104 Abs. 2, Art. 105 Abs. 2, Art. 115 Abs. 1 sowie Art. 322 Abs. 2 i.V.m. Art. 382 Abs. 1 StPO; Parteistellung und Beschwerdelegitimation der…",
-        "datum": "2026-01-22",
+        "key": "bge_152_IV_266",
+        "zitierung": "BGE 152 IV 266",
+        "regesteKurz": "Art. 169 StGB; Art. 152 SchKG; Art. 806 ZGB; Art. 92 VZG; Verfügung über mit Beschlag belegte Vermögenswerte; auf Mietzinsforderungen ausgedehnte Betreibung auf Grundpfandverwertung; reduzierte Verwaltung. Die Liste der Konstellationen der…",
+        "datum": "2026-02-06",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -5675,6 +5747,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_152_IV_281__voll",
+        "zitierung": "Urteil 7B_206/2024 (nicht publ. in BGE 152 IV 281)",
+        "regesteKurz": null,
+        "datum": "2026-03-02",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "163": [
@@ -5687,6 +5769,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_281",
+        "zitierung": "BGE 152 IV 281",
+        "regesteKurz": "Art. 248 f., 416 ff. und 428 StPO; Kostenfolgen des Entsiegelungsverfahrens. Die Kostenfolgen des Entsiegelungsverfahrens richten sich mangels entsprechender spezifischer Bestimmungen nach den allgemeinen Regeln gemäss Art. 416-436 StPO.…",
+        "datum": "2026-03-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_IV_258",
@@ -5774,6 +5866,16 @@
       }
     ],
     "169": [
+      {
+        "key": "bge_152_IV_266",
+        "zitierung": "BGE 152 IV 266",
+        "regesteKurz": "Art. 169 StGB; Art. 152 SchKG; Art. 806 ZGB; Art. 92 VZG; Verfügung über mit Beschlag belegte Vermögenswerte; auf Mietzinsforderungen ausgedehnte Betreibung auf Grundpfandverwertung; reduzierte Verwaltung. Die Liste der Konstellationen der…",
+        "datum": "2026-02-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_146_IV_59",
         "zitierung": "BGE 146 IV 59",
@@ -5973,6 +6075,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_152_IV_276__voll",
+        "zitierung": "Urteil 6B_541/2025 (nicht publ. in BGE 152 IV 276)",
+        "regesteKurz": null,
+        "datum": "2026-02-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_I_366__voll",
         "zitierung": "Urteil 2C_523/2021 (nicht publ. in BGE 149 I 366)",
         "regesteKurz": null,
@@ -5992,7 +6104,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
         "key": "bge_152_IV_73",
@@ -6075,6 +6187,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_III_319",
+        "zitierung": "BGE 152 III 319",
+        "regesteKurz": "a Art. 60 OR; Art. 6 EMRK. Im vorliegenden Fall ist der Beginn der Verjährungsfrist mit Art. 6 EMRK vereinbar (E. 5). Regeste b Art. 60 Abs. 2 OR; Art. 122 StGB. Eine dauerhafte Schädigung eines Embryos oder eines lebend geborenen Fötus…",
+        "datum": "2026-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_152_IV_129",
@@ -6329,6 +6451,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_III_319",
+        "zitierung": "BGE 152 III 319",
+        "regesteKurz": "a Art. 60 OR; Art. 6 EMRK. Im vorliegenden Fall ist der Beginn der Verjährungsfrist mit Art. 6 EMRK vereinbar (E. 5). Regeste b Art. 60 Abs. 2 OR; Art. 122 StGB. Eine dauerhafte Schädigung eines Embryos oder eines lebend geborenen Fötus…",
+        "datum": "2026-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_152_IV_1",
         "zitierung": "BGE 152 IV 1",
         "regesteKurz": "Art. 123 Ziff. 1 StGB, aArt. 189 Abs. 1 und 190 Abs. 1 StGB; sadomasochistische Praktiken, Zustimmung, Vorsatz. Voraussetzungen der Gültigkeit einer Zustimmung der berechtigten Person (E. 4.1.7). Prüfung der Gültigkeitsvoraussetzungen der…",
@@ -6363,16 +6495,6 @@
         "zitierung": "BGE 150 IV 360",
         "regesteKurz": "Art. 221 Abs. 1 bis StPO; Untersuchungshaft; qualifizierte Wiederholungsgefahr. Art. 221 Abs. 1 bis StPO verankert einen ausnahmsweise zulässigen Grund für die Anordnung von Untersuchungshaft. Er sieht im Vergleich zu Art. 221 Abs. 1 lit.…",
         "datum": "2024-06-25",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_IV_240",
-        "zitierung": "BGE 149 IV 240",
-        "regesteKurz": "Verletzung der Fürsorge- oder Erziehungspflicht (Art. 219 StGB); Verfolgungsverjährung, tatbestandliche Handlungseinheit (Art. 98 lit. b StGB). Der in Art. 219 StGB definierte Straftatbestand setzt in der Regel voraus, dass der Täter…",
-        "datum": "2023-04-17",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -6537,6 +6659,26 @@
     ],
     "193": [
       {
+        "key": "bge_152_III_319",
+        "zitierung": "BGE 152 III 319",
+        "regesteKurz": "a Art. 60 OR; Art. 6 EMRK. Im vorliegenden Fall ist der Beginn der Verjährungsfrist mit Art. 6 EMRK vereinbar (E. 5). Regeste b Art. 60 Abs. 2 OR; Art. 122 StGB. Eine dauerhafte Schädigung eines Embryos oder eines lebend geborenen Fötus…",
+        "datum": "2026-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_I_178",
+        "zitierung": "BGE 152 I 178",
+        "regesteKurz": "Art. 36 Abs. 1 lit. b, Art. 37 und 38 Abs. 1 MedBG; Art. 27 und 36 Abs. 3 BV; Entzug der Bewilligung eines Arztes zur Berufsausübung in eigener fachlicher Verantwortung wegen sexuellen Handlungen mit Patientinnen. Verfahrensgegenstand (E.…",
+        "datum": "2025-11-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_148_IV_57",
         "zitierung": "BGE 148 IV 57",
         "regesteKurz": "Art. 192 Abs. 1 StGB; Ausnützung der Abhängigkeit eines Anstaltspfleglings durch einen Betreuer. Die Ausnützung findet auf der subjektiven Ebene bei der abhängigen Person statt, indem sie annimmt, sich dem Täter fügen zu müssen. Das…",
@@ -6568,6 +6710,16 @@
       }
     ],
     "195": [
+      {
+        "key": "bge_152_III_319",
+        "zitierung": "BGE 152 III 319",
+        "regesteKurz": "a Art. 60 OR; Art. 6 EMRK. Im vorliegenden Fall ist der Beginn der Verjährungsfrist mit Art. 6 EMRK vereinbar (E. 5). Regeste b Art. 60 Abs. 2 OR; Art. 122 StGB. Eine dauerhafte Schädigung eines Embryos oder eines lebend geborenen Fötus…",
+        "datum": "2026-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_151_IV_175",
         "zitierung": "BGE 151 IV 175",
@@ -6619,6 +6771,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_III_319",
+        "zitierung": "BGE 152 III 319",
+        "regesteKurz": "a Art. 60 OR; Art. 6 EMRK. Im vorliegenden Fall ist der Beginn der Verjährungsfrist mit Art. 6 EMRK vereinbar (E. 5). Regeste b Art. 60 Abs. 2 OR; Art. 122 StGB. Eine dauerhafte Schädigung eines Embryos oder eines lebend geborenen Fötus…",
+        "datum": "2026-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_152_IV_176",
@@ -6675,16 +6837,6 @@
         "zitierung": "Urteil 6B_120/2021 (nicht publ. in BGE 148 IV 298)",
         "regesteKurz": null,
         "datum": "2022-04-11",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_IV_218__voll",
-        "zitierung": "Urteil 6B_82/2021 (nicht publ. in BGE 147 IV 218)",
-        "regesteKurz": null,
-        "datum": "2021-04-01",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -7507,6 +7659,18 @@
         "gewicht": 0
       }
     ],
+    "289": [
+      {
+        "key": "bge_152_IV_266",
+        "zitierung": "BGE 152 IV 266",
+        "regesteKurz": "Art. 169 StGB; Art. 152 SchKG; Art. 806 ZGB; Art. 92 VZG; Verfügung über mit Beschlag belegte Vermögenswerte; auf Mietzinsforderungen ausgedehnte Betreibung auf Grundpfandverwertung; reduzierte Verwaltung. Die Liste der Konstellationen der…",
+        "datum": "2026-02-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "291": [
       {
         "key": "bge_147_IV_232",
@@ -7591,6 +7755,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_151_III_269__voll",
+        "zitierung": "Urteil 5A_85/2024 (nicht publ. in BGE 151 III 269)",
+        "regesteKurz": null,
+        "datum": "2024-11-08",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_150_III_83__voll",
         "zitierung": "Urteil 4A_290/2023 (nicht publ. in BGE 150 III 83)",
         "regesteKurz": null,
@@ -7629,16 +7803,6 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
-      },
-      {
-        "key": "bge_152_III_168",
-        "zitierung": "BGE 152 III 168",
-        "regesteKurz": "Art. 343 Abs. 1 lit. b ZPO; Bemessung der Ordnungsbusse. Auch wenn dieselbe Verpflichtung zu einem Tun, Unterlassen oder Dulden wiederholt nicht erfüllt wurde, darf das Vollstreckungsgericht im selben Vollstreckungsverfahren gestützt auf…",
-        "datum": "2025-12-04",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "293": [
@@ -8557,6 +8721,18 @@
         "gewicht": 0
       }
     ],
+    "193a": [
+      {
+        "key": "bge_152_III_319",
+        "zitierung": "BGE 152 III 319",
+        "regesteKurz": "a Art. 60 OR; Art. 6 EMRK. Im vorliegenden Fall ist der Beginn der Verjährungsfrist mit Art. 6 EMRK vereinbar (E. 5). Regeste b Art. 60 Abs. 2 OR; Art. 122 StGB. Eine dauerhafte Schädigung eines Embryos oder eines lebend geborenen Fötus…",
+        "datum": "2026-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "226bis": [
       {
         "key": "bge_148_IV_247",
@@ -8667,6 +8843,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_285",
+        "zitierung": "BGE 152 IV 285",
+        "regesteKurz": "Art. 277, 280, 281 StPO; Art. 30, 67a, 80d bis IRSG; Gesuch um internationale Rechtshilfe in Strafsachen; Voraussetzungen für die Erteilung einer nachträglichen Genehmigung zur Verwertung von im Rahmen von geheimen technischen…",
+        "datum": "2026-02-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_IV_1",
@@ -9488,7 +9674,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 6
+        "gewicht": 7
       },
       {
         "key": "bge_146_IV_105",
@@ -9508,7 +9694,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 4
       },
       {
         "key": "bge_146_IV_311",
@@ -9606,7 +9792,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 4
       },
       {
         "key": "bge_147_IV_453",
@@ -9616,7 +9802,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 4
+      },
+      {
+        "key": "bge_152_I_169",
+        "zitierung": "BGE 152 I 169",
+        "regesteKurz": "Art. 13 Abs. 1 BV; Art. 8 EMRK; Art. 66d Abs. 1 lit. b StGB; Entstehung neuer ehelicher oder familiärer Bindungen und Aufschub des Vollzugs der strafrechtlichen Landesverweisung. Begriff der zwingenden Normen (ius cogens) des Völkerrechts…",
+        "datum": "2026-06-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_152_II_89",

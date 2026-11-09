@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-25",
+  "erzeugt": "2026-10-26",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/UV.2025.44",
@@ -17,7 +17,7 @@
       "sachgebiet": "sozialversicherung",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "UVG",
+        "gegenstand": "Medizinische Aktenlage unklar; es liegen zumindest geringe Zweifel vor",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "Dr. iur. G. Thomi (Vorsitz), Dr. med. R. von Aarburg, MLaw B. Fürbringer und Gerichtsschreiber Dr. iur. M. Kreis"
@@ -280,11 +280,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80009&Template=search_result_document.html",
-      "abgerufen": "2026-09-25",
-      "fassungsToken": "2026-09-19",
+      "abgerufen": "2026-10-26",
+      "fassungsToken": "2026-10-15",
       "sha": "f9740c73421a5cb3a12d759ee636eaede16b548e4f286767c797e03b1684a3cf",
       "erstpublikation": "2026-09-19",
-      "aktualisiert": "2026-09-19",
+      "aktualisiert": "2026-10-15",
       "nummerSekundaer": "SVG.2026.149",
       "ecli": "ECLI:CH:BSS:2026:UV.2025.44"
     }

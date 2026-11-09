@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-25",
+  "erzeugt": "2026-10-26",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.67",
@@ -17,7 +17,7 @@
       "sachgebiet": "sozialversicherung",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "IVG (Beschwerde beim Bundesgericht hängig)",
+        "gegenstand": "Kosten der Nachtwache; Fehlen der gesetzlichen Voraussetzungen einer medizinischen Massnahme",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. R. Schnyder (Vorsitz), Dr. med. R. von Aarburg, S. Schenker und Gerichtsschreiber Dr. M. Kreis"
@@ -250,11 +250,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79980&Template=search_result_document.html",
-      "abgerufen": "2026-09-25",
-      "fassungsToken": "2026-09-22",
+      "abgerufen": "2026-10-26",
+      "fassungsToken": "2026-10-15",
       "sha": "1d16233fa314b646ff6a3d26f37e556e50025792d3ab3a1389cda1ee377a74b8",
       "erstpublikation": "2026-09-19",
-      "aktualisiert": "2026-09-22",
+      "aktualisiert": "2026-10-15",
       "nummerSekundaer": "SVG.2026.141",
       "ecli": "ECLI:CH:BSS:2026:IV.2025.67"
     }
