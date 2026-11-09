@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-11-02",
+  "erzeugt": "2026-11-09",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/AUS.2026.97",
@@ -17,7 +17,7 @@
       "sachgebiet": "oeffentlich",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Ausschaffungshaft",
+        "gegenstand": "Anordnung der Ausschaffungshaft",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "Einzelrichter Dr. Beat Jucker"
@@ -125,11 +125,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80212&Template=search_result_document.html",
-      "abgerufen": "2026-11-02",
-      "fassungsToken": "2026-10-31",
+      "abgerufen": "2026-11-09",
+      "fassungsToken": "2026-11-04",
       "sha": "fbbec9827e1a558838dbc52412f6c4266001852a87f377ad8422b067990a5a65",
       "erstpublikation": "2026-10-31",
-      "aktualisiert": "2026-10-31",
+      "aktualisiert": "2026-11-04",
       "nummerSekundaer": "AG.2026.667",
       "ecli": "ECLI:CH:BSA:2026:AUS.2026.97"
     }

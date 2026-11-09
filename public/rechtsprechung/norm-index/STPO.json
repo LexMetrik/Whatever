@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-11-03",
+  "erzeugt": "2026-11-09",
   "erlass": "STPO",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -539,20 +539,20 @@
         "gewicht": 0
       },
       {
-        "key": "bge_152_IV_201__voll",
-        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
+        "key": "bge_152_IV_276__voll",
+        "zitierung": "Urteil 6B_541/2025 (nicht publ. in BGE 152 IV 276)",
         "regesteKurz": null,
-        "datum": "2025-12-04",
+        "datum": "2026-02-04",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_151_IV_365__voll",
-        "zitierung": "Urteil 6B_819/2023 (nicht publ. in BGE 151 IV 365)",
+        "key": "bge_152_IV_201__voll",
+        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
         "regesteKurz": null,
-        "datum": "2025-09-05",
+        "datum": "2025-12-04",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -914,6 +914,16 @@
       }
     ],
     "18": [
+      {
+        "key": "bge_152_IV_281__voll",
+        "zitierung": "Urteil 7B_206/2024 (nicht publ. in BGE 152 IV 281)",
+        "regesteKurz": null,
+        "datum": "2026-03-02",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_151_IV_175__voll",
         "zitierung": "Urteil 7B_950/2024 (nicht publ. in BGE 151 IV 175)",
@@ -2023,6 +2033,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_152_IV_276__voll",
+        "zitierung": "Urteil 6B_541/2025 (nicht publ. in BGE 152 IV 276)",
+        "regesteKurz": null,
+        "datum": "2026-02-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_IV_188__voll",
         "zitierung": "Urteil 6B_831/2023 (nicht publ. in BGE 150 IV 188)",
         "regesteKurz": null,
@@ -2329,6 +2349,16 @@
     ],
     "92": [
       {
+        "key": "bge_152_IV_276",
+        "zitierung": "BGE 152 IV 276",
+        "regesteKurz": "Art. 123 Abs. 2, Art. 126 Abs. 2 lit. b, Art. 331 Abs. 2 StPO; Folgen der Nichteinhaltung der von der Verfahrensleitung angesetzten Frist zur Bezifferung und Begründung der Zivilklage durch die Privatklägerschaft. Grammatikalische,…",
+        "datum": "2026-02-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_147_IV_188",
         "zitierung": "BGE 147 IV 188",
         "regesteKurz": "Art. 29 f. StPO, Art. 92 und 93 Abs. 1 lit. a BGG; Eintretensfrage bei Trennung von Strafverfahren. Darstellung der früheren, uneinheitlichen Rechtsprechung (E. 1.2). Art. 92 BGG ist bei Verfahrenstrennungen nur anwendbar, wenn im…",
@@ -2391,6 +2421,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_276",
+        "zitierung": "BGE 152 IV 276",
+        "regesteKurz": "Art. 123 Abs. 2, Art. 126 Abs. 2 lit. b, Art. 331 Abs. 2 StPO; Folgen der Nichteinhaltung der von der Verfahrensleitung angesetzten Frist zur Bezifferung und Begründung der Zivilklage durch die Privatklägerschaft. Grammatikalische,…",
+        "datum": "2026-02-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_149_IV_196",
@@ -3495,6 +3535,16 @@
     ],
     "123": [
       {
+        "key": "bge_152_IV_276",
+        "zitierung": "BGE 152 IV 276",
+        "regesteKurz": "Art. 123 Abs. 2, Art. 126 Abs. 2 lit. b, Art. 331 Abs. 2 StPO; Folgen der Nichteinhaltung der von der Verfahrensleitung angesetzten Frist zur Bezifferung und Begründung der Zivilklage durch die Privatklägerschaft. Grammatikalische,…",
+        "datum": "2026-02-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_146_IV_211",
         "zitierung": "BGE 146 IV 211",
         "regesteKurz": "Art. 122 Abs. 1, 126 Abs. 1 lit. a StPO; Art. 305 bis Ziff. 2 StGB; Art. 41, 50 Abs. 3 OR; Zivilklage, Schadenersatzforderung aus Geldwäscherei. Soweit das Gericht die beschuldigte Person schuldig spricht, ist der Entscheid über die…",
@@ -3559,6 +3609,26 @@
         "gewicht": 1
       },
       {
+        "key": "bge_150_IV_389__voll",
+        "zitierung": "Urteil 6B_83/2024 (nicht publ. in BGE 150 IV 389)",
+        "regesteKurz": null,
+        "datum": "2024-07-16",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_276",
+        "zitierung": "BGE 152 IV 276",
+        "regesteKurz": "Art. 123 Abs. 2, Art. 126 Abs. 2 lit. b, Art. 331 Abs. 2 StPO; Folgen der Nichteinhaltung der von der Verfahrensleitung angesetzten Frist zur Bezifferung und Begründung der Zivilklage durch die Privatklägerschaft. Grammatikalische,…",
+        "datum": "2026-02-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_148_III_401",
         "zitierung": "BGE 148 III 401",
         "regesteKurz": "Art. 39 ZPO; Art. 122 Abs. 1 und 3 StPO; Art. 135 Ziff. 2 OR; Auftrag; Klage aus Vertrag; Unzuständigkeit des Strafgerichts; Unterbrechung der Verjährung. Ansprüche aus Vertrag können nicht Gegenstand einer adhäsionsweise erhobenen…",
@@ -3573,16 +3643,6 @@
         "zitierung": "Urteil 7B_540/2023 (nicht publ. in BGE 151 IV 228)",
         "regesteKurz": null,
         "datum": "2025-02-06",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_IV_389__voll",
-        "zitierung": "Urteil 6B_83/2024 (nicht publ. in BGE 150 IV 389)",
-        "regesteKurz": null,
-        "datum": "2024-07-16",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -4153,6 +4213,16 @@
         "gewicht": 3
       },
       {
+        "key": "bge_146_IV_36",
+        "zitierung": "BGE 146 IV 36",
+        "regesteKurz": "Art. 280, 272, 277 StPO, Art. 30 IRSG; Aufzeichnungen im Ausland mithilfe eines technischen Überwachungsgerätes (Mikrofon). Die technischen Überwachungsmassnahmen im Sinn von Art. 280 StPO sind Zwangsmassnahmen (E. 2.1). Aufgrund des…",
+        "datum": "2019-11-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 3
+      },
+      {
         "key": "bge_149_IV_352",
         "zitierung": "BGE 149 IV 352",
         "regesteKurz": "Art. 43 ff. StPO; nationale Rechtshilfe, keine prozessualen Zwangsmittel zulässig. Im Rechtshilfeverfahren stehen der ersuchenden Behörde gegenüber der ersuchten Behörde keine prozessualen Zwangsmittel zur Verfügung. Die Regeln über die…",
@@ -4173,16 +4243,6 @@
         "gewicht": 2
       },
       {
-        "key": "bge_146_IV_36",
-        "zitierung": "BGE 146 IV 36",
-        "regesteKurz": "Art. 280, 272, 277 StPO, Art. 30 IRSG; Aufzeichnungen im Ausland mithilfe eines technischen Überwachungsgerätes (Mikrofon). Die technischen Überwachungsmassnahmen im Sinn von Art. 280 StPO sind Zwangsmassnahmen (E. 2.1). Aufgrund des…",
-        "datum": "2019-11-15",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 2
-      },
-      {
         "key": "bge_149_IV_153__voll",
         "zitierung": "Urteil 6B_1133/2021 (nicht publ. in BGE 149 IV 153)",
         "regesteKurz": null,
@@ -4193,10 +4253,10 @@
         "gewicht": 2
       },
       {
-        "key": "bge_149_IV_205",
-        "zitierung": "BGE 149 IV 205",
-        "regesteKurz": "Art. 93 Abs. 1 lit. a BGG; Art. 182 ff., Art. 393 Abs. 1 lit. a und Art. 394 lit. b StPO; Art. 10 Abs. 2 und Art. 13 Abs. 1 BV; Ablehnung eines Beweisantrags der beschuldigten Person durch die Staatsanwaltschaft; nicht wieder…",
-        "datum": "2023-02-17",
+        "key": "bge_150_IV_308",
+        "zitierung": "BGE 150 IV 308",
+        "regesteKurz": "Art. 140, 141, 285a ff. StPO; verdeckte Ermittlung und Territorialitätsprinzip. Im Rahmen einer durch das Zwangsmassnahmengericht rechtsgültig genehmigten verdeckten Ermittlung (gestützt auf Art. 285a ff. StPO; E. 2.3) stellt das Versenden…",
+        "datum": "2024-05-06",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -5220,7 +5280,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 4
       },
       {
         "key": "bge_150_IV_239",
@@ -5241,6 +5301,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 2
+      },
+      {
+        "key": "bge_151_IV_344",
+        "zitierung": "BGE 151 IV 344",
+        "regesteKurz": "Art. 248 Abs. 1 und Art. 264 Abs. 1 lit. b StPO; Art. 93 Abs. 1 lit. a BGG; nicht wieder gutzumachender Nachteil. Bei der (vollständigen) Durchsuchung von privat genutzten Smartphones ist davon auszugehen, dass persönliche Aufzeichnungen…",
+        "datum": "2025-03-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
       },
       {
         "key": "bge_151_IV_185",
@@ -5281,16 +5351,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
-      },
-      {
-        "key": "bge_151_IV_344",
-        "zitierung": "BGE 151 IV 344",
-        "regesteKurz": "Art. 248 Abs. 1 und Art. 264 Abs. 1 lit. b StPO; Art. 93 Abs. 1 lit. a BGG; nicht wieder gutzumachender Nachteil. Bei der (vollständigen) Durchsuchung von privat genutzten Smartphones ist davon auszugehen, dass persönliche Aufzeichnungen…",
-        "datum": "2025-03-25",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "198": [
@@ -6296,7 +6356,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 4
+      },
+      {
+        "key": "bge_151_IV_344__voll",
+        "zitierung": "Urteil 7B_145/2025 (nicht publ. in BGE 151 IV 344)",
+        "regesteKurz": null,
+        "datum": "2025-03-25",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 2
       },
       {
         "key": "bge_150_IV_470__voll",
@@ -6329,10 +6399,10 @@
         "gewicht": 1
       },
       {
-        "key": "bge_151_IV_344__voll",
-        "zitierung": "Urteil 7B_145/2025 (nicht publ. in BGE 151 IV 344)",
+        "key": "bge_151_IV_350__voll",
+        "zitierung": "Urteil 7B_31/2025 (nicht publ. in BGE 151 IV 350)",
         "regesteKurz": null,
-        "datum": "2025-03-25",
+        "datum": "2025-08-13",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -6357,16 +6427,6 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
-      },
-      {
-        "key": "bge_151_IV_18",
-        "zitierung": "BGE 151 IV 18",
-        "regesteKurz": "Art. 141 Abs. 2, Art. 263 Abs. 2 StPO; Erfordernis der nachträglichen schriftlichen Bestätigung der mündlich angeordneten Beschlagnahme. Das Erfordernis der nachträglichen schriftlichen Bestätigung der mündlich angeordneten Beschlagnahme…",
-        "datum": "2024-10-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "247": [
@@ -6390,7 +6450,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 4
+        "gewicht": 5
+      },
+      {
+        "key": "bge_151_IV_344",
+        "zitierung": "BGE 151 IV 344",
+        "regesteKurz": "Art. 248 Abs. 1 und Art. 264 Abs. 1 lit. b StPO; Art. 93 Abs. 1 lit. a BGG; nicht wieder gutzumachender Nachteil. Bei der (vollständigen) Durchsuchung von privat genutzten Smartphones ist davon auszugehen, dass persönliche Aufzeichnungen…",
+        "datum": "2025-03-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
       },
       {
         "key": "bge_148_IV_221",
@@ -6403,20 +6473,20 @@
         "gewicht": 2
       },
       {
-        "key": "bge_151_IV_322",
-        "zitierung": "BGE 151 IV 322",
-        "regesteKurz": "Art. 46 Abs. 1 lit. a, Art. 47 Abs. 1 und Art. 50 VStrR; Art. 248 Abs. 1 StPO; Edition und Siegelung elektronisch übermittelter Unterlagen. Werden Unterlagen gestützt auf ein Editionsbegehren elektronisch übermittelt, gehören sowohl die…",
-        "datum": "2025-04-03",
+        "key": "bge_151_IV_350",
+        "zitierung": "BGE 151 IV 350",
+        "regesteKurz": "Art. 248 Abs. 1 und Art. 264 Abs. 1 lit. b StPO; Art. 93 Abs. 1 lit. a BGG; nicht wieder gutzumachender Nachteil. Die Durchsuchung von Privatgeheimnissen im Sinne von Art. 264 Abs. 1 lit. b StPO ist zulässig, wenn sie sich als geeignet,…",
+        "datum": "2025-08-13",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
       },
       {
-        "key": "bge_151_IV_344",
-        "zitierung": "BGE 151 IV 344",
-        "regesteKurz": "Art. 248 Abs. 1 und Art. 264 Abs. 1 lit. b StPO; Art. 93 Abs. 1 lit. a BGG; nicht wieder gutzumachender Nachteil. Bei der (vollständigen) Durchsuchung von privat genutzten Smartphones ist davon auszugehen, dass persönliche Aufzeichnungen…",
-        "datum": "2025-03-25",
+        "key": "bge_151_IV_322",
+        "zitierung": "BGE 151 IV 322",
+        "regesteKurz": "Art. 46 Abs. 1 lit. a, Art. 47 Abs. 1 und Art. 50 VStrR; Art. 248 Abs. 1 StPO; Edition und Siegelung elektronisch übermittelter Unterlagen. Werden Unterlagen gestützt auf ein Editionsbegehren elektronisch übermittelt, gehören sowohl die…",
+        "datum": "2025-04-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -6447,16 +6517,6 @@
         "zitierung": "BGer 1B_473/2022 vom 12. April 2023",
         "regesteKurz": "Strafverfahren; Entsiegelung",
         "datum": "2023-04-12",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_147_IV_385__voll",
-        "zitierung": "Urteil 1B_333/2020 (nicht publ. in BGE 147 IV 385)",
-        "regesteKurz": null,
-        "datum": "2021-06-22",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -6678,7 +6738,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 4
+      },
+      {
+        "key": "bge_151_IV_344",
+        "zitierung": "BGE 151 IV 344",
+        "regesteKurz": "Art. 248 Abs. 1 und Art. 264 Abs. 1 lit. b StPO; Art. 93 Abs. 1 lit. a BGG; nicht wieder gutzumachender Nachteil. Bei der (vollständigen) Durchsuchung von privat genutzten Smartphones ist davon auszugehen, dass persönliche Aufzeichnungen…",
+        "datum": "2025-03-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
       },
       {
         "key": "bge_150_IV_470",
@@ -6701,10 +6771,10 @@
         "gewicht": 2
       },
       {
-        "key": "bge_151_IV_344",
-        "zitierung": "BGE 151 IV 344",
-        "regesteKurz": "Art. 248 Abs. 1 und Art. 264 Abs. 1 lit. b StPO; Art. 93 Abs. 1 lit. a BGG; nicht wieder gutzumachender Nachteil. Bei der (vollständigen) Durchsuchung von privat genutzten Smartphones ist davon auszugehen, dass persönliche Aufzeichnungen…",
-        "datum": "2025-03-25",
+        "key": "bge_151_IV_350",
+        "zitierung": "BGE 151 IV 350",
+        "regesteKurz": "Art. 248 Abs. 1 und Art. 264 Abs. 1 lit. b StPO; Art. 93 Abs. 1 lit. a BGG; nicht wieder gutzumachender Nachteil. Die Durchsuchung von Privatgeheimnissen im Sinne von Art. 264 Abs. 1 lit. b StPO ist zulässig, wenn sie sich als geeignet,…",
+        "datum": "2025-08-13",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -6735,16 +6805,6 @@
         "zitierung": "BGE 152 IV 107",
         "regesteKurz": "Art. 248 Abs. 1 StPO; Siegelung und Entsiegelung sichergestellter elektronischer Datenträger; Zulässigkeit der Anordnung einer Datenspiegelung durch die Strafverfolgungsbehörden. Zuständigkeiten und Befugnisse der Strafverfolgungsbehörden…",
         "datum": "2026-01-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_IV_350",
-        "zitierung": "BGE 151 IV 350",
-        "regesteKurz": "Art. 248 Abs. 1 und Art. 264 Abs. 1 lit. b StPO; Art. 93 Abs. 1 lit. a BGG; nicht wieder gutzumachender Nachteil. Die Durchsuchung von Privatgeheimnissen im Sinne von Art. 264 Abs. 1 lit. b StPO ist zulässig, wenn sie sich als geeignet,…",
-        "datum": "2025-08-13",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -7081,6 +7141,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_IV_285",
+        "zitierung": "BGE 152 IV 285",
+        "regesteKurz": "Art. 277, 280, 281 StPO; Art. 30, 67a, 80d bis IRSG; Gesuch um internationale Rechtshilfe in Strafsachen; Voraussetzungen für die Erteilung einer nachträglichen Genehmigung zur Verwertung von im Rahmen von geheimen technischen…",
+        "datum": "2026-02-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_IV_338",
         "zitierung": "BGE 151 IV 338",
         "regesteKurz": "Art. 393 Abs. 1 lit. c StPO; Rechtsmittel gegen Entscheide des Zwangsmassnahmengerichts. In seiner seit dem 1. Juli 2024 geltenden Fassung ist Art. 393 Abs. 1 lit. c StPO dahingehend zu verstehen, dass gegen Entscheide des…",
@@ -7120,7 +7190,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
+      },
+      {
+        "key": "bge_152_IV_285",
+        "zitierung": "BGE 152 IV 285",
+        "regesteKurz": "Art. 277, 280, 281 StPO; Art. 30, 67a, 80d bis IRSG; Gesuch um internationale Rechtshilfe in Strafsachen; Voraussetzungen für die Erteilung einer nachträglichen Genehmigung zur Verwertung von im Rahmen von geheimen technischen…",
+        "datum": "2026-02-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_150_IV_139",
@@ -7196,7 +7276,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
       },
       {
         "key": "bge_147_IV_402",
@@ -7217,6 +7297,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_285",
+        "zitierung": "BGE 152 IV 285",
+        "regesteKurz": "Art. 277, 280, 281 StPO; Art. 30, 67a, 80d bis IRSG; Gesuch um internationale Rechtshilfe in Strafsachen; Voraussetzungen für die Erteilung einer nachträglichen Genehmigung zur Verwertung von im Rahmen von geheimen technischen…",
+        "datum": "2026-02-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_147_IV_424",
@@ -7258,7 +7348,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
       },
       {
         "key": "bge_147_IV_402",
@@ -7279,6 +7369,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_285",
+        "zitierung": "BGE 152 IV 285",
+        "regesteKurz": "Art. 277, 280, 281 StPO; Art. 30, 67a, 80d bis IRSG; Gesuch um internationale Rechtshilfe in Strafsachen; Voraussetzungen für die Erteilung einer nachträglichen Genehmigung zur Verwertung von im Rahmen von geheimen technischen…",
+        "datum": "2026-02-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_149_IV_35",
@@ -8405,6 +8505,16 @@
         "gewicht": 3
       },
       {
+        "key": "bge_151_IV_46",
+        "zitierung": "BGE 151 IV 46",
+        "regesteKurz": "Art. 360 StPO; Auslegung; Umfang des Rechts der Privatklägerschaft, die Anklageschrift im abgekürzten Verfahren abzulehnen. Die Ablehnung einer im abgekürzten Verfahren ergangenen Anklageschrift durch die Privatklägerschaft (Art. 360 Abs.…",
+        "datum": "2024-11-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_150_IV_447",
         "zitierung": "BGE 150 IV 447",
         "regesteKurz": "Art. 19 Abs. 2 lit. b StPO; Art. 29 Abs. 1 und Art. 30 Abs. 1 BV; Art. 6 Ziff. 1 EMRK; Zuständigkeit des Einzelgerichts, Obergrenze von zwei Jahren Freiheitsstrafe. Bei der Einhaltung der Maximalgrenze von zwei Jahren gemäss Art. 19 Abs. 2…",
@@ -8429,16 +8539,6 @@
         "zitierung": "BGE 148 IV 445",
         "regesteKurz": "Art. 353 Abs. 1 lit. k und Art. 80 Abs. 2 StPO; auch beim Erlass eines Strafbefehls stellt die persönliche handschriftliche Unterschrift ein formelles Gültigkeitserfordernis im Interesse der Rechtssicherheit dar. Das Anbringen eines…",
         "datum": "2022-06-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_147_IV_167",
-        "zitierung": "BGE 147 IV 167",
-        "regesteKurz": "Art. 404 Abs. 1 StPO; Art. 329 Abs. 1 lit. a und Abs. 2 zweiter Satz, Art. 333 Abs. 1 und 2, je in Verbindung mit Art. 379 StPO; Art. 391 Abs. 1 und 2 StPO; Unzulässigkeit eines zusätzlichen Schuldspruchs aufgrund eines im…",
-        "datum": "2021-03-11",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -8564,6 +8664,16 @@
       }
     ],
     "331": [
+      {
+        "key": "bge_152_IV_276",
+        "zitierung": "BGE 152 IV 276",
+        "regesteKurz": "Art. 123 Abs. 2, Art. 126 Abs. 2 lit. b, Art. 331 Abs. 2 StPO; Folgen der Nichteinhaltung der von der Verfahrensleitung angesetzten Frist zur Bezifferung und Begründung der Zivilklage durch die Privatklägerschaft. Grammatikalische,…",
+        "datum": "2026-02-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_146_IV_59__voll",
         "zitierung": "Urteil 6B_389/2019 (nicht publ. in BGE 146 IV 59)",
@@ -8979,6 +9089,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_IV_276__voll",
+        "zitierung": "Urteil 6B_541/2025 (nicht publ. in BGE 152 IV 276)",
+        "regesteKurz": null,
+        "datum": "2026-02-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_152_IV_201__voll",
         "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
         "regesteKurz": null,
@@ -9013,16 +9133,6 @@
         "zitierung": "Urteil 6B_525/2024 (nicht publ. in BGE 151 IV 73)",
         "regesteKurz": null,
         "datum": "2025-01-15",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_IV_188__voll",
-        "zitierung": "Urteil 6B_831/2023 (nicht publ. in BGE 150 IV 188)",
-        "regesteKurz": null,
-        "datum": "2024-04-24",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -10126,6 +10236,16 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_151_IV_350__voll",
+        "zitierung": "Urteil 7B_31/2025 (nicht publ. in BGE 151 IV 350)",
+        "regesteKurz": null,
+        "datum": "2025-08-13",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
         "gewicht": 1
       },
       {
@@ -10179,20 +10299,10 @@
         "gewicht": 0
       },
       {
-        "key": "bge_151_IV_350__voll",
-        "zitierung": "Urteil 7B_31/2025 (nicht publ. in BGE 151 IV 350)",
+        "key": "bge_152_IV_281__voll",
+        "zitierung": "Urteil 7B_206/2024 (nicht publ. in BGE 152 IV 281)",
         "regesteKurz": null,
-        "datum": "2025-08-13",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bger_7B_674_2024",
-        "zitierung": "BGer 7B_674/2024 vom 1. Juli 2025",
-        "regesteKurz": "Entsiegelung",
-        "datum": "2025-07-01",
+        "datum": "2026-03-02",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -11687,7 +11797,29 @@
         "gewicht": 0
       }
     ],
+    "416": [
+      {
+        "key": "bge_152_IV_281",
+        "zitierung": "BGE 152 IV 281",
+        "regesteKurz": "Art. 248 f., 416 ff. und 428 StPO; Kostenfolgen des Entsiegelungsverfahrens. Die Kostenfolgen des Entsiegelungsverfahrens richten sich mangels entsprechender spezifischer Bestimmungen nach den allgemeinen Regeln gemäss Art. 416-436 StPO.…",
+        "datum": "2026-03-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "417": [
+      {
+        "key": "bge_152_IV_281",
+        "zitierung": "BGE 152 IV 281",
+        "regesteKurz": "Art. 248 f., 416 ff. und 428 StPO; Kostenfolgen des Entsiegelungsverfahrens. Die Kostenfolgen des Entsiegelungsverfahrens richten sich mangels entsprechender spezifischer Bestimmungen nach den allgemeinen Regeln gemäss Art. 416-436 StPO.…",
+        "datum": "2026-03-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_147_IV_526",
         "zitierung": "BGE 147 IV 526",
@@ -11721,6 +11853,30 @@
         "gewicht": 0
       }
     ],
+    "420": [
+      {
+        "key": "bge_152_IV_281",
+        "zitierung": "BGE 152 IV 281",
+        "regesteKurz": "Art. 248 f., 416 ff. und 428 StPO; Kostenfolgen des Entsiegelungsverfahrens. Die Kostenfolgen des Entsiegelungsverfahrens richten sich mangels entsprechender spezifischer Bestimmungen nach den allgemeinen Regeln gemäss Art. 416-436 StPO.…",
+        "datum": "2026-03-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "421": [
+      {
+        "key": "bge_152_IV_281",
+        "zitierung": "BGE 152 IV 281",
+        "regesteKurz": "Art. 248 f., 416 ff. und 428 StPO; Kostenfolgen des Entsiegelungsverfahrens. Die Kostenfolgen des Entsiegelungsverfahrens richten sich mangels entsprechender spezifischer Bestimmungen nach den allgemeinen Regeln gemäss Art. 416-436 StPO.…",
+        "datum": "2026-03-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "422": [
       {
         "key": "bge_146_IV_196",
@@ -11734,6 +11890,16 @@
       }
     ],
     "423": [
+      {
+        "key": "bge_152_IV_281",
+        "zitierung": "BGE 152 IV 281",
+        "regesteKurz": "Art. 248 f., 416 ff. und 428 StPO; Kostenfolgen des Entsiegelungsverfahrens. Die Kostenfolgen des Entsiegelungsverfahrens richten sich mangels entsprechender spezifischer Bestimmungen nach den allgemeinen Regeln gemäss Art. 416-436 StPO.…",
+        "datum": "2026-03-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_147_IV_47",
         "zitierung": "BGE 147 IV 47",
@@ -11789,6 +11955,16 @@
         "gewicht": 2
       },
       {
+        "key": "bge_152_IV_281",
+        "zitierung": "BGE 152 IV 281",
+        "regesteKurz": "Art. 248 f., 416 ff. und 428 StPO; Kostenfolgen des Entsiegelungsverfahrens. Die Kostenfolgen des Entsiegelungsverfahrens richten sich mangels entsprechender spezifischer Bestimmungen nach den allgemeinen Regeln gemäss Art. 416-436 StPO.…",
+        "datum": "2026-03-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_152_IV_14",
         "zitierung": "BGE 152 IV 14",
         "regesteKurz": "a Art. 259 StGB; öffentliche Aufforderung zu Verbrechen oder zur Gewalttätigkeit; Rechtsgut, Aufforderung zu einer im Ausland zu verübenden Straftat. Der Straftatbestand der öffentlichen Aufforderung zu Verbrechen oder zur Gewalttätigkeit…",
@@ -11829,20 +12005,10 @@
         "gewicht": 0
       },
       {
-        "key": "bge_152_IV_201__voll",
-        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
+        "key": "bge_152_IV_266__voll",
+        "zitierung": "Urteil 6B_913/2024 (nicht publ. in BGE 152 IV 266)",
         "regesteKurz": null,
-        "datum": "2025-12-04",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_IV_228__voll",
-        "zitierung": "Urteil 7B_540/2023 (nicht publ. in BGE 151 IV 228)",
-        "regesteKurz": null,
-        "datum": "2025-02-06",
+        "datum": "2026-02-06",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -11850,6 +12016,16 @@
       }
     ],
     "427": [
+      {
+        "key": "bge_152_IV_281",
+        "zitierung": "BGE 152 IV 281",
+        "regesteKurz": "Art. 248 f., 416 ff. und 428 StPO; Kostenfolgen des Entsiegelungsverfahrens. Die Kostenfolgen des Entsiegelungsverfahrens richten sich mangels entsprechender spezifischer Bestimmungen nach den allgemeinen Regeln gemäss Art. 416-436 StPO.…",
+        "datum": "2026-03-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_150_IV_196",
         "zitierung": "BGE 150 IV 196",
@@ -11881,6 +12057,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_281",
+        "zitierung": "BGE 152 IV 281",
+        "regesteKurz": "Art. 248 f., 416 ff. und 428 StPO; Kostenfolgen des Entsiegelungsverfahrens. Die Kostenfolgen des Entsiegelungsverfahrens richten sich mangels entsprechender spezifischer Bestimmungen nach den allgemeinen Regeln gemäss Art. 416-436 StPO.…",
+        "datum": "2026-03-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_152_IV_14",
@@ -12161,6 +12347,16 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_266",
+        "zitierung": "BGE 152 IV 266",
+        "regesteKurz": "Art. 169 StGB; Art. 152 SchKG; Art. 806 ZGB; Art. 92 VZG; Verfügung über mit Beschlag belegte Vermögenswerte; auf Mietzinsforderungen ausgedehnte Betreibung auf Grundpfandverwertung; reduzierte Verwaltung. Die Liste der Konstellationen der…",
+        "datum": "2026-02-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_IV_219",

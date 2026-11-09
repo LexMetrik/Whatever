@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-11-03",
+"erzeugt":"2026-11-09",
 "erlass":"MWSTG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -41,6 +41,7 @@
 "bge_152_II_486__voll":{"zitierung":"Urteil 9C_503/2024 (nicht publ. in BGE 152 II 486)","regesteKurz":null,"datum":"2026-04-23","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"152 II 486","urteil":"9C_503/2024"}},
 "bs_appellationsgericht_BEZ.2021.36":{"zitierung":"Appellationsgericht BS BEZ.2021.36 vom 16.03.2022","regesteKurz":"Arrest","datum":"2022-03-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2022.126":{"zitierung":"Appellationsgericht BS VD.2022.126 vom 09.12.2022","regesteKurz":"Gesuche um Ausfallentschädigung im Kulturbereich","datum":"2022-12-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bstger_BB_2026_57":{"zitierung":"BStGer BB.2026.57 vom 13. Oktober 2026","regesteKurz":"Nichtanhandnahmeverfügung (Art. 310 i.V.m. Art. 322 Abs. 2 StPO)","datum":"2026-10-13","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bstger","status":"eidg"}},
 "bstger_BE_2026_18":{"zitierung":"BStGer BE.2026.18 vom 23. September 2026","regesteKurz":"Levée des scellés (art. 50 al. 3 DPA)","datum":"2026-09-23","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bstger","status":"eidg"}},
 "gr_gerichte_SBK2026101":{"zitierung":"Obergericht GR SBK 26 101 vom 08.10.2026","regesteKurz":null,"datum":"2026-10-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}},
 "gr_gerichte_SBK202686":{"zitierung":"Obergericht GR SBK 26 86 vom 08.10.2026","regesteKurz":null,"datum":"2026-10-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}},
@@ -61,7 +62,7 @@
 "13":[{"key":"bge_149_II_385","gewicht":0},{"key":"bge_148_II_233","gewicht":0}],
 "15":[{"key":"bge_146_II_73","gewicht":0}],
 "16":[{"key":"bge_146_II_73","gewicht":0}],
-"18":[{"key":"bge_152_II_250","gewicht":0},{"key":"bge_151_II_569","gewicht":0},{"key":"bge_151_II_2","gewicht":0},{"key":"bge_149_II_385","gewicht":0},{"key":"bge_149_II_290","gewicht":0},{"key":"bge_149_II_255","gewicht":1},{"key":"bge_149_II_43","gewicht":1},{"key":"gr_gerichte_ZR2202545","gewicht":null}],
+"18":[{"key":"bge_152_II_250","gewicht":0},{"key":"bge_151_II_569","gewicht":0},{"key":"bge_151_II_2","gewicht":0},{"key":"bge_149_II_385","gewicht":0},{"key":"bge_149_II_290","gewicht":0},{"key":"bge_149_II_255","gewicht":1},{"key":"bge_149_II_43","gewicht":1},{"key":"bstger_BB_2026_57","gewicht":null},{"key":"gr_gerichte_ZR2202545","gewicht":null}],
 "19":[{"key":"bge_149_II_290","gewicht":0},{"key":"bge_148_II_233","gewicht":1},{"key":"bge_151_II_2__voll","gewicht":0,"erwaegungen":["E. 3.3"]}],
 "20":[{"key":"bge_151_II_569","gewicht":0},{"key":"bge_149_II_290__voll","gewicht":0}],
 "21":[{"key":"bge_151_II_2","gewicht":1},{"key":"bge_149_II_385","gewicht":0},{"key":"bge_149_II_43","gewicht":0},{"key":"bge_149_II_147","gewicht":1},{"key":"bge_148_II_233","gewicht":2},{"key":"bge_152_II_486__voll","gewicht":0,"erwaegungen":["E. 3.1.2"]}],
@@ -129,7 +130,7 @@
 "13":{"bge":2},
 "15":{"bge":1},
 "16":{"bge":1},
-"18":{"bge":7,"kantonal":1},
+"18":{"bge":7,"eidg":1,"kantonal":1},
 "19":{"bge":2,"bger":1},
 "20":{"bge":1,"bger":1},
 "21":{"bge":5,"bger":1},

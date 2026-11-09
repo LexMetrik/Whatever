@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-11-02",
+  "erzeugt": "2026-11-09",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/EL.2025.15",
@@ -17,7 +17,7 @@
       "sachgebiet": "sozialversicherung",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "ELG",
+        "gegenstand": "Ergänzungsleistungen",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. R. Schnyder (Vorsitz), Dr. med. R. von Aarburg, S. Schenker und a. o. Gerichtsschreiberin MLaw L. Wepfer"
@@ -262,11 +262,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80165&Template=search_result_document.html",
-      "abgerufen": "2026-11-02",
-      "fassungsToken": "2026-10-28",
+      "abgerufen": "2026-11-09",
+      "fassungsToken": "2026-11-06",
       "sha": "638f1c456e545e5d94ea4ea2753227a5bfaba0f1d5eb9a6b155fdfb7aff73dff",
       "erstpublikation": "2026-10-28",
-      "aktualisiert": "2026-10-28",
+      "aktualisiert": "2026-11-06",
       "nummerSekundaer": "SVG.2026.180",
       "ecli": "ECLI:CH:BSS:2026:EL.2025.15"
     }

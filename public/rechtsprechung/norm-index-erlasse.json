@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-11-03",
+  "erzeugt": "2026-11-09",
   "proNorm": {
     "AHVG": [
       {
@@ -1059,6 +1059,15 @@
     ],
     "BETMG": [
       {
+        "key": "bge_152_IV_303",
+        "zitierung": "BGE 152 IV 303",
+        "regesteKurz": "Art. 19 Abs. 2 lit. a BetmG; Gefährdung der Gesundheit vieler Menschen; Grenzwerte nach der Gerichtspraxis; Zusammenfassung und Bestätigung der Rechtsprechung. Das Bundesgericht hält an seiner bereits in BGE 109 IV 143 etablierten und in…",
+        "datum": "2026-03-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH"
+      },
+      {
         "key": "bge_152_IV_242",
         "zitierung": "BGE 152 IV 242",
         "regesteKurz": "Art. 9 und 350 StPO; Abweichung vom ausdrücklich angeklagten Reinheitsgrad eines Betäubungsmittels. Legt das Sachgericht seinem Schuldspruch einen höheren als den ausdrücklich angeklagten Reinheitsgrad zugrunde, verletzt es den…",
@@ -1153,15 +1162,6 @@
         "zitierung": "BGE 150 IV 255",
         "regesteKurz": "Art. 1 StGB; Art. 10, 11 Abs. 1 und Art. 20 Abs. 1 lit. e BetmG; Beihilfe zum Suizid; Verschreibung einer tödlich wirkenden Substanz (Natriumpentobarbital); Legalitätsprinzip. Die Verschreibung von Natriumpentobarbital durch einen Arzt an…",
         "datum": "2024-03-13",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH"
-      },
-      {
-        "key": "bge_149_IV_307",
-        "zitierung": "BGE 149 IV 307",
-        "regesteKurz": "Art. 19b BetmG; Art. 69 StGB; Einziehbarkeit von Betäubungsmitteln des Wirkungstyps Cannabis in Zusammenhang mit straflosen Konsumvorbereitungshandlungen. Geringfügige, zum Eigenkonsum bestimmte Mengen Betäubungsmittel des Wirkungstyps…",
-        "datum": "2023-06-19",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH"
@@ -2942,9 +2942,27 @@
         "kanton": "CH"
       },
       {
+        "key": "bge_152_IV_266",
+        "zitierung": "BGE 152 IV 266",
+        "regesteKurz": "Art. 169 StGB; Art. 152 SchKG; Art. 806 ZGB; Art. 92 VZG; Verfügung über mit Beschlag belegte Vermögenswerte; auf Mietzinsforderungen ausgedehnte Betreibung auf Grundpfandverwertung; reduzierte Verwaltung. Die Liste der Konstellationen der…",
+        "datum": "2026-02-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH"
+      },
+      {
         "key": "bge_152_IV_242",
         "zitierung": "BGE 152 IV 242",
         "regesteKurz": "Art. 9 und 350 StPO; Abweichung vom ausdrücklich angeklagten Reinheitsgrad eines Betäubungsmittels. Legt das Sachgericht seinem Schuldspruch einen höheren als den ausdrücklich angeklagten Reinheitsgrad zugrunde, verletzt es den…",
+        "datum": "2026-02-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH"
+      },
+      {
+        "key": "bge_152_IV_276",
+        "zitierung": "BGE 152 IV 276",
+        "regesteKurz": "Art. 123 Abs. 2, Art. 126 Abs. 2 lit. b, Art. 331 Abs. 2 StPO; Folgen der Nichteinhaltung der von der Verfahrensleitung angesetzten Frist zur Bezifferung und Begründung der Zivilklage durch die Privatklägerschaft. Grammatikalische,…",
         "datum": "2026-02-04",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
@@ -2964,24 +2982,6 @@
         "zitierung": "BGE 152 V 52",
         "regesteKurz": "Art. 28 Abs. 2 UVV; Invalidenrente; Valideneinkommen; Invalideneinkommen. Wirkt sich die Behinderung sowohl auf die unselbstständige unfallversicherte wie auch auf die selbstständige nicht unfallversicherte Tätigkeit aus, bleibt der aus…",
         "datum": "2026-01-27",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH"
-      },
-      {
-        "key": "bge_152_IV_249",
-        "zitierung": "BGE 152 IV 249",
-        "regesteKurz": "Art. 104 Abs. 1 lit. b i.V.m. Art. 118 Abs. 1 und Art. 119 Abs. 2 lit. a, Art. 104 Abs. 2, Art. 105 Abs. 2, Art. 115 Abs. 1 sowie Art. 322 Abs. 2 i.V.m. Art. 382 Abs. 1 StPO; Parteistellung und Beschwerdelegitimation der…",
-        "datum": "2026-01-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH"
-      },
-      {
-        "key": "bge_152_IV_201",
-        "zitierung": "BGE 152 IV 201",
-        "regesteKurz": "a Art. 158 Ziff. 1 Abs. 1 StGB; Art. 321b Abs. 1 OR; ungetreue Geschäftsbesorgung, Rechenschaftspflicht. Die blosse Verletzung der Rechenschaftspflicht im Sinne von Art. 321b Abs. 1 OR durch den Geschäftsführer (Arbeitnehmer) kann unter…",
-        "datum": "2025-12-04",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH"
@@ -4637,6 +4637,15 @@
         "kanton": "CH"
       },
       {
+        "key": "bge_152_IV_285",
+        "zitierung": "BGE 152 IV 285",
+        "regesteKurz": "Art. 277, 280, 281 StPO; Art. 30, 67a, 80d bis IRSG; Gesuch um internationale Rechtshilfe in Strafsachen; Voraussetzungen für die Erteilung einer nachträglichen Genehmigung zur Verwertung von im Rahmen von geheimen technischen…",
+        "datum": "2026-02-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH"
+      },
+      {
         "key": "bge_151_II_873",
         "zitierung": "BGE 151 II 873",
         "regesteKurz": "Art. 28 Ziff. 3 lit. c DBA CH-FR; Art. 8 EMRK; Art. 8 Abs. 6 und Art. 15 StAhiG; Art. 12 lit. h und Art. 13 BGFA; internationale Amtshilfe in Steuersachen; Amtshilfeersuchen zur Beschaffung von Informationen über schweizerische Bankkonten…",
@@ -4722,15 +4731,6 @@
         "zitierung": "BGE 147 IV 544",
         "regesteKurz": "Art. 78 ff., 84 und 93 Abs. 1 lit. a BGG, Art. 80e Abs. 2 lit. b IRSG; zulässiges Rechtsmittel ans Bundesgericht in Streitfällen über die Parteistellung und Akteneinsicht in einem Strafverfahren bei parallelem Rechtshilfeverfahren. Sind im…",
         "datum": "2021-05-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH"
-      },
-      {
-        "key": "bge_147_IV_518",
-        "zitierung": "BGE 147 IV 518",
-        "regesteKurz": "Art. 14 Abs. 1 des Vertrags vom 12. Mai 2004 zwischen der Schweizerischen Eidgenossenschaft und der Föderativen Republik Brasilien über Rechtshilfe in Strafsachen; Art. 29a und Art. 32 Abs. 2 und Abs. 3 BV; Art. 63 Abs. 2 lit. a IRSG; Art.…",
-        "datum": "2021-05-12",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH"
@@ -6657,6 +6657,15 @@
         "kanton": "CH"
       },
       {
+        "key": "bge_152_IV_276",
+        "zitierung": "BGE 152 IV 276",
+        "regesteKurz": "Art. 123 Abs. 2, Art. 126 Abs. 2 lit. b, Art. 331 Abs. 2 StPO; Folgen der Nichteinhaltung der von der Verfahrensleitung angesetzten Frist zur Bezifferung und Begründung der Zivilklage durch die Privatklägerschaft. Grammatikalische,…",
+        "datum": "2026-02-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH"
+      },
+      {
         "key": "bge_152_V_149",
         "zitierung": "BGE 152 V 149",
         "regesteKurz": "Art. 1 Bst. l, zweiter Satz, Art. 3 Abs. 1 und Art. 11 Abs. 2 der Verordnung (EG) Nr. 883/2004 des Europäischen Parlaments und des Rates vom 29. April 2004 zur Koordinierung der Systeme der sozialen Sicherheit; Art. 3 Abs. 3 lit. a KVG…",
@@ -6715,15 +6724,6 @@
         "zitierung": "BGE 152 IV 234",
         "regesteKurz": "Art. 71 und 305 bis StGB; Methode zur Bestimmung des Betrags der Ersatzforderung im Falle einer Vermischung von Vermögenswerten aus einer Geldwäschereistraftat mit legalen Vermögenswerten. Die Bestimmungen des Strafgesetzbuches über die…",
         "datum": "2025-12-05",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH"
-      },
-      {
-        "key": "bge_152_IV_201",
-        "zitierung": "BGE 152 IV 201",
-        "regesteKurz": "a Art. 158 Ziff. 1 Abs. 1 StGB; Art. 321b Abs. 1 OR; ungetreue Geschäftsbesorgung, Rechenschaftspflicht. Die blosse Verletzung der Rechenschaftspflicht im Sinne von Art. 321b Abs. 1 OR durch den Geschäftsführer (Arbeitnehmer) kann unter…",
-        "datum": "2025-12-04",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH"
@@ -7189,6 +7189,15 @@
         "kanton": "CH"
       },
       {
+        "key": "bge_152_IV_266",
+        "zitierung": "BGE 152 IV 266",
+        "regesteKurz": "Art. 169 StGB; Art. 152 SchKG; Art. 806 ZGB; Art. 92 VZG; Verfügung über mit Beschlag belegte Vermögenswerte; auf Mietzinsforderungen ausgedehnte Betreibung auf Grundpfandverwertung; reduzierte Verwaltung. Die Liste der Konstellationen der…",
+        "datum": "2026-02-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH"
+      },
+      {
         "key": "bge_152_IV_27",
         "zitierung": "BGE 152 IV 27",
         "regesteKurz": "a Art. 121 Abs. 2 StPO; Konstituierung der Privatklägerschaft durch Rechtsnachfolge. Art. 121 Abs. 2 StPO findet insbesondere auf die Universalsukzession im Sinne von Art. 560 ZGB Anwendung, auch wenn das Gemeinwesen gemäss Art. 466 und…",
@@ -7265,15 +7274,6 @@
         "zitierung": "BGE 151 III 574",
         "regesteKurz": "Art. 174 SchKG; Tilgung der Kosten des Konkursgerichts innert der zehntägigen Frist zur Weiterziehung des Konkurserkenntnisses; Erfordernis der Glaubhaftmachung der Zahlungsfähigkeit. Hat der Schuldner die Kosten des Konkursgerichts erst…",
         "datum": "2025-08-11",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH"
-      },
-      {
-        "key": "bge_151_III_563",
-        "zitierung": "BGE 151 III 563",
-        "regesteKurz": "Art. 46, 52 f., 89, 272 SchKG; Prosequierung eines schweizweiten Arrestes; Pfändung. Der schweizweite Arrest ermöglicht die Prosequierung des Arrestes durch ein einziges Betreibungs- und Fortsetzungsbegehren. Das Betreibungsamt hat die…",
-        "datum": "2025-07-24",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH"
@@ -7440,10 +7440,28 @@
         "kanton": "CH"
       },
       {
+        "key": "bge_152_IV_281",
+        "zitierung": "BGE 152 IV 281",
+        "regesteKurz": "Art. 248 f., 416 ff. und 428 StPO; Kostenfolgen des Entsiegelungsverfahrens. Die Kostenfolgen des Entsiegelungsverfahrens richten sich mangels entsprechender spezifischer Bestimmungen nach den allgemeinen Regeln gemäss Art. 416-436 StPO.…",
+        "datum": "2026-03-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH"
+      },
+      {
         "key": "bge_152_V_70",
         "zitierung": "BGE 152 V 70",
         "regesteKurz": "Art. 14 Abs. 1 ELG; Art. 21 Abs. 5 ATSG; Sistierung der Vergütung von Krankheits- und Invaliditätskosten bei Aufenthalt des Bezügers von Ergänzungsleistungen zu einer Invalidenrente im Straf- oder Massnahmenvollzug; Auslegung. Art. 14 Abs.…",
         "datum": "2026-02-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH"
+      },
+      {
+        "key": "bge_152_IV_285",
+        "zitierung": "BGE 152 IV 285",
+        "regesteKurz": "Art. 277, 280, 281 StPO; Art. 30, 67a, 80d bis IRSG; Gesuch um internationale Rechtshilfe in Strafsachen; Voraussetzungen für die Erteilung einer nachträglichen Genehmigung zur Verwertung von im Rahmen von geheimen technischen…",
+        "datum": "2026-02-12",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH"
@@ -7458,9 +7476,27 @@
         "kanton": "CH"
       },
       {
+        "key": "bge_152_IV_266",
+        "zitierung": "BGE 152 IV 266",
+        "regesteKurz": "Art. 169 StGB; Art. 152 SchKG; Art. 806 ZGB; Art. 92 VZG; Verfügung über mit Beschlag belegte Vermögenswerte; auf Mietzinsforderungen ausgedehnte Betreibung auf Grundpfandverwertung; reduzierte Verwaltung. Die Liste der Konstellationen der…",
+        "datum": "2026-02-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH"
+      },
+      {
         "key": "bge_152_IV_242",
         "zitierung": "BGE 152 IV 242",
         "regesteKurz": "Art. 9 und 350 StPO; Abweichung vom ausdrücklich angeklagten Reinheitsgrad eines Betäubungsmittels. Legt das Sachgericht seinem Schuldspruch einen höheren als den ausdrücklich angeklagten Reinheitsgrad zugrunde, verletzt es den…",
+        "datum": "2026-02-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH"
+      },
+      {
+        "key": "bge_152_IV_276",
+        "zitierung": "BGE 152 IV 276",
+        "regesteKurz": "Art. 123 Abs. 2, Art. 126 Abs. 2 lit. b, Art. 331 Abs. 2 StPO; Folgen der Nichteinhaltung der von der Verfahrensleitung angesetzten Frist zur Bezifferung und Begründung der Zivilklage durch die Privatklägerschaft. Grammatikalische,…",
         "datum": "2026-02-04",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
@@ -7480,42 +7516,6 @@
         "zitierung": "BGE 152 IV 27",
         "regesteKurz": "a Art. 121 Abs. 2 StPO; Konstituierung der Privatklägerschaft durch Rechtsnachfolge. Art. 121 Abs. 2 StPO findet insbesondere auf die Universalsukzession im Sinne von Art. 560 ZGB Anwendung, auch wenn das Gemeinwesen gemäss Art. 466 und…",
         "datum": "2026-01-29",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH"
-      },
-      {
-        "key": "bge_152_II_89",
-        "zitierung": "BGE 152 II 89",
-        "regesteKurz": "Art. 82 Abs. 1 Satz 2 AsylG; Art. 86 Abs. 1 bis lit. b AIG. Die Sozialhilfebezüge eines Flüchtlings, der rechtskräftig mit einer Landesverweisung nach Art. 66a Abs. 1 StGB belegt wurde, können bis zur tatsächlichen Ausreise aus der Schweiz…",
-        "datum": "2026-01-27",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH"
-      },
-      {
-        "key": "bge_152_IV_107",
-        "zitierung": "BGE 152 IV 107",
-        "regesteKurz": "Art. 248 Abs. 1 StPO; Siegelung und Entsiegelung sichergestellter elektronischer Datenträger; Zulässigkeit der Anordnung einer Datenspiegelung durch die Strafverfolgungsbehörden. Zuständigkeiten und Befugnisse der Strafverfolgungsbehörden…",
-        "datum": "2026-01-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH"
-      },
-      {
-        "key": "bge_152_IV_249",
-        "zitierung": "BGE 152 IV 249",
-        "regesteKurz": "Art. 104 Abs. 1 lit. b i.V.m. Art. 118 Abs. 1 und Art. 119 Abs. 2 lit. a, Art. 104 Abs. 2, Art. 105 Abs. 2, Art. 115 Abs. 1 sowie Art. 322 Abs. 2 i.V.m. Art. 382 Abs. 1 StPO; Parteistellung und Beschwerdelegitimation der…",
-        "datum": "2026-01-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH"
-      },
-      {
-        "key": "bge_152_III_310",
-        "zitierung": "BGE 152 III 310",
-        "regesteKurz": "Sondernutzungsrecht an einem Balkon; Figur der natürlichen Publizität bei Dienstbarkeiten. Wesen des Sondernutzungsrechtes beim Stockwerkeigentum (E. 4). Das Sondernutzungsrecht an einem Balkon wird durch den Begründungsakt einer…",
-        "datum": "2026-01-15",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH"
@@ -7642,6 +7642,24 @@
         "kanton": "CH"
       },
       {
+        "key": "bge_152_IV_281",
+        "zitierung": "BGE 152 IV 281",
+        "regesteKurz": "Art. 248 f., 416 ff. und 428 StPO; Kostenfolgen des Entsiegelungsverfahrens. Die Kostenfolgen des Entsiegelungsverfahrens richten sich mangels entsprechender spezifischer Bestimmungen nach den allgemeinen Regeln gemäss Art. 416-436 StPO.…",
+        "datum": "2026-03-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH"
+      },
+      {
+        "key": "bge_152_IV_285",
+        "zitierung": "BGE 152 IV 285",
+        "regesteKurz": "Art. 277, 280, 281 StPO; Art. 30, 67a, 80d bis IRSG; Gesuch um internationale Rechtshilfe in Strafsachen; Voraussetzungen für die Erteilung einer nachträglichen Genehmigung zur Verwertung von im Rahmen von geheimen technischen…",
+        "datum": "2026-02-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH"
+      },
+      {
         "key": "bge_152_IV_185",
         "zitierung": "BGE 152 IV 185",
         "regesteKurz": "Art. 364a Abs. 1 lit. a StPO; ernsthafte Erwartung der Anordnung des Vollzugs einer freiheitsentziehenden Sanktion als Voraussetzung für Sicherheitshaft im Nachverfahren. Sicherheitshaft nach Art. 364a StPO setzt unter anderem voraus, dass…",
@@ -7651,9 +7669,27 @@
         "kanton": "CH"
       },
       {
+        "key": "bge_152_IV_266",
+        "zitierung": "BGE 152 IV 266",
+        "regesteKurz": "Art. 169 StGB; Art. 152 SchKG; Art. 806 ZGB; Art. 92 VZG; Verfügung über mit Beschlag belegte Vermögenswerte; auf Mietzinsforderungen ausgedehnte Betreibung auf Grundpfandverwertung; reduzierte Verwaltung. Die Liste der Konstellationen der…",
+        "datum": "2026-02-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH"
+      },
+      {
         "key": "bge_152_IV_242",
         "zitierung": "BGE 152 IV 242",
         "regesteKurz": "Art. 9 und 350 StPO; Abweichung vom ausdrücklich angeklagten Reinheitsgrad eines Betäubungsmittels. Legt das Sachgericht seinem Schuldspruch einen höheren als den ausdrücklich angeklagten Reinheitsgrad zugrunde, verletzt es den…",
+        "datum": "2026-02-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH"
+      },
+      {
+        "key": "bge_152_IV_276",
+        "zitierung": "BGE 152 IV 276",
+        "regesteKurz": "Art. 123 Abs. 2, Art. 126 Abs. 2 lit. b, Art. 331 Abs. 2 StPO; Folgen der Nichteinhaltung der von der Verfahrensleitung angesetzten Frist zur Bezifferung und Begründung der Zivilklage durch die Privatklägerschaft. Grammatikalische,…",
         "datum": "2026-02-04",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
@@ -7700,42 +7736,6 @@
         "zitierung": "BGE 152 IV 234",
         "regesteKurz": "Art. 71 und 305 bis StGB; Methode zur Bestimmung des Betrags der Ersatzforderung im Falle einer Vermischung von Vermögenswerten aus einer Geldwäschereistraftat mit legalen Vermögenswerten. Die Bestimmungen des Strafgesetzbuches über die…",
         "datum": "2025-12-05",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH"
-      },
-      {
-        "key": "bge_152_IV_201",
-        "zitierung": "BGE 152 IV 201",
-        "regesteKurz": "a Art. 158 Ziff. 1 Abs. 1 StGB; Art. 321b Abs. 1 OR; ungetreue Geschäftsbesorgung, Rechenschaftspflicht. Die blosse Verletzung der Rechenschaftspflicht im Sinne von Art. 321b Abs. 1 OR durch den Geschäftsführer (Arbeitnehmer) kann unter…",
-        "datum": "2025-12-04",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH"
-      },
-      {
-        "key": "bge_152_IV_161",
-        "zitierung": "BGE 152 IV 161",
-        "regesteKurz": "Art. 183 Ziff. 2 StGB; Kindsentführung. An BGE 141 IV 10 ist auch unter der am 1. Juli 2014 in Kraft getretenen Bestimmung von Art. 301a ZGB festzuhalten (E. 2.4). Die massive Verletzung des Kindeswohls im Sinne von BGE 141 IV 10 lässt…",
-        "datum": "2025-11-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH"
-      },
-      {
-        "key": "bge_152_I_105",
-        "zitierung": "BGE 152 I 105",
-        "regesteKurz": "Art. 8 EMRK; Art. 67 Abs. 3 lit. d StGB; Verbot einer Tätigkeit mit Minderjährigen nach Verurteilung wegen Pornografie, die sexuelle Handlungen mit Minderjährigen zum Gegenstand hatte. Beschränkungen des Zugangs zu einem oder mehreren…",
-        "datum": "2025-10-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH"
-      },
-      {
-        "key": "bge_152_IV_189",
-        "zitierung": "BGE 152 IV 189",
-        "regesteKurz": "Art. 1b BetmG; Verhältnis zwischen dem Betäubungsmittelgesetz (BetmG) und dem Heilmittelgesetz (HMG) hinsichtlich der Einfuhr von als Heilmittel verwendeten Betäubungsmitteln. Das BetmG geht dem HMG hinsichtlich der Einfuhr von als…",
-        "datum": "2025-10-23",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH"
@@ -9624,6 +9624,15 @@
     ],
     "VZG": [
       {
+        "key": "bge_152_IV_266",
+        "zitierung": "BGE 152 IV 266",
+        "regesteKurz": "Art. 169 StGB; Art. 152 SchKG; Art. 806 ZGB; Art. 92 VZG; Verfügung über mit Beschlag belegte Vermögenswerte; auf Mietzinsforderungen ausgedehnte Betreibung auf Grundpfandverwertung; reduzierte Verwaltung. Die Liste der Konstellationen der…",
+        "datum": "2026-02-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH"
+      },
+      {
         "key": "bge_151_III_505",
         "zitierung": "BGE 151 III 505",
         "regesteKurz": "Art. 140 Abs. 1 SchKG; Art. 712i ZGB; Vollstreckung auf dem Weg der Pfändung; Lastenverzeichnis; gesetzliches Grundpfandrecht zur Sicherung des Anspruchs der Stockwerkeigentümergemeinschaft auf die Beitragsforderungen der letzten drei…",
@@ -9940,10 +9949,10 @@
         "kanton": "CH"
       },
       {
-        "key": "bge_152_III_319",
-        "zitierung": "BGE 152 III 319",
-        "regesteKurz": "a Art. 60 OR; Art. 6 EMRK. Im vorliegenden Fall ist der Beginn der Verjährungsfrist mit Art. 6 EMRK vereinbar (E. 5). Regeste b Art. 60 Abs. 2 OR; Art. 122 StGB. Eine dauerhafte Schädigung eines Embryos oder eines lebend geborenen Fötus…",
-        "datum": "2026-01-30",
+        "key": "bge_152_IV_266",
+        "zitierung": "BGE 152 IV 266",
+        "regesteKurz": "Art. 169 StGB; Art. 152 SchKG; Art. 806 ZGB; Art. 92 VZG; Verfügung über mit Beschlag belegte Vermögenswerte; auf Mietzinsforderungen ausgedehnte Betreibung auf Grundpfandverwertung; reduzierte Verwaltung. Die Liste der Konstellationen der…",
+        "datum": "2026-02-06",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH"

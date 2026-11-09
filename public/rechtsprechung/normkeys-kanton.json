@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-11-03",
+  "erzeugt": "2026-11-09",
   "eintraege": {
     "bs_appellationsgericht_AK.2022.32": [
       "BS-291.100"
@@ -5074,9 +5074,17 @@
       "BS-154.100",
       "BS-154.810"
     ],
+    "bs_appellationsgericht_HB.2025.19": [
+      "BS-154.100",
+      "BS-154.810"
+    ],
     "bs_appellationsgericht_HB.2025.2": [
       "BS-154.100",
       "BS-291.400"
+    ],
+    "bs_appellationsgericht_HB.2025.22": [
+      "BS-154.100",
+      "BS-154.810"
     ],
     "bs_appellationsgericht_HB.2025.26": [
       "BS-154.100",
@@ -5533,6 +5541,10 @@
       "BS-154.810",
       "BS-212.400",
       "BS-270.100"
+    ],
+    "bs_appellationsgericht_KE.2026.28": [
+      "BS-154.100",
+      "BS-212.400"
     ],
     "bs_appellationsgericht_KE.2026.3": [
       "BS-154.100",
@@ -6543,6 +6555,10 @@
       "BS-154.100",
       "BS-154.810"
     ],
+    "bs_appellationsgericht_SB.2022.72": [
+      "BS-154.100",
+      "BS-291.400"
+    ],
     "bs_appellationsgericht_SB.2022.73": [
       "BS-154.100",
       "BS-154.810"
@@ -7062,6 +7078,9 @@
       "BS-154.100"
     ],
     "bs_appellationsgericht_SB.2024.67": [
+      "BS-154.100"
+    ],
+    "bs_appellationsgericht_SB.2024.68": [
       "BS-154.100"
     ],
     "bs_appellationsgericht_SB.2024.69": [
@@ -11028,6 +11047,13 @@
       "BS-154.100",
       "BS-270.100"
     ],
+    "bs_appellationsgericht_VD.2026.3": [
+      "BS-153.100",
+      "BS-154.100",
+      "BS-257.100",
+      "BS-258.200",
+      "BS-270.100"
+    ],
     "bs_appellationsgericht_VD.2026.31": [
       "BS-154.100",
       "BS-154.810",
@@ -11922,6 +11948,12 @@
       "BS-890.700",
       "BS-890.710"
     ],
+    "bs_appellationsgericht_ZB.2026.8": [
+      "BS-154.100",
+      "BS-154.810",
+      "BS-291.400",
+      "BS-410.100"
+    ],
     "bs_appellationsgericht_ZB.2026.9": [
       "BS-154.100",
       "BS-154.810"
@@ -12781,6 +12813,9 @@
     "bs_sozialversicherungsgericht_BV.2025.4": [
       "BS-154.100",
       "BS-154.200"
+    ],
+    "bs_sozialversicherungsgericht_BV.2025.6": [
+      "BS-154.100"
     ],
     "bs_sozialversicherungsgericht_BV.2025.7": [
       "BS-154.100"
@@ -14298,6 +14333,10 @@
       "BS-154.100",
       "BS-154.200",
       "BS-291.100"
+    ],
+    "bs_sozialversicherungsgericht_ZV.2026.3": [
+      "BS-154.100",
+      "BS-154.200"
     ],
     "bs_zivilgericht_GS.2024.38": [
       "BS-154.100"

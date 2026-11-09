@@ -1,14 +1,47 @@
 {
-  "erzeugt": "2026-11-03",
+  "erzeugt": "2026-11-09",
   "eintraege": {
     "bs_appellationsgericht_AUS.2026.97": {
-      "fassungsToken": "2026-10-31"
+      "fassungsToken": "2026-11-04"
+    },
+    "bvger_F_7864_2026": {
+      "fassungsToken": "a6f3b03eeaca307db9c1737585c74fb6f3238a1ae146a003dc094dad4f28ab92"
+    },
+    "gr_gerichte_ZR12026165": {
+      "fassungsToken": "c464b9a5c69cc27a46b7c13dd7891bd0402e2fd2969acc05185ae1fb5ac38d8a"
+    },
+    "gr_gerichte_ZR12026170": {
+      "fassungsToken": "2808205ced39d822bfeaf17eb9379656b23c8354814644b249ad1d86e3b47e38"
+    },
+    "bvger_E_5313_2022": {
+      "fassungsToken": "f17673bb2e389d6e476c890f2f41c81b0896faecc8adfbd6f062a4d200b371bc"
+    },
+    "bvger_E_6442_2026": {
+      "fassungsToken": "4d9a55b0c2ff60ef1fe83ee673cf631e2b7b9a5cbc30e448da3f31ecfbb0f2de"
     },
     "bs_appellationsgericht_AUS.2026.95": {
       "fassungsToken": "2026-10-30"
     },
     "bs_appellationsgericht_AUS.2026.96": {
       "fassungsToken": "2026-10-29"
+    },
+    "bvger_A_3356_2026": {
+      "fassungsToken": "19d6a47ec2d013fb6a50b62554cd34789e7e12490e172c0056c1cf7e92aa37c1"
+    },
+    "bvger_A_3811_2026": {
+      "fassungsToken": "5e63e7863d0a7227218dcf4c6da0424230c9c409b22779a46761ebe5542836cc"
+    },
+    "gr_gerichte_ZR12026142": {
+      "fassungsToken": "e5c2614fa69f3bde12b0ad197180ce2cf0aa76aaebebf35a371be0d7ac344a97"
+    },
+    "gr_gerichte_SV1202641": {
+      "fassungsToken": "fd5fae28a9bb33231bb5dda06ff4a5373d28e712e1e3a070e933689a385a3357"
+    },
+    "gr_gerichte_ZR12026167": {
+      "fassungsToken": "7b32318d2b81ba08cc1bde09b7ddefd3c24407cb3942ea51c3364c224352a4fe"
+    },
+    "gr_gerichte_VR3202663": {
+      "fassungsToken": "bafd24c9643e34ad19319321f130c949a8572471f92f898e368de0d23a7fdc23"
     },
     "bs_appellationsgericht_AUS.2026.92": {
       "fassungsToken": "2026-10-24"
@@ -34,6 +67,9 @@
     "bvger_D_7327_2026": {
       "fassungsToken": "01ca75c4444a2fb56b5deebb5fa416930ec1c2f70caf3a19d64a1b3bb6cc5993"
     },
+    "bpatger_O2024_008": {
+      "fassungsToken": "e3f88830e11d32dd1a9add73f35b598377651d0397be54f5bff55f2551fcae1b"
+    },
     "gr_gerichte_ZR12026127": {
       "fassungsToken": "8d2d0208ed22d76e621ca572b6a165e08bc2acc3e5d590df03bcac37c6125ae4"
     },
@@ -52,11 +88,29 @@
     "bvger_F_7333_2026": {
       "fassungsToken": "02b412c2757b6e9504ef6617043f313553078ae96170bf45e509bcb27d37274e"
     },
+    "be_verwaltungsgericht_2002024496": {
+      "fassungsToken": "6ce2d9458ac54b675ff6eeae2353511af19bba30e8423703bdb900db0fb5cd98"
+    },
     "gr_gerichte_SBK202657": {
       "fassungsToken": "bb5a9557989e533c484f72594914bf4278552f784ddd8a1d4d7b4b096e222c6c"
     },
     "gr_gerichte_SV2202652": {
       "fassungsToken": "a91050d5e88e375d83f20ecf6cc41b60cac62bf2b589b09a19bd856edc5d1a65"
+    },
+    "bstger_BG_2026_80": {
+      "fassungsToken": "9a860ecb8b00abb5398be695774ae455b9dca98d35c63930a3dbf7473d095bab"
+    },
+    "bstger_RH_2026_11": {
+      "fassungsToken": "439d673f5a6414c1952efa1bdf3a40323e64df05c928d7e060e984f2b167714c"
+    },
+    "bstger_RR_2026_106": {
+      "fassungsToken": "3e6aeb560dd67f06bc91cfa7735dd50592010f56b3e644dfb870b32a2941bd0a"
+    },
+    "be_verwaltungsgericht_2002026289": {
+      "fassungsToken": "a9989fa1a2a307a6c3c68b7ecc1841614ff87cc8498030415fe048ad007d117e"
+    },
+    "be_verwaltungsgericht_2002026369": {
+      "fassungsToken": "286e8d5b96b20101c7c68378d3d8bcfc31dfa5ef0937d8c7693c48dcfb48c3f1"
     },
     "bs_appellationsgericht_AUS.2026.88": {
       "fassungsToken": "2026-10-14"
@@ -67,11 +121,26 @@
     "bstger_BG_2026_79": {
       "fassungsToken": "6b615b926de5f0eca6908dc92aa37db22a62b3b7a60f48b5a936a86365b43051"
     },
+    "bstger_BB_2026_57": {
+      "fassungsToken": "9a7863bb8810a1629e887b480f7eefe6b039423cc5cd446e4ac18220284710f3"
+    },
+    "bstger_BG_2026_76": {
+      "fassungsToken": "c8300cbb8441de4e58966884698ac67215f9ac3f8e124cebfb0c9c52f07ca13c"
+    },
+    "be_verwaltungsgericht_2002024798": {
+      "fassungsToken": "3527c1007332540fb086dd4c3a62bb98b822b7c8aca2d9bf107647e2253279e8"
+    },
     "gr_gerichte_ZR2202545": {
       "fassungsToken": "77b5081783318a69053cc003038d989005b1691079d2acf84ad9fe23a95d6159"
     },
     "be_verwaltungsgericht_2002026572": {
       "fassungsToken": "a526b985ca4faff80825f1398b088ae0558a1dc7c710d7306b7caa42fdd8bbf5"
+    },
+    "be_verwaltungsgericht_2002025672": {
+      "fassungsToken": "4846d8d5f3c29a38022fc0ba1770f735fa93e484f82b4c0a1e1af06e4c5f3204"
+    },
+    "be_verwaltungsgericht_2002025673": {
+      "fassungsToken": "67e728815bee49b548fc824ff50dd3c62f0407124b53ae8253e6241848400c81"
     },
     "be_verwaltungsgericht_2002025687": {
       "fassungsToken": "284734faed3d03fdc462219eec2b466c03baf0f2b12a615b34d987823d03383d"
@@ -184,6 +253,9 @@
     "gr_gerichte_SBK202691": {
       "fassungsToken": "0fb393c66d40b84403f74a27d352c214a88bf9518083dabac914ae9eff7bf502"
     },
+    "zh_obergericht_NH260004": {
+      "fassungsToken": "30632faa017d1af194aa1a37b7be356d189c9f30e608b40fa6cb63557f4713e6"
+    },
     "bs_appellationsgericht_AUS.2026.77": {
       "fassungsToken": "2026-09-23"
     },
@@ -271,6 +343,9 @@
     "gr_gerichte_VR2202639": {
       "fassungsToken": "a94740ba34bbde52af63c9f07eba7936c10205a9bd330f59cd328f7758c28f2e"
     },
+    "bs_sozialversicherungsgericht_IV.2025.94": {
+      "fassungsToken": "2026-11-05"
+    },
     "bstger_SN_2026_4": {
       "fassungsToken": "9d34c742f92d514f2dc44b98a741eb986ff7adcf3ac87c020265b4959b26a90b"
     },
@@ -282,6 +357,9 @@
     },
     "bstger_RR_2026_97": {
       "fassungsToken": "feab7f37f7685cf7816b2cc5fc4403f54619106b026eff220cf1a34aa80ea14c"
+    },
+    "zh_obergericht_PQ260060": {
+      "fassungsToken": "a4d07925df0e9600078042cb930fe7b67f1c67cac83bea83ac2362da3a5b433a"
     },
     "bs_appellationsgericht_AUS.2026.75": {
       "fassungsToken": "2026-09-22"
@@ -322,6 +400,9 @@
     "zh_obergericht_PP260016": {
       "fassungsToken": "81551003fb59a3899ca53e683687fe755aab48df856ed198aa0171e82f8878fc"
     },
+    "zh_obergericht_PS260335": {
+      "fassungsToken": "30d8684e038abbdca8be5e24abf0e98a655dcc66606639d0dddeed6b2a45af97"
+    },
     "be_verwaltungsgericht_2002026259": {
       "fassungsToken": "ca4d0013b7c73ec68c18dbc093443ca60c49475d00e3cf0eea265c28caa98a58"
     },
@@ -345,6 +426,15 @@
     },
     "zh_obergericht_PS260166": {
       "fassungsToken": "30cbba9851693dcf55f542690d05870e6209e9695d05502722974b1ac535c7fe"
+    },
+    "zh_obergericht_PF260041": {
+      "fassungsToken": "c94e5c236c30b6d5aed777071d53faeeb255cd9e446c53fb8630cf8d278e490b"
+    },
+    "zh_obergericht_PS250362": {
+      "fassungsToken": "41cdb46eb502aac45c555661efe05aeea0c496e9f82ed3b07d8835b6a19c39c0"
+    },
+    "zh_obergericht_PS250363": {
+      "fassungsToken": "019c7966955647a5726dc1785426063ad7c285ad0bc1b3a37be05321b2e629bb"
     },
     "be_verwaltungsgericht_200202668": {
       "fassungsToken": "389629200561af32f819106334166a7dd7509de92069f0a80e023d331af4b77f"
@@ -390,6 +480,9 @@
     },
     "be_verwaltungsgericht_2002024608": {
       "fassungsToken": "cf35fbadfdfcbcec922428be995fc16186ca03df9cca33c12596f06336506479"
+    },
+    "bs_appellationsgericht_KE.2026.28": {
+      "fassungsToken": "2026-11-07"
     },
     "bs_zivilgericht_K3.2025.24": {
       "fassungsToken": "2026-09-09"
@@ -439,6 +532,9 @@
     "zh_obergericht_PS260265": {
       "fassungsToken": "a25d8fb5ba0fe2ebadf0c50b25741962a655c7f8df1da573c9710aa7389d18ba"
     },
+    "bs_sozialversicherungsgericht_ZV.2026.3": {
+      "fassungsToken": "2026-11-06"
+    },
     "bs_appellationsgericht_VD.2025.73": {
       "fassungsToken": "2026-09-30"
     },
@@ -459,6 +555,9 @@
     },
     "zh_obergericht_PS260142": {
       "fassungsToken": "e86e94c6e7b6a622365f5eb90a0f6398628a8ed39ce13f27b09e5f3bc5fb44ff"
+    },
+    "bs_appellationsgericht_SB.2022.72": {
+      "fassungsToken": "2026-11-07"
     },
     "bs_appellationsgericht_AUS.2026.59": {
       "fassungsToken": "2026-07-30"
@@ -484,11 +583,17 @@
     "zh_obergericht_PS260072": {
       "fassungsToken": "2edbc2de0a74e5e919ca139ff2153ec7182195d0d9b39ba22ffdd4477ac6998b"
     },
+    "bs_appellationsgericht_VD.2026.3": {
+      "fassungsToken": "2026-11-07"
+    },
     "bpatger_S2026_003": {
       "fassungsToken": "d8c7ebbd7313083aa978dee6a28262ec6b4c0e5bba6d81c2bca05b00fa8854e5"
     },
     "bpatger_S2025_003": {
       "fassungsToken": "48e0eb31b008167f7ee3ccc53295d82d5c896f70a4deff0b7b2b1c7aa8b501e5"
+    },
+    "bs_appellationsgericht_ZB.2026.8": {
+      "fassungsToken": "2026-11-04"
     },
     "zh_obergericht_PS260195": {
       "fassungsToken": "8d48bf717e09079c8b9d849a0e27453fd688d9a6ee209a59e1621c6ba4d91c9e"
@@ -521,7 +626,7 @@
       "fassungsToken": "f4879c7faa6f8a90e8fc89d10f07a77a3f7916fd15ec6ff9b3ee7016979ae652"
     },
     "bs_sozialversicherungsgericht_AH.2026.2": {
-      "fassungsToken": "2026-10-30"
+      "fassungsToken": "2026-11-05"
     },
     "zh_obergericht_NE260004": {
       "fassungsToken": "23df116370bba8c348372b5e7780dcacfbdb82aee142ec4d037ecab5a2fd2bbe"
@@ -539,10 +644,10 @@
       "fassungsToken": "2026-10-29"
     },
     "bs_sozialversicherungsgericht_EL.2025.15": {
-      "fassungsToken": "2026-10-28"
+      "fassungsToken": "2026-11-06"
     },
     "bs_sozialversicherungsgericht_KV.2025.12": {
-      "fassungsToken": "2026-10-27"
+      "fassungsToken": "2026-11-05"
     },
     "bs_appellationsgericht_AUS.2026.52": {
       "fassungsToken": "2026-07-04"
@@ -572,7 +677,7 @@
       "fassungsToken": "2026-10-22"
     },
     "bs_sozialversicherungsgericht_AL.2025.25": {
-      "fassungsToken": "2026-10-29"
+      "fassungsToken": "2026-11-06"
     },
     "bs_appellationsgericht_BES.2026.9": {
       "fassungsToken": "2026-10-23"
@@ -634,6 +739,9 @@
     "bs_appellationsgericht_ZB.2025.51": {
       "fassungsToken": "2026-10-23"
     },
+    "bs_appellationsgericht_SB.2024.68": {
+      "fassungsToken": "2026-11-06"
+    },
     "bger_1C_329_2026": {
       "fassungsToken": "80dc208520f32d93613e32973b2e1385dca5f3beeb2849284ce821a680328f5f"
     },
@@ -689,7 +797,7 @@
       "fassungsToken": "2026-10-15"
     },
     "bs_sozialversicherungsgericht_IV.2025.105": {
-      "fassungsToken": "2026-10-30"
+      "fassungsToken": "2026-11-05"
     },
     "bs_appellationsgericht_ZB.2026.4": {
       "fassungsToken": "2026-10-17"
@@ -767,7 +875,10 @@
       "fassungsToken": "2026-10-15"
     },
     "bs_sozialversicherungsgericht_AH.2025.10": {
-      "fassungsToken": "2026-10-30"
+      "fassungsToken": "2026-11-05"
+    },
+    "bs_sozialversicherungsgericht_BV.2025.6": {
+      "fassungsToken": "2026-11-05"
     },
     "bs_appellationsgericht_AUS.2026.44": {
       "fassungsToken": "2026-06-06"
@@ -800,7 +911,7 @@
       "fassungsToken": "2026-10-20"
     },
     "bs_sozialversicherungsgericht_UV.2025.53": {
-      "fassungsToken": "2026-10-28"
+      "fassungsToken": "2026-11-05"
     },
     "be_verwaltungsgericht_2002026230": {
       "fassungsToken": "8e095b5feceb14d27ad971dcf2e60230ce346daddbf01c47825a79507a6ae73c"
@@ -842,7 +953,7 @@
       "fassungsToken": "2026-09-11"
     },
     "bs_sozialversicherungsgericht_AH.2026.1": {
-      "fassungsToken": "2026-10-30"
+      "fassungsToken": "2026-11-06"
     },
     "be_verwaltungsgericht_2002025599": {
       "fassungsToken": "605713b41ca552023732ee2cf950c97aeb295448f14b0732a0cc1abdbeb4fae8"
@@ -953,7 +1064,7 @@
       "fassungsToken": "2026-10-30"
     },
     "bs_sozialversicherungsgericht_IV.2025.139": {
-      "fassungsToken": "2026-10-30"
+      "fassungsToken": "2026-11-05"
     },
     "bs_sozialversicherungsgericht_AH.2025.11": {
       "fassungsToken": "2026-06-20"
@@ -1151,7 +1262,7 @@
       "fassungsToken": "2026-08-13"
     },
     "bs_appellationsgericht_VD.2025.146": {
-      "fassungsToken": "2026-09-29"
+      "fassungsToken": "2026-11-06"
     },
     "bs_appellationsgericht_AUS.2026.28": {
       "fassungsToken": "2026-04-25"
@@ -1248,6 +1359,12 @@
     },
     "bs_sozialversicherungsgericht_UV.2025.44": {
       "fassungsToken": "2026-10-15"
+    },
+    "bge_152_IV_303": {
+      "fassungsToken": "0a1f0740731ddda0a0faf6349fb03139f97e1652b170f805691b9a562e746a2b"
+    },
+    "bge_152_IV_303__voll": {
+      "fassungsToken": "0a1f0740731ddda0a0faf6349fb03139f97e1652b170f805691b9a562e746a2b"
     },
     "bs_appellationsgericht_VD.2025.208": {
       "fassungsToken": "2026-08-11"
@@ -1456,6 +1573,12 @@
     "bs_appellationsgericht_BES.2026.2": {
       "fassungsToken": "2026-08-15"
     },
+    "bge_152_IV_281": {
+      "fassungsToken": "c02570a73b2d68bda940ac2f6ce100381f5f1ef4d9a3cf151f7dbb73640572fe"
+    },
+    "bge_152_IV_281__voll": {
+      "fassungsToken": "c02570a73b2d68bda940ac2f6ce100381f5f1ef4d9a3cf151f7dbb73640572fe"
+    },
     "bs_appellationsgericht_VD.2025.205": {
       "fassungsToken": "2026-07-16"
     },
@@ -1546,6 +1669,12 @@
     "bs_appellationsgericht_ZB.2025.6": {
       "fassungsToken": "2026-07-11"
     },
+    "bge_152_IV_285": {
+      "fassungsToken": "860b41a11aa5415f0258543dd62c594bef6e500f44755d45b12f308dd4787ace"
+    },
+    "bge_152_IV_285__voll": {
+      "fassungsToken": "860b41a11aa5415f0258543dd62c594bef6e500f44755d45b12f308dd4787ace"
+    },
     "bs_sozialversicherungsgericht_IV.2025.116": {
       "fassungsToken": "2026-06-20"
     },
@@ -1624,6 +1753,12 @@
     "bs_appellationsgericht_KE.2025.44": {
       "fassungsToken": "2026-07-10"
     },
+    "bge_152_IV_266": {
+      "fassungsToken": "1d475841313b1b8d364c13cfa153e363d6c31a97c3d3106b7ef2faac436d4d48"
+    },
+    "bge_152_IV_266__voll": {
+      "fassungsToken": "1d475841313b1b8d364c13cfa153e363d6c31a97c3d3106b7ef2faac436d4d48"
+    },
     "bs_sozialversicherungsgericht_IV.2025.79": {
       "fassungsToken": "2026-06-11"
     },
@@ -1659,6 +1794,12 @@
     },
     "bs_appellationsgericht_SB.2025.25": {
       "fassungsToken": "2026-09-17"
+    },
+    "bge_152_IV_276": {
+      "fassungsToken": "c1ccc756b2233f6497878c533dd8dd34def238243c4b76b02e780b8ad9a896e0"
+    },
+    "bge_152_IV_276__voll": {
+      "fassungsToken": "c1ccc756b2233f6497878c533dd8dd34def238243c4b76b02e780b8ad9a896e0"
     },
     "bs_appellationsgericht_AUS.2026.7": {
       "fassungsToken": "2026-05-09"
@@ -1820,7 +1961,7 @@
       "fassungsToken": "2026-07-24"
     },
     "bs_sozialversicherungsgericht_AL.2025.18": {
-      "fassungsToken": "2026-10-24"
+      "fassungsToken": "2026-11-06"
     },
     "bs_appellationsgericht_ZZ.2025.2": {
       "fassungsToken": "2026-08-20"
@@ -2416,6 +2557,9 @@
     "bs_sozialversicherungsgericht_KV.2024.4-20251114": {
       "fassungsToken": "2026-03-03"
     },
+    "bs_appellationsgericht_HB.2025.22": {
+      "fassungsToken": "2026-11-07"
+    },
     "bs_appellationsgericht_BES.2024.144": {
       "fassungsToken": "2026-04-18"
     },
@@ -2603,7 +2747,7 @@
       "fassungsToken": "2026-08-29"
     },
     "bs_sozialversicherungsgericht_UV.2024.37": {
-      "fassungsToken": "2026-05-22"
+      "fassungsToken": "2026-11-06"
     },
     "bs_appellationsgericht_BES.2025.91": {
       "fassungsToken": "2026-04-03"
@@ -2655,6 +2799,9 @@
     },
     "bge_152_IV_189__voll": {
       "fassungsToken": "626124919ef77f5f6f9f34ad3bad77762fa20482e0e5195bf6a5c18dafff0dbb"
+    },
+    "bs_appellationsgericht_HB.2025.19": {
+      "fassungsToken": "2026-11-07"
     },
     "bs_appellationsgericht_SB.2024.112": {
       "fassungsToken": "2026-05-22"
@@ -3389,7 +3536,7 @@
       "fassungsToken": "2026-09-18"
     },
     "bs_sozialversicherungsgericht_IV.2025.26": {
-      "fassungsToken": "2026-11-03"
+      "fassungsToken": "2026-11-05"
     },
     "bs_appellationsgericht_VD.2025.95": {
       "fassungsToken": "2026-02-06"

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-11-03",
+  "erzeugt": "2026-11-09",
   "erlass": "BV",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -135,6 +135,16 @@
         "datum": "2024-03-12",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_IV_281__voll",
+        "zitierung": "Urteil 7B_206/2024 (nicht publ. in BGE 152 IV 281)",
+        "regesteKurz": null,
+        "datum": "2026-03-02",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -416,7 +426,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 28
+        "gewicht": 29
       },
       {
         "key": "bge_150_II_346",
@@ -436,7 +446,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 21
+        "gewicht": 22
       },
       {
         "key": "bge_148_IV_356",
@@ -1646,7 +1656,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 15
+        "gewicht": 16
       },
       {
         "key": "bge_147_I_89",
@@ -2213,6 +2223,16 @@
         "gewicht": 6
       },
       {
+        "key": "bge_146_II_335",
+        "zitierung": "BGE 146 II 335",
+        "regesteKurz": "Art. 1 Abs. 1, Art. 2 Ziff. 6 und Art. 12 Abs. 1 AVEG; Allgemeinverbindlicherklärung von Gesamtarbeitsverträgen; Prinzip der \"offenen Türe\"; Zulässigkeit von Nebenbestimmungen. Zulässigkeit der Beschwerde in öffentlich-rechtlichen…",
+        "datum": "2020-05-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 6
+      },
+      {
         "key": "bge_146_I_70",
         "zitierung": "BGE 146 I 70",
         "regesteKurz": "Art. 26 Abs. 1, Art. 27 Abs. 1, Art. 36, Art. 49 Abs. 1, Art. 109 Abs. 1, Art. 122 Abs. 1 BV; kommunale Bestimmungen zum preisgünstigen Wohnungsbau; abstrakte Normenkontrolle; Vorrang von Bundesrecht; Eigentumsgarantie;…",
@@ -2221,16 +2241,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 6
-      },
-      {
-        "key": "bge_150_IV_149",
-        "zitierung": "BGE 150 IV 149",
-        "regesteKurz": "a aArt. 221 Abs. 1 lit. c und Art. 221 Abs. 1bis StPO; Haftgrund der qualifizierten Wiederholungsgefahr nach alter und revidierter StPO (in Kraft seit 1. Januar 2024). Bisherige Praxis gestützt auf aArt. 221 Abs. 1 lit. c StPO (E. 3.1).…",
-        "datum": "2024-03-05",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 5
       }
     ],
     "37": [
@@ -5403,6 +5413,16 @@
     ],
     "164": [
       {
+        "key": "bge_150_IV_255",
+        "zitierung": "BGE 150 IV 255",
+        "regesteKurz": "Art. 1 StGB; Art. 10, 11 Abs. 1 und Art. 20 Abs. 1 lit. e BetmG; Beihilfe zum Suizid; Verschreibung einer tödlich wirkenden Substanz (Natriumpentobarbital); Legalitätsprinzip. Die Verschreibung von Natriumpentobarbital durch einen Arzt an…",
+        "datum": "2024-03-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_148_IV_234",
         "zitierung": "BGE 148 IV 234",
         "regesteKurz": "Art. 3 und 8 EMRK; Art. 36 Istanbul-Konvention; Art. 189 und 190 StGB; die Nötigungshandlung als Tatbestandsmerkmal; Legalitätsprinzip; Zustimmungsprinzip (\"Nur-Ja-heisst-Ja\") und Widerspruchsprinzip (\"Nein-heisst-Nein\"). Auch wenn die…",
@@ -5443,6 +5463,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_152_IV_266",
+        "zitierung": "BGE 152 IV 266",
+        "regesteKurz": "Art. 169 StGB; Art. 152 SchKG; Art. 806 ZGB; Art. 92 VZG; Verfügung über mit Beschlag belegte Vermögenswerte; auf Mietzinsforderungen ausgedehnte Betreibung auf Grundpfandverwertung; reduzierte Verwaltung. Die Liste der Konstellationen der…",
+        "datum": "2026-02-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_III_553",
         "zitierung": "BGE 151 III 553",
         "regesteKurz": "Art. 44 SchKG; Art. 184 Abs. 3 BV; Art. 2 des Embargogesetzes; Art. 15 der Ukraine-Verordnung. Auf sanktionsrechtliche Vermögenssperren, die sich auf die Ukraine-Verordnung stützen, ist Art. 44 SchKG analog anwendbar (E. 3 und 4).",
@@ -5457,26 +5487,6 @@
         "zitierung": "BGE 151 I 382",
         "regesteKurz": "Art. 2 UNO-Pakt II; Art. 6 und 13 EMRK; Art. 29, 30, 190 und 191c BV; Art. 99 AIG; Prüfung der Kompetenz des Staatssekretariats für Migration (SEM), kantonalen Gerichtsurteilen die Zustimmung zu verweigern, auf ihre Verfassungs- und…",
         "datum": "2025-03-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_152_I_38",
-        "zitierung": "BGE 152 I 38",
-        "regesteKurz": "a Art. 7 EMRK; Art. 11A des Genfer Strafgesetzes vom 17. November 2006; Bettelei; konkrete Prüfung der Gesetzmässigkeit von gestützt auf kantonales Recht verhängten Bussen. Wiederholung der Anforderungen an die Bestimmtheit des Gesetzes…",
-        "datum": "2025-03-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_II_593",
-        "zitierung": "BGE 151 II 593",
-        "regesteKurz": "Art. 11 Abs. 2 USG; Art. 12 Abs. 1 und 2, Art. 14 Abs. 2 NISV; Ziff. 63 Anhang 1 NISV; adaptive Mobilfunkantennen; Anwendung eines Korrekturfaktors auf die maximale Sendeleistung und Mittelung der massgeblichen Sendeleistung; Tauglichkeit…",
-        "datum": "2024-12-09",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

@@ -176,41 +176,41 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
     "LugÜ",
     "HZÜ"
   ],
-  "rechtsprechungVolltext": 5626,
-  "rechtsprechungVollurteilVerweise": 1355,
+  "rechtsprechungVolltext": 5670,
+  "rechtsprechungVollurteilVerweise": 1360,
   "rechtsprechungSachgebiete": [
     {
       "id": "privat",
       "label": "Privatrecht",
-      "anzahl": 1115
+      "anzahl": 1123
     },
     {
       "id": "straf",
       "label": "Strafrecht",
-      "anzahl": 1523
+      "anzahl": 1534
     },
     {
       "id": "prozess",
       "label": "Verfahrensrecht",
-      "anzahl": 94
+      "anzahl": 96
     },
     {
       "id": "oeffentlich",
       "label": "Öffentliches Recht",
-      "anzahl": 1509
+      "anzahl": 1523
     },
     {
       "id": "steuern",
       "label": "Steuern & Abgaben",
-      "anzahl": 130
+      "anzahl": 131
     },
     {
       "id": "sozialversicherung",
       "label": "Sozialversicherung",
-      "anzahl": 1255
+      "anzahl": 1263
     }
   ],
-  "rechtsprechungLeitentscheide": 1362,
+  "rechtsprechungLeitentscheide": 1367,
   "materialien": 1690,
   "materialienGesetzgebung": 1363,
   "materialienErlaeuterungen": 327,
@@ -279,7 +279,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
   "rechner": 23,
   "vorlagen": 26,
   "standGesetze": "2026-10-05",
-  "standRechtsprechung": "2026-11-03",
+  "standRechtsprechung": "2026-11-09",
   "standMaterialien": "2026-11-01",
   "juengsterGesetzStand": "2026-10-01",
   "juengsterEntscheid": "2026-10-30",

@@ -1,0 +1,103 @@
+{
+  "erzeugt": "2026-11-09",
+  "eintraege": [
+    {
+      "id": "kanton/GR/gr_gerichte/ZR12026165",
+      "gericht": "gr_gerichte",
+      "gerichtName": "Obergericht GR",
+      "gerichtstyp": "kantonal",
+      "kanton": "GR",
+      "abteilung": "ZR1",
+      "nummer": "ZR1 26 165",
+      "bgeReferenz": null,
+      "zitierung": "Obergericht GR ZR1 26 165 vom 30.10.2026",
+      "datum": "2026-10-30",
+      "sprache": "de",
+      "leitcharakter": "routine",
+      "sachgebiet": "privat",
+      "legalArea": "civil",
+      "rubrum": null,
+      "regeste": null,
+      "regesteAmtlich": false,
+      "abschnitte": [
+        {
+          "typ": "erwaegung",
+          "bloecke": [
+            {
+              "marke": "E. 1",
+              "tiefe": 1,
+              "text": "Auf die Beschwerde von A._____ wird nicht eingetreten."
+            },
+            {
+              "marke": "E. 2",
+              "tiefe": 1,
+              "text": "Die Beschwerde von B._____ wird infolge Rückzugs als gegenstandslos geworden am Geschäftsverzeichnis abgeschrieben."
+            },
+            {
+              "marke": "E. 3",
+              "tiefe": 1,
+              "text": "Die Kosten des Beschwerdeverfahrens von CHF 400.00 gehen zu Lasten des Kantons Graubünden."
+            },
+            {
+              "marke": "E. 4",
+              "tiefe": 1,
+              "text": "[Rechtsmittelbelehrung]"
+            },
+            {
+              "marke": "E. 5",
+              "tiefe": 1,
+              "text": "[Mitteilungen]"
+            }
+          ]
+        },
+        {
+          "typ": "dispositiv",
+          "bloecke": [
+            {
+              "marke": "1.",
+              "text": "Auf die Beschwerde von A._____ wird nicht eingetreten."
+            },
+            {
+              "marke": "2.",
+              "text": "Die Beschwerde von B._____ wird infolge Rückzugs als gegenstandslos geworden am Geschäftsverzeichnis abgeschrieben."
+            },
+            {
+              "marke": "3.",
+              "text": "Die Kosten des Beschwerdeverfahrens von CHF 400.00 gehen zu Lasten des Kantons Graubünden."
+            },
+            {
+              "marke": "4.",
+              "text": "[Rechtsmittelbelehrung] 5. [Mitteilungen]"
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [
+        "Auf die Beschwerde von A._____ wird nicht eingetreten.",
+        "Die Beschwerde von B._____ wird infolge Rückzugs als gegenstandslos\ngeworden am Geschäftsverzeichnis abgeschrieben.",
+        "Die Kosten des Beschwerdeverfahrens von CHF 400.00 gehen zu Lasten\ndes Kantons Graubünden.",
+        "[Rechtsmittelbelehrung]",
+        "[Mitteilungen]"
+      ],
+      "zitierteNormen": [
+        "Art. 38 Abs. 3 GOG",
+        "Art. 450 Abs. 2 ZGB",
+        "Art. 60 Abs. 1 EGZZGB",
+        "Art. 63 Abs. 3 EGZZGB",
+        "Art. 9 Abs. 2 GOG"
+      ],
+      "normKeys": [
+        "ZGB"
+      ],
+      "zitierteEntscheide": [],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/ZR1_2026_165_1c5ca38e769f089c2e67b39c2d2861d0eb5ebec6b0b1194a6306e363c3b963a536c36705c99ac21a80c28dae176ef6ea3d3bdb02f7af840dfe6990494464362231917adb64845b986e380bc3afabc84d?path=1c5ca38e769f089c2e67b39c2d2861d0eb5ebec6b0b1194a6306e363c3b963a536c36705c99ac21a80c28dae176ef6ea3d3bdb02f7af840dfe6990494464362231917adb64845b986e380bc3afabc84d&pathIsEncrypted=1&dossiernummer=ZR1_2026_165",
+      "abgerufen": "2026-11-09",
+      "fassungsToken": "c464b9a5c69cc27a46b7c13dd7891bd0402e2fd2969acc05185ae1fb5ac38d8a",
+      "sha": "5e20c8d7ee316d06f95368bed556b15645ebf58f2f6644a620f7d36fb8b2b714",
+      "ecli": "ECLI:CH:GRG:2026:ZR1.2026.165"
+    }
+  ]
+}

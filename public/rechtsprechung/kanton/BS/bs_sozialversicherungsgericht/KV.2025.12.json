@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-11-02",
+  "erzeugt": "2026-11-09",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/KV.2025.12",
@@ -17,7 +17,7 @@
       "sachgebiet": "sozialversicherung",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "KVG",
+        "gegenstand": "Kündigung des Versicherungsvertrags infolge betrügerischer Begründung des Versicherungsanspruchs; Leistungseinstellung nach Observation",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. R. Schnyder (Vorsitz), Dr. med. R. von Aarburg, S. Schenker und Gerichtsschreiberin lic. iur. B. Bertazzo"
@@ -321,11 +321,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80164&Template=search_result_document.html",
-      "abgerufen": "2026-11-02",
-      "fassungsToken": "2026-10-27",
+      "abgerufen": "2026-11-09",
+      "fassungsToken": "2026-11-05",
       "sha": "950dd5129559c97ad1f79b9aac96a1d271bce746a43363ff9369f55bf7b6f494",
       "erstpublikation": "2026-10-27",
-      "aktualisiert": "2026-10-27",
+      "aktualisiert": "2026-11-05",
       "nummerSekundaer": "SVG.2026.179",
       "ecli": "ECLI:CH:BSS:2026:KV.2025.12"
     }

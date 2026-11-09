@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-11-02",
+  "erzeugt": "2026-11-09",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.105",
@@ -17,7 +17,7 @@
       "sachgebiet": "sozialversicherung",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "IVG",
+        "gegenstand": "Invalidenrente",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "Dr. A. Pfleiderer (Vorsitz), Dr. med. W. Rühl, lic. phil. D. Borer und Gerichtsschreiberin lic. iur. B. Bertazzo"
@@ -280,11 +280,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80187&Template=search_result_document.html",
-      "abgerufen": "2026-11-02",
-      "fassungsToken": "2026-10-30",
+      "abgerufen": "2026-11-09",
+      "fassungsToken": "2026-11-05",
       "sha": "8f7145c3a618cf9168792028895a69d0ecd7a51ddce36706e6be3a42aff246b2",
       "erstpublikation": "2026-10-30",
-      "aktualisiert": "2026-10-30",
+      "aktualisiert": "2026-11-05",
       "nummerSekundaer": "SVG.2026.186",
       "ecli": "ECLI:CH:BSS:2026:IV.2025.105"
     }

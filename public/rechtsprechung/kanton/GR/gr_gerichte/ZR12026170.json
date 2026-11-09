@@ -1,0 +1,97 @@
+{
+  "erzeugt": "2026-11-09",
+  "eintraege": [
+    {
+      "id": "kanton/GR/gr_gerichte/ZR12026170",
+      "gericht": "gr_gerichte",
+      "gerichtName": "Obergericht GR",
+      "gerichtstyp": "kantonal",
+      "kanton": "GR",
+      "abteilung": "ZR1",
+      "nummer": "ZR1 26 170",
+      "bgeReferenz": null,
+      "zitierung": "Obergericht GR ZR1 26 170 vom 30.10.2026",
+      "datum": "2026-10-30",
+      "sprache": "de",
+      "leitcharakter": "routine",
+      "sachgebiet": "privat",
+      "legalArea": "civil",
+      "rubrum": null,
+      "regeste": null,
+      "regesteAmtlich": false,
+      "abschnitte": [
+        {
+          "typ": "erwaegung",
+          "bloecke": [
+            {
+              "marke": "E. 1",
+              "tiefe": 1,
+              "text": "Auf die Beschwerde wird nicht eingetreten."
+            },
+            {
+              "marke": "E. 2",
+              "tiefe": 1,
+              "text": "Die Beschwerde wird der Klinik C._____ zur allfälligen weiteren Behandlung als Entlassungsgesuch weitergeleitet."
+            },
+            {
+              "marke": "E. 3",
+              "tiefe": 1,
+              "text": "Es werden keine Kosten erhoben"
+            },
+            {
+              "marke": "E. 4",
+              "tiefe": 1,
+              "text": "[Rechtsmittelbelehrung]"
+            },
+            {
+              "marke": "E. 5",
+              "tiefe": 1,
+              "text": "[Mitteilungen]"
+            }
+          ]
+        },
+        {
+          "typ": "dispositiv",
+          "bloecke": [
+            {
+              "marke": "1.",
+              "text": "Auf die Beschwerde wird nicht eingetreten."
+            },
+            {
+              "marke": "2.",
+              "text": "Die Beschwerde wird der Klinik C._____ zur allfälligen weiteren Behandlung als Entlassungsgesuch weitergeleitet."
+            },
+            {
+              "marke": "3.",
+              "text": "Es werden keine Kosten erhoben 4. [Rechtsmittelbelehrung] 5. [Mitteilungen]"
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [
+        "Auf die Beschwerde wird nicht eingetreten.",
+        "Die Beschwerde wird der Klinik C._____ zur allfälligen weiteren Behandlung\nals Entlassungsgesuch weitergeleitet.",
+        "Es werden keine Kosten erhoben",
+        "[Rechtsmittelbelehrung]",
+        "[Mitteilungen]"
+      ],
+      "zitierteNormen": [
+        "Art. 38 Abs. 3 GOG",
+        "Art. 428 Abs. 4 ZGB",
+        "Art. 439 Abs. 2 ZGB"
+      ],
+      "normKeys": [
+        "ZGB"
+      ],
+      "zitierteEntscheide": [],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/ZR1_2026_170_1c5ca38e769f089c2e67b39c2d2861d0eb5ebec6b0b1194a6306e363c3b963a5c7151d4b8b0cdb61ff84bb0f06ea209d2a61c9c6d5d9412cb09e72833d8c7ba3381da3f0a236c2df2aff5b8e99030788?path=1c5ca38e769f089c2e67b39c2d2861d0eb5ebec6b0b1194a6306e363c3b963a5c7151d4b8b0cdb61ff84bb0f06ea209d2a61c9c6d5d9412cb09e72833d8c7ba3381da3f0a236c2df2aff5b8e99030788&pathIsEncrypted=1&dossiernummer=ZR1_2026_170",
+      "abgerufen": "2026-11-09",
+      "fassungsToken": "2808205ced39d822bfeaf17eb9379656b23c8354814644b249ad1d86e3b47e38",
+      "sha": "2c535165a550cc88f4c4ac7279d906b75b6e4cb0363daa64bfe717ab8eeb408b",
+      "ecli": "ECLI:CH:GRG:2026:ZR1.2026.170"
+    }
+  ]
+}

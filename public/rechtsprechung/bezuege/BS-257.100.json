@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-11-03",
+"erzeugt":"2026-11-09",
 "erlass":"BS-257.100",
 "erlassEbene":"kanton",
 "dokumente":{
@@ -76,6 +76,7 @@
 "bs_appellationsgericht_VD.2023.88":{"zitierung":"Appellationsgericht BS VD.2023.88 vom 16.02.2024","regesteKurz":"Bewilligung der Versetzung in die offene Institution [...] GmbH (VD.2022.215); Widerruf der Verfügungen vom 15. Juni…","datum":"2024-02-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2024.179":{"zitierung":"Appellationsgericht BS VD.2024.179 vom 16.01.2025","regesteKurz":"Vollzugsbefehl","datum":"2025-01-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2024.43":{"zitierung":"Appellationsgericht BS VD.2024.43 vom 21.06.2024","regesteKurz":"Vollzugsbefehl","datum":"2024-06-21","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2026.3":{"zitierung":"Appellationsgericht BS VD.2026.3 vom 21.07.2026","regesteKurz":"Vollzugsbefehl","datum":"2026-07-21","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_ZS.2024.3":{"zitierung":"Appellationsgericht BS ZS.2024.3 vom 04.09.2024","regesteKurz":"Erwerbstätigkeit ohne Bewilligung (Rückweisungsverfahren betr. SB.2021.67) 6B_828/2024 Urteil Bundesgericht vom…","datum":"2024-09-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
@@ -89,7 +90,7 @@
 "23":[{"key":"bs_appellationsgericht_BES.2026.69","gewicht":null},{"key":"bs_appellationsgericht_BES.2026.49","gewicht":null},{"key":"bs_appellationsgericht_BES.2025.129","gewicht":null},{"key":"bs_appellationsgericht_BES.2024.35","gewicht":null},{"key":"bs_appellationsgericht_BES.2024.37","gewicht":null},{"key":"bs_appellationsgericht_BES.2024.38","gewicht":null},{"key":"bs_appellationsgericht_BES.2023.175","gewicht":null},{"key":"bs_appellationsgericht_BES.2023.78","gewicht":null},{"key":"bs_appellationsgericht_BES.2021.99","gewicht":null},{"key":"bs_appellationsgericht_BES.2022.151","gewicht":null},{"key":"bs_appellationsgericht_BES.2022.168","gewicht":null},{"key":"bs_appellationsgericht_BES.2022.138","gewicht":null},{"key":"bs_appellationsgericht_BES.2022.36","gewicht":null},{"key":"bs_appellationsgericht_BES.2022.47","gewicht":null},{"key":"bs_appellationsgericht_BES.2021.152","gewicht":null}],
 "35":[{"key":"bs_appellationsgericht_BES.2022.127","gewicht":null}],
 "38":[{"key":"bs_appellationsgericht_SB.2025.61","gewicht":null},{"key":"bs_appellationsgericht_SB.2025.59","gewicht":null},{"key":"bs_appellationsgericht_SB.2024.49","gewicht":null},{"key":"bs_appellationsgericht_BES.2023.172","gewicht":null},{"key":"bs_appellationsgericht_SB.2024.45","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.88","gewicht":null},{"key":"bs_appellationsgericht_BES.2021.114","gewicht":null}],
-"40":[{"key":"bs_appellationsgericht_VD.2024.179","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.43","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.25","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.259","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.38","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.45","gewicht":null}],
+"40":[{"key":"bs_appellationsgericht_VD.2026.3","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.179","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.43","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.25","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.259","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.38","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.45","gewicht":null}],
 "43":[{"key":"bs_appellationsgericht_VD.2023.74","gewicht":null}],
 "44":[{"key":"bs_appellationsgericht_DGS.2025.16","gewicht":null},{"key":"bs_appellationsgericht_DGS.2025.12","gewicht":null},{"key":"bs_appellationsgericht_DGS.2025.2","gewicht":null},{"key":"bs_appellationsgericht_DGS.2025.1","gewicht":null},{"key":"bs_appellationsgericht_DGS.2024.47","gewicht":null},{"key":"bs_appellationsgericht_DGS.2024.32","gewicht":null},{"key":"bs_appellationsgericht_DGS.2024.35","gewicht":null},{"key":"bs_appellationsgericht_DGS.2024.29","gewicht":null},{"key":"bs_appellationsgericht_DGS.2024.18","gewicht":null},{"key":"bs_appellationsgericht_SB.2020.76","gewicht":null},{"key":"bs_appellationsgericht_HB.2019.60","gewicht":null},{"key":"bs_appellationsgericht_SB.2018.7","gewicht":null},{"key":"bs_appellationsgericht_SB.2019.80","gewicht":null},{"key":"bs_appellationsgericht_SB.2019.58-20230220","gewicht":null},{"key":"bs_appellationsgericht_SB.2018.131","gewicht":null},{"key":"bs_appellationsgericht_BES.2022.110-20230105","gewicht":null},{"key":"bs_appellationsgericht_SB.2018.96","gewicht":null},{"key":"bs_appellationsgericht_SB.2021.104-20221111","gewicht":null},{"key":"bs_appellationsgericht_SB.2019.14","gewicht":null},{"key":"bs_appellationsgericht_HB.2019.43","gewicht":null},{"key":"bs_appellationsgericht_HB.2019.59","gewicht":null},{"key":"bs_appellationsgericht_SB.2019.76","gewicht":null},{"key":"bs_appellationsgericht_BES.2021.54","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.125","gewicht":null},{"key":"bs_appellationsgericht_BES.2019.139","gewicht":null}]
 },
@@ -104,7 +105,7 @@
 "23":{"kantonal":15},
 "35":{"kantonal":1},
 "38":{"kantonal":7},
-"40":{"kantonal":6},
+"40":{"kantonal":7},
 "43":{"kantonal":1},
 "44":{"kantonal":25}
 }

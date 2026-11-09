@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-11-03",
+  "erzeugt": "2026-11-09",
   "erlass": "BGG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -2017,6 +2017,16 @@
         "gewicht": 4
       },
       {
+        "key": "bge_151_IV_344__voll",
+        "zitierung": "Urteil 7B_145/2025 (nicht publ. in BGE 151 IV 344)",
+        "regesteKurz": null,
+        "datum": "2025-03-25",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 3
+      },
+      {
         "key": "bge_150_IV_103__voll",
         "zitierung": "Urteil 7B_215/2023 (nicht publ. in BGE 150 IV 103)",
         "regesteKurz": null,
@@ -2031,16 +2041,6 @@
         "zitierung": "Urteil 6B_234/2022 (nicht publ. in BGE 150 IV 10)",
         "regesteKurz": null,
         "datum": "2023-06-08",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 3
-      },
-      {
-        "key": "bge_149_IV_248__voll",
-        "zitierung": "Urteil 6B_219/2021 (nicht publ. in BGE 149 IV 248)",
-        "regesteKurz": null,
-        "datum": "2023-04-19",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -2141,6 +2141,16 @@
         "gewicht": 87
       },
       {
+        "key": "bge_147_IV_73__voll",
+        "zitierung": "Urteil 6B_572/2020 (nicht publ. in BGE 147 IV 73)",
+        "regesteKurz": null,
+        "datum": "2021-01-08",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 49
+      },
+      {
         "key": "bge_146_IV_88__voll",
         "zitierung": "Urteil 6B_614/2019 (nicht publ. in BGE 146 IV 88)",
         "regesteKurz": null,
@@ -2149,16 +2159,6 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 49
-      },
-      {
-        "key": "bge_147_IV_73__voll",
-        "zitierung": "Urteil 6B_572/2020 (nicht publ. in BGE 147 IV 73)",
-        "regesteKurz": null,
-        "datum": "2021-01-08",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 48
       },
       {
         "key": "bge_150_II_346__voll",
@@ -2208,7 +2208,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 26
+        "gewicht": 27
       }
     ],
     "67": [
@@ -2372,7 +2372,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 20
+        "gewicht": 21
       }
     ],
     "71": [
@@ -2921,6 +2921,26 @@
         "gewicht": 4
       },
       {
+        "key": "bge_151_IV_344__voll",
+        "zitierung": "Urteil 7B_145/2025 (nicht publ. in BGE 151 IV 344)",
+        "regesteKurz": null,
+        "datum": "2025-03-25",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 3
+      },
+      {
+        "key": "bge_151_IV_30__voll",
+        "zitierung": "Urteil 7B_313/2024 (nicht publ. in BGE 151 IV 30)",
+        "regesteKurz": null,
+        "datum": "2024-09-24",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 3
+      },
+      {
         "key": "bge_150_IV_277__voll",
         "zitierung": "Urteil 7B_261/2023 (nicht publ. in BGE 150 IV 277)",
         "regesteKurz": null,
@@ -2935,26 +2955,6 @@
         "zitierung": "BGE 150 IV 38",
         "regesteKurz": "a Art. 78 ff. BGG; Art. 222 und 429-431 StPO; Zulässigkeit der Beschwerde in Strafsachen. Gegen kantonal letztinstanzliche Entscheide über die Anordnung von Sicherheitshaft im selbstständigen gerichtlichen Nachverfahren betreffend die…",
         "datum": "2023-11-20",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 2
-      },
-      {
-        "key": "bge_149_IV_205",
-        "zitierung": "BGE 149 IV 205",
-        "regesteKurz": "Art. 93 Abs. 1 lit. a BGG; Art. 182 ff., Art. 393 Abs. 1 lit. a und Art. 394 lit. b StPO; Art. 10 Abs. 2 und Art. 13 Abs. 1 BV; Ablehnung eines Beweisantrags der beschuldigten Person durch die Staatsanwaltschaft; nicht wieder…",
-        "datum": "2023-02-17",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 2
-      },
-      {
-        "key": "bge_148_IV_275",
-        "zitierung": "BGE 148 IV 275",
-        "regesteKurz": "Art. 81 Abs. 1 lit. b Ziff. 3 BGG; Art. 135 Abs. 3 lit. b, Art. 135 Abs. 4 lit. a und b, Art. 429 Abs. 1 lit. a, Art. 434 Abs. 1 und 2 StPO; Entschädigungsansprüche von Drittpersonen; Beschwerdelegitimation der Staatsanwaltschaft. Die…",
-        "datum": "2022-03-22",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -3932,7 +3932,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 12
+        "gewicht": 13
       }
     ],
     "91": [
@@ -4272,7 +4272,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 36
+        "gewicht": 37
+      },
+      {
+        "key": "bge_148_V_366",
+        "zitierung": "BGE 148 V 366",
+        "regesteKurz": "Art. 57 Abs. 1 UVG; Zuständigkeit des Schiedsgerichts. Die sachliche Zuständigkeit des kantonalen Schiedsgerichts nach Art. 57 Abs. 1 UVG bestimmt sich unter anderem mit Blick auf die sich in Wirklichkeit gegenüberstehenden Parteien und…",
+        "datum": "2022-08-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 33
       },
       {
         "key": "bge_148_I_160",
@@ -4285,30 +4295,20 @@
         "gewicht": 33
       },
       {
-        "key": "bge_148_V_366",
-        "zitierung": "BGE 148 V 366",
-        "regesteKurz": "Art. 57 Abs. 1 UVG; Zuständigkeit des Schiedsgerichts. Die sachliche Zuständigkeit des kantonalen Schiedsgerichts nach Art. 57 Abs. 1 UVG bestimmt sich unter anderem mit Blick auf die sich in Wirklichkeit gegenüberstehenden Parteien und…",
-        "datum": "2022-08-17",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "key": "bge_146_II_335__voll",
+        "zitierung": "Urteil 2C_910/2019 (nicht publ. in BGE 146 II 335)",
+        "regesteKurz": null,
+        "datum": "2020-05-11",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 32
+        "gewicht": 22
       },
       {
         "key": "bge_149_II_337",
         "zitierung": "BGE 149 II 337",
         "regesteKurz": "Art. 10 Abs. 3 lit. a und b, Art. 28 Abs. 1, 2 und 3, Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 26 Abs. 2, Art. 173 Abs. 1 lit. a und b, Art. 183 Abs. 1 lit. a GAV SBB (2019); Art. 328b OR; Art. 2 Abs. 1 lit. b, Art. 3 lit. c Ziff. 2,…",
         "datum": "2023-08-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 21
-      },
-      {
-        "key": "bge_148_II_392",
-        "zitierung": "BGE 148 II 392",
-        "regesteKurz": "Art. 27, 29 Abs. 2, Art. 94 Abs. 4, Art. 106 und 190 BV; Art. 3 lit. a, Art. 4, 9, 21, 24 Abs. 1 und Art. 86 ff. BGS; DNS-Zugangssperre für von ausländischen Unternehmen in der Schweiz angebotene Online-Geldspiele. Gegen Entscheide des…",
-        "datum": "2022-05-18",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -4426,7 +4426,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 32
+        "gewicht": 33
       },
       {
         "key": "bge_150_II_346",
@@ -4439,6 +4439,16 @@
         "gewicht": 28
       },
       {
+        "key": "bge_148_IV_409",
+        "zitierung": "BGE 148 IV 409",
+        "regesteKurz": "Art. 173 ff. StGB; Ehrverletzungen; Äusserungen gegenüber einem Rechtsanwalt. Die Bedeutung von Äusserungen, die ein Mandant gegenüber seinem Rechtsanwalt tätigt, ist nicht auf die gleiche Weise zu beurteilen wie die Bedeutung von…",
+        "datum": "2022-08-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 22
+      },
+      {
         "key": "bge_148_I_160",
         "zitierung": "BGE 148 I 160",
         "regesteKurz": "Art. 8 Abs. 2, 15 und 36 BV; Art. 9 EMRK; Art. 3, 6 und 7 des Gesetzes über die Laizität des Staates des Kantons Genf vom 26. April 2018 (LLE/GE); Glaubens- und Gewissensfreiheit; Verbot von Diskriminierungen; abstrakte Normenkontrolle.…",
@@ -4447,16 +4457,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 21
-      },
-      {
-        "key": "bge_148_IV_409",
-        "zitierung": "BGE 148 IV 409",
-        "regesteKurz": "Art. 173 ff. StGB; Ehrverletzungen; Äusserungen gegenüber einem Rechtsanwalt. Die Bedeutung von Äusserungen, die ein Mandant gegenüber seinem Rechtsanwalt tätigt, ist nicht auf die gleiche Weise zu beurteilen wie die Bedeutung von…",
-        "datum": "2022-08-31",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 20
       },
       {
         "key": "bge_149_II_337",
@@ -5042,7 +5042,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 46
+        "gewicht": 48
       },
       {
         "key": "bge_150_II_346",
@@ -5062,7 +5062,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 33
+        "gewicht": 34
       },
       {
         "key": "bge_148_V_366",
@@ -5072,7 +5072,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 31
+        "gewicht": 32
       },
       {
         "key": "bge_148_I_160",
@@ -5085,14 +5085,14 @@
         "gewicht": 31
       },
       {
-        "key": "bge_149_II_337",
-        "zitierung": "BGE 149 II 337",
-        "regesteKurz": "Art. 10 Abs. 3 lit. a und b, Art. 28 Abs. 1, 2 und 3, Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 26 Abs. 2, Art. 173 Abs. 1 lit. a und b, Art. 183 Abs. 1 lit. a GAV SBB (2019); Art. 328b OR; Art. 2 Abs. 1 lit. b, Art. 3 lit. c Ziff. 2,…",
-        "datum": "2023-08-21",
+        "key": "bge_148_IV_409",
+        "zitierung": "BGE 148 IV 409",
+        "regesteKurz": "Art. 173 ff. StGB; Ehrverletzungen; Äusserungen gegenüber einem Rechtsanwalt. Die Bedeutung von Äusserungen, die ein Mandant gegenüber seinem Rechtsanwalt tätigt, ist nicht auf die gleiche Weise zu beurteilen wie die Bedeutung von…",
+        "datum": "2022-08-31",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 22
+        "gewicht": 23
       }
     ],
     "106": [
@@ -5124,7 +5124,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 46
+        "gewicht": 48
       },
       {
         "key": "bge_150_II_346",
@@ -5154,7 +5154,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 32
+        "gewicht": 33
       },
       {
         "key": "bge_148_V_366",
@@ -5164,7 +5164,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 31
+        "gewicht": 32
       },
       {
         "key": "bge_146_II_335__voll",
@@ -5174,7 +5174,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 24
+        "gewicht": 25
       }
     ],
     "107": [

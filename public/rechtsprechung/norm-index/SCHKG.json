@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-11-03",
+  "erzeugt": "2026-11-09",
   "erlass": "SCHKG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -1651,6 +1651,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_IV_266",
+        "zitierung": "BGE 152 IV 266",
+        "regesteKurz": "Art. 169 StGB; Art. 152 SchKG; Art. 806 ZGB; Art. 92 VZG; Verfügung über mit Beschlag belegte Vermögenswerte; auf Mietzinsforderungen ausgedehnte Betreibung auf Grundpfandverwertung; reduzierte Verwaltung. Die Liste der Konstellationen der…",
+        "datum": "2026-02-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_III_400",
         "zitierung": "BGE 150 III 400",
         "regesteKurz": "Art. 83 Abs. 2 SchKG; Art. 239 Abs. 2 und Art. 325 Abs. 1 ZPO; Fristbeginn für die Erhebung der Aberkennungsklage. Die 20-tägige Frist für die Erhebung der Aberkennungsklage beginnt ab Eröffnung des Dispositivs des erstinstanzlichen…",
@@ -1685,16 +1695,6 @@
         "zitierung": "BGE 149 III 179",
         "regesteKurz": "Art. 31, 56 ff., 63, 250 Abs. 2 SchKG; Art. 145 Abs. 1 und 4 ZPO; Frist zur Erhebung einer Kollokationsklage im Konkurs. Für die Erhebung einer Kollokationsklage im Konkurs (Art. 250 SchKG) gelten die Gerichtsferien gemäss Art. 145 Abs. 1…",
         "datum": "2022-12-07",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_III_210",
-        "zitierung": "BGE 149 III 210",
-        "regesteKurz": "Art. 68 und 80 f. SchKG; Betreibung für mit definitivem Rechtsöffnungsentscheid zugesprochene Kosten und Parteientschädigung; Rechtsöffnungstitel; Einwendung des Schuldners. Der Rechtsöffnungsentscheid, welcher dem Gläubiger Kosten und…",
-        "datum": "2022-11-24",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1797,6 +1797,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_266",
+        "zitierung": "BGE 152 IV 266",
+        "regesteKurz": "Art. 169 StGB; Art. 152 SchKG; Art. 806 ZGB; Art. 92 VZG; Verfügung über mit Beschlag belegte Vermögenswerte; auf Mietzinsforderungen ausgedehnte Betreibung auf Grundpfandverwertung; reduzierte Verwaltung. Die Liste der Konstellationen der…",
+        "datum": "2026-02-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_152_III_92",
@@ -2125,6 +2135,18 @@
         "zitierung": "BGE 146 III 426",
         "regesteKurz": "Art. 156 Abs. 2 SchKG. Herabsetzung gepfändeter Eigentümer- oder Inhabertitel in der Verwertung? Art. 156 Abs. 2 SchKG ist auf gepfändete Eigentümer- oder Inhabertitel nicht anwendbar, und zwar auch nicht analog (E. 3). Regeste Art. 156…",
         "datum": "2020-09-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "96": [
+      {
+        "key": "bge_152_IV_266",
+        "zitierung": "BGE 152 IV 266",
+        "regesteKurz": "Art. 169 StGB; Art. 152 SchKG; Art. 806 ZGB; Art. 92 VZG; Verfügung über mit Beschlag belegte Vermögenswerte; auf Mietzinsforderungen ausgedehnte Betreibung auf Grundpfandverwertung; reduzierte Verwaltung. Die Liste der Konstellationen der…",
+        "datum": "2026-02-06",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2503,6 +2525,16 @@
     ],
     "151": [
       {
+        "key": "bge_152_IV_266",
+        "zitierung": "BGE 152 IV 266",
+        "regesteKurz": "Art. 169 StGB; Art. 152 SchKG; Art. 806 ZGB; Art. 92 VZG; Verfügung über mit Beschlag belegte Vermögenswerte; auf Mietzinsforderungen ausgedehnte Betreibung auf Grundpfandverwertung; reduzierte Verwaltung. Die Liste der Konstellationen der…",
+        "datum": "2026-02-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_III_405",
         "zitierung": "BGE 151 III 405",
         "regesteKurz": "Tragweite einer von einem Generalunternehmer an einen Handwerker ausgestellten Schuldanerkennung bei der definitiven Rechtsöffnung zur Beseitigung des Rechtsvorschlags eines Dritten, der Eigentümer der Liegenschaft ist, in einer vom…",
@@ -2539,6 +2571,18 @@
         "datum": "2024-12-18",
         "leitcharakter": "routine",
         "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "152": [
+      {
+        "key": "bge_152_IV_266",
+        "zitierung": "BGE 152 IV 266",
+        "regesteKurz": "Art. 169 StGB; Art. 152 SchKG; Art. 806 ZGB; Art. 92 VZG; Verfügung über mit Beschlag belegte Vermögenswerte; auf Mietzinsforderungen ausgedehnte Betreibung auf Grundpfandverwertung; reduzierte Verwaltung. Die Liste der Konstellationen der…",
+        "datum": "2026-02-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -2981,6 +3025,18 @@
         "datum": "2022-09-01",
         "leitcharakter": "routine",
         "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "204": [
+      {
+        "key": "bge_152_IV_266",
+        "zitierung": "BGE 152 IV 266",
+        "regesteKurz": "Art. 169 StGB; Art. 152 SchKG; Art. 806 ZGB; Art. 92 VZG; Verfügung über mit Beschlag belegte Vermögenswerte; auf Mietzinsforderungen ausgedehnte Betreibung auf Grundpfandverwertung; reduzierte Verwaltung. Die Liste der Konstellationen der…",
+        "datum": "2026-02-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       }

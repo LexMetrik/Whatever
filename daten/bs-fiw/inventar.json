@@ -1,14 +1,14 @@
 {
- "erzeugt": "2026-11-03",
+ "erzeugt": "2026-11-09",
  "quelle": "https://rechtsprechung.gerichte.bs.ch (amtliches Portal, Findinfo/Omnis)",
  "portal": {
-  "gesamtN": 11114,
+  "gesamtN": 11124,
   "jahre": {
    "2022": 973,
    "2023": 905,
    "2024": 893,
-   "2025": 844,
-   "2026": 366
+   "2025": 846,
+   "2026": 374
   }
  },
  "eintraege": [
@@ -30532,6 +30532,15 @@
    "aktualisiert": "2026-03-28"
   },
   {
+   "key": 78930,
+   "gn": "HB.2025.19",
+   "gnSekundaer": "AG.2025.612",
+   "datum": "2025-10-23",
+   "titel": "Verlängerung der Sicherheitshaft",
+   "erstpublikation": "2026-11-07",
+   "aktualisiert": "2026-11-07"
+  },
+  {
    "key": 78931,
    "gn": "SB.2024.48",
    "gnSekundaer": "AG.2025.613",
@@ -31034,6 +31043,15 @@
    "titel": "Rechtsöffnung",
    "erstpublikation": "2026-07-11",
    "aktualisiert": "2026-07-11"
+  },
+  {
+   "key": 79022,
+   "gn": "HB.2025.22",
+   "gnSekundaer": "AG.2025.662",
+   "datum": "2025-11-14",
+   "titel": "Verlängerung der Untersuchungshaft (Urteil BGer 7B_1316/2025 vom 18. Dezember 2025)",
+   "erstpublikation": "2026-11-07",
+   "aktualisiert": "2026-11-07"
   },
   {
    "key": 79023,
@@ -34073,9 +34091,9 @@
    "gn": "UV.2024.37",
    "gnSekundaer": "SVG.2026.65",
    "datum": "2025-10-28",
-   "titel": "UVG (Beschwerde beim Bundesgericht hängig) Long-Covid als Berufskrankheit, insbes. Nachweis einer stattgehabten Infektion bei fehlendem positivem Covid-19-Test während der Akuterkrankung",
+   "titel": "Long-Covid als Berufskrankheit, insbes. Nachweis einer stattgehabten Infektion bei fehlendem positivem Covid-19-Test während der Akuterkrankung (Beschwerde beim Bundesgericht hängig)",
    "erstpublikation": "2026-05-06",
-   "aktualisiert": "2026-05-22"
+   "aktualisiert": "2026-11-06"
   },
   {
    "key": 79528,
@@ -34451,9 +34469,9 @@
    "gn": "VD.2025.146",
    "gnSekundaer": "AG.2026.280",
    "datum": "2026-05-06",
-   "titel": "Strafverbüssung in Form der elektronischen Überwachung (Beschwerde beim Bundesgericht hängig)",
+   "titel": "Strafverbüssung in Form der elektronischen Überwachung (BGer 7B_699/2026 vom 17. September 2026)",
    "erstpublikation": "2026-09-29",
-   "aktualisiert": "2026-09-29"
+   "aktualisiert": "2026-11-06"
   },
   {
    "key": 79599,
@@ -34649,9 +34667,9 @@
    "gn": "AL.2025.18",
    "gnSekundaer": "SVG.2026.87",
    "datum": "2026-01-21",
-   "titel": "AVIG",
+   "titel": "Kein Anspruch auf Insolvenzentschädigung mangels Erfüllung der gesetzlichen Voraussetzungen",
    "erstpublikation": "2026-10-24",
-   "aktualisiert": "2026-10-24"
+   "aktualisiert": "2026-11-06"
   },
   {
    "key": 79635,
@@ -34919,9 +34937,9 @@
    "gn": "IV.2025.26",
    "gnSekundaer": "SVG.2026.98",
    "datum": "2025-08-19",
-   "titel": "IVG (Beschwerde beim Bundesgericht hängig)",
+   "titel": "Beweistauglichkeit des psychiatrischen Teilgutachtens; Aufteilung von Haushalt und Erwerb",
    "erstpublikation": "2026-11-03",
-   "aktualisiert": "2026-11-03"
+   "aktualisiert": "2026-11-05"
   },
   {
    "key": 79695,
@@ -35527,6 +35545,15 @@
    "aktualisiert": "2026-07-24"
   },
   {
+   "key": 79878,
+   "gn": "ZB.2026.8",
+   "gnSekundaer": "AG.2026.459",
+   "datum": "2026-06-10",
+   "titel": "Getrenntleben",
+   "erstpublikation": "2026-11-04",
+   "aktualisiert": "2026-11-04"
+  },
+  {
    "key": 79881,
    "gn": "DGS.2025.25",
    "gnSekundaer": "AG.2026.462",
@@ -35543,6 +35570,15 @@
    "titel": "Anordnung der Durchsetzungshaft",
    "erstpublikation": "2026-07-24",
    "aktualisiert": "2026-07-24"
+  },
+  {
+   "key": 79889,
+   "gn": "VD.2026.3",
+   "gnSekundaer": "AG.2026.470",
+   "datum": "2026-07-21",
+   "titel": "Vollzugsbefehl",
+   "erstpublikation": "2026-11-07",
+   "aktualisiert": "2026-11-07"
   },
   {
    "key": 79890,
@@ -35788,6 +35824,15 @@
    "aktualisiert": "2026-09-19"
   },
   {
+   "key": 79993,
+   "gn": "KE.2026.28",
+   "gnSekundaer": "AG.2026.535",
+   "datum": "2026-08-19",
+   "titel": "Errichtung einer Beistandschaft und Entzug des Kontozugriffs",
+   "erstpublikation": "2026-11-07",
+   "aktualisiert": "2026-11-07"
+  },
+  {
    "key": 79999,
    "gn": "BES.2026.69",
    "gnSekundaer": "AG.2026.539",
@@ -35918,9 +35963,9 @@
    "gn": "UV.2025.53",
    "gnSekundaer": "SVG.2026.155",
    "datum": "2026-05-21",
-   "titel": "UVG",
+   "titel": "Leistungseinstellung; Unfallkausalität einer Rotatorenmanschettenläsion",
    "erstpublikation": "2026-10-28",
-   "aktualisiert": "2026-10-28"
+   "aktualisiert": "2026-11-05"
   },
   {
    "key": 80046,
@@ -36013,6 +36058,15 @@
    "aktualisiert": "2026-10-15"
   },
   {
+   "key": 80089,
+   "gn": "SB.2024.68",
+   "gnSekundaer": "AG.2026.596",
+   "datum": "2026-06-15",
+   "titel": "fahrlässige Körperverletzung (schwere Schädigung)",
+   "erstpublikation": "2026-11-06",
+   "aktualisiert": "2026-11-06"
+  },
+  {
    "key": 80090,
    "gn": "IV.2025.138",
    "gnSekundaer": "SVG.2026.167",
@@ -36029,6 +36083,15 @@
    "titel": "Gutachten beweiswertig; Beschwerde abgewiesen (Beschwerde beim Bundesgericht hängig)",
    "erstpublikation": "2026-10-10",
    "aktualisiert": "2026-10-30"
+  },
+  {
+   "key": 80095,
+   "gn": "SB.2022.72",
+   "gnSekundaer": "AG.2026.599",
+   "datum": "2026-07-24",
+   "titel": "Diebstahl, mehrfache Urkundenfälschung, mehrfache falsche Anschuldigung, Vergehen gegen das Waffengesetz, mehrfaches Fahren in fahrunfähigem Zustand (Motorfahrzeug, qualifizierte Atemalkohol oder BAK und andere Gründe) etc. (noch nicht rechtskräftig)",
+   "erstpublikation": "2026-11-07",
+   "aktualisiert": "2026-11-07"
   },
   {
    "key": 80097,
@@ -36152,27 +36215,27 @@
    "gn": "IV.2025.139",
    "gnSekundaer": "SVG.2026.174",
    "datum": "2026-04-30",
-   "titel": "IVG",
+   "titel": "Anspruch auf Eingliederungsmassnahmen bei Aufnahme eines Zweitstudiums verneint; «Grundsatz der Eingliederung vor Rente»",
    "erstpublikation": "2026-10-30",
-   "aktualisiert": "2026-10-30"
+   "aktualisiert": "2026-11-05"
   },
   {
    "key": 80138,
    "gn": "AH.2025.10",
    "gnSekundaer": "SVG.2026.175",
    "datum": "2026-05-26",
-   "titel": "AHVG",
+   "titel": "Schadenersatzpflicht nach Art. 52 AHVG vorliegend bejaht",
    "erstpublikation": "2026-10-30",
-   "aktualisiert": "2026-10-30"
+   "aktualisiert": "2026-11-05"
   },
   {
    "key": 80139,
    "gn": "AL.2025.25",
    "gnSekundaer": "SVG.2026.176",
    "datum": "2026-06-23",
-   "titel": "AVIG",
+   "titel": "Einstellung zufolge Selbstkündigung gerechtfertigt; Unzumutbarkeit des Verbleibs nicht belegt",
    "erstpublikation": "2026-10-29",
-   "aktualisiert": "2026-10-29"
+   "aktualisiert": "2026-11-06"
   },
   {
    "key": 80142,
@@ -36215,36 +36278,36 @@
    "gn": "KV.2025.12",
    "gnSekundaer": "SVG.2026.179",
    "datum": "2026-07-02",
-   "titel": "KVG",
+   "titel": "Kündigung des Versicherungsvertrags infolge betrügerischer Begründung des Versicherungsanspruchs; Leistungseinstellung nach Observation",
    "erstpublikation": "2026-10-27",
-   "aktualisiert": "2026-10-27"
+   "aktualisiert": "2026-11-05"
   },
   {
    "key": 80165,
    "gn": "EL.2025.15",
    "gnSekundaer": "SVG.2026.180",
    "datum": "2026-07-02",
-   "titel": "ELG",
+   "titel": "Ergänzungsleistungen",
    "erstpublikation": "2026-10-28",
-   "aktualisiert": "2026-10-28"
+   "aktualisiert": "2026-11-06"
   },
   {
    "key": 80173,
    "gn": "AH.2026.1",
    "gnSekundaer": "SVG.2026.182",
    "datum": "2026-05-13",
-   "titel": "AHVG",
+   "titel": "Rückforderung der Waisen- und Kinderrente",
    "erstpublikation": "2026-10-30",
-   "aktualisiert": "2026-10-30"
+   "aktualisiert": "2026-11-06"
   },
   {
    "key": 80183,
    "gn": "AH.2026.2",
    "gnSekundaer": "SVG.2026.184",
    "datum": "2026-07-07",
-   "titel": "AHVG",
+   "titel": "Hilflosenentschädigung",
    "erstpublikation": "2026-10-30",
-   "aktualisiert": "2026-10-30"
+   "aktualisiert": "2026-11-05"
   },
   {
    "key": 80185,
@@ -36256,13 +36319,22 @@
    "aktualisiert": "2026-10-24"
   },
   {
+   "key": 80186,
+   "gn": "IV.2025.94",
+   "gnSekundaer": "SVG.2026.185",
+   "datum": "2026-09-07",
+   "titel": "Rentensistierung während Straf- oder Massnahmenvollzug",
+   "erstpublikation": "2026-11-04",
+   "aktualisiert": "2026-11-05"
+  },
+  {
    "key": 80187,
    "gn": "IV.2025.105",
    "gnSekundaer": "SVG.2026.186",
    "datum": "2026-06-09",
-   "titel": "IVG",
+   "titel": "Invalidenrente",
    "erstpublikation": "2026-10-30",
-   "aktualisiert": "2026-10-30"
+   "aktualisiert": "2026-11-05"
   },
   {
    "key": 80188,
@@ -36281,6 +36353,24 @@
    "titel": "Ausschaffungshaft (Art. 76 Abs. 1 AIG)",
    "erstpublikation": "2026-10-27",
    "aktualisiert": "2026-10-27"
+  },
+  {
+   "key": 80194,
+   "gn": "ZV.2026.3",
+   "gnSekundaer": "SVG.2026.187",
+   "datum": "2026-08-06",
+   "titel": "Krankentaggeld",
+   "erstpublikation": "2026-11-05",
+   "aktualisiert": "2026-11-06"
+  },
+  {
+   "key": 80200,
+   "gn": "BV.2025.6",
+   "gnSekundaer": "SVG.2026.189",
+   "datum": "2026-05-26",
+   "titel": "Zeitpunkt des Eintritt der zur Invalidität führenden Arbeitsunfähigkeit umstritten",
+   "erstpublikation": "2026-11-05",
+   "aktualisiert": "2026-11-05"
   },
   {
    "key": 80202,
@@ -36305,9 +36395,9 @@
    "gn": "AUS.2026.97",
    "gnSekundaer": "AG.2026.667",
    "datum": "2026-10-30",
-   "titel": "Ausschaffungshaft",
+   "titel": "Anordnung der Ausschaffungshaft",
    "erstpublikation": "2026-10-31",
-   "aktualisiert": "2026-10-31"
+   "aktualisiert": "2026-11-04"
   }
  ]
 }

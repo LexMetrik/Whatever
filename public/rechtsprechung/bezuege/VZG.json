@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-11-03",
+"erzeugt":"2026-11-09",
 "erlass":"VZG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -10,12 +10,14 @@
 "bge_151_III_405":{"zitierung":"BGE 151 III 405","regesteKurz":"Tragweite einer von einem Generalunternehmer an einen Handwerker ausgestellten Schuldanerkennung bei der definitiven Rechtsöffnung zur Beseitigung des Rechtsvorschlags eines Dritten, der Eigentümer der Liegenschaft ist, in einer vom…","datum":"2024-12-04","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_III_405__voll":{"zitierung":"Urteil 4A_637/2023 (nicht publ. in BGE 151 III 405)","regesteKurz":null,"datum":"2024-12-04","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 III 405","urteil":"4A_637/2023"}},
 "bge_151_III_505":{"zitierung":"BGE 151 III 505","regesteKurz":"Art. 140 Abs. 1 SchKG; Art. 712i ZGB; Vollstreckung auf dem Weg der Pfändung; Lastenverzeichnis; gesetzliches Grundpfandrecht zur Sicherung des Anspruchs der Stockwerkeigentümergemeinschaft auf die Beitragsforderungen der letzten drei…","datum":"2025-04-14","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_152_IV_266":{"zitierung":"BGE 152 IV 266","regesteKurz":"Art. 169 StGB; Art. 152 SchKG; Art. 806 ZGB; Art. 92 VZG; Verfügung über mit Beschlag belegte Vermögenswerte; auf Mietzinsforderungen ausgedehnte Betreibung auf Grundpfandverwertung; reduzierte Verwaltung. Die Liste der Konstellationen der…","datum":"2026-02-06","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bs_appellationsgericht_BEZ.2023.54":{"zitierung":"Appellationsgericht BS BEZ.2023.54 vom 25.09.2023","regesteKurz":"Nichteintreten (BGer-Nr. 5A_857/2023 vom 21. November 2023)","datum":"2023-09-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_BEZ.2026.29":{"zitierung":"Appellationsgericht BS BEZ.2026.29 vom 22.05.2026","regesteKurz":"Grundstückverwertung (BGer Nr. 5A_543/2026 vom 17.06.2026)","datum":"2026-05-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+"bs_appellationsgericht_BEZ.2026.29":{"zitierung":"Appellationsgericht BS BEZ.2026.29 vom 22.05.2026","regesteKurz":"Grundstückverwertung (BGer Nr. 5A_543/2026 vom 17.06.2026)","datum":"2026-05-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"zh_obergericht_PS250363":{"zitierung":"Obergericht ZH PS250363 vom 26.08.2026","regesteKurz":null,"datum":"2026-08-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"ZH","gericht":"zh_obergericht","status":"kantonal"}}
 },
 "proArtikel":{
 "9":[{"key":"bge_149_III_165","gewicht":0},{"key":"bs_appellationsgericht_BEZ.2023.54","gewicht":null}],
-"16":[{"key":"bge_151_III_239__voll","gewicht":0,"erwaegungen":["E. 2.6.3"]}],
+"16":[{"key":"bge_152_IV_266","gewicht":0},{"key":"bge_151_III_239__voll","gewicht":0,"erwaegungen":["E. 2.6.3"]}],
 "18":[{"key":"bge_151_III_239__voll","gewicht":0,"erwaegungen":["E. 2.6.2","E. 2.6.3"]}],
 "28":[{"key":"bge_151_III_505","gewicht":0}],
 "29":[{"key":"bs_appellationsgericht_BEZ.2026.29","gewicht":null}],
@@ -32,12 +34,16 @@
 "85":[{"key":"bge_151_III_405","gewicht":0}],
 "88":[{"key":"bge_151_III_405","gewicht":0}],
 "89":[{"key":"bge_146_III_441","gewicht":0},{"key":"bge_151_III_405__voll","gewicht":0}],
+"90":[{"key":"zh_obergericht_PS250363","gewicht":null}],
+"91":[{"key":"bge_152_IV_266","gewicht":0}],
+"92":[{"key":"bge_152_IV_266","gewicht":0}],
 "99":[{"key":"bge_149_III_165","gewicht":0},{"key":"bs_appellationsgericht_BEZ.2023.54","gewicht":null}],
+"124":[{"key":"bge_152_IV_266","gewicht":0}],
 "78a":[{"key":"bge_149_III_165","gewicht":0}]
 },
 "gesamtProArtikel":{
 "9":{"bge":1,"kantonal":1},
-"16":{"bger":1},
+"16":{"bge":1,"bger":1},
 "18":{"bger":1},
 "28":{"bge":1},
 "29":{"kantonal":1},
@@ -54,7 +60,11 @@
 "85":{"bge":1},
 "88":{"bge":1},
 "89":{"bge":1,"bger":1},
+"90":{"kantonal":1},
+"91":{"bge":1},
+"92":{"bge":1},
 "99":{"bge":1,"kantonal":1},
+"124":{"bge":1},
 "78a":{"bge":1}
 }
 }
