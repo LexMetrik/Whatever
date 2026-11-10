@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-11-01",
+  "erzeugt": "2026-11-09",
   "eintraege": {
     "ESTV-KS-DBG-5A": {
       "sha": "394a1b86f4be4483680f2d32241be25826662b9f8d28ada6850b41e7df254fcc"
@@ -12720,6 +12720,9 @@
         }
       ]
     },
+    "VERN-2026-83": {
+      "sha": "873beeb92b521efde099ac02be9a4c63101bafacd472862ee703828d2a7c4397"
+    },
     "VERN-2026-68": {
       "sha": "8d8cad282e3b004820bffcd5da4ad246530fba2f6300e1de19d505788f88e286"
     },
@@ -12728,6 +12731,9 @@
     },
     "VERN-2026-24": {
       "sha": "0d88e96f3df7c37caf1bf4d5587c9a8ebeb39d3c65980cadf8a373321b155726"
+    },
+    "VERN-2026-67": {
+      "sha": "d3140199fa74c776cf64aaf773b084f0f380c22c50bb81cce422a9828553c900"
     },
     "VERN-2025-101": {
       "sha": "71081a2f60e590c6eada0a9722a8e9d7e17f496a1501bdbcfb4ce69fee09ba63"
@@ -12783,17 +12789,11 @@
     "VERN-2026-62": {
       "sha": "175d8da5dc1ea29d419a5be6e3e0e322875316e4f88e82c67654f22b9dd37019"
     },
-    "VERN-2026-67": {
-      "sha": "589aa9be4b2f80725c2f18ba96d46bf9c4d40e3917a663e7246089f174c0fd8c"
-    },
     "VERN-2026-78": {
       "sha": "379df1f1b1dda41b6c3a94166d0d99f310253e7475c2407f426198ed8fd963fd"
     },
     "VERN-2026-81": {
       "sha": "9f571834db5a60c77b1667db8b24222579f004c6a0c10f905cea55660ec27eda"
-    },
-    "VERN-2026-83": {
-      "sha": "44dfd878e8ec68107aad54b0170bbdb49b14e117ddf2b2da5fd8fee3590b3b71"
     },
     "VERN-2026-87": {
       "sha": "468cb18cc0836d6895606502de0f62a5a4146334f86c97c432fa0c2efbdffe3a"
@@ -12816,9 +12816,6 @@
     "VERN-2026-73": {
       "sha": "c77fc8b76dc2a0f153f9688fd03fbdfe10ef211e02dd2b1732a6aa42c61bc526"
     },
-    "VERN-2026-21": {
-      "sha": "62f7cfc46ad9377a8fdd4a5e0d1ba90fb06aa46e96e29ab1793fc18a852bef34"
-    },
     "VERN-2026-32": {
       "sha": "472cd8135ec2a98af6f3b89ddbd21d1b559f323cd5e63b09202aaf9f64a8cc75"
     },
@@ -12837,9 +12834,6 @@
     "VERN-2026-19": {
       "sha": "3d0857c0a1f3aca05d5f4263681c4694947cc85e983ad01495e2389a5106380e"
     },
-    "VERN-2025-100": {
-      "sha": "22a4ef06f0fce96e469e73c7f9d5e06b3de69ea5bcde11a098ad2d82d72d879d"
-    },
     "VERN-2026-20": {
       "sha": "7e51b19306e0fe377bad411c9d7ee99c637059174475f355c5172cc91c0f2b77"
     },
@@ -12854,6 +12848,9 @@
     },
     "VERN-2021-20": {
       "sha": "3c710256ba571bf1971be5e5dbe74505957e9de0103e011414258d340b99d770"
+    },
+    "VERN-2026-21": {
+      "sha": "d210d06d0a7bc49e0b4586919119621861acb6cdc34df7e0acb057f85ca8e42f"
     },
     "VERN-2026-8": {
       "sha": "de1c43df126214165dd09623793c2a3db6b4380daaa6ecfb0e82669362b67cfe"
@@ -12881,6 +12878,9 @@
     },
     "VERN-2026-44": {
       "sha": "8320d70c6b453b4d526303785a0dbe710f4430c8d8840588ff36420bf1b1f240"
+    },
+    "VERN-2025-100": {
+      "sha": "7f34b2ad0b3e225609c6270d326931cf0c5ffdfc78477664c859ed54fa576c8b"
     },
     "VERN-2025-124": {
       "sha": "53fadd383c490520672c156040626490924cbddb31463f4f3664915149e4221b"
